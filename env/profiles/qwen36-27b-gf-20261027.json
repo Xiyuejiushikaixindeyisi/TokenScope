@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "kind": "user_supplied_launch_parameters",
+    "received_at": "2026-10-27",
+    "session_id": "01a1682f-956d-7630-afe7-e123ba38dfc0",
+    "verification": "declared_configuration_not_observed_effective_runtime",
+    "filter": "monitoring_relevant_allowlist; no credentials or init commands retained"
+  },
+  "defaults_apply_to_next_run": true,
+  "automatic_activation": false,
+  "profile_id": "qwen36-27b-gf-20261027",
+  "model_id": "Qwen3.6-27B",
+  "model_aliases": [
+    "Qwen3.6-27B"
+  ],
+  "deployment": {
+    "gf_pack": "vllm_ascend_0_23_0/0.0.1.20260924161436.fbbc540a",
+    "declared_engine_family": "vllm-ascend",
+    "declared_engine_version": "0.23.0",
+    "gf_sdk_version": "4.1.0.20260924155335",
+    "model_weight_variant": "Qwen3.6-27B-w8a8",
+    "max_model_len": 1010000,
+    "reserved_model_len": 2,
+    "multi_modal": false,
+    "parallel_policy": "tp:8;dp:1",
+    "python_executable": "/usr/local/python3.12.13/bin/python",
+    "venv_python_version": "3.11"
+  },
+  "encoding": {
+    "tokenizer_mode": null,
+    "reasoning_parser": "qwen3",
+    "tool_call_parser": "qwen3_coder",
+    "enable_auto_tool_choice": true,
+    "thinking_default": "native_chat_template_default",
+    "thinking_default_status": "user_confirmed_2026-10-27",
+    "chat_template_kwargs": null,
+    "chat_template_kwargs_status": "not_supplied",
+    "tokenizer_revision": null,
+    "tokenizer_revision_status": "deployment_not_supplied",
+    "structured_outputs": {
+      "backend": "xgrammar",
+      "disable_any_whitespace": true
+    }
+  },
+  "cache": {
+    "prefill": {
+      "prefix_caching": true,
+      "block_size": null,
+      "max_num_seqs": 24,
+      "max_num_batched_tokens": 8192,
+      "enforce_eager": true
+    },
+    "decode": {
+      "prefix_caching": false,
+      "block_size": null,
+      "max_num_seqs": 24,
+      "max_num_batched_tokens": 8192,
+      "async_scheduling": true
+    },
+    "mtp": {
+      "enabled": true,
+      "method": "mtp",
+      "prefill_num_speculative_tokens": 3,
+      "decode_num_speculative_tokens": 3,
+      "enforce_eager": true
+    },
+    "cp": {
+      "prefill_context_parallel_size": null,
+      "decode_context_parallel_size": null,
+      "status": "not_explicit"
+    },
+    "gf_hash_block_size": null,
+    "hybrid_manager": null
+  },
+  "kv_transfer": {
+    "kv_connector": "MooncakeConnectorV1",
+    "mooncake_enabled": true
+  },
+  "model_config_overrides": {
+    "text_config": {
+      "rope_parameters": {
+        "mrope_interleaved": true,
+        "mrope_section": [
+          11,
+          11,
+          10
+        ],
+        "rope_type": "yarn",
+        "rope_theta": 10000000,
+        "partial_rotary_factor": 0.25,
+        "factor": 4.0,
+        "original_max_position_embeddings": 262144
+      }
+    }
+  },
+  "simulation_mapping": {
+    "strategy": "full_block_approximation",
+    "block_size": 1536,
+    "block_size_evidence": "prior_user_observed_startup_log; not_explicit_in_this_launch_command",
+    "mtp": true,
+    "mtp_evidence": "explicit_speculative_config_both_stages",
+    "cp_world_size": 1,
+    "cp_evidence": "approved_simulation_default_not_runtime_fact",
+    "hybrid_enabled": false,
+    "prefix_cache_enabled": true,
+    "prefix_scope": "prefill_input_reuse",
+    "thinking_default": "native_chat_template_default"
+  },
+  "unresolved": [
+    "deployed tokenizer/template revision and file hashes",
+    "effective CP world sizes",
+    "confirm startup-derived 1536 against this exact package if runtime comparison is later required"
+  ]
+}

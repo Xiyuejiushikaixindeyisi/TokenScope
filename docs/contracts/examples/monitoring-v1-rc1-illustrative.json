@@ -1,0 +1,500 @@
+{
+  "contract_version": "v1.0-rc1",
+  "evidence_level": "illustrative_not_tokenizer_or_deployment_measurement",
+  "notes": [
+    "All token lengths are artificial.",
+    "Each model run starts with an empty isolated cache.",
+    "Duplicate business hash_id values are preserved as independent records.",
+    "No alarm is dispatched; the threshold table is unconfigured.",
+    "Qwen and DeepSeek use the same chain approximation; default block sizes are used directly, without conversion to physical Ascend page units."
+  ],
+  "glm_run": {
+    "run_id": "illustrative-glm-run",
+    "model_id": "GLM-5.2",
+    "settings": {
+      "revision": 1,
+      "block_size": 128,
+      "block_size_unit": "simulation_input_tokens",
+      "cp_world_size": 1,
+      "mtp": true,
+      "prefix_cache_enabled": true,
+      "strategy": "full-block-mtp-v1",
+      "simulation_semantics": "full_block_rule",
+      "hybrid_enabled": false,
+      "cache_mode": "full_block"
+    },
+    "quality": {
+      "records_read": 3,
+      "valid_requests": 2,
+      "skipped_rows": 1,
+      "duplicate_hash_id_rows": 1
+    },
+    "rows": [
+      {
+        "source_record_index": 1,
+        "hash_id": "same-id",
+        "appid": "demo-app",
+        "time_utc": "2026-10-26T00:00:00Z",
+        "display_time_example": "2026-10-26T08:00:00+08:00",
+        "J": 430,
+        "P": 400,
+        "H": 0,
+        "C": 400,
+        "O": 40,
+        "cache_status": "available",
+        "complete_input_blocks_published": 3
+      },
+      {
+        "source_record_index": 2,
+        "hash_id": "same-id",
+        "appid": "demo-app",
+        "time_utc": "2026-10-26T00:00:01Z",
+        "J": 450,
+        "P": 400,
+        "H": 256,
+        "C": 144,
+        "O": 60,
+        "cache_status": "available",
+        "prompt_ids_relation": "identical_to_record_1",
+        "matched_blocks_before_mtp": 3,
+        "mtp_dropped_blocks": 1
+      },
+      {
+        "source_record_index": 3,
+        "status": "skipped",
+        "error_code": "INVALID_REQUEST_JSON"
+      }
+    ],
+    "group": {
+      "appid": "demo-app",
+      "request_count": 2,
+      "totals": {
+        "J": 880,
+        "P": 800,
+        "H": 256,
+        "C": 544,
+        "O": 100
+      },
+      "ideal_hit_rate": 0.32,
+      "quantile_method": "nearest_rank",
+      "quantiles": {
+        "J": {
+          "p50": 430,
+          "p80": 450,
+          "p90": 450
+        },
+        "P": {
+          "p50": 400,
+          "p80": 400,
+          "p90": 400
+        },
+        "C": {
+          "p50": 144,
+          "p80": 400,
+          "p90": 400
+        }
+      },
+      "descending_points": {
+        "J": [
+          {
+            "rank": 1,
+            "source_record_index": 2,
+            "length": 450
+          },
+          {
+            "rank": 2,
+            "source_record_index": 1,
+            "length": 430
+          }
+        ],
+        "P": [
+          {
+            "rank": 1,
+            "source_record_index": 1,
+            "length": 400
+          },
+          {
+            "rank": 2,
+            "source_record_index": 2,
+            "length": 400
+          }
+        ],
+        "C": [
+          {
+            "rank": 1,
+            "source_record_index": 1,
+            "length": 400
+          },
+          {
+            "rank": 2,
+            "source_record_index": 2,
+            "length": 144
+          }
+        ]
+      },
+      "threshold_status": "unconfigured",
+      "alarm_signals": [],
+      "histogram_example": {
+        "bin_width": 4000,
+        "domain": [
+          0,
+          4000
+        ],
+        "boundary": "left_closed_right_open",
+        "sample_count": 2,
+        "metrics": {
+          "J": [
+            {
+              "lower": 0,
+              "upper": 4000,
+              "count": 2,
+              "share": 1.0
+            }
+          ],
+          "P": [
+            {
+              "lower": 0,
+              "upper": 4000,
+              "count": 2,
+              "share": 1.0
+            }
+          ],
+          "C": [
+            {
+              "lower": 0,
+              "upper": 4000,
+              "count": 2,
+              "share": 1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "qwen_run": {
+    "run_id": "illustrative-qwen_run",
+    "model_id": "Qwen3.6-27B",
+    "settings": {
+      "block_size": 1536,
+      "block_size_unit": "simulation_input_tokens",
+      "cp_world_size": 1,
+      "mtp": true,
+      "prefix_cache_enabled": true,
+      "strategy": "full-block-mtp-v1",
+      "simulation_semantics": "chained_approximation",
+      "hybrid_enabled": false,
+      "cache_mode": "full_block_approximation",
+      "revision": 1
+    },
+    "quality": {
+      "records_read": 2,
+      "valid_requests": 2,
+      "skipped_rows": 0,
+      "duplicate_hash_id_rows": 0
+    },
+    "rows": [
+      {
+        "source_record_index": 1,
+        "appid": "demo-app",
+        "hash_id": "demo-1",
+        "J": 4200,
+        "P": 4000,
+        "H": 0,
+        "C": 4000,
+        "O": 50,
+        "cache_status": "available",
+        "time_utc": "2026-10-26T00:00:00Z"
+      },
+      {
+        "source_record_index": 2,
+        "appid": "demo-app",
+        "hash_id": "demo-2",
+        "J": 4200,
+        "P": 4000,
+        "H": 1536,
+        "C": 2464,
+        "O": 60,
+        "cache_status": "available",
+        "prompt_ids_relation": "identical_to_record_1",
+        "time_utc": "2026-10-26T00:00:01Z"
+      }
+    ],
+    "group": {
+      "appid": "demo-app",
+      "request_count": 2,
+      "totals": {
+        "J": 8400,
+        "P": 8000,
+        "H": 1536,
+        "C": 6464,
+        "O": 110
+      },
+      "ideal_hit_rate": 0.192,
+      "quantile_method": "nearest_rank",
+      "quantiles": {
+        "J": {
+          "p50": 4200,
+          "p80": 4200,
+          "p90": 4200
+        },
+        "P": {
+          "p50": 4000,
+          "p80": 4000,
+          "p90": 4000
+        },
+        "C": {
+          "p50": 2464,
+          "p80": 4000,
+          "p90": 4000
+        }
+      },
+      "threshold_status": "unconfigured",
+      "alarm_signals": [],
+      "descending_points": {
+        "J": [
+          {
+            "rank": 1,
+            "source_record_index": 1,
+            "length": 4200
+          },
+          {
+            "rank": 2,
+            "source_record_index": 2,
+            "length": 4200
+          }
+        ],
+        "P": [
+          {
+            "rank": 1,
+            "source_record_index": 1,
+            "length": 4000
+          },
+          {
+            "rank": 2,
+            "source_record_index": 2,
+            "length": 4000
+          }
+        ],
+        "C": [
+          {
+            "rank": 1,
+            "source_record_index": 1,
+            "length": 4000
+          },
+          {
+            "rank": 2,
+            "source_record_index": 2,
+            "length": 2464
+          }
+        ]
+      },
+      "histogram_example": {
+        "bin_width": 4000,
+        "domain": [
+          0,
+          8000
+        ],
+        "boundary": "left_closed_right_open",
+        "sample_count": 2,
+        "metrics": {
+          "J": [
+            {
+              "lower": 0,
+              "upper": 4000,
+              "count": 0,
+              "share": 0.0
+            },
+            {
+              "lower": 4000,
+              "upper": 8000,
+              "count": 2,
+              "share": 1.0
+            }
+          ],
+          "P": [
+            {
+              "lower": 0,
+              "upper": 4000,
+              "count": 0,
+              "share": 0.0
+            },
+            {
+              "lower": 4000,
+              "upper": 8000,
+              "count": 2,
+              "share": 1.0
+            }
+          ],
+          "C": [
+            {
+              "lower": 0,
+              "upper": 4000,
+              "count": 1,
+              "share": 0.5
+            },
+            {
+              "lower": 4000,
+              "upper": 8000,
+              "count": 1,
+              "share": 0.5
+            }
+          ]
+        }
+      }
+    }
+  },
+  "deepseek_run": {
+    "run_id": "illustrative-deepseek_run",
+    "model_id": "DeepSeek-V4-Flash-0731",
+    "settings": {
+      "block_size": 32,
+      "block_size_unit": "simulation_input_tokens",
+      "cp_world_size": 1,
+      "mtp": true,
+      "prefix_cache_enabled": true,
+      "strategy": "full-block-mtp-v1",
+      "simulation_semantics": "chained_approximation",
+      "hybrid_enabled": false,
+      "cache_mode": "full_block_approximation",
+      "revision": 1
+    },
+    "quality": {
+      "records_read": 2,
+      "valid_requests": 2,
+      "skipped_rows": 0,
+      "duplicate_hash_id_rows": 0
+    },
+    "rows": [
+      {
+        "source_record_index": 1,
+        "appid": "demo-app",
+        "hash_id": "demo-1",
+        "J": 430,
+        "P": 400,
+        "H": 0,
+        "C": 400,
+        "O": 50,
+        "cache_status": "available",
+        "time_utc": "2026-10-26T00:00:00Z"
+      },
+      {
+        "source_record_index": 2,
+        "appid": "demo-app",
+        "hash_id": "demo-2",
+        "J": 430,
+        "P": 400,
+        "H": 352,
+        "C": 48,
+        "O": 60,
+        "cache_status": "available",
+        "prompt_ids_relation": "identical_to_record_1",
+        "time_utc": "2026-10-26T00:00:01Z"
+      }
+    ],
+    "group": {
+      "appid": "demo-app",
+      "request_count": 2,
+      "totals": {
+        "J": 860,
+        "P": 800,
+        "H": 352,
+        "C": 448,
+        "O": 110
+      },
+      "ideal_hit_rate": 0.44,
+      "quantile_method": "nearest_rank",
+      "quantiles": {
+        "J": {
+          "p50": 430,
+          "p80": 430,
+          "p90": 430
+        },
+        "P": {
+          "p50": 400,
+          "p80": 400,
+          "p90": 400
+        },
+        "C": {
+          "p50": 48,
+          "p80": 400,
+          "p90": 400
+        }
+      },
+      "threshold_status": "unconfigured",
+      "alarm_signals": [],
+      "descending_points": {
+        "J": [
+          {
+            "rank": 1,
+            "source_record_index": 1,
+            "length": 430
+          },
+          {
+            "rank": 2,
+            "source_record_index": 2,
+            "length": 430
+          }
+        ],
+        "P": [
+          {
+            "rank": 1,
+            "source_record_index": 1,
+            "length": 400
+          },
+          {
+            "rank": 2,
+            "source_record_index": 2,
+            "length": 400
+          }
+        ],
+        "C": [
+          {
+            "rank": 1,
+            "source_record_index": 1,
+            "length": 400
+          },
+          {
+            "rank": 2,
+            "source_record_index": 2,
+            "length": 48
+          }
+        ]
+      },
+      "histogram_example": {
+        "bin_width": 4000,
+        "domain": [
+          0,
+          4000
+        ],
+        "boundary": "left_closed_right_open",
+        "sample_count": 2,
+        "metrics": {
+          "J": [
+            {
+              "lower": 0,
+              "upper": 4000,
+              "count": 2,
+              "share": 1.0
+            }
+          ],
+          "P": [
+            {
+              "lower": 0,
+              "upper": 4000,
+              "count": 2,
+              "share": 1.0
+            }
+          ],
+          "C": [
+            {
+              "lower": 0,
+              "upper": 4000,
+              "count": 2,
+              "share": 1.0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "REVISION_CONFLICT",
+    "message": "Synthetic protocol example; reload or correct input as documented."
+  }
+}

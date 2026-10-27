@@ -1,0 +1,60 @@
+# Local environments and caches
+/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+/target/
+node_modules/
+/.build/render/
+
+# Private runtime configuration
+/.env
+/.env.*
+!/.env.example
+/env/private/
+/configs/*.local.*
+
+# Fixed external sources and large model assets have separate provenance
+/upstream/*
+!/upstream/README.md
+/models/*
+!/models/README.md
+
+# Operational data and reproducible outputs
+/data/**
+!/data/**/
+!/data/**/.gitkeep
+!/data/README.md
+/artifacts/*
+!/artifacts/README.md
+
+# Raw evidence stays local; evidence/manifests remains versionable
+/evidence/source_drops/**
+!/evidence/source_drops/**/
+!/evidence/source_drops/**/.gitkeep
+/evidence/huawei/**
+!/evidence/huawei/**/
+!/evidence/huawei/**/.gitkeep
+
+# Isolated S0 schema-validation dependencies; not runtime assets.
+env/.contract-cache/
+
+# Download/browser caches and local build outputs
+/env/.uv-cache/
+/env/browser-cache/
+/.build/*.png
+/test-results/
+/playwright-report/
+/dist/
+/build/
+*.egg-info/
+# Delivery archives belong only in local artifacts, never in main.
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.oci
+*.img
+*.iso

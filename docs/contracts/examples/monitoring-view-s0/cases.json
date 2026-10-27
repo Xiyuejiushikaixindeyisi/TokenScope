@@ -1,0 +1,632 @@
+{
+  "synthetic": true,
+  "contract_version": "1.0.0",
+  "cases": [
+    {
+      "name": "settings-glm",
+      "schema": "ModelSettingsResponse",
+      "path": "examples/monitoring-view-s0/settings-glm.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "settings-qwen",
+      "schema": "ModelSettingsResponse",
+      "path": "examples/monitoring-view-s0/settings-qwen.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "settings-deepseek",
+      "schema": "ModelSettingsResponse",
+      "path": "examples/monitoring-view-s0/settings-deepseek.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "settings-update",
+      "schema": "SettingsUpdate",
+      "path": "examples/monitoring-view-s0/settings-update.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "rule-update",
+      "schema": "RuleUpdate",
+      "path": "examples/monitoring-view-s0/rule-update.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "rule-response",
+      "schema": "RuleResponse",
+      "path": "examples/monitoring-view-s0/rule-response.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "rules-page",
+      "schema": "RulesPage",
+      "path": "examples/monitoring-view-s0/rules-page.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "snapshot-normal",
+      "schema": "ViewSnapshot",
+      "path": "examples/monitoring-view-s0/snapshot-normal.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "snapshot-qwen",
+      "schema": "ViewSnapshot",
+      "path": "examples/monitoring-view-s0/snapshot-qwen.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "snapshot-deepseek",
+      "schema": "ViewSnapshot",
+      "path": "examples/monitoring-view-s0/snapshot-deepseek.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "snapshot-null-rate",
+      "schema": "ViewSnapshot",
+      "path": "examples/monitoring-view-s0/snapshot-null-rate.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "snapshot-large-integer",
+      "schema": "ViewSnapshot",
+      "path": "examples/monitoring-view-s0/snapshot-large-integer.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "catalog-normal",
+      "schema": "CatalogResponse",
+      "path": "examples/monitoring-view-s0/catalog-normal.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "catalog-empty",
+      "schema": "CatalogResponse",
+      "path": "examples/monitoring-view-s0/catalog-empty.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "catalog-page-1",
+      "schema": "CatalogResponse",
+      "path": "examples/monitoring-view-s0/catalog-page-1.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "catalog-page-2",
+      "schema": "CatalogResponse",
+      "path": "examples/monitoring-view-s0/catalog-page-2.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "runs-no-valid-rows",
+      "schema": "PublishedRunsResponse",
+      "path": "examples/monitoring-view-s0/runs-no-valid-rows.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "requests-normal",
+      "schema": "RequestsPage",
+      "path": "examples/monitoring-view-s0/requests-normal.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "requests-duplicate-hash",
+      "schema": "RequestsPage",
+      "path": "examples/monitoring-view-s0/requests-duplicate-hash.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "requests-overflow",
+      "schema": "RequestsPage",
+      "path": "examples/monitoring-view-s0/requests-overflow.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "request-detail",
+      "schema": "RequestDetail",
+      "path": "examples/monitoring-view-s0/request-detail.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "evidence-special_ranges",
+      "schema": "EvidencePage",
+      "path": "examples/monitoring-view-s0/evidence-special_ranges.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "evidence-source_fields",
+      "schema": "EvidencePage",
+      "path": "examples/monitoring-view-s0/evidence-source_fields.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "signals-normal",
+      "schema": "SignalsPage",
+      "path": "examples/monitoring-view-s0/signals-normal.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "receipt-queued",
+      "schema": "Receipt",
+      "path": "examples/monitoring-view-s0/receipt-queued.json",
+      "http_status": 200,
+      "headers": {
+        "Cache-Control": "no-store",
+        "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111"
+      },
+      "synthetic": true
+    },
+    {
+      "name": "receipt-running",
+      "schema": "Receipt",
+      "path": "examples/monitoring-view-s0/receipt-running.json",
+      "http_status": 200,
+      "headers": {
+        "Cache-Control": "no-store",
+        "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111"
+      },
+      "synthetic": true
+    },
+    {
+      "name": "receipt-completed",
+      "schema": "Receipt",
+      "path": "examples/monitoring-view-s0/receipt-completed.json",
+      "http_status": 200,
+      "headers": {
+        "Cache-Control": "no-store",
+        "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111"
+      },
+      "synthetic": true
+    },
+    {
+      "name": "receipt-no_valid_rows",
+      "schema": "Receipt",
+      "path": "examples/monitoring-view-s0/receipt-no_valid_rows.json",
+      "http_status": 200,
+      "headers": {
+        "Cache-Control": "no-store",
+        "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111"
+      },
+      "synthetic": true
+    },
+    {
+      "name": "receipt-failed",
+      "schema": "Receipt",
+      "path": "examples/monitoring-view-s0/receipt-failed.json",
+      "http_status": 200,
+      "headers": {
+        "Cache-Control": "no-store",
+        "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111"
+      },
+      "synthetic": true
+    },
+    {
+      "name": "receipt-interrupted",
+      "schema": "Receipt",
+      "path": "examples/monitoring-view-s0/receipt-interrupted.json",
+      "http_status": 200,
+      "headers": {
+        "Cache-Control": "no-store",
+        "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111"
+      },
+      "synthetic": true
+    },
+    {
+      "name": "receipt-unknown_key_not_a_failed_run",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/receipt-unknown_key_not_a_failed_run.json",
+      "http_status": 404,
+      "headers": {
+        "Cache-Control": "no-store",
+        "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111"
+      },
+      "synthetic": true
+    },
+    {
+      "name": "receipt-wrong_instance_no_lookup_or_enqueue",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/receipt-wrong_instance_no_lookup_or_enqueue.json",
+      "http_status": 409,
+      "headers": {
+        "Cache-Control": "no-store",
+        "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111"
+      },
+      "synthetic": true
+    },
+    {
+      "name": "submission",
+      "schema": "Submission",
+      "path": "examples/monitoring-view-s0/submission.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "submission-accepted",
+      "schema": "LegacyRunState",
+      "path": "examples/monitoring-view-s0/submission-accepted.json",
+      "http_status": 202,
+      "headers": {
+        "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111"
+      },
+      "synthetic": true
+    },
+    {
+      "name": "run-state",
+      "schema": "LegacyRunState",
+      "path": "examples/monitoring-view-s0/run-state.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "models-legacy",
+      "schema": "LegacyModelsList",
+      "path": "examples/monitoring-view-s0/models-legacy.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "event-completed",
+      "schema": "ResultPublishedEvent",
+      "path": "examples/monitoring-view-s0/event-completed.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "event-no-valid",
+      "schema": "ResultPublishedEvent",
+      "path": "examples/monitoring-view-s0/event-no-valid.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "event-failed",
+      "schema": "RunTerminalEvent",
+      "path": "examples/monitoring-view-s0/event-failed.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "event-interrupted",
+      "schema": "RunTerminalEvent",
+      "path": "examples/monitoring-view-s0/event-interrupted.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "event-reset-expired",
+      "schema": "ResetEvent",
+      "path": "examples/monitoring-view-s0/event-reset-expired.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "event-reset-future_cursor",
+      "schema": "ResetEvent",
+      "path": "examples/monitoring-view-s0/event-reset-future_cursor.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "event-reset-instance_changed",
+      "schema": "ResetEvent",
+      "path": "examples/monitoring-view-s0/event-reset-instance_changed.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "event-reset-invalid_cursor",
+      "schema": "ResetEvent",
+      "path": "examples/monitoring-view-s0/event-reset-invalid_cursor.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-404-model_not_found",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-404-model_not_found.json",
+      "http_status": 404,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-404-run_not_found",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-404-run_not_found.json",
+      "http_status": 404,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-404-group_not_found",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-404-group_not_found.json",
+      "http_status": 404,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-404-request_not_found",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-404-request_not_found.json",
+      "http_status": 404,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-404-submission_not_found",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-404-submission_not_found.json",
+      "http_status": 404,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-409-result_not_ready",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-409-result_not_ready.json",
+      "http_status": 409,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-409-catalog_revision_changed",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-409-catalog_revision_changed.json",
+      "http_status": 409,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-409-rules_revision_changed",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-409-rules_revision_changed.json",
+      "http_status": 409,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-409-revision_conflict",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-409-revision_conflict.json",
+      "http_status": 409,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-409-submission_key_conflict",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-409-submission_key_conflict.json",
+      "http_status": 409,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-409-service_instance_changed",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-409-service_instance_changed.json",
+      "http_status": 409,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-422-invalid_request",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-422-invalid_request.json",
+      "http_status": 422,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-422-invalid_export_query",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-422-invalid_export_query.json",
+      "http_status": 422,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-422-invalid_pagination",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-422-invalid_pagination.json",
+      "http_status": 422,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-422-invalid_length_query",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-422-invalid_length_query.json",
+      "http_status": 422,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-422-invalid_bin_width",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-422-invalid_bin_width.json",
+      "http_status": 422,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-422-invalid_settings",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-422-invalid_settings.json",
+      "http_status": 422,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-422-empty_update",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-422-empty_update.json",
+      "http_status": 422,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-422-unsupported_cache_mode",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-422-unsupported_cache_mode.json",
+      "http_status": 422,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-422-unknown_encoding_profile",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-422-unknown_encoding_profile.json",
+      "http_status": 422,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-503-view_index_not_ready",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-503-view_index_not_ready.json",
+      "http_status": 503,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-503-view_artifact_unavailable",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-503-view_artifact_unavailable.json",
+      "http_status": 503,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-503-sse_capacity_exceeded",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-503-sse_capacity_exceeded.json",
+      "http_status": 503,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-503-storage_unavailable",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-503-storage_unavailable.json",
+      "http_status": 503,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-400-invalid_file_ref",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-400-invalid_file_ref.json",
+      "http_status": 400,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "error-400-invalid_settings",
+      "schema": "Error",
+      "path": "examples/monitoring-view-s0/error-400-invalid_settings.json",
+      "http_status": 400,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "rule-ratio",
+      "schema": "Rule",
+      "path": "examples/monitoring-view-s0/rule-ratio.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "rule-fractional-count-threshold",
+      "schema": "Rule",
+      "path": "examples/monitoring-view-s0/rule-fractional-count-threshold.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "requests-empty",
+      "schema": "RequestsPage",
+      "path": "examples/monitoring-view-s0/requests-empty.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "signals-empty",
+      "schema": "SignalsPage",
+      "path": "examples/monitoring-view-s0/signals-empty.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    },
+    {
+      "name": "rules-empty",
+      "schema": "RulesPage",
+      "path": "examples/monitoring-view-s0/rules-empty.json",
+      "http_status": 200,
+      "headers": {},
+      "synthetic": true
+    }
+  ]
+}

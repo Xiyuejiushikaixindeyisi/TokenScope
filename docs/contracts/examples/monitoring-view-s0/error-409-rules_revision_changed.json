@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "RULES_REVISION_CHANGED",
+    "message": "Synthetic protocol example; reload or correct input as documented."
+  }
+}

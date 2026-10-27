@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "UNSUPPORTED_CACHE_MODE",
+    "message": "Synthetic protocol example; reload or correct input as documented."
+  }
+}

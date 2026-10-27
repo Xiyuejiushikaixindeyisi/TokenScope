@@ -1,0 +1,96 @@
+{
+  "contract_version": "1.0.0",
+  "runtime_implemented": false,
+  "operations": [
+    {
+      "operation": "GET /monitoring/catalog",
+      "examples": "catalog-normal / catalog-empty / catalog-page-1 / catalog-page-2",
+      "response": "CatalogResponse"
+    },
+    {
+      "operation": "GET /monitoring/runs",
+      "examples": "runs-no-valid-rows",
+      "response": "PublishedRunsResponse"
+    },
+    {
+      "operation": "GET /monitoring/events",
+      "examples": "event-completed / event-no-valid / event-failed / event-interrupted / event-reset-expired",
+      "response": "SSE; replay.sse / reset.sse"
+    },
+    {
+      "operation": "GET /analysis-runs/{run_id}/view-snapshot",
+      "examples": "snapshot-normal / snapshot-qwen / snapshot-deepseek / snapshot-null-rate / snapshot-large-integer",
+      "response": "ViewSnapshot; ETag/304"
+    },
+    {
+      "operation": "GET /analysis-runs/{run_id}/requests",
+      "examples": "requests-normal / requests-duplicate-hash / requests-overflow / requests-empty",
+      "response": "RequestsPage"
+    },
+    {
+      "operation": "GET /analysis-runs/{run_id}/requests/{source_record_index}",
+      "examples": "request-detail",
+      "response": "RequestDetail"
+    },
+    {
+      "operation": "GET /analysis-runs/{run_id}/requests/{source_record_index}/body",
+      "examples": "request-body.txt",
+      "response": "text/plain"
+    },
+    {
+      "operation": "GET /analysis-runs/{run_id}/requests/{source_record_index}/evidence",
+      "examples": "evidence-special_ranges / evidence-source_fields",
+      "response": "EvidencePage"
+    },
+    {
+      "operation": "GET /analysis-runs/{run_id}/view-signals",
+      "examples": "signals-normal / signals-empty",
+      "response": "SignalsPage"
+    },
+    {
+      "operation": "GET /monitoring/models/{model_id}/settings",
+      "examples": "settings-glm / settings-qwen / settings-deepseek",
+      "response": "ModelSettingsResponse"
+    },
+    {
+      "operation": "PUT /monitoring/models/{model_id}/settings",
+      "examples": "settings-update → settings-glm",
+      "response": "SettingsUpdate → ModelSettingsResponse; 示例分别独立"
+    },
+    {
+      "operation": "GET /monitoring/threshold-rules",
+      "examples": "rules-page / rules-empty",
+      "response": "RulesPage"
+    },
+    {
+      "operation": "PUT /monitoring/threshold-rules",
+      "examples": "rule-update → rule-response; rule-ratio / rule-fractional-count-threshold",
+      "response": "RuleUpdate → RuleResponse"
+    },
+    {
+      "operation": "POST /analysis-runs",
+      "examples": "submission → submission-accepted",
+      "response": "Submission → LegacyRunState; 202"
+    },
+    {
+      "operation": "GET /analysis-runs/{run_id}",
+      "examples": "run-state",
+      "response": "LegacyRunState"
+    },
+    {
+      "operation": "GET /analysis-submissions/{submission_key}",
+      "examples": "receipt-queued / receipt-running / receipt-completed / receipt-no_valid_rows / receipt-failed / receipt-interrupted",
+      "response": "Receipt"
+    },
+    {
+      "operation": "GET /models",
+      "examples": "models-legacy",
+      "response": "LegacyModelsList；旧numeric兼容"
+    },
+    {
+      "operation": "GET /analysis-runs/{run_id}/requests/export",
+      "examples": "../monitoring-view-v0.2/normal / empty (.ndjson / .csv)",
+      "response": "字节夹具+头见原manifest"
+    }
+  ]
+}

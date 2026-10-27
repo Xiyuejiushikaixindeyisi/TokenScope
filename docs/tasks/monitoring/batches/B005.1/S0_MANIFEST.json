@@ -1,0 +1,528 @@
+{
+  "contract_version": "1.0.0",
+  "view_schema_version": "1",
+  "status": "fixed_contract_not_runtime",
+  "created_at_utc": "2026-10-27T08:16:52.079854+00:00",
+  "session_id": "01a1682f-956d-7630-afe7-e123ba38dfc0",
+  "frontend_acceptance": "consumer_to_record",
+  "runtime_implemented": false,
+  "files": [
+    {
+      "path": "docs/contracts/MONITORING_VIEW_V1_DRAFT.md",
+      "bytes": 25295,
+      "sha256": "918068bb84dce55fee17705d9103739bb4864f7a64085fda2d04241138502a71"
+    },
+    {
+      "path": "docs/contracts/MONITORING_VIEW_V1_FIELDS.md",
+      "bytes": 32063,
+      "sha256": "9f9d9208bd2691ad550ada618df457931d996935242978726f9a9d3b7482d430"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/README.md",
+      "bytes": 7537,
+      "sha256": "d281cf2d5ec018aedd1db1dd8a344f2102cce39a8d50a92edc3b411ed6f2787c"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/cases.json",
+      "bytes": 17980,
+      "sha256": "089fe90d82acd7730bfabc21dce9c0552a23393fabeae9e88a352e4486aba205"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/catalog-empty.json",
+      "bytes": 266,
+      "sha256": "02b63a2389e3e894025612649c74f5675899b353982b766e6e805c5ce2e3244a"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/catalog-normal.json",
+      "bytes": 738,
+      "sha256": "acec4fbfb4126dcbc4fb58c59dcc1d811b0d32f91cf0d60cd21bf65d8bb9e7b0"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/catalog-page-1.json",
+      "bytes": 735,
+      "sha256": "e319059b77cbc8a465eede27489115eb33b99ece089f9206f674265abe31fa94"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/catalog-page-2.json",
+      "bytes": 736,
+      "sha256": "62988f1421a83b2df37d5c2e487cd61988f7483d0e5d909734e09086f56f2518"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/endpoint-examples.json",
+      "bytes": 3407,
+      "sha256": "db144d1d11bb128e3d6aafc2f6816dda527ac38f7a73f0c83ed9604545ee2e40"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-400-invalid_file_ref.json",
+      "bytes": 137,
+      "sha256": "346480d9a5dd9b7d409e6e4ad1ec09d3db734a0f2ca8d92256ff12408731efc7"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-400-invalid_settings.json",
+      "bytes": 137,
+      "sha256": "f227221e32c2e0e68dcce3bcd31226c9d42523bffe1fe5bbd047b540bddeae30"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-404-group_not_found.json",
+      "bytes": 136,
+      "sha256": "6ea54b1b6922dc35c56114525eee75a44f5cf1c96db4cb3b492cc468be00c7f3"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-404-model_not_found.json",
+      "bytes": 136,
+      "sha256": "7cc191e071122eda7af633c046aea0faceecfebb4abb43b015e45cd5e4ea4d6b"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-404-request_not_found.json",
+      "bytes": 138,
+      "sha256": "d93667a94a46c6fb63113705f0edecbaf90960ed0b9ae2ddd1a6cc4fac7bf922"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-404-run_not_found.json",
+      "bytes": 134,
+      "sha256": "171bbcffa7866748c16673fb28feba101267edee41d44c6efe00d16104b1a1a6"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-404-submission_not_found.json",
+      "bytes": 141,
+      "sha256": "ce45a0b963b30b3ab56d42ec7c227ba6771cac9eb804dc7b2c3d8430177debf5"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-409-catalog_revision_changed.json",
+      "bytes": 145,
+      "sha256": "e242b03f06beb2038c2c308fe7af309d31db0637cf85b323ae4a8cbc160bba39"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-409-result_not_ready.json",
+      "bytes": 137,
+      "sha256": "6f8917cfc6eca4266539adca6c6be972d34523b3f227c960af60f6a4ddfc0c07"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-409-revision_conflict.json",
+      "bytes": 138,
+      "sha256": "03786eb20a716a9a643e9bdd355bc0979dfaf6f294bad6143be2f3d09bbfe123"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-409-rules_revision_changed.json",
+      "bytes": 143,
+      "sha256": "afa7884b84f1de4cb53c1a76208183dfd07694eb47403448851b37d388c09b97"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-409-service_instance_changed.json",
+      "bytes": 145,
+      "sha256": "bbdebaac2a058d19b28844cf7f715189ac75427cd9b3e476d7a8889fd0cabdd1"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-409-submission_key_conflict.json",
+      "bytes": 144,
+      "sha256": "fc336f9e0e42c46cda3acc7c6e28cfef6509d45d4e0574a1f7b233f4147d0435"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-422-empty_update.json",
+      "bytes": 133,
+      "sha256": "6c1bb5c9089222fe78492d011ed8833a706784b148a8efe7e078f5b63ff34ea4"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-422-invalid_bin_width.json",
+      "bytes": 138,
+      "sha256": "a0b7c7b3291fd7896ca200fbd29d99c51c0655e6ffb94d3532a30df777b93b78"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-422-invalid_export_query.json",
+      "bytes": 141,
+      "sha256": "097239452539e8d3c18e61ca42e8582e265ea95529fe9d0c35dac50e19361f14"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-422-invalid_length_query.json",
+      "bytes": 141,
+      "sha256": "21eee24558182feb3890e32eb2973de28bacdd402e068591c5968b1d56136ee3"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-422-invalid_pagination.json",
+      "bytes": 139,
+      "sha256": "10e0699410bcf2ce099f1ae4836fbfd988aa3918d676196cd9f3a50be02467b0"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-422-invalid_request.json",
+      "bytes": 136,
+      "sha256": "8381dc1c874d4e514c8d8613250ca93edb9bf0f917566425ba868b8eb1b3329e"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-422-invalid_settings.json",
+      "bytes": 137,
+      "sha256": "f227221e32c2e0e68dcce3bcd31226c9d42523bffe1fe5bbd047b540bddeae30"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-422-unknown_encoding_profile.json",
+      "bytes": 145,
+      "sha256": "28d56770b5eef6e505b20c0050adce7a44609c5ded7a6d5a55a296340a81ab82"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-422-unsupported_cache_mode.json",
+      "bytes": 143,
+      "sha256": "f639453f7267ae3eb7c3eb21e2751327cb60a248f3693d37ef334725b7c0cb39"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-503-sse_capacity_exceeded.json",
+      "bytes": 142,
+      "sha256": "d72c0bdc287cb2a944851ba727b081fe765dcbff90587b6953911877fde817dd"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-503-storage_unavailable.json",
+      "bytes": 140,
+      "sha256": "d2aea2ef798282da0c5223a3f008405b1abb6c6ab6fc0835f03367c2edb758b1"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-503-view_artifact_unavailable.json",
+      "bytes": 146,
+      "sha256": "e5a53a24f702fa7f3010c73a87659d301938e394206238a5259cba7dc7b32ce6"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/error-503-view_index_not_ready.json",
+      "bytes": 141,
+      "sha256": "57d8e6a8390d53d9273e0bb3f930984c70a9ee8f420116a27eead86e5253e6f5"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/event-completed.json",
+      "bytes": 275,
+      "sha256": "6c7db3ec5e33db5186ccd0eb787b2f3c93821d6ac83665f9126c984ca43ec63f"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/event-failed.json",
+      "bytes": 307,
+      "sha256": "1858b50537c1dc68266dc2ab4726a07e219f0402e7aec4e1fa8b12303e1d1f1f"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/event-interrupted.json",
+      "bytes": 312,
+      "sha256": "f56e8229685ca8cd217d59ad3d2ce4589770acd658f006792fabebc8676546c5"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/event-no-valid.json",
+      "bytes": 279,
+      "sha256": "9e78a2414f5c95ec8a27e2e435d79896674e2631df2cf6daeceb5f9ff0336853"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/event-reset-expired.json",
+      "bytes": 161,
+      "sha256": "8440fef93f778092a589d124cad40e4e87b2c081dd6b1cd823c03e31ffd580a2"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/event-reset-future_cursor.json",
+      "bytes": 167,
+      "sha256": "64997295bc816d4cd87cd8b6c41a4da12b0e00e2c84bd23a1a511bc257f40281"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/event-reset-instance_changed.json",
+      "bytes": 170,
+      "sha256": "45795948f7319a966cf16f597c6599ea703eeb19deb8d5677aceacbdf8b53a82"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/event-reset-invalid_cursor.json",
+      "bytes": 168,
+      "sha256": "0c9b91110b6aa0c0f9a6a842fe2c27212d223b0296b49364fc999b1b28b3781d"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/evidence-source_fields.json",
+      "bytes": 1250,
+      "sha256": "ee978f159d96b37c9ba53278ef09ce9265da170f081ada3edbe50f8d94b977c4"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/evidence-special_ranges.json",
+      "bytes": 1109,
+      "sha256": "3630129d8762bc8cf159ba177f94b13a43ea44404ed920c1a41c630ef8926934"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/models-legacy.json",
+      "bytes": 541,
+      "sha256": "0a3762b1e78c339109c62da558f608bdf9aad08eacf911a436ec68fe26433461"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/receipt-completed.json",
+      "bytes": 480,
+      "sha256": "e40fd0dc63ab36c34f3425e37960e5eaa243a16b830d47047a5fc02c9e7679e0"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/receipt-failed.json",
+      "bytes": 493,
+      "sha256": "07ce64dd6bae7fb8ff1b88096f99df9a2ef9babbcf6e01d7e160a3bacc42549c"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/receipt-interrupted.json",
+      "bytes": 498,
+      "sha256": "47430b412e84c8b703cda2aeb8f7a0349a8693979ef29ee9fd64d9f03625e4f4"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/receipt-no_valid_rows.json",
+      "bytes": 484,
+      "sha256": "77123d5cc8f486df37da7f713855ac98529ad793596490f7d25b1dd9e6a20764"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/receipt-queued.json",
+      "bytes": 421,
+      "sha256": "cd47c409ec0d9a5a3023f80fa73580d0d1a137c84ecb69014772f58d7cf664a1"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/receipt-running.json",
+      "bytes": 450,
+      "sha256": "35a02f1775537d0ab90abf0f813caa8298c102ffd37f6ee81013005a08633224"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/receipt-unknown_key_not_a_failed_run.json",
+      "bytes": 99,
+      "sha256": "923d430e31777111920bbef51bfe1b8daaecd4002d470fef62fb0b7e6b63f19c"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/receipt-wrong_instance_no_lookup_or_enqueue.json",
+      "bytes": 102,
+      "sha256": "0c6ae7ff462d6e313cfcb9e2b19334fe43d6e58e53b74f36e73e47357f2c4345"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/replay.sse",
+      "bytes": 692,
+      "sha256": "8204c575502ab5da9442abf802bd589e34845d53db074e2e61ddba427b74bced"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/request-body.txt",
+      "bytes": 53,
+      "sha256": "d16dfa75ee8bd44841fe1de1889cdaabf6e2364ef26de6844f8c648e9b087191"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/request-detail.json",
+      "bytes": 1757,
+      "sha256": "580cec8a71a7fb5546d052b2366a2a8f334c505fa6e9b4b30654b17315600073"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/requests-duplicate-hash.json",
+      "bytes": 1385,
+      "sha256": "fc08a09412fb4daa4dc64c89340a339ef5caa5ddeeb9ccb3749b396cf2773936"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/requests-empty.json",
+      "bytes": 535,
+      "sha256": "3b8819bbb80975a69b380f2108ce375a88daadce4f7bc2cc1acd3b4947e8a984"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/requests-normal.json",
+      "bytes": 961,
+      "sha256": "0ed58e6b1b1b6f88f719f714c45301c8e7b152ff71081fa4f29e8b4f5c76cbc0"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/requests-overflow.json",
+      "bytes": 972,
+      "sha256": "1ef0e83579ca346076b3dbe0501d42f7b16680675722543ed67cbb705e922e3b"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/reset.sse",
+      "bytes": 164,
+      "sha256": "ee2e3efcbc503b0cee61827972e2d957035c598aea9720401f8370db080682d3"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/rule-fractional-count-threshold.json",
+      "bytes": 358,
+      "sha256": "6a3f53a602e6d445f3977d1fe40cd889a5c1b6be746b8a7e3cdfca0a9c437b32"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/rule-ratio.json",
+      "bytes": 344,
+      "sha256": "758ff581bac24518e965b01dbe1bc6508cb15dd360f82d91538ed82e00ea7b3c"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/rule-response.json",
+      "bytes": 517,
+      "sha256": "e2388a089775a7281055c8aec64aaf8242fb51787cfa97b3b6c2a73ea13bf19c"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/rule-update.json",
+      "bytes": 368,
+      "sha256": "b5e77b1c8c84db7fb80a06553429d7659a719874962fe28d43cfb35f00ec8bf6"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/rules-empty.json",
+      "bytes": 210,
+      "sha256": "e67bfd20ba887e55bff619a12132f7fb4a4565bda0980adbddc82516d97622f7"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/rules-page.json",
+      "bytes": 624,
+      "sha256": "3a8051ac3426bf1f941edace69485b91c463b77e763f4ceeec830ddfa35ab048"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/run-state.json",
+      "bytes": 308,
+      "sha256": "b9d8635dd9d70eab619a829caca9036d4153613f55ab100de12efa4266bf0b10"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/runs-no-valid-rows.json",
+      "bytes": 659,
+      "sha256": "b61390fe3ffb8a98a70129733f635c53394058a411e117616f24e38c5460cfd4"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/settings-deepseek.json",
+      "bytes": 666,
+      "sha256": "f3ce100cdc549459d54a5af6977680807cbf1217e1f30546052c817498c253a6"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/settings-glm.json",
+      "bytes": 617,
+      "sha256": "b14ce6a8f4a488e6b801b4310c70f928cc0a3b1050888440a14c0e97e4daa8aa"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/settings-qwen.json",
+      "bytes": 646,
+      "sha256": "637cc06921ea73cf40ee27dc54276d778cc7817eb122016126ec32909962b08b"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/settings-update.json",
+      "bytes": 93,
+      "sha256": "6f8cbced5dcda380b61fe4de385c6b652a8e3c3c80a80ac3b92b12da24b60277"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/signals-empty.json",
+      "bytes": 291,
+      "sha256": "ecb16b76f47237b31dfa47d7cc2281ac17d1bb92cecb71a7e78bb013f5b7b8d3"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/signals-normal.json",
+      "bytes": 848,
+      "sha256": "07903c43b740517eedba730af5c7f10a7d0972ee3c9282d752c0cf1f6fa0691c"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/snapshot-deepseek.json",
+      "bytes": 184576,
+      "sha256": "a20243f98618d9141d0347122497df97464dfa734842828475d3ab932e974a15"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/snapshot-large-integer.json",
+      "bytes": 185515,
+      "sha256": "01a2028e3f6f241fd596ce3a31fe574d3e22d079ce1070c40b1ea14eedcdde60"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/snapshot-normal.json",
+      "bytes": 185500,
+      "sha256": "51160e293d117e4a1ee014f56462348b772cc4f294fb34b0b5ce79fef2524c8c"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/snapshot-null-rate.json",
+      "bytes": 184424,
+      "sha256": "af80bbb2bde7e8299a19bbd8539f32aa63f9853ee191eb4a5a99b5b30a68301f"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/snapshot-qwen.json",
+      "bytes": 184525,
+      "sha256": "7667717e47331a3417c14d0f7cf4c013c40e0ac0fbe92c9e5a0729a2dc5658d0"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/submission-accepted.json",
+      "bytes": 308,
+      "sha256": "b9d8635dd9d70eab619a829caca9036d4153613f55ab100de12efa4266bf0b10"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-s0/submission.json",
+      "bytes": 98,
+      "sha256": "4d9663b642cddf3458effcf4e338d921c0c43f72610693a2e2a68665cdeefb39"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-v0.2/README.md",
+      "bytes": 3068,
+      "sha256": "c2b8113286368b3799526d96ce8721c7aca9e0ad292c4740293ffae4a5a07522"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-v0.2/empty.csv",
+      "bytes": 213,
+      "sha256": "0cc1afc5e8dbb7c8aeef626718cfc53519539011977325b9f9f6a1fe07a29e74"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-v0.2/empty.ndjson",
+      "bytes": 861,
+      "sha256": "dd455c05739800eeb84b34a1d495f9bc688e5f4495bfdae5ae52816988731b54"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-v0.2/facts.synthetic.json",
+      "bytes": 1825,
+      "sha256": "919f603f85c5af93ad52a58464f2450f721d96f1daac46283cb44000544c701f"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-v0.2/manifest.json",
+      "bytes": 3875,
+      "sha256": "902661a78516a6106979c40efdaa7fbcd19ae1ec7591d08d7a5775619530f07e"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-v0.2/normal.csv",
+      "bytes": 1190,
+      "sha256": "16b34e19226ef298be4571f4d475a28bd8036a4a8cf00630af4356fc0f8435ac"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-v0.2/normal.ndjson",
+      "bytes": 2139,
+      "sha256": "71be24154799808678c7d7f8247191d15d74cc78c7525b8a44c23d1fa421d12a"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-v0.2/receipts.json",
+      "bytes": 5411,
+      "sha256": "ccc1bbc24d568ab383528bd70647b21082e330866571787fef144441350a6855"
+    },
+    {
+      "path": "docs/contracts/schemas/monitoring-view-v1.design.openapi.json",
+      "bytes": 174667,
+      "sha256": "65638c2d62090c0e5a9707ff2a7112b0c2c1ea4bfa3dfa4fbc082270bb5fcf27"
+    },
+    {
+      "path": "docs/contracts/schemas/monitoring-view-v1.schema.json",
+      "bytes": 99903,
+      "sha256": "dcbd50142d2fedcac32d68c76228f2db2e9a9d8a212d7e92b4ae674b53e8ccc5"
+    },
+    {
+      "path": "docs/tasks/monitoring/batches/B005.1/S0/CONTEXT.md",
+      "bytes": 507,
+      "sha256": "45dafc1b452e25b09c11dc91395d0dd0e023409e6905e7763c9ccb298129a7f7"
+    },
+    {
+      "path": "docs/tasks/monitoring/batches/B005.1/S0/ISSUES.md",
+      "bytes": 1536,
+      "sha256": "51d92cb167b1db577aa65171cdb718ece242ead95410e08dcdd6e919d4a18d37"
+    },
+    {
+      "path": "docs/tasks/monitoring/batches/B005.1/S0/PLAN.md",
+      "bytes": 993,
+      "sha256": "3fe939da0bbf10026fb4b4ff59dac5abdcacdf7c019aee0f39441259df383e7b"
+    },
+    {
+      "path": "docs/tasks/monitoring/batches/B005.1/S0/RESULT.md",
+      "bytes": 993,
+      "sha256": "b3ff288b87c5fc86a3e0be442d9e389cd021758367e394dd7ba0a7736e3ff1cf"
+    },
+    {
+      "path": "docs/tasks/monitoring/batches/B005.1/S0/TESTS.md",
+      "bytes": 1772,
+      "sha256": "13287e8cbedbc23c009d3f4f106e240e411ee80ec53e822cf444c01a14f36e1e"
+    },
+    {
+      "path": "docs/tasks/monitoring/batches/B005.1/S0_CONTRACT.md",
+      "bytes": 9792,
+      "sha256": "973f202c54b72b798f292af78b8fe8596e8f65d415b803bebe9b879ccca8b130"
+    },
+    {
+      "path": "scripts/contracts/build_monitoring_view_v1.py",
+      "bytes": 44176,
+      "sha256": "496ce52fe0061bb4b253f8b1a5f05ba1a56eec6fb33e54bbbb0bd73d3f911583"
+    },
+    {
+      "path": "scripts/contracts/validate_monitoring_view_v1.py",
+      "bytes": 11582,
+      "sha256": "e13c4ecbd53935256f67fd9fccfd6b58598ddb4673bc3bfb731c0c5f9fa5a972"
+    }
+  ],
+  "generation_inputs": [
+    {
+      "path": "docs/contracts/schemas/monitoring-current.openapi.json",
+      "bytes": 29350,
+      "sha256": "d8527644202ef46bcc6c05d5a69bc1a0c64625a17c9b2e411a03779925727a86"
+    },
+    {
+      "path": "docs/contracts/examples/monitoring-view-v1-draft.json",
+      "bytes": 198397,
+      "sha256": "608e9bf71ded734cd5884b0654b725bc63afdc0c9c6528ac091ea8e3df938593"
+    }
+  ]
+}

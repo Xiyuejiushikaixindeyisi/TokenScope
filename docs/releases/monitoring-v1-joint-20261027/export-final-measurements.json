@@ -1,0 +1,32 @@
+[
+  {
+    "peakDeltaBytes": 61280256,
+    "bytes": 268435669,
+    "methodology": "Windows WorkingSet64 summed over this isolated browser SystemInfo process IDs; warm 64 records before baseline; 1s samples, main+renderer+utility/GPU; no forced GC. Persistent browser profile avoids incognito memory-only OPFS; OPFS is real disk-backed writable; file picker is stubbed."
+  },
+  {
+    "peakDeltaBytes": 71503872,
+    "bytes": 268435669,
+    "methodology": "Windows WorkingSet64 summed over this isolated browser SystemInfo process IDs; warm 64 records before baseline; 1s samples, main+renderer+utility/GPU; no forced GC. Persistent browser profile avoids incognito memory-only OPFS; OPFS is real disk-backed writable; file picker is stubbed."
+  },
+  {
+    "peakDeltaBytes": 100151296,
+    "bytes": 268435669,
+    "methodology": "Windows WorkingSet64 summed over this isolated browser SystemInfo process IDs; warm 64 records before baseline; 1s samples, main+renderer+utility/GPU; no forced GC. Persistent browser profile avoids incognito memory-only OPFS; OPFS is real disk-backed writable; file picker is stubbed."
+  },
+  {
+    "peakDeltaBytes": 166469632,
+    "bytes": 1073742037,
+    "methodology": "Windows WorkingSet64 summed over this isolated browser SystemInfo process IDs; warm 64 records before baseline; 1s samples, main+renderer+utility/GPU; no forced GC. Persistent browser profile avoids incognito memory-only OPFS; OPFS is real disk-backed writable; file picker is stubbed."
+  },
+  {
+    "peakDeltaBytes": 196112384,
+    "bytes": 1073742037,
+    "methodology": "Windows WorkingSet64 summed over this isolated browser SystemInfo process IDs; warm 64 records before baseline; 1s samples, main+renderer+utility/GPU; no forced GC. Persistent browser profile avoids incognito memory-only OPFS; OPFS is real disk-backed writable; file picker is stubbed."
+  },
+  {
+    "peakDeltaBytes": 161394688,
+    "bytes": 1073742037,
+    "methodology": "Windows WorkingSet64 summed over this isolated browser SystemInfo process IDs; warm 64 records before baseline; 1s samples, main+renderer+utility/GPU; no forced GC. Persistent browser profile avoids incognito memory-only OPFS; OPFS is real disk-backed writable; file picker is stubbed."
+  }
+]

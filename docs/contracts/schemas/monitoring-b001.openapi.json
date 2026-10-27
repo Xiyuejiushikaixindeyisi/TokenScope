@@ -1,0 +1,686 @@
+{
+  "components": {
+    "schemas": {
+      "Capability": {
+        "additionalProperties": false,
+        "properties": {
+          "executable": {
+            "title": "Executable",
+            "type": "boolean"
+          },
+          "simulation_semantics": {
+            "enum": [
+              "full_block_rule",
+              "chained_approximation"
+            ],
+            "title": "Simulation Semantics",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "available",
+              "disabled",
+              "not_supported"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "strategy": {
+            "title": "Strategy",
+            "type": "string"
+          }
+        },
+        "required": [
+          "executable",
+          "status",
+          "strategy",
+          "simulation_semantics"
+        ],
+        "title": "Capability",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "ModelSettings": {
+        "additionalProperties": false,
+        "properties": {
+          "block_size": {
+            "exclusiveMinimum": 0.0,
+            "title": "Block Size",
+            "type": "integer"
+          },
+          "block_size_unit": {
+            "const": "simulation_input_tokens",
+            "default": "simulation_input_tokens",
+            "title": "Block Size Unit",
+            "type": "string"
+          },
+          "cache_mode": {
+            "enum": [
+              "full_block",
+              "full_block_approximation",
+              "qwen_hybrid",
+              "deepseek_hybrid"
+            ],
+            "title": "Cache Mode",
+            "type": "string"
+          },
+          "cp_world_size": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Cp World Size",
+            "type": "integer"
+          },
+          "encoding_profile": {
+            "default": "default",
+            "title": "Encoding Profile",
+            "type": "string"
+          },
+          "hybrid_enabled": {
+            "default": false,
+            "title": "Hybrid Enabled",
+            "type": "boolean"
+          },
+          "model_aliases": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Model Aliases",
+            "type": "array"
+          },
+          "model_id": {
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id",
+            "type": "string"
+          },
+          "mtp": {
+            "default": true,
+            "title": "Mtp",
+            "type": "boolean"
+          },
+          "prefix_cache_enabled": {
+            "default": true,
+            "title": "Prefix Cache Enabled",
+            "type": "boolean"
+          },
+          "revision": {
+            "default": 1,
+            "exclusiveMinimum": 0.0,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "model_id",
+          "block_size",
+          "cache_mode"
+        ],
+        "title": "ModelSettings",
+        "type": "object"
+      },
+      "ModelView": {
+        "additionalProperties": false,
+        "properties": {
+          "capability": {
+            "$ref": "#/components/schemas/Capability"
+          },
+          "settings": {
+            "$ref": "#/components/schemas/ModelSettings"
+          }
+        },
+        "required": [
+          "settings",
+          "capability"
+        ],
+        "title": "ModelView",
+        "type": "object"
+      },
+      "RunState": {
+        "additionalProperties": false,
+        "properties": {
+          "created_at": {
+            "title": "Created At",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "file_ref": {
+            "title": "File Ref",
+            "type": "string"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "model_id": {
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id",
+            "type": "string"
+          },
+          "run_id": {
+            "title": "Run Id",
+            "type": "string"
+          },
+          "settings": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelSettings"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "completed",
+              "no_valid_rows",
+              "failed",
+              "interrupted"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "file_ref",
+          "model_id",
+          "status",
+          "created_at"
+        ],
+        "title": "RunState",
+        "type": "object"
+      },
+      "RunSubmission": {
+        "additionalProperties": false,
+        "properties": {
+          "file_ref": {
+            "minLength": 1,
+            "title": "File Ref",
+            "type": "string"
+          },
+          "model_id": {
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_ref",
+          "model_id"
+        ],
+        "title": "RunSubmission",
+        "type": "object"
+      },
+      "SettingsChanges": {
+        "additionalProperties": false,
+        "properties": {
+          "block_size": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Block Size"
+          },
+          "cache_mode": {
+            "anyOf": [
+              {
+                "enum": [
+                  "full_block",
+                  "full_block_approximation",
+                  "qwen_hybrid",
+                  "deepseek_hybrid"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cache Mode"
+          },
+          "cp_world_size": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cp World Size"
+          },
+          "encoding_profile": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Encoding Profile"
+          },
+          "hybrid_enabled": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hybrid Enabled"
+          },
+          "model_aliases": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Aliases"
+          },
+          "mtp": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mtp"
+          },
+          "prefix_cache_enabled": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prefix Cache Enabled"
+          }
+        },
+        "title": "SettingsChanges",
+        "type": "object"
+      },
+      "SettingsUpdate": {
+        "additionalProperties": false,
+        "properties": {
+          "changes": {
+            "$ref": "#/components/schemas/SettingsChanges"
+          },
+          "expected_revision": {
+            "exclusiveMinimum": 0.0,
+            "title": "Expected Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "expected_revision",
+          "changes"
+        ],
+        "title": "SettingsUpdate",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "TokenScope Monitoring",
+    "version": "0.1.0.dev1"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/analysis-runs": {
+      "post": {
+        "operationId": "submit_analysis_runs_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RunSubmission"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunState"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Submit"
+      }
+    },
+    "/analysis-runs/{run_id}": {
+      "get": {
+        "operationId": "run_analysis_runs__run_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "run_id",
+            "required": true,
+            "schema": {
+              "title": "Run Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunState"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Run"
+      }
+    },
+    "/healthz": {
+      "get": {
+        "operationId": "health_healthz_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "title": "Response Health Healthz Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health"
+      }
+    },
+    "/models": {
+      "get": {
+        "operationId": "models_models_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ModelView"
+                  },
+                  "title": "Response Models Models Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Models"
+      }
+    },
+    "/models/{model_id}/settings": {
+      "get": {
+        "operationId": "settings_models__model_id__settings_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "model_id",
+            "required": true,
+            "schema": {
+              "title": "Model Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Settings"
+      },
+      "put": {
+        "operationId": "update_settings_models__model_id__settings_put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "model_id",
+            "required": true,
+            "schema": {
+              "title": "Model Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SettingsUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Settings"
+      }
+    },
+    "/readyz": {
+      "get": {
+        "operationId": "ready_readyz_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Ready"
+      }
+    },
+    "/version": {
+      "get": {
+        "operationId": "version_version_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response Version Version Get",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Version"
+      }
+    }
+  }
+}

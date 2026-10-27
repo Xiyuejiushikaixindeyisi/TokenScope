@@ -1,0 +1,898 @@
+{
+  "schema_version": 1,
+  "updated": "2026-10-27",
+  "repositories": [
+    {
+      "id": "vllm",
+      "source": "https://github.com/vllm-project/vllm",
+      "revision": "7b1d07440dde8426a8b3d85e5f5815c06913eb82",
+      "path": "upstream/vllm",
+      "license": "Apache-2.0",
+      "purpose": "background comparison from initial broad search; superseded for current task by user-specified 0.23.0 / Qwen27 / V4-0731 references",
+      "verification": "source read only; deployment identity and runtime behavior not validated",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357
+        },
+        {
+          "path": "vllm/v1/core/kv_cache_manager.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/v1/core/kv_cache_manager.py",
+          "sha256": "cdd0185bd11f301631856336818987baa3520084134de65ab4abb9ecbf714623",
+          "bytes": 40041
+        },
+        {
+          "path": "vllm/v1/core/kv_cache_coordinator.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/v1/core/kv_cache_coordinator.py",
+          "sha256": "efd7193391197c555ebc0c8f2b593a6c4cb5b7da2978cd57414c0b71170f5971",
+          "bytes": 43771
+        },
+        {
+          "path": "vllm/v1/core/single_type_kv_cache_manager.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/v1/core/single_type_kv_cache_manager.py",
+          "sha256": "c597acf93a954b941e94f931f18dedcec8f2d8fda5fdf9c84ae5701f123e45af",
+          "bytes": 117731
+        },
+        {
+          "path": "vllm/v1/core/kv_cache_utils.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/v1/core/kv_cache_utils.py",
+          "sha256": "774fa7691b5b496b8fe7c74d0e0488bec475048ef9d085872c3bf2fe1ccc63f2",
+          "bytes": 46300
+        },
+        {
+          "path": "vllm/config/speculative.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/config/speculative.py",
+          "sha256": "66035ddf7efd644836eb2e212cd4809a38c5cb3d41981581992adac2fa2aa8b2",
+          "bytes": 94740
+        },
+        {
+          "path": "vllm/config/cache.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/config/cache.py",
+          "sha256": "f449f4ca93370823d15341ebdd8816419f937c6c3ac0f1f4ba7483dbf6d51def",
+          "bytes": 22365
+        },
+        {
+          "path": "vllm/config/mamba.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/config/mamba.py",
+          "sha256": "2090f791201ca45dd4f1d72b8651268890eb07574b6084721194eb8fdf612c48",
+          "bytes": 4025
+        },
+        {
+          "path": "docs/design/hybrid_kv_cache_manager.md",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/docs/design/hybrid_kv_cache_manager.md",
+          "sha256": "46668c028e946aba3604f9509ae07ced27353628d836a91427145c502ea5ee22",
+          "bytes": 15620
+        },
+        {
+          "path": "tests/v1/core/prefix_cache/test_hybrid_prefix_cache_hit_rate.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/tests/v1/core/prefix_cache/test_hybrid_prefix_cache_hit_rate.py",
+          "sha256": "e83c4e6f238702b0b2acb21b7ef8a8495c6cc68ecfecd6fa5543080858aa795f",
+          "bytes": 8043
+        },
+        {
+          "path": "tests/v1/core/prefix_cache/test_mamba_eagle_resume_checkpoint.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/tests/v1/core/prefix_cache/test_mamba_eagle_resume_checkpoint.py",
+          "sha256": "db843b6676af8b94fed9f0e8662e492dbc1a18744e6d0b1189922c58114834da",
+          "bytes": 15909
+        },
+        {
+          "path": "vllm/platforms/interface.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/platforms/interface.py",
+          "sha256": "660380c4910ca5cde611463a9bc23a15a74afe07372a34377a36ae535253e68e",
+          "bytes": 57918
+        },
+        {
+          "path": "vllm/model_executor/models/config.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/model_executor/models/config.py",
+          "sha256": "850156ca9540bdd899ab0a3d4e8bcc5a790acd07b6c2b1848fd906a67eb7424a",
+          "bytes": 55362
+        },
+        {
+          "path": "vllm/model_executor/layers/mamba/mamba_utils.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/model_executor/layers/mamba/mamba_utils.py",
+          "sha256": "9183d13f5db237017c3bf0b70560c345569e2e4574b4dc05539a887dfcf5421b",
+          "bytes": 15135
+        },
+        {
+          "path": "vllm/model_executor/models/qwen3_5.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/model_executor/models/qwen3_5.py",
+          "sha256": "ea7e71303c902b9678e85ff3e9a75a7ab6e69b5770605d540ad6ab1084e18187",
+          "bytes": 27942
+        },
+        {
+          "path": "vllm/models/deepseek_v4/sparse_mla.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/7b1d07440dde8426a8b3d85e5f5815c06913eb82/vllm/models/deepseek_v4/sparse_mla.py",
+          "sha256": "e28e8f75f27cc2e2262d63e2ff767496e070a45cc9c37c9108d0ca557ba20067",
+          "bytes": 19789
+        }
+      ]
+    },
+    {
+      "id": "vllm-ascend",
+      "source": "https://github.com/vllm-project/vllm-ascend",
+      "revision": "4e6eac4e476d9be3476e99440f4cabed67b253ea",
+      "path": "upstream/vllm-ascend",
+      "license": "Apache-2.0",
+      "purpose": "background comparison from initial broad search; superseded for current task by user-specified 0.23.0 / Qwen27 / V4-0731 references",
+      "verification": "source read only; deployment identity and runtime behavior not validated",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/4e6eac4e476d9be3476e99440f4cabed67b253ea/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357
+        },
+        {
+          "path": "vllm_ascend/platform.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/4e6eac4e476d9be3476e99440f4cabed67b253ea/vllm_ascend/platform.py",
+          "sha256": "b872d75b342fd0eec85a9d6c046f9c810f261e4de33236f35768415a5e534ea3",
+          "bytes": 94659
+        },
+        {
+          "path": "vllm_ascend/patch/platform/patch_mamba_config.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/4e6eac4e476d9be3476e99440f4cabed67b253ea/vllm_ascend/patch/platform/patch_mamba_config.py",
+          "sha256": "65ab1b1d7f634c57060161b61f60b0c2e1675de586c305055e7979cf52671442",
+          "bytes": 8801
+        },
+        {
+          "path": "vllm_ascend/patch/platform/patch_kv_cache_coordinator.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/4e6eac4e476d9be3476e99440f4cabed67b253ea/vllm_ascend/patch/platform/patch_kv_cache_coordinator.py",
+          "sha256": "3bed49c8db29ff377c9756cb0fa9e475f13bec68985621ffb74fc1da0dc3e204",
+          "bytes": 28586
+        },
+        {
+          "path": "vllm_ascend/core/single_type_kv_cache_manager.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/4e6eac4e476d9be3476e99440f4cabed67b253ea/vllm_ascend/core/single_type_kv_cache_manager.py",
+          "sha256": "22e5d91f07223bddba380ed78c8978c5fc534a7c254fe164894bf63e389702d8",
+          "bytes": 1408
+        },
+        {
+          "path": "docs/source/tutorials/models/DeepSeek-V4-Flash.md",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/4e6eac4e476d9be3476e99440f4cabed67b253ea/docs/source/tutorials/models/DeepSeek-V4-Flash.md",
+          "sha256": "ccd387c2f70e84461b2f38aadbefd43c8a68a99e3a2d38d3a55b3ed199f97e68",
+          "bytes": 72293
+        },
+        {
+          "path": "docs/source/tutorials/models/Qwen3.6-35B-A3B.md",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/4e6eac4e476d9be3476e99440f4cabed67b253ea/docs/source/tutorials/models/Qwen3.6-35B-A3B.md",
+          "sha256": "cd87e149eb418a120852e094670e26a232faa4d6530c5f6487d2d6217a39cfd1",
+          "bytes": 27904
+        },
+        {
+          "path": "tests/ut/patch/platform/test_patch_mamba_config.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/4e6eac4e476d9be3476e99440f4cabed67b253ea/tests/ut/patch/platform/test_patch_mamba_config.py",
+          "sha256": "7d1ac5a16e8d92e965321fb2d92772ffe1c9ded137b5489fc2636cb40a31410b",
+          "bytes": 11753
+        }
+      ]
+    },
+    {
+      "id": "deepseek-recipe",
+      "source": "https://github.com/deepseek-ai/deepseek-recipe",
+      "revision": "935817c66f5d6e64838f419692545f06787e485f",
+      "path": "upstream/deepseek-recipe",
+      "license": "MIT",
+      "purpose": "monitoring research only; selected source snapshot, not a runtime dependency",
+      "verification": "source read only; deployment identity and runtime behavior not validated",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/LICENSE",
+          "sha256": "ebb4f09972aee8608be255debaf78451a68e95c290f55c240dec2ecfa16ea6be",
+          "bytes": 1065
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/README.md",
+          "sha256": "e3ea4bd6b3a3debd8431af23d81935b93858636883dfc651f7ecc3416e099a67",
+          "bytes": 7141
+        },
+        {
+          "path": "docs/tokenizer.md",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/docs/tokenizer.md",
+          "sha256": "3ac464425807e1251693a8813c3e586833d8a098732860f893ac4ce07b2454c4",
+          "bytes": 10148
+        },
+        {
+          "path": "deepseek-recipe-encoding/src/tokenizer.rs",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-encoding/src/tokenizer.rs",
+          "sha256": "21fefc37c6689cac8357d030f1ccb2c84e37d293950797ec4a6a0bfc208b56de",
+          "bytes": 4823
+        },
+        {
+          "path": "deepseek-recipe-encoding/src/v4/dsv4.rs",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-encoding/src/v4/dsv4.rs",
+          "sha256": "d1e210fb958c9d4c0c3ab18899d7aa2e76c8d8f93e66e4dd1f1fcead5790a7ad",
+          "bytes": 15102
+        },
+        {
+          "path": "deepseek-recipe-python/tests/test_bindings.py",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-python/tests/test_bindings.py",
+          "sha256": "d852276ec3a11917f8cf2fbee95662dc3445d042096ed89a8a6a113b12b0f087",
+          "bytes": 41826
+        },
+        {
+          "path": "deepseek-recipe-encoding/src/lib.rs",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-encoding/src/lib.rs",
+          "sha256": "e59026e36cb8b729667ef167debc2d681b0a19e80b5e2227bdfc973f6cc1ad24",
+          "bytes": 4137
+        },
+        {
+          "path": "Cargo.toml",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/Cargo.toml",
+          "sha256": "790d9820e34cfb0555aba0d64e753591cffb786ee66c73b6c7d2925972ba0510",
+          "bytes": 1972
+        },
+        {
+          "path": "README.zh.md",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/README.zh.md",
+          "sha256": "62c22884aaa0446109a73d6b92e3d9c59e81399e8a57902f6ef49fc0dba5bedb",
+          "bytes": 6660
+        },
+        {
+          "path": "deepseek-recipe-core/src/lib.rs",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-core/src/lib.rs",
+          "sha256": "5fb42c69ad2189d485b2880a115d087bb3c89c986a6deeedfe541e11a7f19863",
+          "bytes": 416
+        },
+        {
+          "path": "deepseek-recipe-core/src/conversation.rs",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe-core/src/conversation.rs",
+          "sha256": "6711ffd8de536b52894b3eaf781a78cb027e5e580fee545f47dfbd1b10faeb42",
+          "bytes": 2733
+        },
+        {
+          "path": "deepseek-recipe/src/request/mod.rs",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/deepseek-recipe/935817c66f5d6e64838f419692545f06787e485f/deepseek-recipe/src/request/mod.rs",
+          "sha256": "c2d996aca81b6956b9e997c24fd4239a1191248d4e5399dfa069ee41f19fc2b9",
+          "bytes": 11979
+        }
+      ]
+    },
+    {
+      "id": "deepinfer",
+      "source": "https://github.com/deepseek-ai/DeepInfer",
+      "revision": "9bd9cf243fc53ef9afbf8f04d391d989117d6ab9",
+      "path": "upstream/deepinfer",
+      "license": "MIT",
+      "purpose": "monitoring research only; selected source snapshot, not a runtime dependency",
+      "verification": "source read only; deployment identity and runtime behavior not validated",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357
+        },
+        {
+          "path": "doc/inference_deployment_qa.md",
+          "url": "https://raw.githubusercontent.com/deepseek-ai/DeepInfer/9bd9cf243fc53ef9afbf8f04d391d989117d6ab9/doc/inference_deployment_qa.md",
+          "sha256": "55d428d9958aa35ac863d7f5a2eb21528e683226784b1ac334e8068e21f2326f",
+          "bytes": 28865
+        }
+      ]
+    },
+    {
+      "id": "qwen36-35b",
+      "source": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+      "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+      "path": "upstream/model-reference/qwen36-35b",
+      "license": "apache-2.0",
+      "purpose": "background comparison from initial broad search; superseded for current task by user-specified 0.23.0 / Qwen27 / V4-0731 references",
+      "verification": "metadata/source only; tokenizer.json not downloaded or executed",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "config.json",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/resolve/995ad96eacd98c81ed38be0c5b274b04031597b0/config.json",
+          "sha256": "93a4693fa9d8392fbfccd4b3c9873f4bfdcb14fdede978b123d07d19675efe99",
+          "bytes": 3686
+        },
+        {
+          "path": "tokenizer_config.json",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/resolve/995ad96eacd98c81ed38be0c5b274b04031597b0/tokenizer_config.json",
+          "sha256": "5186f0defcd7f232382c7f0aebcd2252d073bb921ab240e407b7ae8745d2b29b",
+          "bytes": 16718
+        },
+        {
+          "path": "chat_template.jinja",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/resolve/995ad96eacd98c81ed38be0c5b274b04031597b0/chat_template.jinja",
+          "sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+          "bytes": 7764
+        }
+      ]
+    },
+    {
+      "id": "qwen36-27b",
+      "source": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "revision": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9",
+      "path": "upstream/model-reference/qwen36-27b",
+      "license": "apache-2.0",
+      "purpose": "candidate model config/template reference; actual deployment variant not confirmed",
+      "verification": "Pinned source files preserved; actual tokenizer runtime asset acquired and exercised in B002; deployed equivalence and DeepSeek default remain unverified",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "config.json",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-27B/resolve/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/config.json",
+          "sha256": "69db4eb7196bc8190813231b3018ca05d8c2e3abc7b1af19d55c157af44a9d9c",
+          "bytes": 4308
+        },
+        {
+          "path": "tokenizer_config.json",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-27B/resolve/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer_config.json",
+          "sha256": "5186f0defcd7f232382c7f0aebcd2252d073bb921ab240e407b7ae8745d2b29b",
+          "bytes": 16718
+        },
+        {
+          "path": "chat_template.jinja",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-27B/resolve/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/chat_template.jinja",
+          "sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+          "bytes": 7764
+        }
+      ],
+      "runtime_assets": [
+        {
+          "path": "models/qwen36-27b/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer.json",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-27B/resolve/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer.json",
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "bytes": 12807982
+        }
+      ]
+    },
+    {
+      "id": "glm52",
+      "source": "https://huggingface.co/zai-org/GLM-5.2",
+      "revision": "cf457fa734ab149ffef225f80893eb38c6ff5cdc",
+      "path": "upstream/model-reference/glm52",
+      "license": "mit",
+      "purpose": "candidate model config/template reference; actual deployment variant not confirmed",
+      "verification": "Pinned source files preserved; actual tokenizer runtime asset acquired and exercised in B002; deployed equivalence and DeepSeek default remain unverified",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "config.json",
+          "url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/config.json",
+          "sha256": "185f93ee6d12548e16a847e279dc0c3c90b1524c970b0866b42fb545747d859a",
+          "bytes": 3732
+        },
+        {
+          "path": "tokenizer_config.json",
+          "url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer_config.json",
+          "sha256": "98b1271574f41abf89427ae2dda030d94dc9478f0edc5a8bd240db213c6fd5fc",
+          "bytes": 761
+        },
+        {
+          "path": "chat_template.jinja",
+          "url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/chat_template.jinja",
+          "sha256": "172dc74a35e1752df75ecfb2b2cf9326d2852bb1379868ebeec9571654489679",
+          "bytes": 5076
+        }
+      ],
+      "runtime_assets": [
+        {
+          "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer.json",
+          "url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer.json",
+          "sha256": "19e773648cb4e65de8660ea6365e10acca112d42a854923df93db4a6f333a82d",
+          "bytes": 20217442
+        }
+      ]
+    },
+    {
+      "id": "deepseek-v4-flash",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash",
+      "revision": "60d8d70770c6776ff598c94bb586a859a38244f1",
+      "path": "upstream/model-reference/deepseek-v4-flash",
+      "license": "mit",
+      "purpose": "background comparison from initial broad search; superseded for current task by user-specified 0.23.0 / Qwen27 / V4-0731 references",
+      "verification": "metadata/source only; tokenizer.json not downloaded or executed",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "config.json",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/resolve/60d8d70770c6776ff598c94bb586a859a38244f1/config.json",
+          "sha256": "b628e63398a645abc711d92207f8737dd8140f7a4ef1e0a5b3616019e0ddd818",
+          "bytes": 1749
+        },
+        {
+          "path": "tokenizer_config.json",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/resolve/60d8d70770c6776ff598c94bb586a859a38244f1/tokenizer_config.json",
+          "sha256": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547",
+          "bytes": 801
+        },
+        {
+          "path": "encoding/README.md",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/resolve/60d8d70770c6776ff598c94bb586a859a38244f1/encoding/README.md",
+          "sha256": "605363e9e43ee91beba88ea96c7806ce6ecdb2924e481459c9d16e1526470c10",
+          "bytes": 8118
+        }
+      ]
+    },
+    {
+      "id": "prefixlens-local",
+      "source": "/home/zhangxiyue/PrefixLens",
+      "origin": "https://github.com/Xiyuejiushikaixindeyisi/Two-Queue-TTL.git",
+      "revision": "fa3759d933c7583b5081276de3bea3f20671e486",
+      "path": "upstream/prefixlens-local",
+      "license": "not verified",
+      "purpose": "local basic version selected source snapshot; NOT Huawei complete version",
+      "verification": "original worktree has unrelated changes; copied files identified by SHA256; tests not executed",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "2fef95204c98b19efe77b25e0ef98e9b91b9d6579396b8e1476405641849799c",
+          "bytes": 5826
+        },
+        {
+          "path": "lib/hit_rate.py",
+          "sha256": "1d9b337afd617ce1d80ea8472b2aa245547c80a7ba68c4a8602805788eb8485e",
+          "bytes": 3401
+        },
+        {
+          "path": "lib/chain_key.py",
+          "sha256": "518c3f2bc442414559413f434c541d3b4333f65f73abfb8f8be68f5071d24216",
+          "bytes": 1392
+        },
+        {
+          "path": "lib/hf_tokenizer.py",
+          "sha256": "55d67c11fcacd992365ba171b5e269b7a3e411ee0a17fdd0c2781fb9971584ab",
+          "bytes": 4890
+        },
+        {
+          "path": "lib/prompt_encoder.py",
+          "sha256": "241bcc06a6a43ad92e5fb9dbf731ceec65055e8ca6c8ac178bd28078f61c7bdc",
+          "bytes": 8407
+        },
+        {
+          "path": "tests/unit/test_hit_rate.py",
+          "sha256": "88bdc971dc727354e92700a989ad0d6e1e9e7ff15779aff4f67ce64552883bfb",
+          "bytes": 1876
+        },
+        {
+          "path": "tests/unit/test_token_encoder.py",
+          "sha256": "c0a6b20bb76cea5764726bb815037458f4a39acaff2a2050505835c3add692b0",
+          "bytes": 9035
+        }
+      ]
+    },
+    {
+      "id": "vllm-v0.23.0",
+      "source": "https://github.com/vllm-project/vllm",
+      "revision": "0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665",
+      "path": "upstream/vllm-v0.23.0",
+      "license": "Apache-2.0",
+      "purpose": "monitoring selected source research for user-specified model and 0.23.0 image",
+      "verification": "official reference; image digest, deployed revision and effective flags unknown; not executed",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357
+        },
+        {
+          "path": "vllm/v1/core/kv_cache_manager.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/v1/core/kv_cache_manager.py",
+          "sha256": "a69aa08062714b40b149648bbec031a42d22e422fbf9543cd10fbd12d2496edb",
+          "bytes": 24594
+        },
+        {
+          "path": "vllm/v1/core/kv_cache_coordinator.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/v1/core/kv_cache_coordinator.py",
+          "sha256": "aeca063d319413d2bd0f094158a16be08c2a4c9b1c96a21617f97936c23bd9ce",
+          "bytes": 29056
+        },
+        {
+          "path": "vllm/v1/core/single_type_kv_cache_manager.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/v1/core/single_type_kv_cache_manager.py",
+          "sha256": "dc425e1e87b6157f3e5c46be2bfee54076ccb020b86c5a8aaa3d9901c75e46ef",
+          "bytes": 60845
+        },
+        {
+          "path": "vllm/config/speculative.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/config/speculative.py",
+          "sha256": "e985d7c75401dc4a58d026a618680fb757450aeac937214f293fabf793751f7b",
+          "bytes": 48372
+        },
+        {
+          "path": "vllm/model_executor/models/config.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/model_executor/models/config.py",
+          "sha256": "05c011a4a4f913ae2ed5676346222453e5b431e0997bab6fb234ae06d44a0ea8",
+          "bytes": 25894
+        },
+        {
+          "path": "vllm/model_executor/layers/mamba/mamba_utils.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/model_executor/layers/mamba/mamba_utils.py",
+          "sha256": "aa9b7dc46725a012fc61b83a7181baaddad7ab4b0eb8e4144350799697ad6a42",
+          "bytes": 11750
+        },
+        {
+          "path": "vllm/model_executor/models/qwen3_5.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/model_executor/models/qwen3_5.py",
+          "sha256": "04f3de5372973770d71c5c05f2e8a5e221ec52b62cca7a1e302d9201b61b8adc",
+          "bytes": 29662
+        },
+        {
+          "path": "vllm/platforms/interface.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/platforms/interface.py",
+          "sha256": "5b041a43ccb92afb87fc1daf97183ef7f89f666b4c126eb1df66d0dbf17da947",
+          "bytes": 36561
+        },
+        {
+          "path": "tests/v1/core/test_prefix_caching.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/tests/v1/core/test_prefix_caching.py",
+          "sha256": "f313b45805a2bd329bed9f02d8cee99b9bcdb50b59fcb04b88da80bb0877d90f",
+          "bytes": 129256
+        },
+        {
+          "path": "vllm/tokenizers/deepseek_v4.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/tokenizers/deepseek_v4.py",
+          "sha256": "f1ebaaa58fc7f453ebb38c07234591abe35780641822f872558c964cf702fcf3",
+          "bytes": 3477
+        },
+        {
+          "path": "vllm/tokenizers/deepseek_v4_encoding.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/tokenizers/deepseek_v4_encoding.py",
+          "sha256": "582f735bf75ad5fbe2b4a8801d8280a65ff0e41175874249bd62433e78c487ff",
+          "bytes": 28115
+        },
+        {
+          "path": "tests/tokenizers_/test_deepseek_v4.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/tests/tokenizers_/test_deepseek_v4.py",
+          "sha256": "5456d1a48893136c8b51bbb83fc90288d77ffa2008f5bc7c9193e1cc231e3048",
+          "bytes": 8431
+        },
+        {
+          "path": "vllm/models/deepseek_v4/sparse_mla.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/models/deepseek_v4/sparse_mla.py",
+          "sha256": "1223a1ccb146b2599875a87c4296b7373de654a38d870f93eba117568d8deaf9",
+          "bytes": 15465
+        },
+        {
+          "path": "vllm/v1/core/kv_cache_utils.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/v1/core/kv_cache_utils.py",
+          "sha256": "b89f9afa7f95fcc30412ae2031d5370a23e95f35d068fa14e5824dce1c900ee5",
+          "bytes": 87037
+        },
+        {
+          "path": "vllm/v1/kv_cache_interface.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/v1/kv_cache_interface.py",
+          "sha256": "8d6be98bbf75b3d55007b64ccf5afef047ca01790a432522f70a196412c103d9",
+          "bytes": 32837
+        },
+        {
+          "path": "vllm/v1/core/block_pool.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/v1/core/block_pool.py",
+          "sha256": "84755b84c36ed6460ceefe2690c9484a9c31488c5da6daa6c918f497d8837dee",
+          "bytes": 20946
+        },
+        {
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/v1/core/sched/scheduler.py",
+          "sha256": "9ae1491f57a6294e32416b93ef2ea68107fa0d65c3a4d7f745f1261012f735e9",
+          "bytes": 111874
+        },
+        {
+          "path": "vllm/envs.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm/0fc695fc6d1d82e9a5ac6835ac8e4e1c83703665/vllm/envs.py",
+          "sha256": "b776fb6b1bae4a4f1d6c53792e65e15bd6cde7e70d5c17ef08dfeec54cd59603",
+          "bytes": 101069
+        }
+      ]
+    },
+    {
+      "id": "vllm-ascend-v0.23.0",
+      "source": "https://github.com/vllm-project/vllm-ascend",
+      "revision": "5cb98caaadeff42b5b62b996e34bb2aaa29d20fd",
+      "path": "upstream/vllm-ascend-v0.23.0",
+      "license": "Apache-2.0",
+      "purpose": "monitoring selected source research for user-specified model and 0.23.0 image",
+      "verification": "official reference; image digest, deployed revision and effective flags unknown; not executed",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357
+        },
+        {
+          "path": "vllm_ascend/platform.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/vllm_ascend/platform.py",
+          "sha256": "30c75952f784c4d047d7202dd7f68c8fc7c22bb975853a5048fb51ffcbe1f2a8",
+          "bytes": 62514
+        },
+        {
+          "path": "vllm_ascend/patch/platform/patch_mamba_config.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/vllm_ascend/patch/platform/patch_mamba_config.py",
+          "sha256": "ee38c68c27357a7d18f7e368e03a352bb312f79c3576431a64f688ce953716ac",
+          "bytes": 7003
+        },
+        {
+          "path": "vllm_ascend/patch/platform/patch_kv_cache_coordinator.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/vllm_ascend/patch/platform/patch_kv_cache_coordinator.py",
+          "sha256": "35a62e6bb3960f88192ff609751d631eeafbbc29f087560afd60906b3a504999",
+          "bytes": 24734
+        },
+        {
+          "path": "vllm_ascend/core/kv_cache_interface.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/vllm_ascend/core/kv_cache_interface.py",
+          "sha256": "a83a04d288f61e60218242fd31bb0ebdd36e44bdbb83b4649cab0c871cdda26b",
+          "bytes": 13739
+        },
+        {
+          "path": "vllm_ascend/ascend_config.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/vllm_ascend/ascend_config.py",
+          "sha256": "8da61f88d8e5153fde5311ddc8de11cd8a361deb5f2efed5140640a5eeeb7c38",
+          "bytes": 46883
+        },
+        {
+          "path": "docs/source/tutorials/models/DeepSeek-V4-Flash.md",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/docs/source/tutorials/models/DeepSeek-V4-Flash.md",
+          "sha256": "ef35c7dfac46750b586532b5dea57f4e73cda9f41dab9ed4b13a9b7f8af3ae7e",
+          "bytes": 50163
+        },
+        {
+          "path": "vllm_ascend/utils.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/vllm_ascend/utils.py",
+          "sha256": "575b45d684eabdb7ac3195d33de48bd5f3233081f78886c08be92a4a2fd2fc02",
+          "bytes": 67646
+        },
+        {
+          "path": "vllm_ascend/models/deepseek_v4.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/vllm_ascend/models/deepseek_v4.py",
+          "sha256": "c5f9404e8cdfd6e1dd15e2561d356cdd2afe676c8c406b77c65fb70a6ebce7a5",
+          "bytes": 64151
+        },
+        {
+          "path": "tests/ut/test_compressed_prefix_cache.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/tests/ut/test_compressed_prefix_cache.py",
+          "sha256": "47921978c83ab3b3db3185cf01f5d00537ec9f2f5d44e428d362fd1bfc252dd2",
+          "bytes": 6341
+        },
+        {
+          "path": "vllm_ascend/models/layer/attention/layer.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/vllm_ascend/models/layer/attention/layer.py",
+          "sha256": "b49b68afbfe1879cdf145302985b96eec48d0c3020ba89595263845c28d17753",
+          "bytes": 7175
+        },
+        {
+          "path": "vllm_ascend/core/single_type_kv_cache_manager.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/vllm_ascend/core/single_type_kv_cache_manager.py",
+          "sha256": "5292cf9c33c90f83abe7097de1a8b07e1381f3601f38c57bd65119388263e408",
+          "bytes": 12876
+        },
+        {
+          "path": "vllm_ascend/patch/platform/patch_mamba_manager.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/vllm_ascend/patch/platform/patch_mamba_manager.py",
+          "sha256": "f39b28a75509ff5b8617104a00c73e6bd21b8b7acd43f81b50c57ea7c474815e",
+          "bytes": 3404
+        },
+        {
+          "path": "vllm_ascend/patch/platform/patch_kv_cache_utils.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/vllm_ascend/patch/platform/patch_kv_cache_utils.py",
+          "sha256": "695dbd6e40bd4ffc7cf3089e660a05e4a0f5f586bcd8100512091c3f713aa165",
+          "bytes": 16233
+        },
+        {
+          "path": "tests/ut/patch/platform/test_prefix_cache_cp_patches.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/5cb98caaadeff42b5b62b996e34bb2aaa29d20fd/tests/ut/patch/platform/test_prefix_cache_cp_patches.py",
+          "sha256": "f4832a65fce4ea031e9a835dbe036f667f7c68627ce1fe78257395f58c559735",
+          "bytes": 17357
+        }
+      ]
+    },
+    {
+      "id": "deepseek-v4-flash-0731",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+      "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "path": "upstream/model-reference/deepseek-v4-flash-0731",
+      "license": "MIT",
+      "purpose": "monitoring selected source research for user-specified model and 0.23.0 image",
+      "verification": "Pinned source files preserved; actual tokenizer runtime asset acquired and exercised in B002; deployed equivalence and DeepSeek default remain unverified",
+      "acquired_at": "2026-10-23",
+      "files": [
+        {
+          "path": "config.json",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/config.json",
+          "sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023",
+          "bytes": 1888
+        },
+        {
+          "path": "tokenizer_config.json",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer_config.json",
+          "sha256": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547",
+          "bytes": 801
+        },
+        {
+          "path": "encoding/README.md",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/encoding/README.md",
+          "sha256": "294ed6493ebfe5a487f172154d60c494899997fed8806fdd3352dd8e3c33f9de",
+          "bytes": 9168
+        },
+        {
+          "path": "encoding/encoding_dsv4.py",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/encoding/encoding_dsv4.py",
+          "sha256": "abc0d26120250dda0ae077dc64aa28836026e61e970854aaeb792445e6a0dde6",
+          "bytes": 29001
+        },
+        {
+          "path": "encoding/test_encoding_dsv4.py",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/encoding/test_encoding_dsv4.py",
+          "sha256": "c2bc54c4c934f5c64096bd9c555efa7d1ddf179c1eff58f01ceb2dcd60adcf28",
+          "bytes": 3741
+        },
+        {
+          "path": "encoding/tests/test_input_1.json",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/encoding/tests/test_input_1.json",
+          "sha256": "10e0c074c977c3a80daab758af28219c6b1c2bd7f3f5cf2890c84b361cc32897",
+          "bytes": 2748
+        },
+        {
+          "path": "encoding/tests/test_output_1.txt",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/encoding/tests/test_output_1.txt",
+          "sha256": "9b366d9d2eac842a6e890594aac0b58648e5623717202b33497afadf03e26540",
+          "bytes": 2390
+        },
+        {
+          "path": "encoding/tests/test_input_2.json",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/encoding/tests/test_input_2.json",
+          "sha256": "c44ae0db20fafff38a6021e8068d7ed6e28605d76cafd20be80b03398509f447",
+          "bytes": 526
+        },
+        {
+          "path": "encoding/tests/test_output_2.txt",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/encoding/tests/test_output_2.txt",
+          "sha256": "ca66b01a1ac3a204bb032c928fb607d4877171e998a50f7f89f39fa821b75665",
+          "bytes": 342
+        },
+        {
+          "path": "encoding/tests/test_input_3.json",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/encoding/tests/test_input_3.json",
+          "sha256": "37bf8ef95e0411ea5f411be0b02fbafec7363438b6ccefddca0c52ec9aeaf69a",
+          "bytes": 4546
+        },
+        {
+          "path": "encoding/tests/test_output_3.txt",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/encoding/tests/test_output_3.txt",
+          "sha256": "b3b1cd8748b7b90d3c6be6da3f786f12e4d70be073bd445ea162dfad4dc01a64",
+          "bytes": 3313
+        },
+        {
+          "path": "encoding/tests/test_input_4.json",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/encoding/tests/test_input_4.json",
+          "sha256": "c45bbd0a1b7a2f75033d8db4ba74ee5b7653bd01114045a52f79d3b387663465",
+          "bytes": 2730
+        },
+        {
+          "path": "encoding/tests/test_output_4.txt",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/encoding/tests/test_output_4.txt",
+          "sha256": "60e1643840ba9e4aeede450feb7b0498fa66ee24e4a939d48855ce04ec6fc375",
+          "bytes": 2552
+        }
+      ],
+      "runtime_assets": [
+        {
+          "path": "models/deepseek-v4-flash-0731/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer.json",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer.json",
+          "sha256": "8f9f37ca37fdc4f5fd36d5cf4d3b0e8392edb4e894fd10cc0d70b4957c8633cf",
+          "bytes": 6367146
+        }
+      ]
+    },
+    {
+      "id": "vllm-ascend-2026-10-26",
+      "source": "https://github.com/vllm-project/vllm-ascend",
+      "revision": "86add7adfd1194c225fd8880699d5be7a248c3ce",
+      "path": "upstream/vllm-ascend-2026-10-26",
+      "license": "Apache-2.0",
+      "purpose": "2026-10-26 monitoring research comparison; not deployed baseline or runtime dependency",
+      "verification": "source/PR read only; no hardware or integration test executed",
+      "acquired_at": "2026-10-26",
+      "files": [
+        {
+          "path": "vllm_ascend/patch/platform/patch_kv_cache_coordinator.py",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/86add7adfd1194c225fd8880699d5be7a248c3ce/vllm_ascend/patch/platform/patch_kv_cache_coordinator.py",
+          "sha256": "3bed49c8db29ff377c9756cb0fa9e475f13bec68985621ffb74fc1da0dc3e204",
+          "bytes": 28586
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/vllm-project/vllm-ascend/86add7adfd1194c225fd8880699d5be7a248c3ce/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357
+        }
+      ]
+    },
+    {
+      "id": "tokenizers-v0.23.2",
+      "source": "https://github.com/huggingface/tokenizers",
+      "revision": "88a4498ad4ea1a9487b0a9b0ff881383fd5a06a3",
+      "path": "upstream/tokenizers-v0.23.2",
+      "license": "Apache-2.0",
+      "purpose": "2026-10-26 monitoring research comparison; not deployed baseline or runtime dependency",
+      "verification": "source/PR read only; no hardware or integration test executed",
+      "acquired_at": "2026-10-26",
+      "files": [
+        {
+          "path": "tokenizers/src/tokenizer/mod.rs",
+          "url": "https://raw.githubusercontent.com/huggingface/tokenizers/88a4498ad4ea1a9487b0a9b0ff881383fd5a06a3/tokenizers/src/tokenizer/mod.rs",
+          "sha256": "38e8a0755d0c1c627bf532a28d6030413ee719c855fb1a807e1d3a647b62d56c",
+          "bytes": 61601
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/huggingface/tokenizers/88a4498ad4ea1a9487b0a9b0ff881383fd5a06a3/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357
+        }
+      ]
+    },
+    {
+      "id": "vllm-ascend-pr16013",
+      "source": "https://github.com/vllm-project/vllm-ascend",
+      "revision": "f2518f9b78fec4a3b03bb91c502961f099bc6f01",
+      "path": "upstream/vllm-ascend-pr16013",
+      "license": "Apache-2.0",
+      "purpose": "2026-10-26 monitoring research comparison; not deployed baseline or runtime dependency",
+      "verification": "source/PR read only; no hardware or integration test executed",
+      "acquired_at": "2026-10-26",
+      "files": [
+        {
+          "path": "changes.diff",
+          "url": "https://github.com/vllm-project/vllm-ascend/pull/16013.diff",
+          "sha256": "c79acb35392ff377f82551a6a91945d061874bf61108149e64f9103dd940e4f3",
+          "bytes": 16647
+        }
+      ]
+    },
+    {
+      "id": "vllm-pr37898",
+      "source": "https://github.com/vllm-project/vllm",
+      "revision": "dc66e01a7040fdfa8287fbfbbf73f9ac46a1b679",
+      "path": "upstream/vllm-pr37898",
+      "license": "Apache-2.0",
+      "purpose": "2026-10-26 monitoring research comparison; not deployed baseline or runtime dependency",
+      "verification": "source/PR read only; no hardware or integration test executed",
+      "acquired_at": "2026-10-26",
+      "files": [
+        {
+          "path": "changes.diff",
+          "url": "https://github.com/vllm-project/vllm/pull/37898.diff",
+          "sha256": "4ff8a65311e24bbc52d2bf89becf415de80ebaf328742b0fb89468221c9e29a7",
+          "bytes": 7966
+        }
+      ]
+    },
+    {
+      "id": "vllm-ascend-pr14468",
+      "source": "https://github.com/vllm-project/vllm-ascend",
+      "revision": "22ed73a0837093aefe354fb8e58511630b6f5e5e",
+      "path": "upstream/vllm-ascend-pr14468",
+      "license": "Apache-2.0",
+      "purpose": "2026-10-26 monitoring research comparison; not deployed baseline or runtime dependency",
+      "verification": "source/PR read only; no hardware or integration test executed",
+      "acquired_at": "2026-10-26",
+      "files": [
+        {
+          "path": "changes.diff",
+          "url": "https://github.com/vllm-project/vllm-ascend/pull/14468.diff",
+          "sha256": "77ca6898efa70862ce7a7f76418d049f27a73d36bb82c6f1e6a6ffad9c579f5c",
+          "bytes": 745
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Selected research snapshots only. No runtime dependency installed or full repository imported.",
+    "Public model revisions are candidates, not deployment identities. Huawei PrefixLens evidence remains unavailable."
+  ]
+}

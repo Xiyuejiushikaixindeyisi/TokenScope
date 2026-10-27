@@ -1,0 +1,2 @@
+# Preserve exact bytes across platforms: S0 and asset manifests pin file hashes.
+* -text

@@ -1,0 +1,6 @@
+{
+  "service_instance_id": "11111111-1111-4111-8111-111111111111",
+  "view_schema_version": "1",
+  "reason": "future_cursor",
+  "catalog_url": "/monitoring/catalog"
+}

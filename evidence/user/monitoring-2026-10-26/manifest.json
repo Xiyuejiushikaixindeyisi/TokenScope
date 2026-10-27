@@ -1,0 +1,12 @@
+{
+  "received_date": "2026-10-26",
+  "source_path": "C:\\Users\\ALIENWARE\\.codex\\attachments\\35af8d5f-e86a-4e1f-bab0-051a2db26345\\已粘贴的文本.txt",
+  "classification": "user supplied research notes; not deployment verification",
+  "files": [
+    {
+      "path": "vllm-ascend-cache-layout-notes.txt",
+      "sha256": "e69074aab015ba4a4049329f90f8877dbec2e6d3c020ee14e9dd63dd2b83d7e3",
+      "bytes": 11944
+    }
+  ]
+}

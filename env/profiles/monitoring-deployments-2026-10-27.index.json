@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "declared_profiles_not_activated",
+  "profiles": [
+    {
+      "model_id": "DeepSeek-V4-Flash-0731",
+      "path": "env/profiles/deepseek-v4-flash-0731-gf-20261027.json",
+      "sha256": "7a5a220efd3fc4ffa158e11abb9eefe0151b8b7b9df4c55f32b58e1ef93d9f18"
+    },
+    {
+      "model_id": "Qwen3.6-27B",
+      "path": "env/profiles/qwen36-27b-gf-20261027.json",
+      "sha256": "2bd2824dd6dda9b9165d0ffb015765b35fa9ff0bc9d25870c94d280888857852"
+    },
+    {
+      "model_id": "GLM-5.2",
+      "path": "env/profiles/glm52-gf-20261027.json",
+      "sha256": "6ebdb73d41702a4efb19e4e1ba45d2a30c8ab625576844621c0eba9afaa9debb"
+    }
+  ]
+}

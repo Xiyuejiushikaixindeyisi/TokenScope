@@ -1,0 +1,250 @@
+[
+  {
+    "path": "docs/contracts/MONITORING_IMPLEMENTED_API.md",
+    "sha256": "71ea1a1b3e4a0c9f9b92560205dea905db596053e6ae3e6b24214f14f74a4220"
+  },
+  {
+    "path": "docs/contracts/examples/monitoring-v1-executed-synthetic.json",
+    "sha256": "412a89a39d6acc85f70e9163dd2cc95d73e2971ef8cc4e61137a2e86768f50b8"
+  },
+  {
+    "path": "docs/contracts/schemas/monitoring-current.openapi.json",
+    "sha256": "d8527644202ef46bcc6c05d5a69bc1a0c64625a17c9b2e411a03779925727a86"
+  },
+  {
+    "path": "docs/operations/MONITORING_LOCAL.md",
+    "sha256": "c2849033bf0df1a6104905440809a16a9cb2b08acbe2b64127c897742018ac12"
+  },
+  {
+    "path": "env/docker/Dockerfile.monitoring",
+    "sha256": "42a52312b3c88ae7741584ea09a2ae71680307f42b66c7961a7b5c8bdb9e48f5"
+  },
+  {
+    "path": "env/docker/compose.monitoring.yaml",
+    "sha256": "fca26ae7ec5b5c505ebcbfcea56a2ebde28b524465d17789b0b57b49316c644e"
+  },
+  {
+    "path": "env/encoding-assets.lock.json",
+    "sha256": "be74503d8a507066cb7a3d6797ba6481b0b9fd716bbbfcff8003c3cddd4e5c98"
+  },
+  {
+    "path": "env/requirements.runtime.txt",
+    "sha256": "0e8e0ae142ffe996b2bf230ea15ac7cd5fdb952cd2413e719a338c9d68e6c7a8"
+  },
+  {
+    "path": "models/deepseek-v4-flash-0731/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer.json",
+    "sha256": "8f9f37ca37fdc4f5fd36d5cf4d3b0e8392edb4e894fd10cc0d70b4957c8633cf"
+  },
+  {
+    "path": "models/deepseek-v4-flash-0731/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer_config.json",
+    "sha256": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547"
+  },
+  {
+    "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/chat_template.jinja",
+    "sha256": "172dc74a35e1752df75ecfb2b2cf9326d2852bb1379868ebeec9571654489679"
+  },
+  {
+    "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer.json",
+    "sha256": "19e773648cb4e65de8660ea6365e10acca112d42a854923df93db4a6f333a82d"
+  },
+  {
+    "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer_config.json",
+    "sha256": "98b1271574f41abf89427ae2dda030d94dc9478f0edc5a8bd240db213c6fd5fc"
+  },
+  {
+    "path": "models/qwen36-27b/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/chat_template.jinja",
+    "sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259"
+  },
+  {
+    "path": "models/qwen36-27b/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer.json",
+    "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+  },
+  {
+    "path": "models/qwen36-27b/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer_config.json",
+    "sha256": "5186f0defcd7f232382c7f0aebcd2252d073bb921ab240e407b7ae8745d2b29b"
+  },
+  {
+    "path": "prompts/delivery/HUAWEI_MONITORING_V1.md",
+    "sha256": "675e84c77046d9f2e06622dbaa4b56f5742135063e12b7242d18a0845174ee14"
+  },
+  {
+    "path": "pyproject.toml",
+    "sha256": "b46024c83b8a293408236a4ca0b625fd7a14762d2c44c51866094db7c1dac1eb"
+  },
+  {
+    "path": "scripts/release/build_monitoring.py",
+    "sha256": "5312c9917285c6976b0823a8633cc497763c8a60766d0b3372223ecf665585a9"
+  },
+  {
+    "path": "scripts/validation/check_b001.py",
+    "sha256": "37fcbffb66e6ef1df0ea13682372233c85e83cdf9742222d05ca17036611eb9e"
+  },
+  {
+    "path": "scripts/validation/check_batch.py",
+    "sha256": "b2e1ae0d24afa242cb26ee1d29a29b056d701a3521cac996e371c94f8994c4ba"
+  },
+  {
+    "path": "scripts/validation/generate_monitoring_data.py",
+    "sha256": "60825db50b6b269841eafe20792ad19d6a08205a461c371b6433a39cb0d943da"
+  },
+  {
+    "path": "scripts/validation/run_monitoring_e2e.py",
+    "sha256": "86ec85a59b2e9109eaf84b5b72b4584fcbb2ae54317ba3d5e48f68470c877dda"
+  },
+  {
+    "path": "src/tokenscope/__init__.py",
+    "sha256": "7217492f11e627ca3196449ca17fc479cbdfacd9dec88a9738c4569f0ba58ba9"
+  },
+  {
+    "path": "src/tokenscope/api/__init__.py",
+    "sha256": "5651e7ed3ee68f011ad21de42d6ea947a3cae53444388727c5ea67e169db43f2"
+  },
+  {
+    "path": "src/tokenscope/api/app.py",
+    "sha256": "523b9f15911b27949f511b8c76922f155c68aca19cd872931fd7cccf11c0e84f"
+  },
+  {
+    "path": "src/tokenscope/cli.py",
+    "sha256": "7da2f6329901f4e4ddc48d35ee8eb2ae6432783ef84c1c15a465a0dc1900aa8d"
+  },
+  {
+    "path": "src/tokenscope/domain.py",
+    "sha256": "e79ec184f04dedd1115bc99e20e6277b65ab01c831fa2f4fc399919bf9a7c80e"
+  },
+  {
+    "path": "src/tokenscope/encoding/__init__.py",
+    "sha256": "f361bd3914654e168a9546e4582086101eef54f971d9742cfbeed4d326426d1f"
+  },
+  {
+    "path": "src/tokenscope/encoding/assets.py",
+    "sha256": "324dfeb7ca6c5be02c076366cca9362ad6f93d45ff3fdc6d592d819c4f960997"
+  },
+  {
+    "path": "src/tokenscope/encoding/batch.py",
+    "sha256": "900b3bf9adf1e770ea368f26fcf35c227d8ee2c54ce91d83d785b88141ccbda1"
+  },
+  {
+    "path": "src/tokenscope/encoding/models.py",
+    "sha256": "f7efb223eb8ccc4577f032065564a1f8f44fe44a93157a6be1062361c03481c1"
+  },
+  {
+    "path": "src/tokenscope/encoding/shards.py",
+    "sha256": "1ea6145650967adfc97f97c98de826674bffbfcff143e01c6a248e76071e76e4"
+  },
+  {
+    "path": "src/tokenscope/encoding/stage.py",
+    "sha256": "0a3d8fe0211a31c09a645a6dbd779b31b2d4d6ed202ec245e8591275bd4530d8"
+  },
+  {
+    "path": "src/tokenscope/errors.py",
+    "sha256": "22dd30ea198a255f4d932dca09349a5163ca0349c484595430ccb18abe40346e"
+  },
+  {
+    "path": "src/tokenscope/ingestion/__init__.py",
+    "sha256": "d9fa0249303c8fe712d3cf98a333cba39bd531f595b7bcb4ec3a1eb31105989c"
+  },
+  {
+    "path": "src/tokenscope/ingestion/csv_reader.py",
+    "sha256": "5f7ecf3872080bcdbb46d87e3286bcc0b589bf065788dffc6fe9ea2a94c52232"
+  },
+  {
+    "path": "src/tokenscope/monitoring/__init__.py",
+    "sha256": "7c6c2d8a0be268d1d70f4a14d766b40d602cc41f4a30f7228817b834025ee1c5"
+  },
+  {
+    "path": "src/tokenscope/monitoring/pipeline.py",
+    "sha256": "1384f016e18f1cfe8e44d1e7f76154e6fac8db4e7d03205475beb94edd90b4be"
+  },
+  {
+    "path": "src/tokenscope/monitoring/rules.py",
+    "sha256": "c780012e22966917d3cb02d8dbb8c74856dc5e426a5de35ad04bfa564287ba72"
+  },
+  {
+    "path": "src/tokenscope/monitoring/service.py",
+    "sha256": "0211e817d0beb5e3fccf566ab6d1888a57f7db28f84c434dab3b856283f7c99c"
+  },
+  {
+    "path": "src/tokenscope/monitoring/simulation.py",
+    "sha256": "10e6d20ee0b8e2886e57d241a80bae69a1f0aa607896f484827df47550a0be17"
+  },
+  {
+    "path": "src/tokenscope/monitoring/statistics.py",
+    "sha256": "f4a5e60b3650912f3b27c5c7ee2f82420231f509b40a253f7ccff5d97386feff"
+  },
+  {
+    "path": "src/tokenscope/monitoring/storage.py",
+    "sha256": "e6a758eae402d6019a4aede80a947f4f681b5de35e19168bf7d65e7457b64312"
+  },
+  {
+    "path": "src/tokenscope/paths.py",
+    "sha256": "cb3bcea8c428df3238dbe736a0ab5ec2bf5f15ed70cee9e802197cd6bc61d808"
+  },
+  {
+    "path": "src/tokenscope/resources.py",
+    "sha256": "6cdb2b725cb945da30b07387cf35aa2ec8cc89cf607f7e18c7227bc0ee6527ed"
+  },
+  {
+    "path": "tests/conftest.py",
+    "sha256": "c0cb2009013a37575337f500b8649d6e20dc3b6429e8d86f18c729a0c47e8dff"
+  },
+  {
+    "path": "tests/integration/encoding/test_models.py",
+    "sha256": "baeee4a7b4531b5e9cdc40688290613e34f440e748cbbd62ba188e7436f26db5"
+  },
+  {
+    "path": "tests/integration/encoding/test_stage.py",
+    "sha256": "81396e0f537bef60fbd5045fcdd6521466f27a97bfb0c853cf7c9650b57d77d2"
+  },
+  {
+    "path": "tests/integration/monitoring/test_interfaces.py",
+    "sha256": "caeb087f871cc8584ce0f1346143d1f38fc5dc0bbe6bf4cb4e1d11f38a080630"
+  },
+  {
+    "path": "tests/integration/monitoring/test_pipeline.py",
+    "sha256": "d0ac18d1a92ec7994e76f3612def672f79958919009f18a98784676f8f82c735"
+  },
+  {
+    "path": "tests/integration/monitoring/test_robustness.py",
+    "sha256": "75716ee73fc07c01427454798ef51b7768a18e09f3733ebcd75fe36ea3fe9a52"
+  },
+  {
+    "path": "tests/unit/encoding/test_assets.py",
+    "sha256": "808ea804d0ad8d6799ca289c45315c2ffdbb313be77d1ade4efa09d7d12455d4"
+  },
+  {
+    "path": "tests/unit/encoding/test_shards.py",
+    "sha256": "b12e574e8b3ecb588a266709664a6d5bb03d30af3aa09eda3f3ea654b4ea0d66"
+  },
+  {
+    "path": "tests/unit/ingestion/test_csv_reader.py",
+    "sha256": "75368346c371e9d4f34e2bc50f6490c6709994107a5879d8c097aaa535820dd6"
+  },
+  {
+    "path": "tests/unit/monitoring/test_simulation.py",
+    "sha256": "6f950dc63b533441b2e90f49e13f488cf6b541d02fea18d10666613748482070"
+  },
+  {
+    "path": "tests/unit/monitoring/test_statistics_rules.py",
+    "sha256": "3c5b1ee8a40ff8023f6867924aa302b5be0e72ed3aed3c1c9aee2c12b3bdc8a2"
+  },
+  {
+    "path": "tests/unit/monitoring/test_storage.py",
+    "sha256": "dd0a2c2050583498b1ecc68cd38a56245e0d8088a4a7406b5ce18f5f7442b0b8"
+  },
+  {
+    "path": "tests/unit/test_paths.py",
+    "sha256": "7daa2f1c65d2237b01709744cf09e011b21fd4b58376cfd438fc75f2c162ca2a"
+  },
+  {
+    "path": "tests/unit/test_release_gate.py",
+    "sha256": "67010caac8e456baf0c92b1ad6c5b59a806a1a04ab9aee08e57d208394be985e"
+  },
+  {
+    "path": "tests/unit/test_resources.py",
+    "sha256": "29e31c6b4ff21650a7cde05b0b44faa498f7d4d85b579966b63304600f80a461"
+  },
+  {
+    "path": "uv.lock",
+    "sha256": "9eb0d5ba8b8abaaa316003279a7c0c63af7e6d2f2d91a8426c293a2ab1daaf06"
+  }
+]

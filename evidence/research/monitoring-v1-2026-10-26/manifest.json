@@ -1,0 +1,11 @@
+{
+  "memscope_reference": {
+    "source_path": "/home/zhangxiyue/MemScope/docs/adr/0001-python-toolchain-and-layout.md",
+    "sha256": "1aef80eb07a023bd567572819df262d47dcf7bee8d4a06827216332c47e3f757",
+    "bytes": 1643,
+    "scope": "read-only environment reference; no MemScope workflow rules adopted"
+  },
+  "recipe_main_commit": "935817c66f5d6e64838f419692545f06787e485f",
+  "v100_source": "user declaration 2026-10-26",
+  "cpu_driver_cuda": "not located in searched MemScope environment documentation"
+}

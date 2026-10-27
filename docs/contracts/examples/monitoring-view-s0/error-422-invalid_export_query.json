@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "INVALID_EXPORT_QUERY",
+    "message": "Synthetic protocol example; reload or correct input as documented."
+  }
+}

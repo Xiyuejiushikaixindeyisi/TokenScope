@@ -1,0 +1,15 @@
+{
+  "synthetic": true,
+  "status": "proposal",
+  "sse": {
+    "id": "42",
+    "event": "result_published",
+    "data": {
+      "view_schema_version": "1",
+      "publish_seq": 42,
+      "run_id": "demo-run-42",
+      "model_id": "glm-5.2",
+      "published_at": "2026-10-27T04:05:00Z"
+    }
+  }
+}

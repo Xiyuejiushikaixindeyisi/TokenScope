@@ -1,0 +1,24 @@
+{
+  "service_instance_id": "11111111-1111-4111-8111-111111111111",
+  "view_schema_version": "1",
+  "offset": "0",
+  "limit": 50,
+  "total": "0",
+  "next_offset": null,
+  "run_id": "22222222-2222-4222-8222-222222222222",
+  "appid": "synthetic-app-1",
+  "model_id": "GLM-5.2",
+  "filter": {
+    "metric": "prompt_tokens",
+    "lower": "0",
+    "upper": null,
+    "hash_id": null,
+    "hash_match": "exact"
+  },
+  "sort": {
+    "by": "prompt_tokens",
+    "order": "desc",
+    "tie_breaker": "source_record_index_asc"
+  },
+  "items": []
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "settings": {
+      "model_id": "GLM-5.2",
+      "revision": 1,
+      "block_size": 128,
+      "block_size_unit": "simulation_input_tokens",
+      "cp_world_size": 1,
+      "mtp": true,
+      "prefix_cache_enabled": true,
+      "hybrid_enabled": false,
+      "cache_mode": "full_block",
+      "model_aliases": [],
+      "encoding_profile": "default"
+    },
+    "capability": {
+      "executable": true,
+      "status": "available",
+      "strategy": "full-block-mtp-v1",
+      "simulation_semantics": "full_block_rule"
+    }
+  }
+]

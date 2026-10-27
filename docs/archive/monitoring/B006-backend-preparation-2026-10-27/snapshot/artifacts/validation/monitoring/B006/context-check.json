@@ -1,0 +1,10 @@
+{
+  "documents": 47,
+  "links": 287,
+  "missing": [],
+  "approved_sources_sha256": {
+    "docs/tasks/monitoring/DESIGN.md": "994024d9758cfeb331879f9a3fa21e6a0e9396cbbf311dc2ca173d95b0d4124e",
+    "docs/contracts/MONITORING_V1.md": "2d0ef9125e5760b831a5400244b1aaa2525c8adebfb7097c893966cd51ee2a6d"
+  },
+  "packaging_executed": false
+}

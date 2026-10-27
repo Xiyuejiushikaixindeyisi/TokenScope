@@ -1,0 +1,24 @@
+{
+  "service_instance_id": "11111111-1111-4111-8111-111111111111",
+  "view_schema_version": "1",
+  "offset": "0",
+  "limit": 1,
+  "total": "2",
+  "next_offset": "1",
+  "cursor": "11111111-1111-4111-8111-111111111111:42",
+  "catalog_revision": "42",
+  "items": [
+    {
+      "appid": "synthetic-app-1",
+      "model_id": "GLM-5.2",
+      "active_run_id": "22222222-2222-4222-8222-222222222222",
+      "publish_seq": "42",
+      "published_at": "2026-10-27T00:00:00.123456789Z",
+      "data_range_utc": {
+        "start": "2026-10-27T00:00:00.123456789Z",
+        "end": "2026-10-27T00:00:00.123456789Z"
+      },
+      "snapshot_url": "/analysis-runs/22222222-2222-4222-8222-222222222222/view-snapshot?appid=synthetic-app-1"
+    }
+  ]
+}

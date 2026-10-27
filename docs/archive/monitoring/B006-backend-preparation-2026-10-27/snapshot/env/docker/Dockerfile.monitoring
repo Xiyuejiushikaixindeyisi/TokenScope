@@ -1,0 +1,19 @@
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+ARG RELEASE_ID
+ARG SOURCE_MANIFEST_SHA256
+ENV TOKENSCOPE_RELEASE_ID=${RELEASE_ID} \
+    TOKENSCOPE_SOURCE_MANIFEST_SHA256=${SOURCE_MANIFEST_SHA256}
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
+    HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
+    OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+    RAYON_NUM_THREADS=8 PYTHONPATH=/app/src
+WORKDIR /app
+COPY env/requirements.runtime.txt /app/env/requirements.runtime.txt
+RUN python -m pip install --no-cache-dir --require-hashes -r /app/env/requirements.runtime.txt
+COPY src /app/src
+COPY models /app/models
+COPY env/encoding-assets.lock.json /app/env/encoding-assets.lock.json
+COPY uv.lock pyproject.toml /app/
+COPY scripts/validation /app/scripts/validation
+ENTRYPOINT ["python", "-m", "tokenscope.cli"]

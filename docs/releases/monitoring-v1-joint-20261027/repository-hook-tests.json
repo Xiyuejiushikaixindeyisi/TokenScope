@@ -1,0 +1,6 @@
+{
+  "normal_allowed": true,
+  "backup_blocked": true,
+  "artifact_blocked": true,
+  "deleted_artifact_history_blocked": true
+}

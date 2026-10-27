@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "SERVICE_INSTANCE_CHANGED",
+    "message": "Synthetic protocol example; reload or correct input as documented."
+  }
+}

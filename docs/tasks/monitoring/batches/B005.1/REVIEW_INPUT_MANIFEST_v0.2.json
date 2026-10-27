@@ -1,0 +1,75 @@
+{
+  "version": "0.2",
+  "observed_at_utc": "2026-10-27T07:25:13.031771+00:00",
+  "session_id": "01a1682f-956d-7630-afe7-e123ba38dfc0",
+  "files": [
+    {
+      "path": "prompts/sessions/MONITORING_BACKEND_FRONTEND_V1_HANDOFF.md",
+      "sha256": "8380526e67ec5a95ae831eca84195dcba95044fe543e10c593b1deec33dc2112"
+    },
+    {
+      "path": "docs/tasks/viewer/MONITORING_INTERACTION_V1.md",
+      "sha256": "f342b1382b921115e684e6438ebeff878834e32d38486fe683dee1dc32b431a0"
+    },
+    {
+      "path": "docs/tasks/viewer/batches/README.md",
+      "sha256": "4179ede8ad9bc37912c3034f1f08adadae8682d53034197945666c660c97c70e"
+    },
+    {
+      "path": "docs/tasks/viewer/ACCEPTANCE_V1.md",
+      "sha256": "9ff933d21863af234dda2866394a9cf758ec6584dd71d22cd1dcfe8df212b01d"
+    },
+    {
+      "path": "docs/tasks/viewer/reviews/B005_1_REVIEW_2026-10-27.md",
+      "sha256": "178eaf185526f2d994b2bd858571703e34d1c881209e30f5bad478fe3af765bc"
+    },
+    {
+      "path": "src/tokenscope/ingestion/csv_reader.py",
+      "sha256": "5f7ecf3872080bcdbb46d87e3286bcc0b589bf065788dffc6fe9ea2a94c52232"
+    },
+    {
+      "path": "artifacts/validation/monitoring/B005/source-manifest.json",
+      "sha256": "674a8fbfe86130b734a45659880e457d529e9396ab646030215dada6fb1531ca"
+    },
+    {
+      "path": "docs/tasks/monitoring/DESIGN.md",
+      "sha256": "994024d9758cfeb331879f9a3fa21e6a0e9396cbbf311dc2ca173d95b0d4124e"
+    },
+    {
+      "path": "docs/contracts/MONITORING_V1.md",
+      "sha256": "2d0ef9125e5760b831a5400244b1aaa2525c8adebfb7097c893966cd51ee2a6d"
+    }
+  ],
+  "subsequent_observations": [
+    {
+      "observed_at_utc": "2026-10-27T07:41:27.972413+00:00",
+      "reason": "Frontend approval and F001 pause observed during review; original input hashes retained",
+      "files": [
+        {
+          "path": "docs/tasks/viewer/APPROVAL.md",
+          "sha256": "9d41d679e9888b29a452c46ec1d150ba1c1c29ce01eb49ff08fad10535c24228"
+        },
+        {
+          "path": "docs/tasks/viewer/ENTRY.md",
+          "sha256": "556c18d4915c7524cc99facdbad588f9a69d64fa1151656dd7ddfddb1491499f"
+        },
+        {
+          "path": "docs/tasks/viewer/batches/README.md",
+          "sha256": "2041e26481331b47f2a443f681749c7621af72cd7b574c0b1648290adf5df410"
+        },
+        {
+          "path": "docs/tasks/viewer/batches/F001/CONTEXT.md",
+          "sha256": "89acf50ec2c809e8886437c88c8545f84c15ba6bc613a900888d75212d675ea1"
+        },
+        {
+          "path": "docs/tasks/viewer/batches/F001/ISSUES.md",
+          "sha256": "782a424baa64a760bff52947398dea7139616ee6924ba521ace2b321d48b6700"
+        },
+        {
+          "path": "docs/tasks/viewer/MONITORING_INTERACTION_V1.md",
+          "sha256": "f342b1382b921115e684e6438ebeff878834e32d38486fe683dee1dc32b431a0"
+        }
+      ]
+    }
+  ]
+}

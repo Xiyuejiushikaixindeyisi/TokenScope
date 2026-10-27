@@ -1,0 +1,111 @@
+### 1.1 vLLM里的3个角色
+
+- **API server** 负责 HTTP：把 prompt 切成 token，再把 token 还原成文字流式返回。它不持有任何显存。
+- **EngineCore** 在自己的进程里一直循环。每个 **step**，scheduler 决定哪些请求往前走，并保证每个请求拿到所需的KV cache block。它的 KV cache manager 记账：block id 池、free queue、每个请求的 block table。** **我们把这些叫做 **ledger（账本）**。账本里只有数字，没有一个字节的 key 或 value。
+- **worker** 每张 GPU 一个，负责跑模型，持有真正的字节。单卡时 worker 就在 EngineCore 进程里；多卡时每个worker 是独立进程。每个 worker 收到的是同一条消息，用同样的 block id 存放自己那一份 key 和 value。
+
+**1.块池(block pool)：**vllm初始化加载完权重后，会跑一次dummy run计算出**一个block pool**的大小，一次性申请，运行中不再有任何块的创建和删除操作，在显存上，由worker通过发送kernel的形式来增删改。
+**2.自由队列(free queue)：**调度器侧（具体是KVCacheManager）维护的一个双端队列，从队头出，对于无hash的block从队头入，带hash的从队尾入，表中元素是一个8个字段的元数据卡片，除0号块外其他块使用双向链表的形式串连。
+**3.块表(block table)：**记录每个请求用到的块号，在调度器侧，worker的侧，显存上都有维护。
+
+**调度器侧中的block元数据，没有组的概念，除了计算cache命中时，其他时候不感知混合层模型**
+
+
+### 1.2 一个 block，覆盖每一层
+
+**拿一个小模型来说：4 层，每层 8 个 head，key 和 value 各 128 个数，每个数 2 字节。**
+**每一层都会报告一个 ****spec**，记录它每个 token 存什么：head 数、每个 head 的数、每个数几字节，以及每个 block几个 token（16）。由 spec 算出：一个 token 在一层里占 8 × 512 = 4,096 字节；一层里 16 个 token 的 block 占65,536 字节，vLLM 把它叫做一个 **page**。当前vllm默认使用LBHNC布局[[RFC]**: Standardize KV-cache Layouts · Issue #42082 · vllm-project/vllm**]([https://github.com/vllm-project/vllm/issues/42082](https://github.com/vllm-project/vllm/issues/42082))
+
+> 
+> **LBHNC（[num_layers_slots, num_blocks, num_heads, num_states, <state_content>])**
+> 
+> 
+> - **num_states** — token positions per block (or 1 for recurrent state)
+> - **num_heads** — heads (or 1 for headless backends like MLA)
+> - **<state_content>** — backend-specific, always contiguous
+> **所以 block 7 不是一个 page，而是一列：每一行的第 7 个 page。一个 block id 指向每一层里的一个 page，这就是为什么一张 block table 能服务模型的所有层。**
+
+
+### 1.3 到底有多少个 block？
+
+**启动时、第一个请求来之前，EngineCore 和 worker 一起把 block 数定下来，在 **`EngineCore._initialize_kv_caches` 里：
+
+1. **收集 spec**：EngineCore 向 worker 要每一层的 spec（`get_kv_cache_spec`）。
+2. **测量**：每个 worker 加载权重，用假输入跑一次 forward，规模和最大的一步一样。它测出模型峰值需要多少，** **以及 CUDA graph 需要多少空间（`determine_available_memory`）。
+3. **减法**：预算是整张卡**总**显存的一个比例（`gpu_memory_utilization`），不是剩余显存的比例。12.5 GiB 的卡、0.8 的比例，就是 10 GiB。减去模型峰值 5 GiB，再减去 CUDA graph 0.5 GiB，剩下 4.5 GiB 给 KV cache。
+4. **除法**：一个 block 在每一行各占一个 page。32 层、每页 65,536 字节的模型，每个 block 就是** **32 × 65,536 = 2,097,152 字节。4.5 GiB 除以它，向下取整，得到 **2,304 个 block**：`num_blocks = available_memory // bytes_per_block`。
+
+### 2.1 hybrid 模型
+
+**层与层存的东西不一样的模型，就叫 ****hybrid 模型**。
+
+### 2.2 一个简单的 hybrid 模型：H
+
+**我们的模型 ****H** 有 12 层：每层 8 个 head，key 和 value 各 128 个数，每个数 2 字节,block size 16
+**10 层是只读最近 512 个 token 的 sliding window 层（window size 512），2 层（第 10、11 层）是读所有 token 的full attention 层。每个 page  65,536 字节。**
+**一个4096个token的请求进来时**
+**==一个block table只能遵守一种保留规则（retention rule）==**
+**解决办法：**意见不一的层用不同的 block table。共用一张 block table 的一组层叫一个 **KV cache group**，只有retention rule 相同的层才能在同一个 group。每个 group 在 KV cache manager 里有自己的 manager，按 spec 的种类挑选：** **full、window 或 Mamba manager。所有 group 仍然从**同一个池子**里拿 block。
+
+### 2.3 从模型配置到 group
+
+**group 是谁定的？和其它事一样，工作分在线的两边：**
+
+- **worker 上**，模型的每个 attention 或 Mamba 层根据模型配置生成自己的 spec：种类（full、sliding window、Mamba……）、** **head 数、head size、dtype、block size 和 window。只读别的层 key/value 的层不报告 spec。
+- **EngineCore 上**，一个分组函数（`get_kv_cache_groups`）在启动时、第一个请求之前读这些 spec。它几乎从不问这是哪个模型，只看各层自己报告了什么。  
+
+**分组函数是一架梯子，从上往下试，模型在第一个匹配的地方离开：**
+
+1. **所有 spec 都相同？** 一个 group 包含所有层。第一部分的 32 层模型就在这里离开。
+2. **所有层都是同一种**（比如都是 full attention，但 page 有两种大小）？还是一个 group：所有层存同样的 token，** **需要同一张 block table。每层占自己的一行，各行大小可以不同。
+3. **有好几种？** 先把所有 page 变成一样大，再**切分**成 group。
+**H 有两种层，所以走到最底。我们先讲切分，再回头讲“把 page 变成一样大”。**
+
+### 2.4 切分
+
+**分桶（bucket）。** spec 完全相同（种类、大小、window 都相同）的层放进同一个 bucket。H 有两个：10 个 window 层和 2 个full 层。
+**两个 group 本来就够了（至少不会出错），但看看网格：如果每层一行，full group 的 block 273 只填第 10、11 行，window group 的 block 65只填第 0 到 9 行，其余部分被占着却从不读。这个请求要 3,456 个 page，比一张 block table 的 3,072 还多。**
+**解决方案，放弃block pool中行对应模型层的语义，按照最小的桶的层数作为一个组的层数**
+**1.5 倍检验。** 如果最大的 bucket 层数不到最小 bucket 的 1.5 倍，就改由最大的 bucket 决定 group size。12 个 window 层** **加 13 个 full 层时，group size 取 13，每个 window block 闲置一页；若取 12，full 层要用两个 block 装 13 页。
+
+### 2.5 另一个分支：page 大小不同时
+
+**回到刚才跳过的一级：“把 page 变成一样大”。共用一行的 page 为什么必须一样大？**
+**问题：如果 H 的 window 层 head 小一半呢？** 叫它 H/32：key 和 value 各 64 个数，window page 是 32,768 字节，full page** **是 65,536。放进同一行，full group 的 block 3 占字节 196,608 到 262,143，而某个 window group 的 block 7 从字节 229,376开始，正好在它里面。两个 block id 指向同一段字节，两个 group 会互相覆盖。
+**所以在切分之前，vLLM 先把所有 page 变成一样大（page unification），有两种办法：**
+**更大的 block size。** 65,536 正好是 32,768 的两倍，于是 vLLM 把 window 层的 block size 翻倍成 32 个 token。page 随** **token 数变大，一点不浪费。从此 block size 属于每个 group：H/32 的 window group 按 32 个 token 一块计，full group** **仍按 16。
+**问题：如果 window 层是 6 个 head 而不是 8 个？** 叫它 H/6：page 是 49,152 字节，除不尽 65,536。vLLM 就把 page** ****padding** 到 65,536 字节，最后四分之一空着。
+******问题：那 Mamba 层呢？****** 把 H 的 window 层换成 Mamba 层，叫它 Hm。一个 Mamba block 为每层存一个完整的 state，
+**也就是某个位置的快照，和 block size 无关。block size 变大并不会让 state 变大，所以 Mamba page 从不放大，只做 padding，**
+**而且是在启动时、page unification 之前就做。**
+**真实的 Mamba state 有好几 MB（例子里每层 4,295,680 字节）。把 full 层 16 个 token 的 page padding 到这么大，几乎全是空的。**
+**所以 vLLM 每次加 16 个 token 地把 attention 的 block size 往上调，直到一个 page 能装下 state：****1,056 个 token**。
+**这时 Mamba page 只需 padding 0.69%。这就是 Mamba hybrid 模型的 block 大约一千个 token 的原因。**
+
+
+### 3.1 DeepSeek V4 的一层存什么
+
+### 3.2 五份 cache、两条规则、多种 block size
+
+**两个 step 之间，ratio 4 的层要保留五样东西：compressed entry、recent tokens、****waiting tokens**（所在的段还没凑齐、** **compressor 还要用的 token），以及 selector key 和 selector 自己的 waiting tokens。在 vLLM 里每一样都是一份有自己 spec** **的 cache：ratio 4 的层 5 份，ratio 128 的层 3 份，整个模型 **243 份 cache**。
+**它们只遵循两条 retention rule：compressed entry 和 selector key 保留到请求结束（full manager）；recent tokens 和** **waiting tokens 是 sliding window（window manager）。**
+**block size 由模型的 attention kernel 决定：compressed entry 和 selector key 是 256 个 token，recent tokens 是 64，** **waiting tokens 是 8 或 4。又因为一条 compressed entry 代表 4 个 token，一个 256 token 的 block 只装 64 条** **（ratio 128 时装 2 条）。**
+
+
+### 3.3 网格为什么要转过来
+
+**按字节算，page 有四种大小：37,440、32,832、8,640、1,728，谁也不是谁的整数倍，所以加大 block size 没用。padding 也** **不行：MLA kernel 按 576 字节的整块寻址，vLLM 从不拉伸 MLA 的 page。****page unification 失败**，而且那条退路也被跳过。** **如果共用行，一个 group 的 block 7 会压在另一个 group 的 block 6 和 7 上。
+**出路是另一种字节顺序：****block 在最外层**。每个 block 是一段连续字节，对所有 group 一样长；谁持有它，就把自己的各个** **page 并排放在里面，不管大小。于是 block 7 对每个 group 又从同一个字节开始，“同一时间只属于一个 group”又能保护数据了。
+**代价是：每个 block 必须放得下最大的 group，较小的 group 就会在 block 末尾留下一段 ****idle tail**。没有 page 被拉伸，** **只是 block 里有空余。
+
+
+### 3.4 把 243 份 cache 打包成五个 group
+
+**存同样的 token、block size 相同的 cache 就能共用一张 block table，即使 page 大小不同。这样分出四个 ****bucket**：保留到** **请求结束的（91 份，block 256）、recent tokens（61 份，block 64）、ratio 128 的 waiting tokens（31 份，block 8）、** **ratio 4 的 waiting tokens（60 份，block 4）。
+**保留型的 bucket 整体不切。其余的按层数切成一样大的 group：vLLM 试遍 30 到 61 的每个大小，选空位最少的那个，结果是** **31**（一个叫 `approximate gcd` 的小函数）。于是 61 个 recent tokens 层分成两个 group，整个模型共 **五个 group**。** **为 block 在最外层的布局，把 page 大小不同的 cache 分进 group，vLLM 把这叫做 **packing**。
+
+
+### 4.1 vllm-ascend中的实现
+
+对于--block size在vllm中配置的是调度器侧的block中token数，在vllm ascend中配置的是bock中存储的压缩条目数
+只有两种类型的页大小，可以保留页布局LBNHC

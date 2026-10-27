@@ -1,0 +1,23 @@
+import { readFileSync } from 'node:fs';
+import { test, expect } from '@playwright/test';
+test('built shell uses local assets, hash routes and a 390px viewport', async ({ page, browser }, testInfo) => {
+  await testInfo.attach('browser-identity', { body: JSON.stringify({ version: browser.version(), platform: process.platform, node: process.version }), contentType: 'application/json' });
+  const origin = new URL(testInfo.project.use.baseURL!).origin;
+  const catalog = readFileSync(new URL('../../../../docs/contracts/examples/monitoring-view-s0/catalog-empty.json', import.meta.url), 'utf8');
+  await page.route('**/monitoring/catalog**', route => route.fulfill({ contentType: 'application/json', body: catalog }));
+  await page.route('**/monitoring/events**', route => route.fulfill({ contentType: 'text/event-stream', body: ': synthetic heartbeat\n\n' }));
+  const external: string[] = [], errors: string[] = [];
+  page.on('request', request => { if (!request.url().startsWith(origin + '/')) external.push(request.url()); });
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto('/#/overview');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('监控概览');
+  await page.getByRole('link', { name: '请求长度分布' }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('请求长度分布');
+  await page.reload();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('请求长度分布');
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  expect(external).toEqual([]); expect(errors).toEqual([]);
+  await testInfo.attach('network', { body: JSON.stringify({ external, errors }), contentType: 'application/json' });
+  await testInfo.attach('narrow-shell', { body: await page.screenshot(), contentType: 'image/png' });
+});

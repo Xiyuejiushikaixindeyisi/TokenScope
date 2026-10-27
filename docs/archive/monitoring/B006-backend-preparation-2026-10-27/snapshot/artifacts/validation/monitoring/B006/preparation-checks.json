@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "release-tests",
+      "command": [
+        "/home/zhangxiyue/TokenScope/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/unit/test_release_gate.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "release-lint",
+      "command": [
+        "/home/zhangxiyue/TokenScope/.venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "scripts/release",
+        "tests/unit/test_release_gate.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "release-format",
+      "command": [
+        "/home/zhangxiyue/TokenScope/.venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "scripts/release",
+        "tests/unit/test_release_gate.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "compose-static-parse",
+      "exit_code": 0,
+      "limitation": "Docker Compose executable unavailable; not runtime validation"
+    }
+  ],
+  "docker_executed": false,
+  "image_built": false,
+  "delivery_packaged": false
+}

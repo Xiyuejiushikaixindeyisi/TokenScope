@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "SUBMISSION_NOT_FOUND",
+    "message": "Submission not confirmed"
+  }
+}

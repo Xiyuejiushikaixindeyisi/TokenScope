@@ -1,0 +1,91 @@
+{
+  "status": "superseded_document_revision",
+  "version": "B005.1-v0.1",
+  "archived_at_utc": "2026-10-27T07:25:13.031517+00:00",
+  "files": [
+    {
+      "original_path": "docs/tasks/monitoring/batches/B005.1/CONTEXT.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B005.1/CONTEXT.md",
+      "sha256": "4e04bf77abacf3737fb211a292ae2009bf387c03a8d13ff9c5477efa1c0bd49f",
+      "bytes": 3107
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B005.1/DESIGN.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B005.1/DESIGN.md",
+      "sha256": "45e53d477239e557a8ea9c3085f1886e4c729e40d0f0627134924be56569af06",
+      "bytes": 14589
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B005.1/INPUT_MANIFEST.json",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B005.1/INPUT_MANIFEST.json",
+      "sha256": "34f0cff80b4ef43af093b2e0efa141e0057315525d119bb89374207ed202f802",
+      "bytes": 2309
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B005.1/ISSUES.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B005.1/ISSUES.md",
+      "sha256": "6798c730b1d999abb50e0b7890a7efc69c85603b6784e23391cfea173b85f053",
+      "bytes": 2451
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B005.1/PLAN.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B005.1/PLAN.md",
+      "sha256": "1b16e8499a82c3b1af269895609b590cd389a6a72cb68f6e8add0b03b615fa72",
+      "bytes": 4833
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B005.1/RESULT.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B005.1/RESULT.md",
+      "sha256": "54cdaae6c50d5ac5b1f532c9577a7cd66fc395aeabb5b4f6b662615a3ba9033c",
+      "bytes": 1198
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B005.1/TESTS.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B005.1/TESTS.md",
+      "sha256": "da0385525670752020dcba2a01104d60476bbaec4a932b38fd2684f1dd21f5b4",
+      "bytes": 7643
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B006/CONTEXT.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B006/CONTEXT.md",
+      "sha256": "f1ad21002db2eac7465665e7626c5f43fc4fdb05718a85394ad3e0cae06c4a7e",
+      "bytes": 461
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B006/ISSUES.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B006/ISSUES.md",
+      "sha256": "33f63dad97f46f7151736e0eb283b780acce2e44916334bc75053399ed01ca77",
+      "bytes": 583
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B006/PLAN.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B006/PLAN.md",
+      "sha256": "aa3becd33e61c18bb39312ecdc0c1a2522348a73d4af80378ed24fd304918473",
+      "bytes": 1022
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B006/RESULT.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B006/RESULT.md",
+      "sha256": "912ccb5eacee75a2cb85f5cf90929b4ad416330fe98607cc1fc3db503a435db5",
+      "bytes": 664
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B006/TESTS.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B006/TESTS.md",
+      "sha256": "be2ddf387c22bbf6390b3c2b43a190f875f7869361c3da651c51affbaf81d29d",
+      "bytes": 567
+    },
+    {
+      "original_path": "docs/contracts/MONITORING_VIEW_V1_DRAFT.md",
+      "archive_path": "snapshot/docs/contracts/MONITORING_VIEW_V1_DRAFT.md",
+      "sha256": "f1e011f95d0be84ba382b63e0e74d3a09bfe7ec6117ca1fd1caa056131a60e71",
+      "bytes": 14065
+    },
+    {
+      "original_path": "docs/contracts/examples/monitoring-view-v1-draft.json",
+      "archive_path": "snapshot/docs/contracts/examples/monitoring-view-v1-draft.json",
+      "sha256": "608e9bf71ded734cd5884b0654b725bc63afdc0c9c6528ac091ea8e3df938593",
+      "bytes": 198397
+    }
+  ]
+}

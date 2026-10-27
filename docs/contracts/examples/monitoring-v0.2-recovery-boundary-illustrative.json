@@ -1,0 +1,69 @@
+{
+  "schema_status": "v0.2.1-discussion-not-a-final-schema",
+  "is_example": true,
+  "evidence_type": "constructed-rule-arithmetic-not-runtime-output",
+  "scenarios": [
+    {
+      "id": "coarse_compressed_page",
+      "note": "Ascend-style C128 geometry only. No tokenizer, target model or engine executed; the C128 miss suffices, so no positive claims about SWA/state/MTP recovery are made.",
+      "assumptions": {
+        "initial_cache": "empty",
+        "capacity": "unlimited",
+        "cp_world_size": 1,
+        "partial_compressed_hits": false,
+        "c128_storage_entries_per_block": 128,
+        "c128_tokens_per_entry": 128,
+        "c128_logical_tokens_per_block": 16384,
+        "previous_request_cache_immediately_available": true
+      },
+      "requests": [
+        {
+          "hash_id": "ILLUSTRATIVE_A",
+          "prompt_tokens": 8192,
+          "identical_prompt_group": "SAME_PROMPT",
+          "ideal_cached_input_tokens": 0,
+          "ideal_compute_input_tokens": 8192
+        },
+        {
+          "hash_id": "ILLUSTRATIVE_B",
+          "prompt_tokens": 8192,
+          "identical_prompt_group": "SAME_PROMPT",
+          "ideal_cached_input_tokens": 0,
+          "ideal_compute_input_tokens": 8192
+        }
+      ],
+      "aggregate": {
+        "request_count": 2,
+        "prompt_tokens": 16384,
+        "ideal_cached_input_tokens": 0,
+        "ideal_compute_input_tokens": 16384,
+        "ideal_hit_rate": 0
+      }
+    },
+    {
+      "id": "intersection_not_minimum",
+      "note": "Artificial legal-boundary sets demonstrate the interface rule only; not a claimed trace for any target model. MTP omitted to isolate the set operation.",
+      "prompt_tokens": 24,
+      "candidate_cap_tokens": 23,
+      "legal_boundaries_by_group": {
+        "example_group_a": [
+          0,
+          8,
+          16
+        ],
+        "example_group_b": [
+          0,
+          8,
+          12
+        ]
+      },
+      "minimum_of_group_maxima": 12,
+      "common_legal_boundaries": [
+        0,
+        8
+      ],
+      "ideal_cached_input_tokens": 8,
+      "ideal_compute_input_tokens": 16
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "contract_version": "v0.2.2-discussion",
+  "example_kind": "illustrative_control_flow_not_model_output",
+  "source_evidence": "../../../artifacts/research/monitoring-2026-10-26-replay/source-rule-check.json",
+  "limitations": [
+    "Synthetic P=12 and B=4; not a supported target deployment or tokenizer measurement.",
+    "Aligned step endpoints are assumed to materialize complete states; no worker lifecycle was executed.",
+    "Same prefix identity is represented by integer keys; no production hashing was validated.",
+    "Each scenario starts empty; the two requests within a scenario have identical input IDs.",
+    "Theory at all legal boundaries is a separate proposed scenario and is not computed here."
+  ],
+  "shared_rules": {
+    "appid": "synthetic-tenant",
+    "model": "synthetic-hybrid",
+    "capacity": "unlimited",
+    "previous_request_input_immediately_available": true,
+    "mtp": true,
+    "input_only": true,
+    "block_size_tokens": 4,
+    "prompt_tokens": 12,
+    "prefill_policy": "fixed_budget_then_v023_mamba_aligned_split",
+    "checkpoint_policy": "assumed_aligned_step_end_materialization"
+  },
+  "scenarios": [
+    {
+      "cache_profile_id": "illustrative-fixed-budget-12",
+      "per_step_prefill_token_budget": 12,
+      "requests": [
+        {
+          "request_ref": "r1",
+          "prior_checkpoints": [],
+          "ideal_cached_input_tokens": 0,
+          "ideal_compute_input_tokens": 12,
+          "prefill_step_end_positions": [8, 12],
+          "checkpoints_after_request": [8, 12]
+        },
+        {
+          "request_ref": "r2",
+          "prior_checkpoints": [8, 12],
+          "attention_candidate_after_tail_and_mtp": 4,
+          "checkpoint_at_attention_candidate_available": false,
+          "ideal_cached_input_tokens": 0,
+          "ideal_compute_input_tokens": 12
+        }
+      ],
+      "totals": {"request_count": 2, "prompt_tokens": 24, "ideal_cached_input_tokens": 0, "ideal_compute_input_tokens": 24}
+    },
+    {
+      "cache_profile_id": "illustrative-fixed-budget-4",
+      "per_step_prefill_token_budget": 4,
+      "requests": [
+        {
+          "request_ref": "r1",
+          "prior_checkpoints": [],
+          "ideal_cached_input_tokens": 0,
+          "ideal_compute_input_tokens": 12,
+          "prefill_step_end_positions": [4, 8, 12],
+          "checkpoints_after_request": [4, 8, 12]
+        },
+        {
+          "request_ref": "r2",
+          "prior_checkpoints": [4, 8, 12],
+          "attention_candidate_after_tail_and_mtp": 4,
+          "checkpoint_at_attention_candidate_available": true,
+          "ideal_cached_input_tokens": 4,
+          "ideal_compute_input_tokens": 8
+        }
+      ],
+      "totals": {"request_count": 2, "prompt_tokens": 24, "ideal_cached_input_tokens": 4, "ideal_compute_input_tokens": 20}
+    }
+  ],
+  "interpretation": "Different fixed prefill budgets can produce different available checkpoints even with the same page size and identical requests. Results belong to separate cache profiles."
+}

@@ -1,0 +1,123 @@
+{
+  "archived_at_utc": "2026-10-27T04:15:05.859878+00:00",
+  "status": "archived_not_for_release",
+  "reason": "V1 requires frontend and backend; B005.1 and integrated acceptance precede B006",
+  "code_version": "0.1.0.dev5",
+  "source_unchanged": true,
+  "files": [
+    {
+      "original_path": "docs/tasks/monitoring/batches/B006/CONTEXT.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B006/CONTEXT.md",
+      "bytes": 306,
+      "sha256": "ae2ac563bb2c1b6d9cc96c249ae76aabf2e6d33c3db18f1914b57320b3182919"
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B006/ISSUES.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B006/ISSUES.md",
+      "bytes": 725,
+      "sha256": "019eeb27d26663dca90b856c9e98e31f7abdbf8d804d6a57ad620545695ab02e"
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B006/PLAN.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B006/PLAN.md",
+      "bytes": 1398,
+      "sha256": "ed01fb0f004a24baf6580df5468dbd8791061408ebdfe1c367840721cbf2fa02"
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B006/RESULT.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B006/RESULT.md",
+      "bytes": 1218,
+      "sha256": "621765fc4b34261e14617ab27648f8ab38e1759bcffea5be03ff73c371f34d0e"
+    },
+    {
+      "original_path": "docs/tasks/monitoring/batches/B006/TESTS.md",
+      "archive_path": "snapshot/docs/tasks/monitoring/batches/B006/TESTS.md",
+      "bytes": 772,
+      "sha256": "43f62ef0b0beb99a896295c716f6385265a10e9a8759320b1f2b2aa316924515"
+    },
+    {
+      "original_path": "env/docker/Dockerfile.monitoring",
+      "archive_path": "snapshot/env/docker/Dockerfile.monitoring",
+      "bytes": 804,
+      "sha256": "42a52312b3c88ae7741584ea09a2ae71680307f42b66c7961a7b5c8bdb9e48f5"
+    },
+    {
+      "original_path": "env/docker/compose.monitoring.yaml",
+      "archive_path": "snapshot/env/docker/compose.monitoring.yaml",
+      "bytes": 1287,
+      "sha256": "fca26ae7ec5b5c505ebcbfcea56a2ebde28b524465d17789b0b57b49316c644e"
+    },
+    {
+      "original_path": "env/requirements.runtime.txt",
+      "archive_path": "snapshot/env/requirements.runtime.txt",
+      "bytes": 19286,
+      "sha256": "0e8e0ae142ffe996b2bf230ea15ac7cd5fdb952cd2413e719a338c9d68e6c7a8"
+    },
+    {
+      "original_path": "scripts/release/build_monitoring.py",
+      "archive_path": "snapshot/scripts/release/build_monitoring.py",
+      "bytes": 10467,
+      "sha256": "5312c9917285c6976b0823a8633cc497763c8a60766d0b3372223ecf665585a9"
+    },
+    {
+      "original_path": "tests/unit/test_release_gate.py",
+      "archive_path": "snapshot/tests/unit/test_release_gate.py",
+      "bytes": 2401,
+      "sha256": "67010caac8e456baf0c92b1ad6c5b59a806a1a04ab9aee08e57d208394be985e"
+    },
+    {
+      "original_path": "prompts/delivery/HUAWEI_MONITORING_V1.md",
+      "archive_path": "snapshot/prompts/delivery/HUAWEI_MONITORING_V1.md",
+      "bytes": 6810,
+      "sha256": "675e84c77046d9f2e06622dbaa4b56f5742135063e12b7242d18a0845174ee14"
+    },
+    {
+      "original_path": "artifacts/validation/monitoring/B006/context-check.json",
+      "archive_path": "snapshot/artifacts/validation/monitoring/B006/context-check.json",
+      "bytes": 335,
+      "sha256": "a904e5597bfa9ab21029a1ec99fa7795a263ff1d09f40c286bd6499e1ffc8060"
+    },
+    {
+      "original_path": "artifacts/validation/monitoring/B006/preparation-checks.json",
+      "archive_path": "snapshot/artifacts/validation/monitoring/B006/preparation-checks.json",
+      "bytes": 1065,
+      "sha256": "71c7e6183c969037b06782401a4cfc705d7ac154d37ce136d7f434463925d469"
+    },
+    {
+      "original_path": "artifacts/validation/monitoring/B006/preparation-source-manifest.json",
+      "archive_path": "snapshot/artifacts/validation/monitoring/B006/preparation-source-manifest.json",
+      "bytes": 9043,
+      "sha256": "3b1bc1e7b8269e7f9a62e92cbd96cdef47a7dab1b469da2bbb42547186f28bd6"
+    },
+    {
+      "original_path": "artifacts/validation/monitoring/B006/release-format.log",
+      "archive_path": "snapshot/artifacts/validation/monitoring/B006/release-format.log",
+      "bytes": 26,
+      "sha256": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938"
+    },
+    {
+      "original_path": "artifacts/validation/monitoring/B006/release-lint.log",
+      "archive_path": "snapshot/artifacts/validation/monitoring/B006/release-lint.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "original_path": "artifacts/validation/monitoring/B006/release-preflight.json",
+      "archive_path": "snapshot/artifacts/validation/monitoring/B006/release-preflight.json",
+      "bytes": 10022,
+      "sha256": "d587e09e58d5c0b0133632f79b7228202ff63565ebe7c3750b7e639e5282c151"
+    },
+    {
+      "original_path": "artifacts/validation/monitoring/B006/release-tests.log",
+      "archive_path": "snapshot/artifacts/validation/monitoring/B006/release-tests.log",
+      "bytes": 98,
+      "sha256": "e0a6ea218ea5d725ce7272da8d68d45a029e489423e03af6960c7bff0f7fe414"
+    },
+    {
+      "original_path": "artifacts/validation/monitoring/B006/unapproved-build-denied.log",
+      "archive_path": "snapshot/artifacts/validation/monitoring/B006/unapproved-build-denied.log",
+      "bytes": 68,
+      "sha256": "9e52847d719d5a7413fde15aad4decbd064b5c17d8684c1074968a80d4f47b81"
+    }
+  ]
+}

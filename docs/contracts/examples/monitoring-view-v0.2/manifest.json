@@ -1,0 +1,97 @@
+{
+  "status": "synthetic_protocol_fixtures_not_service_evidence",
+  "contract_revision": "0.2",
+  "export_schema_version": "1",
+  "source_identity_note": "input_sha256 is the synthetic facts JSON digest, not an ingested CSV; settings_sha256 is an illustrative identity",
+  "source_sha256": "919f603f85c5af93ad52a58464f2450f721d96f1daac46283cb44000544c701f",
+  "fixtures": [
+    {
+      "name": "normal",
+      "synthetic": true,
+      "rows": 4,
+      "ndjson": {
+        "path": "normal.ndjson",
+        "bytes": 2139,
+        "file_sha256": "71be24154799808678c7d7f8247191d15d74cc78c7525b8a44c23d1fa421d12a",
+        "request_lines_sha256": "e836c082faadda85bbe9c6bba3895956a8c6cbaffb3ccc4f254046c72d6fad26",
+        "headers": {
+          "Cache-Control": "no-store",
+          "X-Export-Schema-Version": "1",
+          "X-Export-Row-Count": "4",
+          "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111",
+          "X-Export-Run-Id": "22222222-2222-4222-8222-222222222222",
+          "Content-Type": "application/x-ndjson; charset=utf-8",
+          "Content-Disposition": "attachment; filename=\"22222222-2222-4222-8222-222222222222.ndjson\""
+        }
+      },
+      "csv": {
+        "path": "normal.csv",
+        "bytes": 1190,
+        "file_sha256": "16b34e19226ef298be4571f4d475a28bd8036a4a8cf00630af4356fc0f8435ac",
+        "parsed_data_records": 4,
+        "physical_lf_count": 7,
+        "headers": {
+          "Cache-Control": "no-store",
+          "X-Export-Schema-Version": "1",
+          "X-Export-Row-Count": "4",
+          "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111",
+          "X-Export-Run-Id": "22222222-2222-4222-8222-222222222222",
+          "Content-Type": "text/csv; charset=utf-8",
+          "Content-Disposition": "attachment; filename=\"22222222-2222-4222-8222-222222222222.csv\"",
+          "X-CSV-Text-Escaping": "apostrophe"
+        }
+      }
+    },
+    {
+      "name": "empty",
+      "synthetic": true,
+      "rows": 0,
+      "ndjson": {
+        "path": "empty.ndjson",
+        "bytes": 861,
+        "file_sha256": "dd455c05739800eeb84b34a1d495f9bc688e5f4495bfdae5ae52816988731b54",
+        "request_lines_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "headers": {
+          "Cache-Control": "no-store",
+          "X-Export-Schema-Version": "1",
+          "X-Export-Row-Count": "0",
+          "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111",
+          "X-Export-Run-Id": "22222222-2222-4222-8222-222222222222",
+          "Content-Type": "application/x-ndjson; charset=utf-8",
+          "Content-Disposition": "attachment; filename=\"22222222-2222-4222-8222-222222222222.ndjson\""
+        }
+      },
+      "csv": {
+        "path": "empty.csv",
+        "bytes": 213,
+        "file_sha256": "0cc1afc5e8dbb7c8aeef626718cfc53519539011977325b9f9f6a1fe07a29e74",
+        "parsed_data_records": 0,
+        "physical_lf_count": 1,
+        "headers": {
+          "Cache-Control": "no-store",
+          "X-Export-Schema-Version": "1",
+          "X-Export-Row-Count": "0",
+          "X-TokenScope-Instance-Id": "11111111-1111-4111-8111-111111111111",
+          "X-Export-Run-Id": "22222222-2222-4222-8222-222222222222",
+          "Content-Type": "text/csv; charset=utf-8",
+          "Content-Disposition": "attachment; filename=\"22222222-2222-4222-8222-222222222222.csv\"",
+          "X-CSV-Text-Escaping": "apostrophe"
+        }
+      }
+    }
+  ],
+  "unicode_split_offsets": [
+    763,
+    764
+  ],
+  "fault_recipes": [
+    "remove final summary line",
+    "replace summary request_lines_sha256 with 64 zeros",
+    "append a request line after summary",
+    "truncate final LF",
+    "change X-Export-Row-Count",
+    "truncate inside quoted CSV field",
+    "split UTF8 at listed offsets"
+  ],
+  "large_256_mib_test": "planned_not_generated_or_executed"
+}

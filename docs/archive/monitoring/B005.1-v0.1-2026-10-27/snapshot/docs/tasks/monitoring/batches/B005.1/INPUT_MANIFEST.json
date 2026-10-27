@@ -1,0 +1,63 @@
+{
+  "status": "design_input_not_test_result",
+  "session_id": "01a1682f-956d-7630-afe7-e123ba38dfc0",
+  "observed_at_utc": "2026-10-27T04:15:05.860576+00:00",
+  "files": [
+    {
+      "path": "docs/tasks/viewer/BACKEND_REQUIREMENTS_V1.md",
+      "sha256": "88ee4ea0d13e47e19252a31b8e32e69d0d93b2ecbfea523d070f6714c5e6ab65"
+    },
+    {
+      "path": "docs/tasks/viewer/MONITORING_INTERACTION_V1.md",
+      "sha256": "5468b1fdae7c9137df7de604737cf33c3e2eccbdfc4873f5d99ce38ad6b4cc6a"
+    },
+    {
+      "path": "docs/tasks/monitoring/DESIGN.md",
+      "sha256": "994024d9758cfeb331879f9a3fa21e6a0e9396cbbf311dc2ca173d95b0d4124e"
+    },
+    {
+      "path": "docs/contracts/MONITORING_V1.md",
+      "sha256": "2d0ef9125e5760b831a5400244b1aaa2525c8adebfb7097c893966cd51ee2a6d"
+    },
+    {
+      "path": "src/tokenscope/monitoring/storage.py",
+      "sha256": "e6a758eae402d6019a4aede80a947f4f681b5de35e19168bf7d65e7457b64312"
+    },
+    {
+      "path": "src/tokenscope/monitoring/pipeline.py",
+      "sha256": "1384f016e18f1cfe8e44d1e7f76154e6fac8db4e7d03205475beb94edd90b4be"
+    },
+    {
+      "path": "src/tokenscope/monitoring/service.py",
+      "sha256": "0211e817d0beb5e3fccf566ab6d1888a57f7db28f84c434dab3b856283f7c99c"
+    },
+    {
+      "path": "src/tokenscope/monitoring/statistics.py",
+      "sha256": "f4a5e60b3650912f3b27c5c7ee2f82420231f509b40a253f7ccff5d97386feff"
+    },
+    {
+      "path": "src/tokenscope/encoding/stage.py",
+      "sha256": "0a3d8fe0211a31c09a645a6dbd779b31b2d4d6ed202ec245e8591275bd4530d8"
+    },
+    {
+      "path": "src/tokenscope/api/app.py",
+      "sha256": "523b9f15911b27949f511b8c76922f155c68aca19cd872931fd7cccf11c0e84f"
+    },
+    {
+      "path": "src/tokenscope/domain.py",
+      "sha256": "e79ec184f04dedd1115bc99e20e6277b65ab01c831fa2f4fc399919bf9a7c80e"
+    },
+    {
+      "path": "scripts/validation/check_batch.py",
+      "sha256": "b2e1ae0d24afa242cb26ee1d29a29b056d701a3521cac996e371c94f8994c4ba"
+    },
+    {
+      "path": "artifacts/validation/monitoring/B005/source-manifest.json",
+      "sha256": "674a8fbfe86130b734a45659880e457d529e9396ab646030215dada6fb1531ca"
+    },
+    {
+      "path": "artifacts/validation/monitoring/B005/20261027T035327Z/report.json",
+      "sha256": "a3176e78a20c8b6386d7e898998e566f1afca5382f422ddedbe21cae1d5b7800"
+    }
+  ]
+}

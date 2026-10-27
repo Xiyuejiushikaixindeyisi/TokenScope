@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "kind": "user_supplied_launch_parameters",
+    "received_at": "2026-10-27",
+    "session_id": "01a1682f-956d-7630-afe7-e123ba38dfc0",
+    "verification": "declared_configuration_not_observed_effective_runtime",
+    "filter": "monitoring_relevant_allowlist; no credentials or init commands retained"
+  },
+  "defaults_apply_to_next_run": true,
+  "automatic_activation": false,
+  "profile_id": "glm52-gf-20261027",
+  "model_id": "GLM-5.2",
+  "model_aliases": [
+    "GLM-5.2"
+  ],
+  "deployment": {
+    "gf_pack": "vllm_ascend_0_23_0/0.0.1.20260905105259.200a2fe6",
+    "declared_engine_family": "vllm-ascend",
+    "declared_engine_version": "0.23.0",
+    "gf_sdk_version": "4.1.0.20260917164510",
+    "transformers_version": "5.5.4",
+    "model_weight_variant": "Eco-Tech_GLM-5.2-w4a8c8",
+    "max_model_len": 204800,
+    "parallel_policy": "p_tp:8;p_dp:2;d_tp:8;d_dp:2",
+    "python_executable": "/usr/local/python3.12.13/bin/python",
+    "venv_python_version": "3.11"
+  },
+  "encoding": {
+    "tokenizer_mode": null,
+    "reasoning_parser": "glm45",
+    "tool_call_parser": "glm47",
+    "enable_auto_tool_choice": true,
+    "thinking_default": "native_chat_template_default",
+    "thinking_default_status": "user_confirmed_2026-10-27",
+    "chat_template_kwargs": null,
+    "chat_template_kwargs_status": "not_supplied",
+    "tokenizer_revision": null,
+    "tokenizer_revision_status": "deployment_not_supplied"
+  },
+  "cache": {
+    "prefill": {
+      "prefix_caching": true,
+      "block_size": null,
+      "prefill_context_parallel_size": 1,
+      "decode_context_parallel_size": 8,
+      "cp_kv_cache_interleave_size": 128,
+      "max_num_seqs": 16,
+      "max_num_batched_tokens": 4096,
+      "async_scheduling": true,
+      "enable_dsa_cp": true,
+      "sfa_dcp_replicated_indexer": true
+    },
+    "decode": {
+      "prefix_caching": true,
+      "block_size": null,
+      "prefill_context_parallel_size": 1,
+      "decode_context_parallel_size": 8,
+      "cp_kv_cache_interleave_size": 128,
+      "max_num_seqs": 16,
+      "max_num_batched_tokens": 128,
+      "async_scheduling": true,
+      "enable_dsa_cp": false,
+      "sfa_dcp_replicated_indexer": true
+    },
+    "mtp": {
+      "enabled": true,
+      "method": "deepseek_mtp",
+      "prefill_num_speculative_tokens": 1,
+      "decode_num_speculative_tokens": 3,
+      "enforce_eager": true
+    },
+    "cp": {
+      "prefill_context_parallel_size": 1,
+      "decode_context_parallel_size": 8,
+      "cp_kv_cache_interleave_size": 128,
+      "status": "explicit_both_stages"
+    },
+    "gf_hash_block_size": 1024
+  },
+  "kv_transfer": {
+    "kv_connector": "MooncakeConnectorV1",
+    "mooncake_enabled": true
+  },
+  "simulation_mapping": {
+    "strategy": "full_block",
+    "block_size": 128,
+    "block_size_evidence": "prior_user_default; interleave_size_is_not_block_size",
+    "mtp": true,
+    "mtp_evidence": "explicit_speculative_config_both_stages",
+    "cp_world_size": null,
+    "cp_evidence": "pending_mapping_of_declared_pcp1_dcp8; do_not_confuse_TP8_with_CP",
+    "approved_default_cp_world_size": 1,
+    "candidate_effective_block_size_if_cp8": 1024,
+    "candidate_status": "arithmetic_only_not_runtime_verified",
+    "hybrid_enabled": false,
+    "prefix_cache_enabled": true,
+    "thinking_default": "native_chat_template_default"
+  },
+  "unresolved": [
+    "mapping of declared PCP1/DCP8 to approved scalar cp_world_size before profile activation",
+    "deployed tokenizer/template revision and file hashes",
+    "GF hash-block role; same 1024 does not by itself prove a mapping"
+  ]
+}

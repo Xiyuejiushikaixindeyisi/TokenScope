@@ -1,0 +1,62 @@
+{
+  "observed_date": "2026-10-26",
+  "source": "GitHub connector fetch_issue response",
+  "response": {
+    "issue": {
+      "url": "https://github.com/vllm-project/vllm/issues/42082",
+      "title": "[RFC]: Standardize KV-cache Layouts",
+      "issue_number": 42082,
+      "body": "# Motivation\n\nRight now attention backends can have semantically different and physically different KV-cache layouts. This leads to messy KV-connector code (i.e. lots of `is_mamba` and `is_mla` flags), and creates a tight coupling between KV-connector and the attention backends, e.g. https://github.com/vllm-project/vllm/blob/4140faa4a51d42cb9618949bee28fd47682f611c/vllm/v1/attention/backends/flash_attn.py#L152-L171\n\nThis also leads to other related bugs like: https://github.com/vllm-project/vllm/pull/41657#issuecomment-4400641394\n\nMore details in: https://docs.google.com/document/d/1-TnWZf8jI6nWgE-xaQkgsWy130CVUqqt1NYqY-mAOe4/edit?usp=sharing\n\n# Proposed Change\n\n## Standard Logical Shape\n\n```\n[num_layers_slots, num_blocks, num_heads, num_states, <state_content>]\n```\n\nWhere:\n\n- **num\\_states** — token positions per block (or 1 for recurrent state)  \n- **num\\_heads** — heads (or 1 for headless backends like MLA)  \n- **\\<state\\_content\\>** — backend-specific, always contiguous\n\nEvery backend maps to this shape:\n\n| Backend | num\\_states | num\\_heads | state\\_content |\n| :---- | :---- | :---- | :---- |\n| GQA | `block_size` | `num_kv_heads` | `[2, head_dim]` |\n| DeepSeek V4 (c4a, 1 layer type example) | `block_size/4` | 1 | `[latent_size]` |\n| MLA | `block_size` | 1 | `[latent_size]` |\n| Mamba2 Conv | 1 | 1 | `[conv_dim/tp, kernel-1]` |\n| Mamba2 SSM | 1 | `num_heads` | `[head_dim, state_size]` |\n\n---\n\n### Stride Order: Logical Shape vs Physical Layout\n\nThe **semantic shape** is always `[layer_slots, blocks, heads, states, <content>]`. The **physical layout** (memory order) is controlled by a `stride_order` permutation.\n\n**LBHNC** (**default**, hetero-TP-friendly):\n\n```\nLogical:   [L, B, H, N, C]\nPhysical:  [L, B, H, N, C]  (identity)\nstride_order = (0, 1, 2, 3, 4)\n```\n\nHead slices are contiguous in memory. Good for head-level TP transfers, hetero-TP disagg.\n\n**LBNHC** (hetero-block-size-friendly):\n\n```\nLogical:   [L, B, H, N, C]\nPhysical:  [L, B, N, H, C]\nstride_order = (0, 1, 3, 2, 4)\n```\n\nState slices are contiguous in memory. Good for block-level transfers, hetero-block-size disagg.\n\n**BLHNC** (larger P/D transfers when homo-TP/block-size):\n\n```\nLogical:   [L, B, H, N, C]\nPhysical:  [B, L, H, N, C]\nstride_order = (1, 0, 2, 3, 4)\n```\n\nAll layers' data for one block is contiguous. The connector can transfer an entire block across all layers in a single RDMA read.\n\n**BHLNC** (larger P/D transfers for hetero-TP):\n\n```\nLogical:   [L, B, H, N, C]\nPhysical:  [B, H, L, N, C]\nstride_order = (1, 2, 0, 3, 4)\n```\n\nFor a given block and head, all layers are contiguous. One contiguous region per (block, head) across all layers.\n\n> **Layout constraints for shared tensors:** When using HMA and groups share the same underlying `KVCacheTensor` (because they have the same `page_size_bytes`), the layers in that tensor may have different H, N, or C dimensions. In that case:\n>\n> 1. The per-layer-per-block content, [H, N, C], must be contiguous in physical memory (i.e. `assert layout[0, 0, ...].is_contiguous()  # [0, 0, H, N, C]`). This rules out `LBNHC` and `BHLNC`; only `LBHNC` and `BLHNC` satisfy this constraint.\n> 2. If the H, N, and C sizes match across all layers in the tensor, any layout (including `LBNHC` and `BHLNC`) is valid.\n>\n> For example, DeepSeek V4 has mixed compression ratios producing layers with different N and C sizes sharing a tensor — the default `LBHNC` layout handles this correctly.\n\n---\n\n### KVCacheSpec Properties\n\n```py\n@dataclass\nclass KVCacheSpec:\n    num_heads: int          # heads (1 if headless)\n    tokens_per_state: int   # -1 infinite, 1 standard, N compressed\n    state_content_size: int # bytes per state per head\n```\n\nNOTE: `sliding_window` and `attention_chunk_size` will still be needed in the spec but we plan to refactor those away in a subsequent attention backends refactor .\n\n`num_states` is derived from `block_size / tokens_per_state` at allocation time — it's not known when the spec is constructed.\n\n| Backend | num\\_heads | tokens/state | num\\_states (derived) |\n| :---- | :---- | :---- | :---- |\n| GQA | `num_kv_heads` | 1 | `block_size` |\n| DeepSeek V4 | `num_kv_heads` | 4 | `block_size/4` |\n| MLA | 1 | 1 | `block_size` |\n| Mamba2 Conv | 1 | \\-1 | 1 |\n| Mamba2 SSM | `num_heads` | \\-1 | 1 |\n\n---\n\n### Spec-Driven TP Slicing\n\nInstead of connector byte math, **specs provide their own slicing**:\n\n```py\nclass KVCacheSpec:\n    def slice_for_tp_transfer(self, my_tensor, my_tp, my_rank,\n                               other_spec, other_tp,\n                               other_rank) -> list[Tensor]:\n        \"\"\"Return slices of `my_tensor` that need to be transferred.\n        Takes both sides' TP configs since tp_size is a deployment\n        property, not part of the spec.\"\"\"\n        ...\n```\n\nEach spec subclass knows how to slice its own tensor. The signature takes the other spec so it can compute the correct overlap — GQA slices by heads, Mamba slices by x/B/C components, MLA may be a single unsliced latent.\n\n#### GQA Slicing\n\nHead slicing handling replication on either side (or both)\n\n```py\ndef slice_for_tp_transfer(self, src_tensor, src_tp, src_rank,\n                          dst_spec, dst_tp, dst_rank):\n\n    src_heads = src_tp*self.num_heads\n    dst_heads = dst_tp*dst_spec.num_heads\n\n    if dst_heads > src_heads:\n        dst_rank %= src_tp\n    elif src_rank >= dst_tp:\n        return []\n\n    head_range = lambda tp_rank, num_heads: (tp_rank * num_heads, (tp_rank + 1) * num_heads)\n\n    src_head_range = head_range(src_rank, self.num_heads)\n    dst_head_range = head_range(dst_rank, dst_spec.num_heads)\n\n    overlap = get_overlap(src_head_range, dst_head_range)\n    if overlap is None:\n        return []\n\n    # Convert global overlap to local tensor indices\n    local_slice = slice(overlap.start - src_head_range[0],\n                        overlap.stop - src_head_range[0])\n    return [src_tensor[:, :, local_slice]]\n\ndef get_overlap(range1, range2):\n    # Calculate the intersection boundaries\n    overlap_start = max(range1[0], range2[0])\n    overlap_end = min(range1[1], range2[1])\n    \n    # Check if the boundaries form a valid range\n    if overlap_start <= overlap_end:\n        return slice(overlap_start, overlap_end)\n    return None\n\n```\n\n#### Mamba Conv Slicing: 3 Slices for x/B/C\n\n```py\ndef slice_for_tp_transfer(self, my_tensor, my_tp, my_rank,\n                          other_spec, other_tp, other_rank):\n    # tensor: [layers, blocks, 1, 1, conv_dim/tp, kernel-1]\n    x_range = self._compute_x_range(my_tp, my_rank, other_tp, other_rank)\n    b_range = self._compute_b_range(my_tp, my_rank, other_tp, other_rank)\n    c_range = self._compute_c_range(my_tp, my_rank, other_tp, other_rank)\n    return [\n        my_tensor[:, :, 0, 0, x_range, :],  # x slice\n        my_tensor[:, :, 0, 0, b_range, :],  # B slice\n        my_tensor[:, :, 0, 0, c_range, :],  # C slice\n    ]\n```\n\nSame interface — spec knows its own structure.\n\n---\n\n## Connector Becomes Generic\n\nThe connector needs both source and destination specs — if they have different stride orders (e.g., prefill uses HND, decode uses NHD), the source and destination slices map to different physical memory regions. Both specs produce slices in the same semantic order, so they pair directly. No backend-specific code in the connector.\n\n```py\n# TP slicing (once at setup — determines which heads to transfer)\nsrc_slices = src_spec.slice_for_tp_transfer(\n    src_cache, src_tp, src_rank, dst_spec, dst_tp, dst_rank)\ndst_meta = make_meta_kv_cache(dst_spec, num_blocks, dst_block_size)\ndst_slices = dst_spec.slice_for_tp_transfer(\n    dst_meta, dst_tp, dst_rank, src_spec, src_tp, src_rank)\n\n# Per-block transfer (handles hetero block sizes naturally)\n# blk_idx is an int, states_slice is a slice\nfor src_blk_idx, src_states_slice, dst_blk_idx, dst_states_slice in block_mapping:\n    for src_s, dst_s in zip(src_slices, dst_slices):\n        src_block = src_s[:, src_blk_idx, :, src_states_slice, ...] # still [num_layers, heads_slice, state_slice, <state_content>]\n        dst_block = dst_s[:, dst_blk_idx, :, dst_states_slice, ...] # still [num_layers, heads_slice, state_slice, <state_content>]\n        for src_chunk, dst_chunk in jointly_contiguous_chunks(\n                src_block, dst_block):\n            self._rdma_transfer(src_chunk, dst_chunk)\n```\n\nTP slicing is computed once (which heads overlap). The \\``` block_mapping` `` hetero block sizes. `jointly_contiguous_chunks` decomposes each pair into regions contiguous in both physical layouts; and will naturally take advantage (if possible) of layers that are packed in an interleaved fashion . Destination offsets come from a meta tensor (`device='meta'`, no GPU memory).\n\nConnector is backend-agnostic.\n\n### Feedback Period.\n\n_No response_\n\n### CC List.\n\n@heheda12345 @benchislett @NickLucche @ZhanqiuHu \n\n### Worktracking\n\nprepatory:\n- https://github.com/vllm-project/vllm/pull/42122\n- https://github.com/vllm-project/vllm/pull/42095\n\nnext steps\n- [1/N] https://github.com/vllm-project/vllm/pull/42374 (standardize attention backends and kv-cache allocation, remove `get_kv_cache_stride_order` and `get_kv_cache_shape`)\n- [2/N] https://github.com/vllm-project/vllm/pull/43151\n- [3/N] refactor the kv-connector code to use meta-tensors and slicing\n",
+      "state": "open",
+      "user": {
+        "login": "LucasWilkinson",
+        "name": "LucasWilkinson",
+        "email": null,
+        "avatar_url": "https://avatars.githubusercontent.com/u/8854186?v=4",
+        "id": 8854186
+      },
+      "assignees": [
+        {
+          "login": "LucasWilkinson",
+          "name": "LucasWilkinson",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/8854186?v=4",
+          "id": 8854186
+        },
+        {
+          "login": "NickLucche",
+          "name": "NickLucche",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/10706289?v=4",
+          "id": 10706289
+        },
+        {
+          "login": "MatthewBonanni",
+          "name": "MatthewBonanni",
+          "email": null,
+          "avatar_url": "https://avatars.githubusercontent.com/u/22648877?v=4",
+          "id": 22648877
+        }
+      ],
+      "labels": [
+        {
+          "name": "RFC",
+          "color": "DE9220",
+          "description": ""
+        }
+      ],
+      "milestone": null,
+      "state_reason": null,
+      "comments": 9,
+      "created_at": "2026-05-08T15:05:38Z",
+      "updated_at": "2026-08-29T04:47:17Z",
+      "closed_at": null,
+      "display_url": "https://github.com/vllm-project/vllm/issues/42082",
+      "display_title": "[RFC]: Standardize KV-cache Layouts"
+    },
+    "url": "https://github.com/vllm-project/vllm/issues/42082",
+    "title": "[RFC]: Standardize KV-cache Layouts",
+    "display_url": "https://github.com/vllm-project/vllm/issues/42082",
+    "display_title": "[RFC]: Standardize KV-cache Layouts"
+  }
+}

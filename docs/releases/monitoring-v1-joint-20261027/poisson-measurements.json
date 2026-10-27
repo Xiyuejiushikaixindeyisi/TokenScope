@@ -1,0 +1,20 @@
+[
+  {
+    "model": "GLM-5.2",
+    "total": 9972,
+    "elapsedMs": 18958,
+    "groups": 5
+  },
+  {
+    "model": "Qwen3.6-27B",
+    "total": 10089,
+    "elapsedMs": 21057,
+    "groups": 5
+  },
+  {
+    "model": "DeepSeek-V4-Flash-0731",
+    "total": 10107,
+    "elapsedMs": 19903,
+    "groups": 5
+  }
+]

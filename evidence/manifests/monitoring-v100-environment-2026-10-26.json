@@ -1,0 +1,20 @@
+{
+  "kind": "user_supplied_remote_agent_report",
+  "received_date": "2026-10-26",
+  "reported_capture_utc": "2026-10-26 13:02–13:26",
+  "source_path": "docs/huawei/TOKEN_SCOPE_V100_ENVIRONMENT_REPORT.md",
+  "sha256": "198a3e08bc51c57be94d3bffc4f7e7092dfcc66558a90a23bd904ba304aee422",
+  "original_preserved_in_place": true,
+  "verified_locally": [
+    "read reported command excerpts",
+    "checked internal consistency and scope",
+    "hashed original bytes"
+  ],
+  "not_verified_locally": [
+    "remote command execution",
+    "CPU performance",
+    "container compatibility",
+    "GPU operation"
+  ],
+  "interpretation": "docs/huawei/MONITORING_V100_DESIGN_REVIEW_2026-10-26.md"
+}

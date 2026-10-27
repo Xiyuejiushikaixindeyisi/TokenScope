@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "kind": "user_supplied_launch_parameters",
+    "received_at": "2026-10-27",
+    "session_id": "01a1682f-956d-7630-afe7-e123ba38dfc0",
+    "verification": "declared_configuration_not_observed_effective_runtime",
+    "filter": "monitoring_relevant_allowlist; no credentials or init commands retained"
+  },
+  "defaults_apply_to_next_run": true,
+  "automatic_activation": false,
+  "profile_id": "deepseek-v4-flash-0731-gf-20261027",
+  "model_id": "DeepSeek-V4-Flash-0731",
+  "model_aliases": [
+    "deepseek_v4_flash"
+  ],
+  "deployment": {
+    "gf_pack": "vllm_ascend_0_30_0rc2/0.0.1.20261023105058.5af0aea3",
+    "declared_engine_family": "vllm-ascend",
+    "declared_engine_version": "0.30.0rc2",
+    "gf_sdk_version": "4.1.0.20261019155931",
+    "model_weight_variant": "DeepSeek-V4-Flash-0731-w4a8-dspark",
+    "max_model_len": 131072,
+    "parallel_policy": "p_tp:8;d_tp:8;p_dp:1;d_dp:1",
+    "python_executable": "/usr/local/python3.12.13/bin/python",
+    "venv_python_version": "3.11"
+  },
+  "encoding": {
+    "tokenizer_mode": "deepseek_v4",
+    "reasoning_parser": "deepseek_v4",
+    "tool_call_parser": "deepseek_v4",
+    "enable_auto_tool_choice": true,
+    "thinking_default": null,
+    "thinking_default_status": "pending_user_effective_config",
+    "chat_template_kwargs": null,
+    "chat_template_kwargs_status": "not_supplied",
+    "tokenizer_revision": null,
+    "tokenizer_revision_status": "deployment_not_supplied",
+    "strict_tool_calling": true
+  },
+  "cache": {
+    "prefill": {
+      "prefix_caching": true,
+      "block_size": 32,
+      "disable_hybrid_kv_cache_manager": false,
+      "max_num_seqs": 32,
+      "max_num_batched_tokens": 2048,
+      "async_scheduling": true,
+      "enable_dsa_cp": true
+    },
+    "decode": {
+      "prefix_caching": false,
+      "block_size": 32,
+      "disable_hybrid_kv_cache_manager": false,
+      "max_num_seqs": 64,
+      "max_num_batched_tokens": 2048,
+      "async_scheduling": true
+    },
+    "mtp": {
+      "enabled": null,
+      "status": "not_explicit_in_supplied_flags; retain_prior_user_simulation_default_true"
+    },
+    "cp": {
+      "prefill_context_parallel_size": null,
+      "decode_context_parallel_size": null,
+      "status": "not_explicit; enable_dsa_cp_does_not_supply_world_size"
+    },
+    "gf_hash_block_size": 4096,
+    "use_multi_groups_kv_cache": true,
+    "use_multi_block_pool": true,
+    "apply_dsv4_patch": true,
+    "hf_overrides": {
+      "use_index_cache": true,
+      "index_topk_pattern": "FSSSSFSSFSSSSSSFSFSSF"
+    }
+  },
+  "kv_transfer": {
+    "kv_connector": "MooncakeHybridConnector",
+    "mooncake_enabled": true,
+    "kv_transfer_config_connector": "MultiConnector",
+    "connectors": [
+      {
+        "kv_connector": "MooncakeConnectorV1",
+        "kv_role": "kv_both",
+        "prefill": {
+          "tp_size": 8,
+          "dp_size": 1
+        },
+        "decode": {
+          "tp_size": 8,
+          "dp_size": 1
+        }
+      },
+      {
+        "kv_connector": "AscendStoreConnector",
+        "kv_role": "kv_producer",
+        "backend": "mooncake"
+      }
+    ]
+  },
+  "simulation_mapping": {
+    "strategy": "full_block_approximation",
+    "block_size": 32,
+    "block_size_evidence": "explicit_prefill_and_decode_flag",
+    "mtp": true,
+    "mtp_evidence": "prior_user_default_not_confirmed_by_these_flags",
+    "cp_world_size": 1,
+    "cp_evidence": "approved_simulation_default_not_runtime_fact",
+    "hybrid_enabled": false,
+    "hybrid_evidence": "V1_enhanced_simulation_not_implemented; manager_flag_is_separate",
+    "prefix_cache_enabled": true,
+    "prefix_scope": "prefill_input_reuse",
+    "thinking_default": null
+  },
+  "unresolved": [
+    "effective thinking/chat_template kwargs for this GF 0.30.0rc2 package",
+    "deployed tokenizer/template revision and file hashes",
+    "effective MTP and CP world sizes",
+    "GF hash-block role; not the simulation block length",
+    "runtime override priority between VLLM_ASCEND_ENABLE_FLASHCOMM1=0 and prefill additional_config enable_flashcomm1=true"
+  ]
+}

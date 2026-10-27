@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "INVALID_FILE_REF",
+    "message": "Synthetic protocol example; reload or correct input as documented."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "MODEL_NOT_FOUND",
+    "message": "Synthetic protocol example; reload or correct input as documented."
+  }
+}

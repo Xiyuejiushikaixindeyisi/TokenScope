@@ -1,0 +1,79 @@
+{
+  "candidate": "joint-v1-20261027",
+  "status": "local_joint_passed_paused",
+  "frontend_backend_service": true,
+  "backend_tests": 166,
+  "frontend_tests": 143,
+  "browser_unique_cases": 30,
+  "browser_report_stats": {
+    "production-pass2": {
+      "startTime": "2026-10-27T11:57:22.536Z",
+      "duration": 153975.226,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "browser-boundaries": {
+      "startTime": "2026-10-27T11:48:08.364Z",
+      "duration": 213217.46000000002,
+      "expected": 17,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "export-final": {
+      "startTime": "2026-10-27T11:52:57.328Z",
+      "duration": 168018.159,
+      "expected": 7,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "recovery-pass3": {
+      "startTime": "2026-10-27T11:54:53.882Z",
+      "duration": 40221.866,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "control": {
+      "startTime": "2026-10-27T11:59:29.974Z",
+      "duration": 13300.501,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "gzip-final": {
+      "startTime": "2026-10-27T11:57:05.204Z",
+      "duration": 9798.832,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "poisson": {
+      "startTime": "2026-10-27T12:03:22.088Z",
+      "duration": 67778.75,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "source_manifest_sha256": "c51c36865ce4abe892a1688ac60b86f56fbe0103919bf4b11e95f01e460ea99e",
+  "s0_files_verified": 101,
+  "s0_changed": [],
+  "input_manifest_sha256": "fcecdbd4e22112c746a73250b862e56fa370aa2150e5beb1e6548bdef7c81e69",
+  "review": "docs/tasks/monitoring/JOINT_RESULT_V1.md",
+  "production_csv": false,
+  "docker_built": false,
+  "delivery_package_created": false,
+  "v100_site_accepted": false,
+  "native_os_save_dialog_tested": false,
+  "real_file_write": "OPFS actual disk file with controlled picker",
+  "services_cleanup": "completed: own 8186 backend, 4186 harness, Windows 8188 proxy stopped; other sessions untouched",
+  "final_source_mismatches": []
+}

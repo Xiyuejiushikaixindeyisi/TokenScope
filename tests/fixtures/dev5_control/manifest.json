@@ -1,0 +1,9 @@
+{
+  "tokenscope/monitoring/storage.py": "e6a758eae402d6019a4aede80a947f4f681b5de35e19168bf7d65e7457b64312",
+  "tokenscope/paths.py": "cb3bcea8c428df3238dbe736a0ab5ec2bf5f15ed70cee9e802197cd6bc61d808",
+  "tokenscope/errors.py": "22dd30ea198a255f4d932dca09349a5163ca0349c484595430ccb18abe40346e",
+  "tokenscope/monitoring/rules.py": "c780012e22966917d3cb02d8dbb8c74856dc5e426a5de35ad04bfa564287ba72",
+  "tokenscope/monitoring/statistics.py": "f4a5e60b3650912f3b27c5c7ee2f82420231f509b40a253f7ccff5d97386feff",
+  "tokenscope/domain.py": "e79ec184f04dedd1115bc99e20e6277b65ab01c831fa2f4fc399919bf9a7c80e",
+  "tokenscope/ingestion/csv_reader.py": "5f7ecf3872080bcdbb46d87e3286bcc0b589bf065788dffc6fe9ea2a94c52232"
+}

@@ -1,0 +1,6 @@
+{
+  "error": {
+    "code": "SERVICE_INSTANCE_CHANGED",
+    "message": "Reload service identity"
+  }
+}

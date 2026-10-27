@@ -1,0 +1,45 @@
+{
+  "schema_status": "v0.1-discussion-not-a-final-schema",
+  "is_example": true,
+  "evidence_type": "hand-constructed-arithmetic-only",
+  "note": "All lengths are invented. No real tokenizer or target model was run. Two requests have identical 400-token prompts but distinct hash_id. Percentile method and alert threshold are proposals.",
+  "appid": "EXAMPLE_APP",
+  "model_profile": "ILLUSTRATIVE_FULL_ATTENTION_B128_MTP_NOT_A_DEPLOYED_MODEL",
+  "assumptions": {
+    "initial_cache": "empty",
+    "capacity": "unlimited",
+    "input_prefix_only": true,
+    "previous_request_cache_immediately_available": true,
+    "block_size": 128,
+    "max_hit_before_block_rounding": "prompt_tokens - 1",
+    "mtp_drop_matched_blocks": 1
+  },
+  "requests": [
+    {"hash_id": "EXAMPLE_1", "json_tokens": 430, "prompt_tokens": 400, "ideal_cached_input_tokens": 0, "ideal_compute_input_tokens": 400, "completion_tokens": 40},
+    {"hash_id": "EXAMPLE_2", "json_tokens": 430, "prompt_tokens": 400, "ideal_cached_input_tokens": 256, "ideal_compute_input_tokens": 144, "completion_tokens": 60}
+  ],
+  "aggregate": {
+    "request_count": 2,
+    "json_tokens": 860,
+    "prompt_tokens": 800,
+    "ideal_cached_input_tokens": 256,
+    "ideal_compute_input_tokens": 544,
+    "completion_tokens": 100,
+    "ideal_hit_rate": 0.32
+  },
+  "charts": {
+    "quantile_method": "linear-type7-proposed",
+    "json": {"ranked_points": [["EXAMPLE_1", 430], ["EXAMPLE_2", 430]], "p50": 430, "p80": 430, "p90": 430},
+    "prompt": {"ranked_points": [["EXAMPLE_1", 400], ["EXAMPLE_2", 400]], "p50": 400, "p80": 400, "p90": 400},
+    "compute_input": {"ranked_points": [["EXAMPLE_1", 400], ["EXAMPLE_2", 144]], "p50": 272, "p80": 348.8, "p90": 374.4}
+  },
+  "illustrative_alert": {
+    "dispatched": false,
+    "metric": "ideal_hit_rate",
+    "operator": "lt",
+    "threshold": 0.5,
+    "observed_value": 0.32,
+    "route": "prefix-analysis",
+    "note": "Illustrative event only; no analyzer was started."
+  }
+}

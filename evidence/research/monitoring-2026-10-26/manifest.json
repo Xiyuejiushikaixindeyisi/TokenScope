@@ -1,0 +1,11 @@
+{
+  "observed_date": "2026-10-26",
+  "files": [
+    {
+      "path": "github-pr-metadata.json",
+      "sha256": "6528e99da877cd51f6c9518bca9e501116d162db93fc0675f5befb55b1f33d1c",
+      "bytes": 83275
+    }
+  ],
+  "note": "PR metadata snapshot, including author claims; not locally reproduced results."
+}

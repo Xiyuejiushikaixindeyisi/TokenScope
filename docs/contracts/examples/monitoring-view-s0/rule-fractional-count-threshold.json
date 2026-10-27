@@ -1,0 +1,13 @@
+{
+  "appid": "synthetic-app-1",
+  "model_id": "GLM-5.2",
+  "rule_id": "long-p50",
+  "revision": "1",
+  "metric": "quantiles.prompt_tokens.p50",
+  "comparator": "gt",
+  "threshold": 90.5,
+  "value_kind": "number",
+  "enabled": true,
+  "route": "length_analysis",
+  "measurement_signature": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+}

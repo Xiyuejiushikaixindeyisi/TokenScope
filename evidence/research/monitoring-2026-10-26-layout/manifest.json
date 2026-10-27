@@ -1,0 +1,10 @@
+{
+  "observed_date": "2026-10-26",
+  "files": [
+    {
+      "path": "vllm-rfc42082.json",
+      "sha256": "0e1bc0d192bfdc206bc085cb64bbbd3ff105c768eb3cdc8276b0d52ab82e8e1a",
+      "bytes": 11479
+    }
+  ]
+}
