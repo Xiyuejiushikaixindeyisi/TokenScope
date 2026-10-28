@@ -1,0 +1,38 @@
+name: tokenscope-monitoring
+services:
+  monitoring:
+    image: ${TOKENSCOPE_IMAGE:?Set the image tag from release-manifest.json}
+    pull_policy: never
+    platform: linux/amd64
+    user: "${TOKENSCOPE_UID:?Set host UID}:${TOKENSCOPE_GID:?Set host GID}"
+    init: true
+    read_only: true
+    cpus: 8.0
+    mem_limit: 32g
+    pids_limit: 256
+    tmpfs:
+      - /tmp:size=536870912,mode=1777
+    volumes:
+      - type: bind
+        source: ${TOKENSCOPE_INPUT_DIR:?Set an existing dedicated input directory}
+        target: /inputs
+        read_only: true
+      - type: bind
+        source: ${TOKENSCOPE_STATE_DIR:?Set an existing dedicated state directory}
+        target: /state
+    ports:
+      - "127.0.0.1:${TOKENSCOPE_PORT:-18000}:8000"
+    command: ["--input-root", "/inputs", "--state-root", "/state", "--asset-root", "/app", "--cpu-budget", "8", "serve", "--host", "0.0.0.0", "--port", "8000", "--viewer-root", "/app/apps/viewer/dist"]
+    networks: [offline]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    restart: unless-stopped
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+networks:
+  offline:
+    internal: true
