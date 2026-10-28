@@ -27,3 +27,9 @@
 联合停点：本机完整服务验证完成；30,168条泊松有效请求、15范围、真实恢复/导出及压力证据已固定。V100现场与容器验收未执行。
 
 Git协作见[Git工作流](../docs/operations/GIT_WORKFLOW.md)；此次整理见[仓库基线](../docs/operations/REPOSITORY_BASELINE_20261027.md)。个人直接合并main，不用PR；backup分支仅本地，两类分析分支待后续启动。
+
+本机人工验收服务已保留在 http://127.0.0.1:8000 （完整前后端），输入data/incoming/manual-20261027，状态artifacts/runtime。三模型共30,168有效请求已分析；等待用户人工验收。启动和复现见README，Docker/打包仍未授权。
+
+
+
+前端最新状态（2026-10-28）：用户回复“F007 通过”，0.1.0-f007已人工验收通过并closed，见[F007结果](../docs/tasks/viewer/batches/F007/RESULT.md)。后端或新session仍需打包前统一审查，Docker/镜像/交付包未授权；交接prompt已同步审批状态。

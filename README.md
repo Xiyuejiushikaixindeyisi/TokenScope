@@ -25,6 +25,14 @@ mkdir -p data/incoming artifacts/runtime
 
 **首次clone必须恢复编码资产**：models不入Git；按[encoding-assets.lock.json](env/encoding-assets.lock.json)中每个文件的source_url下载到path，并逐项核对sha256，或从自己的可信本地备份恢复同摘要文件。仅需Tokenizer/模板，不需要模型权重。缺资产时不能用假编码绕过测试。upstream是调研来源，按[来源锁](env/sources.lock.json)恢复；常规服务通过uv.lock安装依赖，不从浮动源码运行。
 
+## 本机人工验收环境（2026-10-27）
+
+服务入口 http://127.0.0.1:8000 ，完整前端与后端同源。环境保留在项目内：`.venv`、`apps/viewer/node_modules`、`apps/viewer/dist`；输入在`data/incoming/manual-20261027`，运行状态/日志/PID在`artifacts/runtime`。没有使用`/tmp`承载环境或验收数据。当前服务由本机会话后台启动，系统重启后使用上面的启动命令恢复，已有分析结果保留。
+
+合成CSV对应：`manual-20261027/model-1.csv`→GLM-5.2；`model-2.csv`→Qwen3.6-27B；`model-3.csv`→DeepSeek-V4-Flash-0731。每模型5个`synthetic-app-*`，请求数采用泊松采样，包含短请求、66K附近长请求及200K以上边界。DeepSeek合成请求显式关闭思考，不代表确定生产默认值。结果记录在`artifacts/runtime/manual-validation.json`。
+
+浏览器选择appid和模型，检查概览、直方图、请求明细及导出；人工验收结论由用户确认。若启动提示`INVALID_INPUT_ROOT`，先执行`mkdir -p data/incoming artifacts/runtime`；若8000已在运行，无需重复启动。
+
 ## 验证
 
 ```sh

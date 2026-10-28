@@ -121,3 +121,5 @@ S1–S5 closed；dev6/schema3/view1，backend_ready_for_joint并按用户要求�
 
 
 2026-10-27 Git基线：按用户授权初始化main和origin，整理README/ignore/Git工作流；保留所有原始实验数据。原样迁移最小dev5测试夹具到tests，166/143回归及三模型本地HTTP启动通过。启用pre-push产物/backup保护，仅推送main；本地backup/20261027-init作为源码检查点。两分析分支只规划，Docker和包体仍未生成。见docs/operations/REPOSITORY_BASELINE_20261027.md。
+
+2026-10-27 本机人工验收增量：按README执行uv sync/npm ci/generate/build，核对3套编码资产；修正缺失输入目录的INVALID_INPUT_ROOT提示（17项相关测试通过）。完整前后端持续运行于http://127.0.0.1:8000，PID记录artifacts/runtime/server.pid，输入data/incoming/manual-20261027，状态artifacts/runtime；旧F006后端进程已停止，数据保留。三模型5appid共30,168有效合成请求完成，独立计量/分位数及前缀抽样核对通过，15个展示快照可读，浏览器显示真实结果和SSE连接。证据artifacts/runtime/manual-validation.json及manual-browser.png。环境/数据均在项目内，未使用/tmp承载环境，未构建Docker/交付包；等待用户人工验收，不能代称人工通过。

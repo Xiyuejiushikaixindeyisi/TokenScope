@@ -1,6 +1,6 @@
 # 前端逐batch开发计划 v1.0
 
-2026-10-27；最终评审稿配套。[最终设计](../MONITORING_INTERACTION_V1.md)已获用户审批（见[审批记录](../APPROVAL.md)）；F001–F006已closed；最终前端ready_for_joint，真实联合由后端统一执行。
+2026-10-27；最终评审稿配套。[最终设计](../MONITORING_INTERACTION_V1.md)已获用户审批（见[审批记录](../APPROVAL.md)）；F001–F006已closed，随后联合完成；当前F007已于2026-10-28人工验收通过并closed，见本批PLAN。
 
 每批依次维护CONTEXT、PLAN、ISSUES、TESTS、RESULT。门槛/问题/测试证据齐备才closed，再推进下一批。不能把失败改为下批优化后通过；目标/接口变化或降门槛交用户裁决。每批增量更新memory/tasks/viewer及ENTRY/CODEMAP，CURRENT只存入口。记录假服务/实际后端/联合验收的不同证据。
 
@@ -12,6 +12,7 @@
 | [F004](F004/PLAN.md) | 提交恢复与配置操作 | closed / 证据见各批RESULT |
 | [F005](F005/PLAN.md) | 有界导出和完整性校验 | closed / 证据见各批RESULT |
 | [F006](F006/PLAN.md) | 统一前端验收、设计核对和后端交接 | closed / 证据见各批RESULT |
+| [F007](F007/PLAN.md) | 审批DEMO视觉还原；独立视觉与人工验收 | closed / 2026-10-28人工验收通过；打包前统一审查待执行 |
 
 ## 联合测试与交付
 

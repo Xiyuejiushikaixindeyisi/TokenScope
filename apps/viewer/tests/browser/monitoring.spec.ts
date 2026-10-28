@@ -41,3 +41,20 @@ test('synthetic contract dashboard: scope, histogram cache, requests, safe detai
   await testInfo.attach('network', { body: JSON.stringify({ snapshots, queries, errors }), contentType: 'application/json' });
   expect(errors).toEqual([]);
 });
+
+test('F007 long scope and source labels do not overflow a narrow viewport', async ({ page }) => {
+  const catalog = sample('catalog-normal'), snapshot = sample('snapshot-null-rate');
+  const longApp = 'tenant-' + 'long-name-'.repeat(24);
+  catalog.items[0].appid = longApp; snapshot.identity.appid = longApp;
+  snapshot.provenance.source_label = 'source/' + 'long-file-name-'.repeat(30) + '.csv';
+  await page.route('**/monitoring/catalog**', r => r.fulfill({ json: catalog }));
+  await page.route('**/monitoring/events**', r => r.fulfill({ contentType: 'text/event-stream', body: ': fixture\n\n' }));
+  await page.route('**/view-snapshot**', r => { const raw = JSON.stringify(snapshot); return r.fulfill({ contentType: 'application/json', headers: { ETag: '"' + createHash('sha256').update(raw).digest('hex') + '"' }, body: raw }); });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/#/overview'); await expect(page.locator('.metric')).toHaveCount(6);
+  await expect(page.locator('.metric.hit strong')).toHaveText('—');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.getByText('数据质量与版本', { exact: true }).click();
+  await expect(page.locator('.metadata-body')).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});

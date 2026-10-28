@@ -85,3 +85,11 @@ build_demo.py 将报告源码和样例内联进 HTML，无外部资源依赖。�
 2026-10-27：F003 closed，120项回归与真实Edge合成展示检查通过；代码features/{overview,distributions,requests,signals}、components/{useRead,History}。源摘要/失败修复/视觉/网络见F003 RESULT。已自主进入F004提交恢复与配置；后端契约未变。
 
 2026-10-27：F004 closed，128项回归+真实Edge2条恢复/CAS综合流程通过。代码state/{receipt-store,submission-coordinator}、features/{submissions,settings}；固定S0不变。进入F005有界导出；完整前端完成后才提交用户审批。
+
+## F007计划入口（尚未编码）
+
+审批原型固定为artifacts/prototypes/monitoring-v1/tokenscope-monitoring-demo.html；从配色参考升级为视觉规格。计划修改现有app.tsx、styles/base.css、components/History.tsx、features内展示组件，逐文件范围见[batches/F007/PLAN.md](batches/F007/PLAN.md)。测试复用现有component/browser框架；实际新增/修改符号和证据待实施登记，不提前声称已实现。
+
+## F007实际代码（0.1.0-f007）
+
+app.tsx：sidebar/topbar/filter-meta/标题导出菜单；Overview.tsx：compact、六卡、精确值与去向条；Distributions.tsx：图表坐标/网格/分位值/众数位置；styles/base.css：审批原型CSS与React适配。未新建业务组件/类，数据层未变。测试：component/monitoring、browser/{monitoring,full-journey,visual}.spec.ts。视觉/真实只读核对使用visual.spec.ts，具体命令和证据见F007 TESTS。生成审查prompt在prompts/sessions/SESSION_FRONTEND_REVIEW_AND_PACKAGING.md。

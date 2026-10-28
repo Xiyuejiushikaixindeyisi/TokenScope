@@ -43,6 +43,7 @@ env/.contract-cache/
 
 # Download/browser caches and local build outputs
 /env/.uv-cache/
+/env/.npm-cache/
 /env/browser-cache/
 /.build/*.png
 /test-results/

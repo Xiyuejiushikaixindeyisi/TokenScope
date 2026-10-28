@@ -71,3 +71,22 @@ def test_fifo_and_directory_not_read(tmp_path):
             with InputRoot(tmp_path).open(file_ref):
                 pass
         assert exc.value.code == "INVALID_INPUT_FILE"
+
+
+@pytest.mark.parametrize("kind", ["missing", "file", "file_parent"])
+def test_invalid_input_root_reports_actionable_cli_error(tmp_path, capsys, kind):
+    import json
+
+    from tokenscope.cli import main
+
+    root = tmp_path / "input"
+    if kind != "missing":
+        root.write_text("not a directory")
+    if kind == "file_parent":
+        root = root / "child"
+    result = main(["--input-root", str(root), "--state-root", str(tmp_path / "state"), "serve"])
+    assert result == 2
+    error = json.loads(capsys.readouterr().out)["error"]
+    assert error["code"] == "INVALID_INPUT_ROOT"
+    assert "directory" in error["message"]
+    assert not (tmp_path / "state").exists()

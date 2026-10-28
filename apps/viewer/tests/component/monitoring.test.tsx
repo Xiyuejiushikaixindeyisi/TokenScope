@@ -27,3 +27,11 @@ it('selects half-open ordinary and open overflow ranges via keyboard', () => {
   fireEvent.change(screen.getByLabelText('分箱宽度'), { target: { value: '1000' } });
   expect(container.querySelectorAll('rect')).toHaveLength(603);
 });
+
+it('restores six cards and retains exact values with compact presentation', () => {
+  const s = sample('snapshot-large-integer'); const { container } = render(<Overview snapshot={s} />);
+  expect(container.querySelectorAll('.metric')).toHaveLength(6);
+  expect(container.querySelector('.bar-panel')).toHaveTextContent(BigInt(s.metrics.totals.ideal_cached_input_tokens).toLocaleString('zh-CN'));
+  expect(container.querySelector('.exact-values')).toHaveTextContent(BigInt(s.metrics.totals.prompt_tokens).toLocaleString('zh-CN'));
+  expect(screen.queryByText('当前完整结果')).not.toBeInTheDocument();
+});

@@ -23,4 +23,4 @@ GLM/Qwen/V4普通链式DES，block=128/1536/32；Qwen/V4标近似，增强hybrid
 [任务记忆](../../../memory/tasks/monitoring.md) · [实际会话](../../../memory/SESSIONS.md)
 
 
-当前已停止联合工作；由用户另行决定是否进入Docker和交付包。
+本机人工验收环境已按README构建并持续运行：http://127.0.0.1:8000；三模型×5appid合成结果已生成，等待用户人工确认。详情见README的本机人工验收环境。由用户另行决定是否进入Docker和交付包。

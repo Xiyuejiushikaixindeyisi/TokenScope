@@ -15,7 +15,14 @@ from tokenscope.errors import TokenScopeError
 
 class InputRoot:
     def __init__(self, root: Path) -> None:
-        self.root = root.resolve(strict=True)
+        try:
+            self.root = root.resolve(strict=True)
+        except (FileNotFoundError, NotADirectoryError) as exc:
+            raise TokenScopeError(
+                "INVALID_INPUT_ROOT",
+                "Input root does not exist or is not a directory; "
+                "create --input-root before starting",
+            ) from exc
         if not self.root.is_dir():
             raise TokenScopeError("INVALID_INPUT_ROOT", "Input root must be a directory")
 

@@ -1,0 +1,40 @@
+{
+  "review_status": "source_candidate_passed",
+  "packaging_authorized": false,
+  "container_verified": false,
+  "onsite_verified": false,
+  "session_id": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "candidate_manifest_sha256": "1b67ab1d6eb6ae5ac53a16d2f1d4ab8afc7e8a62b8b640803db2d3556dbeb9af",
+  "report_sha256": "116915e145869de0c2c7f7448b4420cbc7c88a4b35ad13c806fde710c0e5d0c0",
+  "frontend_tests": 144,
+  "backend_targeted_tests": 27,
+  "fixture_browser_tests": 8,
+  "read_only_real_browser_tests": 1,
+  "browser_environment": {
+    "TOKENSCOPE_EXTERNAL_PREVIEW": "1",
+    "TOKENSCOPE_BROWSER_EXECUTABLE": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+    "fixture_url": "http://127.0.0.1:4189",
+    "real_url": "http://127.0.0.1:8000",
+    "TOKENSCOPE_VISUAL_REAL": "1"
+  },
+  "evidence_sha256": {
+    "final-identity-check.json": "1039231975511a6801560b852a2d7a99e214524b0209e0141f034cc686c7b5dc",
+    "checks.py": "2d82ce0907d0259067a5ef6ff6aa428c84fd4a0ba10e2cc35a36be76a6b13980",
+    "identity.py": "d09cf7e00e01e20d7a1f101535c45a758039cb910ade48756eae0612b1c0f74c",
+    "candidate-manifest.json": "1b67ab1d6eb6ae5ac53a16d2f1d4ab8afc7e8a62b8b640803db2d3556dbeb9af",
+    "backend-targeted.log": "dadda7aa9262cde27af882c482c405dcf3516072ada08d49b44bf6d7dea321e5",
+    "verify.py": "35ec70b4e9c1dafff350c90250fd7267da876ca61e4e7b549d0fc394a1f4c0dc",
+    "checks.json": "87d08926a5a6c082dffb70985efd235183de9be2a66d32c41030824873defa6b",
+    "git-status.txt": "ede610b836a51d742aadb7ed91b334b36fa44f3df67c641d5a5df74153ed06d3",
+    "browser.log": "8c1341e638eba6dfb255b83ca99deda927bfd4391b5da1b86c91fed9d9b6d1a1",
+    "identity-check.json": "0def8e75ce822bfd260e636481e44f20616694b7b7df846c094c01ab83751fee",
+    "real-browser.log": "c226a155a634d935a6f9128c5b61f6f784439bf9b5535998aa57b148ba8366ec",
+    "frontend-rebuild.log": "06cc9d54b62d37b3f194c332e38d43e3bd57aa67fd923a4472e19af647ba1958",
+    "frontend-unit.log": "820e1274d03eb6a0f81188272e4da1e9517bd6139dc05444728f46d09382004f",
+    "working-tree.diff": "b30a82abefaf2357f7e07c0f92635f7e71f8e6c14d0872cf9363879d20b6cf84",
+    "frontend-typecheck.log": "5aca33e7e1a019b38931fd5a5ca663274eed7440813b8d5f6ddcae343fe5f16f",
+    "frontend-lint.log": "0cc69c6eb6a59975bdb3c88204cdd24803bcd134486d3a0d652b8a64d2553750",
+    "close_review.py": "02e44a68ca103c697ec2fa16acc755d63cae47ec5240ec5c0a412c4249c08c0e",
+    "update_delivery_docs.py": "2898df08cf57317f35004820fc8b1449ec6ab69ab9e76d9fe8e0bc2b192a5175"
+  }
+}

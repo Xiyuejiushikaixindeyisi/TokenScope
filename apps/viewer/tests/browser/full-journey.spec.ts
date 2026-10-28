@@ -15,11 +15,11 @@ test('atomic publication while editing, incompatible schema and offline cached v
   const run = '33333333-3333-4333-8333-333333333333'; current = structuredClone(old); current.identity.run_id = run; current.identity.publish_seq = '43'; catalog.items[0].active_run_id = run; catalog.catalog_revision = '43'; catalog.cursor = catalog.service_instance_id + ':43';
   const event = { service_instance_id: catalog.service_instance_id, view_schema_version: '1', run_id: run, model_id: old.identity.model_id, publish_seq: '43', published_at: '2026-10-27T00:00:00.000000000Z', status: 'completed' };
   await page.evaluate(e => (window as unknown as { events: EventTarget }).events.dispatchEvent(new MessageEvent('result_published', { data: JSON.stringify(e), lastEventId: e.service_instance_id + ':43' })), event);
-  await expect(page.getByText('新结果可查看。', { exact: false })).toBeVisible(); await expect(page.getByLabel('Block size')).toHaveValue('1536'); await expect(page.getByText('当前范围：', { exact: false })).toContainText(old.identity.run_id);
-  await page.getByRole('button', { name: '切换到新完整结果' }).click(); await expect(page.getByText('当前范围：', { exact: false })).toContainText(run);
+  await expect(page.getByText('新结果可查看。', { exact: false })).toBeVisible(); await expect(page.getByLabel('Block size')).toHaveValue('1536'); await expect(page.locator('.metadata-body')).toContainText(old.identity.run_id);
+  await page.getByRole('button', { name: '切换到新完整结果' }).click(); await expect(page.locator('.metadata-body')).toContainText(run);
   const before = snapshots; await page.getByRole('link', { name: '监控概览' }).click(); await page.getByRole('link', { name: '请求长度分布' }).click(); expect(snapshots).toBe(before);
   await context.setOffline(true); await page.getByRole('link', { name: '监控概览' }).click(); await expect(page.locator('.metric-grid')).toBeVisible(); await context.setOffline(false);
   current = structuredClone(old); current.identity.view_schema_version = '999'; catalog.items[0].active_run_id = '44444444-4444-4444-8444-444444444444'; current.identity.run_id = catalog.items[0].active_run_id; catalog.cursor = catalog.service_instance_id + ':44'; catalog.catalog_revision = '44';
   await page.evaluate(e => (window as unknown as { events: EventTarget }).events.dispatchEvent(new MessageEvent('result_published', { data: JSON.stringify(e), lastEventId: e.service_instance_id + ':44' })), { ...event, run_id: current.identity.run_id, publish_seq: '44' });
-  await expect(page.getByRole('alert')).toContainText('完整结果读取失败'); await expect(page.getByText('当前范围：', { exact: false })).toContainText(run);
+  await expect(page.getByRole('alert')).toContainText('完整结果读取失败'); await expect(page.locator('.metadata-body')).toContainText(run);
 });

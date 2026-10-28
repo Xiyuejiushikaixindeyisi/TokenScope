@@ -66,3 +66,23 @@ F001五份批文档、契约对照、代码地图、源码/依赖/构建摘要�
 用户已采用导出64MiB优化/256MiB验收修订；六次256MiB/1GiB最大154.1MiB，增长中位比2.214（不是常数空间证明）。失败、热更新干扰及复测均保留。
 
 用户询问可否开始端到端验收：可以，由后端Session 1统一执行；前端交接docs/tasks/viewer/handoffs/FRONTEND_READY_FOR_JOINT.md。前端本地闭环不等于最终联合/发布通过。完整前端交用户审批，配合后端后续问题修复，不自动发消息/创建会话。Docker、镜像和代码交付仍单独审批。入口已精简，CURRENT的前端链接保持有效，不覆盖后端进度。
+
+## 2026-10-27：F007审批DEMO视觉还原方案落地
+
+用户确认联合已完成，但指出正式UI偏离审批HTML，特别是“当前完整结果”大面板。本会话核对后确认实现仅沿用配色，导航/卡片/信息层级偏离。用户批准恢复原型骨架与样式，要求本轮形成最终batch方案；已创建F007 CONTEXT/PLAN/ISSUES/TESTS/VISUAL_ACCEPTANCE/RESULT，当前planned，未编码/未执行本批应用测试。
+
+方向：左侧导航、紧凑筛选与元信息条、六卡三列、Token去向条、三图及表格/操作样式；数据层/契约/真实业务保持。冻结原型SHA ef7bb11c8d5450e41826a10c39230167b6a5bb22198416fff0c93c282ea5fdc5。实际CODEX_THREAD_ID核实为01a17811-4c9a-7513-befc-b35723aec96e。编码前重新核实工作区身份，保留他人未提交修改。
+
+前端功能回归、独立视觉对照、用户人工验收分别登记，人工通过前不closed；不重复整套联合review。后端Docker构建/镜像打包前统一阅读代码、闭环、设计进行验收，仍须单独打包授权。不自动发消息或修改后端。入口docs/tasks/viewer/ENTRY.md → batches/F007/PLAN.md。
+
+## 2026-10-27：F007实现完成，待HTTP人工验收
+
+用户批准开发，并要求提供HTTP人工验收链接；之后由后端或用户另建session统一审查/打包，需提供prompt。已完成0.1.0-f007，恢复审批DEMO骨架、六卡、去向条、紧凑元信息和图表/表单样式。4个展示src文件修改，API/store/cache/domain/worker/export控制器摘要未变，依赖仅根版本号更新。144单元组件、8隔离browser场景、真实8000视觉只读用例通过。首次身份定位测试失败与窄屏导航隐藏已修复并保留证据。
+
+人工入口http://127.0.0.1:8000/#/overview，HTTP已核对当前dist；旧4175不能作为版本证明。F007状态awaiting_user_visual_acceptance，不closed，不冒称人工通过。RESULT/TESTS/VISUAL_ACCEPTANCE已填实际结果；证据artifacts/validation/viewer/F007。源码尚未提交，不用旧main替代当前工作树。
+
+已准备prompts/sessions/SESSION_FRONTEND_REVIEW_AND_PACKAGING.md供用户复制新session；不自动创建/发送。旧joint测试需要适配新UI定位，前端不修改后端维护脚本。后续先核实人工通过，再统一审查，获单独打包授权后构建；未Docker/镜像/代码包。
+
+## 2026-10-28：F007人工验收通过并闭环
+
+用户明确回复：“F007 通过”。据此关闭F007（0.1.0-f007），同步RESULT、VISUAL_ACCEPTANCE、任务入口、批次索引和新session审查prompt。前端代码/测试/构建未改，既有证据保留。本次批准只确认F007，不替代后端或新session的打包前统一审查，也不是Docker/镜像/代码交付包授权。没有创建会话、发送消息或执行打包。

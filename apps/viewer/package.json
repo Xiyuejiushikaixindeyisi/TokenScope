@@ -1,6 +1,6 @@
 {
   "name": "@tokenscope/viewer",
-  "version": "0.1.0-f006",
+  "version": "0.1.0-f007",
   "private": true,
   "type": "module",
   "engines": {
