@@ -12,7 +12,7 @@
 
 4. 从manifest读取image_archive，执行`docker load -i <image_archive>`，再`docker image inspect <image_tag>`，完整Id必须等于manifest.image_id，架构必须linux/amd64。不运行docker pull，不依赖现场外网或在线pip/npm安装。
 5. 解压code_archive到新目录（先检查tar清单路径无绝对路径或..），读取其中deploy/monitoring/README.md。不要覆盖已有源码或运行库。
-6. 首次合成验收规划新的input路径，创建专属父目录、state和report目录，input留给下一步生成器创建。复制deployment.env.example为deployment.env，写入manifest.image_tag、实际`id -u`/`id -g`、input/state绝对路径和空闲端口。不要复用生产state；保留非root、只读根/输入、8CPU、32GiB、pids限制和内部网络。遇权限问题仅修正自己的专属目录，不chmod共享目录或改为privileged。
+6. 首次合成验收规划新的input路径，创建专属父目录、state和report目录，input留给下一步生成器创建。复制deployment.env.example为deployment.env，写入manifest.image_tag、实际`id -u`/`id -g`、input/state绝对路径和空闲端口。不要复用生产state；保留非root、只读根/输入、8CPU、32GiB、pids限制和专属bridge网络。遇权限问题仅修正自己的专属目录，不chmod共享目录或改为privileged。
 7. 用加载的镜像生成独立合成输入：执行`docker run --rm --network none --user "$(id -u):$(id -g)" -e PYTHONPATH=/app/src -v "<专属测试父目录>:/work" --entrypoint python <image_tag> /app/scripts/validation/generate_monitoring_data.py /work/input --seed 281028 --mean-requests 100 --long-per-app 1`。生成器要求input尚不存在，先建父目录而不是input。它生成每模型5appid的泊松数据、长尾和边界，DeepSeek请求显式关闭思考，仅测试使用。把deployment.env输入路径指向此生成目录。
 8. 使用唯一Compose project名称（例如tokenscope-v1-20261028），运行`docker compose --env-file deployment.env -p <project> -f compose.yaml config`并检查，再`up -d --pull never`。记录容器ID、镜像ID、挂载、配额、健康状态和日志，不关闭其他服务。
 

@@ -2,7 +2,7 @@
 
 此目录是dev6/F007完整前后端的发布入口，替代已归档的env/docker仅后端准备。CPU linux/amd64，Python3.11.16，前端由同源FastAPI挂载；默认仅绑定宿主127.0.0.1:18000。
 
-基础镜像使用Docker Official Image在ECR的固定摘要，具体值写入交付manifest；不从浮动tag发布。构建前在WSL生成离线wheelhouse，按uv.lock/requirements.runtime.txt校验摘要。prepare_monitoring_context.py只复制明确源码、配置、前端dist、编码锁中资产和wheel，不包含生产输入、状态库、Git、凭据或上游仓库。Docker build使用--network=none和固定BASE_IMAGE。容器运行使用只读根、只读输入、独立可写/state、8CPU/32GiB、内部网络，不依赖GPU或外网。
+基础镜像使用Docker Official Image在ECR的固定摘要，具体值写入交付manifest；不从浮动tag发布。构建前在WSL生成离线wheelhouse，按uv.lock/requirements.runtime.txt校验摘要。prepare_monitoring_context.py只复制明确源码、配置、前端dist、编码锁中资产和wheel，不包含生产输入、状态库、Git、凭据或上游仓库。Docker build使用--network=none和固定BASE_IMAGE。容器运行使用只读根、只读输入、独立可写/state、8CPU/32GiB、专属bridge网络，不依赖GPU或外网。
 
 交付目录包括镜像tar.gz、代码tar.gz、compose.yaml、deployment.env.example、release-manifest.json、SHA256SUMS、华为执行prompt和桌面验收说明。代码包包含可维护源码、前端离线dist、编码资产、离线wheelhouse及来源摘要；不承诺只靠代码包在无基础镜像时离线重建。现场应优先docker load已验证镜像，不要求重新编译。
 

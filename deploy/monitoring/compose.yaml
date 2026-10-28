@@ -23,7 +23,7 @@ services:
     ports:
       - "127.0.0.1:${TOKENSCOPE_PORT:-18000}:8000"
     command: ["--input-root", "/inputs", "--state-root", "/state", "--asset-root", "/app", "--cpu-budget", "8", "serve", "--host", "0.0.0.0", "--port", "8000", "--viewer-root", "/app/apps/viewer/dist"]
-    networks: [offline]
+    networks: [service]
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=3)"]
       interval: 15s
@@ -34,5 +34,5 @@ services:
     security_opt: ["no-new-privileges:true"]
     cap_drop: [ALL]
 networks:
-  offline:
-    internal: true
+  service:
+    driver: bridge
