@@ -6,7 +6,7 @@
 
 用户本轮授权真实前后端端到端测试和review，完成即暂停。本机完整服务通过本轮正常链路、恢复、导出、压力、设计核对；分层证据如下。Docker/镜像/代码交付包没有构建，B006打包保持pending。绝密CSV不出现场，本轮全部数据为明确标记的合成数据。
 
-统一证据目录：[joint-v1](../../../artifacts/validation/monitoring/joint-v1/)。候选身份和测试汇总见其中 `acceptance.json`、`source-manifest.json`；原前端74项、后端62项交接摘要开始时全部一致，见 `initial-manifests.json`。
+统一证据目录：[joint-v1](../../../artifacts/validation/monitoring/joint-v1)。候选身份和测试汇总见其中 `acceptance.json`、`source-manifest.json`；原前端74项、后端62项交接摘要开始时全部一致，见 `initial-manifests.json`。
 
 实际运行：WSL Ubuntu22.04/.venv Python3.11.16，CPU预算8；构建Node22.22.2/npm10.9.7；浏览器Windows Edge156.0.4314.42、测试runner Node24.22.1/Playwright1.64.1。正式dist由FastAPI同源挂载在8186，无Vite代理；4186仅用于真实源模块harness和确定性故障夹具；8188仅为流式gzip测试代理。安全上下文为localhost，不等同现场远端HTTP。
 

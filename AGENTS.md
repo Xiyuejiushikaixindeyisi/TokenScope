@@ -24,7 +24,9 @@
 - Tokenizer 与 Chat Template 绑定模型 revision、配置模式和文件摘要。真实数据与生成产物默认不进入 Git，必要来源清单和验证记录另行维护。
 - 原始证据不改写；核对、勘误和结论放 docs 并指向证据。历史版本不覆盖当前入口。
 
-- 当前监控V1的审批与开发入口是 docs/tasks/monitoring/ENTRY.md：B005.1 PLAN为主计划，S0/TESTS为必要附件；DESIGN和过程记录不分别重复申请审批。
+- 四个现有session职责以memory/SESSIONS.md为准：总设计休眠；监控后端负责后端及华为启动验收/debug；前端负责监控及两类分析界面；审查打包负责统一审查及授权后的交付。
+- 当前监控维护/现场入口为docs/tasks/monitoring/ENTRY.md，交付入口为docs/tasks/delivery/ENTRY.md。B005.1计划/设计/TESTS和冻结S0是维护依据，已完成审批不重复申请。
+- 已闭环批次、旧prompt和过期记忆归档到achieve；原始证据、冻结契约和已发布交付文件保持身份，归档后更新入口和链接。
 - 协作、交接、联合验收及打包顺序统一维护于 docs/architecture/TASK_SESSION_WORKFLOW.md；授权内按batch/步骤验证闭环后推进，不把整理文档当作恢复编码或打包授权。
 
 ## Git协作

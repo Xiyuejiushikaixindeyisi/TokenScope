@@ -7,12 +7,12 @@
 | 内容 | 权威入口 | 状态 |
 | --- | --- | --- |
 | 设计 v1.0 | [DESIGN](DESIGN.md) | 已批准；原稿摘要见 APPROVAL |
-| 评审阅读版 | [HTML](TOKEN_MONITORING_V1_APPROVAL.html) / [Markdown](TOKEN_MONITORING_V1_APPROVAL.md) | 从 DESIGN 生成，包含组件、类、时序和活动四图 |
+| 评审阅读版 | [HTML](../../../achieve/2026-10-28/docs/tasks/monitoring/TOKEN_MONITORING_V1_APPROVAL.html) / [Markdown](../../../achieve/2026-10-28/docs/tasks/monitoring/TOKEN_MONITORING_V1_APPROVAL.md) | 从 DESIGN 生成，包含组件、类、时序和活动四图 |
 | 公共契约 v1.0 | [MONITORING_V1](../../contracts/MONITORING_V1.md) | 与 rc2 的指标/仿真/分布语义一致；补充运行和交付接口 |
 | 示意样例 v1.0 | [JSON](../../contracts/examples/monitoring-v1-illustrative.json) | 人工数据，包含三模型、分箱边界、并列众数和空集；非业务实测 |
 | 环境证据 | [原报告](../../huawei/TOKEN_SCOPE_V100_ENVIRONMENT_REPORT.md) / [核对](../../huawei/MONITORING_V100_DESIGN_REVIEW_2026-10-26.md) / [profile](../../../env/profiles/huawei-v100-2026-10-26.json) | 原报告未改写；兼容性和性能未验证 |
 | 执行与进展 | [batch 索引](batches/README.md) / [监控记忆](../../../memory/tasks/monitoring.md) | B001–B005后端closed；B005.1 S0已固定，S1–S5后端闭环；B006归档/pending；生产DeepSeek缺省pending |
-| 恢复上下文 | [当前交接](../../../memory/handoffs/2026-10-27-monitoring-development.md) / [CODEMAP](CODEMAP.md) | 下一轮按当前 batch 扩展阅读 |
+| 恢复上下文 | [当前交接](../../../achieve/2026-10-28/memory/handoffs/2026-10-27-monitoring-development.md) / [CODEMAP](CODEMAP.md) | 下一轮按当前 batch 扩展阅读 |
 | 本次版本摘要与检查 | [manifest](../../../artifacts/reviews/monitoring-v1/design-v1.0-manifest.json) / [检查结果](../../../artifacts/reviews/monitoring-v1/context-validation.json) | 文档/图形/链接/样例检查，不代表代码或部署测试 |
 
 ## 历史与替代关系
@@ -44,7 +44,7 @@
 
 [设计v0.2](batches/B005.1/DESIGN.md)、[共享接口草案](../../contracts/MONITORING_VIEW_V1_DRAFT.md)、[输入摘要](batches/B005.1/INPUT_MANIFEST.json)。拟dev6/schema3/view1仅为计划，不修改运行版本/当前OpenAPI；完整服务还需前端资源版本和J01–J06真实联合证据。
 
-S0：[固定交接](batches/B005.1/S0_CONTRACT.md)、[Schema/样例清单](batches/B005.1/S0_MANIFEST.json)、[闭环](batches/B005.1/S0/RESULT.md)。本轮评审响应与修订摘要见[响应v0.2](batches/B005.1/REVIEW_RESPONSE_v0.2.md)。旧v0.1文档[14文件原字节归档](../../archive/monitoring/B005.1-v0.1-2026-10-27/README.md)；旧B00619文件不变。前端可消费固定契约，实际服务和最终联合另验。
+S0：[固定交接](batches/B005.1/S0_CONTRACT.md)、[Schema/样例清单](batches/B005.1/S0_MANIFEST.json)、[闭环](batches/B005.1/S0/RESULT.md)。本轮评审响应与修订摘要见[响应v0.2](../../../achieve/2026-10-28/docs/tasks/monitoring/batches/B005.1/REVIEW_RESPONSE_v0.2.md)。旧v0.1文档[14文件原字节归档](../../archive/monitoring/B005.1-v0.1-2026-10-27/README.md)；旧B00619文件不变。前端可消费固定契约，实际服务和最终联合另验。
 
 
 2026-10-27 joint-v1-20261027：dev6/f006联合修正版（按joint-v1/source-manifest.json身份），不覆盖S0和原版本证据；统一本机验收完成，未打包，详见JOINT_RESULT_V1.md。

@@ -26,7 +26,7 @@
 
 ## 本轮实际复测
 
-全部日志与独立重建资源在[本轮证据目录](../../../../../artifacts/reviews/prepackage-20261028/)。没有覆盖F007或joint旧证据，没有替换共享apps/viewer/dist。
+全部日志与独立重建资源在[本轮证据目录](../../../../../artifacts/reviews/prepackage-20261028)。没有覆盖F007或joint旧证据，没有替换共享apps/viewer/dist。
 
 | 检查 | 实际结果 |
 | --- | --- |

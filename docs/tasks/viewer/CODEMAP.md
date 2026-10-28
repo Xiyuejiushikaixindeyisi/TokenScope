@@ -1,4 +1,4 @@
-# 当前前端源码地图（2026-10-27，0.1.0-f006）
+# 当前前端源码地图（2026-10-28，0.1.0-f007）
 
 apps/viewer为正式实现，旧HTML为视觉参考。设计及验收入口见ENTRY。
 
@@ -88,7 +88,7 @@ build_demo.py 将报告源码和样例内联进 HTML，无外部资源依赖。�
 
 ## F007计划入口（尚未编码）
 
-审批原型固定为artifacts/prototypes/monitoring-v1/tokenscope-monitoring-demo.html；从配色参考升级为视觉规格。计划修改现有app.tsx、styles/base.css、components/History.tsx、features内展示组件，逐文件范围见[batches/F007/PLAN.md](batches/F007/PLAN.md)。测试复用现有component/browser框架；实际新增/修改符号和证据待实施登记，不提前声称已实现。
+审批原型固定为artifacts/prototypes/monitoring-v1/tokenscope-monitoring-demo.html；从配色参考升级为视觉规格。计划修改现有app.tsx、styles/base.css、components/History.tsx、features内展示组件，逐文件范围见[batches/F007/PLAN.md](../../../achieve/2026-10-28/docs/tasks/viewer/batches/F007/PLAN.md)。测试复用现有component/browser框架；实际新增/修改符号和证据待实施登记，不提前声称已实现。
 
 ## F007实际代码（0.1.0-f007）
 

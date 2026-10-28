@@ -77,4 +77,4 @@ LCP 差异位置与实际可复用边界分开解释；只有业务位置时不�
 
 ## 当前权威：Token监控前端v1.0最终评审稿
 
-2026-10-27用户采用R1/R2修订；[最终方案](MONITORING_INTERACTION_V1.md)、[batch计划](batches/README.md)、[统一验收](ACCEPTANCE_V1.md)取代早期交互建议。设计待用户审批，F001–F006未开始。最终联合测试/打包归后端session；[交接prompt](../../../prompts/sessions/MONITORING_BACKEND_FRONTEND_V1_HANDOFF.md)未自动发送。
+2026-10-27用户采用R1/R2修订；[最终方案](MONITORING_INTERACTION_V1.md)、[batch计划](batches/README.md)、[统一验收](ACCEPTANCE_V1.md)取代早期交互建议。设计待用户审批，F001–F006未开始。最终联合测试/打包归后端session；[交接prompt](../../../achieve/2026-10-28/prompts/sessions/MONITORING_BACKEND_FRONTEND_V1_HANDOFF.md)未自动发送。

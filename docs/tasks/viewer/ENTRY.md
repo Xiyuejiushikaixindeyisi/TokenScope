@@ -1,19 +1,15 @@
-# 前端展示任务入口
+# TokenScope前端设计开发入口
 
-2026-10-28：**F007（0.1.0-f007）用户人工验收通过，batch closed。后端或新session的打包前统一审查待执行。** Docker与交付包未授权。
+2026-10-28：Token监控F007（0.1.0-f007）已获用户人工验收，打包前审查和本机容器交付也已完成。当前维护监控前端；后续继续负责低命中率分析、Token异常分析的前端设计与开发。两个分析器的结果/证据契约需与对应新session共同确认，已有HTML demo不等于正式分析实现。
 
-当前入口：[F007最终修改方案](batches/F007/PLAN.md) → [测试](batches/F007/TESTS.md) → [独立视觉验收](batches/F007/VISUAL_ACCEPTANCE.md) → [闭环/后端审查入口](batches/F007/RESULT.md)。审批HTML是本批唯一视觉基准，不再仅作为配色参考。功能交互继续遵循[批准设计](MONITORING_INTERACTION_V1.md)和S0。[批次索引](batches/README.md) · [审批记录](APPROVAL.md) · [源码地图](CODEMAP.md)。历史F001–F006及[联合结果](../monitoring/JOINT_RESULT_V1.md)保留。
+## 当前阅读顺序
 
-纯展示修复由前端回归和用户人工视觉验收，不主动重复完整联合review；后端在Docker构建/镜像打包前统一阅读代码、闭环、设计文档验收。两项独立记录，打包仍需单独同意。
+- P0：[当前状态](../../../memory/CURRENT.md)、[分工](../../../memory/SESSIONS.md)。
+- P1监控维护：[批准交互设计](MONITORING_INTERACTION_V1.md)、[源码地图](CODEMAP.md)、[验收门槛](ACCEPTANCE_V1.md)、[固定S0](../monitoring/batches/B005.1/S0_CONTRACT.md)。
+- P1分析界面：[分析报告展示设计起点](DESIGN.md)、[两类分析HTML demo](../../../artifacts/prototypes/monitoring-v1/tokenscope-monitoring-with-reports-v2.html)、[原型来源与入口](CODEMAP.md)，再读[低命中分析](../prefix-analysis/ENTRY.md)或[Token异常分析](../length-analysis/ENTRY.md)的当前设计/契约。
+- P2已完成证据：[F007结果](../../../achieve/2026-10-28/docs/tasks/viewer/batches/F007/RESULT.md)、[视觉验收](../../../achieve/2026-10-28/docs/tasks/viewer/batches/F007/VISUAL_ACCEPTANCE.md)、[联合结果](../monitoring/JOINT_RESULT_V1.md)、[交付结果](../monitoring/batches/B006/RESULT_20261028.md)。
+- P3：[闭环批次索引](batches/README.md)、[审批历史](APPROVAL.md)。
 
-P0：AGENTS、memory/CURRENT、本入口。P1：本次修改涉及的批次与设计章节、固定后端S0及相关源码/测试；不全量读历史研究。
+职责：apps/viewer、前端设计/测试/记忆；前端只消费已有结果，不在页面访问时运行编码、理想命中计算或诊断。分析session维护算法和结果/证据契约，前端维护展示和交互，不把合成HTML数据当真实后端能力。
 
-职责：本fork维护前端代码/设计/测试/记忆；只消费监控后端契约，不实现计量或诊断算法。最终真实J01–J06/R1/R2、Docker/镜像/代码交付由后端Session 1统一负责，打包须用户另行同意。两类分析交互延后，已批准报告HTML只是参考。
-
-执行约定：按MONITORING_INTERACTION_V1.md逐batch实现→验证/测试→达到门槛→闭环记录和增量记忆；agent自行决定下一batch，完整前端后交用户审批。只有无法解决、改变总方案、增加未约定组件或类、涉及后端契约变更的重大问题才暂停讨论；普通缺陷和测试失败自主修复，不反复停止、不擅改契约。
-
-用户批准内存修订：64MiB优化、256MiB导出增量验收上限；两规模重复测量，正确性和应用缓冲限制不变，见设计9.4与F005记录。
-
-[前端记忆](../../../memory/tasks/viewer.md) · [实际会话登记](../../../memory/SESSIONS.md) · [构建入口](../../../apps/viewer/README.md)
-
-人工验收HTTP：http://127.0.0.1:8000/#/overview （刷新读取当前构建）。后续审查/打包可由用户另建session执行，交接prompt见prompts/sessions/SESSION_FRONTEND_REVIEW_AND_PACKAGING.md；本会话未创建。
+后端负责现场服务启动验收/失败排查；打包session负责统一审查及授权后的交付。前端提供可复现构建/资源/锁/测试和回退，修复自身问题。重大目标/接口/验收变化与用户讨论；授权内普通缺陷和测试失败自行修复复测，不降低门槛。当前导出仍按64MiB优化目标、256MiB验收上限及已批准的重复大文件测量要求，不因归档改变。

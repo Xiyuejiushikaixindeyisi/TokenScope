@@ -12,7 +12,7 @@
 | [service.py](../../../src/tokenscope/monitoring/service.py)、[API](../../../src/tokenscope/api/app.py) | 旧GET保持，新增展示服务/安全DTO/SSE/详情/导出 | [旧接口](../../../tests/integration/monitoring/test_interfaces.py)、拟test_view_api/test_view_export |
 | [stage.py](../../../src/tokenscope/encoding/stage.py) | 已有原JSON/轻证据/事实连接，不调用GET重编码 | [stage](../../../tests/integration/encoding/test_stage.py) |
 | [simulation.py](../../../src/tokenscope/monitoring/simulation.py) | 普通链式DES、增强占位，本批不改算法 | [差分](../../../tests/unit/monitoring/test_simulation.py) |
-| [check_batch.py](../../../scripts/validation/check_batch.py)、[E2E](../../../scripts/validation/run_monitoring_e2e.py) | 旧145项基线；实施时增加B005.1及SSE真实进程E2E | [B005最终记录](batches/B005/TESTS.md) |
+| [check_batch.py](../../../scripts/validation/check_batch.py)、[E2E](../../../scripts/validation/run_monitoring_e2e.py) | 旧145项基线；实施时增加B005.1及SSE真实进程E2E | [B005最终记录](../../../achieve/2026-10-28/docs/tasks/monitoring/batches/B005/TESTS.md) |
 
 拟建view_models/view_projection/publications/events/views及测试详见[B005.1 PLAN](batches/B005.1/PLAN.md)，当前尚无对应代码，不能当已实现路径。验收映射见[TESTS](batches/B005.1/TESTS.md)。前端两份只读依赖及所读源码SHA见[输入清单](batches/B005.1/INPUT_MANIFEST.json)。共享接口唯一草案见[MONITORING_VIEW](../../contracts/MONITORING_VIEW_V1_DRAFT.md)。
 

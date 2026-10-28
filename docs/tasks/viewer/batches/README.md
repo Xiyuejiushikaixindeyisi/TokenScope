@@ -1,25 +1,17 @@
-# 前端逐batch开发计划 v1.0
+# 前端批次索引
 
-2026-10-27；最终评审稿配套。[最终设计](../MONITORING_INTERACTION_V1.md)已获用户审批（见[审批记录](../APPROVAL.md)）；F001–F006已closed，随后联合完成；当前F007已于2026-10-28人工验收通过并closed，见本批PLAN。
+F001–F007均已闭环，正文移achieve；监控当前维护和两类分析界面入口见[ENTRY](../ENTRY.md)。
 
-每批依次维护CONTEXT、PLAN、ISSUES、TESTS、RESULT。门槛/问题/测试证据齐备才closed，再推进下一批。不能把失败改为下批优化后通过；目标/接口变化或降门槛交用户裁决。每批增量更新memory/tasks/viewer及ENTRY/CODEMAP，CURRENT只存入口。记录假服务/实际后端/联合验收的不同证据。
-
-| 批次 | 范围 | 当前状态 |
+| 批次 | 范围 | 历史结果 |
 | --- | --- | --- |
-| [F001](F001/PLAN.md) | 契约与前端工程基础 | closed / 全部门槛通过 |
-| [F002](F002/PLAN.md) | 通知、目录、缓存和完整快照 | closed / 证据见各批RESULT |
-| [F003](F003/PLAN.md) | 监控展示与只读交互 | closed / 证据见各批RESULT |
-| [F004](F004/PLAN.md) | 提交恢复与配置操作 | closed / 证据见各批RESULT |
-| [F005](F005/PLAN.md) | 有界导出和完整性校验 | closed / 证据见各批RESULT |
-| [F006](F006/PLAN.md) | 统一前端验收、设计核对和后端交接 | closed / 证据见各批RESULT |
-| [F007](F007/PLAN.md) | 审批DEMO视觉还原；独立视觉与人工验收 | closed / 2026-10-28人工验收通过；打包前统一审查待执行 |
+| F001 | 契约与工程 | [闭环](../../../../achieve/2026-10-28/docs/tasks/viewer/batches/F001/RESULT.md) |
+| F002 | 通知与缓存 | [闭环](../../../../achieve/2026-10-28/docs/tasks/viewer/batches/F002/RESULT.md) |
+| F003 | 监控展示 | [闭环](../../../../achieve/2026-10-28/docs/tasks/viewer/batches/F003/RESULT.md) |
+| F004 | 提交恢复与配置 | [闭环](../../../../achieve/2026-10-28/docs/tasks/viewer/batches/F004/RESULT.md) |
+| F005 | 有界导出 | [闭环](../../../../achieve/2026-10-28/docs/tasks/viewer/batches/F005/RESULT.md) |
+| F006 | 统一验证交接 | [闭环](../../../../achieve/2026-10-28/docs/tasks/viewer/batches/F006/RESULT.md) |
+| F007 | 视觉恢复及用户验收 | [闭环](../../../../achieve/2026-10-28/docs/tasks/viewer/batches/F007/RESULT.md) |
 
-## 联合测试与交付
+F007用户于2026-10-28确认通过；后续统一审查和容器交付见[B006结果](../../monitoring/batches/B006/RESULT_20261028.md)。历史联合由后端完成，当前打包归独立审查打包session。
 
-F006是前端本地统一验证与ready_for_joint交接，不是最终发布验收。后端会话统一执行真实J01–J06及R1/R2扩展，绑定双方源码/资源、schema、数据和浏览器证据；统一负责Docker/镜像归档/代码包。前端提供构建产物及可复现入口不属于擅自构建交付包。原B006保持其后端入口状态，本文不替它改进度。
-
-## 前端持续实施约定（2026-10-27，用户最新决定）
-
-基于 docs/tasks/viewer/MONITORING_INTERACTION_V1.md 开发前端；每个batch实现后验证、测试、满足门槛并更新问题/测试/闭环及记忆，再由agent自行决定进入下一batch。完成完整前端后提交用户审批，不逐批反复等待。
-
-只有无法解决、需要改变总方案、增加未约定组件或类，或涉及后端契约变更的重大问题，才暂停与用户讨论。普通实现缺陷和测试失败自主修复复测，不降低门槛。不得擅改后端接口契约；本条更新的是研发协作约定。最终真实联合验收归后端，Docker及交付包另行审批。
+后续新批按授权记录范围/依赖→实现→测试修复→问题与结果→入口/记忆；重大变更与用户讨论，不重复创建已完成批次。

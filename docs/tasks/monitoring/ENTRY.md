@@ -1,28 +1,19 @@
-# Token监控：开发与交接入口
+# Token监控后端设计开发入口
 
-2026-10-28交付会话增量：用户明确授权后，dev6/F007完整服务已在WSL构建并通过容器、断网、重启和浏览器验证，镜像/代码/prompt已移动Windows桌面；[本轮交付结果](batches/B006/RESULT_20261028.md)。B006 P5华为现场仍待验收。以下2026-10-27为历史联合停点。
-
-2026-10-27：**用户授权的真实前后端联合E2E与review已完成并暂停。** 最新入口：[联合报告](JOINT_RESULT_V1.md)。候选joint-v1-20261027为dev6/f006联合修正版，以SHA清单为准；166项后端、143项前端回归，3模型×5appid全量泊松30,168有效请求及浏览器/恢复/导出压力通过。S0/schema不变，B006打包pending，Docker/交付包未授权。
+2026-10-28：后端dev6/schema3/view1、前后端联合已完成，F007与统一交付已完成本机验收。**本session负责华为实验机服务能否拉起的验收，以及启动失败的debug、修复和复测。现场回传尚未收到，不能宣布现场通过。**
 
 ## 当前阅读顺序
 
-| 优先级/用途 | 入口 |
+| 用途 | 入口 |
 | --- | --- |
-| P0 恢复 | AGENTS→[CURRENT](../../../memory/CURRENT.md)→本页 |
-| P1 后端结果/接入 | [B005.1 RESULT](batches/B005.1/RESULT.md)、[实际API](../../contracts/MONITORING_IMPLEMENTED_API.md)、[监控交接](../../../memory/handoffs/2026-10-27-monitoring-development.md) |
-| P1 已批准基线 | [PLAN](batches/B005.1/PLAN.md)，必要附件[S0](batches/B005.1/S0_CONTRACT.md)、[TESTS](batches/B005.1/TESTS.md)；无需重新逐份审批 |
-| P1 前端与联合 | [联合报告](JOINT_RESULT_V1.md)及其候选/测试清单为当前结果；前端自身批次入口保留历史 |
-| P1 后续交付 | 联合通过后按[B006 PLAN](batches/B006/PLAN.md)提供具体候选并征得用户同意，再构建/容器验证/现场验收 |
-| P2 实现依据 | [CODEMAP](CODEMAP.md)、B005.1 DESIGN/ISSUES/TESTS和[源码/证据总清单](../../../artifacts/validation/monitoring/B005.1/backend-acceptance.json) |
-| P3 追溯 | [VERSIONS](VERSIONS.md)、旧批/研究/审批HTML与归档，不替代当前入口 |
+| P0恢复 | [CURRENT](../../../memory/CURRENT.md)、[SESSIONS](../../../memory/SESSIONS.md) |
+| P1现场启动验收 | [本轮交付结果](batches/B006/RESULT_20261028.md)、[完整服务执行prompt](../../../prompts/delivery/HUAWEI_MONITORING_FULL_SERVICE.md)、[部署说明](../../../deploy/monitoring/README.md)、[V100事实核对](../../huawei/README.md) |
+| P1定位修复 | [CODEMAP](CODEMAP.md)、[实际API](../../contracts/MONITORING_IMPLEMENTED_API.md)、[当前计量设计](DESIGN.md)、[B005.1技术设计](batches/B005.1/DESIGN.md)、[固定S0](batches/B005.1/S0_CONTRACT.md)、[验证门槛](batches/B005.1/TESTS.md) |
+| P2本机结果 | [联合报告](JOINT_RESULT_V1.md)、[B005.1闭环](../../../achieve/2026-10-28/docs/tasks/monitoring/batches/B005.1/RESULT.md)、[B006](batches/B006/PLAN.md) |
+| P3历史 | [已关闭批次](batches/README.md)、[achieve](../../../achieve/README.md) |
 
-协作、权威顺序及门槛：[统一工作流](../../architecture/TASK_SESSION_WORKFLOW.md)。后端通过≠联合通过≠容器通过≠现场通过。不代替前端会话修改进度、发消息、fork或委派。
+收到现场脱敏报告后先核对release_id/source_commit/image_id、摘要、实际内核/架构/Docker/Compose/端口/权限/挂载和日志；区分包损坏、环境/启动、后端业务和前端问题。按影响范围本地复现并修复后端，保留失败与复测证据；前端问题转其维护范围，镜像/Compose/重新交付与[打包session](../delivery/ENTRY.md)对接。本轮分工不等于已连接现场机器或已执行远程操作。
 
-## 保留边界
+现场预检和启动成功只是一层；合成功能、持久化恢复、浏览器能力及真实CSV性能分别留证，缺项写未执行，不关闭B006 P5。现场原件按[华为文档规则](../../huawei/README.md)保存，不能回传真实请求正文/CSV。
 
-GLM/Qwen/V4普通链式DES，block=128/1536/32；Qwen/V4标近似，增强hybrid只占位。统一编码、计量和直方图由后端维护，GET只读已存成果。生产DeepSeek缺省思考、GLM CP映射、GF资产等价和V100现场性能仍未决。本机只有每模型5appid泊松合成数据，不索取绝密CSV。
-
-[任务记忆](../../../memory/tasks/monitoring.md) · [实际会话](../../../memory/SESSIONS.md)
-
-
-本机人工验收环境已按README构建并持续运行：http://127.0.0.1:8000；三模型×5appid合成结果已生成，等待用户人工确认。详情见README的本机人工验收环境。由用户另行决定是否进入Docker和交付包。
+维护监控后端、统一编码/计量/理想命中计算与公共契约。GET只读成果，诊断复用同一实现。DeepSeek缺省思考、GLM CP映射、GF资产等价和V100真实数据性能仍未决。修复后由打包session统一审查，新的构建/包体须有效明确授权；不用日常Docker重建代替开发测试。

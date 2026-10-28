@@ -1,6 +1,9 @@
-# 发布脚本当前状态
+# 发布脚本入口
 
-2026-10-27：**B006 pending，旧构建方案已归档**。build_monitoring.py仍是0.1.0.dev5时期的monitoring_backend_only准备脚本；原路径保留用于B005历史测试，不能作为第一版完整服务的发布路径。本轮未修改或执行脚本。
+当前完整服务入口：[部署说明](../../deploy/monitoring/README.md)、[交付session](../../docs/tasks/delivery/ENTRY.md)。
 
-[归档与摘要](../../docs/archive/monitoring/B006-backend-preparation-2026-10-27/README.md)。重新启用前必须纳入前端资产、B005.1及联合验收、完整服务版本清单，并在端到端验证之后取得用户新的明确打包批准。
+- prepare_monitoring_context.py：白名单源码/资源/锁定wheel/编码资产，固定候选身份。
+- verify_service.py：显式合成提交检查，或只读恢复检查；报告不等于现场真实数据结论。
+- package_monitoring.py：通过容器/恢复/浏览器检查后形成代码/镜像和清单，产物仅本地。
 
+Docker构建/重新打包须有效明确用户授权。build_monitoring.py是旧backend_only历史脚本，为原测试保留，不作为当前发布入口；[历史快照](../../docs/archive/monitoring/B006-backend-preparation-2026-10-27/README.md)。

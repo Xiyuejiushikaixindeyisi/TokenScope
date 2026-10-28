@@ -1,24 +1,15 @@
-# 任务入口索引
+# 任务与session入口
 
-更新日期：2026-10-27。监控与前端会话已登记；实际实施/暂停状态见各任务ENTRY，不将早期规划视作当前状态。监控V1审批、开发和完整服务交付顺序见[统一工作流](../architecture/TASK_SESSION_WORKFLOW.md)。
+2026-10-28：四个现有session，未来两个以上；实际ID与状态见[登记](../../memory/SESSIONS.md)。职责来自用户最新指派，不由早期主副/fork关系推断。
 
-| 任务 | 负责会话安排 | 启动依赖 | 入口 |
-| --- | --- | --- | --- |
-| Token 监控 | Session 1维护监控后端并统一最终联合/交付 | 用户启动 Session 1 | [监控入口](monitoring/ENTRY.md) |
-| 前端展示 | 已登记前端fork会话，按自身审批与F批计划 | 监控设计完成 | [展示入口](viewer/ENTRY.md) |
-| 理想命中率低原因分析 | 新 Session 2 | 监控设计完成 | [前缀诊断入口](prefix-analysis/ENTRY.md) |
-| 单条请求长度异常分析 | 新 Session 3 | 监控设计完成 | [长度诊断入口](length-analysis/ENTRY.md) |
-| 自进化 Agent | 后续新的 Agent 会话 | 两类分析设计和代码开发均完成 | [Agent 入口](evolution-agent/ENTRY.md) |
+| 任务/session | 状态与职责 | 入口 |
+| --- | --- | --- |
+| TokenScope总设计 | 休眠；产品形态、整体边界、session分工 | [总设计](product/ENTRY.md) |
+| Token监控后端设计开发 | 后端与公共计量契约；华为启动验收、失败debug/修复 | [监控](monitoring/ENTRY.md) |
+| TokenScope前端设计开发 | 监控展示完成；后续两类分析的前端设计开发 | [前端](viewer/ENTRY.md) |
+| 镜像打包和审查 | 统一审查、授权后构建/包体/prompt/本地备份 | [交付](delivery/ENTRY.md) |
+| 命中率异常分析 | 新session待启动；当前范围低理想命中原因分析 | [前缀诊断](prefix-analysis/ENTRY.md) |
+| Token异常分析 | 新session待启动；当前范围请求长度与组成归因 | [长度诊断](length-analysis/ENTRY.md) |
+| 自进化Agent及其他后续任务 | 按依赖与用户启动，不预设已创建 | [Agent](evolution-agent/ENTRY.md) |
 
-会话安排不代表会话已创建；实际状态见 [会话登记](../../memory/SESSIONS.md)。不按主副会话关系推定职责。
-
-## 阅读方式
-
-新 session 读项目 AGENTS、精简 CURRENT 和自己的 ENTRY。然后按该任务当前工作状态阅读 P1；P2/P3 按需追溯，不全量阅读其他任务文档和上游源码。
-
-各任务ENTRY给出当前设计、batch和CODEMAP。监控当前执行入口为B005.1 PLAN（S0固定，S1–S5后端闭环，交接见RESULT）；前端采用同一S0按自身计划推进；其他任务未登记启动不表示已开展工作。
-
-共享输入输出放 docs/contracts，研究放 docs/research，现场原件放 evidence。任务设计引用这些来源，不复制维护第二份。
-
-完整工作方式见 [协作约定](../architecture/TASK_SESSION_WORKFLOW.md)。P3历史启动 Session 1 的文本见 [启动 prompt](../../prompts/sessions/SESSION1_MONITORING_DESIGN.md)。
-
+P0读AGENTS→CURRENT→自己的ENTRY；P1读当前设计、直接依赖契约、源码和测试；P2按问题追依据；P3才读[achieve](../../achieve/README.md)历史。共享输入输出放docs/contracts，原始证据不移改。完整协作方式见[工作流](../architecture/TASK_SESSION_WORKFLOW.md)。

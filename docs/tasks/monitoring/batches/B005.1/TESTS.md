@@ -128,7 +128,7 @@ ruff check/format、mypy28源码、test_views 1项集成测试通过（3.06s）�
 
 ## 最终验证状态
 
-A01–A18后端范围通过，逐项证据与实测值集中在[RESULT最终闭环](RESULT.md)。全回归164 passed（147.48s），ruff/format/mypy31源码通过；最终候选HTTP/压力重跑通过。14份实际DTO、101个固定S0文件校验通过。浏览器TS/R1/R2/J门槛未冒称通过，待前端F006。全部失败与复测见ISSUES，原日志保留。
+A01–A18后端范围通过，逐项证据与实测值集中在[RESULT最终闭环](../../../../../achieve/2026-10-28/docs/tasks/monitoring/batches/B005.1/RESULT.md)。全回归164 passed（147.48s），ruff/format/mypy31源码通过；最终候选HTTP/压力重跑通过。14份实际DTO、101个固定S0文件校验通过。浏览器TS/R1/R2/J门槛未冒称通过，待前端F006。全部失败与复测见ISSUES，原日志保留。
 
 
 ## 2026-10-27 统一联合验收增量

@@ -8,3 +8,5 @@
 
 
 2026-10-27：[B006仅后端准备归档](monitoring/B006-backend-preparation-2026-10-27/README.md)，19份文件逐SHA保存。第一版须含前后端完整服务，当前由B005.1方案及联合验收取代其直接交付路线；B006 pending。
+
+2026-10-28：新的闭环批次、旧prompt和记忆统一在[achieve](../../achieve/README.md)。本目录已有带摘要快照保持原位，不重写历史证据；当前职责及交付状态以任务ENTRY为准。

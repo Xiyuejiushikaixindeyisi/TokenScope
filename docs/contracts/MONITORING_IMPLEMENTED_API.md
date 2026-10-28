@@ -23,7 +23,7 @@ SSE只对相同游标的空尾部查询共享最多100ms结果以控制20订阅�
 
 schema2→3启动前自动建立SQLite一致性备份（先pending文件、校验/fsync后原子改名）；已有完成结果由worker仅根据既有facts回填sidecar，完成前新视图返回503 VIEW_INDEX_NOT_READY。原seal不改写。停服务回退需先保存完整schema3状态及sidecar，再恢复schema2备份并使用dev5代码；不要让旧代码直接打开schema3。
 
-B005.1本机验证结果和未决项见[RESULT](../tasks/monitoring/batches/B005.1/RESULT.md)。这些接口可供独立前端按S0接入，但真实完整服务联合/容器/V100验收分别记录，不把后端单独通过当成最终服务通过。
+B005.1本机验证结果和未决项见[RESULT](../../achieve/2026-10-28/docs/tasks/monitoring/batches/B005.1/RESULT.md)。这些接口可供独立前端按S0接入，但真实完整服务联合/容器/V100验收分别记录，不把后端单独通过当成最终服务通过。
 
 ## 提交与状态
 

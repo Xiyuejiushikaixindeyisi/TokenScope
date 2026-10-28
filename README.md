@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-监控V1本机联合验收完成：后端0.1.0.dev6、前端0.1.0-f006的联合修正版，control schema3、view1、S0契约1.0.0。Git main保存可维护源码；具体基线由Git commit和[联合报告](docs/tasks/monitoring/JOINT_RESULT_V1.md)标识。尚未进行Docker交付或V100现场验收。
+监控V1：后端0.1.0.dev6、前端0.1.0-f007，control schema3、view1、S0 1.0.0；本机联合、F007用户验收、统一审查及Docker/代码交付已完成，华为现场待验收。版本与包摘要见[交付结果](docs/tasks/monitoring/batches/B006/RESULT_20261028.md)。四个session分工与入口见[任务索引](docs/tasks/README.md)，已闭环资料见[achieve](achieve/README.md)。
 
 ## 本地运行（Linux / WSL）
 

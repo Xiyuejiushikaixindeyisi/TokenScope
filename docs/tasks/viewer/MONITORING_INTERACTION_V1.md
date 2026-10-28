@@ -196,12 +196,12 @@ F001须取得后端修订契约/完整样例的确认；尚未提供真实服务
 
 ## 13. 后端交接与技术依据
 
-可直接粘贴的[后端交接prompt](../../../prompts/sessions/MONITORING_BACKEND_FRONTEND_V1_HANDOFF.md)包含统一交付责任、R1/R2修订及验收动作，未自动发送。
+可直接粘贴的[后端交接prompt](../../../achieve/2026-10-28/prompts/sessions/MONITORING_BACKEND_FRONTEND_V1_HANDOFF.md)包含统一交付责任、R1/R2修订及验收动作，未自动发送。
 
 技术选型参考：[React TypeScript](https://react.dev/learn/typescript)、[Vite](https://vite.dev/guide/)。实际版本由F001锁定；官方能力说明不等于本项目已验证。
 
 ## F007：审批DEMO视觉还原补充（2026-10-27）
 
-用户批准直接恢复审批HTML的页面骨架与样式，覆盖本文“仅作为视觉起点”的宽泛表述；具体代码修改、验证、测试和单独视觉验收以[F007 PLAN](batches/F007/PLAN.md)为准。HTML冻结摘要见CONTEXT。六卡三列、输入Token去向条、紧凑元信息、左侧导航及三直方图按原型还原；真实状态/功能差异显式记录，不引入模拟业务。原数据交互、计量语义、后端契约不变。
+用户批准直接恢复审批HTML的页面骨架与样式，覆盖本文“仅作为视觉起点”的宽泛表述；具体代码修改、验证、测试和单独视觉验收以[F007 PLAN](../../../achieve/2026-10-28/docs/tasks/viewer/batches/F007/PLAN.md)为准。HTML冻结摘要见CONTEXT。六卡三列、输入Token去向条、紧凑元信息、左侧导航及三直方图按原型还原；真实状态/功能差异显式记录，不引入模拟业务。原数据交互、计量语义、后端契约不变。
 
-本批纯展示修复不重复整套联合review；前端回归、agent视觉对照、用户人工验收分别记录。后端在Docker构建与镜像打包前统一检查代码、闭环和设计；打包授权独立。当前F007已实施、前端验证通过，2026-10-28用户人工验收通过、F007 closed，见[闭环入口](batches/F007/RESULT.md)。
+本批纯展示修复不重复整套联合review；前端回归、agent视觉对照、用户人工验收分别记录。后端在Docker构建与镜像打包前统一检查代码、闭环和设计；打包授权独立。当前F007已实施、前端验证通过，2026-10-28用户人工验收通过、F007 closed，见[闭环入口](../../../achieve/2026-10-28/docs/tasks/viewer/batches/F007/RESULT.md)。

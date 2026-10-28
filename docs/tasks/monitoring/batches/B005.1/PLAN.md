@@ -1,6 +1,6 @@
 # B005.1 代码编写与实施方案
 
-2026-10-27，v0.2：**用户已批准实施。S0保持冻结，S1–S5后端门槛闭环；backend_ready_for_joint，未打包**。依据 [CONTEXT](CONTEXT.md)、[DESIGN v0.2](DESIGN.md)、[共享接口草案](../../../../contracts/MONITORING_VIEW_V1_DRAFT.md)。恢复代码实施后按以下小步验证推进，不跳过失败进入下一步。
+2026-10-27，v0.2：**用户已批准实施。S0保持冻结，S1–S5后端门槛闭环；backend_ready_for_joint，未打包**。依据 [CONTEXT](../../../../../achieve/2026-10-28/docs/tasks/monitoring/batches/B005.1/CONTEXT.md)、[DESIGN v0.2](DESIGN.md)、[共享接口草案](../../../../contracts/MONITORING_VIEW_V1_DRAFT.md)。恢复代码实施后按以下小步验证推进，不跳过失败进入下一步。
 
 ## 2026-10-27 当前有效授权（覆盖下方历史状态）
 

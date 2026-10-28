@@ -1,10 +1,5 @@
-# Prompt 分类
+# Prompt入口
 
-- agent：产品自进化 Agent 的提示词，与调查输入输出及探测器版本关联。
-- huawei：用户发给华为机执行者的任务 prompt，引用准确的源码、镜像、配置和输出要求。
-- sessions：新开发或评审会话的启动 prompt，明确职责、修改范围与阅读优先级。
+当前现场执行：[完整服务华为prompt](delivery/HUAWEI_MONITORING_FULL_SERVICE.md)，部署时使用随包冻结副本并核对manifest；维护仓库文本不覆盖已交付版本。
 
-当前目录为空，未创建实际执行任务。发布时将选定 prompt 固定到对应交付版本，不能交付一个随后会漂移的“最新 prompt”路径。
-
-产品运行时调查产物放 artifacts/agent_runs；研发 session 交接放 memory/handoffs。
-
+已完成的session启动、前后端交接、F007审查prompt已移至[achieve](../achieve/README.md)，不再作为新会话当前指令。新会话从[任务ENTRY](../docs/tasks/README.md)读取职责。agent目录仅用于产品自进化Agent，角色规划不自动启动工作。

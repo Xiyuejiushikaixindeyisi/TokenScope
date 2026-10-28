@@ -6,6 +6,7 @@
 
 | 目录 | 内容和维护规则 |
 | --- | --- |
+| achieve | 已闭环批次、旧prompt和过期记忆；按日期保留路径映射，原始证据/冻结契约不搬迁 |
 | memory | 研发当前状态、协作规则、会话分工和交接，保持精简并链接权威文档 |
 | docs | 范围、设计、契约、现场核对、阶段计划、调研、决策和分享 |
 | upstream | 固定版本的外部仓库或源码快照，不跟随浮动分支漂移 |
@@ -19,7 +20,7 @@
 | prompts | agent、huawei、sessions 三类版本化提示词 |
 | tests | fixtures、unit、replay、conformance、integration |
 | scripts | dev、import、validate、package 辅助工具 |
-| deploy | 后续 Dockerfile、Compose 和部署入口 |
+| deploy | 当前完整服务Dockerfile/Compose与部署说明；见deploy/monitoring |
 | evidence | 原始源码投递、现场回传、文件清单与摘要 |
 | data | raw、normalized、derived 实际数据，保留来源关联 |
 | artifacts | runs、agent_runs、builds、releases 运行与交付产物 |

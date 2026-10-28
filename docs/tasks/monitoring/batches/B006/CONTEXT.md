@@ -1,9 +1,7 @@
-# B006上下文 v0.2
+# B006当前上下文
 
-2026-10-27，**pending，文档修订不等于执行授权**。用户已指定后端Session 1统一完成最终真实前后端联合测试、Docker构建、镜像归档和代码交付包。前端提供F006 ready_for_joint和可复现构建/测试/回退材料，配合修复；最终前端方案仍待审批后才能编码。
+2026-10-28：dev6/F007完整服务已经通过本机联合、F007用户验收、统一审查和容器交付；不是早期dev5/backend_only状态。当前release monitoring-v1-20261028，包内源码92236ee；[实际结果](RESULT_20261028.md)绑定版本与证据。
 
-依据：[交接评审](../../../../../prompts/sessions/MONITORING_BACKEND_FRONTEND_V1_HANDOFF.md)、[B005.1 v0.2](../B005.1/DESIGN.md)、[前端验收V01–V15](../../../viewer/ACCEPTANCE_V1.md)。本批当前[DESIGN](DESIGN.md)/PLAN/TESTS已纳入R1/R2和统一责任，但当前源码仍dev5/schema2，无新代码、镜像或交付包。
+用户已授权并完成本轮构建与桌面交付；新的候选打包仍需有效明确授权。后端session负责华为服务启动验收、失败debug和后端修复；前端负责自身界面缺陷；审查打包session负责审查/构建/包体/本地备份。现场尚未验收。
 
-原仅后端准备19文件[归档](../../../../archive/monitoring/B006-backend-preparation-2026-10-27/README.md)保持原字节；不能复用backend_only白名单/批准。B005.1后端与前端本地门槛分别通过后，由Session 1统一跑真实J/R扩展；成功并获新明确打包同意，才进入实际B006执行。
-
-S0依赖更新（2026-10-27）：[固定契约1.0.0](../B005.1/S0_CONTRACT.md)已交付，仅完成前端契约输入；B005.1实现、前端F006、最终真实联合与新的打包批准仍是B006前置，B006保持pending。
+依赖：[当前设计](DESIGN.md)、[门槛](TESTS.md)、[固定S0](../B005.1/S0_CONTRACT.md)、[前端设计](../../../viewer/MONITORING_INTERACTION_V1.md)、[统一工作流](../../../../architecture/TASK_SESSION_WORKFLOW.md)。旧backend_only准备禁止作为当前发布入口。

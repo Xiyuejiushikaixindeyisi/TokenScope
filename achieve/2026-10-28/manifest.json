@@ -1,0 +1,729 @@
+{
+  "date": "2026-10-28",
+  "source_commit": "9198865da252346d079d2bf29451eb118d5e1792",
+  "session_id": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "records": [
+    {
+      "old": "docs/tasks/monitoring/batches/B001/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B001/CONTEXT.md",
+      "sha256_before": "f67bedb88b142fd5f59b0979adf285768d88dcffc5b45988fb03c78176e08177",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "bbd615caf4da6ea6e64d28ff053ed08a94601e583d7d39c1bc59d603f50fe5c4"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B001/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B001/ISSUES.md",
+      "sha256_before": "79d8f565954f73552bceda6d0337a7cd6ab9683cb60aa1e61b91a8812ee0eef4",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "79d8f565954f73552bceda6d0337a7cd6ab9683cb60aa1e61b91a8812ee0eef4"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B001/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B001/PLAN.md",
+      "sha256_before": "7f3450356909a78aa9bd9ea42bab774e8bcf6c4953035b294a33bdd59f57a864",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "7f3450356909a78aa9bd9ea42bab774e8bcf6c4953035b294a33bdd59f57a864"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B001/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B001/RESULT.md",
+      "sha256_before": "ebad56e439319e266c17e48740c3ea31c55e6f816f38725875490a090c681870",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "58dd49f85ae9633cb86e62ca545618473349b7083bec4752dd7d5ff63387668b"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B001/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B001/TESTS.md",
+      "sha256_before": "be9829d58447c2ec756ac87ef8b7e18292a97332cd88647600f9b84cbac47a01",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "4dc66cea485c27e886d5b56bc32c75d755bba2ef2e85a9b1ebb2a7924d783ea6"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B002/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B002/CONTEXT.md",
+      "sha256_before": "a2536591498073ef6893b471f8941a527bf617b01848f30a3109a4ffd15ccc9f",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "a2536591498073ef6893b471f8941a527bf617b01848f30a3109a4ffd15ccc9f"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B002/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B002/ISSUES.md",
+      "sha256_before": "497e1569f5b8665b48d07aca75e76fb326d920b9f092ce0eefeddc6716ef23ee",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "497e1569f5b8665b48d07aca75e76fb326d920b9f092ce0eefeddc6716ef23ee"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B002/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B002/PLAN.md",
+      "sha256_before": "bea78b8e75197e2c29a8a93ea01dbc5bceaa0ac5a7f92064726231b0e8de3350",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "bea78b8e75197e2c29a8a93ea01dbc5bceaa0ac5a7f92064726231b0e8de3350"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B002/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B002/RESULT.md",
+      "sha256_before": "fe62ab8a07cc3a8f5957ea25788c8ea786a920b2e0892a7d8888ac97adef45ed",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "fe62ab8a07cc3a8f5957ea25788c8ea786a920b2e0892a7d8888ac97adef45ed"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B002/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B002/TESTS.md",
+      "sha256_before": "2627c00cde85e474af41562d68c395a006f0b492086117cb1d2f8ec4fe12e49d",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "a5634cb14eb8d73aaafaf7a81cd059e9785cb60eba06233f08c9c0b467602335"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B003/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B003/CONTEXT.md",
+      "sha256_before": "22fc83b2852f8321c68fb5d8643d97bb687946e6837207f68c12850e9612be53",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "22fc83b2852f8321c68fb5d8643d97bb687946e6837207f68c12850e9612be53"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B003/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B003/ISSUES.md",
+      "sha256_before": "a4f57e84121138f230450263fa94ef04feeb9dd71e6c497a834eb2e6f2366de4",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "a4f57e84121138f230450263fa94ef04feeb9dd71e6c497a834eb2e6f2366de4"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B003/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B003/PLAN.md",
+      "sha256_before": "e9cd26b663d73bd0d5b4f29a28b947ef7a9de5cd492c96dc104e819cbd556603",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "e9cd26b663d73bd0d5b4f29a28b947ef7a9de5cd492c96dc104e819cbd556603"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B003/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B003/RESULT.md",
+      "sha256_before": "221955974977c22c2663f598eea356d895df811bfbf6c52f982f9a58f2e1c2f5",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "221955974977c22c2663f598eea356d895df811bfbf6c52f982f9a58f2e1c2f5"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B003/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B003/TESTS.md",
+      "sha256_before": "08fc4ff2c1440ab200cc1d54e5e23424943c318a903c3c113aa9032aebd17702",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "08fc4ff2c1440ab200cc1d54e5e23424943c318a903c3c113aa9032aebd17702"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B004/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B004/CONTEXT.md",
+      "sha256_before": "7d33d788e015dccaf138df5d220c61ed1f9ad0b0ab1558b0d2f0be2c5d1c2c83",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "7d33d788e015dccaf138df5d220c61ed1f9ad0b0ab1558b0d2f0be2c5d1c2c83"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B004/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B004/ISSUES.md",
+      "sha256_before": "f4d1c5e480592dd0b3140042120cb5b07e72b7ecbdc7037ba7b04c91bd0a25ac",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "f4d1c5e480592dd0b3140042120cb5b07e72b7ecbdc7037ba7b04c91bd0a25ac"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B004/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B004/PLAN.md",
+      "sha256_before": "b857fe9b6625b628f76db20f54f00e2a1fabe55ba9dc4ee7dea73750448921cd",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "b857fe9b6625b628f76db20f54f00e2a1fabe55ba9dc4ee7dea73750448921cd"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B004/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B004/RESULT.md",
+      "sha256_before": "071d0d46f808a4f182eeeed172ecabdda2daff1192e3285d33c3b1890d09d624",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "071d0d46f808a4f182eeeed172ecabdda2daff1192e3285d33c3b1890d09d624"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B004/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B004/TESTS.md",
+      "sha256_before": "ea945a724b179bbca1846857e228f83705dfe4189fdfc8bf89d6208bb9a142a8",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "ea945a724b179bbca1846857e228f83705dfe4189fdfc8bf89d6208bb9a142a8"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B005/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B005/CONTEXT.md",
+      "sha256_before": "91438086ff22018f421984a500f62ec017c38832087af12ce4cf5365732e3ce5",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "91438086ff22018f421984a500f62ec017c38832087af12ce4cf5365732e3ce5"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B005/DESIGN_CHECK.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B005/DESIGN_CHECK.md",
+      "sha256_before": "23304bb29dfbbbe8d1478195bb0a81bdc972703651a2ece2880d74a03b06fd19",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "23304bb29dfbbbe8d1478195bb0a81bdc972703651a2ece2880d74a03b06fd19"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B005/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B005/ISSUES.md",
+      "sha256_before": "108f3d7e37fd25f8bb9a070b63d9afbb05056d0ec256f4e98c2a78a6679e0fc3",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "108f3d7e37fd25f8bb9a070b63d9afbb05056d0ec256f4e98c2a78a6679e0fc3"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B005/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B005/PLAN.md",
+      "sha256_before": "dfb6dc588d8243592c8a801c6eed955e775926d08447e6a6e4a0bb5d2a42d316",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "dfb6dc588d8243592c8a801c6eed955e775926d08447e6a6e4a0bb5d2a42d316"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B005/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B005/RESULT.md",
+      "sha256_before": "4194f9bc256e70f01fe1cff2cb01725a88171eab20e8fc60ecf8530a00989c91",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "f6ab5a2740b61f747b728f7e009a2ecbdc0b2f36680542b82f5d38cf13c9dfda"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B005/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B005/TESTS.md",
+      "sha256_before": "dd7c5395d782b7d6d68fcd6451995eb4fb087ece8d72287a200e8bf16ab93c65",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "a64b7cdf513b2a4f3104f5955e523f0820c06c10687d560e5b8b75d3546ac925"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F001/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F001/CONTEXT.md",
+      "sha256_before": "5a653053103526188eff0f1e417c2536be883ec6d7b5a0327dab6941b3b53c12",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "fb50b7fdc8a919393f037098a9894e1bd12b21ed466cd83e2a8d26cb6736ded0"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F001/CONTRACT_MATRIX.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F001/CONTRACT_MATRIX.md",
+      "sha256_before": "4b43e7652218ab168863919759947883d126c9ee4524c93b85968e3d3a7a5065",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "4b43e7652218ab168863919759947883d126c9ee4524c93b85968e3d3a7a5065"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F001/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F001/ISSUES.md",
+      "sha256_before": "e3614f1b2e016ffd8fd2faed3e82e1aea1de12848e4c207fbfda039580a4acd2",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "e3614f1b2e016ffd8fd2faed3e82e1aea1de12848e4c207fbfda039580a4acd2"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F001/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F001/PLAN.md",
+      "sha256_before": "87a54b2e36e6308cb261b5d823add8255750df7962cafc9df68e81524444e355",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "87a54b2e36e6308cb261b5d823add8255750df7962cafc9df68e81524444e355"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F001/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F001/RESULT.md",
+      "sha256_before": "5235067775071a2a96987b34236baf64c511743e4646075a010c46b215f0786c",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "5235067775071a2a96987b34236baf64c511743e4646075a010c46b215f0786c"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F001/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F001/TESTS.md",
+      "sha256_before": "6d4d3ea47da71dde869c086ea26fa10782bf919da84dd53ea9c9392052fd2019",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "6d4d3ea47da71dde869c086ea26fa10782bf919da84dd53ea9c9392052fd2019"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F002/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F002/CONTEXT.md",
+      "sha256_before": "5c09f529b1036fa263c785ff85ea2a6c888f094edb9763fabf5772397b77e3a6",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "45862641eaa0696aa3adbda088a4278ccbb20e2e3c1b137b52b25d4f0b246a56"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F002/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F002/ISSUES.md",
+      "sha256_before": "de4595a1d0a0af0faaacf2673724960ab381f504172861384b74c8e74ab4a2da",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "de4595a1d0a0af0faaacf2673724960ab381f504172861384b74c8e74ab4a2da"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F002/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F002/PLAN.md",
+      "sha256_before": "7f265ff8afc8efa6f317200a8ee1cf258a50d237182c2aaa38055ea1915c319e",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "7f265ff8afc8efa6f317200a8ee1cf258a50d237182c2aaa38055ea1915c319e"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F002/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F002/RESULT.md",
+      "sha256_before": "ad76d8d3305da1594c966ca47cd286c1008defe96bb3da8f1bd219a89527612c",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "ad76d8d3305da1594c966ca47cd286c1008defe96bb3da8f1bd219a89527612c"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F002/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F002/TESTS.md",
+      "sha256_before": "9676fa069418b7fecb75e70faac5bf1ff2f1e448fb499f1fbcd50bc6382ad542",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "9676fa069418b7fecb75e70faac5bf1ff2f1e448fb499f1fbcd50bc6382ad542"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F003/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F003/CONTEXT.md",
+      "sha256_before": "ff57e0d639486f59f48033d7a01ff039023d396b9d7795f602d6fb8ddbea0c3c",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "352e261a3350854a1fae8869e76b793a7a15a2dd61833490f18817fa4cc4fb84"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F003/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F003/ISSUES.md",
+      "sha256_before": "19d0be70099ad6cc0427271c3f66090c9ac345892ad4e825c89a77c82f14ae7d",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "19d0be70099ad6cc0427271c3f66090c9ac345892ad4e825c89a77c82f14ae7d"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F003/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F003/PLAN.md",
+      "sha256_before": "da1ebce7eb6cb8ed0ab94834b8eb0a40a790a8158554800a9a6eb20b2f1e2faf",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "da1ebce7eb6cb8ed0ab94834b8eb0a40a790a8158554800a9a6eb20b2f1e2faf"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F003/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F003/RESULT.md",
+      "sha256_before": "97878842b80675b5f2fe9c5bb347f7107cbfb220b5b4a7596fa973007d5be4ac",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "97878842b80675b5f2fe9c5bb347f7107cbfb220b5b4a7596fa973007d5be4ac"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F003/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F003/TESTS.md",
+      "sha256_before": "3ceb9cf51d90642bb0da5696aea4047e4bba8e67934d52e1de9c440b2d9ecd8a",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "3ceb9cf51d90642bb0da5696aea4047e4bba8e67934d52e1de9c440b2d9ecd8a"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F004/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F004/CONTEXT.md",
+      "sha256_before": "65418db0ed854fa046fbde2e9b391d88c440a04c00a8c9a24418463d232dc58d",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "1f8687f83c2735887fa09d854a9847cd153f3640c200269b0d88ad7d4a12d111"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F004/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F004/ISSUES.md",
+      "sha256_before": "e98f607a2dfcc7caf8998afe708d076874f47036be594f81057b17f0dc0a4f67",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "e98f607a2dfcc7caf8998afe708d076874f47036be594f81057b17f0dc0a4f67"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F004/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F004/PLAN.md",
+      "sha256_before": "d38d859156068db641d63bfd1c243d51588ad2005a0d6de7ae38d52b025dabfe",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "d38d859156068db641d63bfd1c243d51588ad2005a0d6de7ae38d52b025dabfe"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F004/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F004/RESULT.md",
+      "sha256_before": "ceb65492f041774a348e602278c0e46dcf5c768e187d7dbd847516f0901ab98c",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "ceb65492f041774a348e602278c0e46dcf5c768e187d7dbd847516f0901ab98c"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F004/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F004/TESTS.md",
+      "sha256_before": "9898a125040e328d427044a88da99c8aa76410d91d0fdc9abbfb75d08fc5dbc6",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "9898a125040e328d427044a88da99c8aa76410d91d0fdc9abbfb75d08fc5dbc6"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F005/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F005/CONTEXT.md",
+      "sha256_before": "00c2003c0431caf19e6831e329155545a3bed781df31be4381800d5bc2194b19",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "94dd1b7b907822b02ee9b793f12c57d3048bec44d278d35bd7ff46263edf3108"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F005/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F005/ISSUES.md",
+      "sha256_before": "d7aeaaa6f49b6f8f2bf87b5f2d28c42717e719adbb0136daa27aa08ca01ba9f2",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "d7aeaaa6f49b6f8f2bf87b5f2d28c42717e719adbb0136daa27aa08ca01ba9f2"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F005/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F005/PLAN.md",
+      "sha256_before": "58b3774d6231bc32511681ca6c7069ebb80155acef6ee43edeb9129fa238a5b1",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "58b3774d6231bc32511681ca6c7069ebb80155acef6ee43edeb9129fa238a5b1"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F005/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F005/RESULT.md",
+      "sha256_before": "b20d1571aceb494cd7b7bc8a5044fad654524f831ccea6162e58f57a1573eca3",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "b20d1571aceb494cd7b7bc8a5044fad654524f831ccea6162e58f57a1573eca3"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F005/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F005/TESTS.md",
+      "sha256_before": "e80e5936759d38f837b2cf21d87d561e0dfcddc7ca07c6d327e844a32bd7dce8",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "e80e5936759d38f837b2cf21d87d561e0dfcddc7ca07c6d327e844a32bd7dce8"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F006/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F006/CONTEXT.md",
+      "sha256_before": "031f42a93ef1005efb19e27cee89a81e19bc6c8d1635d871a22232342e3d7594",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "d161a40cc9f73f7f046147d14fc56650f15d061da5e840bf042d095239c55616"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F006/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F006/ISSUES.md",
+      "sha256_before": "7cbe98bacacc5e31688032ad93e02402bc9c656aae53e83fe46926f0c17ad7e5",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "7cbe98bacacc5e31688032ad93e02402bc9c656aae53e83fe46926f0c17ad7e5"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F006/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F006/PLAN.md",
+      "sha256_before": "8bf7f0143dbe297cb3f002200cc7b34ecaead860ca9f016c819932ebb74fe646",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "8bf7f0143dbe297cb3f002200cc7b34ecaead860ca9f016c819932ebb74fe646"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F006/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F006/RESULT.md",
+      "sha256_before": "e280336e7c3546cb7a3661b7884fbb7f6684d0a837ce9c664bba398b8f763f92",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "e280336e7c3546cb7a3661b7884fbb7f6684d0a837ce9c664bba398b8f763f92"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F006/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F006/TESTS.md",
+      "sha256_before": "8fe40cc47da53e68318662eaaa0458eabb3581e3a5614445ea48d1be20314d3f",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "8fe40cc47da53e68318662eaaa0458eabb3581e3a5614445ea48d1be20314d3f"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F007/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F007/CONTEXT.md",
+      "sha256_before": "2f6319c1a9c4078a196fba1cf6e25a0f835c7cad519c0d021c33ec599e2fbe05",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "d884f4dec2f1d4803de2fb200a1aeb8c0009c093990a8431daf34d1c3b08dcb8"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F007/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F007/ISSUES.md",
+      "sha256_before": "0b20b7293b11020fcea7e1fe59c413c77f409d24510192777b38c45cd7867b5d",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "0b20b7293b11020fcea7e1fe59c413c77f409d24510192777b38c45cd7867b5d"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F007/PLAN.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F007/PLAN.md",
+      "sha256_before": "59f2563bb66abd75a26c736ab25f4b8de3f522532a0121de14e6d852c2531ea6",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "59f2563bb66abd75a26c736ab25f4b8de3f522532a0121de14e6d852c2531ea6"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F007/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F007/RESULT.md",
+      "sha256_before": "8be49703e8ce26e3c8acb57b81fbd8dfccf741d5eb307750a95777617b9957a3",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "8be49703e8ce26e3c8acb57b81fbd8dfccf741d5eb307750a95777617b9957a3"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F007/TESTS.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F007/TESTS.md",
+      "sha256_before": "f6959c762ea3440388b703f8d30befa460a816597771cef17b8f5d5e06769447",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "f6959c762ea3440388b703f8d30befa460a816597771cef17b8f5d5e06769447"
+    },
+    {
+      "old": "docs/tasks/viewer/batches/F007/VISUAL_ACCEPTANCE.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/batches/F007/VISUAL_ACCEPTANCE.md",
+      "sha256_before": "c1c16f26cb540660092d86edb416184a24617a6b3c980e73b1ab9485662aeaa1",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "c1c16f26cb540660092d86edb416184a24617a6b3c980e73b1ab9485662aeaa1"
+    },
+    {
+      "old": "docs/tasks/viewer/handoffs/FRONTEND_READY_FOR_JOINT.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/handoffs/FRONTEND_READY_FOR_JOINT.md",
+      "sha256_before": "e4641dbedfca27424687481c90f727614e8624953409b06fe3eef4d90027f68e",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "e4641dbedfca27424687481c90f727614e8624953409b06fe3eef4d90027f68e"
+    },
+    {
+      "old": "docs/tasks/viewer/reviews/B005_1_REVIEW_2026-10-27.md",
+      "new": "achieve/2026-10-28/docs/tasks/viewer/reviews/B005_1_REVIEW_2026-10-27.md",
+      "sha256_before": "178eaf185526f2d994b2bd858571703e34d1c881209e30f5bad478fe3af765bc",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "8df419390ca4ba1fe6471ba1dc0c70948dc5753ede19503f3a3d237ebb8b815b"
+    },
+    {
+      "old": "prompts/sessions/.gitkeep",
+      "new": "achieve/2026-10-28/prompts/sessions/.gitkeep",
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "old": "prompts/sessions/MONITORING_BACKEND_FRONTEND_V1_HANDOFF.md",
+      "new": "achieve/2026-10-28/prompts/sessions/MONITORING_BACKEND_FRONTEND_V1_HANDOFF.md",
+      "sha256_before": "8380526e67ec5a95ae831eca84195dcba95044fe543e10c593b1deec33dc2112",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "b1c621ce9fa2d7685ab4e6900f4a883be1b2a6df612c2e0ff36ac6af830296aa"
+    },
+    {
+      "old": "prompts/sessions/SESSION1_MONITORING_DESIGN.md",
+      "new": "achieve/2026-10-28/prompts/sessions/SESSION1_MONITORING_DESIGN.md",
+      "sha256_before": "b6a4b4a8fce56dff97ab21956a85b51f18cf19c1db4fd79f38ed88baf2da3cf4",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "b6a4b4a8fce56dff97ab21956a85b51f18cf19c1db4fd79f38ed88baf2da3cf4"
+    },
+    {
+      "old": "prompts/sessions/SESSION_FRONTEND_REVIEW_AND_PACKAGING.md",
+      "new": "achieve/2026-10-28/prompts/sessions/SESSION_FRONTEND_REVIEW_AND_PACKAGING.md",
+      "sha256_before": "d91e834116c958f17945f8d159219495e696ffa0af5162074c4f58d7cc23611e",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "d91e834116c958f17945f8d159219495e696ffa0af5162074c4f58d7cc23611e"
+    },
+    {
+      "old": "memory/handoffs/2026-10-23-workspace.md",
+      "new": "achieve/2026-10-28/memory/handoffs/2026-10-23-workspace.md",
+      "sha256_before": "ba9f734b9d23507a8ab78df62f54dac96fc5de2a48e349ae8fbc7ff3b38b4f3c",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "40b08d40719ae8c6bdde12ecca18c7955ae4bf22a9dbc87fe0aea30f6f8a5870"
+    },
+    {
+      "old": "memory/handoffs/2026-10-26-monitoring-v1.md",
+      "new": "achieve/2026-10-28/memory/handoffs/2026-10-26-monitoring-v1.md",
+      "sha256_before": "7da60b0b9993748a31f40bcbb68f02c89e8362ef035c649d7146ba2056ec8224",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "825ad965c8faa8ea5d29a7daf1fcd4f308d7c88e5ff773acbde3e6fa7155a6eb"
+    },
+    {
+      "old": "memory/handoffs/2026-10-27-monitoring-development.md",
+      "new": "achieve/2026-10-28/memory/handoffs/2026-10-27-monitoring-development.md",
+      "sha256_before": "5ecbaccf931c33fb029b90657235617b8337fe2981a3245db1f8eb2499f2ffa2",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "5f68bd3571dc701c0743114e31df2d499caf02a0117095cceacf94ddbff8f9fb"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B005.1/CONTEXT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B005.1/CONTEXT.md",
+      "sha256_before": "44a8beb18ee20f8fe2c8be19104ea9fe2cb14f954b5d39a5964b111d93853cec",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "51ca96f6ff7710727675f33c0a24f1a9454dd615f09d4c0142198934a5e0a167"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B005.1/RESULT.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B005.1/RESULT.md",
+      "sha256_before": "abbf33dca6865022ae161f315730b5ed3865380928a33d170b879d4b921bc38d",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "89aa6899bd18376306f7f4c41b6276fe58f9fa738c5b69f8075813aa01d0bf5c"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B005.1/ISSUES.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B005.1/ISSUES.md",
+      "sha256_before": "82b40f82c40673b2b89775011579ee7a4e0ac11abcfe557d9925c17c56067a95",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "8dd7c3ab17c65fb96c6805d96fa86d7bc0ef91a2433bba253e410f0657cf4076"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B005.1/REVIEW_RESPONSE_v0.2.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/batches/B005.1/REVIEW_RESPONSE_v0.2.md",
+      "sha256_before": "e0c838bed6108cf18e6449756be1b70e136d60a60b78389d36db399f58286c56",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "e2aa16527a213cb88f62e223510eb921500549446f4aaf77506be525375197e5"
+    },
+    {
+      "old": "prompts/delivery/HUAWEI_MONITORING_V1.md",
+      "new": "achieve/2026-10-28/prompts/delivery/HUAWEI_MONITORING_V1.md",
+      "sha256_before": "675e84c77046d9f2e06622dbaa4b56f5742135063e12b7242d18a0845174ee14",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "675e84c77046d9f2e06622dbaa4b56f5742135063e12b7242d18a0845174ee14"
+    },
+    {
+      "old": "docs/tasks/monitoring/prompts/HUAWEI_V100_ENVIRONMENT_PROBE.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/prompts/HUAWEI_V100_ENVIRONMENT_PROBE.md",
+      "sha256_before": "70618244668c7f808ac8e913dd42ae323f6a116253e3365c00df17ecfcfe8243",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "70618244668c7f808ac8e913dd42ae323f6a116253e3365c00df17ecfcfe8243"
+    },
+    {
+      "old": "docs/tasks/monitoring/TOKEN_MONITORING_V1_APPROVAL.html",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/TOKEN_MONITORING_V1_APPROVAL.html",
+      "sha256_before": "29563c9b41fd7841e19c174540f8eb016b650d9627076e2032aad37f1d4ee400",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "29563c9b41fd7841e19c174540f8eb016b650d9627076e2032aad37f1d4ee400"
+    },
+    {
+      "old": "docs/tasks/monitoring/TOKEN_MONITORING_V1_APPROVAL.md",
+      "new": "achieve/2026-10-28/docs/tasks/monitoring/TOKEN_MONITORING_V1_APPROVAL.md",
+      "sha256_before": "6ca361bdc585c7a4687cababe8d481bb3e9a9ca5d088674d5ac5e270ed1b22de",
+      "reason": "closed batch or superseded handoff/prompt",
+      "sha256_after": "9006522a12d58d8f901358b02176d9066699ebcf7a8815bc35154980dfd2e1ad"
+    },
+    {
+      "old": "memory/CURRENT.md",
+      "new": "achieve/2026-10-28/snapshots/memory/CURRENT.md",
+      "sha256_before": "5896e2d6fc0d90258392eae82e66ba177138850c41ace2cd68b10587348d87f5",
+      "reason": "superseded current-status snapshot",
+      "sha256_after": "450326202fe2ef1b9926d869bbdde7f9dc01e6cb9efaf0563f03f176839d77bd"
+    },
+    {
+      "old": "memory/SESSIONS.md",
+      "new": "achieve/2026-10-28/snapshots/memory/SESSIONS.md",
+      "sha256_before": "9cb96592cd27317c62b1edbe52ddd3ac703bc296d8557ef94cb8747fc517cfb5",
+      "reason": "superseded current-status snapshot",
+      "sha256_after": "2846ee2edcc4176688f2163eb3ccbe93e9476100b0e5f0a431b47a1c5003d392"
+    },
+    {
+      "old": "memory/COLLABORATION.md",
+      "new": "achieve/2026-10-28/snapshots/memory/COLLABORATION.md",
+      "sha256_before": "f9d70f29ed880b969e308e001c4f4949822ea2c2c4a1ce7928320c1fcfa7dbcd",
+      "reason": "superseded current-status snapshot",
+      "sha256_after": "7f902154c1d23f30a0634e12822f4646d0db62224094cf2b986ea9a6d516c480"
+    },
+    {
+      "old": "memory/tasks/monitoring.md",
+      "new": "achieve/2026-10-28/snapshots/memory/tasks/monitoring.md",
+      "sha256_before": "e4a74b68f3b7ea51304d83c8bf8fbf7dd7b7b0b8f7784f7c2574eab4518b8422",
+      "reason": "superseded current-status snapshot",
+      "sha256_after": "334dc0082ed68e1abd317859ed17b6cea614623e0b99435e49932e48a15e6e91"
+    },
+    {
+      "old": "memory/tasks/viewer.md",
+      "new": "achieve/2026-10-28/snapshots/memory/tasks/viewer.md",
+      "sha256_before": "a062ddcd2bc105f55a4a9979b2eb99644aff7a981c5964dde4f31d86d357d0ac",
+      "reason": "superseded current-status snapshot",
+      "sha256_after": "041e938211cbe805ab8dffd2bf6343f5d81ff3130e14a0a4fc96055744c1e457"
+    },
+    {
+      "old": "docs/architecture/TASK_SESSION_WORKFLOW.md",
+      "new": "achieve/2026-10-28/snapshots/docs/architecture/TASK_SESSION_WORKFLOW.md",
+      "sha256_before": "0c16198a5c4f3df40156b08ca32e663f6e46e5bc4ff7fe5346946f1e71dd61a3",
+      "reason": "superseded current-status snapshot",
+      "sha256_after": "46e96fd7390fff6c048e8db219d9d0298c82fd4d8329d4861b4d937378baa67e"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B006/CONTEXT.md",
+      "new": "achieve/2026-10-28/snapshots/docs/tasks/monitoring/batches/B006/CONTEXT.md",
+      "sha256_before": "aff530314d970bdef15710bbe2236a4b2aac7f4fb9280b0cb99035613ffa76e8",
+      "sha256_after": "4197a07acb90fbf2659eafe2729b6e830d6e25f81d22e88e0d4251b675eca165",
+      "reason": "superseded B006 status; replaced with current status"
+    },
+    {
+      "old": "docs/tasks/monitoring/batches/B006/ISSUES.md",
+      "new": "achieve/2026-10-28/snapshots/docs/tasks/monitoring/batches/B006/ISSUES.md",
+      "sha256_before": "887d757b414490c54e03549bdcccb877a3c59d3ef1c7439867c5d62ba62b255e",
+      "sha256_after": "6e216ab2c40f265461c10805f9bdf070e5ca6b5cfa0dfe265f640b38b7ae851b",
+      "reason": "superseded B006 status; replaced with current status"
+    }
+  ],
+  "frozen_files_unchanged": {
+    "docs/contracts/examples/monitoring-view-s0/error-503-view_index_not_ready.json": "57d8e6a8390d53d9273e0bb3f930984c70a9ee8f420116a27eead86e5253e6f5",
+    "docs/tasks/monitoring/batches/B005.1/S0/RESULT.md": "b3ff288b87c5fc86a3e0be442d9e389cd021758367e394dd7ba0a7736e3ff1cf",
+    "scripts/contracts/validate_monitoring_view_v1.py": "e13c4ecbd53935256f67fd9fccfd6b58598ddb4673bc3bfb731c0c5f9fa5a972",
+    "docs/contracts/examples/monitoring-view-s0/cases.json": "089fe90d82acd7730bfabc21dce9c0552a23393fabeae9e88a352e4486aba205",
+    "docs/contracts/examples/monitoring-view-s0/error-422-empty_update.json": "6c1bb5c9089222fe78492d011ed8833a706784b148a8efe7e078f5b63ff34ea4",
+    "docs/contracts/schemas/monitoring-view-v1.design.openapi.json": "65638c2d62090c0e5a9707ff2a7112b0c2c1ea4bfa3dfa4fbc082270bb5fcf27",
+    "docs/contracts/examples/monitoring-view-s0/settings-glm.json": "b14ce6a8f4a488e6b801b4310c70f928cc0a3b1050888440a14c0e97e4daa8aa",
+    "docs/tasks/monitoring/batches/B005.1/S0/ISSUES.md": "51d92cb167b1db577aa65171cdb718ece242ead95410e08dcdd6e919d4a18d37",
+    "docs/contracts/examples/monitoring-view-v0.2/manifest.json": "902661a78516a6106979c40efdaa7fbcd19ae1ec7591d08d7a5775619530f07e",
+    "docs/contracts/examples/monitoring-view-s0/error-503-storage_unavailable.json": "d2aea2ef798282da0c5223a3f008405b1abb6c6ab6fc0835f03367c2edb758b1",
+    "docs/contracts/examples/monitoring-view-s0/error-422-invalid_pagination.json": "10e0699410bcf2ce099f1ae4836fbfd988aa3918d676196cd9f3a50be02467b0",
+    "docs/contracts/examples/monitoring-view-s0/event-reset-instance_changed.json": "45795948f7319a966cf16f597c6599ea703eeb19deb8d5677aceacbdf8b53a82",
+    "docs/contracts/examples/monitoring-view-s0/snapshot-qwen.json": "7667717e47331a3417c14d0f7cf4c013c40e0ac0fbe92c9e5a0729a2dc5658d0",
+    "docs/contracts/MONITORING_VIEW_V1_DRAFT.md": "918068bb84dce55fee17705d9103739bb4864f7a64085fda2d04241138502a71",
+    "docs/contracts/examples/monitoring-view-s0/requests-empty.json": "3b8819bbb80975a69b380f2108ce375a88daadce4f7bc2cc1acd3b4947e8a984",
+    "docs/contracts/examples/monitoring-view-s0/event-reset-invalid_cursor.json": "0c9b91110b6aa0c0f9a6a842fe2c27212d223b0296b49364fc999b1b28b3781d",
+    "docs/contracts/schemas/monitoring-view-v1.schema.json": "dcbd50142d2fedcac32d68c76228f2db2e9a9d8a212d7e92b4ae674b53e8ccc5",
+    "docs/contracts/MONITORING_VIEW_V1_FIELDS.md": "9f9d9208bd2691ad550ada618df457931d996935242978726f9a9d3b7482d430",
+    "docs/contracts/examples/monitoring-view-v0.2/normal.ndjson": "71be24154799808678c7d7f8247191d15d74cc78c7525b8a44c23d1fa421d12a",
+    "docs/contracts/examples/monitoring-view-s0/error-422-invalid_export_query.json": "097239452539e8d3c18e61ca42e8582e265ea95529fe9d0c35dac50e19361f14",
+    "docs/contracts/examples/monitoring-view-s0/replay.sse": "8204c575502ab5da9442abf802bd589e34845d53db074e2e61ddba427b74bced",
+    "docs/contracts/examples/monitoring-view-s0/rule-update.json": "b5e77b1c8c84db7fb80a06553429d7659a719874962fe28d43cfb35f00ec8bf6",
+    "docs/contracts/examples/monitoring-view-s0/settings-update.json": "6f8cbced5dcda380b61fe4de385c6b652a8e3c3c80a80ac3b92b12da24b60277",
+    "docs/contracts/examples/monitoring-view-s0/snapshot-large-integer.json": "01a2028e3f6f241fd596ce3a31fe574d3e22d079ce1070c40b1ea14eedcdde60",
+    "docs/contracts/examples/monitoring-view-s0/error-404-request_not_found.json": "d93667a94a46c6fb63113705f0edecbaf90960ed0b9ae2ddd1a6cc4fac7bf922",
+    "docs/contracts/examples/monitoring-view-s0/snapshot-normal.json": "51160e293d117e4a1ee014f56462348b772cc4f294fb34b0b5ce79fef2524c8c",
+    "docs/contracts/examples/monitoring-view-s0/error-409-catalog_revision_changed.json": "e242b03f06beb2038c2c308fe7af309d31db0637cf85b323ae4a8cbc160bba39",
+    "docs/contracts/examples/monitoring-view-v0.2/receipts.json": "ccc1bbc24d568ab383528bd70647b21082e330866571787fef144441350a6855",
+    "docs/contracts/examples/monitoring-view-s0/reset.sse": "ee2e3efcbc503b0cee61827972e2d957035c598aea9720401f8370db080682d3",
+    "docs/contracts/examples/monitoring-view-s0/catalog-page-2.json": "62988f1421a83b2df37d5c2e487cd61988f7483d0e5d909734e09086f56f2518",
+    "docs/contracts/examples/monitoring-view-s0/receipt-wrong_instance_no_lookup_or_enqueue.json": "0c6ae7ff462d6e313cfcb9e2b19334fe43d6e58e53b74f36e73e47357f2c4345",
+    "docs/contracts/examples/monitoring-view-s0/error-422-invalid_request.json": "8381dc1c874d4e514c8d8613250ca93edb9bf0f917566425ba868b8eb1b3329e",
+    "docs/contracts/examples/monitoring-view-s0/error-409-service_instance_changed.json": "bbdebaac2a058d19b28844cf7f715189ac75427cd9b3e476d7a8889fd0cabdd1",
+    "docs/contracts/examples/monitoring-view-s0/receipt-unknown_key_not_a_failed_run.json": "923d430e31777111920bbef51bfe1b8daaecd4002d470fef62fb0b7e6b63f19c",
+    "docs/contracts/examples/monitoring-view-s0/models-legacy.json": "0a3762b1e78c339109c62da558f608bdf9aad08eacf911a436ec68fe26433461",
+    "docs/contracts/examples/monitoring-view-v0.2/README.md": "c2b8113286368b3799526d96ce8721c7aca9e0ad292c4740293ffae4a5a07522",
+    "docs/contracts/examples/monitoring-view-s0/submission-accepted.json": "b9d8635dd9d70eab619a829caca9036d4153613f55ab100de12efa4266bf0b10",
+    "docs/contracts/examples/monitoring-view-s0/signals-normal.json": "07903c43b740517eedba730af5c7f10a7d0972ee3c9282d752c0cf1f6fa0691c",
+    "docs/contracts/examples/monitoring-view-v1-draft.json": "608e9bf71ded734cd5884b0654b725bc63afdc0c9c6528ac091ea8e3df938593",
+    "docs/tasks/monitoring/batches/B005.1/S0_CONTRACT.md": "973f202c54b72b798f292af78b8fe8596e8f65d415b803bebe9b879ccca8b130",
+    "docs/contracts/examples/monitoring-view-s0/receipt-running.json": "35a02f1775537d0ab90abf0f813caa8298c102ffd37f6ee81013005a08633224",
+    "docs/contracts/examples/monitoring-view-s0/rule-response.json": "e2388a089775a7281055c8aec64aaf8242fb51787cfa97b3b6c2a73ea13bf19c",
+    "docs/contracts/examples/monitoring-view-s0/submission.json": "4d9663b642cddf3458effcf4e338d921c0c43f72610693a2e2a68665cdeefb39",
+    "docs/contracts/examples/monitoring-view-s0/catalog-empty.json": "02b63a2389e3e894025612649c74f5675899b353982b766e6e805c5ce2e3244a",
+    "docs/contracts/examples/monitoring-view-s0/event-reset-expired.json": "8440fef93f778092a589d124cad40e4e87b2c081dd6b1cd823c03e31ffd580a2",
+    "docs/contracts/examples/monitoring-view-v0.2/normal.csv": "16b34e19226ef298be4571f4d475a28bd8036a4a8cf00630af4356fc0f8435ac",
+    "scripts/contracts/build_monitoring_view_v1.py": "496ce52fe0061bb4b253f8b1a5f05ba1a56eec6fb33e54bbbb0bd73d3f911583",
+    "docs/contracts/examples/monitoring-view-s0/error-400-invalid_file_ref.json": "346480d9a5dd9b7d409e6e4ad1ec09d3db734a0f2ca8d92256ff12408731efc7",
+    "docs/tasks/monitoring/batches/B005.1/S0/PLAN.md": "3fe939da0bbf10026fb4b4ff59dac5abdcacdf7c019aee0f39441259df383e7b",
+    "docs/contracts/examples/monitoring-view-s0/endpoint-examples.json": "db144d1d11bb128e3d6aafc2f6816dda527ac38f7a73f0c83ed9604545ee2e40",
+    "docs/contracts/examples/monitoring-view-s0/error-422-invalid_settings.json": "f227221e32c2e0e68dcce3bcd31226c9d42523bffe1fe5bbd047b540bddeae30",
+    "docs/contracts/examples/monitoring-view-s0/catalog-normal.json": "acec4fbfb4126dcbc4fb58c59dcc1d811b0d32f91cf0d60cd21bf65d8bb9e7b0",
+    "docs/contracts/examples/monitoring-view-s0/settings-deepseek.json": "f3ce100cdc549459d54a5af6977680807cbf1217e1f30546052c817498c253a6",
+    "docs/contracts/examples/monitoring-view-s0/event-reset-future_cursor.json": "64997295bc816d4cd87cd8b6c41a4da12b0e00e2c84bd23a1a511bc257f40281",
+    "docs/contracts/examples/monitoring-view-s0/run-state.json": "b9d8635dd9d70eab619a829caca9036d4153613f55ab100de12efa4266bf0b10",
+    "docs/contracts/examples/monitoring-view-s0/receipt-queued.json": "cd47c409ec0d9a5a3023f80fa73580d0d1a137c84ecb69014772f58d7cf664a1",
+    "docs/contracts/examples/monitoring-view-s0/error-409-revision_conflict.json": "03786eb20a716a9a643e9bdd355bc0979dfaf6f294bad6143be2f3d09bbfe123",
+    "docs/contracts/examples/monitoring-view-s0/catalog-page-1.json": "e319059b77cbc8a465eede27489115eb33b99ece089f9206f674265abe31fa94",
+    "docs/contracts/examples/monitoring-view-s0/error-503-view_artifact_unavailable.json": "e5a53a24f702fa7f3010c73a87659d301938e394206238a5259cba7dc7b32ce6",
+    "docs/tasks/monitoring/batches/B005.1/S0/CONTEXT.md": "45dafc1b452e25b09c11dc91395d0dd0e023409e6905e7763c9ccb298129a7f7",
+    "docs/contracts/examples/monitoring-view-s0/settings-qwen.json": "637cc06921ea73cf40ee27dc54276d778cc7817eb122016126ec32909962b08b",
+    "docs/contracts/examples/monitoring-view-s0/error-404-group_not_found.json": "6ea54b1b6922dc35c56114525eee75a44f5cf1c96db4cb3b492cc468be00c7f3",
+    "docs/contracts/examples/monitoring-view-s0/error-404-model_not_found.json": "7cc191e071122eda7af633c046aea0faceecfebb4abb43b015e45cd5e4ea4d6b",
+    "docs/contracts/examples/monitoring-view-s0/receipt-failed.json": "07ce64dd6bae7fb8ff1b88096f99df9a2ef9babbcf6e01d7e160a3bacc42549c",
+    "docs/contracts/examples/monitoring-view-s0/error-400-invalid_settings.json": "f227221e32c2e0e68dcce3bcd31226c9d42523bffe1fe5bbd047b540bddeae30",
+    "docs/contracts/examples/monitoring-view-s0/error-404-submission_not_found.json": "ce45a0b963b30b3ab56d42ec7c227ba6771cac9eb804dc7b2c3d8430177debf5",
+    "docs/contracts/examples/monitoring-view-s0/error-409-rules_revision_changed.json": "afa7884b84f1de4cb53c1a76208183dfd07694eb47403448851b37d388c09b97",
+    "docs/contracts/schemas/monitoring-current.openapi.json": "d8527644202ef46bcc6c05d5a69bc1a0c64625a17c9b2e411a03779925727a86",
+    "docs/contracts/examples/monitoring-view-s0/event-no-valid.json": "9e78a2414f5c95ec8a27e2e435d79896674e2631df2cf6daeceb5f9ff0336853",
+    "docs/contracts/examples/monitoring-view-s0/requests-overflow.json": "1ef0e83579ca346076b3dbe0501d42f7b16680675722543ed67cbb705e922e3b",
+    "docs/tasks/monitoring/batches/B005.1/S0/TESTS.md": "13287e8cbedbc23c009d3f4f106e240e411ee80ec53e822cf444c01a14f36e1e",
+    "docs/contracts/examples/monitoring-view-v0.2/empty.ndjson": "dd455c05739800eeb84b34a1d495f9bc688e5f4495bfdae5ae52816988731b54",
+    "docs/contracts/examples/monitoring-view-s0/error-404-run_not_found.json": "171bbcffa7866748c16673fb28feba101267edee41d44c6efe00d16104b1a1a6",
+    "docs/contracts/examples/monitoring-view-v0.2/facts.synthetic.json": "919f603f85c5af93ad52a58464f2450f721d96f1daac46283cb44000544c701f",
+    "docs/contracts/examples/monitoring-view-s0/error-422-unknown_encoding_profile.json": "28d56770b5eef6e505b20c0050adce7a44609c5ded7a6d5a55a296340a81ab82",
+    "docs/contracts/examples/monitoring-view-s0/evidence-source_fields.json": "ee978f159d96b37c9ba53278ef09ce9265da170f081ada3edbe50f8d94b977c4",
+    "docs/contracts/examples/monitoring-view-s0/event-completed.json": "6c7db3ec5e33db5186ccd0eb787b2f3c93821d6ac83665f9126c984ca43ec63f",
+    "docs/contracts/examples/monitoring-view-s0/error-422-unsupported_cache_mode.json": "f639453f7267ae3eb7c3eb21e2751327cb60a248f3693d37ef334725b7c0cb39",
+    "docs/contracts/examples/monitoring-view-s0/rules-page.json": "3a8051ac3426bf1f941edace69485b91c463b77e763f4ceeec830ddfa35ab048",
+    "docs/contracts/examples/monitoring-view-s0/error-503-sse_capacity_exceeded.json": "d72c0bdc287cb2a944851ba727b081fe765dcbff90587b6953911877fde817dd",
+    "docs/contracts/examples/monitoring-view-s0/request-detail.json": "580cec8a71a7fb5546d052b2366a2a8f334c505fa6e9b4b30654b17315600073",
+    "docs/contracts/examples/monitoring-view-s0/requests-normal.json": "0ed58e6b1b1b6f88f719f714c45301c8e7b152ff71081fa4f29e8b4f5c76cbc0",
+    "docs/contracts/examples/monitoring-view-v0.2/empty.csv": "0cc1afc5e8dbb7c8aeef626718cfc53519539011977325b9f9f6a1fe07a29e74",
+    "docs/contracts/examples/monitoring-view-s0/requests-duplicate-hash.json": "fc08a09412fb4daa4dc64c89340a339ef5caa5ddeeb9ccb3749b396cf2773936",
+    "docs/contracts/examples/monitoring-view-s0/receipt-completed.json": "e40fd0dc63ab36c34f3425e37960e5eaa243a16b830d47047a5fc02c9e7679e0",
+    "docs/contracts/examples/monitoring-view-s0/snapshot-null-rate.json": "af80bbb2bde7e8299a19bbd8539f32aa63f9853ee191eb4a5a99b5b30a68301f",
+    "docs/contracts/examples/monitoring-view-s0/error-409-submission_key_conflict.json": "fc336f9e0e42c46cda3acc7c6e28cfef6509d45d4e0574a1f7b233f4147d0435",
+    "docs/contracts/examples/monitoring-view-s0/error-409-result_not_ready.json": "6f8917cfc6eca4266539adca6c6be972d34523b3f227c960af60f6a4ddfc0c07",
+    "docs/contracts/examples/monitoring-view-s0/request-body.txt": "d16dfa75ee8bd44841fe1de1889cdaabf6e2364ef26de6844f8c648e9b087191",
+    "docs/contracts/examples/monitoring-view-s0/error-422-invalid_length_query.json": "21eee24558182feb3890e32eb2973de28bacdd402e068591c5968b1d56136ee3",
+    "docs/contracts/examples/monitoring-view-s0/rules-empty.json": "e67bfd20ba887e55bff619a12132f7fb4a4565bda0980adbddc82516d97622f7",
+    "docs/contracts/examples/monitoring-view-s0/receipt-interrupted.json": "47430b412e84c8b703cda2aeb8f7a0349a8693979ef29ee9fd64d9f03625e4f4",
+    "docs/contracts/examples/monitoring-view-s0/signals-empty.json": "ecb16b76f47237b31dfa47d7cc2281ac17d1bb92cecb71a7e78bb013f5b7b8d3",
+    "docs/contracts/examples/monitoring-view-s0/runs-no-valid-rows.json": "b61390fe3ffb8a98a70129733f635c53394058a411e117616f24e38c5460cfd4",
+    "docs/contracts/examples/monitoring-view-s0/evidence-special_ranges.json": "3630129d8762bc8cf159ba177f94b13a43ea44404ed920c1a41c630ef8926934",
+    "docs/contracts/examples/monitoring-view-s0/README.md": "d281cf2d5ec018aedd1db1dd8a344f2102cce39a8d50a92edc3b411ed6f2787c",
+    "docs/contracts/examples/monitoring-view-s0/snapshot-deepseek.json": "a20243f98618d9141d0347122497df97464dfa734842828475d3ab932e974a15",
+    "docs/contracts/examples/monitoring-view-s0/event-interrupted.json": "f56e8229685ca8cd217d59ad3d2ce4589770acd658f006792fabebc8676546c5",
+    "docs/contracts/examples/monitoring-view-s0/rule-ratio.json": "758ff581bac24518e965b01dbe1bc6508cb15dd360f82d91538ed82e00ea7b3c",
+    "docs/contracts/examples/monitoring-view-s0/rule-fractional-count-threshold.json": "6a3f53a602e6d445f3977d1fe40cd889a5c1b6be746b8a7e3cdfca0a9c437b32",
+    "docs/contracts/examples/monitoring-view-s0/error-422-invalid_bin_width.json": "a0b7c7b3291fd7896ca200fbd29d99c51c0655e6ffb94d3532a30df777b93b78",
+    "docs/contracts/examples/monitoring-view-s0/receipt-no_valid_rows.json": "77123d5cc8f486df37da7f713855ac98529ad793596490f7d25b1dd9e6a20764",
+    "docs/contracts/examples/monitoring-view-s0/event-failed.json": "1858b50537c1dc68266dc2ab4726a07e219f0402e7aec4e1fa8b12303e1d1f1f"
+  },
+  "note": "Navigation-only edits are recorded separately from original evidence; published artifacts unchanged."
+}
