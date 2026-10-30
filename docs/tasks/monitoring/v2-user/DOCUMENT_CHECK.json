@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-30",
+  "scope": "documentation_only",
+  "status": "passed",
+  "markdown_files": 6,
+  "local_links_checked": 35,
+  "files_sha256": {
+    "CROSSCHECK_MA_20261030.md": "eb898e408e7988e98e2c0a52cd341c9c735b36f52b0c823548276429bf0c46d5",
+    "BATCH_PLAN.md": "c96b951708953ac19801dcf01f88c891f621dd9c6275518d17f2f9850cc9ab9b",
+    "DESIGN.md": "f991245dbe48a2568c721ba67256d91b3bdbf86b997bdf79c373386f1c70b110",
+    "BATCH_RECORD_TEMPLATE.md": "f1059b37f5efa4ee602919e9c48bfc4304cc85601587140774d50719db9b0907",
+    "VERSIONS.md": "32c61cc65903420cc3ee1139b1217f60da67703161510c9964c3a888d70e461a",
+    "ENTRY.md": "025babf8bcde8bbbac0d4b0227f7922a3f25e8c5506dca39563c6714f5d0958a"
+  },
+  "archived_v01_sha256": "bc036529fa013a43339d3cb57b7eb70b1cca5aceaee339717aa3ae237c549c08",
+  "ma_design_sha256": "12d0304ec22d77060af7677de84c7cf4e7928d4fd39c2d88d188af7a2f50abbb",
+  "failures": [],
+  "business_tests": "not_run",
+  "deployment": "not_run",
+  "packaging": "not_run",
+  "git_commit": "not_created"
+}

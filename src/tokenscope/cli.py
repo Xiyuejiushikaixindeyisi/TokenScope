@@ -11,9 +11,13 @@ from pydantic import ValidationError
 from tokenscope.api.app import create_app
 from tokenscope.domain import RunSubmission, SettingsUpdate
 from tokenscope.errors import TokenScopeError
+from tokenscope.monitoring.dispatcher import Dispatcher
+from tokenscope.monitoring.ma.contracts import Submit
+from tokenscope.monitoring.ma.service import MaService
 from tokenscope.monitoring.rules import RuleUpdate
 from tokenscope.monitoring.service import MonitoringService
 from tokenscope.resources import configure_process
+from tokenscope.user_monitoring.service import UserRunService
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -36,6 +40,18 @@ def main(argv: list[str] | None = None) -> int:
         command.add_argument("--model", required=True)
     run = subcommands.add_parser("run")
     run.add_argument("run_id")
+    ma_submit = subcommands.add_parser("ma-submit")
+    ma_submit.add_argument("--json", required=True)
+    ma_run = subcommands.add_parser("ma-run")
+    ma_run.add_argument("run_id")
+    ma_snapshot = subcommands.add_parser("ma-snapshot")
+    ma_snapshot.add_argument("run_id")
+    ma_snapshot.add_argument("instance_uuid")
+    ma_catalog = subcommands.add_parser("ma-catalog")
+    ma_catalog.add_argument("--spec")
+    ma_catalog.add_argument("--offset", type=int, default=0)
+    ma_catalog.add_argument("--limit", type=int, default=100)
+    ma_catalog.add_argument("--revision", type=int)
     rules = subcommands.add_parser("rules")
     rules.add_argument("--update-json")
     for name in ("metrics", "histograms", "lengths", "signals", "explain"):
@@ -91,8 +107,23 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "run":
             result = service.control.run(args.run_id).model_dump(mode="json")
         elif args.command == "work-once":
-            processed = service.processor.process_next()
+            ma = MaService(service)
+            dispatcher = Dispatcher(service.processor, ma.processor, state_root=service.state_root)
+            dispatcher.register(UserRunService(service))
+            processed = dispatcher.process_next()
             result = processed.model_dump(mode="json") if processed else None
+        elif args.command.startswith("ma-"):
+            ma = MaService(service)
+            if args.command == "ma-submit":
+                result = ma.submit(Submit.model_validate_json(args.json)).model_dump(mode="json")
+            elif args.command == "ma-run":
+                result = ma.store.receipt(args.run_id).model_dump(mode="json")
+            elif args.command == "ma-snapshot":
+                result = ma.snapshot(args.run_id, args.instance_uuid).model_dump(mode="json")
+            else:
+                result = ma.catalog(args.spec, args.offset, args.limit, args.revision).model_dump(
+                    mode="json"
+                )
         elif args.command == "metrics":
             result = service.metrics(args.run_id, args.appid, args.offset, args.limit)
         elif args.command == "histograms":

@@ -13,14 +13,19 @@ from fastapi.responses import JSONResponse, Response
 from starlette.staticfiles import StaticFiles
 
 from tokenscope import __version__
+from tokenscope.api.ma import router as ma_router
 from tokenscope.api.openapi import install as install_openapi
+from tokenscope.api.user import router as user_router
 from tokenscope.api.views import router as view_router
 from tokenscope.domain import ModelId, ModelView, RunState, RunSubmission, SettingsUpdate
 from tokenscope.errors import TokenScopeError
+from tokenscope.monitoring.dispatcher import Dispatcher
 from tokenscope.monitoring.events import EventResponse, PublicationEventReader
+from tokenscope.monitoring.ma.service import MaService
 from tokenscope.monitoring.rules import RuleUpdate
 from tokenscope.monitoring.service import MonitoringService
 from tokenscope.monitoring.view_models import Nonempty, QueryDecimal
+from tokenscope.user_monitoring.service import UserRunService
 
 
 def create_app(
@@ -29,6 +34,10 @@ def create_app(
     if viewer_root is not None and not (viewer_root / "index.html").is_file():
         raise TokenScopeError("VIEWER_BUILD_MISSING", "Viewer build requires index.html", 503)
     events = PublicationEventReader(service.control)
+    ma = MaService(service)
+    dispatcher = Dispatcher(service.processor, ma.processor, state_root=service.state_root)
+    user = UserRunService(service)
+    dispatcher.register(user)
 
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
@@ -38,7 +47,7 @@ def create_app(
             next_prune = 0.0
             while not stop.is_set():
                 try:
-                    result = service.processor.process_next()
+                    result = dispatcher.process_next()
                     if time.monotonic() >= next_prune:
                         events.prune()
                         next_prune = time.monotonic() + 60
@@ -61,13 +70,30 @@ def create_app(
 
     @app.exception_handler(TokenScopeError)
     async def domain_error(request: Request, exc: TokenScopeError) -> JSONResponse:
+        if request.url.path.startswith("/monitoring/user-v2/"):
+            if exc.http_status == 404:
+                exc = TokenScopeError("RESOURCE_NOT_FOUND", "Unknown user resource", 404)
+            elif exc.http_status in (400, 422) and exc.code not in (
+                "INVALID_ARGUMENT",
+                "MODEL_MISMATCH",
+                "SERVICE_BINDING_CONFLICT",
+            ):
+                exc = TokenScopeError("INVALID_ARGUMENT", "Invalid user input", 422)
         return JSONResponse({"error": exc.as_dict()}, status_code=exc.http_status)
 
     @app.exception_handler(RequestValidationError)
     async def request_error(request: Request, exc: RequestValidationError) -> JSONResponse:
         # Do not echo a request body, file path or arbitrary supplied values in errors.
         return JSONResponse(
-            {"error": {"code": "INVALID_REQUEST", "message": "Invalid API input"}}, status_code=422
+            {
+                "error": {
+                    "code": "INVALID_ARGUMENT"
+                    if request.url.path.startswith("/monitoring/user-v2/")
+                    else "INVALID_REQUEST",
+                    "message": "Invalid API input",
+                }
+            },
+            status_code=422,
         )
 
     @app.exception_handler(sqlite3.Error)
@@ -79,6 +105,11 @@ def create_app(
         )
 
     app.include_router(view_router(service))
+    app.include_router(ma_router(ma))
+    app.include_router(user_router(user))
+    app.state.user = user
+    app.state.ma = ma
+    app.state.dispatcher = dispatcher
     app.state.events = events
 
     @app.get("/monitoring/events")

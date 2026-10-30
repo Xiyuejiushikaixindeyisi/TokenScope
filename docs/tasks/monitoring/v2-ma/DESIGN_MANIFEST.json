@@ -1,0 +1,218 @@
+{
+  "kind": "ma_design_document_checkpoint",
+  "design_version": "1.0",
+  "date": "2026-10-30",
+  "session_id": "01a18ab2-2600-7ae1-8b0e-979dad9ec3be",
+  "implementation_status": "not_started",
+  "batches": [
+    "M000",
+    "M001",
+    "M002",
+    "M003",
+    "M004",
+    "M005"
+  ],
+  "batch_status": "planned",
+  "user_design_review_version": "1.0",
+  "user_design_review_sha256": "f991245dbe48a2568c721ba67256d91b3bdbf86b997bdf79c373386f1c70b110",
+  "user_design_current_sha256": "f991245dbe48a2568c721ba67256d91b3bdbf86b997bdf79c373386f1c70b110",
+  "git_head_at_review": "6042a05bb469dd806f32beb04a4fb6894a521ce0",
+  "git_commit_push_performed": false,
+  "validation_history": [
+    "First pass detected concurrent user v0.1 to v1.0 revision; read and archived v1.0, reconciled parser API and heavy user-index tasks.",
+    "User confirmed user-monitoring implementation has started; updated MA dependency memory and shared role status. No user implementation tests or batch acceptance claimed."
+  ],
+  "validation": {
+    "active_markdown_count": 33,
+    "relative_links": "checked",
+    "fence_pairs": "checked",
+    "six_batches_four_documents": "checked",
+    "archive_sha256": "checked",
+    "user_design_matches_review": true,
+    "business_tests": "not_run",
+    "mermaid_render": "not_run",
+    "issues": []
+  },
+  "files": [
+    {
+      "path": "achieve/2026-10-30/monitoring-v2-ma-design-v0.1/MA_DESIGN.md",
+      "bytes": 34450,
+      "sha256": "e1865de93326954a8caf7ed1d3c6165dbeb632441b229b9da6e323da1fb126fb"
+    },
+    {
+      "path": "achieve/2026-10-30/monitoring-v2-ma-design-v0.1/MA_MEMORY_BEFORE_V1.md",
+      "bytes": 10973,
+      "sha256": "eddf59b0ffb811ce5dddae2a2d10aea3dd3a3e500e80c8629a38431918641c01"
+    },
+    {
+      "path": "achieve/2026-10-30/monitoring-v2-ma-design-v0.1/README.md",
+      "bytes": 962,
+      "sha256": "7720234d8f923678aec850e5a85db988c9bddefc8e8b5aef562d81babaaeca46"
+    },
+    {
+      "path": "achieve/2026-10-30/monitoring-v2-ma-design-v0.1/USER_DESIGN_REVIEW_INPUT.md",
+      "bytes": 10429,
+      "sha256": "bc036529fa013a43339d3cb57b7eb70b1cca5aceaee339717aa3ae237c549c08"
+    },
+    {
+      "path": "achieve/2026-10-30/monitoring-v2-ma-design-v0.1/USER_DESIGN_V1_REVIEW_INPUT.md",
+      "bytes": 21528,
+      "sha256": "f991245dbe48a2568c721ba67256d91b3bdbf86b997bdf79c373386f1c70b110"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/ACCEPTANCE.md",
+      "bytes": 5996,
+      "sha256": "3c921ca5541950bde1869ebd897b6b1ae0fa6868d4507e61deb0167d78c73a89"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/BATCH_PLAN.md",
+      "bytes": 8147,
+      "sha256": "8ee71e3ce0bf3e56837b56004095d3fa4acaaaa6fd2cf10d980c2e903c032466"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M000/ISSUES.md",
+      "bytes": 638,
+      "sha256": "7e0daa88018291a93498a1145636860a20fa6d36b33309e6685a60a4e94bbe31"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M000/PLAN.md",
+      "bytes": 1986,
+      "sha256": "2cc4767d0368f91278b2042f4d69941e750d5ada7c16341eee41656f0cac62ee"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M000/RESULT.md",
+      "bytes": 884,
+      "sha256": "b1a5ba4602e08133398097229ca9a00592abfcc0111ad8beaeac8206e889de3c"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M000/TESTS.md",
+      "bytes": 1258,
+      "sha256": "08b370008178c1eefa8725856cf18523817aa16e11c3633cdcc9e3718e08ef16"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M001/ISSUES.md",
+      "bytes": 622,
+      "sha256": "9270a71ae2f4585e065370833e0e313b34b2e9bbbcdd09f56888ec6045185ae0"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M001/PLAN.md",
+      "bytes": 1946,
+      "sha256": "e12b00b5a507bf14c44c1f36af3f190ced81a44df0afdcd16328d633be81fb13"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M001/RESULT.md",
+      "bytes": 884,
+      "sha256": "5c92976010c679f218e8de23a28f037982fdbe0b7b6ae44121a31c05d54e0486"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M001/TESTS.md",
+      "bytes": 1367,
+      "sha256": "2124d00cd9bb1de34e8f5d1f0769519ff7d5fd5d5d17677542149cbd29e355a1"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M002/ISSUES.md",
+      "bytes": 639,
+      "sha256": "1e681052b6dbf18c10bbaf2af472f351b92b18c1ac0fe7e0a57f025ffa648ef7"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M002/PLAN.md",
+      "bytes": 1932,
+      "sha256": "a04abfd56e1bc7a4699db9a60dd48c90cbdaf6c90a4ea04c5cdc332188fa6540"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M002/RESULT.md",
+      "bytes": 884,
+      "sha256": "7529602725aba33f81d83a827323a6ac32cf59dcf8dba59ad8c28f3406723cf2"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M002/TESTS.md",
+      "bytes": 1379,
+      "sha256": "6b341769363a5495b48ea44d7be61561771db40ebcdf4f1a85d8d374f82748af"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M003/ISSUES.md",
+      "bytes": 625,
+      "sha256": "99e5691ffabe9ad3fc4bf7d677a602ace360fad6278f232938ca2b5ebd0acb11"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M003/PLAN.md",
+      "bytes": 1848,
+      "sha256": "075fced411c26211b9b3d8e86bee494f39d5ee2d89ee978213b3913c31abb2c2"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M003/RESULT.md",
+      "bytes": 884,
+      "sha256": "99e92d2c26254b60b4db2e82d910240d5d104c1a482d39f5bb107ef8ab79ff1d"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M003/TESTS.md",
+      "bytes": 1403,
+      "sha256": "ef05ee9981731daeed82a0b2df0d6fde4320fef02ac3753c68c89931d9b6d415"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M004/ISSUES.md",
+      "bytes": 641,
+      "sha256": "fa63fe1f249d1176d4485461d1fa8b788f921612444a70ca77048071118a8d5e"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M004/PLAN.md",
+      "bytes": 2113,
+      "sha256": "54abc10dad2edf5626a0bb3b0fb11eaf5e9d1f164a9f94f6c0ff956910284874"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M004/RESULT.md",
+      "bytes": 884,
+      "sha256": "30d1ccedbb03a6fe6470c051dc89c67f4c50b454a24b76e99053a02594232cba"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M004/TESTS.md",
+      "bytes": 1521,
+      "sha256": "874bbe4cdedf67ede886173750e22429c4652c2ad5a904c3ba73e455e66ed7f1"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M005/ISSUES.md",
+      "bytes": 639,
+      "sha256": "434b37fe9fdc06658b0f46de0bea9580a624f5c0e850eb9ff3d67ea00347da00"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M005/PLAN.md",
+      "bytes": 1974,
+      "sha256": "1be7bd17a50ee999a565c97f1ad0c17d5e484b318e7915b09f204a0b85647d83"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M005/RESULT.md",
+      "bytes": 884,
+      "sha256": "b8eb01a6ff826887d8eeae3262a511f7a2286c9ae1cead1e1c57547469bd98cf"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/batches/M005/TESTS.md",
+      "bytes": 1371,
+      "sha256": "4c20020d68dd4e3a760b4e0ea2840af11d143f5fb1c0910f15583dda7d97bcf3"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/CROSS_CHECK.md",
+      "bytes": 5828,
+      "sha256": "c10c2da05ef75467427adfff8426490a267b44b20c0f1ab0c291198a24312b10"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/DESIGN.md",
+      "bytes": 41906,
+      "sha256": "1bfaf2e4be9ef11493d6fc5aa0386192d9cd3775309bac396e54f0301069f841"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/ENTRY.md",
+      "bytes": 3346,
+      "sha256": "87d93e9c33a16f95436e901fdfa7abfce7877d657ccc602bc5890c4b4a301714"
+    },
+    {
+      "path": "docs/tasks/monitoring/v2-ma/VERSIONS.md",
+      "bytes": 2906,
+      "sha256": "26469cf1ac28b716c4e33b477c20f2f7fc961972dfd88b64bf6bd2d66bdf75bf"
+    },
+    {
+      "path": "memory/tasks/monitoring-v2-ma.md",
+      "bytes": 6923,
+      "sha256": "442be0643bd9dab2e9a3d6803a144e44037613672fad91998a8330ccb5dcd516"
+    }
+  ]
+}

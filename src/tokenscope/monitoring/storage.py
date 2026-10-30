@@ -146,6 +146,15 @@ class ControlStore:
                 updated = ModelSettings.model_validate(values)
             except ValidationError as exc:
                 raise TokenScopeError("INVALID_SETTINGS", "Invalid model settings") from exc
+            if "model_aliases" in changes:
+                selected = {updated.model_id, *updated.model_aliases}
+                for other_id in DEFAULT_SETTINGS:
+                    if other_id != model_id:
+                        other = self.settings(other_id, db)
+                        if selected.intersection({other.model_id, *other.model_aliases}):
+                            raise TokenScopeError(
+                                "MODEL_ALIAS_CONFLICT", "Alias belongs to another model", 409
+                            )
             db.execute(
                 "INSERT INTO model_settings VALUES (?, ?, ?)",
                 (model_id, updated.revision, updated.model_dump_json()),

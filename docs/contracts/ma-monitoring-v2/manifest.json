@@ -1,0 +1,7 @@
+{
+  "docs/contracts/ma-monitoring-v2/design.openapi.json": "e4d6092e80d8d975a896af97e3b591f56cddbd96f2f5e770ab7c629a681d79ba",
+  "docs/contracts/ma-monitoring-v2/schema.json": "726a65e2a485cbec8655b3065178d41de4c7cea030d98005b1ea117db121d364",
+  "docs/contracts/ma-monitoring-v2/frontend.examples.json": "3842d5e7cf9486ff45881e45c1cc0ce26d3c15f90b00d47a9af96fe523ef6e4a",
+  "docs/contracts/ma-monitoring-v2/examples.json": "0cbfa2a4c9bdbc5765a985a1f2900b6432665b8dc586f6f76daf1bb3edcefe96",
+  "src/tokenscope/monitoring/ma/contracts.py": "8eca3bb81c5553e0cd573f42f5b1918df86bf49908ccf6553e93785af9bf2a83"
+}

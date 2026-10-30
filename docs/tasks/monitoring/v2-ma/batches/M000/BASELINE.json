@@ -1,0 +1,12 @@
+{
+  "src/tokenscope/domain.py": "b235a9f554ab6273e5bf414f81b1d4476f04b0d29e1169a6616d7bfd4f4655a4",
+  "env/sources.lock.json": "365c017f4278196709ba0595d41709f104635ba2c1c8b6005593f3369aed4386",
+  "src/tokenscope/user_monitoring/contracts.py": "ee3b0222af2bfb894adee82a6f84e2d0552a53998546f7e3c03e535627aa70ec",
+  "pyproject.toml": "ab805cc1799842ee3b2778100015fbcdb6355bbc7d052052a54792e32da4d7a7",
+  "src/tokenscope/monitoring/pipeline.py": "aea7775692c04353811a2a17b2d05c1d28d932f74449655c1e1aad3db6992216",
+  "uv.lock": "1a0ec180617a6a1ae003ebe70c56df0d56a0d8cc6f6479fd99cfaa5d2a938884",
+  "src/tokenscope/monitoring/statistics.py": "f4a5e60b3650912f3b27c5c7ee2f82420231f509b40a253f7ccff5d97386feff",
+  "src/tokenscope/ingestion/csv_reader.py": "b277eab74bb7cb27b5f541567a5ede8f1eec64d491bc5e4e5670cd916bb1ce6b",
+  "docs/tasks/monitoring/batches/B005.1/S0_CONTRACT.md": "973f202c54b72b798f292af78b8fe8596e8f65d415b803bebe9b879ccca8b130",
+  "src/tokenscope/monitoring/simulation.py": "10e6d20ee0b8e2886e57d241a80bae69a1f0aa607896f484827df47550a0be17"
+}

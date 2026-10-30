@@ -1,0 +1,19 @@
+{
+  "submit": {
+    "submission_key": "example",
+    "pre_file_ref": "pre.csv",
+    "now_file_ref": "now.csv",
+    "model_standard_name": "Qwen-64K",
+    "model_id": "Qwen3.6-27B",
+    "pre_start": "2026-10-20T07:00:00Z",
+    "now_start": "2026-10-20T08:00:00Z",
+    "now_end": "2026-10-20T09:00:00Z"
+  },
+  "empty_catalog": {
+    "service_instance_id": "service-1",
+    "catalog_revision": "0",
+    "total": "0",
+    "next_offset": null,
+    "entries": []
+  }
+}

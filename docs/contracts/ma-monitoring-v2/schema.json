@@ -1,0 +1,1279 @@
+{
+  "Catalog": {
+    "$defs": {
+      "CatalogEntry": {
+        "additionalProperties": false,
+        "properties": {
+          "empty_scope_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "empty_file",
+                  "all_unassigned"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Empty Scope Reason"
+          },
+          "instance_uuids": {
+            "items": {
+              "maxLength": 512,
+              "minLength": 1,
+              "type": "string"
+            },
+            "title": "Instance Uuids",
+            "type": "array"
+          },
+          "ma_run_id": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Ma Run Id",
+            "type": "string"
+          },
+          "model_standard_name": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Model Standard Name",
+            "type": "string"
+          },
+          "now_end": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Now End",
+            "type": "string"
+          },
+          "now_start": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Now Start",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ma_run_id",
+          "model_standard_name",
+          "now_start",
+          "now_end",
+          "instance_uuids",
+          "empty_scope_reason"
+        ],
+        "title": "CatalogEntry",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "catalog_revision": {
+        "pattern": "^(0|[1-9][0-9]*)$",
+        "title": "Catalog Revision",
+        "type": "string"
+      },
+      "entries": {
+        "items": {
+          "$ref": "#/$defs/CatalogEntry"
+        },
+        "title": "Entries",
+        "type": "array"
+      },
+      "next_offset": {
+        "anyOf": [
+          {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next Offset"
+      },
+      "service_instance_id": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Service Instance Id",
+        "type": "string"
+      },
+      "total": {
+        "pattern": "^(0|[1-9][0-9]*)$",
+        "title": "Total",
+        "type": "string"
+      }
+    },
+    "required": [
+      "service_instance_id",
+      "catalog_revision",
+      "total",
+      "next_offset",
+      "entries"
+    ],
+    "title": "Catalog",
+    "type": "object"
+  },
+  "ErrorEnvelope": {
+    "$defs": {
+      "Error": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Code",
+            "type": "string"
+          },
+          "message": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "Error",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "error": {
+        "$ref": "#/$defs/Error"
+      }
+    },
+    "required": [
+      "error"
+    ],
+    "title": "ErrorEnvelope",
+    "type": "object"
+  },
+  "QualityPage": {
+    "$defs": {
+      "QualityIssue": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Code",
+            "type": "string"
+          },
+          "field": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Field",
+            "type": "string"
+          },
+          "physical_line_end": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Physical Line End",
+            "type": "string"
+          },
+          "physical_line_start": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Physical Line Start",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "pre",
+              "now"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "source_record_index": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Source Record Index",
+            "type": "string"
+          }
+        },
+        "required": [
+          "role",
+          "source_record_index",
+          "physical_line_start",
+          "physical_line_end",
+          "field",
+          "code"
+        ],
+        "title": "QualityIssue",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "issues": {
+        "items": {
+          "$ref": "#/$defs/QualityIssue"
+        },
+        "title": "Issues",
+        "type": "array"
+      },
+      "ma_run_id": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Ma Run Id",
+        "type": "string"
+      },
+      "next_offset": {
+        "anyOf": [
+          {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next Offset"
+      },
+      "service_instance_id": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Service Instance Id",
+        "type": "string"
+      },
+      "total": {
+        "pattern": "^(0|[1-9][0-9]*)$",
+        "title": "Total",
+        "type": "string"
+      }
+    },
+    "required": [
+      "service_instance_id",
+      "ma_run_id",
+      "total",
+      "next_offset",
+      "issues"
+    ],
+    "title": "QualityPage",
+    "type": "object"
+  },
+  "Receipt": {
+    "$defs": {
+      "Submit": {
+        "additionalProperties": false,
+        "properties": {
+          "model_id": {
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id",
+            "type": "string"
+          },
+          "model_standard_name": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Model Standard Name",
+            "type": "string"
+          },
+          "now_end": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Now End",
+            "type": "string"
+          },
+          "now_file_ref": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Now File Ref",
+            "type": "string"
+          },
+          "now_start": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Now Start",
+            "type": "string"
+          },
+          "pre_file_ref": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Pre File Ref",
+            "type": "string"
+          },
+          "pre_start": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Pre Start",
+            "type": "string"
+          },
+          "source_timezone": {
+            "const": "UTC",
+            "default": "UTC",
+            "title": "Source Timezone",
+            "type": "string"
+          },
+          "submission_key": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Submission Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "submission_key",
+          "pre_file_ref",
+          "now_file_ref",
+          "model_standard_name",
+          "model_id",
+          "pre_start",
+          "now_start",
+          "now_end"
+        ],
+        "title": "Submit",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "binding": {
+        "$ref": "#/$defs/Submit"
+      },
+      "catalog_revision": {
+        "anyOf": [
+          {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Catalog Revision"
+      },
+      "error_code": {
+        "anyOf": [
+          {
+            "maxLength": 512,
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Error Code"
+      },
+      "error_detail": {
+        "anyOf": [
+          {
+            "maxLength": 512,
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Error Detail"
+      },
+      "ma_run_id": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Ma Run Id",
+        "type": "string"
+      },
+      "schema_version": {
+        "const": "1.0.0",
+        "default": "1.0.0",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "service_instance_id": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Service Instance Id",
+        "type": "string"
+      },
+      "state": {
+        "enum": [
+          "queued",
+          "running",
+          "completed",
+          "failed",
+          "interrupted"
+        ],
+        "title": "State",
+        "type": "string"
+      }
+    },
+    "required": [
+      "service_instance_id",
+      "ma_run_id",
+      "binding",
+      "state"
+    ],
+    "title": "Receipt",
+    "type": "object"
+  },
+  "Snapshot": {
+    "$defs": {
+      "Coverage": {
+        "additionalProperties": false,
+        "properties": {
+          "assigned": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Assigned",
+            "type": "string"
+          },
+          "encoded": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Encoded",
+            "type": "string"
+          },
+          "paired": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Paired",
+            "type": "string"
+          },
+          "production_input": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Production Input",
+            "type": "string"
+          },
+          "real": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Real",
+            "type": "string"
+          }
+        },
+        "required": [
+          "assigned",
+          "production_input",
+          "real",
+          "encoded",
+          "paired"
+        ],
+        "title": "Coverage",
+        "type": "object"
+      },
+      "FileQuality": {
+        "additionalProperties": false,
+        "properties": {
+          "assigned": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Assigned",
+            "type": "string"
+          },
+          "duplicate_hash_rows": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Duplicate Hash Rows",
+            "type": "string"
+          },
+          "encoded": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Encoded",
+            "type": "string"
+          },
+          "reasons": {
+            "additionalProperties": {
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            "title": "Reasons",
+            "type": "object"
+          },
+          "records_read": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Records Read",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "pre",
+              "now"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "unassigned": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Unassigned",
+            "type": "string"
+          }
+        },
+        "required": [
+          "role",
+          "records_read",
+          "assigned",
+          "unassigned",
+          "encoded",
+          "duplicate_hash_rows",
+          "reasons"
+        ],
+        "title": "FileQuality",
+        "type": "object"
+      },
+      "Histogram": {
+        "additionalProperties": false,
+        "properties": {
+          "bin_width": {
+            "enum": [
+              "1000",
+              "2000",
+              "5000"
+            ],
+            "title": "Bin Width",
+            "type": "string"
+          },
+          "bins": {
+            "items": {
+              "$ref": "#/$defs/HistogramBin"
+            },
+            "title": "Bins",
+            "type": "array"
+          },
+          "boundary": {
+            "const": "left_closed_right_open",
+            "title": "Boundary",
+            "type": "string"
+          },
+          "overflow_start": {
+            "const": "200000",
+            "title": "Overflow Start",
+            "type": "string"
+          },
+          "quantile_algorithm": {
+            "const": "nearest_rank",
+            "title": "Quantile Algorithm",
+            "type": "string"
+          },
+          "quantiles": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "pattern": "^(0|[1-9][0-9]*)$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "propertyNames": {
+              "enum": [
+                "p50",
+                "p80",
+                "p90"
+              ]
+            },
+            "title": "Quantiles",
+            "type": "object"
+          },
+          "regular_domain": {
+            "items": {
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Regular Domain",
+            "type": "array"
+          },
+          "sample_count": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Sample Count",
+            "type": "string"
+          },
+          "summary": {
+            "$ref": "#/$defs/HistogramSummary"
+          }
+        },
+        "required": [
+          "bin_width",
+          "regular_domain",
+          "overflow_start",
+          "boundary",
+          "sample_count",
+          "quantile_algorithm",
+          "quantiles",
+          "bins",
+          "summary"
+        ],
+        "title": "Histogram",
+        "type": "object"
+      },
+      "HistogramBin": {
+        "additionalProperties": false,
+        "properties": {
+          "count": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Count",
+            "type": "string"
+          },
+          "lower": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Lower",
+            "type": "string"
+          },
+          "overflow": {
+            "title": "Overflow",
+            "type": "boolean"
+          },
+          "share": {
+            "anyOf": [
+              {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Share"
+          },
+          "upper": {
+            "anyOf": [
+              {
+                "pattern": "^(0|[1-9][0-9]*)$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upper"
+          }
+        },
+        "required": [
+          "lower",
+          "upper",
+          "count",
+          "share",
+          "overflow"
+        ],
+        "title": "HistogramBin",
+        "type": "object"
+      },
+      "HistogramSummary": {
+        "additionalProperties": false,
+        "properties": {
+          "max_length": {
+            "anyOf": [
+              {
+                "pattern": "^(0|[1-9][0-9]*)$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Length"
+          },
+          "mode_bin_indices": {
+            "items": {
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            "title": "Mode Bin Indices",
+            "type": "array"
+          },
+          "mode_count": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Mode Count",
+            "type": "string"
+          },
+          "mode_share": {
+            "anyOf": [
+              {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mode Share"
+          },
+          "overflow_count": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Overflow Count",
+            "type": "string"
+          },
+          "under_8k_count": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Under 8K Count",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mode_bin_indices",
+          "mode_count",
+          "mode_share",
+          "under_8k_count",
+          "overflow_count",
+          "max_length"
+        ],
+        "title": "HistogramSummary",
+        "type": "object"
+      },
+      "HitMetric": {
+        "additionalProperties": false,
+        "properties": {
+          "hit_rate": {
+            "anyOf": [
+              {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hit Rate"
+          },
+          "sample_count": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Sample Count",
+            "type": "string"
+          },
+          "totals": {
+            "$ref": "#/$defs/TokenTotals"
+          }
+        },
+        "required": [
+          "sample_count",
+          "totals",
+          "hit_rate"
+        ],
+        "title": "HitMetric",
+        "type": "object"
+      },
+      "InstanceSnapshot": {
+        "additionalProperties": false,
+        "properties": {
+          "bins": {
+            "items": {
+              "$ref": "#/$defs/TimeBin"
+            },
+            "maxItems": 12,
+            "minItems": 12,
+            "title": "Bins",
+            "type": "array"
+          },
+          "coverage": {
+            "$ref": "#/$defs/Coverage"
+          },
+          "handle_outside_window_count": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Handle Outside Window Count",
+            "type": "string"
+          },
+          "handle_time_max": {
+            "anyOf": [
+              {
+                "maxLength": 512,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Handle Time Max"
+          },
+          "handle_time_min": {
+            "anyOf": [
+              {
+                "maxLength": 512,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Handle Time Min"
+          },
+          "hour": {
+            "$ref": "#/$defs/Pressure"
+          },
+          "ideal": {
+            "$ref": "#/$defs/HitMetric"
+          },
+          "ideal_status": {
+            "enum": [
+              "available",
+              "no_valid_prewarm",
+              "warmup_order_conflict",
+              "empty_now"
+            ],
+            "title": "Ideal Status",
+            "type": "string"
+          },
+          "input_histograms": {
+            "additionalProperties": {
+              "$ref": "#/$defs/Histogram"
+            },
+            "propertyNames": {
+              "enum": [
+                "1000",
+                "2000",
+                "5000"
+              ]
+            },
+            "title": "Input Histograms",
+            "type": "object"
+          },
+          "instance_uuid": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Instance Uuid",
+            "type": "string"
+          },
+          "limitations": {
+            "items": {
+              "maxLength": 512,
+              "minLength": 1,
+              "type": "string"
+            },
+            "title": "Limitations",
+            "type": "array"
+          },
+          "mismatched_input_count": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Mismatched Input Count",
+            "type": "string"
+          },
+          "model_standard_name": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Model Standard Name",
+            "type": "string"
+          },
+          "paired_ideal": {
+            "$ref": "#/$defs/HitMetric"
+          },
+          "paired_input_coverage": {
+            "anyOf": [
+              {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paired Input Coverage"
+          },
+          "paired_real": {
+            "$ref": "#/$defs/HitMetric"
+          },
+          "paired_request_coverage": {
+            "anyOf": [
+              {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paired Request Coverage"
+          },
+          "pre_assigned": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Pre Assigned",
+            "type": "string"
+          },
+          "pre_encoded": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Pre Encoded",
+            "type": "string"
+          },
+          "production_input_tokens": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Production Input Tokens",
+            "type": "string"
+          },
+          "real": {
+            "$ref": "#/$defs/HitMetric"
+          },
+          "schema_version": {
+            "const": "1.0.0",
+            "default": "1.0.0",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "uncached_histograms": {
+            "additionalProperties": {
+              "$ref": "#/$defs/Histogram"
+            },
+            "propertyNames": {
+              "enum": [
+                "1000",
+                "2000",
+                "5000"
+              ]
+            },
+            "title": "Uncached Histograms",
+            "type": "object"
+          },
+          "zero_uncached_count": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Zero Uncached Count",
+            "type": "string"
+          }
+        },
+        "required": [
+          "instance_uuid",
+          "model_standard_name",
+          "coverage",
+          "pre_assigned",
+          "pre_encoded",
+          "ideal_status",
+          "production_input_tokens",
+          "real",
+          "ideal",
+          "paired_real",
+          "paired_ideal",
+          "mismatched_input_count",
+          "paired_request_coverage",
+          "paired_input_coverage",
+          "hour",
+          "bins",
+          "input_histograms",
+          "uncached_histograms",
+          "zero_uncached_count",
+          "handle_time_min",
+          "handle_time_max",
+          "handle_outside_window_count",
+          "limitations"
+        ],
+        "title": "InstanceSnapshot",
+        "type": "object"
+      },
+      "JsonValue": {},
+      "Pressure": {
+        "additionalProperties": false,
+        "properties": {
+          "real_count": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Real Count",
+            "type": "string"
+          },
+          "request_count": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Request Count",
+            "type": "string"
+          },
+          "requests_per_second": {
+            "minimum": 0,
+            "title": "Requests Per Second",
+            "type": "number"
+          },
+          "seconds": {
+            "enum": [
+              300,
+              3600
+            ],
+            "title": "Seconds",
+            "type": "integer"
+          },
+          "uncached_tokens": {
+            "anyOf": [
+              {
+                "pattern": "^(0|[1-9][0-9]*)$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Uncached Tokens"
+          },
+          "uncached_tokens_per_second": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Uncached Tokens Per Second"
+          }
+        },
+        "required": [
+          "seconds",
+          "request_count",
+          "real_count",
+          "uncached_tokens",
+          "requests_per_second",
+          "uncached_tokens_per_second"
+        ],
+        "title": "Pressure",
+        "type": "object"
+      },
+      "Submit": {
+        "additionalProperties": false,
+        "properties": {
+          "model_id": {
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id",
+            "type": "string"
+          },
+          "model_standard_name": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Model Standard Name",
+            "type": "string"
+          },
+          "now_end": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Now End",
+            "type": "string"
+          },
+          "now_file_ref": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Now File Ref",
+            "type": "string"
+          },
+          "now_start": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Now Start",
+            "type": "string"
+          },
+          "pre_file_ref": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Pre File Ref",
+            "type": "string"
+          },
+          "pre_start": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Pre Start",
+            "type": "string"
+          },
+          "source_timezone": {
+            "const": "UTC",
+            "default": "UTC",
+            "title": "Source Timezone",
+            "type": "string"
+          },
+          "submission_key": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Submission Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "submission_key",
+          "pre_file_ref",
+          "now_file_ref",
+          "model_standard_name",
+          "model_id",
+          "pre_start",
+          "now_start",
+          "now_end"
+        ],
+        "title": "Submit",
+        "type": "object"
+      },
+      "TimeBin": {
+        "additionalProperties": false,
+        "properties": {
+          "end": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "End",
+            "type": "string"
+          },
+          "index": {
+            "exclusiveMaximum": 12,
+            "minimum": 0,
+            "title": "Index",
+            "type": "integer"
+          },
+          "pressure": {
+            "$ref": "#/$defs/Pressure"
+          },
+          "start": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Start",
+            "type": "string"
+          }
+        },
+        "required": [
+          "index",
+          "start",
+          "end",
+          "pressure"
+        ],
+        "title": "TimeBin",
+        "type": "object"
+      },
+      "TokenTotals": {
+        "additionalProperties": false,
+        "properties": {
+          "cached_tokens": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Cached Tokens",
+            "type": "string"
+          },
+          "input_tokens": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Input Tokens",
+            "type": "string"
+          },
+          "uncached_tokens": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Uncached Tokens",
+            "type": "string"
+          }
+        },
+        "required": [
+          "input_tokens",
+          "cached_tokens",
+          "uncached_tokens"
+        ],
+        "title": "TokenTotals",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "binding": {
+        "$ref": "#/$defs/Submit"
+      },
+      "file_quality": {
+        "items": {
+          "$ref": "#/$defs/FileQuality"
+        },
+        "title": "File Quality",
+        "type": "array"
+      },
+      "instance": {
+        "$ref": "#/$defs/InstanceSnapshot"
+      },
+      "ma_run_id": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Ma Run Id",
+        "type": "string"
+      },
+      "runtime": {
+        "additionalProperties": {
+          "$ref": "#/$defs/JsonValue"
+        },
+        "title": "Runtime",
+        "type": "object"
+      },
+      "service_instance_id": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Service Instance Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "service_instance_id",
+      "ma_run_id",
+      "binding",
+      "instance",
+      "file_quality",
+      "runtime"
+    ],
+    "title": "Snapshot",
+    "type": "object"
+  },
+  "Submit": {
+    "additionalProperties": false,
+    "properties": {
+      "model_id": {
+        "enum": [
+          "GLM-5.2",
+          "Qwen3.6-27B",
+          "DeepSeek-V4-Flash-0731"
+        ],
+        "title": "Model Id",
+        "type": "string"
+      },
+      "model_standard_name": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Model Standard Name",
+        "type": "string"
+      },
+      "now_end": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Now End",
+        "type": "string"
+      },
+      "now_file_ref": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Now File Ref",
+        "type": "string"
+      },
+      "now_start": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Now Start",
+        "type": "string"
+      },
+      "pre_file_ref": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Pre File Ref",
+        "type": "string"
+      },
+      "pre_start": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Pre Start",
+        "type": "string"
+      },
+      "source_timezone": {
+        "const": "UTC",
+        "default": "UTC",
+        "title": "Source Timezone",
+        "type": "string"
+      },
+      "submission_key": {
+        "maxLength": 512,
+        "minLength": 1,
+        "title": "Submission Key",
+        "type": "string"
+      }
+    },
+    "required": [
+      "submission_key",
+      "pre_file_ref",
+      "now_file_ref",
+      "model_standard_name",
+      "model_id",
+      "pre_start",
+      "now_start",
+      "now_end"
+    ],
+    "title": "Submit",
+    "type": "object"
+  }
+}

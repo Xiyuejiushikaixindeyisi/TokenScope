@@ -80,7 +80,11 @@ def encoder(request):
         if model.startswith("DeepSeek")
         else EncodingProfile()
     )
-    return ModelEncoder(AssetRegistry(ROOT).load(model), DEFAULT_SETTINGS[model], profile)
+    return ModelEncoder(
+        AssetRegistry(ROOT).load(model),
+        DEFAULT_SETTINGS[model].model_copy(update={"encoding_profile": "default"}),
+        profile,
+    )
 
 
 def test_real_assets_batch_single_detailed_equivalence(encoder):
@@ -164,7 +168,10 @@ def test_json_literal_special_token_is_plain(encoder):
 
 @pytest.mark.parametrize("model", ["GLM-5.2", "Qwen3.6-27B"])
 def test_template_native_default_and_explicit_thinking_change(model):
-    encoder = ModelEncoder(AssetRegistry(ROOT).load(model), DEFAULT_SETTINGS[model])
+    encoder = ModelEncoder(
+        AssetRegistry(ROOT).load(model),
+        DEFAULT_SETTINGS[model].model_copy(update={"encoding_profile": "default"}),
+    )
     request = bodies(model)[0]
     native = encoder.render(json.dumps(request))
     request["chat_template_kwargs"] = {"enable_thinking": False}
@@ -175,7 +182,10 @@ def test_template_native_default_and_explicit_thinking_change(model):
 
 def test_deepseek_missing_default_is_explicitly_pending():
     model = "DeepSeek-V4-Flash-0731"
-    encoder = ModelEncoder(AssetRegistry(ROOT).load(model), DEFAULT_SETTINGS[model])
+    encoder = ModelEncoder(
+        AssetRegistry(ROOT).load(model),
+        DEFAULT_SETTINGS[model].model_copy(update={"encoding_profile": "default"}),
+    )
     with pytest.raises(TokenScopeError) as error:
         encoder.render(json.dumps(bodies(model)[0]))
     assert error.value.code == "ENCODING_DEFAULT_UNRESOLVED"
@@ -184,8 +194,16 @@ def test_deepseek_missing_default_is_explicitly_pending():
 def test_deepseek_explicit_thinking_modes_and_literal_boundaries():
     model = "DeepSeek-V4-Flash-0731"
     assets = AssetRegistry(ROOT).load(model)
-    on = ModelEncoder(assets, DEFAULT_SETTINGS[model], EncodingProfile(default_thinking=True))
-    off = ModelEncoder(assets, DEFAULT_SETTINGS[model], EncodingProfile(default_thinking=False))
+    on = ModelEncoder(
+        assets,
+        DEFAULT_SETTINGS[model].model_copy(update={"encoding_profile": "default"}),
+        EncodingProfile(default_thinking=True),
+    )
+    off = ModelEncoder(
+        assets,
+        DEFAULT_SETTINGS[model].model_copy(update={"encoding_profile": "default"}),
+        EncodingProfile(default_thinking=False),
+    )
     raw = json.dumps(bodies(model)[3])
     rendered = on.render(raw)
     assert rendered.text != off.render(raw).text
@@ -201,7 +219,10 @@ def test_deepseek_explicit_thinking_modes_and_literal_boundaries():
 
 def test_deepseek_explicit_request_needs_no_missing_default():
     model = "DeepSeek-V4-Flash-0731"
-    encoder = ModelEncoder(AssetRegistry(ROOT).load(model), DEFAULT_SETTINGS[model])
+    encoder = ModelEncoder(
+        AssetRegistry(ROOT).load(model),
+        DEFAULT_SETTINGS[model].model_copy(update={"encoding_profile": "default"}),
+    )
     request = bodies(model)[0]
     request["thinking"] = {"type": "disabled"}
     assert isinstance(
@@ -215,7 +236,10 @@ def test_deepseek_explicit_request_needs_no_missing_default():
 
 def test_source_references_do_not_invent_missing_model_field():
     model = "GLM-5.2"
-    encoder = ModelEncoder(AssetRegistry(ROOT).load(model), DEFAULT_SETTINGS[model])
+    encoder = ModelEncoder(
+        AssetRegistry(ROOT).load(model),
+        DEFAULT_SETTINGS[model].model_copy(update={"encoding_profile": "default"}),
+    )
     rendered = encoder.render(json.dumps({"messages": [{"role": "user", "content": "hello"}]}))
     assert "/model" not in [item["json_pointer"] for item in rendered.source_fields]
 
@@ -231,6 +255,7 @@ from tokenscope.encoding.batch import EncodingBatchService,EncodedRequest
 root=Path.cwd()
 results={}
 for model,settings in DEFAULT_SETTINGS.items():
+    settings=settings.model_copy(update={"encoding_profile":"default"})
     default=False if model.startswith('DeepSeek') else None
     profile=EncodingProfile(cpu_budget=int(sys.argv[1]),default_thinking=default)
     encoder=ModelEncoder(AssetRegistry(root).load(model),settings,profile)

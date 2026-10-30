@@ -14,16 +14,16 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 | Token监控后端开发V1 | 01a1682f-956d-7630-afe7-e123ba38dfc0，历史环境登记 | 休眠 | 保留V1能力/现场交接；不自动启动修复或打包 | [监控V1](../docs/tasks/monitoring/ENTRY.md) · [验收](../docs/huawei/MONITORING_V1_ACCEPTANCE_20261030.md) |
 | Token监控前端开发V1 | 01a17811-4c9a-7513-befc-b35723aec96e，前端环境已核实 | 休眠 | F007/UI-01和两份新前端prompt交接完成，保留原型开发起点 | [前端交接](../docs/tasks/viewer/ENTRY.md) · [UI-01](../docs/tasks/viewer/PROTOTYPE_V2_UI_01.md) |
 | 镜像打包和审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d，历史环境登记 | 运行中（用户指定） | 统一审查、版本/交付管理；镜像和代码包仍须单独授权 | [交付](../docs/tasks/delivery/ENTRY.md) |
-| V2 Token监控后端（本会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境与应用列表核实 | 运行中；待fork，本轮仅整理交接 | 本轮P1：角色/入口、版本整理、检查、commit及push；不在父会话展开两线详细设计 | [产品记忆](tasks/monitoring.md) · [检查点](../docs/operations/V2_HANDOFF_20261030.md) |
+| V2 Token监控后端（原父会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境与应用列表核实 | 历史角色；同一会话已按用户指派转为同事监控后端 | 已完成产品讨论、分线与版本整理；不再以父会话接管两线 | [产品记忆](tasks/monitoring.md) · [检查点](../docs/operations/V2_HANDOFF_20261030.md) |
+| V2 同事监控后端设计与开发（本会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境核实 | M000–M005 closed，本机后端开发/统一验收完成；未部署打包 | 235测试及静态/类型/契约通过；后续维护与前端/现场/用户索引联合接入，不代签外部验收 | [最终报告](../docs/tasks/monitoring/v2-ma/batches/M005/RESULT.md) · [已实现API](../docs/tasks/monitoring/v2-ma/IMPLEMENTED_API.md) · [本线记忆](tasks/monitoring-v2-ma.md) |
+| V2 用户监控后端—功能设计与开发 | 01a18bc7-cdb5-7830-a185-ad3aa6257b21，环境核实 | U000–U005 closed；前端接入支持/后端维护；本轮提交交接，未部署打包 | 289全量＋最终15恢复定点测试通过；三模型真HTTP、MA联合/共享锁与进程恢复通过。后续前端/真实校准/现场待验证 | [本线ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md) · [设计](../docs/tasks/monitoring/v2-user/DESIGN.md) · [记忆](tasks/monitoring-v2-user.md) |
 
 ## 待创建或登记session
 
-以下均无已核实ID，不虚构为已运行。本轮不创建聊天、不发跨会话消息。两条监控后端平行推进，不将此前“TTFT排在MA之后”的建议当作强制依赖。
+用户与MA后端均已登记；其余角色保持各自提交时点状态。本轮不创建聊天、不发跨会话消息。两条监控后端平行推进，不将此前“TTFT排在MA之后”的建议当作强制依赖。
 
 | 角色 | 实际ID／状态 | 优先任务与范围 | 依赖与入口 |
 | --- | --- | --- | --- |
-| V2 用户监控后端—功能设计与开发 | 未知；待从本会话fork/登记 | 首先收敛P90 TTFT目标下最低理想命中率的条件/校准证据，以及搜索排行；GB、appid×common_name；后续本线调研、设计和代码 | [用户功能ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md)；不等待MA整线完成，代码按本线获批方案推进 |
-| V2 同事监控后端设计与开发 | 未知；待从本会话fork/登记 | 首先收敛MA独立采集、窗口回放与对照；GF、规格×UUID、同UUID跨appid/P共享；后续本线调研、设计和代码 | [MA ENTRY](../docs/tasks/monitoring/v2-ma/ENTRY.md)；30min/1h候选、前份＋当前份回放待讨论，不等待用户功能整线 |
 | 异常分析后端设计 | 未知；待创建/登记 | 先统一调研、产品设计，明确两类分析边界及证据需求；不属于监控功能增加 | [分析母会话ENTRY](../docs/tasks/analysis/ENTRY.md)；产品阶段完成后按用户启动fork下面两线 |
 | 低命中率分析后端 | 未知；后续fork，未启动 | 母会话调研/产品设计完成后承接本线详细设计与开发 | [低命中ENTRY](../docs/tasks/prefix-analysis/ENTRY.md)；复用监控统一计量 |
 | Token异常分析后端 | 未知；后续fork，未启动 | 母会话调研/产品设计完成后承接本线详细设计与开发 | [Token异常ENTRY](../docs/tasks/length-analysis/ENTRY.md)；复用统一编码计量 |
@@ -38,3 +38,5 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 - 两前端分别负责监控/异常界面；共享路由、样式、状态/API、锁文件同样按一次改动一个维护方。UI-01是初版认可起点，不是正式后端能力或新契约。
 - 详细设计、开发与验证由新session和用户推进；职责安排不等于全部方案/接口/batch已审批。V1兼容/数据质量作为相关依赖保留，不在本轮另启修复。
 - 文档交接不等于已通知。共享文件修改前读最新状态，每轮维护实际进度；见[工作流](../docs/architecture/TASK_SESSION_WORKFLOW.md)。旧登记见[归档](../achieve/2026-10-28/snapshots/memory/SESSIONS.md)。
+
+后端交接更新（2026-10-30）：用户U000–U005、MA M000–M005均closed；本次收录用户线及已闭环MA接入依赖。共享app/CLI编辑窗口已释放，用户索引经Dispatcher.register接入共同worker.lock。用户会话转入前端接入支持/后端维护；[前端交接入口](../docs/tasks/monitoring/v2-user/FRONTEND_HANDOFF.md)。前端接收/真实校准/现场仍待验证，不部署打包；其他会话未完成工作不纳入本次提交。

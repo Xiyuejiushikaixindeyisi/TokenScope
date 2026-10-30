@@ -97,19 +97,36 @@ def capability(settings: ModelSettings) -> Capability:
 
 DEFAULT_SETTINGS: dict[str, ModelSettings] = {
     "GLM-5.2": ModelSettings(
-        model_id="GLM-5.2", block_size=128, cache_mode="full_block", model_aliases=("glm-5.2",)
+        model_id="GLM-5.2",
+        block_size=128,
+        cache_mode="full_block",
+        model_aliases=("glm-5.2", "GLM-V5.2", "GLM-V5.2-32K", "GLM-V5.2-64K", "GLM-V5.2-128K"),
     ),
     "Qwen3.6-27B": ModelSettings(
         model_id="Qwen3.6-27B",
         block_size=1536,
         cache_mode="full_block_approximation",
-        model_aliases=("Qwen3.6-27B",),
+        model_aliases=(
+            "Qwen3.6-27B",
+            "Qwen-V3.6-27B",
+            "Qwen-V3.6-27B-32K",
+            "Qwen-V3.6-27B-64K",
+            "Qwen-V3.6-27B-128K",
+        ),
     ),
     "DeepSeek-V4-Flash-0731": ModelSettings(
         model_id="DeepSeek-V4-Flash-0731",
         block_size=32,
         cache_mode="full_block_approximation",
-        model_aliases=("deepseek-v4-flash-0731",),
+        model_aliases=(
+            "deepseek-v4-flash-0731",
+            "DeepSeek-V4-Flash",
+            "DeepSeek-V4-Flash-8K",
+            "DeepSeek-V4-Flash-32K",
+            "DeepSeek-V4-Flash-64K",
+            "DeepSeek-V4-Flash-128K",
+        ),
+        encoding_profile="thinking_disabled",
     ),
 }
 

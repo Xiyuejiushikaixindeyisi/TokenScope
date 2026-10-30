@@ -115,6 +115,15 @@ def test_rules_outbox_idempotence_and_cached_settings(service):
 
 
 def test_pending_deepseek_no_valid_and_interrupted(service):
+    # Existing installations explicitly retaining unresolved default stay protected.
+    from tokenscope.domain import SettingsUpdate
+
+    service.control.update_settings(
+        "DeepSeek-V4-Flash-0731",
+        SettingsUpdate.model_validate(
+            {"expected_revision": 1, "changes": {"encoding_profile": "default"}}
+        ),
+    )
     raw = json.dumps({"messages": [{"role": "user", "content": "pending"}]})
     (service.inputs.root / "pending.csv").write_bytes(csv_bytes([valid_row(request_input=raw)]))
     run = service.submit(RunSubmission(file_ref="pending.csv", model_id="DeepSeek-V4-Flash-0731"))

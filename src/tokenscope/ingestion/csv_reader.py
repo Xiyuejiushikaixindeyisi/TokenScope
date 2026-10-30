@@ -56,11 +56,22 @@ class RequestRecord:
     request_input: str
 
 
-def parse_utc(value: str) -> tuple[int, str]:
+def parse_utc(
+    value: str, *, source_timezone: str = "UTC", field: str = "model_handle_start_time"
+) -> tuple[int, str]:
     """Accept ISO calendar time, assuming UTC when no suffix; retain nanoseconds."""
-    matched = TIME_PATTERN.fullmatch(value.strip())
+    if source_timezone != "UTC":
+        raise InvalidRow("UNSUPPORTED_SOURCE_TIMEZONE", field)
+    normalized = value.strip()
+    day_first = re.fullmatch(
+        r"(\d{2})/(\d{2})/(\d{4}) (\d{2}:\d{2}:\d{2}(?:\.\d{1,9})?)", normalized
+    )
+    if day_first:
+        day, month, year, clock_text = day_first.groups()
+        normalized = f"{year}-{month}-{day} {clock_text}"
+    matched = TIME_PATTERN.fullmatch(normalized)
     if matched is None:
-        raise InvalidRow("INVALID_TIMESTAMP", "model_handle_start_time")
+        raise InvalidRow("INVALID_TIMESTAMP", field)
     date, clock, fraction, offset = matched.groups()
     try:
         base = datetime.fromisoformat(f"{date}T{clock}").replace(tzinfo=UTC)
@@ -76,7 +87,7 @@ def parse_utc(value: str) -> tuple[int, str]:
         if not -(2**63) <= ns <= 2**63 - 1:
             raise ValueError("timestamp outside SQLite nanosecond range")
     except (ValueError, OverflowError) as exc:
-        raise InvalidRow("INVALID_TIMESTAMP", "model_handle_start_time") from exc
+        raise InvalidRow("INVALID_TIMESTAMP", field) from exc
     return ns, base.strftime("%Y-%m-%dT%H:%M:%S") + f".{nanos:09d}Z"
 
 

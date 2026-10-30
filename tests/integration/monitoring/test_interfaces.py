@@ -33,8 +33,8 @@ def test_liveness_readiness_and_submit_no_fake_metrics(service):
     client = TestClient(create_app(service))
     assert client.get("/healthz").status_code == 200
     ready = client.get("/readyz")
-    assert ready.status_code == 503
-    assert ready.json()["ready"] is False
+    assert ready.status_code == 200
+    assert ready.json()["ready"] is True
     response = client.post("/analysis-runs", json={"file_ref": "glm.csv", "model_id": "GLM-5.2"})
     assert response.status_code == 202
     assert response.json()["status"] == "queued"

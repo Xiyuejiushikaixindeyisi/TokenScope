@@ -1,0 +1,425 @@
+[
+  {
+    "model": "Receipt",
+    "source": "local_http_synthetic_csv",
+    "value": {
+      "service_instance_id": "f738c663-753c-4869-a697-ace0a5233c5e",
+      "user_run_id": "ur-be2d7622868b4d4b86635d982f380bbb",
+      "base_run_id": "c4ce79dd-7e5b-4a21-addf-2ef94c04cf95",
+      "common_name": "GLM-V5.2",
+      "model_id": "GLM-5.2",
+      "state": "ready",
+      "index_revision": "710768469f8ec4a2cf252b7a231fd9832c7917c4e18b4ce6e9f52022d95c8054",
+      "error_code": null
+    }
+  },
+  {
+    "model": "Ranking",
+    "source": "local_http_synthetic_csv",
+    "value": {
+      "service_instance_id": "f738c663-753c-4869-a697-ace0a5233c5e",
+      "user_run_id": "ur-be2d7622868b4d4b86635d982f380bbb",
+      "common_name": "GLM-V5.2",
+      "index_revision": "710768469f8ec4a2cf252b7a231fd9832c7917c4e18b4ce6e9f52022d95c8054",
+      "bin_width": 5000,
+      "total": "2",
+      "next_offset": null,
+      "file_quality": {
+        "read_rows": "4",
+        "valid_rows": "3",
+        "skipped_rows": "1"
+      },
+      "rows": [
+        {
+          "appid": "a",
+          "request_count": "2",
+          "total_prompt_tokens": "8272",
+          "total_ideal_cached_tokens": "3968",
+          "total_ideal_compute_tokens": "4304",
+          "ideal_hit_rate": 0.4796905222437137,
+          "prompt_p90": "4136",
+          "typical_compute_tokens": {
+            "numerator": "4304",
+            "denominator": "2"
+          },
+          "representative_bin": {
+            "lower": "0",
+            "upper": "5000",
+            "count": "2",
+            "sum_compute_tokens": "4304",
+            "share": 1.0,
+            "mean": {
+              "numerator": "4304",
+              "denominator": "2"
+            }
+          },
+          "tie_count": "1"
+        },
+        {
+          "appid": "b",
+          "request_count": "1",
+          "total_prompt_tokens": "4136",
+          "total_ideal_cached_tokens": "0",
+          "total_ideal_compute_tokens": "4136",
+          "ideal_hit_rate": 0.0,
+          "prompt_p90": "4136",
+          "typical_compute_tokens": {
+            "numerator": "4136",
+            "denominator": "1"
+          },
+          "representative_bin": {
+            "lower": "0",
+            "upper": "5000",
+            "count": "1",
+            "sum_compute_tokens": "4136",
+            "share": 1.0,
+            "mean": {
+              "numerator": "4136",
+              "denominator": "1"
+            }
+          },
+          "tie_count": "1"
+        }
+      ]
+    }
+  },
+  {
+    "model": "Evaluation",
+    "source": "local_http_synthetic_csv",
+    "value": {
+      "evaluation_id": "ue-448b588cb5db42b0ae5a4e9ce7b99938",
+      "service_instance_id": "f738c663-753c-4869-a697-ace0a5233c5e",
+      "request": {
+        "submission_key": "GLM-5.2",
+        "user_run_id": "ur-be2d7622868b4d4b86635d982f380bbb",
+        "appid": "a",
+        "scenario_id": "GLM-5.2",
+        "scenario_revision": "1",
+        "target_seconds": "8",
+        "waiting_seconds": "3",
+        "comparator": "le"
+      },
+      "scenario": {
+        "scenario_id": "GLM-5.2",
+        "revision": "1",
+        "model_id": "GLM-5.2",
+        "common_name": "GLM-V5.2",
+        "deployment": "synthetic-test",
+        "source": "user_assumption",
+        "source_description": "synthetic",
+        "evidence_sha256": null,
+        "measurement_boundary": "GF dispatch-first token",
+        "workload_description": "fixed cost",
+        "thinking_mode": "disabled",
+        "min_prompt_tokens": "0",
+        "max_prompt_tokens": "1000000",
+        "chunk_tokens": "8192",
+        "chunk_seconds": "2",
+        "overhead_seconds": "1",
+        "sample_count": "0",
+        "calibration_notes": "not calibrated"
+      },
+      "status": "reference",
+      "reason": null,
+      "request_count": "2",
+      "prompt_p90": "4136",
+      "allowed_chunks": "2",
+      "computable_tokens": "4136",
+      "required_hit_fraction": {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      "required_hit_rate": 0.0,
+      "limitations": [
+        "P90-length reference only; not an aggregate ideal-hit-rate pass/fail threshold.",
+        "Fixed waiting/chunk assumptions; waiting/computation percentiles do not add.",
+        "GB service flow is hypothetical for this deployment, not a production instance replay.",
+        "Workload, thinking mode and measurement boundary require operator confirmation.",
+        "Full-block/MTP and cache-read overhead may make the reference unattainable.",
+        "User assumption; not calibrated performance evidence."
+      ]
+    }
+  },
+  {
+    "model": "Receipt",
+    "source": "local_http_synthetic_csv",
+    "value": {
+      "service_instance_id": "f738c663-753c-4869-a697-ace0a5233c5e",
+      "user_run_id": "ur-ea53e51ee26248a5871645a8213b1b2c",
+      "base_run_id": "5cdac45a-6eac-405a-b354-208462ebe239",
+      "common_name": "Qwen-V3.6-27B",
+      "model_id": "Qwen3.6-27B",
+      "state": "ready",
+      "index_revision": "3f444bdf1e8fbe83033c1eeacf0448222c98c2b1a1e753046c6fa55e5df440d1",
+      "error_code": null
+    }
+  },
+  {
+    "model": "Ranking",
+    "source": "local_http_synthetic_csv",
+    "value": {
+      "service_instance_id": "f738c663-753c-4869-a697-ace0a5233c5e",
+      "user_run_id": "ur-ea53e51ee26248a5871645a8213b1b2c",
+      "common_name": "Qwen-V3.6-27B",
+      "index_revision": "3f444bdf1e8fbe83033c1eeacf0448222c98c2b1a1e753046c6fa55e5df440d1",
+      "bin_width": 5000,
+      "total": "2",
+      "next_offset": null,
+      "file_quality": {
+        "read_rows": "4",
+        "valid_rows": "3",
+        "skipped_rows": "1"
+      },
+      "rows": [
+        {
+          "appid": "a",
+          "request_count": "2",
+          "total_prompt_tokens": "8496",
+          "total_ideal_cached_tokens": "1536",
+          "total_ideal_compute_tokens": "6960",
+          "ideal_hit_rate": 0.1807909604519774,
+          "prompt_p90": "4248",
+          "typical_compute_tokens": {
+            "numerator": "6960",
+            "denominator": "2"
+          },
+          "representative_bin": {
+            "lower": "0",
+            "upper": "5000",
+            "count": "2",
+            "sum_compute_tokens": "6960",
+            "share": 1.0,
+            "mean": {
+              "numerator": "6960",
+              "denominator": "2"
+            }
+          },
+          "tie_count": "1"
+        },
+        {
+          "appid": "b",
+          "request_count": "1",
+          "total_prompt_tokens": "4248",
+          "total_ideal_cached_tokens": "0",
+          "total_ideal_compute_tokens": "4248",
+          "ideal_hit_rate": 0.0,
+          "prompt_p90": "4248",
+          "typical_compute_tokens": {
+            "numerator": "4248",
+            "denominator": "1"
+          },
+          "representative_bin": {
+            "lower": "0",
+            "upper": "5000",
+            "count": "1",
+            "sum_compute_tokens": "4248",
+            "share": 1.0,
+            "mean": {
+              "numerator": "4248",
+              "denominator": "1"
+            }
+          },
+          "tie_count": "1"
+        }
+      ]
+    }
+  },
+  {
+    "model": "Evaluation",
+    "source": "local_http_synthetic_csv",
+    "value": {
+      "evaluation_id": "ue-1726a69378844f5e884aa48faa822dec",
+      "service_instance_id": "f738c663-753c-4869-a697-ace0a5233c5e",
+      "request": {
+        "submission_key": "Qwen3.6-27B",
+        "user_run_id": "ur-ea53e51ee26248a5871645a8213b1b2c",
+        "appid": "a",
+        "scenario_id": "Qwen3.6-27B",
+        "scenario_revision": "1",
+        "target_seconds": "8",
+        "waiting_seconds": "3",
+        "comparator": "le"
+      },
+      "scenario": {
+        "scenario_id": "Qwen3.6-27B",
+        "revision": "1",
+        "model_id": "Qwen3.6-27B",
+        "common_name": "Qwen-V3.6-27B",
+        "deployment": "synthetic-test",
+        "source": "user_assumption",
+        "source_description": "synthetic",
+        "evidence_sha256": null,
+        "measurement_boundary": "GF dispatch-first token",
+        "workload_description": "fixed cost",
+        "thinking_mode": "disabled",
+        "min_prompt_tokens": "0",
+        "max_prompt_tokens": "1000000",
+        "chunk_tokens": "8192",
+        "chunk_seconds": "2",
+        "overhead_seconds": "1",
+        "sample_count": "0",
+        "calibration_notes": "not calibrated"
+      },
+      "status": "reference",
+      "reason": null,
+      "request_count": "2",
+      "prompt_p90": "4248",
+      "allowed_chunks": "2",
+      "computable_tokens": "4248",
+      "required_hit_fraction": {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      "required_hit_rate": 0.0,
+      "limitations": [
+        "P90-length reference only; not an aggregate ideal-hit-rate pass/fail threshold.",
+        "Fixed waiting/chunk assumptions; waiting/computation percentiles do not add.",
+        "GB service flow is hypothetical for this deployment, not a production instance replay.",
+        "Workload, thinking mode and measurement boundary require operator confirmation.",
+        "Full-block/MTP and cache-read overhead may make the reference unattainable.",
+        "User assumption; not calibrated performance evidence."
+      ]
+    }
+  },
+  {
+    "model": "Receipt",
+    "source": "local_http_synthetic_csv",
+    "value": {
+      "service_instance_id": "f738c663-753c-4869-a697-ace0a5233c5e",
+      "user_run_id": "ur-ff027bb0f4d84e82bd6d21075db86534",
+      "base_run_id": "6baac86f-eeeb-4075-9de0-e7bbb730667b",
+      "common_name": "DeepSeek-V4-Flash",
+      "model_id": "DeepSeek-V4-Flash-0731",
+      "state": "ready",
+      "index_revision": "b484a2d158bd96fd9d882788984b16e5fb6814e291a238047ef1067c25efc481",
+      "error_code": null
+    }
+  },
+  {
+    "model": "Ranking",
+    "source": "local_http_synthetic_csv",
+    "value": {
+      "service_instance_id": "f738c663-753c-4869-a697-ace0a5233c5e",
+      "user_run_id": "ur-ff027bb0f4d84e82bd6d21075db86534",
+      "common_name": "DeepSeek-V4-Flash",
+      "index_revision": "b484a2d158bd96fd9d882788984b16e5fb6814e291a238047ef1067c25efc481",
+      "bin_width": 5000,
+      "total": "2",
+      "next_offset": null,
+      "file_quality": {
+        "read_rows": "4",
+        "valid_rows": "3",
+        "skipped_rows": "1"
+      },
+      "rows": [
+        {
+          "appid": "a",
+          "request_count": "2",
+          "total_prompt_tokens": "8508",
+          "total_ideal_cached_tokens": "4192",
+          "total_ideal_compute_tokens": "4316",
+          "ideal_hit_rate": 0.4927127409496944,
+          "prompt_p90": "4254",
+          "typical_compute_tokens": {
+            "numerator": "4316",
+            "denominator": "2"
+          },
+          "representative_bin": {
+            "lower": "0",
+            "upper": "5000",
+            "count": "2",
+            "sum_compute_tokens": "4316",
+            "share": 1.0,
+            "mean": {
+              "numerator": "4316",
+              "denominator": "2"
+            }
+          },
+          "tie_count": "1"
+        },
+        {
+          "appid": "b",
+          "request_count": "1",
+          "total_prompt_tokens": "4254",
+          "total_ideal_cached_tokens": "0",
+          "total_ideal_compute_tokens": "4254",
+          "ideal_hit_rate": 0.0,
+          "prompt_p90": "4254",
+          "typical_compute_tokens": {
+            "numerator": "4254",
+            "denominator": "1"
+          },
+          "representative_bin": {
+            "lower": "0",
+            "upper": "5000",
+            "count": "1",
+            "sum_compute_tokens": "4254",
+            "share": 1.0,
+            "mean": {
+              "numerator": "4254",
+              "denominator": "1"
+            }
+          },
+          "tie_count": "1"
+        }
+      ]
+    }
+  },
+  {
+    "model": "Evaluation",
+    "source": "local_http_synthetic_csv",
+    "value": {
+      "evaluation_id": "ue-59e58f5380c94048b6d61a9f4a25ba7a",
+      "service_instance_id": "f738c663-753c-4869-a697-ace0a5233c5e",
+      "request": {
+        "submission_key": "DeepSeek-V4-Flash-0731",
+        "user_run_id": "ur-ff027bb0f4d84e82bd6d21075db86534",
+        "appid": "a",
+        "scenario_id": "DeepSeek-V4-Flash-0731",
+        "scenario_revision": "1",
+        "target_seconds": "8",
+        "waiting_seconds": "3",
+        "comparator": "le"
+      },
+      "scenario": {
+        "scenario_id": "DeepSeek-V4-Flash-0731",
+        "revision": "1",
+        "model_id": "DeepSeek-V4-Flash-0731",
+        "common_name": "DeepSeek-V4-Flash",
+        "deployment": "synthetic-test",
+        "source": "user_assumption",
+        "source_description": "synthetic",
+        "evidence_sha256": null,
+        "measurement_boundary": "GF dispatch-first token",
+        "workload_description": "fixed cost",
+        "thinking_mode": "disabled",
+        "min_prompt_tokens": "0",
+        "max_prompt_tokens": "1000000",
+        "chunk_tokens": "8192",
+        "chunk_seconds": "2",
+        "overhead_seconds": "1",
+        "sample_count": "0",
+        "calibration_notes": "not calibrated"
+      },
+      "status": "reference",
+      "reason": null,
+      "request_count": "2",
+      "prompt_p90": "4254",
+      "allowed_chunks": "2",
+      "computable_tokens": "4254",
+      "required_hit_fraction": {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      "required_hit_rate": 0.0,
+      "limitations": [
+        "P90-length reference only; not an aggregate ideal-hit-rate pass/fail threshold.",
+        "Fixed waiting/chunk assumptions; waiting/computation percentiles do not add.",
+        "GB service flow is hypothetical for this deployment, not a production instance replay.",
+        "Workload, thinking mode and measurement boundary require operator confirmation.",
+        "Full-block/MTP and cache-read overhead may make the reference unattainable.",
+        "User assumption; not calibrated performance evidence."
+      ]
+    }
+  }
+]
