@@ -15,7 +15,7 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 | Token监控前端开发V1 | 01a17811-4c9a-7513-befc-b35723aec96e，前端环境已核实 | 休眠 | F007/UI-01和两份新前端prompt交接完成，保留原型开发起点 | [前端交接](../docs/tasks/viewer/ENTRY.md) · [UI-01](../docs/tasks/viewer/PROTOTYPE_V2_UI_01.md) |
 | 镜像打包和审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d，历史环境登记 | 运行中（用户指定） | 统一审查、版本/交付管理；镜像和代码包仍须单独授权 | [交付](../docs/tasks/delivery/ENTRY.md) |
 | V2 Token监控后端（原父会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境与应用列表核实 | 历史角色；同一会话已按用户指派转为同事监控后端 | 已完成产品讨论、分线与版本整理；不再以父会话接管两线 | [产品记忆](tasks/monitoring.md) · [检查点](../docs/operations/V2_HANDOFF_20261030.md) |
-| V2 同事监控后端设计与开发（本会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境核实 | M000–M005 closed，本机后端开发/统一验收完成；未部署打包 | 235测试及静态/类型/契约通过；后续维护与前端/现场/用户索引联合接入，不代签外部验收 | [最终报告](../docs/tasks/monitoring/v2-ma/batches/M005/RESULT.md) · [已实现API](../docs/tasks/monitoring/v2-ma/IMPLEMENTED_API.md) · [本线记忆](tasks/monitoring-v2-ma.md) |
+| V2 同事监控后端设计与开发（本会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境核实 | M000–M005 closed；版本同步与前端交接，后续维护 | ma-backend-local-1；源码已在获授权的后端集成提交中，本轮仅追加MA交接；未部署打包 | [交接](../docs/tasks/monitoring/v2-ma/FRONTEND_HANDOFF.md) · [Git身份](../docs/tasks/monitoring/v2-ma/GIT_CHECKPOINT.md) · [记忆](tasks/monitoring-v2-ma.md) |
 | V2 用户监控后端—功能设计与开发 | 01a18bc7-cdb5-7830-a185-ad3aa6257b21，环境核实 | U000–U005 closed；前端接入支持/后端维护；源码已提交推送，未部署打包 | 289全量＋最终15恢复定点测试通过；三模型真HTTP、MA联合/共享锁与进程恢复通过。后续前端/真实校准/现场待验证 | [本线ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md) · [设计](../docs/tasks/monitoring/v2-user/DESIGN.md) · [记忆](tasks/monitoring-v2-user.md) |
 
 ## 待创建或登记session

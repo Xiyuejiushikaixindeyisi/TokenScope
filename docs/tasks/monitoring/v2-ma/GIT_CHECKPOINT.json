@@ -1,0 +1,136 @@
+{
+  "checkpoint": "ma-backend-local-1",
+  "source_commit": "9a037466f7211126261ec2026f54b9c19c2e2151",
+  "already_pushed_parent": "3224c4b8d1cf2abb4e22fbdeb505d05d714f3224",
+  "design": "1.0",
+  "ma_protocol": "1.0.0",
+  "ma_control_schema": 1,
+  "source_owner": "authorized completed backend integration by user-monitoring session",
+  "current_commit_scope": "MA documentation, frontend handoff and MA-only shared-memory changes",
+  "validation": {
+    "isolated_pytest": "227 passed, 1 existing warning",
+    "seconds": 203.7,
+    "isolated_mypy_sources": 41,
+    "isolated_format_files": 107,
+    "integrated_pytest": "289 passed, 1 existing deprecation warning",
+    "integrated_seconds": 234.92,
+    "integrated_mypy_sources": 50,
+    "integrated_format_files": 126
+  },
+  "unchanged_ma_files": [
+    {
+      "sha256": "d1a56ec410f06fdac224b9f9ca42c0a97aab92ddf587c0dd6d65c3c66c6e9536",
+      "path": "src/tokenscope/api/ma.py",
+      "bytes": 2138
+    },
+    {
+      "sha256": "625128f62f0eed84d0be0053edeefa647cab1d5175b8051f6a5055947b58c16e",
+      "path": "src/tokenscope/monitoring/dispatcher.py",
+      "bytes": 2059
+    },
+    {
+      "sha256": "313184a04f824cb5b2007217e769e118ec3f4ce3cbe62cfb0ce220d69f77fc46",
+      "path": "src/tokenscope/monitoring/ma/__init__.py",
+      "bytes": 69
+    },
+    {
+      "sha256": "8eca3bb81c5553e0cd573f42f5b1918df86bf49908ccf6553e93785af9bf2a83",
+      "path": "src/tokenscope/monitoring/ma/contracts.py",
+      "bytes": 12391
+    },
+    {
+      "sha256": "8fdd02ceabfba369b5f86ce35c9eafac6f1dc9e8f7952182f582555946602507",
+      "path": "src/tokenscope/monitoring/ma/ingest.py",
+      "bytes": 8220
+    },
+    {
+      "sha256": "0d3880b6e4e8a4cfdc74bf2cab82dd184166fbe4c20eaee0110988c109e5b9cb",
+      "path": "src/tokenscope/monitoring/ma/pipeline.py",
+      "bytes": 8528
+    },
+    {
+      "sha256": "2bb384136aecb084ec48ba1c75d3b3255babae371ebb4630478c58a5396763bf",
+      "path": "src/tokenscope/monitoring/ma/replay.py",
+      "bytes": 5539
+    },
+    {
+      "sha256": "df74cd7c1b55698baa90341f738cacfb6917c6d618ef3541ab90b733c1f71650",
+      "path": "src/tokenscope/monitoring/ma/service.py",
+      "bytes": 5957
+    },
+    {
+      "sha256": "352fa9b13452e51fd3e0efcc3e8cc3bfb24fdcbd1fd0453fa4a0913c3ec1296f",
+      "path": "src/tokenscope/monitoring/ma/statistics.py",
+      "bytes": 8834
+    },
+    {
+      "sha256": "14eb838c36cec12640200e7a52f2bbb6b117a3a5345a82e6b22d9f22e558824b",
+      "path": "src/tokenscope/monitoring/ma/storage.py",
+      "bytes": 6458
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": "tests/unit/ma/__init__.py",
+      "bytes": 0
+    },
+    {
+      "sha256": "a677c8598fd37b926e97bdef87dc33c2537f42f176fd4342592d8f9e0d68342f",
+      "path": "tests/unit/ma/helpers.py",
+      "bytes": 1365
+    },
+    {
+      "sha256": "3660fcd8351540fd77de5471a15f5595a83a7dc1f0c59b46f05855d9891015b0",
+      "path": "tests/unit/ma/test_acceptance.py",
+      "bytes": 7838
+    },
+    {
+      "sha256": "81819f05a107b1b724dae039a8aecb6bd538ea1daf06aec368590d57b16a1b29",
+      "path": "tests/unit/ma/test_contracts.py",
+      "bytes": 1545
+    },
+    {
+      "sha256": "b0b47c16ce325b5bae4a7c97e6698dcc96f556b8f15170d0aac2e5ea794ace5f",
+      "path": "tests/unit/ma/test_failures.py",
+      "bytes": 2807
+    },
+    {
+      "sha256": "0fb3f6ca75ec0fb95ed02f810c7b079a5c5167c15319f4489735266bd1a5745b",
+      "path": "tests/unit/ma/test_ingest.py",
+      "bytes": 2027
+    },
+    {
+      "sha256": "070f33d106e2f3d28f2d5bd6c8a1d59074f2031dd8a125825fa662e03603f631",
+      "path": "tests/unit/ma/test_processes.py",
+      "bytes": 3881
+    },
+    {
+      "sha256": "46ab684d1efc5370466a5fe01093388fbcc91cb3db26aeae910d52f84ec03db1",
+      "path": "tests/unit/ma/test_replay.py",
+      "bytes": 3356
+    },
+    {
+      "sha256": "90064503972543470859443be226dc6c4af182867afd2cbe0c06003da586c904",
+      "path": "tests/unit/ma/test_service.py",
+      "bytes": 4950
+    },
+    {
+      "sha256": "1307123cccc0b440f16c54f947c0ffd7ed3af368df7d9a5f51c6f61689dfc524",
+      "path": "tests/unit/ma/test_snapshot_contract.py",
+      "bytes": 3480
+    },
+    {
+      "sha256": "89a94063704c10b175bc631501eda5b5cfc459d94232b711efcd45069a6132be",
+      "path": "tests/unit/ma/test_statistics.py",
+      "bytes": 2633
+    },
+    {
+      "sha256": "3a33385cf26feaeac103a78f11eb91c76b5f829ca55e6a52d9b4f1c5b86e6f83",
+      "path": "tests/unit/ma/test_storage.py",
+      "bytes": 1562
+    }
+  ],
+  "isolated_log_sha256": "4f9ea6c1968bb9d3da1ca62fbd602f7bce30d23cfa2c8fb84387657ab00171b5",
+  "deployed": false,
+  "packaged": false,
+  "integrated_log_sha256": "1c521bfe039c9175d2ef5a0c87c24b3074e0251b20609a889d8972acbe973423"
+}

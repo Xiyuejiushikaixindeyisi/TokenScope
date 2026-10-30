@@ -11,7 +11,7 @@
 | GET /monitoring/ma/runs/{ma_run_id}/instances/{instance_uuid} | 预生成的同集合对照、独立指标、12桶、两图、质量、运行条件 |
 | GET /monitoring/ma/runs/{ma_run_id}/quality | role/源序号/字段/原因分页，不发送正文 |
 
-CLI沿用全局input-root/state-root/asset-root/cpu-budget参数，新增ma-submit --json、ma-run、ma-snapshot、ma-catalog；work-once同时调度V1和MA。HTTP后台也使用同一Dispatcher；用户索引处理器可注册，尚未进行真实三线联合验证。
+CLI沿用全局input-root/state-root/asset-root/cpu-budget参数，新增ma-submit --json、ma-run、ma-snapshot、ma-catalog；work-once同时调度V1和MA。HTTP后台也使用同一Dispatcher；用户线U005已完成并同步Dispatcher.register(user)接入与联合验证，本线保留该装配；各线验收身份分别记录。
 
 用户需先将两CSV放到受控input-root，再提交相对file_ref，不提供上传或自动采集。source_timezone固定UTC；两个窗口均一小时，左闭右开。原SQL BETWEEN的右端重复行必须在导出时处理，工具不静默迁移记录或修改JSON。
 

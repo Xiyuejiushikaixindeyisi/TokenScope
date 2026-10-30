@@ -2,6 +2,10 @@
 
 2026-10-30：用户将原V2 Token监控后端会话指派为本线，已登记实际ID；见[SESSIONS](../../../../memory/SESSIONS.md)。已按最新授权完成两线交叉检查和[MA最终设计v1.0](DESIGN.md)，M000–M005已按授权完成开发及统一验收；[最终报告](batches/M005/RESULT.md)、[已实现API](IMPLEMENTED_API.md)、[代码地图](CODEMAP.md)和[设计对照](batches/M005/DESIGN_CHECK.md)为当前入口。235项测试通过，未部署或打包。
 
+## 版本与前端接收
+
+当前检查点ma-backend-local-1；先读[前端交接](FRONTEND_HANDOFF.md)、[版本记录](VERSIONS.md)和[Git检查点](GIT_CHECKPOINT.md)。MA协议1.0.0；合成样例16项。当前为本机后端完成后的维护/交接阶段，前端/现场/发布按各自流程验收。
+
 ## 范围与优先任务
 
 - GF数据，model_standard_name×instance uuid；每个规格下每个实例单独统计理想/真实命中与流量压力。同UUID内跨appid和P共享prefix cache，不跨UUID混算。

@@ -17,7 +17,7 @@
 旧状态快照：[2026-10-30](../achieve/2026-10-30/snapshots/memory/CURRENT.md)。原始证据、冻结契约、已发布交付文件保持身份，生产CSV不离现场。
 
 - 用户监控后端U000–U005 closed：[最终报告](../docs/tasks/monitoring/v2-user/batches/U005/RESULT.md)。289全量及最终15恢复定点测试通过；三模型真实HTTP/CLI、MA后端联合/共享额度及进程恢复通过。用户契约1.0.1及[已实现API](../docs/tasks/monitoring/v2-user/IMPLEMENTED_API.md)就绪；真实校准/前端/现场仍pending，未部署或打包。
-- MA监控后端M000–M005已闭环：[最终报告](../docs/tasks/monitoring/v2-ma/batches/M005/RESULT.md)，235测试通过，静态/类型/契约及真实HTTP/CLI/进程恢复/资源验证通过。[设计对照](../docs/tasks/monitoring/v2-ma/batches/M005/DESIGN_CHECK.md)与[已实现API](../docs/tasks/monitoring/v2-ma/IMPLEMENTED_API.md)就绪；前端、现场仍pending；用户索引真实联合已由用户线U005验证，未部署打包。
+- MA监控后端M000–M005已闭环，ma-backend-local-1；源码已随已闭环后端依赖集成同步，本轮只追加MA版本/前端交接。[交接](../docs/tasks/monitoring/v2-ma/FRONTEND_HANDOFF.md)与[Git身份](../docs/tasks/monitoring/v2-ma/GIT_CHECKPOINT.md)为当前入口；独立候选227项、已同步集成版本289项测试通过。维护/交接中，未部署打包。
 
 本轮用户授权提交push用户后端与已闭环MA必要依赖；[前端交接](../docs/tasks/monitoring/v2-user/FRONTEND_HANDOFF.md)与[提交范围](../docs/tasks/monitoring/v2-user/GIT_HANDOFF_20261030.md)。不包含其他会话未完成材料，未部署打包。
 
