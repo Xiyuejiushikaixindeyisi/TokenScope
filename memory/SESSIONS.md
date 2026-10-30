@@ -16,7 +16,7 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 | 镜像打包和审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d，历史环境登记 | 运行中（用户指定） | 统一审查、版本/交付管理；镜像和代码包仍须单独授权 | [交付](../docs/tasks/delivery/ENTRY.md) |
 | V2 Token监控后端（原父会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境与应用列表核实 | 历史角色；同一会话已按用户指派转为同事监控后端 | 已完成产品讨论、分线与版本整理；不再以父会话接管两线 | [产品记忆](tasks/monitoring.md) · [检查点](../docs/operations/V2_HANDOFF_20261030.md) |
 | V2 同事监控后端设计与开发（本会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境核实 | M000–M005 closed，本机后端开发/统一验收完成；未部署打包 | 235测试及静态/类型/契约通过；后续维护与前端/现场/用户索引联合接入，不代签外部验收 | [最终报告](../docs/tasks/monitoring/v2-ma/batches/M005/RESULT.md) · [已实现API](../docs/tasks/monitoring/v2-ma/IMPLEMENTED_API.md) · [本线记忆](tasks/monitoring-v2-ma.md) |
-| V2 用户监控后端—功能设计与开发 | 01a18bc7-cdb5-7830-a185-ad3aa6257b21，环境核实 | U000–U005 closed；前端接入支持/后端维护；本轮提交交接，未部署打包 | 289全量＋最终15恢复定点测试通过；三模型真HTTP、MA联合/共享锁与进程恢复通过。后续前端/真实校准/现场待验证 | [本线ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md) · [设计](../docs/tasks/monitoring/v2-user/DESIGN.md) · [记忆](tasks/monitoring-v2-user.md) |
+| V2 用户监控后端—功能设计与开发 | 01a18bc7-cdb5-7830-a185-ad3aa6257b21，环境核实 | U000–U005 closed；前端接入支持/后端维护；源码已提交推送，未部署打包 | 289全量＋最终15恢复定点测试通过；三模型真HTTP、MA联合/共享锁与进程恢复通过。后续前端/真实校准/现场待验证 | [本线ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md) · [设计](../docs/tasks/monitoring/v2-user/DESIGN.md) · [记忆](tasks/monitoring-v2-user.md) |
 
 ## 待创建或登记session
 
@@ -40,3 +40,5 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 - 文档交接不等于已通知。共享文件修改前读最新状态，每轮维护实际进度；见[工作流](../docs/architecture/TASK_SESSION_WORKFLOW.md)。旧登记见[归档](../achieve/2026-10-28/snapshots/memory/SESSIONS.md)。
 
 后端交接更新（2026-10-30）：用户U000–U005、MA M000–M005均closed；本次收录用户线及已闭环MA接入依赖。共享app/CLI编辑窗口已释放，用户索引经Dispatcher.register接入共同worker.lock。用户会话转入前端接入支持/后端维护；[前端交接入口](../docs/tasks/monitoring/v2-user/FRONTEND_HANDOFF.md)。前端接收/真实校准/现场仍待验证，不部署打包；其他会话未完成工作不纳入本次提交。
+
+用户后端源码交接9a037466f7211126261ec2026f54b9c19c2e2151已push origin main并核实远端SHA；当前为前端接入支持/后端维护。[交接入口](../docs/tasks/monitoring/v2-user/FRONTEND_HANDOFF.md)。其他会话未完成材料留在工作区，未部署打包。

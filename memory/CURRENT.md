@@ -20,3 +20,5 @@
 - MA监控后端M000–M005已闭环：[最终报告](../docs/tasks/monitoring/v2-ma/batches/M005/RESULT.md)，235测试通过，静态/类型/契约及真实HTTP/CLI/进程恢复/资源验证通过。[设计对照](../docs/tasks/monitoring/v2-ma/batches/M005/DESIGN_CHECK.md)与[已实现API](../docs/tasks/monitoring/v2-ma/IMPLEMENTED_API.md)就绪；前端、现场仍pending；用户索引真实联合已由用户线U005验证，未部署打包。
 
 本轮用户授权提交push用户后端与已闭环MA必要依赖；[前端交接](../docs/tasks/monitoring/v2-user/FRONTEND_HANDOFF.md)与[提交范围](../docs/tasks/monitoring/v2-user/GIT_HANDOFF_20261030.md)。不包含其他会话未完成材料，未部署打包。
+
+用户后端源码交接9a037466f7211126261ec2026f54b9c19c2e2151已push origin main并核实远端SHA；当前为前端接入支持/后端维护。[交接入口](../docs/tasks/monitoring/v2-user/FRONTEND_HANDOFF.md)。其他会话未完成材料留在工作区，未部署打包。
