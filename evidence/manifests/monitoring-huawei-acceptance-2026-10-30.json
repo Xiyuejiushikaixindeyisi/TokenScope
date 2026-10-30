@@ -1,0 +1,10 @@
+{
+  "received_date": "2026-10-30",
+  "report_date": "2026-10-29",
+  "source": "User attachment 12f27a4c-22c8-4aa6-b773-28b303fc2c77/Pasted text.txt",
+  "path": "evidence/huawei/2026-10-30/TOKEN_SCOPE_HUAWEI_RUN_AND_BUG_REPORT.md",
+  "bytes": 24674,
+  "sha256": "c2f8512a3efa463bbc096e6b338f91f8acf15be755dc71c15b56fb14b22b7776",
+  "evidence_status": "user-provided field report; original bytes preserved; no local rerun",
+  "acceptance": "User confirmed monitoring V1 frontend and backend passed on 2026-10-30"
+}

@@ -1,6 +1,6 @@
 # 镜像打包和审查入口
 
-2026-10-28：monitoring-v1-20261028本机交付完成，桌面用户验收和华为现场验收待执行。当前职责：打包前统一审查，用户明确授权后的Docker构建/镜像和代码包/执行prompt，版本与摘要、本地backup管理。华为服务启动验收和失败debug归监控后端session；前端修复归前端session。
+2026-10-30：用户确认monitoring V1前后端验收通过，[现场接收与边界](../../huawei/MONITORING_V1_ACCEPTANCE_20261030.md)已登记；monitoring-v1-20261028交付身份不变，本轮不重包。当前职责：打包前统一审查，用户明确授权后的Docker构建/镜像和代码包/执行prompt，版本与摘要、本地backup管理。华为服务启动验收和失败debug归监控后端session；前端修复归前端session。
 
 ## 阅读入口
 

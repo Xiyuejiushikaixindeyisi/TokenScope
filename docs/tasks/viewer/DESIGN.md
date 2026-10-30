@@ -1,5 +1,7 @@
 # 前端展示设计起点
 
+2026-10-30当前状态：[V1前后端已验收](../../huawei/MONITORING_V1_ACCEPTANCE_20261030.md)。本稿保留获批报告原型及设计演进，下方旧“待审批/尚未实现/打包归后端”等状态不是当前任务依据；当前维护按[ENTRY](ENTRY.md)，V2与异常分析初步展示准备按[下一阶段上下文](NEXT_PHASE_CONTEXT.md)。本轮未修改HTML或制定新展示方案。
+
 状态：2026-10-26 用户指定现有 HTML 为前端设计起点，并明确由本 fork 会话负责前端。2026-10-27 按用户最新意见改为 appid × 模型下的业务优化建议卡片（report-ui-v2-business），不再展示任务状态列表。本稿不是后端能力承诺。当前范围见 [任务入口](ENTRY.md)。
 
 ## 已确认的原型基线
@@ -78,3 +80,7 @@ LCP 差异位置与实际可复用边界分开解释；只有业务位置时不�
 ## 当前权威：Token监控前端v1.0最终评审稿
 
 2026-10-27用户采用R1/R2修订；[最终方案](MONITORING_INTERACTION_V1.md)、[batch计划](batches/README.md)、[统一验收](ACCEPTANCE_V1.md)取代早期交互建议。设计待用户审批，F001–F006未开始。最终联合测试/打包归后端session；[交接prompt](../../../achieve/2026-10-28/prompts/sessions/MONITORING_BACKEND_FRONTEND_V1_HANDOFF.md)未自动发送。
+
+## 2026-10-30 UI-01展示原型
+
+用户授权初步展示设计，已按最新MAAS_REFERENCE完成用户appid×模型服务增强、独立模型规格×UUID页面与已有异常分析复用。当前说明、HTML文档入口、范围和验证见[UI-01](PROTOTYPE_V2_UI_01.md)，等待用户视觉评审。旧原型不改、正式前后端不改、S0不改；不是后端功能设计或代码开发授权。

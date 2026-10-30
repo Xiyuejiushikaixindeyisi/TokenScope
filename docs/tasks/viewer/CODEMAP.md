@@ -93,3 +93,7 @@ build_demo.py 将报告源码和样例内联进 HTML，无外部资源依赖。�
 ## F007实际代码（0.1.0-f007）
 
 app.tsx：sidebar/topbar/filter-meta/标题导出菜单；Overview.tsx：compact、六卡、精确值与去向条；Distributions.tsx：图表坐标/网格/分位值/众数位置；styles/base.css：审批原型CSS与React适配。未新建业务组件/类，数据层未变。测试：component/monitoring、browser/{monitoring,full-journey,visual}.spec.ts。视觉/真实只读核对使用visual.spec.ts，具体命令和证据见F007 TESTS。生成审查prompt在prompts/sessions/SESSION_FRONTEND_REVIEW_AND_PACKAGING.md。
+
+## UI-01展示原型（2026-10-30，待用户评审）
+
+[原型说明](PROTOTYPE_V2_UI_01.md)。仅artifacts/prototypes/monitoring-v2维护展示，不是apps/viewer变更：build_demo.py读取冻结报告HTML，prototype.css沿用并扩展样式，prototype.js中的decorateUser/renderTTFT、renderRanking/renderRankRows、renderMA/renderMARows/renderMADetail和v2Route分别负责用户增强/排行/MA对照趋势/原型导航；index.html为自包含结果，manifest.json绑定来源摘要。check_demo.cjs检查原型交互与视口，证据位于artifacts/validation/viewer/v2-ui-01。异常分析复用monitoring-v1已有报告实现与合成样例。

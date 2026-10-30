@@ -1,0 +1,9 @@
+{
+  "version": "UI-01",
+  "purpose": "HTML visual design reference in docs",
+  "file": "tokenscope-v2-demo-ui01.html",
+  "sha256": "28518db9eae0f1f2d8921c8a02e6bc66e3d20485804508073026101b0cb916ee",
+  "self_contained": true,
+  "source": "artifacts/prototypes/monitoring-v2/tokenscope-v2-demo-ui01.html",
+  "source_bytes_unchanged": true
+}

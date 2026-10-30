@@ -1,20 +1,40 @@
-# Session 分工登记
+# Session 角色与任务登记
 
-更新：2026-10-28，依据用户最新明确分工。现有四个 session；角色职责不等于当前正在执行任务。旧登记与逐轮日志已归档到[历史快照](../achieve/2026-10-28/snapshots/memory/SESSIONS.md)。
+更新：2026-10-30，依据用户最新分工及“先整理并push，暂不创建聊天”的明确回复。本文是角色/状态权威入口，覆盖旧四会话分工和旧串行V2推进顺序。状态按用户安排记录，不把应用idle等瞬时状态当作角色休眠。
 
-| Session | 实际 ID | 当前状态与责任 | 入口 |
+## 每个session首先做什么
+
+P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首次回复明确角色、任务与排除范围、当前阶段、优先级、依赖和下一步；取得实际ID再登记，未知写未知，不复用父会话ID。角色未明确不进入设计/编码。P1读自己的产品输入/当前设计/契约及直接依赖；P2按问题读证据、源码与研究；P3才追历史。fork继承上下文，不继承父会话全部职责或实施授权。
+
+## 已有session
+
+| 角色 | 实际ID与来源 | 状态 | 当前任务与优先级 | 入口 |
+| --- | --- | --- | --- | --- |
+| TokenScope总设计 | 未知，历史未核实 | 休眠 | 用户唤醒后处理总体边界与协调，不代写任务方案 | [总设计](../docs/tasks/product/ENTRY.md) |
+| Token监控后端开发V1 | 01a1682f-956d-7630-afe7-e123ba38dfc0，历史环境登记 | 休眠 | 保留V1能力/现场交接；不自动启动修复或打包 | [监控V1](../docs/tasks/monitoring/ENTRY.md) · [验收](../docs/huawei/MONITORING_V1_ACCEPTANCE_20261030.md) |
+| Token监控前端开发V1 | 01a17811-4c9a-7513-befc-b35723aec96e，前端环境已核实 | 休眠 | F007/UI-01和两份新前端prompt交接完成，保留原型开发起点 | [前端交接](../docs/tasks/viewer/ENTRY.md) · [UI-01](../docs/tasks/viewer/PROTOTYPE_V2_UI_01.md) |
+| 镜像打包和审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d，历史环境登记 | 运行中（用户指定） | 统一审查、版本/交付管理；镜像和代码包仍须单独授权 | [交付](../docs/tasks/delivery/ENTRY.md) |
+| V2 Token监控后端（本会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境与应用列表核实 | 运行中；待fork，本轮仅整理交接 | 本轮P1：角色/入口、版本整理、检查、commit及push；不在父会话展开两线详细设计 | [产品记忆](tasks/monitoring.md) · [检查点](../docs/operations/V2_HANDOFF_20261030.md) |
+
+## 待创建或登记session
+
+以下均无已核实ID，不虚构为已运行。本轮不创建聊天、不发跨会话消息。两条监控后端平行推进，不将此前“TTFT排在MA之后”的建议当作强制依赖。
+
+| 角色 | 实际ID／状态 | 优先任务与范围 | 依赖与入口 |
 | --- | --- | --- | --- |
-| TokenScope总设计 | 未知（现有文档未记录可核实ID，不沿用其他会话ID） | 休眠；产品形态、整体边界、session分工与跨任务协调；不代替任务详细设计 | [总设计](../docs/tasks/product/ENTRY.md) |
-| Token监控后端设计开发 | 01a1682f-956d-7630-afe7-e123ba38dfc0（历史环境登记） | 监控后端、统一编码/计量/理想命中算法与公共契约；负责华为服务启动验收、启动失败的debug和修复；现场报告尚未收到 | [监控后端](../docs/tasks/monitoring/ENTRY.md) |
-| TokenScope前端设计开发 | 01a17811-4c9a-7513-befc-b35723aec96e（历史环境登记） | F007监控展示已通过用户验收；持续负责整体前端及低命中率/Token异常两类分析的前端设计开发；分析器契约待对应新session明确 | [前端](../docs/tasks/viewer/ENTRY.md) |
-| 镜像打包和审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d（本轮环境CODEX_THREAD_ID/SESSION_ID一致） | 打包前统一审查、获明确授权后的WSL构建与容器验收、镜像/代码/prompt交付及本地备份管理；本轮更新文档与记忆 | [审查与交付](../docs/tasks/delivery/ENTRY.md) |
+| V2 用户监控后端—功能设计与开发 | 未知；待从本会话fork/登记 | 首先收敛P90 TTFT目标下最低理想命中率的条件/校准证据，以及搜索排行；GB、appid×common_name；后续本线调研、设计和代码 | [用户功能ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md)；不等待MA整线完成，代码按本线获批方案推进 |
+| V2 同事监控后端设计与开发 | 未知；待从本会话fork/登记 | 首先收敛MA独立采集、窗口回放与对照；GF、规格×UUID、同UUID跨appid/P共享；后续本线调研、设计和代码 | [MA ENTRY](../docs/tasks/monitoring/v2-ma/ENTRY.md)；30min/1h候选、前份＋当前份回放待讨论，不等待用户功能整线 |
+| 异常分析后端设计 | 未知；待创建/登记 | 先统一调研、产品设计，明确两类分析边界及证据需求；不属于监控功能增加 | [分析母会话ENTRY](../docs/tasks/analysis/ENTRY.md)；产品阶段完成后按用户启动fork下面两线 |
+| 低命中率分析后端 | 未知；后续fork，未启动 | 母会话调研/产品设计完成后承接本线详细设计与开发 | [低命中ENTRY](../docs/tasks/prefix-analysis/ENTRY.md)；复用监控统一计量 |
+| Token异常分析后端 | 未知；后续fork，未启动 | 母会话调研/产品设计完成后承接本线详细设计与开发 | [Token异常ENTRY](../docs/tasks/length-analysis/ENTRY.md)；复用统一编码计量 |
+| Token监控V2前端设计与开发 | 未知；待创建/登记 | 用户功能与MA两个界面；先职责/后端就绪核对，沿用获批DEMO | [监控前端prompt](../prompts/sessions/TOKEN_MONITORING_V2_FRONTEND_START.md)；对接两条监控后端，阶段顺序见工作流 |
+| 异常分析前端设计与开发 | 未知；待创建/登记 | 两类业务建议/证据报告；先职责/后端就绪核对 | [异常前端prompt](../prompts/sessions/ANOMALY_ANALYSIS_FRONTEND_START.md)；后续对接两条分析后端，不使用监控前端prompt代替 |
+| hybrid attention仿真 | 无session；暂不做 | 不调研设计或开发，不作为监控两线依赖 | 保留现有近似的能力边界 |
+| 自进化Agent | 未知；未启动 | 两类诊断设计与代码均完成后由用户另行启动 | [Agent ENTRY](../docs/tasks/evolution-agent/ENTRY.md) |
 
-## 未来 session（尚未登记启动）
+## 共享职责与交接
 
-- [Token异常分析—调研设计开发](../docs/tasks/length-analysis/ENTRY.md)：当前范围为请求长度/组成归因；更广语义由该session与用户确认，复用统一编码计量。
-- [命中率异常分析—调研设计开发](../docs/tasks/prefix-analysis/ENTRY.md)：当前范围为低理想命中原因诊断，复用监控算法，不维护第二套计算口径。
-- [自进化Agent](../docs/tasks/evolution-agent/ENTRY.md)：两类分析设计和代码均完成后，再按用户启动；不限于未来仅新增两个session。
-
-监控设计前置已满足；未来session仍需用户实际创建/启动，不能因为文档入口存在就自动开展。两个分析session拥有分析实现及结果/证据契约，前端session拥有其界面，两者共同明确可展示数据。
-
-共享文件修改前读最新状态；按职责维护模块。后端提供现场脱敏报告与修复版本，前端处理界面缺陷，打包会话审查修复和重新交付；总设计只在用户唤醒或需产品/跨任务决策时介入。记录与文件交接不等于已通知其他会话，本轮未创建、唤醒或发送消息。
+- 两监控后端共用统一Tokenizer/Template、计量和理想命中基础，各自维护本线场景/结果语义，不复制公共算法。每项公共模块或契约改动先在本登记/任务ENTRY注明唯一维护会话、影响范围和接入版本；未分配的公共改动不同时编辑。V1休眠会话不自动成为活动维护方。
+- 两前端分别负责监控/异常界面；共享路由、样式、状态/API、锁文件同样按一次改动一个维护方。UI-01是初版认可起点，不是正式后端能力或新契约。
+- 详细设计、开发与验证由新session和用户推进；职责安排不等于全部方案/接口/batch已审批。V1兼容/数据质量作为相关依赖保留，不在本轮另启修复。
+- 文档交接不等于已通知。共享文件修改前读最新状态，每轮维护实际进度；见[工作流](../docs/architecture/TASK_SESSION_WORKFLOW.md)。旧登记见[归档](../achieve/2026-10-28/snapshots/memory/SESSIONS.md)。
