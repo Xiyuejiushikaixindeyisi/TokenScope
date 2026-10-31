@@ -1,5 +1,7 @@
 # Token监控V2前端记忆
 
+收尾：源码`ef2b96c4f605c2b0482d85914dca26c6cd48b5de`已push origin main并核实远端；本地4173/8000测试服务已停止。[Git检查点](../../docs/tasks/viewer/monitoring-v2/GIT_CHECKPOINT.md)。其他会话修改保留，本线源码/文档已提交；没有部署打包。
+
 **最新状态：MV2-F000–F006本地正式开发与验证完成，待用户最终功能/视觉评审。** 159项单元/组件、25项浏览器、类型/静态/Vite构建通过。主入口[最终结果](../../docs/tasks/viewer/monitoring-v2/batches/MV2-F006/RESULT.md)、[测试映射](../../docs/tasks/viewer/monitoring-v2/batches/MV2-F006/TESTS.md)、[源码及复现](../../docs/tasks/viewer/monitoring-v2/CODEMAP.md)。无部署、镜像或交付包；下方记录为各阶段历史，不覆盖此状态。
 
 ## 正式开发执行记录（2026-10-31）
