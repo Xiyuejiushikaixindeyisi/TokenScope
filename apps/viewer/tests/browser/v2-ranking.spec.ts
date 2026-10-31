@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+test('ranking queries and preserves conditions across navigation', async ({ page }) => {
+    test.skip(process.env.TOKENSCOPE_REAL_BACKEND !== '1', 'isolated backend');
+    await page.goto('/#/users');
+    const receipt = await page.evaluate(async () => { const c = await fetch('/monitoring/catalog').then(r => r.json()); return fetch('/monitoring/user-v2/runs', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-TokenScope-Instance-Id': c.service_instance_id }, body: JSON.stringify({ submission_key: 'mv2-f001-user', file_ref: 'model-1.csv', model_id: 'GLM-5.2', common_name: 'GLM-V5.2' }) }).then(r => r.json()); });
+    await page.getByRole('button', { name: '打开运行', exact: true }).click();
+    await page.locator('input[name=run]').fill(receipt.user_run_id);
+    await page.getByRole('button', { name: '打开', exact: true }).click();
+    await expect(page.locator('.metric-grid')).toBeVisible();
+    await page.locator('.sidebar a[href="#/users/ranking"]').click();
+    await expect(page.locator('.v2-rank-table tbody tr').first()).toBeVisible();
+    const requests: string[] = [];
+    page.on('request', r => { if (r.url().includes('/rankings?'))
+        requests.push(r.url()); });
+    await page.getByLabel('排行排序').selectOption('typical_ideal_compute_tokens');
+    await expect.poll(() => requests.some(u => u.includes('sort=typical_ideal_compute_tokens'))).toBe(true);
+    await page.getByText('数值条件 · 0个边界生效').click();
+    await page.getByLabel('理想命中率下限', { exact: true }).fill('0');
+    const before = requests.length;
+    await page.waitForTimeout(350);
+    expect(requests.length).toBe(before);
+    await page.getByRole('button', { name: '应用条件', exact: true }).click();
+    await expect.poll(() => requests.some(u => u.includes('ideal_hit_rate_min=0.00'))).toBe(true);
+    await page.getByLabel('搜索APPID').fill('%_');
+    await expect.poll(() => requests.some(u => new URL(u).searchParams.get('appid_contains') === '%_')).toBe(true);
+    await expect(page.getByText('没有匹配的APPID，当前运行保持不变。')).toBeVisible();
+    await page.getByRole('link', { name: '返回当前监控' }).click();
+    await page.locator('.sidebar a[href="#/users/ranking"]').click();
+    await expect(page.getByLabel('搜索APPID')).toHaveValue('%_');
+});

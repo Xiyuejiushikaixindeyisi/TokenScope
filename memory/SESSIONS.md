@@ -1,5 +1,7 @@
 # Session 角色与任务登记
 
+2026-10-31监控V2前端执行结果：用户已授权F000–F006逐批实施；现全部本地实现与验证完成，待最终评审。159项单元/组件、25项浏览器、类型/静态/构建通过。维护会话01a18c49-d9b4-7a33-8c04-e5a72adfcc24；实际改动apps/viewer的app.tsx、vite代理、新增api/v2、features/v2、state/storage及测试/生成脚本；旧base.css、后端契约/算法、异常分析未改。未部署打包；[结果与限制](../docs/tasks/viewer/monitoring-v2/batches/MV2-F006/RESULT.md)。覆盖下方历史待评审记录。
+
 更新：2026-10-30，依据用户最新分工及“先整理并push，暂不创建聊天”的明确回复。本文是角色/状态权威入口，覆盖旧四会话分工和旧串行V2推进顺序。状态按用户安排记录，不把应用idle等瞬时状态当作角色休眠。
 
 ## 每个session首先做什么
@@ -13,6 +15,7 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 | TokenScope总设计 | 未知，历史未核实 | 休眠 | 用户唤醒后处理总体边界与协调，不代写任务方案 | [总设计](../docs/tasks/product/ENTRY.md) |
 | Token监控后端开发V1 | 01a1682f-956d-7630-afe7-e123ba38dfc0，历史环境登记 | 休眠 | 保留V1能力/现场交接；不自动启动修复或打包 | [监控V1](../docs/tasks/monitoring/ENTRY.md) · [验收](../docs/huawei/MONITORING_V1_ACCEPTANCE_20261030.md) |
 | Token监控前端开发V1 | 01a17811-4c9a-7513-befc-b35723aec96e，前端环境已核实 | 休眠 | F007/UI-01和两份新前端prompt交接完成，保留原型开发起点 | [前端交接](../docs/tasks/viewer/ENTRY.md) · [UI-01](../docs/tasks/viewer/PROTOTYPE_V2_UI_01.md) |
+| Token监控V2前端设计与开发 | 01a18c49-d9b4-7a33-8c04-e5a72adfcc24，本会话环境CODEX_THREAD_ID与CODEX_SESSION_ID一致核实 | F000–F006本地开发验证完成，待用户最终评审；未部署打包 | UI-02配色布局；用户2.0.0/MA1.0.0；159单元/组件＋25浏览器通过，60秒查询/历史保留与新旧TTFT接入；性能校准待完成 | [最终结果](../docs/tasks/viewer/monitoring-v2/batches/MV2-F006/RESULT.md) · [本线ENTRY](../docs/tasks/viewer/monitoring-v2/ENTRY.md) · [记忆](tasks/viewer-monitoring-v2.md) |
 | 镜像打包和审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d，历史环境登记 | 运行中（用户指定） | 统一审查、版本/交付管理；镜像和代码包仍须单独授权 | [交付](../docs/tasks/delivery/ENTRY.md) |
 | V2 Token监控后端（原父会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境与应用列表核实 | 历史角色；同一会话已按用户指派转为同事监控后端 | 已完成产品讨论、分线与版本整理；不再以父会话接管两线 | [产品记忆](tasks/monitoring.md) · [检查点](../docs/operations/V2_HANDOFF_20261030.md) |
 | V2 同事监控后端设计与开发（本会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境核实 | M000–M005 closed；版本同步与前端交接，后续维护 | ma-backend-local-1；源码已在获授权的后端集成提交中，本轮仅追加MA交接；未部署打包 | [交接](../docs/tasks/monitoring/v2-ma/FRONTEND_HANDOFF.md) · [Git身份](../docs/tasks/monitoring/v2-ma/GIT_CHECKPOINT.md) · [记忆](tasks/monitoring-v2-ma.md) |
@@ -27,7 +30,6 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 | 异常分析后端设计 | 未知；待创建/登记 | 先统一调研、产品设计，明确两类分析边界及证据需求；不属于监控功能增加 | [分析母会话ENTRY](../docs/tasks/analysis/ENTRY.md)；产品阶段完成后按用户启动fork下面两线 |
 | 低命中率分析后端 | 未知；后续fork，未启动 | 母会话调研/产品设计完成后承接本线详细设计与开发 | [低命中ENTRY](../docs/tasks/prefix-analysis/ENTRY.md)；复用监控统一计量 |
 | Token异常分析后端 | 未知；后续fork，未启动 | 母会话调研/产品设计完成后承接本线详细设计与开发 | [Token异常ENTRY](../docs/tasks/length-analysis/ENTRY.md)；复用统一编码计量 |
-| Token监控V2前端设计与开发 | 未知；待创建/登记 | 用户功能与MA两个界面；先职责/后端就绪核对，沿用获批DEMO | [监控前端prompt](../prompts/sessions/TOKEN_MONITORING_V2_FRONTEND_START.md)；对接两条监控后端，阶段顺序见工作流 |
 | 异常分析前端设计与开发 | 未知；待创建/登记 | 两类业务建议/证据报告；先职责/后端就绪核对 | [异常前端prompt](../prompts/sessions/ANOMALY_ANALYSIS_FRONTEND_START.md)；后续对接两条分析后端，不使用监控前端prompt代替 |
 | hybrid attention仿真 | 无session；暂不做 | 不调研设计或开发，不作为监控两线依赖 | 保留现有近似的能力边界 |
 | 自进化Agent | 未知；未启动 | 两类诊断设计与代码均完成后由用户另行启动 | [Agent ENTRY](../docs/tasks/evolution-agent/ENTRY.md) |

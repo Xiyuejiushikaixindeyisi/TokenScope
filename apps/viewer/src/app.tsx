@@ -16,6 +16,7 @@ import { ReceiptStore } from './state/receipt-store';
 import { SubmissionCoordinator } from './state/submission-coordinator';
 import { Submissions } from './features/submissions/Submissions';
 import { Settings } from './features/settings/Settings';
+import { V2App } from './features/v2/V2App';
 const pages = [ ['overview', '监控概览'], ['distributions', '请求长度分布'], ['requests', '请求明细'], ['signals', '监控信号'], ['settings', '运行设置'], ['submissions', '提交任务'] ] as const;
 function subscribe(listener: () => void) {
   window.addEventListener('hashchange', listener);
@@ -23,6 +24,12 @@ function subscribe(listener: () => void) {
 }
 function currentPage() { return window.location.hash.slice(2) || 'overview'; }
 export function App() {
+  const route = useSyncExternalStore(subscribe, currentPage);
+  const page = route.split('?')[0] ?? 'users';
+  if (!window.location.hash || page.startsWith('users') || page.startsWith('ma')) return <V2App page={page}/>;
+  return <LegacyApp/>;
+}
+function LegacyApp() {
   const route = useSyncExternalStore(subscribe, currentPage);
   const [page = 'overview', query = ''] = route.split('?');
   const [bin, setBin] = useState<(BinSelection & { run: string }) | null>(null);

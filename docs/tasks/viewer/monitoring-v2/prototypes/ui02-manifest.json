@@ -1,0 +1,33 @@
+{
+  "version": "UI-02",
+  "status": "ui02_visual_approved_parameter_guard_updated",
+  "source": "docs\\tasks\\viewer\\prototypes\\tokenscope-v2-demo-ui01.html",
+  "source_sha256": "28518db9eae0f1f2d8921c8a02e6bc66e3d20485804508073026101b0cb916ee",
+  "file": "tokenscope-v2-demo-ui02.html",
+  "sha256": "799786cb3ee52e0931d2482211f82e594ab0f33ad57969232a7ea2ec06d2eaea",
+  "self_contained": true,
+  "production_code_changed": false,
+  "files": {
+    "artifacts\\prototypes\\monitoring-v2\\ui02\\build_demo.py": "eefd195adcff0c7d5ce0216b117f54ac08676ddfbed3ef77751c30d70e77bc37",
+    "artifacts\\prototypes\\monitoring-v2\\ui02\\prototype.js": "4ea6381af563d65dbd4f9455aee57e986d56e0bcfa59c80172220914734cae03",
+    "artifacts\\prototypes\\monitoring-v2\\ui02\\prototype.css": "553f844c1186ce92bf5e9b193d78eb1c0ea4c39fd088c89c417a0455e17f1e41",
+    "docs\\tasks\\viewer\\monitoring-v2\\prototypes\\tokenscope-v2-demo-ui02.html": "799786cb3ee52e0931d2482211f82e594ab0f33ad57969232a7ea2ec06d2eaea"
+  },
+  "data": "synthetic presentation fixtures; precomputed offline; not production measurements",
+  "note": "Added presentation-only boundary apps; inherited UI-01 base styles and page skeleton.",
+  "contract_basis": {
+    "docs/tasks/monitoring/v2-user/DESIGN.md": "26c2ebe77b39bed9804776125010d7ff30b6f262f84a0ddcf8f8f5112ed43746",
+    "docs/contracts/user-monitoring-v2/manifest.json": "02f86dd9773ca8839e004e5128c69d2756f8c6bc6323afc0e1eaf9f053e444cd",
+    "docs/tasks/monitoring/v2-ma/DESIGN.md": "da958af672f279fb0ad496df1f57822a44439951a63e9ca80ad0f6a8e3105874",
+    "docs/contracts/ma-monitoring-v2/manifest.json": "b29e3edfac5ce5fc6cf9d46f11df0b0cbd71b1738bb898ef3b423c309faa81e9"
+  },
+  "contract_versions": {
+    "user": "1.0.1",
+    "ma": "1.0.0"
+  },
+  "validation": "artifacts/validation/viewer/monitoring-v2/UI-02/checks.json",
+  "calibration_status": "代码完成，性能校准待完成",
+  "parameter_guard": "default empty waiting/missing scenario; blank checked before conversion",
+  "approved_layout_pre_guard_sha256": "b50b78412fb0a47f034b0c3320879ffb4e795131921bd64a1eaddc8cad80d2d5",
+  "parameter_guard_validation": "artifacts/validation/monitoring/ttft-calibration-20261030/browser-checks.json"
+}

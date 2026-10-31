@@ -1,0 +1,6 @@
+import { test, expect } from 'vitest';
+import { decimalText, percentageInput, rangeQuery, fractionText } from '../../src/features/v2/numbers';
+test('exact decimal filtering does not lose large integer bounds', () => { const v = '900719925474099312345'; expect(rangeQuery({ request_count_min: v }).request_count_min).toBe(v); expect(() => rangeQuery({ request_count_min: v, request_count_max: '900719925474099312344' })).toThrow(); expect(() => rangeQuery({ request_count_min: '1.1' })).toThrow(); });
+test('percentage conversion, empty versus explicit zero, and decimal syntax', () => { expect(percentageInput('1.25')).toBe('0.0125'); expect(percentageInput('100')).toBe('1.00'); expect(decimalText('0')).toBe('0'); for (const v of ['', ' ', '1e3', 'NaN', '-1', '01'])
+    expect(() => decimalText(v)).toThrow(); expect(() => percentageInput('100.01')).toThrow(); expect(rangeQuery({ ideal_hit_rate_min: '0' })).toEqual({ ideal_hit_rate_min: '0.00' }); });
+test('rational formatting preserves integer magnitude', () => { expect(fractionText({ numerator: '900719925474099312345', denominator: '1' })).toBe('900,719,925,474,099,312,345.00'); expect(fractionText({ numerator: '5', denominator: '3' })).toBe('1.67'); });
