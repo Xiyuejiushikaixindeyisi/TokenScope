@@ -11,3 +11,5 @@
 整理结果与验证：[维护记录](../../docs/operations/DOCUMENT_MAINTENANCE_20261028.md)。80项归档、8份状态快照，冻结文件与桌面交付身份不变。
 
 2026-10-28用户明确授权提交并推送本轮文档整理；仅main文档/入口/记忆纳入推送。交付包继续由已提交的本地backup/20261028-monitoring-v1清单管理，该分支不推送、不合并main，桌面包体不变。
+
+2026-10-31 Git收口：已验证源码修复提交cd14fc73b77e7baff4fa9b45f3dc886f7c996272（main），前后端索引与测试候选摘要匹配；随后补文档检查点并按授权显式push main。最终远端核对见[Git记录](../../docs/tasks/delivery/MONITORING_V2_GIT_20261031.md)链接的实际验证证据。其他session未提交内容保留；无交付包或backup推送。
