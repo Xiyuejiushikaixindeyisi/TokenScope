@@ -16,7 +16,7 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 | 镜像打包和审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d，历史环境登记 | 运行中（用户指定） | 统一审查、版本/交付管理；镜像和代码包仍须单独授权 | [交付](../docs/tasks/delivery/ENTRY.md) |
 | V2 Token监控后端（原父会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境与应用列表核实 | 历史角色；同一会话已按用户指派转为同事监控后端 | 已完成产品讨论、分线与版本整理；不再以父会话接管两线 | [产品记忆](tasks/monitoring.md) · [检查点](../docs/operations/V2_HANDOFF_20261030.md) |
 | V2 同事监控后端设计与开发（本会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境核实 | M000–M005 closed；版本同步与前端交接，后续维护 | ma-backend-local-1；源码已在获授权的后端集成提交中，本轮仅追加MA交接；未部署打包 | [交接](../docs/tasks/monitoring/v2-ma/FRONTEND_HANDOFF.md) · [Git身份](../docs/tasks/monitoring/v2-ma/GIT_CHECKPOINT.md) · [记忆](tasks/monitoring-v2-ma.md) |
-| V2 用户监控后端—功能设计与开发 | 01a18bc7-cdb5-7830-a185-ad3aa6257b21，环境核实 | U006–U008 closed；代码完成，性能校准待完成；前端接入支持 | 2026-10-31最小TTFT模型已实现，契约2.0.0；W覆盖全部非计算、不单列O，证据选填，旧历史兼容。380全量＋最终126测试、类型/静态/契约审计通过；前端交接完成但未改前端，现场/真实校准待完成 | [本线ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md) · [设计](../docs/tasks/monitoring/v2-user/DESIGN.md) · [记忆](tasks/monitoring-v2-user.md) |
+| V2 用户监控后端—功能设计与开发 | 01a18bc7-cdb5-7830-a185-ad3aa6257b21，环境核实 | U006–U008 closed且源码已push；代码完成，性能校准待完成；前端接入支持 | 2026-10-31最小TTFT模型已实现，契约2.0.0；W覆盖全部非计算、不单列O，证据选填，旧历史兼容。380全量＋最终126测试、类型/静态/契约审计通过；前端交接完成但未改前端，现场/真实校准待完成 | [本线ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md) · [设计](../docs/tasks/monitoring/v2-user/DESIGN.md) · [记忆](tasks/monitoring-v2-user.md) |
 
 ## 待创建或登记session
 
@@ -44,3 +44,5 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 用户后端源码交接9a037466f7211126261ec2026f54b9c19c2e2151已push origin main并核实远端SHA；当前为前端接入支持/后端维护。[交接入口](../docs/tasks/monitoring/v2-user/FRONTEND_HANDOFF.md)。其他会话未完成材料留在工作区，未部署打包。
 
 用户监控U006–U008本轮获授权提交/push；当前前端接入支持/后端维护，性能校准待完成；[Git检查点](../docs/tasks/monitoring/v2-user/GIT_HANDOFF_U008_20261031.md)。只暂存本线共享段落，其他会话未完成材料保留本地，未部署打包。
+
+2026-10-31推送确认：U006–U008源码提交a4053db5789fa9460b1fae4097a8835b2554357c已push origin main，git ls-remote核实远端同一SHA；本地身份u008-local-1/契约2.0.0。仅本线44文件及共享记忆本线段落入提交，其他session未完成材料保留工作区。当前前端接入支持/后端维护；代码完成，性能校准待完成。未修改前端、部署或打包。
