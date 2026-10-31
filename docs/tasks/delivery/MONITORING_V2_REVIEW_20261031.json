@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-31",
+  "session": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "head": "5c619f80631dbd0efdcbadffa7eedbf314bb678e",
+  "decision": "not_passed",
+  "open_issues": [
+    "RV2-01",
+    "RV2-02",
+    "RV2-03"
+  ],
+  "business_source_modified": false,
+  "git_integration_performed": false,
+  "local_test_image_id": "sha256:8fbc284b8b3afc275e203a8a55ade5d6e62d4653446bbd0fb75c8d5daadb3beb",
+  "evidence_sha256": {
+    "artifacts/reviews/monitoring-v2-20261031/candidate.json": "5fb7995e745da852b9f77fc5f3a693360ab6b160cf948523e11f7b8a065cc04c",
+    "artifacts/reviews/monitoring-v2-20261031/identity-verification.json": "5c0f9881972731ef66dd03d56e1e3d0b8bcfab4bf9ebddd909f697554ea566ba",
+    "artifacts/reviews/monitoring-v2-20261031/pytest.log": "67ab7314afefb779d24fa72d88ce5dd00648fd9dcc84699ef746074f446e0b7f",
+    "artifacts/reviews/monitoring-v2-20261031/checks.json": "9494f1b4abe9a25aebd5d3912400982f730a32c55f105d20cd02613e8c8e6aa5",
+    "artifacts/reviews/monitoring-v2-20261031/test.log": "5efe8e75012551135984af54faa4a64ae7f2d1d869265731808583bfbd9b8114",
+    "artifacts/reviews/monitoring-v2-20261031/browser.log": "216c698702773f5a3d111f278fe243cb95ddc4dbb008a83c734908e5e01cf24c",
+    "artifacts/reviews/monitoring-v2-20261031/docker-browser/browser.log": "4319aac05a58fd46b2b080e9d0be5abeb8ed556c21fb4f93d9e48a6c648368c7",
+    "artifacts/reviews/monitoring-v2-20261031/docker-browser/ranking-retest.log": "90e6b11caf13dd853fdf7f0898541032040ef68fe0bea9a0eca2e2ef4b02fd33",
+    "artifacts/reviews/monitoring-v2-20261031/extra-observations.json": "453145f1bd0b5bef9d6264472ffe3bef4ba86b324ff46b625e57e4cc2e41ff39",
+    "artifacts/reviews/monitoring-v2-20261031/docker-browser/extra-observations.json": "3dad7568cadfab8df8526c2e227a0eb31291156c346a3af9efc6207046e95bcc",
+    "artifacts/reviews/monitoring-v2-20261031/ranking-reset.json": "e96897d876a56e04205628f7c489f5921b56d182633e06137d9299915511eeb8",
+    "artifacts/reviews/monitoring-v2-20261031/source-restart.json": "2527dafa66c872e091ac8473b5483ab4a20f304bf969b9b4bb4d010aa9360982",
+    "artifacts/reviews/monitoring-v2-20261031/container-restart.json": "4b27df72f9f35b95fe4bc92b61e2e919dbbaa6f74eec4b014316ab7984843f06",
+    "artifacts/reviews/monitoring-v2-20261031/cleanup.json": "6693c997fea5a17c154671c897e9678a53a52df2cb4167ee431bd51089f6d803"
+  }
+}

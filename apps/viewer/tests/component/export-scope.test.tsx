@@ -1,0 +1,36 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { act, fireEvent, render, screen } from '@testing-library/react';
+import { expect, test, vi } from 'vitest';
+import { Exports } from '../../src/features/exports/Exports';
+import { validateDto } from '../../src/api/validate';
+import { beginExport } from '../../src/features/exports/export-controller';
+vi.mock('../../src/features/exports/export-controller', () => ({ beginExport: vi.fn() }));
+const sample = () => validateDto('ViewSnapshot', JSON.parse(readFileSync(resolve(process.cwd(), '../../docs/contracts/examples/monitoring-view-s0/snapshot-normal.json'), 'utf8')));
+for (const field of ['run_id', 'appid', 'service_instance_id'] as const) for (const outcome of ['resolve', 'reject'] as const) test(`scope ${field}: late ${outcome}/finally cannot change new export`, async () => {
+  const jobs: { signal: AbortSignal; resolve: (v: Awaited<ReturnType<typeof beginExport>>) => void; reject: (e: Error) => void }[] = [];
+  vi.mocked(beginExport).mockImplementation((_url, _file, _expected, signal) => new Promise((resolve, reject) => jobs.push({ signal, resolve, reject })));
+  const snapshot = sample();
+  const view = render(<Exports snapshot={snapshot}/>);
+  fireEvent.click(screen.getByText('导出 NDJSON'));
+  view.rerender(<Exports snapshot={{ ...snapshot, identity: { ...snapshot.identity, [field]: 'new-scope' } }}/>);
+  expect(jobs[0]!.signal.aborted).toBe(true);
+  expect(screen.queryByText('取消导出')).not.toBeInTheDocument();
+  fireEvent.click(screen.getByText('导出 CSV'));
+  await act(async () => { if (outcome === 'reject') jobs[0]!.reject(Error('OLD_ERROR')); else jobs[0]!.resolve({ rows: '999', verification: 'ok', bytes: 1, maxInflight: 1, saved: true }); });
+  expect(screen.getByText('取消导出')).toBeInTheDocument();
+  expect(screen.queryByText(/999|OLD_ERROR/)).not.toBeInTheDocument();
+  fireEvent.click(screen.getByText('取消导出'));
+  expect(jobs[1]!.signal.aborted).toBe(true);
+  view.unmount();
+});
+test('leaving export aborts; filter and sort are also scope', () => {
+  const signals: AbortSignal[] = [];
+  vi.mocked(beginExport).mockImplementation((_u, _f, _e, signal) => { signals.push(signal); return new Promise(() => {}); });
+  const snapshot = sample(), view = render(<Exports snapshot={snapshot}/>);
+  fireEvent.click(screen.getByText('导出 NDJSON'));
+  view.rerender(<Exports snapshot={snapshot} sort={{ by: 'prompt_tokens', order: 'asc', tie_breaker: 'source_record_index_asc' }}/>);
+  expect(signals[0]!.aborted).toBe(true);
+  fireEvent.click(screen.getByText('导出 CSV'));
+  view.unmount(); expect(signals[1]!.aborted).toBe(true);
+});

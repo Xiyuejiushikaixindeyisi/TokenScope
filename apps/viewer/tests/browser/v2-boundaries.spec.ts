@@ -1,6 +1,15 @@
+import { readyUser } from './v2-fixtures';
 import { test, expect } from '@playwright/test';
 import examples from '../../../../docs/contracts/user-monitoring-v2/2.0.0/runtime.examples.json' with { type: 'json' };
 test.beforeEach(() => test.skip(process.env.TOKENSCOPE_REAL_BACKEND !== '1', 'isolated backend'));
+test.beforeEach(async ({ page }) => {
+    await page.goto('/#/users');
+    const run = await page.evaluate(async () => {
+        const c = await fetch('/monitoring/catalog').then(r => r.json());
+        return fetch('/monitoring/user-v2/runs', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-TokenScope-Instance-Id': c.service_instance_id }, body: JSON.stringify({ submission_key: 'mv2-f006-user-1', file_ref: 'model-1.csv', model_id: 'GLM-5.2', common_name: 'GLM-V5.2' }) }).then(r => r.json());
+    });
+    await readyUser(page, run);
+});
 test('real legacy TTFT read, new limits, missing W and forbidden O', async ({ page }) => {
     await page.goto('/#/users');
     const setup = await page.evaluate(async (legacy) => {

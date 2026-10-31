@@ -1,5 +1,13 @@
 import { test, expect } from 'vitest';
 import { RequestPool } from '../../src/state/v2-pool';
+test('identity signal stops queue synchronously and rejects late publications', async () => {
+    const scope = new AbortController(), pool = new RequestPool(4, scope.signal);
+    const releases: (() => void)[] = []; let done = 0;
+    for (let i = 0; i < 13; i++) pool.run(() => new Promise<void>(resolve => releases.push(resolve)), () => done++, () => done++);
+    expect(releases).toHaveLength(4); scope.abort();
+    releases.forEach(r => r()); await new Promise(r => setTimeout(r, 0));
+    expect(releases).toHaveLength(4); expect(done).toBe(0);
+});
 test('four in flight, individual failure releases slot, stopped scope never publishes', async () => {
     const pool = new RequestPool(), resolves: (() => void)[] = [], rejects: (() => void)[] = [];
     let active = 0, maximum = 0, done = 0, failed = 0;

@@ -1,0 +1,21 @@
+import { act, fireEvent, render, screen } from '@testing-library/react';
+import { expect, test, vi } from 'vitest';
+import { V2App } from '../../src/features/v2/V2App';
+const mocks = vi.hoisted(() => ({ catalog: vi.fn(), contract: vi.fn().mockResolvedValue(undefined) }));
+vi.mock('../../src/api/client', () => ({ getJson: mocks.catalog }));
+vi.mock('../../src/api/v2/client', () => ({ verifyUserContract: mocks.contract, V2Client: class { constructor(readonly instance: string) {} } }));
+vi.mock('../../src/features/v2/MAMonitor', () => ({ MAMonitor: ({ api }: { api: { instance: string } }) => <div>scope:{api.instance}</div> }));
+vi.mock('../../src/features/v2/UserMonitor', () => ({ UserMonitor: () => null }));
+test('late connection cannot restore scope after identity invalidation or supersede reconnect', async () => {
+  let old!: (value: unknown) => void;
+  mocks.catalog.mockImplementationOnce(() => new Promise(r => { old = r; })).mockResolvedValue({ service_instance_id: 'new' });
+  render(<V2App page="ma"/>);
+  await act(async () => {});
+  act(() => { window.dispatchEvent(new Event('tokenscope-instance-changed')); });
+  expect(screen.getByText('重新连接')).toBeInTheDocument();
+  fireEvent.click(screen.getByText('重新连接')); await act(async () => {});
+  expect(screen.getByText('scope:new')).toBeInTheDocument();
+  await act(async () => { old({ service_instance_id: 'old' }); });
+  expect(screen.queryByText('scope:old')).not.toBeInTheDocument();
+  expect(screen.getByText('scope:new')).toBeInTheDocument();
+});

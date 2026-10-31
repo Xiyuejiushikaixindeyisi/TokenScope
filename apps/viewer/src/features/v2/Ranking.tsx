@@ -18,7 +18,11 @@ export function Ranking({ api, receipt, active, select }: {
     const revisionRetries = useRef(0);
     const revision = useRef<string | undefined>(receipt.index_revision ?? undefined);
     const [modeApp, setModeApp] = useState<string | null>(null), [modes, setModes] = useState<Modes | null>(null), [modeOffset, setModeOffset] = useState('0'), [modeError, setModeError] = useState('');
-    useEffect(() => { const t = setTimeout(() => { setQuerySearch(search); setOffset('0'); }, 300); return () => clearTimeout(t); }, [search]);
+    useEffect(() => {
+        if (search === querySearch) return;
+        const t = setTimeout(() => { setQuerySearch(search); setOffset('0'); }, 300);
+        return () => clearTimeout(t);
+    }, [search, querySearch]);
     useEffect(() => {
         if (!active || receipt.state !== 'ready')
             return;
@@ -58,8 +62,7 @@ export function Ranking({ api, receipt, active, select }: {
     }, [api, receipt.user_run_id, modeApp, modeOffset, width]);
     const change = (setter: (s: string) => void) => (value: string) => { setter(value); setOffset('0'); };
     return <section hidden={!active}><div className="page-head"><div><h1>搜索与排行</h1><p>{receipt.common_name} · 同一运行内比较APPID</p></div><a className="btn" href="#/users">返回当前监控</a></div><section className="panel"><div className="v2-rank-controls"><label>搜索 APPID<input aria-label="搜索APPID" value={search} onChange={e => setSearch(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') {
-        setQuerySearch(search);
-        setOffset('0');
+        if (search !== querySearch) { setQuerySearch(search); setOffset('0'); }
     } }} placeholder="区分大小写 · 字面子串" maxLength={4096}/></label><label>模型服务<input readOnly value={receipt.common_name}/></label><label>排序指标<select aria-label="排行排序" value={sort} onChange={e => change(setSort)(e.target.value)}>{Object.entries(sortNames).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select></label><label>顺序<select aria-label="排行顺序" value={direction} onChange={e => change(setDirection)(e.target.value)}><option value="desc">从高到低</option><option value="asc">从低到高</option></select></label></div>
  <div className="toolbar"><label>众数箱宽<select aria-label="众数箱宽" value={width} onChange={e => change(setWidth)(e.target.value)}>{['5000', '2000', '1000'].map(w => <option key={w} value={w}>{Number(w) / 1000}K Token</option>)}</select></label><span className="muted">理想重算C · 超过200K仍等宽分箱</span></div>
  <details className="v2-pad"><summary>数值条件 · {Object.keys(applied).length}个边界生效</summary><div className="v2-ranges">{Object.entries(sortNames).map(([k, label]) => <label key={k}>{label}{k === 'ideal_hit_rate' ? '（%）' : ''}<div>{['min', 'max'].map(side => <input key={side} aria-label={`${label}${side === 'min' ? '下限' : '上限'}`} inputMode="decimal" value={draft[k + '_' + side] ?? ''} placeholder={side === 'min' ? '下限' : '上限'} onChange={e => setDraft({ ...draft, [k + '_' + side]: e.target.value })}/>)}</div></label>)}</div><button onClick={() => { try {

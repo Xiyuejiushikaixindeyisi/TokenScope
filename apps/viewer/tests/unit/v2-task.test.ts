@@ -91,3 +91,13 @@ test('transient read errors retry on next minute without losing history', async 
     expect(task.getSnapshot().displayed).toBe('new');
     task.stop();
 });
+
+for (const code of ['INSTANCE_MISMATCH', 'SERVICE_INSTANCE_CHANGED']) test(`active polling stops after ${code}`, async () => {
+    vi.useFakeTimers();
+    const read = vi.fn().mockRejectedValue(new ApiError(409, code, 'changed'));
+    const task = new TaskTracker(read, async () => 'new', 'old');
+    task.start({ state: 'running' });
+    await vi.advanceTimersByTimeAsync(60000); expect(read).toHaveBeenCalledTimes(1);
+    await vi.advanceTimersByTimeAsync(180000); expect(read).toHaveBeenCalledTimes(1);
+    task.stop();
+});

@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-31",
+  "session": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "baseline": "5c619f80631dbd0efdcbadffa7eedbf314bb678e",
+  "decision": "passed_monitoring_v2_candidate_only",
+  "closed": [
+    "RV2-01",
+    "RV2-02",
+    "RV2-03"
+  ],
+  "handoff_frontend_aggregate": "6202ff3db40686320b7ec194a855fcce5a35560abb35808fc56267387662884d",
+  "final_files_aggregate": "1e05068c596380c7b230e6714524bdbbee62535f2c9b6c1923450359a4594c85",
+  "reviewer_test_only_change": {
+    "path": "apps/viewer/tests/browser/v2-acceptance.spec.ts",
+    "before_sha256": "aafa603ad703e46e57b1ffb281dbe996234db494f5d6a0f8f292a3718b9c9594",
+    "after_sha256": "60f692f9e7fc5f78c9806d7c33fd7773e83ae8ec9e2df76eb3c1db4ee73f76b8",
+    "reason": "Freeze clock before task scheduling; preserve 59999/60000ms assertions"
+  },
+  "local_test_image": "sha256:0e14131c23266e03f899871687904b543a686a1cd623be25bd740303daaf1a95",
+  "evidence_sha256": {
+    "artifacts/reviews/monitoring-v2-rereview-20261031/final-candidate.json": "059040e777c05297217fa073b7adc32176d25503e24ae85d471e2565c1460566",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/backend-sha256.json": "a96b052b0270967f6850965f91da134ff83e7308028b7365218b9c319f6e4ab3",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/checks.json": "9fc7008fe4be02f128c13654fb371fafa061a8c2a0990b332e4d133f0d29dffc",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/test.log": "f49318b4c9974d9ec77ad36bdb92057cbbe77020dfdcc05f1de4e773326b3446",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/browser-final.log": "713603932cd3cbdff2744f5bff0c890940a8b973b42383613bb6ee06d185dd28",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/docker-browser/browser.log": "8e2883421c2858b5885210edcf5afc66a794bab6c8ea72903aaa9134c75e57b8",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/docker-browser/clock-retest.log": "9934ab1ea6f739ee237446d4ca2bce0f69948e29877fd13d03b64a5feba69655",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/extra-observations.json": "2859c57d52fc9c37eb7f6e5c19f551d18c786ce57c3735b13e84b984f40dbddc",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/ranking-reset.json": "d6c728ed0fcfa03c512aa25c7bcb3e23844fad2ac364ade0f053e40926a90921",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/docker-browser/extra-observations.json": "3f681463986657a83d836624fc6c74574dc08e34727b67fb1c37a3b0109fe9d6",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/docker-browser/ranking-reset.json": "d6c728ed0fcfa03c512aa25c7bcb3e23844fad2ac364ade0f053e40926a90921",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/container-restart.json": "c9ee87a19c552abef1579976fa6a0d0dc71f90371ead5c99f0a619f86109d11d",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/identity-verification.json": "5c0f9881972731ef66dd03d56e1e3d0b8bcfab4bf9ebddd909f697554ea566ba"
+  }
+}

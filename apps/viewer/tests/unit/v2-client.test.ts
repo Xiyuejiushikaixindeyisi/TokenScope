@@ -2,6 +2,29 @@ import { expect, test, vi } from 'vitest';
 import { V2Client, validateV2 } from '../../src/api/v2/client';
 import { V2Records } from '../../src/storage/v2-records';
 const receipt = { service_instance_id: 'service', user_run_id: 'u', base_run_id: null, common_name: 'c', model_id: 'GLM-5.2', state: 'accepted', index_revision: null, error_code: null };
+for (const code of ['INSTANCE_MISMATCH', 'SERVICE_INSTANCE_CHANGED']) test(`identity ${code} aborts in-flight and blocks all subsequent requests`, async () => {
+    let release!: (v: Response) => void;
+    const fetcher = vi.fn().mockImplementationOnce(() => new Promise<Response>(r => { release = r; })).mockResolvedValue(new Response(JSON.stringify({ error: { code, message: 'Reload service identity' } }), { status: 409, headers: { 'Content-Type': 'application/json' } }));
+    const api = new V2Client('service', fetcher), changed = vi.fn();
+    window.addEventListener('tokenscope-instance-changed', changed);
+    const late = api.request('user', 'Receipt', '/runs/u').catch(e => e);
+    await expect(api.request(code === 'INSTANCE_MISMATCH' ? 'user' : 'ma', 'Receipt', '/runs/u')).rejects.toThrow();
+    expect(fetcher.mock.calls[0]?.[1].signal.aborted).toBe(true);
+    release(new Response(JSON.stringify(receipt), { headers: { 'Content-Type': 'application/json' } }));
+    expect(await late).toMatchObject({ name: 'AbortError' });
+    await expect(api.request('ma', 'Catalog', '/catalog')).rejects.toThrow();
+    await expect(api.request('user', 'Receipt', '/runs', { body: {} })).rejects.toThrow();
+    expect(fetcher).toHaveBeenCalledTimes(2); expect(changed).toHaveBeenCalledTimes(1);
+    window.removeEventListener('tokenscope-instance-changed', changed);
+});
+test('503 and network errors do not invalidate identity', async () => {
+    const fetcher = vi.fn().mockRejectedValueOnce(Error('offline')).mockResolvedValueOnce(new Response(JSON.stringify({ error: { code: 'UNAVAILABLE', message: 'retry read' } }), { status: 503, headers: { 'Content-Type': 'application/json' } })).mockResolvedValue(new Response(JSON.stringify(receipt), { headers: { 'Content-Type': 'application/json' } }));
+    const api = new V2Client('service', fetcher), changed = vi.fn(); window.addEventListener('tokenscope-instance-changed', changed);
+    await expect(api.request('user', 'Receipt', '/runs/u')).rejects.toThrow();
+    await expect(api.request('user', 'Receipt', '/runs/u')).rejects.toThrow();
+    expect(await api.request('user', 'Receipt', '/runs/u')).toEqual(receipt); expect(changed).not.toHaveBeenCalled();
+    window.removeEventListener('tokenscope-instance-changed', changed);
+});
 test('strict validation and service boundary; no coercion or extra fields', async () => {
     expect(validateV2('user', 'Receipt', receipt)).toEqual(receipt);
     expect(() => validateV2('user', 'Receipt', { ...receipt, extra: 1 })).toThrow();

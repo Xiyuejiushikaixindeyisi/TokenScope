@@ -1,8 +1,10 @@
+import { readyUser } from './v2-fixtures';
 import { test, expect } from '@playwright/test';
 test('real minimal scenario: explicit W, evaluate and invalidate', async ({ page }) => {
     test.skip(process.env.TOKENSCOPE_REAL_BACKEND !== '1', 'isolated backend');
     await page.goto('/#/users');
     const receipt = await page.evaluate(async () => { const c = await fetch('/monitoring/catalog').then(r => r.json()); return fetch('/monitoring/user-v2/runs', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-TokenScope-Instance-Id': c.service_instance_id }, body: JSON.stringify({ submission_key: 'mv2-f001-user', file_ref: 'model-1.csv', model_id: 'GLM-5.2', common_name: 'GLM-V5.2' }) }).then(r => r.json()); });
+    await readyUser(page, receipt);
     await page.getByRole('button', { name: '打开运行', exact: true }).click();
     await page.locator('input[name=run]').fill(receipt.user_run_id);
     await page.getByRole('button', { name: '打开', exact: true }).click();

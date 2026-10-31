@@ -177,7 +177,7 @@ export function MAMonitor({ api }: {
     }
     catch (e) {
         setError(errorText(e));
-    } const requests = new RequestPool(4); pool.current = requests; setRows(Object.fromEntries(display.entry.instance_uuids.map(id => [id, { state: 'loading' }]))); setSelected(''); setModel(display.entry.model_standard_name); setQualityOffset('0'); setQuality(null); setQualityOpen(false); for (const id of display.entry.instance_uuids)
+    } const requests = new RequestPool(4, api.signal); pool.current = requests; setRows(Object.fromEntries(display.entry.instance_uuids.map(id => [id, { state: 'loading' }]))); setSelected(''); setModel(display.entry.model_standard_name); setQualityOffset('0'); setQuality(null); setQualityOpen(false); for (const id of display.entry.instance_uuids)
         loadRow(id, display, requests); return () => requests.stop(); }, [display]);
     useEffect(() => { if (!qualityOpen || !display)
         return; let live = true; const c = new AbortController(); setQuality(null); setQualityError(''); void api.request('ma', 'QualityPage', `/runs/${segment(display.entry.ma_run_id)}/quality`, { signal: c.signal, query: { offset: qualityOffset, limit: 20 } }).then(v => { if (live) {

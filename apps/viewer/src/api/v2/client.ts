@@ -43,21 +43,31 @@ export function validateV2<K extends Kind, N extends keyof Contract[K] & string>
     return value as Contract[K][N];
 }
 export class V2Client {
+    private readonly lifetime = new AbortController();
+    get signal() { return this.lifetime.signal; }
+    private identityChanged() {
+        if (this.lifetime.signal.aborted) return;
+        this.lifetime.abort();
+        globalThis.dispatchEvent?.(new Event('tokenscope-instance-changed'));
+    }
     constructor(readonly instance: string, private readonly fetcher: typeof fetch = (...args) => globalThis.fetch(...args)) { }
     async request<K extends Kind, N extends keyof Contract[K] & string>(kind: K, name: N, suffix: string, options: {
         query?: Record<string, string | number | undefined>;
         body?: unknown;
         signal?: AbortSignal;
     } = {}): Promise<Contract[K][N]> {
+        const signal = options.signal ? AbortSignal.any([options.signal, this.lifetime.signal]) : this.lifetime.signal;
+        signal.throwIfAborted();
         const path = `/monitoring/${kind === 'user' ? 'user-v2' : 'ma'}${suffix}`;
         const response = await this.fetcher(apiPath(path, options.query), {
             method: options.body === undefined ? 'GET' : 'POST', credentials: 'same-origin', redirect: 'error', cache: 'no-store',
             headers: { Accept: 'application/json', 'Content-Type': 'application/json', 'X-TokenScope-Instance-Id': this.instance },
-            ...(options.body === undefined ? {} : { body: JSON.stringify(options.body) }), ...(options.signal ? { signal: options.signal } : {}),
+            ...(options.body === undefined ? {} : { body: JSON.stringify(options.body) }), signal,
         });
         if (!response.headers.get('content-type')?.includes('application/json'))
             throw new ProtocolError('Content-Type');
         const payload: unknown = await response.json();
+        signal.throwIfAborted();
         if (!response.ok) {
             // Error envelopes have the same stable code/message projection in both namespaces.
             const schema = kind === 'user' ? userSchemas.ErrorEnvelope : maSchemas.ErrorEnvelope;
@@ -69,13 +79,13 @@ export class V2Client {
                     message: string;
                 };
             }).error;
-            if (error.code === 'INSTANCE_MISMATCH')
-                globalThis.dispatchEvent?.(new Event('tokenscope-instance-changed'));
+            if (error.code === 'INSTANCE_MISMATCH' || error.code === 'SERVICE_INSTANCE_CHANGED')
+                this.identityChanged();
             throw new ApiError(response.status, error.code, error.message);
         }
         const value = validateV2(kind, name, payload);
         if (value && typeof value === 'object' && 'service_instance_id' in value && value.service_instance_id !== this.instance) {
-            globalThis.dispatchEvent?.(new Event('tokenscope-instance-changed'));
+            this.identityChanged();
             throw new ApiError(409, 'INSTANCE_MISMATCH', '服务身份已变化，请重新选择运行');
         }
         return value;

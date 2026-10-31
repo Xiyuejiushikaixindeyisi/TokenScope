@@ -27,6 +27,8 @@ def write(name, columns, rows):
 for index, model in enumerate(("GLM-5.2", "Qwen3.6-27B", "DeepSeek-V4-Flash-0731"), 1):
     rows = [dict(hash_id=f"synthetic-{j}", appid=f"synthetic-app-{index}", model_handle_start_time=f"2026-10-27T00:00:{j:02d}Z", completion_tokens=str(j + 10), request_input=json.dumps({"model": model, "messages": [{"role": "system", "content": "synthetic prefix " * 200}, {"role": "user", "content": f"question {j}"}]})) for j in range(30)]
     write(f"model-{index}.csv", rows[0].keys(), rows)
+    if index == 1:
+        write("multi-app.csv", rows[0].keys(), [r | {"appid": "app-a" if j < 15 else "app-b"} for j, r in enumerate(rows)])
 
 raw = json.dumps({"model": "Qwen3.6-27B", "messages": [{"role": "user", "content": "shared synthetic prefix " * 200}]})
 

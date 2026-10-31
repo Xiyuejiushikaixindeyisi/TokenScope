@@ -72,12 +72,15 @@ export async function beginExport(url: string, filename: string, expected: Omit<
     if (window.isSecureContext && picker) {
       const handlePromise = picker.call(window, { suggestedName: filename }); // before network await, preserving activation
       const handle = await handlePromise;
+      signal.throwIfAborted();
       if (typeof handle.createWritable !== 'function') throw new Error('FILE_WRITE_UNAVAILABLE');
       sink = await handle.createWritable();
     }
+    signal.throwIfAborted();
     const response = await fetcher(url, { signal, credentials: 'same-origin', redirect: 'error', cache: 'no-store', headers: { 'X-TokenScope-Instance-Id': expected.scope.service_instance_id } });
     handedOff = true;
     const result = await exportStream(response, expected, signal, sink);
+    signal.throwIfAborted();
     if (result.blob) { const objectUrl = URL.createObjectURL(result.blob), link = document.createElement('a'); link.href = objectUrl; link.download = filename; link.click(); setTimeout(() => URL.revokeObjectURL(objectUrl), 1000); }
     return result;
   } catch (error) { if (sink && !handedOff) await sink.abort().catch(() => {}); throw error; }
