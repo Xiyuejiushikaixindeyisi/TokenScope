@@ -1,5 +1,7 @@
 # 任务与session协作流程
 
+2026-10-31监控V2最新阶段：正式页面验收、三项修复独立复审及main提交推送均已完成；见[当前状态](../tasks/delivery/MONITORING_V2_STATUS.md)。本轮临时测试镜像仅用于本机复测，未交付打包。已闭环评审和交接已归档，当前暂不打包；等待异常分析前后端完成验收后，再按用户安排统一交付。本机通过不代表华为现场通过。
+
 2026-10-30用户最新分工：监控后端两线并行、异常分析先母会话后分线；实际角色/状态以[SESSIONS](../../memory/SESSIONS.md)为准。[旧工作流快照](../../achieve/2026-10-28/snapshots/docs/architecture/TASK_SESSION_WORKFLOW.md)仅供追溯。
 
 ## 当前会话结构与启动顺序

@@ -1,12 +1,14 @@
 # Token监控V2前端记忆
 
-**2026-10-31最新：前端修复及自测完成，待独立复审。** [RV2修复交接](../../docs/tasks/viewer/monitoring-v2/REVIEW_FIX_HANDOFF_20261031.md)。RV2-01客户端同时识别两身份错误、同步取消lifetime/请求池、阻断迟到连接；RV2-02完整导出scope隔离并取消、旧回调不写新状态，离开到排行也卸载导出；RV2-03只在实际生效搜索变化时重置页码。冷环境用例显式建任务并等待ready/completed；原校验和20+5/大整数/null/revision/众数断言保留。全量173单元/组件及typecheck/lint/build通过；选定50浏览器、最终受影响30浏览器、冷state排行1项分别通过，集合重叠不加总。文件选择器/写入API为受控替身，真实HTTP/Worker与下载回退另行实测，不声称原生磁盘验收。证据artifacts/validation/viewer/RV2-FIX-20261031，HEAD仍5c619f80631dbd0efdcbadffa7eedbf314bb678e，21个前端文件未提交；不改后端/冻结契约/UI-02，原审查证据摘要一致。自有18041/14183、18042/14184已停止，输入/state保留；原8000/4173仍HTTP200。未构建镜像、打包、部署、Git收口或发跨会话消息。由用户转“镜像打包和审查”独立复审；原候选不通过不由本线关闭。
+2026-10-31审查方结果同步：三项修复已独立复审通过且推送main，见[当前状态](../../docs/tasks/delivery/MONITORING_V2_STATUS.md)。下方“待复审/未提交”为历史记录；修复交接已归档，原始证据保持原位。本线职责不变。
+
+**2026-10-31最新：前端修复及自测完成，待独立复审。** [RV2修复交接](../../achieve/2026-10-31/monitoring-v2-review/docs/tasks/viewer/monitoring-v2/REVIEW_FIX_HANDOFF_20261031.md)。RV2-01客户端同时识别两身份错误、同步取消lifetime/请求池、阻断迟到连接；RV2-02完整导出scope隔离并取消、旧回调不写新状态，离开到排行也卸载导出；RV2-03只在实际生效搜索变化时重置页码。冷环境用例显式建任务并等待ready/completed；原校验和20+5/大整数/null/revision/众数断言保留。全量173单元/组件及typecheck/lint/build通过；选定50浏览器、最终受影响30浏览器、冷state排行1项分别通过，集合重叠不加总。文件选择器/写入API为受控替身，真实HTTP/Worker与下载回退另行实测，不声称原生磁盘验收。证据artifacts/validation/viewer/RV2-FIX-20261031，HEAD仍5c619f80631dbd0efdcbadffa7eedbf314bb678e，21个前端文件未提交；不改后端/冻结契约/UI-02，原审查证据摘要一致。自有18041/14183、18042/14184已停止，输入/state保留；原8000/4173仍HTTP200。未构建镜像、打包、部署、Git收口或发跨会话消息。由用户转“镜像打包和审查”独立复审；原候选不通过不由本线关闭。
 
 2026-10-31修复启动：环境实际CODEX_SESSION_ID/CODEX_THREAD_ID均为01a18c49-d9b4-7a33-8c04-e5a72adfcc24。按用户授权负责RV2-01/02/03前端源码、回归和独立冷state本地验证；基线HEAD 5c619f80631dbd0efdcbadffa7eedbf314bb678e。维护apps/viewer相关客户端、导出、排行和测试；不改后端/契约/UI-02，不构建镜像、不Git收口、不发跨会话消息。原8000/4173仍占用，保留；新证据artifacts/validation/viewer/RV2-FIX-20261031。完成后交用户转审查方独立复审。
 
-**最新：2026-10-31用户确认用户监控、MA监控正式页面验收通过。** 本线转验收后维护/审查支持；[三端交接材料](../../docs/tasks/delivery/MONITORING_V2_REVIEW_HANDOFF.md)已整理，交审查打包会话对监控前端/用户后端/MA后端完整E2E和健壮性独立审查。用户澄清允许本机临时测试镜像及Docker E2E，禁止交付镜像构建/导出、打包、部署与华为prompt。检测通过后由接收方统一Git提交、合main并push；等待异常分析前后端设计开发验收完成再统一交付。本轮只文档/记忆，未执行测试或Docker、未改代码、未代接收方Git收口、未发送跨会话消息；服务未主动停止。覆盖下方待用户评审历史状态。
+**最新：2026-10-31用户确认用户监控、MA监控正式页面验收通过。** 本线转验收后维护/审查支持；[三端交接材料](../../achieve/2026-10-31/monitoring-v2-review/docs/tasks/delivery/MONITORING_V2_REVIEW_HANDOFF.md)已整理，交审查打包会话对监控前端/用户后端/MA后端完整E2E和健壮性独立审查。用户澄清允许本机临时测试镜像及Docker E2E，禁止交付镜像构建/导出、打包、部署与华为prompt。检测通过后由接收方统一Git提交、合main并push；等待异常分析前后端设计开发验收完成再统一交付。本轮只文档/记忆，未执行测试或Docker、未改代码、未代接收方Git收口、未发送跨会话消息；服务未主动停止。覆盖下方待用户评审历史状态。
 
-2026-10-31本地验收启动：用户要求后已启动并保持前端4173/后端8000（工具会话20468/83867，后端PID727230）。沿用隔离runtime与既有合成结果；Windows HTTP和Edge只读检查用户6卡、MA13UUID正常、无页面脚本错误。[访问地址和评审路径](../../docs/tasks/viewer/monitoring-v2/LOCAL_REVIEW.md)。当前服务运行状态覆盖下方上轮收尾停止记录；未部署打包，未改正式代码。
+2026-10-31本地验收启动：用户要求后已启动并保持前端4173/后端8000（工具会话20468/83867，后端PID727230）。沿用隔离runtime与既有合成结果；Windows HTTP和Edge只读检查用户6卡、MA13UUID正常、无页面脚本错误。[访问地址和评审路径](../../achieve/2026-10-31/monitoring-v2-review/docs/tasks/viewer/monitoring-v2/LOCAL_REVIEW.md)。当前服务运行状态覆盖下方上轮收尾停止记录；未部署打包，未改正式代码。
 
 收尾：源码`ef2b96c4f605c2b0482d85914dca26c6cd48b5de`已push origin main并核实远端；本地4173/8000测试服务已停止。[Git检查点](../../docs/tasks/viewer/monitoring-v2/GIT_CHECKPOINT.md)。其他会话修改保留，本线源码/文档已提交；没有部署打包。
 

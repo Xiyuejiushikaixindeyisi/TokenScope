@@ -8,7 +8,7 @@
 
 审查基线及本轮 HEAD 均为 `5c619f80631dbd0efdcbadffa7eedbf314bb678e`。修复为**未提交工作区差异**，没有新的修复 SHA。开始时前端目录无差异；其他会话已有文档及异常分析源码差异保留。未 reset、清理、拉 main 覆盖工作区或暂存文件。
 
-本轮证据根目录：`artifacts/validation/viewer/RV2-FIX-20261031/`（下文简称 E）。[候选清单](../../../../artifacts/validation/viewer/RV2-FIX-20261031/candidate.json)记录源码/测试/脚本/配置/依赖锁逐文件 SHA256、全部21个前端未提交文件、合成输入摘要。其排序文件摘要映射的聚合 SHA256 为：
+本轮证据根目录：`artifacts/validation/viewer/RV2-FIX-20261031/`（下文简称 E）。[候选清单](../../../../../../../artifacts/validation/viewer/RV2-FIX-20261031/candidate.json)记录源码/测试/脚本/配置/依赖锁逐文件 SHA256、全部21个前端未提交文件、合成输入摘要。其排序文件摘要映射的聚合 SHA256 为：
 
 `6202ff3db40686320b7ec194a855fcce5a35560abb35808fc56267387662884d`
 
@@ -21,7 +21,7 @@
 - 浏览器：新增 `tests/browser/v2-fixtures.ts`、`v2-review-fixes.spec.ts`；修改 `v2-acceptance.spec.ts`、`v2-boundaries.spec.ts`、`v2-ranking.spec.ts`、`v2-ttft.spec.ts`、`v2-user.spec.ts`。
 - 输入生成：`scripts/prepare-v2-fixtures.py`新增两个APPID的合成文件，仍不覆盖既有输入。
 
-文档只维护本交接、ENTRY、`memory/tasks/viewer-monitoring-v2.md`及共享 CURRENT/SESSIONS 内本线状态。依赖和锁文件无变更。[不变性核对](../../../../artifacts/validation/viewer/RV2-FIX-20261031/unchanged.json)：140个冻结契约、UI-02原型、S0、样式和导出协议路径与 HEAD 一致；原评审 JSON 列出的14个证据摘要全部一致。原报告及原证据只读，未改审查结论。
+文档只维护本交接、ENTRY、`memory/tasks/viewer-monitoring-v2.md`及共享 CURRENT/SESSIONS 内本线状态。依赖和锁文件无变更。[不变性核对](../../../../../../../artifacts/validation/viewer/RV2-FIX-20261031/unchanged.json)：140个冻结契约、UI-02原型、S0、样式和导出协议路径与 HEAD 一致；原评审 JSON 列出的14个证据摘要全部一致。原报告及原证据只读，未改审查结论。
 
 ## 逐项修复与验证层级
 

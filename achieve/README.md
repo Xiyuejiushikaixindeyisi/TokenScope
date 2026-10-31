@@ -1,5 +1,7 @@
 # achieve归档索引
 
+2026-10-31：[监控V2闭环审查与修复交接](2026-10-31/monitoring-v2-review/README.md)，8份归档、6份原文快照；原始证据不移动。
+
 按用户指定命名`achieve`，不是删除目录。2026-10-28整理已关闭批次、过期启动/交接prompt和长篇历史记忆；[当前任务入口](../docs/tasks/README.md)与[会话分工](../memory/SESSIONS.md)是恢复起点。
 
 | 历史材料 | 位置/替代入口 |

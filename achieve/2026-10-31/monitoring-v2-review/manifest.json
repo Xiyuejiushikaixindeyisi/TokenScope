@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-31",
+  "session": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "head": "fe7f08387d0aa09bedd531677c7bf68d2c215969",
+  "scope": "Closed monitoring V2 review chain only; no packaging",
+  "files": [
+    {
+      "source": "docs/tasks/delivery/MONITORING_V2_REVIEW_HANDOFF.md",
+      "archived": "achieve/2026-10-31/monitoring-v2-review/docs/tasks/delivery/MONITORING_V2_REVIEW_HANDOFF.md",
+      "before_sha256": "927fc4d68417d6a3e003a340fd26fa233a9a8b8c8e5b98aa7d6bbdca5503715c",
+      "after_sha256": "121543aebb1789712bb15228167d60a49c425ea7eedd8fc2e9e95ce80b80b490",
+      "change": "navigation_only"
+    },
+    {
+      "source": "docs/tasks/delivery/MONITORING_V2_REVIEW_20261031.md",
+      "archived": "achieve/2026-10-31/monitoring-v2-review/docs/tasks/delivery/MONITORING_V2_REVIEW_20261031.md",
+      "before_sha256": "328c664c7b939271d8815efe7c32e5a1f9e69fa6f01a7f898452a93ef1d80890",
+      "after_sha256": "28167b6c640484952be353fb9b40164b87b483a31d0251f3d3d6e42b40cddeca",
+      "change": "navigation_only"
+    },
+    {
+      "source": "docs/tasks/delivery/MONITORING_V2_REVIEW_20261031.json",
+      "archived": "achieve/2026-10-31/monitoring-v2-review/docs/tasks/delivery/MONITORING_V2_REVIEW_20261031.json",
+      "before_sha256": "af2eceed05ab1029b244317d74853ca857d5390fff9961e67e407714dc5a0c03",
+      "after_sha256": "af2eceed05ab1029b244317d74853ca857d5390fff9961e67e407714dc5a0c03",
+      "change": "byte_identical"
+    },
+    {
+      "source": "docs/tasks/delivery/MONITORING_V2_REREVIEW_20261031.md",
+      "archived": "achieve/2026-10-31/monitoring-v2-review/docs/tasks/delivery/MONITORING_V2_REREVIEW_20261031.md",
+      "before_sha256": "2fdd9fe21f7e8b2cc00f44e4adf8696857601e07d74ca9d7dea964c81dd530d6",
+      "after_sha256": "0295e4debd8f48604b083c3f7e6c28aa90fdb3e269475eee9207e34b82e9943d",
+      "change": "navigation_only"
+    },
+    {
+      "source": "docs/tasks/delivery/MONITORING_V2_REREVIEW_20261031.json",
+      "archived": "achieve/2026-10-31/monitoring-v2-review/docs/tasks/delivery/MONITORING_V2_REREVIEW_20261031.json",
+      "before_sha256": "aba51244ad4b34b777224c86564ed2d006b6cb3d9d86a02cc6eaf6cc0c80526d",
+      "after_sha256": "aba51244ad4b34b777224c86564ed2d006b6cb3d9d86a02cc6eaf6cc0c80526d",
+      "change": "byte_identical"
+    },
+    {
+      "source": "docs/tasks/delivery/MONITORING_V2_GIT_20261031.md",
+      "archived": "achieve/2026-10-31/monitoring-v2-review/docs/tasks/delivery/MONITORING_V2_GIT_20261031.md",
+      "before_sha256": "1d50c16879a6ff6426747ea5e5aa18dfb3a2035fb1657893ec2e19d686becc75",
+      "after_sha256": "2f64d2c933660b890630aa23d9f7dae739bcc2f96fe2b57938d16531eecb5874",
+      "change": "navigation_only"
+    },
+    {
+      "source": "docs/tasks/viewer/monitoring-v2/REVIEW_FIX_HANDOFF_20261031.md",
+      "archived": "achieve/2026-10-31/monitoring-v2-review/docs/tasks/viewer/monitoring-v2/REVIEW_FIX_HANDOFF_20261031.md",
+      "before_sha256": "ef237919d22884812ba0e2e1c642d11b7ab13e6ef53657d7300c0f3973bcb4b0",
+      "after_sha256": "fd9915522a180c0a779bd1fb85089a34e1ed2a30baa43ec6d1cb8d18819cbb6a",
+      "change": "navigation_only"
+    },
+    {
+      "source": "docs/tasks/viewer/monitoring-v2/LOCAL_REVIEW.md",
+      "archived": "achieve/2026-10-31/monitoring-v2-review/docs/tasks/viewer/monitoring-v2/LOCAL_REVIEW.md",
+      "before_sha256": "3f416dc6f7784cbbf6762d007efce2a97748fbdec160bcc32c57feacaf68c80d",
+      "after_sha256": "3f416dc6f7784cbbf6762d007efce2a97748fbdec160bcc32c57feacaf68c80d",
+      "change": "byte_identical"
+    }
+  ],
+  "snapshots": [
+    {
+      "source": "memory/CURRENT.md",
+      "snapshot": "achieve/2026-10-31/monitoring-v2-review/snapshots/memory/CURRENT.md",
+      "sha256": "e96e09d46b8b11159f688e32a298715b315c472e37b6821347626ddfa4f0fd4d"
+    },
+    {
+      "source": "memory/SESSIONS.md",
+      "snapshot": "achieve/2026-10-31/monitoring-v2-review/snapshots/memory/SESSIONS.md",
+      "sha256": "8651cfd20f2157b1c77de84eb022ea64fe552c91b2ac7f5cf10ff9d4336c8e55"
+    },
+    {
+      "source": "memory/tasks/delivery.md",
+      "snapshot": "achieve/2026-10-31/monitoring-v2-review/snapshots/memory/tasks/delivery.md",
+      "sha256": "e917458d9c3fd31d60b800ca00b26331422d9616edd266eaecdf79ec4e2eec2e"
+    },
+    {
+      "source": "docs/tasks/delivery/ENTRY.md",
+      "snapshot": "achieve/2026-10-31/monitoring-v2-review/snapshots/docs/tasks/delivery/ENTRY.md",
+      "sha256": "57943abc680d989033fbdca706e1f476fc84a372e1fd0d2265224de303be5900"
+    },
+    {
+      "source": "docs/tasks/viewer/monitoring-v2/ENTRY.md",
+      "snapshot": "achieve/2026-10-31/monitoring-v2-review/snapshots/docs/tasks/viewer/monitoring-v2/ENTRY.md",
+      "sha256": "128e4778bdfd6d93c4f45cf66f9fd3403323e7aee1442b00b719daf2fac47258"
+    },
+    {
+      "source": "docs/architecture/TASK_SESSION_WORKFLOW.md",
+      "snapshot": "achieve/2026-10-31/monitoring-v2-review/snapshots/docs/architecture/TASK_SESSION_WORKFLOW.md",
+      "sha256": "2de15c55c6b95fa29b3aa963e3db2863a760b0441c34848dff043bcdd5296945"
+    }
+  ],
+  "preserved_evidence_sha256": {
+    "artifacts/reviews/monitoring-v2-20261031/candidate.json": "5fb7995e745da852b9f77fc5f3a693360ab6b160cf948523e11f7b8a065cc04c",
+    "artifacts/reviews/monitoring-v2-20261031/identity-verification.json": "5c0f9881972731ef66dd03d56e1e3d0b8bcfab4bf9ebddd909f697554ea566ba",
+    "artifacts/reviews/monitoring-v2-20261031/pytest.log": "67ab7314afefb779d24fa72d88ce5dd00648fd9dcc84699ef746074f446e0b7f",
+    "artifacts/reviews/monitoring-v2-20261031/checks.json": "9494f1b4abe9a25aebd5d3912400982f730a32c55f105d20cd02613e8c8e6aa5",
+    "artifacts/reviews/monitoring-v2-20261031/test.log": "5efe8e75012551135984af54faa4a64ae7f2d1d869265731808583bfbd9b8114",
+    "artifacts/reviews/monitoring-v2-20261031/browser.log": "216c698702773f5a3d111f278fe243cb95ddc4dbb008a83c734908e5e01cf24c",
+    "artifacts/reviews/monitoring-v2-20261031/docker-browser/browser.log": "4319aac05a58fd46b2b080e9d0be5abeb8ed556c21fb4f93d9e48a6c648368c7",
+    "artifacts/reviews/monitoring-v2-20261031/docker-browser/ranking-retest.log": "90e6b11caf13dd853fdf7f0898541032040ef68fe0bea9a0eca2e2ef4b02fd33",
+    "artifacts/reviews/monitoring-v2-20261031/extra-observations.json": "453145f1bd0b5bef9d6264472ffe3bef4ba86b324ff46b625e57e4cc2e41ff39",
+    "artifacts/reviews/monitoring-v2-20261031/docker-browser/extra-observations.json": "3dad7568cadfab8df8526c2e227a0eb31291156c346a3af9efc6207046e95bcc",
+    "artifacts/reviews/monitoring-v2-20261031/ranking-reset.json": "e96897d876a56e04205628f7c489f5921b56d182633e06137d9299915511eeb8",
+    "artifacts/reviews/monitoring-v2-20261031/source-restart.json": "2527dafa66c872e091ac8473b5483ab4a20f304bf969b9b4bb4d010aa9360982",
+    "artifacts/reviews/monitoring-v2-20261031/container-restart.json": "4b27df72f9f35b95fe4bc92b61e2e919dbbaa6f74eec4b014316ab7984843f06",
+    "artifacts/reviews/monitoring-v2-20261031/cleanup.json": "6693c997fea5a17c154671c897e9678a53a52df2cb4167ee431bd51089f6d803",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/final-candidate.json": "059040e777c05297217fa073b7adc32176d25503e24ae85d471e2565c1460566",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/backend-sha256.json": "a96b052b0270967f6850965f91da134ff83e7308028b7365218b9c319f6e4ab3",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/checks.json": "9fc7008fe4be02f128c13654fb371fafa061a8c2a0990b332e4d133f0d29dffc",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/test.log": "f49318b4c9974d9ec77ad36bdb92057cbbe77020dfdcc05f1de4e773326b3446",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/browser-final.log": "713603932cd3cbdff2744f5bff0c890940a8b973b42383613bb6ee06d185dd28",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/docker-browser/browser.log": "8e2883421c2858b5885210edcf5afc66a794bab6c8ea72903aaa9134c75e57b8",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/docker-browser/clock-retest.log": "9934ab1ea6f739ee237446d4ca2bce0f69948e29877fd13d03b64a5feba69655",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/extra-observations.json": "2859c57d52fc9c37eb7f6e5c19f551d18c786ce57c3735b13e84b984f40dbddc",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/ranking-reset.json": "d6c728ed0fcfa03c512aa25c7bcb3e23844fad2ac364ade0f053e40926a90921",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/docker-browser/extra-observations.json": "3f681463986657a83d836624fc6c74574dc08e34727b67fb1c37a3b0109fe9d6",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/docker-browser/ranking-reset.json": "d6c728ed0fcfa03c512aa25c7bcb3e23844fad2ac364ade0f053e40926a90921",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/container-restart.json": "c9ee87a19c552abef1579976fa6a0d0dc71f90371ead5c99f0a619f86109d11d",
+    "artifacts/reviews/monitoring-v2-rereview-20261031/identity-verification.json": "5c0f9881972731ef66dd03d56e1e3d0b8bcfab4bf9ebddd909f697554ea566ba"
+  }
+}

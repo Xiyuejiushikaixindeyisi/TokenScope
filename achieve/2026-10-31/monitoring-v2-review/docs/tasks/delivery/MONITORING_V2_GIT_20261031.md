@@ -8,6 +8,6 @@
 
 验证：[复审结果](MONITORING_V2_REREVIEW_20261031.md)，173单元/组件、51源码浏览器、39容器、4受影响容器检查通过；容器重启115个地址响应摘要一致。原评审及前端交接保持历史身份；本轮通过不等于异常分析或华为现场通过。
 
-本Git记录与入口记忆形成随后文档检查点，按用户授权显式`git push origin main`，不push --all、不推backup，不包含artifacts、数据、模型资产、镜像或代码包。最终HEAD/远端SHA和退出码由推送后生成的本地证据记录：[push-verification.json](../../../artifacts/reviews/monitoring-v2-rereview-20261031/push-verification.json)。该文件在实际远端核对成功后写入，不预填推送结果。
+本Git记录与入口记忆形成随后文档检查点，按用户授权显式`git push origin main`，不push --all、不推backup，不包含artifacts、数据、模型资产、镜像或代码包。最终HEAD/远端SHA和退出码由推送后生成的本地证据记录：[push-verification.json](../../../../../../artifacts/reviews/monitoring-v2-rereview-20261031/push-verification.json)。该文件在实际远端核对成功后写入，不预填推送结果。
 
 本轮临时测试镜像仅本地；测试容器/本轮源码服务及专属daemon已停止，原8000/4173仍HTTP200。未交付打包。

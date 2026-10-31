@@ -20,14 +20,14 @@ Docker授权已向用户澄清并获明确答复：“是，允许本机测试�
 
 ## 接收前先读与版本
 
-先读AGENTS、memory/CURRENT.md、memory/SESSIONS.md、[交付入口](ENTRY.md)，再按下表定位；不全量阅读异常分析历史。
+先读AGENTS、memory/CURRENT.md、memory/SESSIONS.md、[交付入口](../../../../../../docs/tasks/delivery/ENTRY.md)，再按下表定位；不全量阅读异常分析历史。
 
 | 组件 | 身份与权威入口 | 已有证据（非本次重新测试） |
 | --- | --- | --- |
-| Token监控前端 | 源码ef2b96c4f605c2b0482d85914dca26c6cd48b5de；文档检查点5c619f8；[入口](../viewer/monitoring-v2/ENTRY.md)、[源码地图/复现](../viewer/monitoring-v2/CODEMAP.md)、[交互](../viewer/monitoring-v2/INTERACTION_V2.md) | MV2-F000–F006；159单元/组件、25浏览器、typecheck/lint/Vite构建；[结果](../viewer/monitoring-v2/batches/MV2-F006/RESULT.md)、[测试映射](../viewer/monitoring-v2/batches/MV2-F006/TESTS.md)、[问题/限制](../viewer/monitoring-v2/batches/MV2-F006/ISSUES.md)；本轮用户正式页面验收通过 |
-| 用户监控后端 | u008-local-1；a4053db5789fa9460b1fae4097a8835b2554357c；[契约2.0.0](../../contracts/user-monitoring-v2/2.0.0/README.md)、[TTFT交接](../monitoring/v2-user/TTFT_FRONTEND_HANDOFF.md)、[实际API](../monitoring/v2-user/IMPLEMENTED_API.md) | U006–U008；[U008结果](../monitoring/v2-user/batches/U008/RESULT.md)记录380全量及最终126等不同范围，不相加作新总数；代码完成，性能校准待完成 |
-| MA监控后端 | ma-backend-local-1；集成源码9a037466f7211126261ec2026f54b9c19c2e2151；[Git检查点](../monitoring/v2-ma/GIT_CHECKPOINT.md)、[前端交接](../monitoring/v2-ma/FRONTEND_HANDOFF.md)、[契约1.0.0](../../contracts/ma-monitoring-v2/CONTRACT.md) | M000–M005；原235、独立候选227、集成复核289为不同集合和版本；以对应报告/manifest为准，不冒充当前候选复测 |
-| 共用S0/编码及控制层 | [S0冻结入口](../monitoring/batches/B005.1/S0_CONTRACT.md)、env/sources.lock.json、模型配置/资产锁；api/app、CLI及Dispatcher | 保留V1发布身份；三端集成需验证共用服务、资源及队列影响 |
+| Token监控前端 | 源码ef2b96c4f605c2b0482d85914dca26c6cd48b5de；文档检查点5c619f8；[入口](../../../../../../docs/tasks/viewer/monitoring-v2/ENTRY.md)、[源码地图/复现](../../../../../../docs/tasks/viewer/monitoring-v2/CODEMAP.md)、[交互](../../../../../../docs/tasks/viewer/monitoring-v2/INTERACTION_V2.md) | MV2-F000–F006；159单元/组件、25浏览器、typecheck/lint/Vite构建；[结果](../../../../../../docs/tasks/viewer/monitoring-v2/batches/MV2-F006/RESULT.md)、[测试映射](../../../../../../docs/tasks/viewer/monitoring-v2/batches/MV2-F006/TESTS.md)、[问题/限制](../../../../../../docs/tasks/viewer/monitoring-v2/batches/MV2-F006/ISSUES.md)；本轮用户正式页面验收通过 |
+| 用户监控后端 | u008-local-1；a4053db5789fa9460b1fae4097a8835b2554357c；[契约2.0.0](../../../../../../docs/contracts/user-monitoring-v2/2.0.0/README.md)、[TTFT交接](../../../../../../docs/tasks/monitoring/v2-user/TTFT_FRONTEND_HANDOFF.md)、[实际API](../../../../../../docs/tasks/monitoring/v2-user/IMPLEMENTED_API.md) | U006–U008；[U008结果](../../../../../../docs/tasks/monitoring/v2-user/batches/U008/RESULT.md)记录380全量及最终126等不同范围，不相加作新总数；代码完成，性能校准待完成 |
+| MA监控后端 | ma-backend-local-1；集成源码9a037466f7211126261ec2026f54b9c19c2e2151；[Git检查点](../../../../../../docs/tasks/monitoring/v2-ma/GIT_CHECKPOINT.md)、[前端交接](../../../../../../docs/tasks/monitoring/v2-ma/FRONTEND_HANDOFF.md)、[契约1.0.0](../../../../../../docs/contracts/ma-monitoring-v2/CONTRACT.md) | M000–M005；原235、独立候选227、集成复核289为不同集合和版本；以对应报告/manifest为准，不冒充当前候选复测 |
+| 共用S0/编码及控制层 | [S0冻结入口](../../../../../../docs/tasks/monitoring/batches/B005.1/S0_CONTRACT.md)、env/sources.lock.json、模型配置/资产锁；api/app、CLI及Dispatcher | 保留V1发布身份；三端集成需验证共用服务、资源及队列影响 |
 
 上述源码此前已在main历史中，接收方仍须核实当前HEAD、远端、提交祖先和工作区差异；不能因历史已push跳过本次统一整理，也不制造无变化的重复源码提交。当前共享工作区有其他会话未提交内容，禁止全局reset、git add .或混入未完成异常分析文件。
 
@@ -36,7 +36,7 @@ Docker授权已向用户澄清并获明确答复：“是，允许本机测试�
 1. **锁定候选**：记录HEAD、工作区三端差异、依赖锁、契约manifest、UI-02身份、模型revision/配置/摘要；明确测试覆盖的实际源码。整理问题清单与测试矩阵后运行，不以旧日志代替本次结果。
 2. **源码及契约审查**：重点核对服务身份/run/base_run/APPID/UUID隔离，读接口不启动分析，严格Schema与精确整数/null，错误码、分页revision、参数边界、路径/输入根、幂等、原子发布及恢复。检查并发、取消、迟到响应、超时/网络异常、资源释放、持久化损坏与重启健壮性。
 3. **本机三端E2E**：实际正式前端→真实同源API→任务队列→发布结果→界面/明细/导出；三模型用户流程及MA双文件流程。运行对应前后端完整/受影响测试、类型与静态检查，保留失败和修复复测证据。
-4. **本机Docker E2E**：检查[既有构建入口](../../../deploy/monitoring/README.md)及Dockerfile/Compose/上下文脚本是否适配本次三端，不能假定旧V1镜像已包含V2。允许为测试构建临时镜像，使用独立测试输入/state/端口，验证镜像内前端静态资源、同源路由/OpenAPI、三端提交/读取/恢复/导出及容器重启。检查挂载权限、资产/配置身份、日志与健康状态。不得运行会导出tar包、写交付manifest/prompt或发布交付镜像的一键发布流程。
+4. **本机Docker E2E**：检查[既有构建入口](../../../../../../deploy/monitoring/README.md)及Dockerfile/Compose/上下文脚本是否适配本次三端，不能假定旧V1镜像已包含V2。允许为测试构建临时镜像，使用独立测试输入/state/端口，验证镜像内前端静态资源、同源路由/OpenAPI、三端提交/读取/恢复/导出及容器重启。检查挂载权限、资产/配置身份、日志与健康状态。不得运行会导出tar包、写交付manifest/prompt或发布交付镜像的一键发布流程。
 5. **关闭问题**：按严重度和责任线记录发现、复现、根因、修复版本、复测与剩余风险。重大语义或契约改变回到对应维护方和用户；不删断言、替换假服务或放宽条件凑通过。需要其他会话处理时按项目协作授权走，不把本交接当成任意发消息授权。
 6. **Git统一收口**：检测通过后，在已验证候选基础上整理三端源码/测试/配置/文档，合入main、显式push origin main，核实远端SHA；审查后修复需对应复测。不得上传真实数据、state、dist交付包、镜像、凭据，backup仅本地。写明新提交与已存在祖先分别包含什么。
 7. **报告并等待统一交付阶段**：提交三端审查、Docker E2E、问题闭环、Git身份与限制；到此停止，不部署/打包/交付镜像/prompt/华为操作。

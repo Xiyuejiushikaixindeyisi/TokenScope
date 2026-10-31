@@ -10,7 +10,7 @@
 - 前端交接152个路径摘要全部匹配，聚合6202ff3db40686320b7ec194a855fcce5a35560abb35808fc56267387662884d；依赖锁未变。
 - 本轮源码服务使用从HEAD逐文件提取的监控后端，避免把其他会话的api/app.py、cli.py及未提交analysis模块带进候选。临时Docker上下文同样以该后端逐文件摘要覆盖对应文件；未改共享工作树后台源码，未清理其他会话工作。
 - S0/用户2.0.0/MA1.0.0、UI-02及实际模型资产120个不同路径摘要均匹配。接收时前端无漂移；复审仅追加1处浏览器测试时钟暂停，业务源码不变，final-candidate.json记录最终测试摘要，旧评审14项证据摘要未变。
-- 证据根目录：[artifacts/reviews/monitoring-v2-rereview-20261031](../../../artifacts/reviews/monitoring-v2-rereview-20261031/)。frontend-candidate.json、backend-sha256.json、identity-verification.json、status-before.txt记录候选及背景；没有将历史应用包名dev6/F007当作充分V2身份。
+- 证据根目录：[artifacts/reviews/monitoring-v2-rereview-20261031](../../../../../../artifacts/reviews/monitoring-v2-rereview-20261031)。frontend-candidate.json、backend-sha256.json、identity-verification.json、status-before.txt记录候选及背景；没有将历史应用包名dev6/F007当作充分V2身份。
 
 ## 三问题关闭证据
 
@@ -44,7 +44,7 @@
 - 本机测试tag：tokenscope/local-test:mv2-rereview-20261031。
 - image ID：sha256:0e14131c23266e03f899871687904b543a686a1cd623be25bd740303daaf1a95。
 - 固定基础镜像：public.ecr.aws/docker/library/python@sha256:a36c24f9cbdf4fd0f52d67f0823eeac19c2028c637cecc392d97f980d4fec56b。
-- 构建：[artifacts/builds/monitoring-v2-rereview-20261031](../../../artifacts/builds/monitoring-v2-rereview-20261031/)；context/candidate.json包含116个上下文文件摘要、前端修复聚合摘要、用户/MA契约及local-test-only用途；backend-sha256对应已审查基线。镜像基线标签不会单独代表未提交前端修复，须联合该manifest识别。
+- 构建：[artifacts/builds/monitoring-v2-rereview-20261031](../../../../../../artifacts/builds/monitoring-v2-rereview-20261031)；context/candidate.json包含116个上下文文件摘要、前端修复聚合摘要、用户/MA契约及local-test-only用途；backend-sha256对应已审查基线。镜像基线标签不会单独代表未提交前端修复，须联合该manifest识别。
 - 复用项目Docker26.1.4/Compose2.27.1，WSL linux/amd64、离线锁定wheel、build --network=none。非root1000:1000、只读根和输入、独立state，8CPU/32GiB，回环18052。构建命令、image/container inspect、compose展开和容器日志均保留。
 - 源码服务18051/Vite14193；独立合成inputs/state-corrected。Windows Node24驱动Edge156，WSL Node22.22.2/npm10.9.7运行项目检查与构建。
 - 文件API路径是受控showSaveFilePicker/createWritable替身，真实HTTP/Worker与浏览器下载路径另行验证；不宣称原生系统选择器及磁盘提交验收。真实性能校准、现场CSV、华为旧内核/资源/驱动及新异常分析业务均不在本轮通过范围。

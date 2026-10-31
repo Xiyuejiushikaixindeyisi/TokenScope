@@ -10,4 +10,4 @@
 
 源码已推送，测试服务已停止，版本/工作区边界见[Git检查点](../../GIT_CHECKPOINT.md)。
 
-后续服务已按用户要求重新启动供正式页面验收，见[本地评审](../../LOCAL_REVIEW.md)；上句停止状态为前轮历史。本轮只登记用户验收和[三端审查交接](../../../../delivery/MONITORING_V2_REVIEW_HANDOFF.md)，不把前端验收代写为独立三端审查/Docker/性能/现场验收通过。审查打包会话允许构建本机临时测试镜像，禁止交付镜像、打包、部署及华为prompt；通过后由其统一Git收口。
+后续服务已按用户要求重新启动供正式页面验收，见[本地评审](../../../../../../achieve/2026-10-31/monitoring-v2-review/docs/tasks/viewer/monitoring-v2/LOCAL_REVIEW.md)；上句停止状态为前轮历史。本轮只登记用户验收和[三端审查交接](../../../../../../achieve/2026-10-31/monitoring-v2-review/docs/tasks/delivery/MONITORING_V2_REVIEW_HANDOFF.md)，不把前端验收代写为独立三端审查/Docker/性能/现场验收通过。审查打包会话允许构建本机临时测试镜像，禁止交付镜像、打包、部署及华为prompt；通过后由其统一Git收口。
