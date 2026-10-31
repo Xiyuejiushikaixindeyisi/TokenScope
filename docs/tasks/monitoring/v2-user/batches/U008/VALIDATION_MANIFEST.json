@@ -1,0 +1,32 @@
+{
+  "old_contract_and_frontend_unchanged": true,
+  "changed_existing_files": [
+    "src/tokenscope/api/user.py",
+    "src/tokenscope/user_monitoring/estimator.py",
+    "src/tokenscope/user_monitoring/contracts.py"
+  ],
+  "runtime_examples": 6,
+  "user_operations": 9,
+  "deterministic_contract_generation": true,
+  "sha256": {
+    "src/tokenscope/api/user.py": "3fb0e83d420ad835ffd858bf967721b267bb98b6b3beab093d7de15b59bf1a3a",
+    "src/tokenscope/user_monitoring/estimator.py": "ed530218552738454ccdd67378db2f3d182329262178960e4e0660add32091b6",
+    "src/tokenscope/user_monitoring/contracts.py": "10c642229261d0e4eb9638c421c7ab78d9c5fe8d123c4cf38450e53cb67a01d5",
+    "docs/contracts/user-monitoring-v2/2.0.0/design.openapi.json": "1f0e148dab552126b05ff4276606cb13b5cd758932fa4aa19043d2e978384e75",
+    "docs/contracts/user-monitoring-v2/2.0.0/schema.json": "3eee4349acefb3f30d62e4e80cf6ae6f7b94d08fa9003316803218e21999749d",
+    "docs/contracts/user-monitoring-v2/2.0.0/runtime.examples.json": "7bd3d9ba9372980e178e2d21937fb9774243270479bbac7090e5324e5eb6fd18",
+    "docs/contracts/user-monitoring-v2/2.0.0/examples.json": "a54ca1a4a5ffdd238e3efcc9cba01e78ccab0e3b7d21b689a630d99c795b6bd9",
+    "docs/contracts/user-monitoring-v2/2.0.0/manifest.json": "5404e735566ca46ad4e6885e9b9a6a6dc3e54c8a79fa42a929542c258d258e1a",
+    "docs/contracts/user-monitoring-v2/2.0.0/runtime.openapi.json": "97a71ac19637e1fdbf6911ec55cd5a38f76deabe48a14f74949b0f476b990255",
+    "scripts/validation/check_user_contract.py": "5c6960dc58dd6e50d30a26ba92306e24dc4e1dd4d23f2bfe1b9b1c54c46f7211",
+    "tests/unit/monitoring/test_user_minimal_contract.py": "1dc5d2b7592d68254f711fa0e5c743ee038e04790e4ced807e1f9b1cf182d1a7",
+    "tests/unit/monitoring/test_user_minimal_estimator.py": "b512c5e6cf1759abe88ab09af65bccd0ca14e5cd2745c077274cb0861813b62b",
+    "tests/integration/monitoring/test_user_minimal_ttft.py": "bcd1024d0a55641ba41d31167053ee6acdd2a8b008e6e282fa523f99ebf7212f"
+  },
+  "backend": "u008-local-1",
+  "contract": "2.0.0",
+  "full_tests": 380,
+  "final_targeted_tests": 126,
+  "calibration": "pending",
+  "frontend": "not_modified"
+}

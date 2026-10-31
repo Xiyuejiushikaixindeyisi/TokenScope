@@ -10,7 +10,7 @@ from pydantic.json_schema import models_json_schema
 from tokenscope.user_monitoring import contracts as c
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "docs/contracts/user-monitoring-v2"
+OUT = ROOT / "docs/contracts/user-monitoring-v2/2.0.0"
 MODELS = [
     c.Submit,
     c.Bind,
@@ -18,6 +18,7 @@ MODELS = [
     c.Ranking,
     c.Modes,
     c.Scenario,
+    c.BatchScenario,
     c.EvaluationRequest,
     c.Evaluation,
     c.ErrorEnvelope,
@@ -32,13 +33,19 @@ def dump(name, data):
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     _, schema = models_json_schema(
-        [(m, "validation") for m in MODELS], title="User monitoring 1.0.1"
+        [(m, "validation") for m in MODELS], title="User monitoring 2.0.0"
     )
     schema["$schema"] = "https://json-schema.org/draft/2020-12/schema"
     dump("schema.json", schema)
     components = json.loads(
         json.dumps(schema["$defs"]).replace("#/$defs/", "#/components/schemas/")
     )
+    components["ScenarioPayload"] = {
+        "anyOf": [
+            {"$ref": "#/components/schemas/Scenario"},
+            {"$ref": "#/components/schemas/BatchScenario"},
+        ]
+    }
     paths = {}
     operations = [
         ("/runs", "post", "Submit", "Receipt", "202"),
@@ -46,8 +53,8 @@ def main():
         ("/runs/{user_run_id}", "get", None, "Receipt", "200"),
         ("/runs/{user_run_id}/rankings", "get", None, "Ranking", "200"),
         ("/runs/{user_run_id}/modes", "get", None, "Modes", "200"),
-        ("/scenarios", "post", "Scenario", "Scenario", "201"),
-        ("/scenarios/{scenario_id}/{revision}", "get", None, "Scenario", "200"),
+        ("/scenarios", "post", "ScenarioPayload", "ScenarioPayload", "201"),
+        ("/scenarios/{scenario_id}/{revision}", "get", None, "ScenarioPayload", "200"),
         ("/evaluations", "post", "EvaluationRequest", "Evaluation", "201"),
         ("/evaluations/{evaluation_id}", "get", None, "Evaluation", "200"),
     ]
@@ -152,7 +159,7 @@ def main():
         "design.openapi.json",
         {
             "openapi": "3.1.0",
-            "info": {"title": "User monitoring design", "version": "1.0.1"},
+            "info": {"title": "User monitoring design", "version": "2.0.0"},
             "paths": paths,
             "components": {"schemas": components},
         },
@@ -347,6 +354,31 @@ def main():
             },
         ]
     )
+    minimal = {
+        k: scenario[k]
+        for k in (
+            "scenario_id",
+            "revision",
+            "model_id",
+            "common_name",
+            "deployment",
+            "source",
+            "source_description",
+            "chunk_tokens",
+            "chunk_seconds",
+        )
+    }
+    minimal["timing_model"] = "batch_reference_total_noncompute_v1"
+    examples.append({"model": "BatchScenario", "valid": True, "value": minimal})
+    for changes in (
+        {"overhead_seconds": "0"},
+        {"timing_model": "unknown"},
+        {"min_prompt_tokens": "1"},
+        {"chunk_seconds": "0"},
+    ):
+        examples.append(
+            {"model": "BatchScenario", "valid": False, "value": dict(minimal, **changes)}
+        )
     for example in examples:
         try:
             MODELS_BY_NAME[example["model"]].model_validate_json(json.dumps(example["value"]))

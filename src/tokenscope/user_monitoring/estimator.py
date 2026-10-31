@@ -6,7 +6,14 @@ from typing import Any
 from uuid import uuid4
 
 from tokenscope.errors import TokenScopeError
-from tokenscope.user_monitoring.contracts import Evaluation, EvaluationRequest, Scenario
+from tokenscope.user_monitoring.contracts import (
+    SCENARIO_ADAPTER,
+    BatchScenario,
+    Evaluation,
+    EvaluationRequest,
+    Scenario,
+    ScenarioPayload,
+)
 from tokenscope.user_monitoring.service import UserRunService
 from tokenscope.user_monitoring.storage import canonical
 
@@ -21,7 +28,7 @@ LIMITATIONS = [
 
 def calculate(
     request: EvaluationRequest,
-    scenario: Scenario,
+    scenario: ScenarioPayload,
     *,
     count: int,
     prompt_p90: int | None,
@@ -48,18 +55,43 @@ def calculate(
         if scenario.source == "user_assumption"
         else "Measurement applicability is limited to the supplied evidence."
     )
+    if isinstance(scenario, BatchScenario):
+        # Legacy messages remain unchanged for legacy calculations. Optional
+        # validation materials must not read as prerequisites in the new model.
+        payload["limitations"] = payload["limitations"][:3] + payload["limitations"][5:]
+        payload["limitations"].extend(
+            [
+                "W covers all non-compute time from GF dispatch to first token; no separate O.",
+                "Whole-batch token budget is assumed to be per-request progress, not measured.",
+                "Batch timing alone does not validate end-to-end reference accuracy.",
+                "Full-block/MTP restrictions or inaccurate W may make the reference unattainable.",
+                "Detailed workload and thinking-mode evidence is optional "
+                "for assumption scenarios.",
+            ]
+        )
+        if scenario.min_prompt_tokens is None:
+            payload["limitations"].append("Prompt-length applicability range is unverified.")
     if not count or prompt_p90 is None or prompt_p90 == 0:
         payload["reason"] = "NO_POSITIVE_P90"
-    elif not int(scenario.min_prompt_tokens) <= prompt_p90 <= int(scenario.max_prompt_tokens):
+    elif (
+        scenario.min_prompt_tokens is not None
+        and scenario.max_prompt_tokens is not None
+        and not int(scenario.min_prompt_tokens) <= prompt_p90 <= int(scenario.max_prompt_tokens)
+    ):
         payload.update(status="out_of_scope", reason="P90_OUTSIDE_CALIBRATION_RANGE")
     else:
-        budget = (
-            Fraction(request.target_seconds)
-            - Fraction(request.waiting_seconds)
-            - Fraction(scenario.overhead_seconds)
-        )
+        budget = Fraction(request.target_seconds) - Fraction(request.waiting_seconds)
+        if isinstance(scenario, Scenario):
+            budget -= Fraction(scenario.overhead_seconds)
         if budget < 0 or (budget == 0 and request.comparator == "lt"):
-            payload.update(status="no_budget", reason="WAIT_AND_OVERHEAD_EXHAUST_TARGET")
+            payload.update(
+                status="no_budget",
+                reason=(
+                    "WAIT_AND_OVERHEAD_EXHAUST_TARGET"
+                    if isinstance(scenario, Scenario)
+                    else "NONCOMPUTE_BUDGET_EXHAUSTS_TARGET"
+                ),
+            )
         else:
             steps = budget / Fraction(scenario.chunk_seconds)
             n = (
@@ -86,7 +118,7 @@ class EstimatorService:
     def __init__(self, user: UserRunService) -> None:
         self.user = user
 
-    def put_scenario(self, scenario: Scenario) -> Scenario:
+    def put_scenario(self, scenario: ScenarioPayload) -> ScenarioPayload:
         self.user.validate_name(scenario.common_name, scenario.model_id)
         payload = canonical(scenario.model_dump(mode="json"))
         with self.user.store.connect() as db:
@@ -105,14 +137,14 @@ class EstimatorService:
                 )
         return scenario
 
-    def scenario(self, scenario_id: str, revision: str) -> Scenario:
+    def scenario(self, scenario_id: str, revision: str) -> ScenarioPayload:
         with self.user.store.connect(readonly=True) as db:
             row = db.execute(
                 "SELECT payload FROM scenarios WHERE id=? AND revision=?", (scenario_id, revision)
             ).fetchone()
         if row is None:
             raise TokenScopeError("RESOURCE_NOT_FOUND", "Unknown scenario revision", 404)
-        return Scenario.model_validate_json(row[0])
+        return SCENARIO_ADAPTER.validate_json(row[0])
 
     def evaluate(self, request: EvaluationRequest) -> Evaluation:
         intent = canonical(request.model_dump(mode="json"))

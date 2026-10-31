@@ -154,3 +154,49 @@ def test_invalid_scenario(changes):
 def test_invalid_request(changes):
     with pytest.raises(ValidationError):
         request(**changes)
+
+
+@pytest.mark.parametrize(
+    "field", ["chunk_tokens", "chunk_seconds", "overhead_seconds", "waiting_seconds"]
+)
+@pytest.mark.parametrize("missing", ["absent", "null", "blank"])
+def test_required_parameters_have_no_defaults(field, missing):
+    model = EvaluationRequest if field == "waiting_seconds" else Scenario
+    data = (request() if field == "waiting_seconds" else scenario()).model_dump(mode="json")
+    if missing == "absent":
+        del data[field]
+    else:
+        data[field] = None if missing == "null" else ""
+    with pytest.raises(ValidationError):
+        model.model_validate(data)
+
+
+def test_explicit_zero_wait_is_not_a_missing_value():
+    assert request(waiting_seconds="0").waiting_seconds == "0"
+    assert run(request(waiting_seconds="0")).request.waiting_seconds == "0"
+
+
+@pytest.mark.parametrize(
+    "field", ["chunk_tokens", "chunk_seconds", "overhead_seconds", "waiting_seconds"]
+)
+@pytest.mark.parametrize("missing", ["absent", "null", "blank"])
+def test_http_missing_parameters_produce_no_rate_or_saved_evaluation(service, field, missing):
+    from fastapi.testclient import TestClient
+
+    from tokenscope.api.app import create_app
+
+    app = create_app(service, start_worker=False)
+    headers = {"X-TokenScope-Instance-Id": app.state.ma.service_id}
+    data = (request() if field == "waiting_seconds" else scenario()).model_dump(mode="json")
+    if missing == "absent":
+        del data[field]
+    else:
+        data[field] = None if missing == "null" else ""
+    endpoint = "evaluations" if field == "waiting_seconds" else "scenarios"
+    with TestClient(app) as client:
+        response = client.post(f"/monitoring/user-v2/{endpoint}", json=data, headers=headers)
+    assert response.status_code == 422
+    assert set(response.json()) == {"error"}
+    with app.state.user.store.connect(readonly=True) as db:
+        assert db.execute("SELECT count(*) FROM evaluations").fetchone()[0] == 0
+        assert db.execute("SELECT count(*) FROM scenarios").fetchone()[0] == 0

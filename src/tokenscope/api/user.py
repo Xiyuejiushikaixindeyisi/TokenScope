@@ -14,7 +14,7 @@ from tokenscope.user_monitoring.contracts import (
     Modes,
     Ranking,
     Receipt,
-    Scenario,
+    ScenarioPayload,
     Submit,
 )
 from tokenscope.user_monitoring.estimator import EstimatorService
@@ -57,12 +57,12 @@ def router(service: UserRunService) -> APIRouter:
     def modes(user_run_id: str, query: Annotated[ModeQuery, Query()]) -> Modes:
         return ranking.modes(user_run_id, query)
 
-    @api.post("/scenarios", response_model=Scenario, status_code=201)
-    def put_scenario(body: Scenario) -> Scenario:
+    @api.post("/scenarios", response_model=ScenarioPayload, status_code=201)
+    def put_scenario(body: ScenarioPayload) -> ScenarioPayload:
         return estimator.put_scenario(body)
 
-    @api.get("/scenarios/{scenario_id}/{revision}", response_model=Scenario)
-    def scenario(scenario_id: str, revision: str) -> Scenario:
+    @api.get("/scenarios/{scenario_id}/{revision}", response_model=ScenarioPayload)
+    def scenario(scenario_id: str, revision: str) -> ScenarioPayload:
         return estimator.scenario(scenario_id, revision)
 
     @api.post("/evaluations", response_model=Evaluation, status_code=201)
@@ -85,5 +85,6 @@ def router(service: UserRunService) -> APIRouter:
                     }
                 ],
                 "x-runtime-implemented": True,
+                "x-user-contract-version": "2.0.0",
             }
     return api

@@ -1,0 +1,356 @@
+[
+  {
+    "model": "DeepSeek-V4-Flash-0731",
+    "timing": "new",
+    "response": {
+      "evaluation_id": "ue-fd93918079d94574a508dd8ce8a4394c",
+      "service_instance_id": "a29491d3-9b17-4de0-bf90-072e6d6904a0",
+      "request": {
+        "submission_key": "eval",
+        "user_run_id": "ur-22590c5b239e4504b02617ac2acd489e",
+        "appid": "tenant",
+        "scenario_id": "minimal",
+        "scenario_revision": "1",
+        "target_seconds": "8",
+        "waiting_seconds": "5",
+        "comparator": "le"
+      },
+      "scenario": {
+        "timing_model": "batch_reference_total_noncompute_v1",
+        "scenario_id": "minimal",
+        "revision": "1",
+        "model_id": "DeepSeek-V4-Flash-0731",
+        "common_name": "DeepSeek-V4-Flash",
+        "deployment": "synthetic fixed deployment",
+        "source": "user_assumption",
+        "source_description": "arithmetic fixture, not real calibration",
+        "chunk_tokens": "8192",
+        "chunk_seconds": "1",
+        "measurement_boundary": "GF dispatch to first token",
+        "workload_description": null,
+        "thinking_mode": null,
+        "min_prompt_tokens": null,
+        "max_prompt_tokens": null,
+        "evidence_sha256": null,
+        "sample_count": null,
+        "calibration_notes": null
+      },
+      "status": "reference",
+      "reason": null,
+      "request_count": "2",
+      "prompt_p90": "6",
+      "allowed_chunks": "3",
+      "computable_tokens": "6",
+      "required_hit_fraction": {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      "required_hit_rate": 0.0,
+      "limitations": [
+        "P90-length reference only; not an aggregate ideal-hit-rate pass/fail threshold.",
+        "Fixed waiting/chunk assumptions; waiting/computation percentiles do not add.",
+        "GB service flow is hypothetical for this deployment, not a production instance replay.",
+        "User assumption; not calibrated performance evidence.",
+        "W covers all non-compute time from GF dispatch to first token; no separate O.",
+        "Whole-batch token budget is assumed to be per-request progress, not measured.",
+        "Batch timing alone does not validate end-to-end reference accuracy.",
+        "Full-block/MTP restrictions or inaccurate W may make the reference unattainable.",
+        "Detailed workload and thinking-mode evidence is optional for assumption scenarios.",
+        "Prompt-length applicability range is unverified."
+      ]
+    }
+  },
+  {
+    "model": "DeepSeek-V4-Flash-0731",
+    "timing": "legacy",
+    "response": {
+      "evaluation_id": "ue-4cd1a136138745228e175e9f65ad6690",
+      "service_instance_id": "a29491d3-9b17-4de0-bf90-072e6d6904a0",
+      "request": {
+        "submission_key": "legacy-eval",
+        "user_run_id": "ur-22590c5b239e4504b02617ac2acd489e",
+        "appid": "tenant",
+        "scenario_id": "legacy",
+        "scenario_revision": "1",
+        "target_seconds": "8",
+        "waiting_seconds": "3",
+        "comparator": "le"
+      },
+      "scenario": {
+        "scenario_id": "legacy",
+        "revision": "1",
+        "model_id": "DeepSeek-V4-Flash-0731",
+        "common_name": "DeepSeek-V4-Flash",
+        "deployment": "synthetic only",
+        "source": "user_assumption",
+        "source_description": "arithmetic fixture, not measured",
+        "evidence_sha256": null,
+        "measurement_boundary": "GF dispatch to first token; assumed",
+        "workload_description": "synthetic",
+        "thinking_mode": "default",
+        "min_prompt_tokens": "1",
+        "max_prompt_tokens": "131072",
+        "chunk_tokens": "8192",
+        "chunk_seconds": "2",
+        "overhead_seconds": "1",
+        "sample_count": "0",
+        "calibration_notes": "not calibrated"
+      },
+      "status": "reference",
+      "reason": null,
+      "request_count": "2",
+      "prompt_p90": "6",
+      "allowed_chunks": "2",
+      "computable_tokens": "6",
+      "required_hit_fraction": {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      "required_hit_rate": 0.0,
+      "limitations": [
+        "P90-length reference only; not an aggregate ideal-hit-rate pass/fail threshold.",
+        "Fixed waiting/chunk assumptions; waiting/computation percentiles do not add.",
+        "GB service flow is hypothetical for this deployment, not a production instance replay.",
+        "Workload, thinking mode and measurement boundary require operator confirmation.",
+        "Full-block/MTP and cache-read overhead may make the reference unattainable.",
+        "User assumption; not calibrated performance evidence."
+      ]
+    }
+  },
+  {
+    "model": "GLM-5.2",
+    "timing": "new",
+    "response": {
+      "evaluation_id": "ue-3673b10e43e34335b2beba5d80ad4019",
+      "service_instance_id": "90fb51a6-1ec1-4173-a407-91ad90156c74",
+      "request": {
+        "submission_key": "eval",
+        "user_run_id": "ur-2e2f9a4e1be742e5a7339ae2f24d5240",
+        "appid": "tenant",
+        "scenario_id": "minimal",
+        "scenario_revision": "1",
+        "target_seconds": "8",
+        "waiting_seconds": "5",
+        "comparator": "le"
+      },
+      "scenario": {
+        "timing_model": "batch_reference_total_noncompute_v1",
+        "scenario_id": "minimal",
+        "revision": "1",
+        "model_id": "GLM-5.2",
+        "common_name": "GLM-V5.2",
+        "deployment": "synthetic fixed deployment",
+        "source": "user_assumption",
+        "source_description": "arithmetic fixture, not real calibration",
+        "chunk_tokens": "8192",
+        "chunk_seconds": "1",
+        "measurement_boundary": "GF dispatch to first token",
+        "workload_description": null,
+        "thinking_mode": null,
+        "min_prompt_tokens": null,
+        "max_prompt_tokens": null,
+        "evidence_sha256": null,
+        "sample_count": null,
+        "calibration_notes": null
+      },
+      "status": "reference",
+      "reason": null,
+      "request_count": "2",
+      "prompt_p90": "14",
+      "allowed_chunks": "3",
+      "computable_tokens": "14",
+      "required_hit_fraction": {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      "required_hit_rate": 0.0,
+      "limitations": [
+        "P90-length reference only; not an aggregate ideal-hit-rate pass/fail threshold.",
+        "Fixed waiting/chunk assumptions; waiting/computation percentiles do not add.",
+        "GB service flow is hypothetical for this deployment, not a production instance replay.",
+        "User assumption; not calibrated performance evidence.",
+        "W covers all non-compute time from GF dispatch to first token; no separate O.",
+        "Whole-batch token budget is assumed to be per-request progress, not measured.",
+        "Batch timing alone does not validate end-to-end reference accuracy.",
+        "Full-block/MTP restrictions or inaccurate W may make the reference unattainable.",
+        "Detailed workload and thinking-mode evidence is optional for assumption scenarios.",
+        "Prompt-length applicability range is unverified."
+      ]
+    }
+  },
+  {
+    "model": "GLM-5.2",
+    "timing": "legacy",
+    "response": {
+      "evaluation_id": "ue-35b02c64eaff4492998b124ab4608a1c",
+      "service_instance_id": "90fb51a6-1ec1-4173-a407-91ad90156c74",
+      "request": {
+        "submission_key": "legacy-eval",
+        "user_run_id": "ur-2e2f9a4e1be742e5a7339ae2f24d5240",
+        "appid": "tenant",
+        "scenario_id": "legacy",
+        "scenario_revision": "1",
+        "target_seconds": "8",
+        "waiting_seconds": "3",
+        "comparator": "le"
+      },
+      "scenario": {
+        "scenario_id": "legacy",
+        "revision": "1",
+        "model_id": "GLM-5.2",
+        "common_name": "GLM-V5.2",
+        "deployment": "synthetic only",
+        "source": "user_assumption",
+        "source_description": "arithmetic fixture, not measured",
+        "evidence_sha256": null,
+        "measurement_boundary": "GF dispatch to first token; assumed",
+        "workload_description": "synthetic",
+        "thinking_mode": "default",
+        "min_prompt_tokens": "1",
+        "max_prompt_tokens": "131072",
+        "chunk_tokens": "8192",
+        "chunk_seconds": "2",
+        "overhead_seconds": "1",
+        "sample_count": "0",
+        "calibration_notes": "not calibrated"
+      },
+      "status": "reference",
+      "reason": null,
+      "request_count": "2",
+      "prompt_p90": "14",
+      "allowed_chunks": "2",
+      "computable_tokens": "14",
+      "required_hit_fraction": {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      "required_hit_rate": 0.0,
+      "limitations": [
+        "P90-length reference only; not an aggregate ideal-hit-rate pass/fail threshold.",
+        "Fixed waiting/chunk assumptions; waiting/computation percentiles do not add.",
+        "GB service flow is hypothetical for this deployment, not a production instance replay.",
+        "Workload, thinking mode and measurement boundary require operator confirmation.",
+        "Full-block/MTP and cache-read overhead may make the reference unattainable.",
+        "User assumption; not calibrated performance evidence."
+      ]
+    }
+  },
+  {
+    "model": "Qwen3.6-27B",
+    "timing": "new",
+    "response": {
+      "evaluation_id": "ue-ecd25d64ea4f4ef39d666993320fc224",
+      "service_instance_id": "e1e0254e-334b-4d00-9728-8e35ff697f9a",
+      "request": {
+        "submission_key": "eval",
+        "user_run_id": "ur-f9e9cb6cc2fa4e3dac81f5814f51f7ac",
+        "appid": "tenant",
+        "scenario_id": "minimal",
+        "scenario_revision": "1",
+        "target_seconds": "8",
+        "waiting_seconds": "5",
+        "comparator": "le"
+      },
+      "scenario": {
+        "timing_model": "batch_reference_total_noncompute_v1",
+        "scenario_id": "minimal",
+        "revision": "1",
+        "model_id": "Qwen3.6-27B",
+        "common_name": "Qwen-V3.6-27B",
+        "deployment": "synthetic fixed deployment",
+        "source": "user_assumption",
+        "source_description": "arithmetic fixture, not real calibration",
+        "chunk_tokens": "8192",
+        "chunk_seconds": "1",
+        "measurement_boundary": "GF dispatch to first token",
+        "workload_description": null,
+        "thinking_mode": null,
+        "min_prompt_tokens": null,
+        "max_prompt_tokens": null,
+        "evidence_sha256": null,
+        "sample_count": null,
+        "calibration_notes": null
+      },
+      "status": "reference",
+      "reason": null,
+      "request_count": "2",
+      "prompt_p90": "12",
+      "allowed_chunks": "3",
+      "computable_tokens": "12",
+      "required_hit_fraction": {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      "required_hit_rate": 0.0,
+      "limitations": [
+        "P90-length reference only; not an aggregate ideal-hit-rate pass/fail threshold.",
+        "Fixed waiting/chunk assumptions; waiting/computation percentiles do not add.",
+        "GB service flow is hypothetical for this deployment, not a production instance replay.",
+        "User assumption; not calibrated performance evidence.",
+        "W covers all non-compute time from GF dispatch to first token; no separate O.",
+        "Whole-batch token budget is assumed to be per-request progress, not measured.",
+        "Batch timing alone does not validate end-to-end reference accuracy.",
+        "Full-block/MTP restrictions or inaccurate W may make the reference unattainable.",
+        "Detailed workload and thinking-mode evidence is optional for assumption scenarios.",
+        "Prompt-length applicability range is unverified."
+      ]
+    }
+  },
+  {
+    "model": "Qwen3.6-27B",
+    "timing": "legacy",
+    "response": {
+      "evaluation_id": "ue-552344e161d34edabbda0ff90473036e",
+      "service_instance_id": "e1e0254e-334b-4d00-9728-8e35ff697f9a",
+      "request": {
+        "submission_key": "legacy-eval",
+        "user_run_id": "ur-f9e9cb6cc2fa4e3dac81f5814f51f7ac",
+        "appid": "tenant",
+        "scenario_id": "legacy",
+        "scenario_revision": "1",
+        "target_seconds": "8",
+        "waiting_seconds": "3",
+        "comparator": "le"
+      },
+      "scenario": {
+        "scenario_id": "legacy",
+        "revision": "1",
+        "model_id": "Qwen3.6-27B",
+        "common_name": "Qwen-V3.6-27B",
+        "deployment": "synthetic only",
+        "source": "user_assumption",
+        "source_description": "arithmetic fixture, not measured",
+        "evidence_sha256": null,
+        "measurement_boundary": "GF dispatch to first token; assumed",
+        "workload_description": "synthetic",
+        "thinking_mode": "default",
+        "min_prompt_tokens": "1",
+        "max_prompt_tokens": "131072",
+        "chunk_tokens": "8192",
+        "chunk_seconds": "2",
+        "overhead_seconds": "1",
+        "sample_count": "0",
+        "calibration_notes": "not calibrated"
+      },
+      "status": "reference",
+      "reason": null,
+      "request_count": "2",
+      "prompt_p90": "12",
+      "allowed_chunks": "2",
+      "computable_tokens": "12",
+      "required_hit_fraction": {
+        "numerator": "0",
+        "denominator": "1"
+      },
+      "required_hit_rate": 0.0,
+      "limitations": [
+        "P90-length reference only; not an aggregate ideal-hit-rate pass/fail threshold.",
+        "Fixed waiting/chunk assumptions; waiting/computation percentiles do not add.",
+        "GB service flow is hypothetical for this deployment, not a production instance replay.",
+        "Workload, thinking mode and measurement boundary require operator confirmation.",
+        "Full-block/MTP and cache-read overhead may make the reference unattainable.",
+        "User assumption; not calibrated performance evidence."
+      ]
+    }
+  }
+]

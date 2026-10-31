@@ -1,11 +1,13 @@
-"""User monitoring contract 1.0.1. No runtime routes are installed by this module."""
+"""User monitoring contract 2.0.0 with unchanged legacy Scenario wire semantics."""
 
 from enum import StrEnum
 from typing import Annotated, Literal, Self
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, TypeAdapter, model_validator
 
 UInt = Annotated[str, Field(pattern=r"^(0|[1-9][0-9]*)$", max_length=128)]
+# A ratio of two 128-character decimal inputs can have up to 254 integer digits.
+ChunkCount = Annotated[str, Field(pattern=r"^(0|[1-9][0-9]*)$", max_length=256)]
 PositiveIntText = Annotated[str, Field(pattern=r"^[1-9][0-9]*$", max_length=128)]
 Text = Annotated[str, Field(min_length=1, max_length=4096)]
 DecimalText = Annotated[str, Field(pattern=r"^(0|[1-9][0-9]*)(\.[0-9]+)?$", max_length=128)]
@@ -192,6 +194,60 @@ class Scenario(DTO):
         return self
 
 
+class BatchScenario(DTO):
+    """Explicit total-noncompute reference; batch budget is assumed per-request progress."""
+
+    timing_model: Literal["batch_reference_total_noncompute_v1"]
+    scenario_id: Text
+    revision: PositiveIntText
+    model_id: ModelId
+    common_name: Text
+    deployment: Text
+    source: Literal["user_assumption", "verified_measurement"]
+    source_description: Text
+    chunk_tokens: PositiveIntText
+    chunk_seconds: DecimalText
+    measurement_boundary: Literal["GF dispatch to first token"] = "GF dispatch to first token"
+    workload_description: Text | None = None
+    thinking_mode: Text | None = None
+    min_prompt_tokens: UInt | None = None
+    max_prompt_tokens: PositiveIntText | None = None
+    evidence_sha256: Annotated[str, Field(pattern=r"^[0-9a-f]{64}$")] | None = None
+    sample_count: UInt | None = None
+    calibration_notes: Text | None = None
+
+    @model_validator(mode="after")
+    def valid_scenario(self) -> Self:
+        from decimal import Decimal
+
+        if Decimal(self.chunk_seconds) <= 0:
+            raise ValueError("chunk_seconds must be positive")
+        if (self.min_prompt_tokens is None) != (self.max_prompt_tokens is None):
+            raise ValueError("coverage requires both bounds")
+        if (
+            self.min_prompt_tokens is not None
+            and self.max_prompt_tokens is not None
+            and int(self.min_prompt_tokens) > int(self.max_prompt_tokens)
+        ):
+            raise ValueError("invalid coverage")
+        if self.source == "verified_measurement" and (
+            not self.evidence_sha256
+            or self.sample_count is None
+            or int(self.sample_count) == 0
+            or self.min_prompt_tokens is None
+            or not self.calibration_notes
+        ):
+            raise ValueError("verified reference requires evidence, samples, coverage and notes")
+        return self
+
+
+# A missing tag can only match the complete legacy shape. Unknown tags and a new
+# shape carrying overhead_seconds match neither branch (both forbid extra fields).
+ScenarioPayload = Scenario | BatchScenario
+# Pydantic supports union adapters at runtime; its constructor annotation expects a class.
+SCENARIO_ADAPTER: TypeAdapter[ScenarioPayload] = TypeAdapter(ScenarioPayload)  # type: ignore[arg-type]
+
+
 class EvaluationRequest(DTO):
     submission_key: Text
     user_run_id: Text
@@ -215,12 +271,12 @@ class Evaluation(DTO):
     evaluation_id: Text
     service_instance_id: Text
     request: EvaluationRequest
-    scenario: Scenario
+    scenario: ScenarioPayload
     status: Literal["reference", "reference_with_limit", "no_budget", "out_of_scope", "unavailable"]
     reason: Text | None
     request_count: UInt
     prompt_p90: UInt | None
-    allowed_chunks: UInt | None
+    allowed_chunks: ChunkCount | None
     computable_tokens: UInt | None
     required_hit_fraction: Fraction | None
     required_hit_rate: Ratio | None

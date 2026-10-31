@@ -1,11 +1,12 @@
 # 用户监控后端版本与上下文
 
+当前TTFT状态：**代码完成，性能校准待完成**。新最小模型已实现：W覆盖全部非计算耗时、不单列O；证据材料选填，缺必要参数不出比例、W不默认0。当前用户契约2.0.0，旧1.0.1历史兼容；[前端接入](TTFT_FRONTEND_HANDOFF.md)尚待前端实施/验收。
 2026-10-30。获批设计v1.0；本地开发身份u005-local-1；用户契约1.0.1，独立control schema1/index算法user-index-1。U000–U005全部closed，[最终报告](batches/U005/RESULT.md)为能力入口。
 
 | 版本 | 状态 | 入口 |
 | --- | --- | --- |
 | v0.1 | 历史初稿归档 | [原文](../../../../achieve/2026-10-30/docs/tasks/monitoring/v2-user/DESIGN_v0.1.md) |
-| 设计v1.0 | 用户认可，按batch实现 | [DESIGN](DESIGN.md) · [BATCH_PLAN](BATCH_PLAN.md) |
+| 设计v1.0 | 用户认可，按batch实现 | [修订前快照](../../../../achieve/2026-10-31/user-ttft-before-minimal/DESIGN.md) · [BATCH_PLAN](BATCH_PLAN.md) |
 | 用户契约1.0.0 | U000初始契约/基线，执行记录保留 | [U000 RESULT](batches/U000/RESULT.md) |
 | 用户契约1.0.1 | U005输入防护/计数正则勘误及错误/分页语义对齐；字段/公式/分组不变 | [契约](../../../contracts/user-monitoring-v2/README.md) |
 | u005-local-1 | 本地后端实现及统一验证通过，MA真联合通过 | [实际API](IMPLEMENTED_API.md) · [源码证据清单](batches/U005/VALIDATION_MANIFEST.json) |
@@ -31,3 +32,12 @@ V1发布monitoring-v1-20261028、包内源码92236ee993974e740d085e22e49b6b93c94
 
 ## 源码推送确认（2026-10-30）
 源码交接提交9a037466f7211126261ec2026f54b9c19c2e2151已成功push origin main，git ls-remote核实同一SHA。包含用户后端及已闭环MA运行依赖；剔除核验期间新出现的MA整理稿，其他会话未完成材料保留本地。暂存源码50测试/类型/静态/契约通过，51源文件与U005验收摘要一致。未部署、打包或创建发行tag。此后提交仅补记推送事实，不改变源码身份。
+
+## 2026-10-31文档修订
+设计v1.1与最小校准方案已按用户认可更新；新增[工程调整审批稿](TTFT_MINIMAL_ADAPTATION_REVIEW.md)。旧设计/清单保存在[修订前快照目录](../../../../achieve/2026-10-31/user-ttft-before-minimal/)。仅文档修订，不改变u005-local-1、契约1.0.1或已有验收身份；未修改代码、接口文件、前端或部署配置。
+
+## 2026-10-31 TTFT增量实现
+用户认可工程调整后按U006–U008推进，后端身份u008-local-1、[契约2.0.0](../../../contracts/user-monitoring-v2/2.0.0/README.md)。源码仍3文件增量，无控制库DDL迁移；旧冻结1.0.1/旧验收清单保持。新计时类型/W总非计算口径、证据选填、历史兼容及前端交接见[U008](batches/U008/RESULT.md)。未创建发行tag、提交push、部署或打包。
+
+## U006–U008提交交接（2026-10-31）
+本轮用户授权提交/push，范围与实际Git身份见[U008 Git检查点](GIT_HANDOFF_U008_20261031.md)。优先采用[TTFT前端交接](TTFT_FRONTEND_HANDOFF.md)及契约2.0.0；前端接入支持/后端维护，性能校准待完成，不部署打包。
