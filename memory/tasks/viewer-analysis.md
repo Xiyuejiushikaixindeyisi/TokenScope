@@ -2,7 +2,7 @@
 
 2026-11-01；实际session `01a19111-344a-75c1-84e0-14db8be08f4f`。用户已将原异常前端角色扩展为功能总负责：前端debug修复、主动协调对应后端调查/复现/测试/debug/修复、联合验证报告、版本归档记忆和push GitHub，最后提供给镜像打包审查session的prompt。后端唯一维护职责不变。
 
-当前候选`analysis-rv2-20261101`，前端`viewer-analysis-ui04-local-3`，公共`arpc-local-4`，Token`token-review-20261101-1`/`arta-local-1`。两后端实际独立复审已通过、文件窗口释放，294项归口提交清单核对通过（公共一处完成登记后的记忆摘要已由归口刷新）；本会话正进行最终Git收口。
+当前候选`analysis-rv2-20261101`，前端`viewer-analysis-ui04-local-3`，公共`arpc-local-4`，Token`token-review-20261101-1`/`arta-local-1`。两后端实际独立复审已通过、窗口释放，294项归口提交清单核对通过（公共一处记忆摘要由归口刷新）。源码10f4a0674892c9f331f262b91e6a6118a17ac4ac已push origin main并核实远端；415文件变更，179项被测源码/测试/构建输入与index匹配。其他任务8份改动保留，[Git交接](../../docs/tasks/analysis/GIT_HANDOFF_RV2_20261101.md)。
 
 L4/L5已按最新用户要求各一张卡、每类详情≤3个代表例子。后端元数据跨页按rule归并，完整RequestKey去重；样例两类各6条请求，不能显示组人数之和42/18。例子按无向双侧定位指纹去重，只请求最多3组，不把例子数当影响数。旧group深链可返回新探测器详情；L1–L3、Token四项建议、通知/历史/缓存/partial默认规则保持，无评估表单或轮询。
 

@@ -32,7 +32,7 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 
 | 角色 | 实际ID／状态 | 优先任务与范围 | 依赖与入口 |
 | --- | --- | --- | --- |
-| 异常分析功能总负责（兼前端设计与开发） | 01a19111-344a-75c1-84e0-14db8be08f4f，已核实 | RV2修复/联合验证完成：L4/L5各一卡≤3例，195单元/组件、18浏览器；两后端实际独立复审通过，Git收口中 | P0：主动协调后端归口debug、联合报告、版本归档记忆及已授权GitHub push；统一审查打包prompt已准备供用户转交，用户视觉待确认。不代写后端、不自行打包部署 | [联合报告](../docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md) · [统筹入口](../docs/tasks/analysis/COORDINATION_RV2.md) |
+| 异常分析功能总负责（兼前端设计与开发） | 01a19111-344a-75c1-84e0-14db8be08f4f，已核实 | RV2修复/联合验证/归档/Git闭环；源码10f4a06已push并核实，L4/L5各一卡≤3例；195单元/组件、18浏览器；两后端实际独立复审通过 | P0：持续承接异常分析前端debug及主动后端归口协调；统一审查打包prompt已准备供用户转交，用户视觉待确认。不代写后端、不自行打包部署 | [Git交接](../docs/tasks/analysis/GIT_HANDOFF_RV2_20261101.md) · [联合报告](../docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md) |
 | hybrid attention仿真 | 无session；暂不做 | 不调研设计或开发，不作为监控两线依赖 | 保留现有近似的能力边界 |
 | 自进化Agent | 未知；未启动 | 两类诊断设计与代码均完成后由用户另行启动 | [Agent ENTRY](../docs/tasks/evolution-agent/ENTRY.md) |
 
