@@ -5,7 +5,7 @@
     "scripts/release/package_monitoring.py": "8cb8b2ae4e80c45ff0859260cdc3116dfc2dac61fbce64edf61a7192d95beb82",
     "deploy/monitoring/README.md": "97cbb1c1c798dd9aa38f9276676e73bef377e4b93aaceb27319190992d9169af",
     "deploy/monitoring/deployment.env.example": "474a89a8c4e61d70b101b6f3afa2ef99a5e769fd37b7e174cef5f0c6bcee8c06",
-    "prompts/delivery/HUAWEI_FULL_SERVICE_RV2.md": "cd38bd8bb019dcc11503d11e0fdf19e3584e65c86daf2a7588051bb03a7b9d0b",
+    "prompts/delivery/HUAWEI_FULL_SERVICE_RV2.md": "88955f9613e4c4c5b06047c9c05ee26c76f5d3f6d40488a406bfe991c5664c13",
     "tests/unit/test_release_fixed_commit.py": "b16eb76876b656676d317179a0d82dbd1c1307ccbf8b89e455bc6b338091117d"
   },
   "tests": {
@@ -13,5 +13,6 @@
     "fixed_commit_isolation": "1 passed in 0.20s"
   },
   "release_id": "tokenscope-rv2-20261101",
-  "image_tag": "tokenscope/full-service:tokenscope-rv2-20261101"
+  "image_tag": "tokenscope/full-service:tokenscope-rv2-20261101",
+  "followup": "Prompt generator mount corrected: mount parent and create missing input child, preserving existing input."
 }

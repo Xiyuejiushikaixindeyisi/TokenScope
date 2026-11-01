@@ -20,16 +20,18 @@ test "$(docker image inspect "$TOKENSCOPE_IMAGE" --format '{{.Id}}')" = "$EXPECT
 
 ## 2. 隔离合成验收环境
 
-使用新的专用绝对input/state目录、独立Compose项目名`tokenscope-rv2-acceptance`和空闲宿主端口，例如18060；不覆盖旧V1生产state或停止其他服务。先 `mkdir -p` 两目录，确认实际UID/GID有写state权限。复制deployment.env.example为deployment.env，填manifest image、`id -u`、`id -g`、真实绝对目录和端口。发布默认127.0.0.1绑定，8CPU/32GiB、只读root/input、可写state及/tmp、专属bridge，无GPU。
+使用新的专用绝对input/state目录、独立Compose项目名`tokenscope-rv2-acceptance`和空闲宿主端口，例如18060；不覆盖旧V1生产state或停止其他服务。先创建state及input的父目录，input本身由下面生成器创建，确认实际UID/GID有写权限。复制deployment.env.example为deployment.env，填manifest image、`id -u`、`id -g`、真实绝对目录和端口。发布默认127.0.0.1绑定，8CPU/32GiB、只读root/input、可写state及/tmp、专属bridge，无GPU。
 
 在启动服务前，显式生成小型合成输入（将INPUT替换为新input绝对路径）：
 
 ```bash
-INPUT=/absolute/new/input
-mkdir -p "$INPUT"
+INPUT=/absolute/new/acceptance-parent/input
+PARENT=$(dirname "$INPUT")
+mkdir -p "$PARENT"
+test ! -e "$INPUT" # 生成器要求目标input尚不存在；选新目录，不能删除已有输入
 docker run --rm --network none --user "$(id -u):$(id -g)" --entrypoint python \
-  -v "$INPUT:/synthetic" "$TOKENSCOPE_IMAGE" /app/scripts/validation/generate_monitoring_data.py \
-  /synthetic --mean-requests 8 --long-per-app 0
+  -v "$PARENT:/synthetic" "$TOKENSCOPE_IMAGE" /app/scripts/validation/generate_monitoring_data.py \
+  /synthetic/input --mean-requests 8 --long-per-app 0
 
 docker compose --env-file deployment.env -p tokenscope-rv2-acceptance -f compose.yaml config
 docker compose --env-file deployment.env -p tokenscope-rv2-acceptance -f compose.yaml up -d --pull never
