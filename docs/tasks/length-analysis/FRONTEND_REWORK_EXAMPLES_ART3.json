@@ -1,0 +1,673 @@
+{
+  "version": "token-recommendation-visual-art3",
+  "status": "synthetic_visual_fixture_not_current_api",
+  "synthetic": true,
+  "provenance": "手工构造视觉样例；未执行探测/编码/回放/服务。所有身份与策略均为fixture。",
+  "scope": {
+    "scope_id": "synthetic-scope-fixed-100",
+    "appid": "synthetic-app",
+    "model_id": "synthetic-model",
+    "common_name": "synthetic-service",
+    "request_count": "100",
+    "window_label": "同一构造分析范围；不伪造真实run/时间/摘要"
+  },
+  "metric_convention": "全scope P/C；amount=after-before；ratio是相对before的精确分数，显示百分比时乘100；N为raw改变请求数。H仅为数学守恒校验，不是主展示指标。",
+  "cards": [
+    {
+      "recommendation_id": "synthetic-rec-T2",
+      "recipe_key": "synthetic-recipe-T2",
+      "scope_id": "synthetic-scope-fixed-100",
+      "task_id": "synthetic-analysis-task",
+      "primary_rule": "T2",
+      "category_rules": [
+        "T2"
+      ],
+      "category_label": "工具返回内容",
+      "title": "search 结果仅保留 title 和 url",
+      "change_summary": "按已登记返回投影规则，逐条保留 title、url；省略 body，保持结果数组与工具调用配对。",
+      "status": "available",
+      "basis": {
+        "kind": "business_policy",
+        "ref": "synthetic-result-projection-v1",
+        "revision": "1",
+        "real_configuration_verified": false
+      },
+      "conditions": [
+        "假设业务约定模型只需 title/url，并允许省略 body；不是由字段名或工具输入Schema推断。",
+        "收益为合成数学示例，非以下文本的真实编码结果；实际任务效果未验证。"
+      ],
+      "source_refs": [
+        {
+          "fragment_id": "0",
+          "observation_ids": [
+            "synthetic-obs-T2"
+          ],
+          "finding_ids": [
+            "synthetic-finding-T2"
+          ],
+          "unit_ids": [
+            "synthetic-unit-T2"
+          ]
+        }
+      ],
+      "impact": {
+        "matched_requests": "40",
+        "modified_requests": "40",
+        "total_requests": "100",
+        "matching_complete": true,
+        "complete": true,
+        "count_basis": "raw_changed_requestkey_union_full_scope",
+        "note": "N为此方案实际修改请求数；不是例子数或位置数（本文件为构造）。"
+      },
+      "before": {
+        "n": "100",
+        "p": "10000",
+        "h": "8000",
+        "c": "2000"
+      },
+      "after": {
+        "n": "100",
+        "p": "8000",
+        "h": "6400",
+        "c": "1600"
+      },
+      "changes": {
+        "input_tokens": {
+          "amount": "-2000",
+          "direction": "decrease",
+          "ratio": {
+            "numerator": "-1",
+            "denominator": "5"
+          },
+          "ratio_unit": "fraction_of_before_not_percentage_points"
+        },
+        "compute_tokens": {
+          "amount": "-400",
+          "direction": "decrease",
+          "ratio": {
+            "numerator": "-1",
+            "denominator": "5"
+          },
+          "ratio_unit": "fraction_of_before_not_percentage_points"
+        }
+      },
+      "plan_ref": {
+        "task_id": "synthetic-analysis-task",
+        "plan_id": "synthetic-plan-T2"
+      },
+      "evaluation_ref": {
+        "task_id": "synthetic-analysis-task",
+        "evaluation_id": "synthetic-eval-T2"
+      },
+      "evaluation_status": "available",
+      "reason_codes": [],
+      "examples": [
+        {
+          "request_key": {
+            "base_run_id": "synthetic-base",
+            "source_record_index": "0"
+          },
+          "raw_sha256": null,
+          "source_pointer": "/messages/2/content",
+          "embedded": {
+            "format": "json",
+            "parser_version": "json-exact-1",
+            "pointer": ""
+          },
+          "raw_span": null,
+          "before": "[{\"title\":\"资料A\",\"url\":\"https://example.invalid/a\",\"body\":\"文档正文示例\",\"source_id\":9007199254740993}]",
+          "after": "[{\"title\":\"资料A\",\"url\":\"https://example.invalid/a\"}]",
+          "text_kind": "constructed_local_example_not_verbatim_capture",
+          "highlight_basis": "path_only_no_raw_offsets",
+          "context_label": "单个代表请求的相关字段；不是完整请求",
+          "truncated": false
+        }
+      ],
+      "warning": null
+    },
+    {
+      "recommendation_id": "synthetic-rec-T3",
+      "recipe_key": "synthetic-recipe-T3",
+      "scope_id": "synthetic-scope-fixed-100",
+      "task_id": "synthetic-analysis-task",
+      "primary_rule": "T3",
+      "category_rules": [
+        "T3"
+      ],
+      "category_label": "重复内容",
+      "title": "consume 使用已登记的 document_ref 复用文档",
+      "change_summary": "将 consume.arguments 中 document 正文替换为同载荷的 document_ref；保留原工具结果和其他参数。",
+      "status": "available",
+      "basis": {
+        "kind": "explicit_authorization",
+        "ref": "synthetic-reference-protocol-v1",
+        "revision": "1",
+        "real_configuration_verified": false
+      },
+      "conditions": [
+        "构造前提：业务已有真实可解析引用及载荷映射，工具精确版本支持 document_ref 且 document 非必填。示例地址为不可执行占位，不宣称现实已有。",
+        "收益为合成数学示例，非以下文本的真实编码结果；实际任务效果未验证。"
+      ],
+      "source_refs": [
+        {
+          "fragment_id": "0",
+          "observation_ids": [
+            "synthetic-obs-T3"
+          ],
+          "finding_ids": [],
+          "unit_ids": [
+            "synthetic-unit-T3"
+          ]
+        }
+      ],
+      "impact": {
+        "matched_requests": "12",
+        "modified_requests": "12",
+        "total_requests": "100",
+        "matching_complete": true,
+        "complete": true,
+        "count_basis": "raw_changed_requestkey_union_full_scope",
+        "note": "N为此方案实际修改请求数；不是例子数或位置数（本文件为构造）。"
+      },
+      "before": {
+        "n": "100",
+        "p": "10000",
+        "h": "8000",
+        "c": "2000"
+      },
+      "after": {
+        "n": "100",
+        "p": "9000",
+        "h": "7200",
+        "c": "1800"
+      },
+      "changes": {
+        "input_tokens": {
+          "amount": "-1000",
+          "direction": "decrease",
+          "ratio": {
+            "numerator": "-1",
+            "denominator": "10"
+          },
+          "ratio_unit": "fraction_of_before_not_percentage_points"
+        },
+        "compute_tokens": {
+          "amount": "-200",
+          "direction": "decrease",
+          "ratio": {
+            "numerator": "-1",
+            "denominator": "10"
+          },
+          "ratio_unit": "fraction_of_before_not_percentage_points"
+        }
+      },
+      "plan_ref": {
+        "task_id": "synthetic-analysis-task",
+        "plan_id": "synthetic-plan-T3"
+      },
+      "evaluation_ref": {
+        "task_id": "synthetic-analysis-task",
+        "evaluation_id": "synthetic-eval-T3"
+      },
+      "evaluation_status": "available",
+      "reason_codes": [],
+      "examples": [
+        {
+          "request_key": {
+            "base_run_id": "synthetic-base",
+            "source_record_index": "0"
+          },
+          "raw_sha256": null,
+          "source_pointer": "/messages/3/tool_calls/0/function/arguments",
+          "embedded": {
+            "format": "json",
+            "parser_version": "json-exact-1",
+            "pointer": "/document"
+          },
+          "raw_span": null,
+          "before": "{\"document\":\"同一份文档正文\",\"case_id\":9007199254740993}",
+          "after": "{\"document_ref\":\"fixture-only://object/doc-A\",\"case_id\":9007199254740993}",
+          "text_kind": "constructed_local_example_not_verbatim_capture",
+          "highlight_basis": "path_only_no_raw_offsets",
+          "context_label": "单个代表请求的相关字段；不是完整请求",
+          "truncated": false,
+          "related_locations": [
+            {
+              "source_pointer": "/messages/2/content",
+              "embedded": null,
+              "excerpt": "同一份文档正文",
+              "relation": "same_request_tool_result"
+            },
+            {
+              "source_pointer": "/messages/3/tool_calls/0/function/arguments",
+              "embedded": {
+                "format": "json",
+                "parser_version": "json-exact-1",
+                "pointer": ""
+              },
+              "excerpt": "{\"document\":\"同一份文档正文\",\"case_id\":9007199254740993}",
+              "relation": "embedded_root_context"
+            }
+          ]
+        }
+      ],
+      "warning": null
+    },
+    {
+      "recommendation_id": "synthetic-rec-T4",
+      "recipe_key": "synthetic-recipe-T4",
+      "scope_id": "synthetic-scope-fixed-100",
+      "task_id": "synthetic-analysis-task",
+      "primary_rule": "T4",
+      "category_rules": [
+        "T4"
+      ],
+      "category_label": "历史工具结果",
+      "title": "保留最近2个结果，较早结果替换为约定的省略标记",
+      "change_summary": "按已登记策略在每个请求快照内保留最近2个结果容器；较早结果内容替换为“[历史结果已省略]”，保留消息角色和调用ID。",
+      "status": "available",
+      "basis": {
+        "kind": "business_policy",
+        "ref": "synthetic-retention-v1",
+        "revision": "1",
+        "real_configuration_verified": false
+      },
+      "conditions": [
+        "假设业务明确允许此作用域较早结果仅留省略标记；不是摘要、可重读引用或内容过期判断。K=2只属此样例，不是系统默认。",
+        "收益为合成数学示例，非以下文本的真实编码结果；实际任务效果未验证。"
+      ],
+      "source_refs": [
+        {
+          "fragment_id": "0",
+          "observation_ids": [
+            "synthetic-obs-T4"
+          ],
+          "finding_ids": [
+            "synthetic-finding-T4"
+          ],
+          "unit_ids": [
+            "synthetic-unit-T4"
+          ]
+        }
+      ],
+      "impact": {
+        "matched_requests": "60",
+        "modified_requests": "60",
+        "total_requests": "100",
+        "matching_complete": true,
+        "complete": true,
+        "count_basis": "raw_changed_requestkey_union_full_scope",
+        "note": "N为此方案实际修改请求数；不是例子数或位置数（本文件为构造）。"
+      },
+      "before": {
+        "n": "100",
+        "p": "10000",
+        "h": "8000",
+        "c": "2000"
+      },
+      "after": {
+        "n": "100",
+        "p": "8000",
+        "h": "5000",
+        "c": "3000"
+      },
+      "changes": {
+        "input_tokens": {
+          "amount": "-2000",
+          "direction": "decrease",
+          "ratio": {
+            "numerator": "-1",
+            "denominator": "5"
+          },
+          "ratio_unit": "fraction_of_before_not_percentage_points"
+        },
+        "compute_tokens": {
+          "amount": "1000",
+          "direction": "increase",
+          "ratio": {
+            "numerator": "1",
+            "denominator": "2"
+          },
+          "ratio_unit": "fraction_of_before_not_percentage_points"
+        }
+      },
+      "plan_ref": {
+        "task_id": "synthetic-analysis-task",
+        "plan_id": "synthetic-plan-T4"
+      },
+      "evaluation_ref": {
+        "task_id": "synthetic-analysis-task",
+        "evaluation_id": "synthetic-eval-T4"
+      },
+      "evaluation_status": "available",
+      "reason_codes": [],
+      "examples": [
+        {
+          "request_key": {
+            "base_run_id": "synthetic-base",
+            "source_record_index": "0"
+          },
+          "raw_sha256": null,
+          "source_pointer": "/messages/1/content",
+          "embedded": null,
+          "raw_span": null,
+          "before": "较早工具结果正文：包含历史检索明细……",
+          "after": "[历史结果已省略]",
+          "text_kind": "constructed_local_example_not_verbatim_capture",
+          "highlight_basis": "path_only_no_raw_offsets",
+          "context_label": "单个代表请求的相关字段；不是完整请求",
+          "truncated": false
+        }
+      ],
+      "warning": "输入减少但计算Token增加，需评估缓存代价。"
+    }
+  ],
+  "state_variants": [
+    {
+      "recommendation_id": "synthetic-T3-no-protocol",
+      "recipe_key": "synthetic-recipe-T3",
+      "scope_id": "synthetic-scope-fixed-100",
+      "task_id": "synthetic-analysis-task",
+      "primary_rule": "T3",
+      "category_rules": [
+        "T3"
+      ],
+      "category_label": "重复内容",
+      "title": "文档在返回和参数中重复，暂缺可用引用协议",
+      "change_summary": "建议核实 consume 是否支持引用复用；当前未形成可执行替换方案。",
+      "status": "advice_only",
+      "basis": null,
+      "conditions": [
+        "尚无引用协议/真实映射，也无额外普通消息删除约定。"
+      ],
+      "source_refs": [
+        {
+          "fragment_id": "0",
+          "observation_ids": [
+            "synthetic-obs-T3"
+          ],
+          "finding_ids": [],
+          "unit_ids": [
+            "synthetic-unit-T3"
+          ]
+        }
+      ],
+      "impact": {
+        "matched_requests": "12",
+        "modified_requests": null,
+        "total_requests": "100",
+        "matching_complete": true,
+        "complete": false,
+        "count_basis": "matched_only_not_actual_modified",
+        "note": "N为此方案实际修改请求数；不是例子数或位置数（本文件为构造）。"
+      },
+      "before": {
+        "n": "100",
+        "p": "10000",
+        "h": "8000",
+        "c": "2000"
+      },
+      "after": null,
+      "changes": null,
+      "plan_ref": null,
+      "evaluation_ref": null,
+      "evaluation_status": null,
+      "reason_codes": [
+        "REFERENCE_BASIS_MISSING"
+      ],
+      "examples": [
+        {
+          "request_key": {
+            "base_run_id": "synthetic-base",
+            "source_record_index": "0"
+          },
+          "raw_sha256": null,
+          "source_pointer": "/messages/3/tool_calls/0/function/arguments",
+          "embedded": {
+            "format": "json",
+            "parser_version": "json-exact-1",
+            "pointer": "/document"
+          },
+          "raw_span": null,
+          "before": "{\"document\":\"同一份文档正文\",\"case_id\":9007199254740993}",
+          "after": null,
+          "text_kind": "constructed_local_example_not_verbatim_capture",
+          "highlight_basis": "path_only_no_raw_offsets",
+          "context_label": "单个代表请求的相关字段；不是完整请求",
+          "truncated": false,
+          "related_locations": [
+            {
+              "source_pointer": "/messages/2/content",
+              "embedded": null,
+              "excerpt": "同一份文档正文",
+              "relation": "same_request_tool_result"
+            },
+            {
+              "source_pointer": "/messages/3/tool_calls/0/function/arguments",
+              "embedded": {
+                "format": "json",
+                "parser_version": "json-exact-1",
+                "pointer": ""
+              },
+              "excerpt": "{\"document\":\"同一份文档正文\",\"case_id\":9007199254740993}",
+              "relation": "embedded_root_context"
+            }
+          ]
+        }
+      ],
+      "warning": null
+    },
+    {
+      "recommendation_id": "synthetic-T4-blocked",
+      "recipe_key": "synthetic-recipe-T4",
+      "scope_id": "synthetic-scope-fixed-100",
+      "task_id": "synthetic-analysis-task",
+      "primary_rule": "T4",
+      "category_rules": [
+        "T4"
+      ],
+      "category_label": "历史工具结果",
+      "title": "保留最近2个结果，较早结果替换为约定的省略标记",
+      "change_summary": "按已登记策略在每个请求快照内保留最近2个结果容器；较早结果内容替换为“[历史结果已省略]”，保留消息角色和调用ID。",
+      "status": "blocked",
+      "basis": {
+        "kind": "business_policy",
+        "ref": "synthetic-retention-v1",
+        "revision": "1",
+        "real_configuration_verified": false
+      },
+      "conditions": [
+        "假设业务明确允许此作用域较早结果仅留省略标记；不是摘要、可重读引用或内容过期判断。K=2只属此样例，不是系统默认。",
+        "收益为合成数学示例，非以下文本的真实编码结果；实际任务效果未验证。"
+      ],
+      "source_refs": [
+        {
+          "fragment_id": "0",
+          "observation_ids": [
+            "synthetic-obs-T4"
+          ],
+          "finding_ids": [
+            "synthetic-finding-T4"
+          ],
+          "unit_ids": [
+            "synthetic-unit-T4"
+          ]
+        }
+      ],
+      "impact": {
+        "matched_requests": "60",
+        "modified_requests": null,
+        "total_requests": "100",
+        "matching_complete": true,
+        "complete": false,
+        "count_basis": "matched_only_not_actual_modified",
+        "note": "N为此方案实际修改请求数；不是例子数或位置数（本文件为构造）。"
+      },
+      "before": {
+        "n": "100",
+        "p": "10000",
+        "h": "8000",
+        "c": "2000"
+      },
+      "after": null,
+      "changes": null,
+      "plan_ref": {
+        "task_id": "synthetic-analysis-task",
+        "plan_id": "synthetic-variant-1-plan_id"
+      },
+      "evaluation_ref": {
+        "task_id": "synthetic-analysis-task",
+        "evaluation_id": "synthetic-variant-1-evaluation_id"
+      },
+      "evaluation_status": "blocked",
+      "reason_codes": [
+        "MODIFICATION_GUARD_FAILED"
+      ],
+      "examples": [
+        {
+          "request_key": {
+            "base_run_id": "synthetic-base",
+            "source_record_index": "0"
+          },
+          "raw_sha256": null,
+          "source_pointer": "/messages/1/content",
+          "embedded": null,
+          "raw_span": null,
+          "before": "较早工具结果正文：包含历史检索明细……",
+          "after": null,
+          "text_kind": "constructed_local_example_not_verbatim_capture",
+          "highlight_basis": "path_only_no_raw_offsets",
+          "context_label": "单个代表请求的相关字段；不是完整请求",
+          "truncated": false
+        }
+      ],
+      "warning": "源内容与方案保护值不一致，未发布修改后指标。"
+    },
+    {
+      "recommendation_id": "synthetic-T2-zero",
+      "recipe_key": "synthetic-recipe-T2",
+      "scope_id": "synthetic-scope-fixed-100",
+      "task_id": "synthetic-analysis-task",
+      "primary_rule": "T2",
+      "category_rules": [
+        "T2"
+      ],
+      "category_label": "工具返回内容",
+      "title": "本范围已符合字段保留规则，无需修改",
+      "change_summary": "候选规则匹配，但本次具体方案应用不改变原文；完整评估结果为零变化。",
+      "status": "available",
+      "basis": {
+        "kind": "business_policy",
+        "ref": "synthetic-result-projection-v1",
+        "revision": "1",
+        "real_configuration_verified": false
+      },
+      "conditions": [
+        "假设业务约定模型只需 title/url，并允许省略 body；不是由字段名或工具输入Schema推断。",
+        "收益为合成数学示例，非以下文本的真实编码结果；实际任务效果未验证。"
+      ],
+      "source_refs": [
+        {
+          "fragment_id": "0",
+          "observation_ids": [
+            "synthetic-obs-T2"
+          ],
+          "finding_ids": [
+            "synthetic-finding-T2"
+          ],
+          "unit_ids": [
+            "synthetic-unit-T2"
+          ]
+        }
+      ],
+      "impact": {
+        "matched_requests": "40",
+        "modified_requests": "0",
+        "total_requests": "100",
+        "matching_complete": true,
+        "complete": true,
+        "count_basis": "raw_changed_requestkey_union_full_scope",
+        "note": "N为此方案实际修改请求数；不是例子数或位置数（本文件为构造）。"
+      },
+      "before": {
+        "n": "100",
+        "p": "10000",
+        "h": "8000",
+        "c": "2000"
+      },
+      "after": {
+        "n": "100",
+        "p": "10000",
+        "h": "8000",
+        "c": "2000"
+      },
+      "changes": {
+        "input_tokens": {
+          "amount": "0",
+          "direction": "unchanged",
+          "ratio": {
+            "numerator": "0",
+            "denominator": "1"
+          },
+          "ratio_unit": "fraction_of_before_not_percentage_points"
+        },
+        "compute_tokens": {
+          "amount": "0",
+          "direction": "unchanged",
+          "ratio": {
+            "numerator": "0",
+            "denominator": "1"
+          },
+          "ratio_unit": "fraction_of_before_not_percentage_points"
+        }
+      },
+      "plan_ref": {
+        "task_id": "synthetic-analysis-task",
+        "plan_id": "synthetic-variant-2-plan_id"
+      },
+      "evaluation_ref": {
+        "task_id": "synthetic-analysis-task",
+        "evaluation_id": "synthetic-variant-2-evaluation_id"
+      },
+      "evaluation_status": "available",
+      "reason_codes": [],
+      "examples": [
+        {
+          "request_key": {
+            "base_run_id": "synthetic-base",
+            "source_record_index": "0"
+          },
+          "raw_sha256": null,
+          "source_pointer": "/messages/2/content",
+          "embedded": {
+            "format": "json",
+            "parser_version": "json-exact-1",
+            "pointer": ""
+          },
+          "raw_span": null,
+          "before": "[{\"title\":\"资料A\",\"url\":\"https://example.invalid/a\"}]",
+          "after": "[{\"title\":\"资料A\",\"url\":\"https://example.invalid/a\"}]",
+          "text_kind": "constructed_local_example_not_verbatim_capture",
+          "highlight_basis": "path_only_no_raw_offsets",
+          "context_label": "单个代表请求的相关字段；不是完整请求",
+          "truncated": false
+        }
+      ],
+      "warning": null
+    }
+  ],
+  "limitations": [
+    "raw_sha256=null仅因无真实封存原文；不是建议放宽真实契约摘要要求",
+    "后端真实响应、关联对象kind/字段仍待公共方冻结；前端只可用来制作代表卡片",
+    "4张主卡为不同替代方案，N与收益不可相加",
+    "示例中的[历史结果已省略]为明确省略标记，不是生成摘要或可重读能力",
+    "TA-S1: T1 removed from Token scope; tool-definition size shortening is not moved to low-hit analysis."
+  ],
+  "public_contract_design": "analysis-recommendations-1",
+  "supersedes": "FRONTEND_REWORK_EXAMPLES_ART2.json (four-category historical visual fixture)",
+  "active_rules": [
+    "T2",
+    "T3",
+    "T4"
+  ]
+}

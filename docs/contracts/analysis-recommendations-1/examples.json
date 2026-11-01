@@ -1,0 +1,456 @@
+{
+  "invalid": [
+    {
+      "case": "T1 rejected",
+      "model": "Proposal",
+      "wire": {
+        "adapter_version": "token-auto-proposals-1",
+        "applicability": "matched",
+        "reason_codes": [],
+        "recipe": {
+          "basis": {
+            "assumptions": [],
+            "authority": {
+              "source_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "source_kind": "test_fixture",
+              "source_ref": "not-production",
+              "status": "verified"
+            },
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "kind": "business_policy",
+            "limitations": [],
+            "ref": "fixture-only",
+            "revision": "1",
+            "scope_selector": "{}"
+          },
+          "category_rules": [
+            "T1"
+          ],
+          "change_summary": "Keep value (fixture only)",
+          "conditions": [],
+          "handler_id": "project_result_fields",
+          "handler_version": "1",
+          "limitations": [],
+          "parameter_generator_json": "{\"version\":\"fixture-generator-1\",\"fields\":[\"value\"]}",
+          "primary_rule": "T1",
+          "recipe_id": "fixture-project",
+          "revision": "1",
+          "selector_json": "{\"version\":\"fixture-selector-1\",\"tool\":\"example\"}",
+          "title": "Synthetic field projection"
+        },
+        "request_targets": [
+          {
+            "location": {
+              "embedded": null,
+              "raw_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "request_key": {
+                "base_run_id": "synthetic-run",
+                "source_record_index": "100000000000000000000"
+              },
+              "source_pointer": "/messages/1/content",
+              "text_range": null
+            },
+            "parameters_json": "{\"fields\":[\"value\"]}"
+          }
+        ],
+        "support_refs": [
+          {
+            "finding_ids": [],
+            "fragment_id": "fixture-fragment",
+            "kind": "token_observation",
+            "location_ids": [],
+            "observation_ids": [
+              "fixture-observation"
+            ],
+            "raw_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "request_key": {
+              "base_run_id": "synthetic-run",
+              "source_record_index": "100000000000000000000"
+            },
+            "scope_id": "fixture-scope",
+            "task_id": "fixture-task",
+            "unit_ids": []
+          }
+        ]
+      }
+    },
+    {
+      "case": "foreign target",
+      "model": "Proposal",
+      "wire": {
+        "adapter_version": "token-auto-proposals-1",
+        "applicability": "matched",
+        "reason_codes": [],
+        "recipe": {
+          "basis": {
+            "assumptions": [],
+            "authority": {
+              "source_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "source_kind": "test_fixture",
+              "source_ref": "not-production",
+              "status": "verified"
+            },
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "kind": "business_policy",
+            "limitations": [],
+            "ref": "fixture-only",
+            "revision": "1",
+            "scope_selector": "{}"
+          },
+          "category_rules": [
+            "T2"
+          ],
+          "change_summary": "Keep value (fixture only)",
+          "conditions": [],
+          "handler_id": "project_result_fields",
+          "handler_version": "1",
+          "limitations": [],
+          "parameter_generator_json": "{\"version\":\"fixture-generator-1\",\"fields\":[\"value\"]}",
+          "primary_rule": "T2",
+          "recipe_id": "fixture-project",
+          "revision": "1",
+          "selector_json": "{\"version\":\"fixture-selector-1\",\"tool\":\"example\"}",
+          "title": "Synthetic field projection"
+        },
+        "request_targets": [
+          {
+            "location": {
+              "embedded": null,
+              "raw_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "request_key": {
+                "base_run_id": "synthetic-run",
+                "source_record_index": "100000000000000000000"
+              },
+              "source_pointer": "/messages/1/content",
+              "text_range": null
+            },
+            "parameters_json": "{\"fields\":[\"value\"]}"
+          }
+        ],
+        "support_refs": [
+          {
+            "finding_ids": [],
+            "fragment_id": "fixture-fragment",
+            "kind": "token_observation",
+            "location_ids": [],
+            "observation_ids": [
+              "fixture-observation"
+            ],
+            "raw_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "request_key": {
+              "base_run_id": "synthetic-run",
+              "source_record_index": "100000000000000000000"
+            },
+            "scope_id": "fixture-scope",
+            "task_id": "fixture-task",
+            "unit_ids": []
+          }
+        ]
+      }
+    },
+    {
+      "case": "unknown adapter",
+      "model": "Proposal",
+      "wire": {
+        "adapter_version": "unknown",
+        "applicability": "matched",
+        "reason_codes": [],
+        "recipe": {
+          "basis": {
+            "assumptions": [],
+            "authority": {
+              "source_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "source_kind": "test_fixture",
+              "source_ref": "not-production",
+              "status": "verified"
+            },
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "kind": "business_policy",
+            "limitations": [],
+            "ref": "fixture-only",
+            "revision": "1",
+            "scope_selector": "{}"
+          },
+          "category_rules": [
+            "T2"
+          ],
+          "change_summary": "Keep value (fixture only)",
+          "conditions": [],
+          "handler_id": "project_result_fields",
+          "handler_version": "1",
+          "limitations": [],
+          "parameter_generator_json": "{\"version\":\"fixture-generator-1\",\"fields\":[\"value\"]}",
+          "primary_rule": "T2",
+          "recipe_id": "fixture-project",
+          "revision": "1",
+          "selector_json": "{\"version\":\"fixture-selector-1\",\"tool\":\"example\"}",
+          "title": "Synthetic field projection"
+        },
+        "request_targets": [
+          {
+            "location": {
+              "embedded": null,
+              "raw_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "request_key": {
+                "base_run_id": "synthetic-run",
+                "source_record_index": "100000000000000000000"
+              },
+              "source_pointer": "/messages/1/content",
+              "text_range": null
+            },
+            "parameters_json": "{\"fields\":[\"value\"]}"
+          }
+        ],
+        "support_refs": [
+          {
+            "finding_ids": [],
+            "fragment_id": "fixture-fragment",
+            "kind": "token_observation",
+            "location_ids": [],
+            "observation_ids": [
+              "fixture-observation"
+            ],
+            "raw_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "request_key": {
+              "base_run_id": "synthetic-run",
+              "source_record_index": "100000000000000000000"
+            },
+            "scope_id": "fixture-scope",
+            "task_id": "fixture-task",
+            "unit_ids": []
+          }
+        ]
+      }
+    },
+    {
+      "case": "missing observations",
+      "model": "Proposal",
+      "wire": {
+        "adapter_version": "token-auto-proposals-1",
+        "applicability": "matched",
+        "reason_codes": [],
+        "recipe": {
+          "basis": {
+            "assumptions": [],
+            "authority": {
+              "source_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "source_kind": "test_fixture",
+              "source_ref": "not-production",
+              "status": "verified"
+            },
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "kind": "business_policy",
+            "limitations": [],
+            "ref": "fixture-only",
+            "revision": "1",
+            "scope_selector": "{}"
+          },
+          "category_rules": [
+            "T2"
+          ],
+          "change_summary": "Keep value (fixture only)",
+          "conditions": [],
+          "handler_id": "project_result_fields",
+          "handler_version": "1",
+          "limitations": [],
+          "parameter_generator_json": "{\"version\":\"fixture-generator-1\",\"fields\":[\"value\"]}",
+          "primary_rule": "T2",
+          "recipe_id": "fixture-project",
+          "revision": "1",
+          "selector_json": "{\"version\":\"fixture-selector-1\",\"tool\":\"example\"}",
+          "title": "Synthetic field projection"
+        },
+        "request_targets": [
+          {
+            "location": {
+              "embedded": null,
+              "raw_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "request_key": {
+                "base_run_id": "synthetic-run",
+                "source_record_index": "100000000000000000000"
+              },
+              "source_pointer": "/messages/1/content",
+              "text_range": null
+            },
+            "parameters_json": "{\"fields\":[\"value\"]}"
+          }
+        ],
+        "support_refs": [
+          {
+            "finding_ids": [],
+            "fragment_id": "fixture-fragment",
+            "kind": "token_observation",
+            "location_ids": [],
+            "observation_ids": [],
+            "raw_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "request_key": {
+              "base_run_id": "synthetic-run",
+              "source_record_index": "100000000000000000000"
+            },
+            "scope_id": "fixture-scope",
+            "task_id": "fixture-task",
+            "unit_ids": []
+          }
+        ]
+      }
+    },
+    {
+      "case": "partial cannot publish modified count",
+      "model": "Impact",
+      "wire": {
+        "count_basis": "raw_body_changed",
+        "evaluation_complete": false,
+        "match_complete": true,
+        "matched_checked_requests": "6",
+        "matched_requests": "6",
+        "modified_requests": "0",
+        "total_requests": "6"
+      }
+    }
+  ],
+  "nature": "synthetic transport fixtures; private DSL must be validated by Token adapter",
+  "valid": [
+    {
+      "model": "RecipeBundle",
+      "wire": {
+        "bundle_id": "fixture",
+        "recipes": [
+          {
+            "basis": {
+              "assumptions": [],
+              "authority": {
+                "source_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "source_kind": "test_fixture",
+                "source_ref": "not-production",
+                "status": "verified"
+              },
+              "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "kind": "business_policy",
+              "limitations": [],
+              "ref": "fixture-only",
+              "revision": "1",
+              "scope_selector": "{}"
+            },
+            "category_rules": [
+              "T2"
+            ],
+            "change_summary": "Keep value (fixture only)",
+            "conditions": [],
+            "handler_id": "project_result_fields",
+            "handler_version": "1",
+            "limitations": [],
+            "parameter_generator_json": "{\"version\":\"fixture-generator-1\",\"fields\":[\"value\"]}",
+            "primary_rule": "T2",
+            "recipe_id": "fixture-project",
+            "revision": "1",
+            "selector_json": "{\"version\":\"fixture-selector-1\",\"tool\":\"example\"}",
+            "title": "Synthetic field projection"
+          }
+        ],
+        "revision": "1",
+        "version": "token-auto-proposals-1"
+      }
+    },
+    {
+      "model": "Proposal",
+      "wire": {
+        "adapter_version": "token-auto-proposals-1",
+        "applicability": "matched",
+        "reason_codes": [],
+        "recipe": {
+          "basis": {
+            "assumptions": [],
+            "authority": {
+              "source_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "source_kind": "test_fixture",
+              "source_ref": "not-production",
+              "status": "verified"
+            },
+            "digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "kind": "business_policy",
+            "limitations": [],
+            "ref": "fixture-only",
+            "revision": "1",
+            "scope_selector": "{}"
+          },
+          "category_rules": [
+            "T2"
+          ],
+          "change_summary": "Keep value (fixture only)",
+          "conditions": [],
+          "handler_id": "project_result_fields",
+          "handler_version": "1",
+          "limitations": [],
+          "parameter_generator_json": "{\"version\":\"fixture-generator-1\",\"fields\":[\"value\"]}",
+          "primary_rule": "T2",
+          "recipe_id": "fixture-project",
+          "revision": "1",
+          "selector_json": "{\"version\":\"fixture-selector-1\",\"tool\":\"example\"}",
+          "title": "Synthetic field projection"
+        },
+        "request_targets": [
+          {
+            "location": {
+              "embedded": null,
+              "raw_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "request_key": {
+                "base_run_id": "synthetic-run",
+                "source_record_index": "100000000000000000000"
+              },
+              "source_pointer": "/messages/1/content",
+              "text_range": null
+            },
+            "parameters_json": "{\"fields\":[\"value\"]}"
+          }
+        ],
+        "support_refs": [
+          {
+            "finding_ids": [],
+            "fragment_id": "fixture-fragment",
+            "kind": "token_observation",
+            "location_ids": [],
+            "observation_ids": [
+              "fixture-observation"
+            ],
+            "raw_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "request_key": {
+              "base_run_id": "synthetic-run",
+              "source_record_index": "100000000000000000000"
+            },
+            "scope_id": "fixture-scope",
+            "task_id": "fixture-task",
+            "unit_ids": []
+          }
+        ]
+      }
+    },
+    {
+      "model": "ProposalDescriptor",
+      "wire": {
+        "basis_kinds": [
+          "business_policy",
+          "explicit_authorization"
+        ],
+        "generator_identity": "fixture-1",
+        "rule_ids": [
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "version": "token-auto-proposals-1"
+      }
+    },
+    {
+      "model": "Impact",
+      "wire": {
+        "count_basis": "raw_body_changed",
+        "evaluation_complete": true,
+        "match_complete": true,
+        "matched_checked_requests": "6",
+        "matched_requests": "6",
+        "modified_requests": "0",
+        "total_requests": "6"
+      }
+    }
+  ]
+}

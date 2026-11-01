@@ -1,5 +1,7 @@
 # 文档入口
 
+异常分析当前由[功能总负责RV2入口](tasks/analysis/COORDINATION_RV2.md)统筹修复、联合验证与Git收口；历史AF阶段已[归档](../achieve/2026-11-01/analysis-rv2/README.md)。
+
 监控V2评审与修复已闭环并归档：[当前状态](tasks/delivery/MONITORING_V2_STATUS.md)。暂不打包，待异常分析前后端验收后统一交付。
 
 2026-10-30整理：当前入口与已闭环记录分开；新分线角色、状态及阅读优先级见[任务索引](tasks/README.md)与[实际登记](../memory/SESSIONS.md)。
@@ -11,11 +13,11 @@
 | P2依据 | 被当前问题引用的研究、来源锁、现场证据及验证报告 |
 | P3追溯 | [achieve归档](../achieve/README.md)、[旧archive索引](archive/README.md) |
 
-监控dev6/F007已完成本机审查、容器和桌面交付：[交付结果](tasks/monitoring/batches/B006/RESULT_20261028.md)。后端负责华为启动验收与失败修复，打包session负责交付管理；2026-10-30用户确认前后端V1通过，见[现场验收与分析交接](huawei/MONITORING_V1_ACCEPTANCE_20261030.md)；异常分析现改为先母会话调研/产品设计，再fork两线。
+监控dev6/F007已完成本机审查、容器和桌面交付：[交付结果](tasks/monitoring/batches/B006/RESULT_20261028.md)。后端负责华为启动验收与失败修复，打包session负责交付管理；2026-10-30用户确认前后端V1通过，见[现场验收与分析交接](huawei/MONITORING_V1_ACCEPTANCE_20261030.md)；异常分析产品v0.4已审批，主会话承接低命中后端，Token异常线已获用户许可fork并启动，见[分线交接](tasks/analysis/BACKEND_SPLIT_HANDOFF.md)。
 
 - [总设计](tasks/product/ENTRY.md)：产品形态、边界、分工，当前休眠。
 - [监控V1](tasks/monitoring/ENTRY.md)：休眠，已交付源码/契约基线；V2两线并行：[用户功能](tasks/monitoring/v2-user/ENTRY.md)、[MA监控](tasks/monitoring/v2-ma/ENTRY.md)。
-- [前端交接](tasks/viewer/ENTRY.md)：V1会话休眠，UI-01及两个前端prompt；[异常分析母会话](tasks/analysis/ENTRY.md)先调研/产品设计。
+- [前端交接](tasks/viewer/ENTRY.md)：V1会话休眠，UI-01及两个前端prompt；[异常分析已批产品](tasks/analysis/ENTRY.md)与两线后端交接入口。
 - [本轮版本检查点](operations/V2_HANDOFF_20261030.md)：仅文档/DEMO交接，V1发布身份不变。
 - [审查打包](tasks/delivery/ENTRY.md)：审查、构建、包体、版本和执行prompt。
 - [工作流](architecture/TASK_SESSION_WORKFLOW.md)、[目录约定](architecture/WORKSPACE_LAYOUT.md)、[一期目标](requirements/V1_SCOPE.md)、[Git流程](operations/GIT_WORKFLOW.md)。

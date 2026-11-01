@@ -1,0 +1,14 @@
+{
+  "received_date": "2026-10-30",
+  "source_kind": "user_attachment",
+  "source_name": "Pasted text.txt",
+  "attachment_id": "dcbf12fc-68e1-4aed-a432-59116c16f9e6",
+  "saved_path": "evidence/huawei/2026-10-30/PREFIXLENS_SERIAL_DETECTOR_RESEARCH.md",
+  "bytes": 73387,
+  "sha256": "3e0df8981466cdd287ac97b5998bba94be795ef2bc3c4b9d45d899c605a76869",
+  "copy_verified": true,
+  "reported_project_path": "/mnt/esfs/zhangxiyue/PrefixLens",
+  "reported_git_commit": null,
+  "verification_scope": "Attachment copied byte-for-byte; embedded source excerpts reviewed. Remote source files, tests, historical outputs and browser behavior were not independently rerun or verified locally.",
+  "interpretation_path": "docs/research/implementations/PREFIXLENS_HUAWEI_REVIEW_2026-10-30.md"
+}

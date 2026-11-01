@@ -1,30 +1,14 @@
 # 当前状态
 
-2026-10-31：监控V2用户/MA页面已验收，三项问题修复独立复审通过，main已推送至本轮检查点fe7f083；[当前状态](../docs/tasks/delivery/MONITORING_V2_STATUS.md)。暂不打包，等待异常分析前后端完成验收后统一交付。
+2026-11-01：异常分析用户指定总负责session `01a19111-344a-75c1-84e0-14db8be08f4f` 已完成RV2前端修复与联合验证，正在按已获授权统一GitHub收口；[统筹入口](../docs/tasks/analysis/COORDINATION_RV2.md) · [联合报告](../docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md)。其他session维护职责及权限不因记忆压缩改变。
 
-更新：2026-10-30。用户确认Token监控V1（前端+后端）验收通过，进入维护及两类分析启动阶段。[现场验收与交接](../docs/huawei/MONITORING_V1_ACCEPTANCE_20261030.md)为当前事实入口。
+- 前端`viewer-analysis-ui04-local-3`：L4/L5各一张卡、每类≤3例，跨组请求去重；195项单元/组件、18个不同浏览器用例通过，当前后端组合7项真实联调再次通过。唯一入口http://localhost:4191/#/analysis，4193仅跳转。UI-04保持，用户功能/视觉确认待进行。
+- 低命中/公共`arpc-local-4`：[独立复审通过](../docs/tasks/prefix-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md)，PCR-01/02归口修复关闭；RV2 215个只读GET/聚合核验通过，旧state不变。
+- Token私有`token-review-20261101-1`/`arta-local-1`：[独立复审通过](../docs/tasks/length-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md)，164本线+12独立边界、ART4只读通过，无阻断。仅T2–T4，新链路无T1；tool_calls:null保守partial边界保留。
+- 总负责可主动请求两后端收集/复现/测试/debug/修复，不代写其业务模块。已准备[统一审查交付prompt](../prompts/sessions/ANALYSIS_UNIFIED_REVIEW_DELIVERY_RV2.md)供用户转交，尚未自动启动打包；本机未打包部署，用户认可、生产策略和华为现场均不代签。
 
-- dev6/F007、S0 1.0.0、schema3/view1；monitoring-v1-20261028发布身份保持不变。三模型现场任务完成，每文件约22–55分钟；有效150,698/读入354,638条，77范围。
-- 现场采用时间格式转换、模型别名和DeepSeek thinking_disabled配置；不等于源码修复或生产模式等价。数据质量、时间口径、GF资产/GLM CP等边界见验收交接，不将有效子集称为全量画像。
-- 异常分析先由一个后端母会话调研/产品设计，完成后再按用户启动fork低命中与Token异常两线；异常分析不属监控功能增加。统一编码计量仍由监控提供，自进化Agent依赖不变。
-- 监控V2用户与MA后端均已登记并完成本地开发；用户线负责V1兼容、TTFT参考与搜索排行，MA线负责GF规格×UUID；hybrid暂不做，UI-01视觉起点不变。
-- V1前后端、总设计休眠；审查打包运行中。用户后端转入前端接入支持/维护；角色见[SESSIONS](SESSIONS.md)。
-- 原V1前端保持休眠；[监控V2前端](../docs/tasks/viewer/monitoring-v2/ENTRY.md)已完成正式实现、页面验收和修复复审，转维护支持；TTFT性能校准待完成。异常分析前端按其自身登记推进。
+监控既有状态保持：V1已获用户现场验收，S0/已发布交付身份不变；监控V2前端与MA已验收、三项修复独立复审并push，见[交付状态](../docs/tasks/delivery/MONITORING_V2_STATUS.md)。用户后端U006–U008代码完成且已push，TTFT性能校准待完成；MA会话按用户限定承接华为服务启动/功能验证/Bug维护，P90 TTFT回用户监控线。没有新增远端或打包授权。
 
-- 用户侧GB按appid×common_name；MA侧GF按规格×UUID，同UUID跨appid/P共享。MA已确认手动两份连续1小时CSV，pre从空缓存预热、仅统计now；5分钟变化＋整小时平均，输入/实际未命中两张独立分布图。有限预热不能保证理想≥真实；[最新MA口径与设计](../docs/tasks/monitoring/v2-ma/DESIGN.md)。统一内网访问目标保留，见[MaaS参考](../docs/architecture/MAAS_REFERENCE.md)。
-- 本轮为文档/DEMO交接检查点，V1发布身份不变；[版本整理记录](../docs/operations/V2_HANDOFF_20261030.md)。
+V1前后端/总设计保持休眠；hybrid暂不做，自进化Agent未启动，未来职责不等于已获启动。完整实际角色以[SESSIONS](SESSIONS.md)为准。
 
-[SESSIONS](SESSIONS.md) · [监控](../docs/tasks/monitoring/ENTRY.md) · [命中率低分析](../docs/tasks/prefix-analysis/ENTRY.md) · [Token异常分析](../docs/tasks/length-analysis/ENTRY.md) · [交付](../docs/tasks/delivery/ENTRY.md) · [协作流程](../docs/architecture/TASK_SESSION_WORKFLOW.md)
-
-旧状态快照：[2026-10-30](../achieve/2026-10-30/snapshots/memory/CURRENT.md)。原始证据、冻结契约、已发布交付文件保持身份，生产CSV不离现场。
-
-- 用户监控后端U006–U008最小TTFT适配closed；**代码完成，性能校准待完成**。新W覆盖全部非计算、不单列O，证据选填；契约2.0.0保留旧情景/历史兼容。全量380＋最终126测试、类型/静态/契约审计通过。[验收](../docs/tasks/monitoring/v2-user/batches/U008/RESULT.md) · [前端交接](../docs/tasks/monitoring/v2-user/TTFT_FRONTEND_HANDOFF.md)。未修改前端、部署或打包。
-- MA监控后端M000–M005已闭环，ma-backend-local-1；源码已随已闭环后端依赖集成同步，本轮只追加MA版本/前端交接。[交接](../docs/tasks/monitoring/v2-ma/FRONTEND_HANDOFF.md)与[Git身份](../docs/tasks/monitoring/v2-ma/GIT_CHECKPOINT.md)为当前入口；独立候选227项、已同步集成版本289项测试通过。维护/交接中，未部署打包。
-
-本轮用户授权提交push用户后端与已闭环MA必要依赖；[前端交接](../docs/tasks/monitoring/v2-user/FRONTEND_HANDOFF.md)与[提交范围](../docs/tasks/monitoring/v2-user/GIT_HANDOFF_20261030.md)。不包含其他会话未完成材料，未部署打包。
-
-用户后端源码交接9a037466f7211126261ec2026f54b9c19c2e2151已push origin main并核实远端SHA；当前为前端接入支持/后端维护。[交接入口](../docs/tasks/monitoring/v2-user/FRONTEND_HANDOFF.md)。其他会话未完成材料留在工作区，未部署打包。
-
-用户监控U006–U008本轮获授权提交/push；当前前端接入支持/后端维护，性能校准待完成；[Git检查点](../docs/tasks/monitoring/v2-user/GIT_HANDOFF_U008_20261031.md)。只暂存本线共享段落，其他会话未完成材料保留本地，未部署打包。
-
-2026-10-31推送确认：U006–U008源码提交a4053db5789fa9460b1fae4097a8835b2554357c已push origin main，git ls-remote核实远端同一SHA；本地身份u008-local-1/契约2.0.0。仅本线44文件及共享记忆本线段落入提交，其他session未完成材料保留工作区。当前前端接入支持/后端维护；代码完成，性能校准待完成。未修改前端、部署或打包。
+[历史原文快照](../achieve/2026-11-01/analysis-rv2/snapshots/memory/CURRENT.before-rv2-closeout.md) · [归档说明](../achieve/2026-11-01/analysis-rv2/README.md) · [监控入口](../docs/tasks/monitoring/ENTRY.md) · [统一工作流](../docs/architecture/TASK_SESSION_WORKFLOW.md)。原始证据/冻结契约/已发布包保持原位，旧暂停/未编码/双实例文字不覆盖当前状态。

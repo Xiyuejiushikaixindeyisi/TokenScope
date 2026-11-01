@@ -1,0 +1,12 @@
+{
+  "validation_kind": "static_models_and_document_links_only_no_server_no_analysis",
+  "date": "2026-10-31",
+  "counts": {
+    "wire_objects": 24,
+    "digest_checks": 6,
+    "links": 8,
+    "identity_files": 64
+  },
+  "business_tests_rerun": false,
+  "all_passed": true
+}

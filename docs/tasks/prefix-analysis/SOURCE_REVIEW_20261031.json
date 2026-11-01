@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-31",
+  "head_at_review": "ac0699863a4dbe5824862d9d3c1b64a7ecd48d50",
+  "kind": "read_only_source_review",
+  "note": "Working-tree file digests; not proof all files match HEAD. No business tests or replay executed.",
+  "files": [
+    {
+      "path": "src/tokenscope/domain.py",
+      "sha256": "b235a9f554ab6273e5bf414f81b1d4476f04b0d29e1169a6616d7bfd4f4655a4"
+    },
+    {
+      "path": "src/tokenscope/ingestion/csv_reader.py",
+      "sha256": "b277eab74bb7cb27b5f541567a5ede8f1eec64d491bc5e4e5670cd916bb1ce6b"
+    },
+    {
+      "path": "src/tokenscope/encoding/models.py",
+      "sha256": "f7efb223eb8ccc4577f032065564a1f8f44fe44a93157a6be1062361c03481c1"
+    },
+    {
+      "path": "src/tokenscope/encoding/batch.py",
+      "sha256": "900b3bf9adf1e770ea368f26fcf35c227d8ee2c54ce91d83d785b88141ccbda1"
+    },
+    {
+      "path": "src/tokenscope/encoding/stage.py",
+      "sha256": "0a3d8fe0211a31c09a645a6dbd779b31b2d4d6ed202ec245e8591275bd4530d8"
+    },
+    {
+      "path": "src/tokenscope/encoding/shards.py",
+      "sha256": "1ea6145650967adfc97f97c98de826674bffbfcff143e01c6a248e76071e76e4"
+    },
+    {
+      "path": "src/tokenscope/encoding/assets.py",
+      "sha256": "324dfeb7ca6c5be02c076366cca9362ad6f93d45ff3fdc6d592d819c4f960997"
+    },
+    {
+      "path": "src/tokenscope/monitoring/simulation.py",
+      "sha256": "10e6d20ee0b8e2886e57d241a80bae69a1f0aa607896f484827df47550a0be17"
+    },
+    {
+      "path": "src/tokenscope/monitoring/pipeline.py",
+      "sha256": "aea7775692c04353811a2a17b2d05c1d28d932f74449655c1e1aad3db6992216"
+    },
+    {
+      "path": "src/tokenscope/monitoring/storage.py",
+      "sha256": "60fc1c4364f2b5220a0612fc1e65282d812c9a0b14068bece6d1e510d0374449"
+    },
+    {
+      "path": "src/tokenscope/monitoring/views.py",
+      "sha256": "0eeee38d2a426dfa09c74a3536290a3b8fb11e4d0627d0d65a30dbc0decd7195"
+    },
+    {
+      "path": "src/tokenscope/monitoring/service.py",
+      "sha256": "c47b89bbba2ed405d8d3e7bd3ad501e9272cf3e3d4a62a0271a36c74704c0fbc"
+    },
+    {
+      "path": "src/tokenscope/monitoring/dispatcher.py",
+      "sha256": "625128f62f0eed84d0be0053edeefa647cab1d5175b8051f6a5055947b58c16e"
+    },
+    {
+      "path": "src/tokenscope/user_monitoring/service.py",
+      "sha256": "842d8dbbc3ed04414c97bdac460bb5017c3df2c1d3cc4a5998f87be3f7710c77"
+    },
+    {
+      "path": "src/tokenscope/user_monitoring/storage.py",
+      "sha256": "aead3722466e5f05063a3f48ec8a2684b22a05aa3f065ab0443631c71daaae7b"
+    },
+    {
+      "path": "src/tokenscope/user_monitoring/projection.py",
+      "sha256": "9420d2c991af65cb622851dee54c8d44bbe0603e9e6cf35ffc7e8122223a77fd"
+    },
+    {
+      "path": "src/tokenscope/api/app.py",
+      "sha256": "cc2fe4c729acef13301b79cf834fd83eb8e0ce98e27c2b9369c6366c618ff95f"
+    },
+    {
+      "path": "src/tokenscope/monitoring/view_models.py",
+      "sha256": "9c67a8c46dfaf4d91000f6c557f533444d2c0f5ad713da0c1414ad4ca10067a6"
+    }
+  ]
+}

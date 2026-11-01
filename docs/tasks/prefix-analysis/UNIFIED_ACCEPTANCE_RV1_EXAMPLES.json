@@ -1,0 +1,3033 @@
+{
+  "identity": "unified-acceptance-rv1-20261101-1",
+  "source_artifact": "artifacts/validation/unified-rv1-20261101-01/actual-unified-rv1.json",
+  "source_sha256": "14d2456039418c4d62987e48ecf79eaff76e9817c020ba637cd3a9ce84262a31",
+  "synthetic": true,
+  "service_instance_id": "0cf8b18b-224f-44f3-959d-bbfc1cfe010e",
+  "binding_id": "f860b372ec762939acba36cbffbfebab82e97836215f52df683a96900b0e2256",
+  "catalog": {
+    "version": "diagnostics-discovery-1",
+    "service_instance_id": "0cf8b18b-224f-44f3-959d-bbfc1cfe010e",
+    "snapshot": "0cf8b18b-224f-44f3-959d-bbfc1cfe010e:b7c70c34-7b82-431d-ab23-61254b72c941:5",
+    "event_cursor": "0cf8b18b-224f-44f3-959d-bbfc1cfe010e:b7c70c34-7b82-431d-ab23-61254b72c941:5",
+    "items": [
+      {
+        "task_id": "d69ce286-8461-4b0e-bc95-83b341b9c47b",
+        "task_kind": "analysis",
+        "parent_task_id": null,
+        "plan_refs": [],
+        "status": "ready",
+        "error_code": null,
+        "report_published": true,
+        "report_ref": "d69ce286-8461-4b0e-bc95-83b341b9c47b",
+        "report_digest": "7419fc7dfab14817cd38d6b228b7d5830a78e7b2815bcbce241e6170b22669d4",
+        "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+        "scope": {
+          "source": {
+            "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+            "user_run_id": null,
+            "common_name": null,
+            "model_id": "GLM-5.2",
+            "manifest_sha256": "17d6c25e7ead2cee41903ee2178d39c92c02a9ec532a1202289868fb3774ff4c",
+            "asset_identity": "c8bf2cc61113194473ec5502ac3116dcad8611dc95d469a5d4995d3a75150a43",
+            "encoder_identity": "7e6e71933f9278ad86c56fafe919abd4f4eab23ca57123aefa03f3415275ce63",
+            "profile_json": "{\"name\": \"default\", \"cpu_budget\": 8, \"default_thinking\": null, \"template_options\": {}}",
+            "settings_json": "{\"model_id\":\"GLM-5.2\",\"revision\":1,\"block_size\":128,\"block_size_unit\":\"simulation_input_tokens\",\"cp_world_size\":1,\"mtp\":true,\"prefix_cache_enabled\":true,\"hybrid_enabled\":false,\"cache_mode\":\"full_block\",\"model_aliases\":[\"glm-5.2\",\"GLM-V5.2\",\"GLM-V5.2-32K\",\"GLM-V5.2-64K\",\"GLM-V5.2-128K\"],\"encoding_profile\":\"default\"}",
+            "algorithm_version": "full-block-mtp-v1"
+          },
+          "appid": "synthetic-orders",
+          "window": null,
+          "request_count": "6",
+          "request_keys_digest": "fedbc55f43dabdbbaff3364a85f5481669e6cc53119c4b4c1d280ac9fcf03343",
+          "baseline_origin": "original_run_window"
+        },
+        "binding": {
+          "appid": "synthetic-orders",
+          "model_id": "GLM-5.2",
+          "common_name": null,
+          "source_kind": "base"
+        },
+        "binding_id": "f860b372ec762939acba36cbffbfebab82e97836215f52df683a96900b0e2256",
+        "directions": [
+          "low_hit",
+          "token_content"
+        ],
+        "sequence": "1",
+        "terminal_at": "2026-11-01T05:54:13.303Z",
+        "published_at": "2026-11-01T05:54:13.303Z",
+        "analysis_completed_at": "2026-11-01T05:54:13.303Z",
+        "legacy": false,
+        "default_eligible": true
+      },
+      {
+        "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+        "task_kind": "analysis",
+        "parent_task_id": null,
+        "plan_refs": [],
+        "status": "ready",
+        "error_code": null,
+        "report_published": true,
+        "report_ref": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+        "report_digest": "68a47b363dc2b80da019094c04136c91627428d686862bc18a03aedf0a476daf",
+        "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+        "scope": {
+          "source": {
+            "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+            "user_run_id": null,
+            "common_name": null,
+            "model_id": "GLM-5.2",
+            "manifest_sha256": "17d6c25e7ead2cee41903ee2178d39c92c02a9ec532a1202289868fb3774ff4c",
+            "asset_identity": "c8bf2cc61113194473ec5502ac3116dcad8611dc95d469a5d4995d3a75150a43",
+            "encoder_identity": "7e6e71933f9278ad86c56fafe919abd4f4eab23ca57123aefa03f3415275ce63",
+            "profile_json": "{\"name\": \"default\", \"cpu_budget\": 8, \"default_thinking\": null, \"template_options\": {}}",
+            "settings_json": "{\"model_id\":\"GLM-5.2\",\"revision\":1,\"block_size\":128,\"block_size_unit\":\"simulation_input_tokens\",\"cp_world_size\":1,\"mtp\":true,\"prefix_cache_enabled\":true,\"hybrid_enabled\":false,\"cache_mode\":\"full_block\",\"model_aliases\":[\"glm-5.2\",\"GLM-V5.2\",\"GLM-V5.2-32K\",\"GLM-V5.2-64K\",\"GLM-V5.2-128K\"],\"encoding_profile\":\"default\"}",
+            "algorithm_version": "full-block-mtp-v1"
+          },
+          "appid": "synthetic-orders",
+          "window": null,
+          "request_count": "6",
+          "request_keys_digest": "fedbc55f43dabdbbaff3364a85f5481669e6cc53119c4b4c1d280ac9fcf03343",
+          "baseline_origin": "original_run_window"
+        },
+        "binding": {
+          "appid": "synthetic-orders",
+          "model_id": "GLM-5.2",
+          "common_name": null,
+          "source_kind": "base"
+        },
+        "binding_id": "f860b372ec762939acba36cbffbfebab82e97836215f52df683a96900b0e2256",
+        "directions": [
+          "low_hit",
+          "token_content"
+        ],
+        "sequence": "2",
+        "terminal_at": "2026-11-01T05:54:28.221Z",
+        "published_at": "2026-11-01T05:54:28.221Z",
+        "analysis_completed_at": "2026-11-01T05:54:28.221Z",
+        "legacy": false,
+        "default_eligible": true
+      },
+      {
+        "task_id": "11ab16c3-1ea4-4d71-b6d7-a41b828564ee",
+        "task_kind": "analysis",
+        "parent_task_id": null,
+        "plan_refs": [],
+        "status": "partial",
+        "error_code": null,
+        "report_published": true,
+        "report_ref": "11ab16c3-1ea4-4d71-b6d7-a41b828564ee",
+        "report_digest": "3267ff997cf1681b4032fa6b716cd1c4d69171c4eb80cdaf385714f8dc086935",
+        "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+        "scope": {
+          "source": {
+            "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+            "user_run_id": null,
+            "common_name": null,
+            "model_id": "GLM-5.2",
+            "manifest_sha256": "17d6c25e7ead2cee41903ee2178d39c92c02a9ec532a1202289868fb3774ff4c",
+            "asset_identity": "c8bf2cc61113194473ec5502ac3116dcad8611dc95d469a5d4995d3a75150a43",
+            "encoder_identity": "7e6e71933f9278ad86c56fafe919abd4f4eab23ca57123aefa03f3415275ce63",
+            "profile_json": "{\"name\": \"default\", \"cpu_budget\": 8, \"default_thinking\": null, \"template_options\": {}}",
+            "settings_json": "{\"model_id\":\"GLM-5.2\",\"revision\":1,\"block_size\":128,\"block_size_unit\":\"simulation_input_tokens\",\"cp_world_size\":1,\"mtp\":true,\"prefix_cache_enabled\":true,\"hybrid_enabled\":false,\"cache_mode\":\"full_block\",\"model_aliases\":[\"glm-5.2\",\"GLM-V5.2\",\"GLM-V5.2-32K\",\"GLM-V5.2-64K\",\"GLM-V5.2-128K\"],\"encoding_profile\":\"default\"}",
+            "algorithm_version": "full-block-mtp-v1"
+          },
+          "appid": "synthetic-orders",
+          "window": null,
+          "request_count": "6",
+          "request_keys_digest": "fedbc55f43dabdbbaff3364a85f5481669e6cc53119c4b4c1d280ac9fcf03343",
+          "baseline_origin": "original_run_window"
+        },
+        "binding": {
+          "appid": "synthetic-orders",
+          "model_id": "GLM-5.2",
+          "common_name": null,
+          "source_kind": "base"
+        },
+        "binding_id": "f860b372ec762939acba36cbffbfebab82e97836215f52df683a96900b0e2256",
+        "directions": [
+          "low_hit",
+          "token_content"
+        ],
+        "sequence": "5",
+        "terminal_at": "2026-11-01T05:54:33.235Z",
+        "published_at": "2026-11-01T05:54:33.235Z",
+        "analysis_completed_at": "2026-11-01T05:54:33.235Z",
+        "legacy": false,
+        "default_eligible": false
+      }
+    ],
+    "defaults": [
+      {
+        "binding_id": "f860b372ec762939acba36cbffbfebab82e97836215f52df683a96900b0e2256",
+        "direction": "low_hit",
+        "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+        "sequence": "2"
+      },
+      {
+        "binding_id": "f860b372ec762939acba36cbffbfebab82e97836215f52df683a96900b0e2256",
+        "direction": "token_content",
+        "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+        "sequence": "2"
+      }
+    ],
+    "next_after": null
+  },
+  "terminal_responses": [
+    {
+      "version": "diagnostics-discovery-1",
+      "service_instance_id": "0cf8b18b-224f-44f3-959d-bbfc1cfe010e",
+      "terminal": {
+        "task_id": "d69ce286-8461-4b0e-bc95-83b341b9c47b",
+        "task_kind": "analysis",
+        "parent_task_id": null,
+        "plan_refs": [],
+        "status": "ready",
+        "error_code": null,
+        "report_published": true,
+        "report_ref": "d69ce286-8461-4b0e-bc95-83b341b9c47b",
+        "report_digest": "7419fc7dfab14817cd38d6b228b7d5830a78e7b2815bcbce241e6170b22669d4",
+        "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+        "scope": {
+          "source": {
+            "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+            "user_run_id": null,
+            "common_name": null,
+            "model_id": "GLM-5.2",
+            "manifest_sha256": "17d6c25e7ead2cee41903ee2178d39c92c02a9ec532a1202289868fb3774ff4c",
+            "asset_identity": "c8bf2cc61113194473ec5502ac3116dcad8611dc95d469a5d4995d3a75150a43",
+            "encoder_identity": "7e6e71933f9278ad86c56fafe919abd4f4eab23ca57123aefa03f3415275ce63",
+            "profile_json": "{\"name\": \"default\", \"cpu_budget\": 8, \"default_thinking\": null, \"template_options\": {}}",
+            "settings_json": "{\"model_id\":\"GLM-5.2\",\"revision\":1,\"block_size\":128,\"block_size_unit\":\"simulation_input_tokens\",\"cp_world_size\":1,\"mtp\":true,\"prefix_cache_enabled\":true,\"hybrid_enabled\":false,\"cache_mode\":\"full_block\",\"model_aliases\":[\"glm-5.2\",\"GLM-V5.2\",\"GLM-V5.2-32K\",\"GLM-V5.2-64K\",\"GLM-V5.2-128K\"],\"encoding_profile\":\"default\"}",
+            "algorithm_version": "full-block-mtp-v1"
+          },
+          "appid": "synthetic-orders",
+          "window": null,
+          "request_count": "6",
+          "request_keys_digest": "fedbc55f43dabdbbaff3364a85f5481669e6cc53119c4b4c1d280ac9fcf03343",
+          "baseline_origin": "original_run_window"
+        },
+        "binding": {
+          "appid": "synthetic-orders",
+          "model_id": "GLM-5.2",
+          "common_name": null,
+          "source_kind": "base"
+        },
+        "binding_id": "f860b372ec762939acba36cbffbfebab82e97836215f52df683a96900b0e2256",
+        "directions": [
+          "low_hit",
+          "token_content"
+        ],
+        "sequence": "1",
+        "terminal_at": "2026-11-01T05:54:13.303Z",
+        "published_at": "2026-11-01T05:54:13.303Z",
+        "analysis_completed_at": "2026-11-01T05:54:13.303Z",
+        "legacy": false,
+        "default_eligible": true
+      }
+    },
+    {
+      "version": "diagnostics-discovery-1",
+      "service_instance_id": "0cf8b18b-224f-44f3-959d-bbfc1cfe010e",
+      "terminal": {
+        "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+        "task_kind": "analysis",
+        "parent_task_id": null,
+        "plan_refs": [],
+        "status": "ready",
+        "error_code": null,
+        "report_published": true,
+        "report_ref": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+        "report_digest": "68a47b363dc2b80da019094c04136c91627428d686862bc18a03aedf0a476daf",
+        "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+        "scope": {
+          "source": {
+            "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+            "user_run_id": null,
+            "common_name": null,
+            "model_id": "GLM-5.2",
+            "manifest_sha256": "17d6c25e7ead2cee41903ee2178d39c92c02a9ec532a1202289868fb3774ff4c",
+            "asset_identity": "c8bf2cc61113194473ec5502ac3116dcad8611dc95d469a5d4995d3a75150a43",
+            "encoder_identity": "7e6e71933f9278ad86c56fafe919abd4f4eab23ca57123aefa03f3415275ce63",
+            "profile_json": "{\"name\": \"default\", \"cpu_budget\": 8, \"default_thinking\": null, \"template_options\": {}}",
+            "settings_json": "{\"model_id\":\"GLM-5.2\",\"revision\":1,\"block_size\":128,\"block_size_unit\":\"simulation_input_tokens\",\"cp_world_size\":1,\"mtp\":true,\"prefix_cache_enabled\":true,\"hybrid_enabled\":false,\"cache_mode\":\"full_block\",\"model_aliases\":[\"glm-5.2\",\"GLM-V5.2\",\"GLM-V5.2-32K\",\"GLM-V5.2-64K\",\"GLM-V5.2-128K\"],\"encoding_profile\":\"default\"}",
+            "algorithm_version": "full-block-mtp-v1"
+          },
+          "appid": "synthetic-orders",
+          "window": null,
+          "request_count": "6",
+          "request_keys_digest": "fedbc55f43dabdbbaff3364a85f5481669e6cc53119c4b4c1d280ac9fcf03343",
+          "baseline_origin": "original_run_window"
+        },
+        "binding": {
+          "appid": "synthetic-orders",
+          "model_id": "GLM-5.2",
+          "common_name": null,
+          "source_kind": "base"
+        },
+        "binding_id": "f860b372ec762939acba36cbffbfebab82e97836215f52df683a96900b0e2256",
+        "directions": [
+          "low_hit",
+          "token_content"
+        ],
+        "sequence": "2",
+        "terminal_at": "2026-11-01T05:54:28.221Z",
+        "published_at": "2026-11-01T05:54:28.221Z",
+        "analysis_completed_at": "2026-11-01T05:54:28.221Z",
+        "legacy": false,
+        "default_eligible": true
+      }
+    },
+    {
+      "version": "diagnostics-discovery-1",
+      "service_instance_id": "0cf8b18b-224f-44f3-959d-bbfc1cfe010e",
+      "terminal": {
+        "task_id": "11ab16c3-1ea4-4d71-b6d7-a41b828564ee",
+        "task_kind": "analysis",
+        "parent_task_id": null,
+        "plan_refs": [],
+        "status": "partial",
+        "error_code": null,
+        "report_published": true,
+        "report_ref": "11ab16c3-1ea4-4d71-b6d7-a41b828564ee",
+        "report_digest": "3267ff997cf1681b4032fa6b716cd1c4d69171c4eb80cdaf385714f8dc086935",
+        "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+        "scope": {
+          "source": {
+            "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+            "user_run_id": null,
+            "common_name": null,
+            "model_id": "GLM-5.2",
+            "manifest_sha256": "17d6c25e7ead2cee41903ee2178d39c92c02a9ec532a1202289868fb3774ff4c",
+            "asset_identity": "c8bf2cc61113194473ec5502ac3116dcad8611dc95d469a5d4995d3a75150a43",
+            "encoder_identity": "7e6e71933f9278ad86c56fafe919abd4f4eab23ca57123aefa03f3415275ce63",
+            "profile_json": "{\"name\": \"default\", \"cpu_budget\": 8, \"default_thinking\": null, \"template_options\": {}}",
+            "settings_json": "{\"model_id\":\"GLM-5.2\",\"revision\":1,\"block_size\":128,\"block_size_unit\":\"simulation_input_tokens\",\"cp_world_size\":1,\"mtp\":true,\"prefix_cache_enabled\":true,\"hybrid_enabled\":false,\"cache_mode\":\"full_block\",\"model_aliases\":[\"glm-5.2\",\"GLM-V5.2\",\"GLM-V5.2-32K\",\"GLM-V5.2-64K\",\"GLM-V5.2-128K\"],\"encoding_profile\":\"default\"}",
+            "algorithm_version": "full-block-mtp-v1"
+          },
+          "appid": "synthetic-orders",
+          "window": null,
+          "request_count": "6",
+          "request_keys_digest": "fedbc55f43dabdbbaff3364a85f5481669e6cc53119c4b4c1d280ac9fcf03343",
+          "baseline_origin": "original_run_window"
+        },
+        "binding": {
+          "appid": "synthetic-orders",
+          "model_id": "GLM-5.2",
+          "common_name": null,
+          "source_kind": "base"
+        },
+        "binding_id": "f860b372ec762939acba36cbffbfebab82e97836215f52df683a96900b0e2256",
+        "directions": [
+          "low_hit",
+          "token_content"
+        ],
+        "sequence": "5",
+        "terminal_at": "2026-11-01T05:54:33.235Z",
+        "published_at": "2026-11-01T05:54:33.235Z",
+        "analysis_completed_at": "2026-11-01T05:54:33.235Z",
+        "legacy": false,
+        "default_eligible": false
+      }
+    }
+  ],
+  "default_recommendations": {
+    "version": "analysis-recommendations-1",
+    "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+    "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+    "availability": "computed",
+    "items": [
+      {
+        "id": "rec:8560b5bf370566a7615483f72679df7c3c7d388fca701b84636bf1512bc98995",
+        "data": {
+          "version": "analysis-recommendations-1",
+          "recommendation_id": "rec:8560b5bf370566a7615483f72679df7c3c7d388fca701b84636bf1512bc98995",
+          "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+          "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+          "direction": "token_content",
+          "generator_identity": "token-content-recipes-1",
+          "recipe_key": "recipe:39fb99fd30edf0121a841244d6b0aba7883c9c6398db05ee9fb6413703730a94",
+          "group_basis_digest": "39fb99fd30edf0121a841244d6b0aba7883c9c6398db05ee9fb6413703730a94",
+          "recipe": {
+            "recipe_id": "orders-fields",
+            "revision": "1",
+            "primary_rule": "T2",
+            "category_rules": [
+              "T2"
+            ],
+            "handler_id": "project_result_fields",
+            "handler_version": "1",
+            "basis": {
+              "kind": "business_policy",
+              "ref": "synthetic-policy:orders-fields",
+              "revision": "1",
+              "digest": "d603e3da2e1c4e3f128669800a7b6d7aad6977496bc9183a8692a454cb8ee67a",
+              "authority": {
+                "source_kind": "synthetic_fixture",
+                "source_ref": "orders-fields",
+                "source_digest": "d603e3da2e1c4e3f128669800a7b6d7aad6977496bc9183a8692a454cb8ee67a",
+                "status": "verified"
+              },
+              "assumptions": [],
+              "limitations": [
+                "仅为构造策略验证；不代表生产业务授权、质量等价或真实业务收益。"
+              ],
+              "scope_selector_digest": "82013beab6ba9170d0316af1e1a9046adf8d4f1a678efb866ae768332c345390"
+            },
+            "title": "订单查询结果只保留订单号与状态",
+            "change_summary": "对 query_orders 返回数组的每条订单保留 order_id、status，移除 debug_log；订单条数和顺序保持不变。",
+            "conditions": [
+              "仅适用于 synthetic-orders 构造数据及这里固定的工具定义。"
+            ],
+            "limitations": [],
+            "selector_json_digest": "82013beab6ba9170d0316af1e1a9046adf8d4f1a678efb866ae768332c345390",
+            "parameter_generator_json_digest": "413a251ba26d28ae3c218c8e7ea3f09699e8faee4758099b8c0f4167f25dcae0"
+          },
+          "support_refs": [
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "45fa0f820e65680d5c75ff2a961f4764b53766f8bd3a89afbf864501016293e4",
+              "finding_ids": [],
+              "fragment_id": "1",
+              "observation_ids": [
+                "obs:5f24c0a53c481c6d16b7d2d4f13bf6b0adc6d9749c05c86257fcbe0fbf408a52",
+                "obs:fa2ce679c9270dc6c6c7e4947f31cd2bdd264520ad5c6d618c807a9e3a67a3be"
+              ],
+              "unit_ids": [
+                "unit:9966fca3b090cb511b298d6620c65b062e8e1bacdd80951b1106fc84782d0f95",
+                "unit:afebbd26b0c1c1f5987a9a13999fba512fea4e45ff2a80264c50afc2a53ac183"
+              ],
+              "location_ids": [
+                "loc:545a43f5bff8e7a017f355594b9fd9c85c7b2909c3fcb10072d0aa2f2c1d8946",
+                "loc:c35954508c4cee88c775057143df94770cc2072558987322f7b6ecdcc650753b"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "2"
+              },
+              "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+              "finding_ids": [],
+              "fragment_id": "2",
+              "observation_ids": [
+                "obs:64746a3375b4d235288d3ba0fa893c4c06868f7e4e333d56df84c8e17ce9324d",
+                "obs:6e80cadeae6862d48c348f435e95861fa2bb61ddbd8e93aa9d1b30caa13db173"
+              ],
+              "unit_ids": [
+                "unit:4e0a54080f413b0cff028331c3728943c090201ca3e6327ee3ea43ce6376ad61",
+                "unit:8badd879f0361542daf07a8a491a70d348470672110c217cf5d2fdb305465014"
+              ],
+              "location_ids": [
+                "loc:2785eb666695c4cc567e0b547689ae3a98d5bf7870e71931a0b0268c1ee2f77d",
+                "loc:42af331d7663dff0283eddc8a497b69042bc79532bdf9e6afc74394c07286ce5"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+              "finding_ids": [],
+              "fragment_id": "3",
+              "observation_ids": [
+                "obs:08facbcd9790ea68390a500abb8c8d64fef4e2c2b620be679e8e29305c91324a",
+                "obs:10f3a987aa8ec2c214fcbafb3a9347fa8a4eee408a046d1a3b871145800e0d16"
+              ],
+              "unit_ids": [
+                "unit:7d0f48ed34cf63499e2d1ac7e0d0751409047d8ffe5a7f7a46a4c9118f1255e4",
+                "unit:88d2386591502fea73194c2227b75d018cb1ddb6621b0586a12fb925a829f6dc"
+              ],
+              "location_ids": [
+                "loc:4959f916f2ba2920a77c6db3cbe342e579e894e6c87f5193240aa4dbc3652ec1",
+                "loc:de09fe75262552da9f2d48ca9069aa4d3cda4b43d4c13191eae766175170142a"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "4"
+              },
+              "raw_sha256": "ba317c6eb726536c0402f78f92a274e432e1abc5d32355d03aa4e5f1735a75bf",
+              "finding_ids": [],
+              "fragment_id": "4",
+              "observation_ids": [
+                "obs:6503fa085aea7263e8eadc4c67a39e20613a7a645a904994bc4e864cea6e2cb1",
+                "obs:8d9392783aba6b972464dda09f84104afdd5944efb0da4456e4d537dbdabd4ee"
+              ],
+              "unit_ids": [
+                "unit:503081f67810bb926636299466ebca1a62d863a38750c6e810fed2d5c302b348",
+                "unit:f98b24251b34b7fdf3069168a24cbf551185c277185a768d2128e2bd8d9a1040"
+              ],
+              "location_ids": [
+                "loc:61443f19c5366117a80fe8039e447ada5e7b6d4ac468545461ba0cb263861610",
+                "loc:f0b501f02142536de16a6544641383f20d9280f7ef5c6881398b92ca77a40b87"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "5"
+              },
+              "raw_sha256": "bb0a295d193eaf671e89619d9c9c0cda86326b9c20dc1dbd34194f3ded6f784b",
+              "finding_ids": [],
+              "fragment_id": "5",
+              "observation_ids": [
+                "obs:26e4e23b4fc2f1f4a0cdaff424695f1f902e140349f377b96ebaf75cfdd2c435",
+                "obs:6870e5a0ad2356b2dd88f9b1fcd28590e9e9608904c679d59d841fe85cf60bc5"
+              ],
+              "unit_ids": [
+                "unit:1e84182cd915aed7192f950e6e79b5f592bba422b3620ff466ddd350273083eb",
+                "unit:71b7d4c64f21078cbf2c77302796fadb3a92e7178ff746ebc01b556449bab851"
+              ],
+              "location_ids": [
+                "loc:03298fbbf05c3a5c61321daf96e2be4ab8f689c17d0625b166f9b86cfe609e6c",
+                "loc:7e507ea64a1dbd7d0f245c514e384cd98913d0d899ed7f6512c0e783e57b69b7"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "6"
+              },
+              "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+              "finding_ids": [],
+              "fragment_id": "6",
+              "observation_ids": [
+                "obs:921e1ab35af78ae123498ad0b395f125163f6da8491f0d7cdf9c2b30f09a2654",
+                "obs:922c4d6e68c4195452901eb9a71ed8f51df51c5bacbb1be891de4ff7c8723aa3"
+              ],
+              "unit_ids": [
+                "unit:54643ec59793fa6c260b38b830d36a49c04971b6bfb54157894cd4dcfcc13371",
+                "unit:e586b178abc945144de37b2d1be6d59594cf5655f116077add6ea3c18f9988a8"
+              ],
+              "location_ids": [
+                "loc:7838847cac17305d93d3ef43c556a431752325cd9ca49888464bc019a378eddc",
+                "loc:e35b4759051e5d2e1e7fbbe9c4214ddee96512f2cc21efb4383f1a2ad149c88a"
+              ]
+            }
+          ],
+          "matched_set_digest": "8ace61919faa6fe66d930aedfd90896fc549369666e3ec7cec165e9e5af6dc71",
+          "support_set_digest": "059032bca48d9d8b4aa204ee48dec55efe00a39688e205a478e4af17de535757",
+          "members_complete": true,
+          "impact": {
+            "total_requests": "6",
+            "matched_requests": "6",
+            "matched_checked_requests": "6",
+            "match_complete": true,
+            "modified_requests": "6",
+            "evaluation_complete": true,
+            "count_basis": "raw_body_changed"
+          },
+          "proposal_status": "matched",
+          "preparation_status": "prepared",
+          "evaluation_status": "available",
+          "status": "available",
+          "reason_codes": [],
+          "reason_details": [],
+          "prepared_plan_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "plan:662041392e830c81966172fe96f5d45688ba768ba6025c28e972409e736b8d11"
+          },
+          "execution_plan_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "plan:662041392e830c81966172fe96f5d45688ba768ba6025c28e972409e736b8d11"
+          },
+          "evaluation_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "6c92c1d2-ffe2-4660-b4ad-2d33c4e02f6f"
+          },
+          "evaluation_reused": false,
+          "execution_fingerprint": "2646e959e4e84b0742f2fa34671d36a5cdc06b0bdff1183557b00ea7e9707e76",
+          "evaluation": {
+            "evaluation_id": "6c92c1d2-ffe2-4660-b4ad-2d33c4e02f6f",
+            "plan_id": "plan:662041392e830c81966172fe96f5d45688ba768ba6025c28e972409e736b8d11",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "stage": "direct_full",
+            "direction": "token_content",
+            "status": "available",
+            "baseline_origin": "original_run_window",
+            "coverage": {
+              "checked": "6",
+              "eligible": "6",
+              "complete": true,
+              "reasons": [],
+              "stop_location": null
+            },
+            "before": {
+              "p": "21582",
+              "h": "0",
+              "c": "21582",
+              "n": "6",
+              "j": "22413"
+            },
+            "after": {
+              "p": "16272",
+              "h": "0",
+              "c": "16272",
+              "n": "6",
+              "j": "16590"
+            },
+            "modified_before": {
+              "p": "21582",
+              "h": "0",
+              "c": "21582",
+              "n": "6",
+              "j": "22413"
+            },
+            "modified_after": {
+              "p": "16272",
+              "h": "0",
+              "c": "16272",
+              "n": "6",
+              "j": "16590"
+            },
+            "manifest_ref": "token_recommendations/0/rows.sqlite3",
+            "reason_codes": []
+          },
+          "display_qualification": "token_evaluated",
+          "example_refs": [
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:55d4bd467b61e7e0b1f87cfb7437ea8f0815d489a8733890c7f98ea61720de59"
+            },
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:114d67e10169874dd798e17ffb0758865986675500374ed5d7813dd541e551d3"
+            },
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:c5730828eb2a31f4ca7506f1ad2522992b82e04664348cecaead003e510284fd"
+            }
+          ],
+          "display_order": "0",
+          "metrics": {
+            "gain_percentage_points": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "input_tokens_delta": "-5310",
+            "input_tokens_ratio": {
+              "numerator": "-295",
+              "denominator": "1199"
+            },
+            "compute_tokens_delta": "-5310",
+            "compute_tokens_ratio": {
+              "numerator": "-295",
+              "denominator": "1199"
+            }
+          }
+        }
+      },
+      {
+        "id": "rec:d17fdf64851377f247b3890f556127bd0ade35b5e69cc4a2369322f373dc1b2e",
+        "data": {
+          "version": "analysis-recommendations-1",
+          "recommendation_id": "rec:d17fdf64851377f247b3890f556127bd0ade35b5e69cc4a2369322f373dc1b2e",
+          "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+          "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+          "direction": "low_hit",
+          "generator_identity": "prefix-recommendations-1",
+          "recipe_key": "recipe:20eb69654b42f9ead885fcb76973601779e71ce37e0988eff6090a55a56df69f",
+          "group_basis_digest": "efbaa0bf942e4fa2779d951c5c73c2cf9225c72d38768b7e2b08c242eb1bf2a6",
+          "recipe": {
+            "recipe_id": "efbaa0bf942e4fa2779d951c5c73c2cf9225c72d38768b7e2b08c242eb1bf2a6",
+            "revision": "1",
+            "primary_rule": "L1",
+            "category_rules": [
+              "L1"
+            ],
+            "handler_id": "prefix-recipe",
+            "handler_version": "1",
+            "basis": {
+              "kind": "offline_hypothesis",
+              "ref": "approved-low-hit-offline",
+              "revision": "AR-C1",
+              "digest": "efbaa0bf942e4fa2779d951c5c73c2cf9225c72d38768b7e2b08c242eb1bf2a6",
+              "authority": {
+                "source_kind": "approved_design",
+                "source_ref": "AR-C1",
+                "source_digest": "efbaa0bf942e4fa2779d951c5c73c2cf9225c72d38768b7e2b08c242eb1bf2a6",
+                "status": "verified"
+              },
+              "assumptions": [
+                "Offline copy only; business decides adoption"
+              ],
+              "limitations": [],
+              "scope_selector_digest": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe"
+            },
+            "title": "请求前部动态内容影响相同指令复用",
+            "change_summary": "在业务不依赖该动态内容的前提下，删除/messages/0/content中下面已定位的时间戳片段，保留其余消息和指令；具体位置和删除前后内容见局部证据，是否采用由业务决定。",
+            "conditions": [],
+            "limitations": [],
+            "selector_json_digest": "45625aa08d580ecc2ca51b4a298e126f9095f37601e8541501a738320139a6cc",
+            "parameter_generator_json_digest": "c89a148be40e6752261e3038609a4b68de22fa3bfdaf32f884edffb8480b9bbe"
+          },
+          "support_refs": [
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "45fa0f820e65680d5c75ff2a961f4764b53766f8bd3a89afbf864501016293e4",
+              "finding_ids": [
+                "finding:1e104c8b1b8525e5fa9d85eecac372098b1f911c352681271ef5f14c1398c89d"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "45fa0f820e65680d5c75ff2a961f4764b53766f8bd3a89afbf864501016293e4",
+              "finding_ids": [
+                "finding:405388581ee420c64ac67dae0ba7670a2f378b1b3c1aa5734127356240ef5c61"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "45fa0f820e65680d5c75ff2a961f4764b53766f8bd3a89afbf864501016293e4",
+              "finding_ids": [
+                "finding:445371d425a799fdd17004dff81905ccd7057916a5e14f3ec66e3319278720b8"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "45fa0f820e65680d5c75ff2a961f4764b53766f8bd3a89afbf864501016293e4",
+              "finding_ids": [
+                "finding:a43e0ada3a11032ebd78c48e881b38abf484d97aa3a36790e5ff4a068a814d19"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "45fa0f820e65680d5c75ff2a961f4764b53766f8bd3a89afbf864501016293e4",
+              "finding_ids": [
+                "finding:aba9c0d1e040c4965bb079ece092bf81e894066f863da233d9f003765d6e2334"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "2"
+              },
+              "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+              "finding_ids": [
+                "finding:36a50c4b2d9a82215bb3ae5489baa988480612c7f4e4d52e66da10b12dd34c06"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "2"
+              },
+              "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+              "finding_ids": [
+                "finding:439f938cb9a212c05dfc7213480d68edcbebd3c5b75eb97e324e575c25a28f33"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "2"
+              },
+              "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+              "finding_ids": [
+                "finding:7a09c55bf5c1f371ea8339849365f0dab02ee7f7072d7da1f32207018fa7680b"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "2"
+              },
+              "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+              "finding_ids": [
+                "finding:8ac2d849927d93bf96eb53c60de588ba45c76239b75914e85db39df38a71c929"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "2"
+              },
+              "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+              "finding_ids": [
+                "finding:aba9c0d1e040c4965bb079ece092bf81e894066f863da233d9f003765d6e2334"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+              "finding_ids": [
+                "finding:1041fb0324a8c61c96ea144b2321ed6d8f3e5f9f85900d372b98d376221fd614"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+              "finding_ids": [
+                "finding:1e104c8b1b8525e5fa9d85eecac372098b1f911c352681271ef5f14c1398c89d"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+              "finding_ids": [
+                "finding:55ce50d120817f39845aaded7e22578d01fdafce85b6965716aa5242853a773d"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+              "finding_ids": [
+                "finding:8ac2d849927d93bf96eb53c60de588ba45c76239b75914e85db39df38a71c929"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+              "finding_ids": [
+                "finding:cde274074a4332ba74305f8b02058bc353a7737d6096efd303d396bb913caf8c"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "4"
+              },
+              "raw_sha256": "ba317c6eb726536c0402f78f92a274e432e1abc5d32355d03aa4e5f1735a75bf",
+              "finding_ids": [
+                "finding:233367fc980a04dcfe515354a43b2c6590df0d65607871ca40a889d35b0778fc"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "4"
+              },
+              "raw_sha256": "ba317c6eb726536c0402f78f92a274e432e1abc5d32355d03aa4e5f1735a75bf",
+              "finding_ids": [
+                "finding:445371d425a799fdd17004dff81905ccd7057916a5e14f3ec66e3319278720b8"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "4"
+              },
+              "raw_sha256": "ba317c6eb726536c0402f78f92a274e432e1abc5d32355d03aa4e5f1735a75bf",
+              "finding_ids": [
+                "finding:7a09c55bf5c1f371ea8339849365f0dab02ee7f7072d7da1f32207018fa7680b"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "4"
+              },
+              "raw_sha256": "ba317c6eb726536c0402f78f92a274e432e1abc5d32355d03aa4e5f1735a75bf",
+              "finding_ids": [
+                "finding:c1862cf472b1505333f7fd70f2ce5eb86b3024b62ee72b0c0a65aaef3a2fd68e"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "4"
+              },
+              "raw_sha256": "ba317c6eb726536c0402f78f92a274e432e1abc5d32355d03aa4e5f1735a75bf",
+              "finding_ids": [
+                "finding:cde274074a4332ba74305f8b02058bc353a7737d6096efd303d396bb913caf8c"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "5"
+              },
+              "raw_sha256": "bb0a295d193eaf671e89619d9c9c0cda86326b9c20dc1dbd34194f3ded6f784b",
+              "finding_ids": [
+                "finding:36a50c4b2d9a82215bb3ae5489baa988480612c7f4e4d52e66da10b12dd34c06"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "5"
+              },
+              "raw_sha256": "bb0a295d193eaf671e89619d9c9c0cda86326b9c20dc1dbd34194f3ded6f784b",
+              "finding_ids": [
+                "finding:55ce50d120817f39845aaded7e22578d01fdafce85b6965716aa5242853a773d"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "5"
+              },
+              "raw_sha256": "bb0a295d193eaf671e89619d9c9c0cda86326b9c20dc1dbd34194f3ded6f784b",
+              "finding_ids": [
+                "finding:a43e0ada3a11032ebd78c48e881b38abf484d97aa3a36790e5ff4a068a814d19"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "5"
+              },
+              "raw_sha256": "bb0a295d193eaf671e89619d9c9c0cda86326b9c20dc1dbd34194f3ded6f784b",
+              "finding_ids": [
+                "finding:c1862cf472b1505333f7fd70f2ce5eb86b3024b62ee72b0c0a65aaef3a2fd68e"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "5"
+              },
+              "raw_sha256": "bb0a295d193eaf671e89619d9c9c0cda86326b9c20dc1dbd34194f3ded6f784b",
+              "finding_ids": [
+                "finding:e79a8afc87755c1c62589e081e07b0f2f6cd67045f9631e22f704bc77a9b941c"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "6"
+              },
+              "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+              "finding_ids": [
+                "finding:1041fb0324a8c61c96ea144b2321ed6d8f3e5f9f85900d372b98d376221fd614"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "6"
+              },
+              "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+              "finding_ids": [
+                "finding:233367fc980a04dcfe515354a43b2c6590df0d65607871ca40a889d35b0778fc"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "6"
+              },
+              "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+              "finding_ids": [
+                "finding:405388581ee420c64ac67dae0ba7670a2f378b1b3c1aa5734127356240ef5c61"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "6"
+              },
+              "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+              "finding_ids": [
+                "finding:439f938cb9a212c05dfc7213480d68edcbebd3c5b75eb97e324e575c25a28f33"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            },
+            {
+              "kind": "prefix_finding",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "6"
+              },
+              "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+              "finding_ids": [
+                "finding:e79a8afc87755c1c62589e081e07b0f2f6cd67045f9631e22f704bc77a9b941c"
+              ],
+              "fragment_id": null,
+              "observation_ids": [],
+              "unit_ids": [],
+              "location_ids": []
+            }
+          ],
+          "matched_set_digest": "3d9f77d278d8a55aff6926be5b6e476905299f64146757aabd7ab1034cbb9531",
+          "support_set_digest": "ffe911abe91f29ebb7abdf4843701e92627158b78c707ef2c9ecf373c31163b2",
+          "members_complete": true,
+          "impact": {
+            "total_requests": "6",
+            "matched_requests": "6",
+            "matched_checked_requests": "6",
+            "match_complete": true,
+            "modified_requests": "6",
+            "evaluation_complete": true,
+            "count_basis": "raw_body_changed"
+          },
+          "proposal_status": "matched",
+          "preparation_status": "prepared",
+          "evaluation_status": "available",
+          "status": "available",
+          "reason_codes": [],
+          "reason_details": [],
+          "prepared_plan_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "plan:947e082f6f83902d74468ae79637e12bb7014c913eba7d74f0efb635b1f081d5"
+          },
+          "execution_plan_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "plan:947e082f6f83902d74468ae79637e12bb7014c913eba7d74f0efb635b1f081d5"
+          },
+          "evaluation_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "43b80895-bedf-479f-ac94-9689942c85f9"
+          },
+          "evaluation_reused": false,
+          "execution_fingerprint": null,
+          "evaluation": {
+            "evaluation_id": "43b80895-bedf-479f-ac94-9689942c85f9",
+            "plan_id": "plan:947e082f6f83902d74468ae79637e12bb7014c913eba7d74f0efb635b1f081d5",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "stage": "full",
+            "direction": "low_hit",
+            "status": "available",
+            "baseline_origin": "original_run_window",
+            "coverage": {
+              "checked": "6",
+              "eligible": "6",
+              "complete": true,
+              "reasons": [],
+              "stop_location": null
+            },
+            "before": {
+              "p": "21582",
+              "h": "0",
+              "c": "21582",
+              "n": "6",
+              "j": "22413"
+            },
+            "after": {
+              "p": "21504",
+              "h": "15104",
+              "c": "6400",
+              "n": "6",
+              "j": "21858"
+            },
+            "modified_before": {
+              "p": "21582",
+              "h": "0",
+              "c": "21582",
+              "n": "6",
+              "j": "22413"
+            },
+            "modified_after": {
+              "p": "21504",
+              "h": "15104",
+              "c": "6400",
+              "n": "6",
+              "j": "21858"
+            },
+            "manifest_ref": "experiments/0/full/rows.sqlite3",
+            "reason_codes": []
+          },
+          "display_qualification": "low_hit_optimization",
+          "example_refs": [
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:fc3a3e4ae46b4824545da9001f8524695cd588f59dac1993d7098c33b55a238b"
+            },
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:3698b5bbc6d860140e375bee92fe01372e7f435637bf5ab7cecb9a504ac80d89"
+            },
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:5ce491eceeef1c20376ddb0f6f082d1d2068fb721ce4d566e13c78eb69bde2f4"
+            }
+          ],
+          "display_order": "0",
+          "metrics": {
+            "gain_percentage_points": {
+              "numerator": "1475",
+              "denominator": "21"
+            },
+            "input_tokens_delta": "-78",
+            "input_tokens_ratio": {
+              "numerator": "-13",
+              "denominator": "3597"
+            },
+            "compute_tokens_delta": "-15182",
+            "compute_tokens_ratio": {
+              "numerator": "-7591",
+              "denominator": "10791"
+            }
+          }
+        }
+      },
+      {
+        "id": "rec:072f13ab636d1e7145f8f6d5afd55b756248c45272700ea6beff4c826d05a93b",
+        "data": {
+          "version": "analysis-recommendations-1",
+          "recommendation_id": "rec:072f13ab636d1e7145f8f6d5afd55b756248c45272700ea6beff4c826d05a93b",
+          "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+          "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+          "direction": "token_content",
+          "generator_identity": "token-content-recipes-1",
+          "recipe_key": "recipe:3f68599e9e17d88615b082b0b99885afe6ef0f7998e898b7bff6dd0575a370ec",
+          "group_basis_digest": "3f68599e9e17d88615b082b0b99885afe6ef0f7998e898b7bff6dd0575a370ec",
+          "recipe": {
+            "recipe_id": "orders-reference",
+            "revision": "1",
+            "primary_rule": "T3",
+            "category_rules": [
+              "T3"
+            ],
+            "handler_id": "replace_payload_with_reference",
+            "handler_version": "1",
+            "basis": {
+              "kind": "explicit_authorization",
+              "ref": "synthetic-policy:orders-reference",
+              "revision": "1",
+              "digest": "22f64f820ddf9c3533fe1df8f432e31933ba43d17ff775b538481be48df937d7",
+              "authority": {
+                "source_kind": "synthetic_fixture",
+                "source_ref": "orders-reference",
+                "source_digest": "22f64f820ddf9c3533fe1df8f432e31933ba43d17ff775b538481be48df937d7",
+                "status": "verified"
+              },
+              "assumptions": [],
+              "limitations": [
+                "仅为构造策略验证；不代表生产业务授权、质量等价或真实业务收益。"
+              ],
+              "scope_selector_digest": "84307c25615d601b985ce79b14e8ce079da6220a97d383f0e49ef581e2e9702a"
+            },
+            "title": "汇总工具的重复订单全文改为快照引用",
+            "change_summary": "将 summarize_orders 参数 document 中与查询结果完全相同的订单全文，改为 document_ref=fixture://orders/snapshot-001；该引用已在本地构造映射中核对，生产消费协议未验证。",
+            "conditions": [
+              "仅适用于 synthetic-orders 构造数据及这里固定的工具定义。"
+            ],
+            "limitations": [],
+            "selector_json_digest": "84307c25615d601b985ce79b14e8ce079da6220a97d383f0e49ef581e2e9702a",
+            "parameter_generator_json_digest": "f53b9009c97851e9e11c55138283f713cba8e772b2ed4fe9738d74e42134b2bb"
+          },
+          "support_refs": [
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "45fa0f820e65680d5c75ff2a961f4764b53766f8bd3a89afbf864501016293e4",
+              "finding_ids": [],
+              "fragment_id": "1",
+              "observation_ids": [
+                "obs:c27f3804b4a2d774ddf767bf38875942d76a79c4bf42bbd57f39ad667b66b02a"
+              ],
+              "unit_ids": [
+                "unit:85209a5e09e7457df044a9c8d436fea37f1d56937a2c4014223d161c3004d214"
+              ],
+              "location_ids": [
+                "loc:d3b06a08c18bee345584342213ac782d24056022111b721aa5ccff0420633b1d"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "2"
+              },
+              "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+              "finding_ids": [],
+              "fragment_id": "2",
+              "observation_ids": [
+                "obs:12dec2e54956e5b5af8da1ff5d752767804406f6c2667813ac02f1a7beb9fccc"
+              ],
+              "unit_ids": [
+                "unit:d0e0db97826c357449ead4a6ec107ac4ca8db7e88bb174c2ccdbd8799a13aada"
+              ],
+              "location_ids": [
+                "loc:8e6d963b6bee5a49b0fa62af138238e56fa78201ff8ee075b1fb4f0afdae9298"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+              "finding_ids": [],
+              "fragment_id": "3",
+              "observation_ids": [
+                "obs:1e1f03980b3ccb92721584fe321a4bc97b4eef181c8b3f4e8d75b31bbff7cac2"
+              ],
+              "unit_ids": [
+                "unit:f9d3bc15a36ed099eb1d64e89fdef64dda978fe20c3beae3b2d15db34ef45837"
+              ],
+              "location_ids": [
+                "loc:40fd9c3c27155f4c9bcdadc8313feafad5faff643b51e0a31372f4b3f63119da"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "4"
+              },
+              "raw_sha256": "ba317c6eb726536c0402f78f92a274e432e1abc5d32355d03aa4e5f1735a75bf",
+              "finding_ids": [],
+              "fragment_id": "4",
+              "observation_ids": [
+                "obs:e0f6b00e79f2101594f15e0883e99b9d2f9c0a5c734ea016325e060699fae864"
+              ],
+              "unit_ids": [
+                "unit:53c8ac066834cb51fef809a633f047dc080bfeef1b2e6233674b33bd11dde7d2"
+              ],
+              "location_ids": [
+                "loc:0ea4cab530d87e997bd7b0b998a6be666f9a049dd228adace3373fb763be77ee"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "5"
+              },
+              "raw_sha256": "bb0a295d193eaf671e89619d9c9c0cda86326b9c20dc1dbd34194f3ded6f784b",
+              "finding_ids": [],
+              "fragment_id": "5",
+              "observation_ids": [
+                "obs:4a0fe99952dd20bd96124a2acc38b33c8d533b2c2bcd82b539b3b2a0b14cb6e3"
+              ],
+              "unit_ids": [
+                "unit:fcf26956931249948eff15a9f8105109fcc01755b494590dbcaee152f1a72708"
+              ],
+              "location_ids": [
+                "loc:66f8ec8fa0ad9447e361346d1df884e1ee253b8eaf73a1844e6aaee6473daa58"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "6"
+              },
+              "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+              "finding_ids": [],
+              "fragment_id": "6",
+              "observation_ids": [
+                "obs:bc37d2b0f8b873053a717e7570959d06c3e2f6a7ed046dc7056fc09546ebabea"
+              ],
+              "unit_ids": [
+                "unit:06736afc960df4ee169636d5d09dc61d7b26be8f928fa373ec91db158d0a7aa8"
+              ],
+              "location_ids": [
+                "loc:fbe4398b0d928b6d74f7c84547fa3a6c7cf59dfce8b79ca84c832b783408a419"
+              ]
+            }
+          ],
+          "matched_set_digest": "8ace61919faa6fe66d930aedfd90896fc549369666e3ec7cec165e9e5af6dc71",
+          "support_set_digest": "ea86fab438dec09ee5206393c4053a92cc470bbfebe427dc6de482a097cfd8c9",
+          "members_complete": true,
+          "impact": {
+            "total_requests": "6",
+            "matched_requests": "6",
+            "matched_checked_requests": "6",
+            "match_complete": true,
+            "modified_requests": "6",
+            "evaluation_complete": true,
+            "count_basis": "raw_body_changed"
+          },
+          "proposal_status": "matched",
+          "preparation_status": "prepared",
+          "evaluation_status": "available",
+          "status": "available",
+          "reason_codes": [],
+          "reason_details": [],
+          "prepared_plan_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "plan:fac391a5a8d131458392feeb99d20230421d8492178e8579a73f353c28ac7174"
+          },
+          "execution_plan_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "plan:fac391a5a8d131458392feeb99d20230421d8492178e8579a73f353c28ac7174"
+          },
+          "evaluation_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "fe4d003d-8c16-48c0-9622-36d3aed74640"
+          },
+          "evaluation_reused": false,
+          "execution_fingerprint": "8a16ac906cd0c90b7961b223a68f1b746fe7f9f8152a40edc87c545fb4b67b42",
+          "evaluation": {
+            "evaluation_id": "fe4d003d-8c16-48c0-9622-36d3aed74640",
+            "plan_id": "plan:fac391a5a8d131458392feeb99d20230421d8492178e8579a73f353c28ac7174",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "stage": "direct_full",
+            "direction": "token_content",
+            "status": "available",
+            "baseline_origin": "original_run_window",
+            "coverage": {
+              "checked": "6",
+              "eligible": "6",
+              "complete": true,
+              "reasons": [],
+              "stop_location": null
+            },
+            "before": {
+              "p": "21582",
+              "h": "0",
+              "c": "21582",
+              "n": "6",
+              "j": "22413"
+            },
+            "after": {
+              "p": "18822",
+              "h": "0",
+              "c": "18822",
+              "n": "6",
+              "j": "19008"
+            },
+            "modified_before": {
+              "p": "21582",
+              "h": "0",
+              "c": "21582",
+              "n": "6",
+              "j": "22413"
+            },
+            "modified_after": {
+              "p": "18822",
+              "h": "0",
+              "c": "18822",
+              "n": "6",
+              "j": "19008"
+            },
+            "manifest_ref": "token_recommendations/1/rows.sqlite3",
+            "reason_codes": []
+          },
+          "display_qualification": "token_evaluated",
+          "example_refs": [
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:23b993df2fa060dabc3bdae05c1ee295c6fa47cbc6524373904552cd29380ec3"
+            },
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:64d0b43826281de8e4950d62396460bd97d1021699882f46adb3937d29ca0e06"
+            },
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:e53464da51826af006ae96c9db8e14f0ac1061b0d9eda8f99e27b14ec68176f1"
+            }
+          ],
+          "display_order": "1",
+          "metrics": {
+            "gain_percentage_points": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "input_tokens_delta": "-2760",
+            "input_tokens_ratio": {
+              "numerator": "-460",
+              "denominator": "3597"
+            },
+            "compute_tokens_delta": "-2760",
+            "compute_tokens_ratio": {
+              "numerator": "-460",
+              "denominator": "3597"
+            }
+          }
+        }
+      },
+      {
+        "id": "rec:b804269a9544c0d2e68dce4d835194b5fbdfc55cfb478e271416e544d4caa569",
+        "data": {
+          "version": "analysis-recommendations-1",
+          "recommendation_id": "rec:b804269a9544c0d2e68dce4d835194b5fbdfc55cfb478e271416e544d4caa569",
+          "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+          "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+          "direction": "token_content",
+          "generator_identity": "token-content-recipes-1",
+          "recipe_key": "recipe:8b5fa9b9eea40c781580b6dc962ef8088a0cc8d5d787ee3fdef019fd08596cfc",
+          "group_basis_digest": "8b5fa9b9eea40c781580b6dc962ef8088a0cc8d5d787ee3fdef019fd08596cfc",
+          "recipe": {
+            "recipe_id": "orders-copy",
+            "revision": "1",
+            "primary_rule": "T3",
+            "category_rules": [
+              "T3"
+            ],
+            "handler_id": "remove_authorized_duplicate_message",
+            "handler_version": "1",
+            "basis": {
+              "kind": "explicit_authorization",
+              "ref": "synthetic-policy:orders-copy",
+              "revision": "1",
+              "digest": "4bbb702c8a8f86a78a08f5a2664a2bab32c03e63f673f3f7413bb116ab9f782f",
+              "authority": {
+                "source_kind": "synthetic_fixture",
+                "source_ref": "orders-copy",
+                "source_digest": "4bbb702c8a8f86a78a08f5a2664a2bab32c03e63f673f3f7413bb116ab9f782f",
+                "status": "verified"
+              },
+              "assumptions": [],
+              "limitations": [
+                "仅为构造策略验证；不代表生产业务授权、质量等价或真实业务收益。"
+              ],
+              "scope_selector_digest": "a5f284814451382b22532c35804db7672e623901eb090ddd6ac0d79d514311fc"
+            },
+            "title": "删除重复粘贴订单全文的普通用户消息",
+            "change_summary": "删除仅包含这份完整订单快照的重复 user 消息；保留最初的汇总指令、query_orders 工具结果和工具调用消息。",
+            "conditions": [
+              "仅适用于 synthetic-orders 构造数据及这里固定的工具定义。"
+            ],
+            "limitations": [],
+            "selector_json_digest": "a5f284814451382b22532c35804db7672e623901eb090ddd6ac0d79d514311fc",
+            "parameter_generator_json_digest": "4052fc321dbbfe04760b434a1e187596a4e2a89ac5f04224a095147fa7864108"
+          },
+          "support_refs": [
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "45fa0f820e65680d5c75ff2a961f4764b53766f8bd3a89afbf864501016293e4",
+              "finding_ids": [],
+              "fragment_id": "1",
+              "observation_ids": [
+                "obs:c27f3804b4a2d774ddf767bf38875942d76a79c4bf42bbd57f39ad667b66b02a"
+              ],
+              "unit_ids": [
+                "unit:6ffe653d37483faa709b018fb9efe9b8bc48d06f07c9db5e26896e6c7cd8b06a"
+              ],
+              "location_ids": [
+                "loc:2e360e922530229fe5a1458f893dc076e6a15462e2824e8245e1788bf3372ac9"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "2"
+              },
+              "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+              "finding_ids": [],
+              "fragment_id": "2",
+              "observation_ids": [
+                "obs:12dec2e54956e5b5af8da1ff5d752767804406f6c2667813ac02f1a7beb9fccc"
+              ],
+              "unit_ids": [
+                "unit:080492dfa96dc144cc5176c6d1d675ff6e6d2536f8b5a6f41632dfc9e10f1ada"
+              ],
+              "location_ids": [
+                "loc:96afa48a81c48a18ce488309e8a0c8a11cdb42c239bf74bfe60c4e2000968fd2"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+              "finding_ids": [],
+              "fragment_id": "3",
+              "observation_ids": [
+                "obs:1e1f03980b3ccb92721584fe321a4bc97b4eef181c8b3f4e8d75b31bbff7cac2"
+              ],
+              "unit_ids": [
+                "unit:9f7d8236f054d49467c43d4eb2740d46f303feae05a83bce8a7d1be722c6c9b9"
+              ],
+              "location_ids": [
+                "loc:23761c1c599068896278012cfc83ebc6f2400eb3f9985853b29afc1fda2cda83"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "4"
+              },
+              "raw_sha256": "ba317c6eb726536c0402f78f92a274e432e1abc5d32355d03aa4e5f1735a75bf",
+              "finding_ids": [],
+              "fragment_id": "4",
+              "observation_ids": [
+                "obs:e0f6b00e79f2101594f15e0883e99b9d2f9c0a5c734ea016325e060699fae864"
+              ],
+              "unit_ids": [
+                "unit:a7228f571b72fc13b59c8e9b5d36ac04ec9b4f236e5d7f755256705d98d6701e"
+              ],
+              "location_ids": [
+                "loc:94c535d8153ec21760a137e3d528df5d6c6cfe4373d27bf8dcde7c29479ff0fc"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "5"
+              },
+              "raw_sha256": "bb0a295d193eaf671e89619d9c9c0cda86326b9c20dc1dbd34194f3ded6f784b",
+              "finding_ids": [],
+              "fragment_id": "5",
+              "observation_ids": [
+                "obs:4a0fe99952dd20bd96124a2acc38b33c8d533b2c2bcd82b539b3b2a0b14cb6e3"
+              ],
+              "unit_ids": [
+                "unit:0fff0750b4ab0905c075a51629b1f2f7f0defd3a28d7875da2cb68d138c11ad3"
+              ],
+              "location_ids": [
+                "loc:ce180ac3d153efcc807449f0f9ed558a439bba920bf049ddbb2ffeca0ee67016"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "6"
+              },
+              "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+              "finding_ids": [],
+              "fragment_id": "6",
+              "observation_ids": [
+                "obs:bc37d2b0f8b873053a717e7570959d06c3e2f6a7ed046dc7056fc09546ebabea"
+              ],
+              "unit_ids": [
+                "unit:fc681711d3192664d27948dc20ca9420da5975d9be488749289b62b1d1d2801e"
+              ],
+              "location_ids": [
+                "loc:c2335c29dd3f158ea04e57cca268f4833c6ce780d02c4dc05cb3333174451ed3"
+              ]
+            }
+          ],
+          "matched_set_digest": "8ace61919faa6fe66d930aedfd90896fc549369666e3ec7cec165e9e5af6dc71",
+          "support_set_digest": "4bc3186eb68828ee8985d646e98fbc4cd803f7effc383c9275c64759a26d52c8",
+          "members_complete": true,
+          "impact": {
+            "total_requests": "6",
+            "matched_requests": "6",
+            "matched_checked_requests": "6",
+            "match_complete": true,
+            "modified_requests": "6",
+            "evaluation_complete": true,
+            "count_basis": "raw_body_changed"
+          },
+          "proposal_status": "matched",
+          "preparation_status": "prepared",
+          "evaluation_status": "available",
+          "status": "available",
+          "reason_codes": [],
+          "reason_details": [],
+          "prepared_plan_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "plan:7bcf009b2b60258299284ad67c9347c4132167fff024513d0f9a09568f06883f"
+          },
+          "execution_plan_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "plan:7bcf009b2b60258299284ad67c9347c4132167fff024513d0f9a09568f06883f"
+          },
+          "evaluation_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "9b563e4b-9910-49d6-8b12-30df6241cf7c"
+          },
+          "evaluation_reused": false,
+          "execution_fingerprint": "567d0c1de6aaaadc5bb8a365b11b35cf5ccf1483f157d96cc05ea70ba30cd960",
+          "evaluation": {
+            "evaluation_id": "9b563e4b-9910-49d6-8b12-30df6241cf7c",
+            "plan_id": "plan:7bcf009b2b60258299284ad67c9347c4132167fff024513d0f9a09568f06883f",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "stage": "direct_full",
+            "direction": "token_content",
+            "status": "available",
+            "baseline_origin": "original_run_window",
+            "coverage": {
+              "checked": "6",
+              "eligible": "6",
+              "complete": true,
+              "reasons": [],
+              "stop_location": null
+            },
+            "before": {
+              "p": "21582",
+              "h": "0",
+              "c": "21582",
+              "n": "6",
+              "j": "22413"
+            },
+            "after": {
+              "p": "18768",
+              "h": "0",
+              "c": "18768",
+              "n": "6",
+              "j": "19062"
+            },
+            "modified_before": {
+              "p": "21582",
+              "h": "0",
+              "c": "21582",
+              "n": "6",
+              "j": "22413"
+            },
+            "modified_after": {
+              "p": "18768",
+              "h": "0",
+              "c": "18768",
+              "n": "6",
+              "j": "19062"
+            },
+            "manifest_ref": "token_recommendations/2/rows.sqlite3",
+            "reason_codes": []
+          },
+          "display_qualification": "token_evaluated",
+          "example_refs": [
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:a51fff178bd42643fdcdd5fa06f953623d5edadd9aef612d4712491d615aac68"
+            },
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:44aed13649061168cb14dfcb39b3434d48c026ace616c13b70bf46039a4d66fe"
+            },
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:f41641c98314ecb773de95cee8b05f4c745a074e0ceefa93c9b8df80c22f20ae"
+            }
+          ],
+          "display_order": "2",
+          "metrics": {
+            "gain_percentage_points": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "input_tokens_delta": "-2814",
+            "input_tokens_ratio": {
+              "numerator": "-469",
+              "denominator": "3597"
+            },
+            "compute_tokens_delta": "-2814",
+            "compute_tokens_ratio": {
+              "numerator": "-469",
+              "denominator": "3597"
+            }
+          }
+        }
+      },
+      {
+        "id": "rec:4a12f952c6d8f49ddd903247310c23cc8409c4322537d1a15e469b1332d56048",
+        "data": {
+          "version": "analysis-recommendations-1",
+          "recommendation_id": "rec:4a12f952c6d8f49ddd903247310c23cc8409c4322537d1a15e469b1332d56048",
+          "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+          "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+          "direction": "token_content",
+          "generator_identity": "token-content-recipes-1",
+          "recipe_key": "recipe:8bf83d460ec6422c0332e4886b008fb796fa9412357d353588081c48bc8cab07",
+          "group_basis_digest": "8bf83d460ec6422c0332e4886b008fb796fa9412357d353588081c48bc8cab07",
+          "recipe": {
+            "recipe_id": "orders-retention",
+            "revision": "1",
+            "primary_rule": "T4",
+            "category_rules": [
+              "T4"
+            ],
+            "handler_id": "apply_retention_replacements",
+            "handler_version": "1",
+            "basis": {
+              "kind": "business_policy",
+              "ref": "synthetic-policy:orders-retention",
+              "revision": "1",
+              "digest": "f557601a9cd797a935a6e9d3b676265bc0e3644827a7a71b125ee60157d45c1e",
+              "authority": {
+                "source_kind": "synthetic_fixture",
+                "source_ref": "orders-retention",
+                "source_digest": "f557601a9cd797a935a6e9d3b676265bc0e3644827a7a71b125ee60157d45c1e",
+                "status": "verified"
+              },
+              "assumptions": [],
+              "limitations": [
+                "仅为构造策略验证；不代表生产业务授权、质量等价或真实业务收益。"
+              ],
+              "scope_selector_digest": "82013beab6ba9170d0316af1e1a9046adf8d4f1a678efb866ae768332c345390"
+            },
+            "title": "保留最近1份订单查询结果，替换较早结果",
+            "change_summary": "在同一请求中保留 query_orders 最近1份完整结果；较早结果替换为 {\"omitted\":true,\"reason\":\"较早订单快照已省略\"}，保留工具消息与调用关系。",
+            "conditions": [
+              "仅适用于 synthetic-orders 构造数据及这里固定的工具定义。"
+            ],
+            "limitations": [],
+            "selector_json_digest": "82013beab6ba9170d0316af1e1a9046adf8d4f1a678efb866ae768332c345390",
+            "parameter_generator_json_digest": "742bf87279679e964c55fc3e7fd920116f45758595f12bc0f485b4f50c2426bf"
+          },
+          "support_refs": [
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "45fa0f820e65680d5c75ff2a961f4764b53766f8bd3a89afbf864501016293e4",
+              "finding_ids": [],
+              "fragment_id": "1",
+              "observation_ids": [
+                "obs:91ce535526b509b8fb46fd0f0d8af781b25ccc436a301c7a46b00f34d341389d"
+              ],
+              "unit_ids": [
+                "unit:afebbd26b0c1c1f5987a9a13999fba512fea4e45ff2a80264c50afc2a53ac183"
+              ],
+              "location_ids": [
+                "loc:545a43f5bff8e7a017f355594b9fd9c85c7b2909c3fcb10072d0aa2f2c1d8946"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "2"
+              },
+              "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+              "finding_ids": [],
+              "fragment_id": "2",
+              "observation_ids": [
+                "obs:6468efceefd4f7d0caeba53f5b063b98f9a68f7e866d7b44e453fb807f3cebde"
+              ],
+              "unit_ids": [
+                "unit:4e0a54080f413b0cff028331c3728943c090201ca3e6327ee3ea43ce6376ad61"
+              ],
+              "location_ids": [
+                "loc:2785eb666695c4cc567e0b547689ae3a98d5bf7870e71931a0b0268c1ee2f77d"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+              "finding_ids": [],
+              "fragment_id": "3",
+              "observation_ids": [
+                "obs:39cad100123057e7decdfb6ce8c7c0cc6bdc1f1bcfc459ced56035cafceb054a"
+              ],
+              "unit_ids": [
+                "unit:7d0f48ed34cf63499e2d1ac7e0d0751409047d8ffe5a7f7a46a4c9118f1255e4"
+              ],
+              "location_ids": [
+                "loc:4959f916f2ba2920a77c6db3cbe342e579e894e6c87f5193240aa4dbc3652ec1"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "4"
+              },
+              "raw_sha256": "ba317c6eb726536c0402f78f92a274e432e1abc5d32355d03aa4e5f1735a75bf",
+              "finding_ids": [],
+              "fragment_id": "4",
+              "observation_ids": [
+                "obs:0f38f49583cee6223fb8beeb68cd63ed321f5745fd52081f81664acae9ef3665"
+              ],
+              "unit_ids": [
+                "unit:f98b24251b34b7fdf3069168a24cbf551185c277185a768d2128e2bd8d9a1040"
+              ],
+              "location_ids": [
+                "loc:f0b501f02142536de16a6544641383f20d9280f7ef5c6881398b92ca77a40b87"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "5"
+              },
+              "raw_sha256": "bb0a295d193eaf671e89619d9c9c0cda86326b9c20dc1dbd34194f3ded6f784b",
+              "finding_ids": [],
+              "fragment_id": "5",
+              "observation_ids": [
+                "obs:b100e1eeb6261da0777782773feef92f3a36c702b4eccfd3b3e475b715538f5f"
+              ],
+              "unit_ids": [
+                "unit:71b7d4c64f21078cbf2c77302796fadb3a92e7178ff746ebc01b556449bab851"
+              ],
+              "location_ids": [
+                "loc:03298fbbf05c3a5c61321daf96e2be4ab8f689c17d0625b166f9b86cfe609e6c"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+              "request_key": {
+                "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                "source_record_index": "6"
+              },
+              "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+              "finding_ids": [],
+              "fragment_id": "6",
+              "observation_ids": [
+                "obs:a55eb64875676f8ed19f05df962af1f2af10bc0f44b3b7297bbd0f4211eb292d"
+              ],
+              "unit_ids": [
+                "unit:e586b178abc945144de37b2d1be6d59594cf5655f116077add6ea3c18f9988a8"
+              ],
+              "location_ids": [
+                "loc:7838847cac17305d93d3ef43c556a431752325cd9ca49888464bc019a378eddc"
+              ]
+            }
+          ],
+          "matched_set_digest": "8ace61919faa6fe66d930aedfd90896fc549369666e3ec7cec165e9e5af6dc71",
+          "support_set_digest": "8a3c6ef5ba6f3a5a79d7f7837d6bfd95f1a89de56448456256f817c5078499c3",
+          "members_complete": true,
+          "impact": {
+            "total_requests": "6",
+            "matched_requests": "6",
+            "matched_checked_requests": "6",
+            "match_complete": true,
+            "modified_requests": "6",
+            "evaluation_complete": true,
+            "count_basis": "raw_body_changed"
+          },
+          "proposal_status": "matched",
+          "preparation_status": "prepared",
+          "evaluation_status": "available",
+          "status": "available",
+          "reason_codes": [],
+          "reason_details": [],
+          "prepared_plan_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "plan:305b294638a03cf46d0f24673f591a49b8607aeab62a54c9454dd05835e34998"
+          },
+          "execution_plan_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "plan:305b294638a03cf46d0f24673f591a49b8607aeab62a54c9454dd05835e34998"
+          },
+          "evaluation_ref": {
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "id": "164d65c7-0a51-46ab-9805-2029e9fb65b0"
+          },
+          "evaluation_reused": false,
+          "execution_fingerprint": "71ce62a9ab9f8a4091583b75df9a9ed19dcbce3e9ec98e48040e55415c5307c8",
+          "evaluation": {
+            "evaluation_id": "164d65c7-0a51-46ab-9805-2029e9fb65b0",
+            "plan_id": "plan:305b294638a03cf46d0f24673f591a49b8607aeab62a54c9454dd05835e34998",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "stage": "direct_full",
+            "direction": "token_content",
+            "status": "available",
+            "baseline_origin": "original_run_window",
+            "coverage": {
+              "checked": "6",
+              "eligible": "6",
+              "complete": true,
+              "reasons": [],
+              "stop_location": null
+            },
+            "before": {
+              "p": "21582",
+              "h": "0",
+              "c": "21582",
+              "n": "6",
+              "j": "22413"
+            },
+            "after": {
+              "p": "18828",
+              "h": "0",
+              "c": "18828",
+              "n": "6",
+              "j": "19140"
+            },
+            "modified_before": {
+              "p": "21582",
+              "h": "0",
+              "c": "21582",
+              "n": "6",
+              "j": "22413"
+            },
+            "modified_after": {
+              "p": "18828",
+              "h": "0",
+              "c": "18828",
+              "n": "6",
+              "j": "19140"
+            },
+            "manifest_ref": "token_recommendations/3/rows.sqlite3",
+            "reason_codes": []
+          },
+          "display_qualification": "token_evaluated",
+          "example_refs": [
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:bcbc5a3526f10051e68f087f183015fd10a7fc8d5cb160dd7b8f118a83519b18"
+            },
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:a93d3c7b057a80bb2fcf48a4739e59da5bfbb146769f9cad0abcb3c145a58583"
+            },
+            {
+              "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+              "id": "example:b5ab08d760fbf1faa5c7a816aec386c044f8d4c273bdf4ef9cac3a6cef43dcb6"
+            }
+          ],
+          "display_order": "3",
+          "metrics": {
+            "gain_percentage_points": {
+              "numerator": "0",
+              "denominator": "1"
+            },
+            "input_tokens_delta": "-2754",
+            "input_tokens_ratio": {
+              "numerator": "-153",
+              "denominator": "1199"
+            },
+            "compute_tokens_delta": "-2754",
+            "compute_tokens_ratio": {
+              "numerator": "-153",
+              "denominator": "1199"
+            }
+          }
+        }
+      }
+    ],
+    "offset": "0",
+    "next_offset": null
+  },
+  "selected_actual_examples": {
+    "/diagnostics/tasks/4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633/recommendations/rec:8560b5bf370566a7615483f72679df7c3c7d388fca701b84636bf1512bc98995/examples": {
+      "version": "analysis-recommendations-1",
+      "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+      "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+      "items": [
+        {
+          "id": "example:55d4bd467b61e7e0b1f87cfb7437ea8f0815d489a8733890c7f98ea61720de59",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:55d4bd467b61e7e0b1f87cfb7437ea8f0815d489a8733890c7f98ea61720de59",
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "owner_id": "rec:8560b5bf370566a7615483f72679df7c3c7d388fca701b84636bf1512bc98995",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "45fa0f820e65680d5c75ff2a961f4764b53766f8bd3a89afbf864501016293e4",
+                "source_pointer": "/messages/3/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "3331",
+                "end": "4165"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "810"
+              },
+              "excerpt": "[{\\\"order_id\\\": \\\"DEMO-001\\\", \\\"status\\\": \\\"已发货\\\", \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\"}, {\\\"order_id\\\": \\\"DEMO-002\\\", \\\"status\\\": \\\"待发货\\\", \\\"debug_log\\\": \\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\"}]",
+              "context_before": "unction\", \"function\": {\"name\": \"query_orders\", \"arguments\": \"{}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"old-query\", \"content\": \"",
+              "context_after": "\"}, {\"role\": \"assistant\", \"content\": \"\", \"tool_calls\": [{\"id\": \"latest-query\", \"type\": \"function\", \"function\": {\"name\": \"query_o",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "63d0bc3843373963a428e6303db0db93d3f14898ce19bb92daa5c05cd0aeae3a",
+                "source_pointer": "/messages/3/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "3278",
+                "end": "3373"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "79"
+              },
+              "excerpt": "[{\\\"order_id\\\":\\\"DEMO-001\\\",\\\"status\\\":\\\"已发货\\\"},{\\\"order_id\\\":\\\"DEMO-002\\\",\\\"status\\\":\\\"待发货\\\"}]",
+              "context_before": "\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"old-query\",\"content\":\"",
+              "context_after": "\"},{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"latest-query\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"argu",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "comparison": null
+          }
+        },
+        {
+          "id": "example:114d67e10169874dd798e17ffb0758865986675500374ed5d7813dd541e551d3",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:114d67e10169874dd798e17ffb0758865986675500374ed5d7813dd541e551d3",
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "owner_id": "rec:8560b5bf370566a7615483f72679df7c3c7d388fca701b84636bf1512bc98995",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "2"
+                },
+                "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+                "source_pointer": "/messages/3/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "3331",
+                "end": "4214"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "848"
+              },
+              "excerpt": "[\\n  {\\n    \\\"order_id\\\": \\\"DEMO-001\\\",\\n    \\\"status\\\": \\\"已发货\\\",\\n    \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\"\\n  },\\n  {\\n    \\\"order_id\\\": \\\"DEMO-002\\\",\\n    \\\"status\\\": \\\"待发货\\\",\\n    \\\"debug_log\\\": \\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\"\\n  }\\n]",
+              "context_before": "unction\", \"function\": {\"name\": \"query_orders\", \"arguments\": \"{}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"old-query\", \"content\": \"",
+              "context_after": "\"}, {\"role\": \"assistant\", \"content\": \"\", \"tool_calls\": [{\"id\": \"latest-query\", \"type\": \"function\", \"function\": {\"name\": \"query_o",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "2"
+                },
+                "raw_sha256": "286b76de83c9bd1e0c2ce7f5d941dcb99ed2cf63146b81b51cae9b9f2ad161c3",
+                "source_pointer": "/messages/3/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "3278",
+                "end": "3373"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "79"
+              },
+              "excerpt": "[{\\\"order_id\\\":\\\"DEMO-001\\\",\\\"status\\\":\\\"已发货\\\"},{\\\"order_id\\\":\\\"DEMO-002\\\",\\\"status\\\":\\\"待发货\\\"}]",
+              "context_before": "\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"old-query\",\"content\":\"",
+              "context_after": "\"},{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"latest-query\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"argu",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "comparison": null
+          }
+        },
+        {
+          "id": "example:c5730828eb2a31f4ca7506f1ad2522992b82e04664348cecaead003e510284fd",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:c5730828eb2a31f4ca7506f1ad2522992b82e04664348cecaead003e510284fd",
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "owner_id": "rec:8560b5bf370566a7615483f72679df7c3c7d388fca701b84636bf1512bc98995",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+                "source_pointer": "/messages/3/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "3331",
+                "end": "4165"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "810"
+              },
+              "excerpt": "[{\\\"order_id\\\": \\\"DEMO-001\\\", \\\"status\\\": \\\"已发货\\\", \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\"}, {\\\"order_id\\\": \\\"DEMO-002\\\", \\\"status\\\": \\\"待发货\\\", \\\"debug_log\\\": \\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\"}]",
+              "context_before": "unction\", \"function\": {\"name\": \"query_orders\", \"arguments\": \"{}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"old-query\", \"content\": \"",
+              "context_after": "\"}, {\"role\": \"assistant\", \"content\": \"\", \"tool_calls\": [{\"id\": \"latest-query\", \"type\": \"function\", \"function\": {\"name\": \"query_o",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "6cb1902805b61ea63b24bd38d6ecf4d5fe27e7124fc111c11bd5e1bde68f53c6",
+                "source_pointer": "/messages/3/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "3278",
+                "end": "3373"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "79"
+              },
+              "excerpt": "[{\\\"order_id\\\":\\\"DEMO-001\\\",\\\"status\\\":\\\"已发货\\\"},{\\\"order_id\\\":\\\"DEMO-002\\\",\\\"status\\\":\\\"待发货\\\"}]",
+              "context_before": "\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"old-query\",\"content\":\"",
+              "context_after": "\"},{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"latest-query\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"argu",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "comparison": null
+          }
+        }
+      ],
+      "next_offset": null
+    },
+    "/diagnostics/tasks/4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633/recommendations/rec:d17fdf64851377f247b3890f556127bd0ade35b5e69cc4a2369322f373dc1b2e/examples": {
+      "version": "analysis-recommendations-1",
+      "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+      "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+      "items": [
+        {
+          "id": "example:fc3a3e4ae46b4824545da9001f8524695cd588f59dac1993d7098c33b55a238b",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:fc3a3e4ae46b4824545da9001f8524695cd588f59dac1993d7098c33b55a238b",
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "owner_id": "rec:d17fdf64851377f247b3890f556127bd0ade35b5e69cc4a2369322f373dc1b2e",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "45fa0f820e65680d5c75ff2a961f4764b53766f8bd3a89afbf864501016293e4",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "7",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "347",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "7",
+                "end": "26"
+              },
+              "excerpt": "2026-11-01 09:00:00",
+              "context_before": "{\"type\": \"string\"}, \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 ",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "db2323bf59374feeaad4fc0ec9aa179bb22f6f07f85c50b7ec5b6804dc58cc8b",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "7",
+                  "end": "7"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "318",
+                "end": "318"
+              },
+              "decoded_span": {
+                "start": "7",
+                "end": "7"
+              },
+              "excerpt": "",
+              "context_before": "\"document\":{\"type\":\"string\"},\"document_ref\":{\"type\":\"string\"}},\"required\":[]}}}],\"messages\":[{\"role\":\"system\",\"content\":\"构造采样时间 ",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "comparison": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "25",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "365",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "25",
+                "end": "26"
+              },
+              "excerpt": "2",
+              "context_before": ", \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 2026-11-01 09:00:0",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            }
+          }
+        },
+        {
+          "id": "example:3698b5bbc6d860140e375bee92fe01372e7f435637bf5ab7cecb9a504ac80d89",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:3698b5bbc6d860140e375bee92fe01372e7f435637bf5ab7cecb9a504ac80d89",
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "owner_id": "rec:d17fdf64851377f247b3890f556127bd0ade35b5e69cc4a2369322f373dc1b2e",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "2"
+                },
+                "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "7",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "347",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "7",
+                "end": "26"
+              },
+              "excerpt": "2026-11-01 09:00:01",
+              "context_before": "{\"type\": \"string\"}, \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 ",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "2"
+                },
+                "raw_sha256": "e299221273d1ae0cd5826771a7aea0e80d1cea48c0b9ff4e5937abed3a9af080",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "7",
+                  "end": "7"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "318",
+                "end": "318"
+              },
+              "decoded_span": {
+                "start": "7",
+                "end": "7"
+              },
+              "excerpt": "",
+              "context_before": "\"document\":{\"type\":\"string\"},\"document_ref\":{\"type\":\"string\"}},\"required\":[]}}}],\"messages\":[{\"role\":\"system\",\"content\":\"构造采样时间 ",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "comparison": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "5"
+                },
+                "raw_sha256": "bb0a295d193eaf671e89619d9c9c0cda86326b9c20dc1dbd34194f3ded6f784b",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "25",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "365",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "25",
+                "end": "26"
+              },
+              "excerpt": "4",
+              "context_before": ", \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 2026-11-01 09:00:0",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            }
+          }
+        },
+        {
+          "id": "example:5ce491eceeef1c20376ddb0f6f082d1d2068fb721ce4d566e13c78eb69bde2f4",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:5ce491eceeef1c20376ddb0f6f082d1d2068fb721ce4d566e13c78eb69bde2f4",
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "owner_id": "rec:d17fdf64851377f247b3890f556127bd0ade35b5e69cc4a2369322f373dc1b2e",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "7",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "347",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "7",
+                "end": "26"
+              },
+              "excerpt": "2026-11-01 09:00:02",
+              "context_before": "{\"type\": \"string\"}, \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 ",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "db2323bf59374feeaad4fc0ec9aa179bb22f6f07f85c50b7ec5b6804dc58cc8b",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "7",
+                  "end": "7"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "318",
+                "end": "318"
+              },
+              "decoded_span": {
+                "start": "7",
+                "end": "7"
+              },
+              "excerpt": "",
+              "context_before": "\"document\":{\"type\":\"string\"},\"document_ref\":{\"type\":\"string\"}},\"required\":[]}}}],\"messages\":[{\"role\":\"system\",\"content\":\"构造采样时间 ",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "comparison": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "6"
+                },
+                "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "25",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "365",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "25",
+                "end": "26"
+              },
+              "excerpt": "5",
+              "context_before": ", \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 2026-11-01 09:00:0",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            }
+          }
+        }
+      ],
+      "next_offset": null
+    },
+    "/diagnostics/tasks/4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633/difference-groups/diff:e1ffd9070eb25c7f0a011ff45e7d769f3c84976df53a332175b9ca89b3174642/examples": {
+      "version": "analysis-recommendations-1",
+      "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+      "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+      "items": [
+        {
+          "id": "example:28bd129ba985ec0bc922c75e4b4caefd4428b992b94a0dba7fb938613cd12ace",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:28bd129ba985ec0bc922c75e4b4caefd4428b992b94a0dba7fb938613cd12ace",
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "owner_id": "diff:e1ffd9070eb25c7f0a011ff45e7d769f3c84976df53a332175b9ca89b3174642",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "2"
+                },
+                "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "25",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "365",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "25",
+                "end": "26"
+              },
+              "excerpt": "1",
+              "context_before": ", \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 2026-11-01 09:00:0",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": null,
+            "comparison": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "6"
+                },
+                "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "25",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "365",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "25",
+                "end": "26"
+              },
+              "excerpt": "5",
+              "context_before": ", \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 2026-11-01 09:00:0",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            }
+          }
+        },
+        {
+          "id": "example:3e7b64c215744091af339261db878c4e88fffc5d0fb03b72255b739e96c7b55a",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:3e7b64c215744091af339261db878c4e88fffc5d0fb03b72255b739e96c7b55a",
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "owner_id": "diff:e1ffd9070eb25c7f0a011ff45e7d769f3c84976df53a332175b9ca89b3174642",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "4"
+                },
+                "raw_sha256": "ba317c6eb726536c0402f78f92a274e432e1abc5d32355d03aa4e5f1735a75bf",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "25",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "365",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "25",
+                "end": "26"
+              },
+              "excerpt": "3",
+              "context_before": ", \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 2026-11-01 09:00:0",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": null,
+            "comparison": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "6"
+                },
+                "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "25",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "365",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "25",
+                "end": "26"
+              },
+              "excerpt": "5",
+              "context_before": ", \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 2026-11-01 09:00:0",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            }
+          }
+        },
+        {
+          "id": "example:c4353aeff36dd6e23b43e3158ed628e2b3ba5cada18f029af2cea538e6699506",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:c4353aeff36dd6e23b43e3158ed628e2b3ba5cada18f029af2cea538e6699506",
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "owner_id": "diff:e1ffd9070eb25c7f0a011ff45e7d769f3c84976df53a332175b9ca89b3174642",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "2"
+                },
+                "raw_sha256": "94d0ef866da71636e8a5014fd2cbeb6a87ac86b9c5291aabe0fbec2ba404d155",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "25",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "365",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "25",
+                "end": "26"
+              },
+              "excerpt": "1",
+              "context_before": ", \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 2026-11-01 09:00:0",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": null,
+            "comparison": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "4"
+                },
+                "raw_sha256": "ba317c6eb726536c0402f78f92a274e432e1abc5d32355d03aa4e5f1735a75bf",
+                "source_pointer": "/messages/0/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "25",
+                  "end": "26"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "365",
+                "end": "366"
+              },
+              "decoded_span": {
+                "start": "25",
+                "end": "26"
+              },
+              "excerpt": "3",
+              "context_before": ", \"document_ref\": {\"type\": \"string\"}}, \"required\": []}}}], \"messages\": [{\"role\": \"system\", \"content\": \"构造采样时间 2026-11-01 09:00:0",
+              "context_after": "\\n稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；稳定订单汇总规则；",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            }
+          }
+        }
+      ],
+      "next_offset": null
+    },
+    "/diagnostics/tasks/4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633/difference-groups/diff:87646e944b7e99c7f718e3205fdf4d1ab01bf0af5c177ef6cf5763c276c69d90/examples": {
+      "version": "analysis-recommendations-1",
+      "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+      "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+      "items": [
+        {
+          "id": "example:9427e2193520860fa37931b1164f5553213cd75dbae2b680e774cc236365e686",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:9427e2193520860fa37931b1164f5553213cd75dbae2b680e774cc236365e686",
+            "task_id": "4f5a4bd6-c09e-4ac4-a5aa-9f5fdd832633",
+            "scope_id": "scope:1933454c2c53157fb810a68e7c76a3a6ca1effd1dd84db5468bb4d25524de868",
+            "owner_id": "diff:87646e944b7e99c7f718e3205fdf4d1ab01bf0af5c177ef6cf5763c276c69d90",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "b3b1d14749d31dbe237d87b84343de1810b79ba877bad76ec93f6bc4e41b9e30",
+                "source_pointer": "/messages/3/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "1",
+                  "end": "809"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "3332",
+                "end": "4164"
+              },
+              "decoded_span": {
+                "start": "1",
+                "end": "809"
+              },
+              "excerpt": "{\\\"order_id\\\": \\\"DEMO-001\\\", \\\"status\\\": \\\"已发货\\\", \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\"}, {\\\"order_id\\\": \\\"DEMO-002\\\", \\\"status\\\": \\\"待发货\\\", \\\"debug_log\\\": \\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\"}",
+              "context_before": "nction\", \"function\": {\"name\": \"query_orders\", \"arguments\": \"{}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"old-query\", \"content\": \"[",
+              "context_after": "]\"}, {\"role\": \"assistant\", \"content\": \"\", \"tool_calls\": [{\"id\": \"latest-query\", \"type\": \"function\", \"function\": {\"name\": \"query_",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": null,
+            "comparison": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "3e59424e-37a2-45d3-b949-1ce37dc3452a",
+                  "source_record_index": "6"
+                },
+                "raw_sha256": "40656789e8f8c802c1a51fb728b3b18be1be7df973116399927998e0116321cc",
+                "source_pointer": "/messages/3/content",
+                "embedded": null,
+                "text_range": {
+                  "start": "1",
+                  "end": "847"
+                }
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "3332",
+                "end": "4213"
+              },
+              "decoded_span": {
+                "start": "1",
+                "end": "847"
+              },
+              "excerpt": "\\n  {\\n    \\\"order_id\\\": \\\"DEMO-001\\\",\\n    \\\"status\\\": \\\"已发货\\\",\\n    \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\"\\n  },\\n  {\\n    \\\"order_id\\\": \\\"DEMO-002\\\",\\n    \\\"status\\\": \\\"待发货\\\",\\n    \\\"debug_log\\\": \\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\"\\n  }\\n",
+              "context_before": "nction\", \"function\": {\"name\": \"query_orders\", \"arguments\": \"{}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"old-query\", \"content\": \"[",
+              "context_after": "]\"}, {\"role\": \"assistant\", \"content\": \"\", \"tool_calls\": [{\"id\": \"latest-query\", \"type\": \"function\", \"function\": {\"name\": \"query_",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            }
+          }
+        }
+      ],
+      "next_offset": null
+    }
+  }
+}

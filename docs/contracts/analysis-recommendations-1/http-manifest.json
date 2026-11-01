@@ -1,0 +1,7 @@
+{
+  "version": "analysis-recommendations-1",
+  "files": {
+    "public-views.json": "d22400804ca91cbde6124488416c4aad988cb15401a5c90b9d8d6468cde4de01"
+  },
+  "note": "Public GET recipe summaries omit private selector/generator/basis scope JSON."
+}

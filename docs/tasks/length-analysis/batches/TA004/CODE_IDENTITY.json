@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "session_id": "01a18fcd-0464-7cf1-b435-4f394bd33e66",
+  "contract": "analysis-common-1.0",
+  "identity_kind": "shared_worktree_snapshot_not_release",
+  "files": [
+    {
+      "path": "env/encoding-assets.lock.json",
+      "sha256": "be74503d8a507066cb7a3d6797ba6481b0b9fd716bbbfcff8003c3cddd4e5c98"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/contracts.py",
+      "sha256": "727682c816941156f7c9317bd76d18e76225d4b5c3b24f5be2d47ee64b655139"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/encoding.py",
+      "sha256": "b0790044bbbc474c4390bd8300ccae0462cf0cd68e5e0db9957573af794d8b54"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/evaluation.py",
+      "sha256": "ce4a6d3f53d4ed4854e6e29d9f82ea4f1ac12d7e5d647bc1304b27fa462c8ee8"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/modifications.py",
+      "sha256": "eb5525f97886e29c4fd51edb0c589caae130aba158e6c664b6ab8206d7d19f33"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/plugins.py",
+      "sha256": "87d580f14c460d4f13cdf53929e6b59bf90884c5a89e8dcc564b327173ba0c8d"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/source.py",
+      "sha256": "036ea9346441707dc5569e30e6b549d2d90aa4bc20282f8823cb02e0f2e42413"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/wire.py",
+      "sha256": "1cae6722ce0a708fbf4ac6d920cd209dbd9d9f14e00bb77c11c44dd321d2ca63"
+    },
+    {
+      "path": "src/tokenscope/token_content/__init__.py",
+      "sha256": "1cef1a362e9130de361a674ffaa00bf0e2b95eaacc0be3f59fc97fb8e232e429"
+    },
+    {
+      "path": "src/tokenscope/token_content/candidates.py",
+      "sha256": "981d217a6c8ce64cd4f1f8f7b62f489085c47042abca223dd54f92098f7b8806"
+    },
+    {
+      "path": "src/tokenscope/token_content/duplicates.py",
+      "sha256": "1229d032470ea5fc5c88c8fed671c1323265abf6832a1f63954a36e26983d282"
+    },
+    {
+      "path": "src/tokenscope/token_content/extraction.py",
+      "sha256": "0bc914470882ab975398ca6a25b9e01bbe0d690cf2373927000ecd5c52426b87"
+    },
+    {
+      "path": "src/tokenscope/token_content/json_values.py",
+      "sha256": "1ce12c48d987e0abe834e468e61a7d483abc99f8719d071eaf9a6327f64bc076"
+    },
+    {
+      "path": "src/tokenscope/token_content/measurements.py",
+      "sha256": "644600007aeb82c1f7c78f54d6630c8b1d082c30eec1463167110187d21ec742"
+    },
+    {
+      "path": "src/tokenscope/token_content/plugin.py",
+      "sha256": "06339caa8d89bb529f06a25f75a118d3908cec11450fb31d34eec4e18df63762"
+    },
+    {
+      "path": "src/tokenscope/token_content/policies.py",
+      "sha256": "4cf1d5c78be470e41a2d90af0455111fee3570eead8b19d80f6ce003552a7768"
+    },
+    {
+      "path": "src/tokenscope/token_content/rules.py",
+      "sha256": "80d8469c10bc120131a8d02e1ac1be2c5c877686ca6e831e25be8c4d0b27613b"
+    },
+    {
+      "path": "src/tokenscope/token_content/stops.py",
+      "sha256": "68ef0d559a5d535317a94620a56e444351973e05f1b9abfa00ef7d8afc8ef719"
+    },
+    {
+      "path": "src/tokenscope/token_content/transformations.py",
+      "sha256": "d0ab11e3b9d39e6cba83467092b36f6edd8c7edad101443e2ca6e4d0fa752113"
+    },
+    {
+      "path": "tests/integration/token_content/test_real_handlers.py",
+      "sha256": "f54663a4b07179531e2460f46ee54440b0748861c0f5ac1973090a4993c65c9f"
+    },
+    {
+      "path": "tests/unit/token_content/test_common_baseline.py",
+      "sha256": "22ee779d16ae710d0fc096d7069d1d8622a2d8d13e3c0658e7c0a4bd7611b39f"
+    },
+    {
+      "path": "tests/unit/token_content/test_duplicates_plugin.py",
+      "sha256": "420fad2b537bdbd89ca94f2755ba973687bf2cfe816b793534121acc92f084f4"
+    },
+    {
+      "path": "tests/unit/token_content/test_extraction.py",
+      "sha256": "8a2cbcb003afad9050bb9b3bf0cbd99ed55bcbd4b91dd62ce948ffde94dac696"
+    },
+    {
+      "path": "tests/unit/token_content/test_h0_consumption.py",
+      "sha256": "c431434e9bd26721b65bba2e0f86dc3035e050b26d9c7260db8c438d645adf5a"
+    },
+    {
+      "path": "tests/unit/token_content/test_rules.py",
+      "sha256": "c493f7cd6108817198b940adaca53c14288bb68829d61c204b4388cfce39dc96"
+    },
+    {
+      "path": "tests/unit/token_content/test_transformations.py",
+      "sha256": "68e4c973caa1fc06c2b28d690564bbd186bf1d6d2dda804bf9eeb88f211c13f7"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-01",
+  "session": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "candidate": "arpc-local-4",
+  "decision": "passed_scoped_backend_review",
+  "closed": [
+    "PCR-01",
+    "PCR-02"
+  ],
+  "final_source_drift": false,
+  "final_pytest": {
+    "public_prefix": 146,
+    "independent_edges": 4,
+    "token_affected": 6
+  },
+  "rv1_get_routes": 215,
+  "original_rv1_files_unchanged": 84,
+  "head": "5d824b506d9e055bcf397c3846dafc450fcf02e5",
+  "evidence_sha256": {
+    "artifacts/reviews/prefix-common-independent-20261101/identity.json": "ba298486ebc55c8ec671cf7d156d378638809652804a6a0c283132c9df27ac8b",
+    "artifacts/reviews/prefix-common-independent-20261101/fix-identity-verification.json": "0c8b8dd07a34e9f6e67dfb4461e3560b6f3237d8d2f6865f83dc444708b68163",
+    "artifacts/reviews/prefix-common-independent-20261101/environment.json": "0aa8a624f1b031133b35d39f9e97ad273e6048ff358e7d318008a93b27553d5d",
+    "artifacts/reviews/prefix-common-independent-20261101/checks.json": "885497fe881d8af271f2943a0af21d20b912114925fa6b0e93b68faf8b4a8850",
+    "artifacts/reviews/prefix-common-independent-20261101/check-0.log": "84eb3a8afafb905dd78541521b9caad66fad305c72da88f91a5db4c789dc30d9",
+    "artifacts/reviews/prefix-common-independent-20261101/compat.json": "a4a040a9ef364c06c9d4fdaef3a0af7fa5d62cc1c4a09116728e0ef42bfb8630",
+    "artifacts/reviews/prefix-common-independent-20261101/compat.log": "4940560b52988793d0d4a18dcca2bae8efd389161106ecc3974b840ea7493266",
+    "artifacts/reviews/prefix-common-independent-20261101/edge.log": "72bc1463204609312a419275b7d605288e625dc8e8f3fa899004453db78a986e",
+    "artifacts/reviews/prefix-common-independent-20261101/partial.log": "65eaf7877310a47f4dbf640f67f68dca1e2137239031828ba91e069ea9e9b77f",
+    "artifacts/reviews/prefix-common-independent-20261101/final-start-identity.json": "40ea069f5027cbd630c84076613cdd8624d6b6137960ad96eda5b58214e6713a",
+    "artifacts/reviews/prefix-common-independent-20261101/final-end-identity.json": "40ea069f5027cbd630c84076613cdd8624d6b6137960ad96eda5b58214e6713a",
+    "artifacts/reviews/prefix-common-independent-20261101/final-checks.json": "76e6a1bedd32b5e1f5fb76ea89bded84212142d367b0ac4b122f57cd4776dbf9",
+    "artifacts/reviews/prefix-common-independent-20261101/final-0.log": "4880f0eab428197def952f3afc966a5debd86d185d616d8a48458d13a6d76612",
+    "artifacts/reviews/prefix-common-independent-20261101/final-1.log": "580f4bb1da846f8eb2c1bf713c8689cf6efe204879b8bd0d8d45be49850a05bb",
+    "artifacts/reviews/prefix-common-independent-20261101/final-2.log": "522d7b3a15704213950b7053c882b6ddd0c41149631300ce6c1933d21b5971c3",
+    "artifacts/reviews/prefix-common-independent-20261101/final-3.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "artifacts/reviews/prefix-common-independent-20261101/final-token.log": "9bed8488ebac5b32fe8479edd55a998f9afaee7fa8d69c688e09f4590de336dc",
+    "artifacts/reviews/prefix-common-independent-20261101/rv1-readonly.json": "dcd180167264c8ec4b209e231cc32c8bf3a2845c068fe2538b6c34409f173fe1",
+    "artifacts/reviews/prefix-common-independent-20261101/rv1-final-readonly.json": "3e4ed092032d0360cea63974681a86cf9dd6da97c36cbaa152bf1ee32b250b91",
+    "artifacts/reviews/prefix-common-independent-20261101/test_independent_edges.py": "6cd8255735f4e0097d758015dac8e0255d9714069ba1cadd4f60020594d97178"
+  },
+  "packaging": false,
+  "git_publish": false
+}

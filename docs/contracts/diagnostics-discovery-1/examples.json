@@ -1,0 +1,264 @@
+{
+  "notice": "Synthetic fixtures, not production observations; generated task IDs and timestamps are example-local.",
+  "empty_catalog": {
+    "version": "diagnostics-discovery-1",
+    "service_instance_id": "example-instance",
+    "snapshot": "example-instance:017d8f34-59ec-4d76-b2b7-791f4d7bc74b:0",
+    "event_cursor": "example-instance:017d8f34-59ec-4d76-b2b7-791f4d7bc74b:0",
+    "items": [],
+    "defaults": [],
+    "next_after": null
+  },
+  "catalog": {
+    "version": "diagnostics-discovery-1",
+    "service_instance_id": "example-instance",
+    "snapshot": "example-instance:017d8f34-59ec-4d76-b2b7-791f4d7bc74b:3",
+    "event_cursor": "example-instance:017d8f34-59ec-4d76-b2b7-791f4d7bc74b:3",
+    "items": [
+      {
+        "task_id": "47b1d4eb-05ee-4866-9ed9-13d5fc26cf0c",
+        "task_kind": "analysis",
+        "parent_task_id": null,
+        "plan_refs": [],
+        "status": "ready",
+        "error_code": null,
+        "report_published": true,
+        "report_ref": "47b1d4eb-05ee-4866-9ed9-13d5fc26cf0c",
+        "report_digest": "30325b3c97d2aec9df4b402df89b6791b862da7f7d77300c7f9be5e57f80b5dc",
+        "scope_id": "scope:730f94edd027bf36a6459a7256d4370cdd7c70eca4139a5460578081cae28e81",
+        "scope": {
+          "source": {
+            "base_run_id": "r",
+            "user_run_id": null,
+            "common_name": null,
+            "model_id": "m",
+            "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "asset_identity": "asset",
+            "encoder_identity": "encoder",
+            "profile_json": "{}",
+            "settings_json": "{}",
+            "algorithm_version": "1"
+          },
+          "appid": "a",
+          "window": null,
+          "request_count": "1",
+          "request_keys_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "baseline_origin": "original_run_window"
+        },
+        "binding": {
+          "appid": "a",
+          "model_id": "m",
+          "common_name": null,
+          "source_kind": "base"
+        },
+        "binding_id": "a0b81ddcbeae368b5c3241be043bd861948a63ff69608b2e772df7dea1b9f5aa",
+        "directions": [
+          "low_hit",
+          "token_content"
+        ],
+        "sequence": "1",
+        "terminal_at": "2026-10-31T09:25:59.122Z",
+        "published_at": "2026-10-31T09:25:59.122Z",
+        "analysis_completed_at": "2026-10-31T09:25:59.122Z",
+        "legacy": false,
+        "default_eligible": true
+      },
+      {
+        "task_id": "c5340789-7f57-428e-83b6-e9d91bb6129a",
+        "task_kind": "analysis",
+        "parent_task_id": null,
+        "plan_refs": [],
+        "status": "partial",
+        "error_code": null,
+        "report_published": true,
+        "report_ref": "c5340789-7f57-428e-83b6-e9d91bb6129a",
+        "report_digest": "30325b3c97d2aec9df4b402df89b6791b862da7f7d77300c7f9be5e57f80b5dc",
+        "scope_id": "scope:730f94edd027bf36a6459a7256d4370cdd7c70eca4139a5460578081cae28e81",
+        "scope": {
+          "source": {
+            "base_run_id": "r",
+            "user_run_id": null,
+            "common_name": null,
+            "model_id": "m",
+            "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "asset_identity": "asset",
+            "encoder_identity": "encoder",
+            "profile_json": "{}",
+            "settings_json": "{}",
+            "algorithm_version": "1"
+          },
+          "appid": "a",
+          "window": null,
+          "request_count": "1",
+          "request_keys_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "baseline_origin": "original_run_window"
+        },
+        "binding": {
+          "appid": "a",
+          "model_id": "m",
+          "common_name": null,
+          "source_kind": "base"
+        },
+        "binding_id": "a0b81ddcbeae368b5c3241be043bd861948a63ff69608b2e772df7dea1b9f5aa",
+        "directions": [
+          "low_hit",
+          "token_content"
+        ],
+        "sequence": "2",
+        "terminal_at": "2026-10-31T09:25:59.138Z",
+        "published_at": "2026-10-31T09:25:59.138Z",
+        "analysis_completed_at": "2026-10-31T09:25:59.138Z",
+        "legacy": false,
+        "default_eligible": false
+      }
+    ],
+    "defaults": [
+      {
+        "binding_id": "a0b81ddcbeae368b5c3241be043bd861948a63ff69608b2e772df7dea1b9f5aa",
+        "direction": "low_hit",
+        "task_id": "47b1d4eb-05ee-4866-9ed9-13d5fc26cf0c",
+        "sequence": "1"
+      },
+      {
+        "binding_id": "a0b81ddcbeae368b5c3241be043bd861948a63ff69608b2e772df7dea1b9f5aa",
+        "direction": "token_content",
+        "task_id": "47b1d4eb-05ee-4866-9ed9-13d5fc26cf0c",
+        "sequence": "1"
+      }
+    ],
+    "next_after": null
+  },
+  "terminal_event": {
+    "version": "diagnostics-discovery-1",
+    "service_instance_id": "example-instance",
+    "event_id": "example-instance:017d8f34-59ec-4d76-b2b7-791f4d7bc74b:1",
+    "task_id": "47b1d4eb-05ee-4866-9ed9-13d5fc26cf0c",
+    "task_kind": "analysis",
+    "parent_task_id": null,
+    "plan_refs": [],
+    "status": "ready",
+    "error_code": null,
+    "report_published": true,
+    "report_ref": "47b1d4eb-05ee-4866-9ed9-13d5fc26cf0c",
+    "report_digest": "30325b3c97d2aec9df4b402df89b6791b862da7f7d77300c7f9be5e57f80b5dc",
+    "scope_id": "scope:730f94edd027bf36a6459a7256d4370cdd7c70eca4139a5460578081cae28e81",
+    "binding": {
+      "appid": "a",
+      "model_id": "m",
+      "common_name": null,
+      "source_kind": "base"
+    },
+    "binding_id": "a0b81ddcbeae368b5c3241be043bd861948a63ff69608b2e772df7dea1b9f5aa",
+    "directions": [
+      "low_hit",
+      "token_content"
+    ],
+    "sequence": "1",
+    "terminal_at": "2026-10-31T09:25:59.122Z",
+    "published_at": "2026-10-31T09:25:59.122Z",
+    "analysis_completed_at": "2026-10-31T09:25:59.122Z",
+    "legacy": false,
+    "default_eligible": true
+  },
+  "partial_terminal": {
+    "version": "diagnostics-discovery-1",
+    "service_instance_id": "example-instance",
+    "terminal": {
+      "task_id": "c5340789-7f57-428e-83b6-e9d91bb6129a",
+      "task_kind": "analysis",
+      "parent_task_id": null,
+      "plan_refs": [],
+      "status": "partial",
+      "error_code": null,
+      "report_published": true,
+      "report_ref": "c5340789-7f57-428e-83b6-e9d91bb6129a",
+      "report_digest": "30325b3c97d2aec9df4b402df89b6791b862da7f7d77300c7f9be5e57f80b5dc",
+      "scope_id": "scope:730f94edd027bf36a6459a7256d4370cdd7c70eca4139a5460578081cae28e81",
+      "scope": {
+        "source": {
+          "base_run_id": "r",
+          "user_run_id": null,
+          "common_name": null,
+          "model_id": "m",
+          "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "asset_identity": "asset",
+          "encoder_identity": "encoder",
+          "profile_json": "{}",
+          "settings_json": "{}",
+          "algorithm_version": "1"
+        },
+        "appid": "a",
+        "window": null,
+        "request_count": "1",
+        "request_keys_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseline_origin": "original_run_window"
+      },
+      "binding": {
+        "appid": "a",
+        "model_id": "m",
+        "common_name": null,
+        "source_kind": "base"
+      },
+      "binding_id": "a0b81ddcbeae368b5c3241be043bd861948a63ff69608b2e772df7dea1b9f5aa",
+      "directions": [
+        "low_hit",
+        "token_content"
+      ],
+      "sequence": "2",
+      "terminal_at": "2026-10-31T09:25:59.138Z",
+      "published_at": "2026-10-31T09:25:59.138Z",
+      "analysis_completed_at": "2026-10-31T09:25:59.138Z",
+      "legacy": false,
+      "default_eligible": false
+    }
+  },
+  "evaluation_terminal": {
+    "version": "diagnostics-discovery-1",
+    "service_instance_id": "example-instance",
+    "terminal": {
+      "task_id": "595fecc4-6509-4850-8f5d-91e878eb64e0",
+      "task_kind": "token_authorization",
+      "parent_task_id": "parent",
+      "plan_refs": [],
+      "status": "ready",
+      "error_code": null,
+      "report_published": true,
+      "report_ref": "595fecc4-6509-4850-8f5d-91e878eb64e0",
+      "report_digest": "30325b3c97d2aec9df4b402df89b6791b862da7f7d77300c7f9be5e57f80b5dc",
+      "scope_id": "scope:730f94edd027bf36a6459a7256d4370cdd7c70eca4139a5460578081cae28e81",
+      "scope": {
+        "source": {
+          "base_run_id": "r",
+          "user_run_id": null,
+          "common_name": null,
+          "model_id": "m",
+          "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "asset_identity": "asset",
+          "encoder_identity": "encoder",
+          "profile_json": "{}",
+          "settings_json": "{}",
+          "algorithm_version": "1"
+        },
+        "appid": "a",
+        "window": null,
+        "request_count": "1",
+        "request_keys_digest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseline_origin": "original_run_window"
+      },
+      "binding": {
+        "appid": "a",
+        "model_id": "m",
+        "common_name": null,
+        "source_kind": "base"
+      },
+      "binding_id": "a0b81ddcbeae368b5c3241be043bd861948a63ff69608b2e772df7dea1b9f5aa",
+      "directions": [],
+      "sequence": "3",
+      "terminal_at": "2026-10-31T09:25:59.153Z",
+      "published_at": "2026-10-31T09:25:59.153Z",
+      "analysis_completed_at": "2026-10-31T09:25:59.153Z",
+      "legacy": false,
+      "default_eligible": false
+    }
+  }
+}

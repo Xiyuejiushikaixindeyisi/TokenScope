@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-01",
+  "scope": "Closed frontend AF records and historical review prompt; memory snapshots",
+  "files": [
+    {
+      "source": "docs/tasks/viewer/analysis/batches/AF000.md",
+      "archive": "achieve/2026-11-01/analysis-rv2/docs/tasks/viewer/analysis/batches/AF000.md",
+      "before_sha256": "cd33c8b57ebd035888f7b05fdcdfe463d69ff45b4373da3a296defca5f473ebb",
+      "archived_sha256": "cd33c8b57ebd035888f7b05fdcdfe463d69ff45b4373da3a296defca5f473ebb",
+      "pointer_sha256": "219b1289e4b334d982c751367ee96d8357a404cd57bf61dad6f7817de3019945",
+      "change": "relative navigation updated; historical findings unchanged"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/batches/AF001.md",
+      "archive": "achieve/2026-11-01/analysis-rv2/docs/tasks/viewer/analysis/batches/AF001.md",
+      "before_sha256": "5d731cf7baabb763613a9257d09dd9989b1d5bc17562d44d75427641fbdb852a",
+      "archived_sha256": "5d731cf7baabb763613a9257d09dd9989b1d5bc17562d44d75427641fbdb852a",
+      "pointer_sha256": "b95acd437e1fe0d708a55abc9d8c0f7361b8156ab102cc2e5efd8bf2d2267f00",
+      "change": "relative navigation updated; historical findings unchanged"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/batches/AF002.md",
+      "archive": "achieve/2026-11-01/analysis-rv2/docs/tasks/viewer/analysis/batches/AF002.md",
+      "before_sha256": "e4add285ef8acb05fba412a79aeef31b4dc6e9cf3937c127aca572f1866d170b",
+      "archived_sha256": "e4add285ef8acb05fba412a79aeef31b4dc6e9cf3937c127aca572f1866d170b",
+      "pointer_sha256": "1677e428172ad054d1bd5cb4d75753bad60ef28a68d79c2299952d1fd9d73083",
+      "change": "relative navigation updated; historical findings unchanged"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/batches/AF003.md",
+      "archive": "achieve/2026-11-01/analysis-rv2/docs/tasks/viewer/analysis/batches/AF003.md",
+      "before_sha256": "16ecb5d5cf76ec3303c4b532a36750aeb1832371cf72093565dafdbdf9d956f1",
+      "archived_sha256": "16ecb5d5cf76ec3303c4b532a36750aeb1832371cf72093565dafdbdf9d956f1",
+      "pointer_sha256": "a99541f55a2901de0b9f28552405e735b27660e46e13a2edf1a14918cc8fa803",
+      "change": "relative navigation updated; historical findings unchanged"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/batches/AF004.md",
+      "archive": "achieve/2026-11-01/analysis-rv2/docs/tasks/viewer/analysis/batches/AF004.md",
+      "before_sha256": "1236deaeea3937b2f7a4209c23c05d3b5da265e224903de2928adca7e26c3125",
+      "archived_sha256": "1236deaeea3937b2f7a4209c23c05d3b5da265e224903de2928adca7e26c3125",
+      "pointer_sha256": "846d23171984738e077ca0f7335854eff6141e3b5caac34a251b374bfec24dea",
+      "change": "relative navigation updated; historical findings unchanged"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/batches/AF005.md",
+      "archive": "achieve/2026-11-01/analysis-rv2/docs/tasks/viewer/analysis/batches/AF005.md",
+      "before_sha256": "37d649ddb326a97a075fe2c9ba7c07d95f50c7225b872d034a4cad2276e3f43c",
+      "archived_sha256": "37d649ddb326a97a075fe2c9ba7c07d95f50c7225b872d034a4cad2276e3f43c",
+      "pointer_sha256": "e4132595ba11c8f9fee48c504d7f98e4c6a848f4372864a697d81282a59475ed",
+      "change": "relative navigation updated; historical findings unchanged"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/batches/AF006.md",
+      "archive": "achieve/2026-11-01/analysis-rv2/docs/tasks/viewer/analysis/batches/AF006.md",
+      "before_sha256": "2fab05612d40b20c00e064851ffb0019fe0d851c897e001a0d94b1667dca1aa2",
+      "archived_sha256": "d85be5cfb46a8232d4206ffce7c23ab042af7ace673397091f0a2997f7bf609f",
+      "pointer_sha256": "5f7492b0f8b269a2288fdc695d8aa4d10f0b3b1ec756da0c0b581359616e9b1a",
+      "change": "relative navigation updated; historical findings unchanged"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/PROMPT_INDEPENDENT_REVIEW.md",
+      "archive": "achieve/2026-11-01/analysis-rv2/docs/tasks/viewer/analysis/PROMPT_INDEPENDENT_REVIEW.md",
+      "before_sha256": "495823e5820610c44313d42524aa01c201da124aa035cfe7332a71631aaa7291",
+      "archived_sha256": "a3a09767476e736c2545fdde49dfb2a3ca48b625f88a84eec8fb3f0566465d03",
+      "pointer_sha256": "d7de220665a2192ad1d6c20ff1fdf32f83f24bd25a71949132b11bf6f6ff8d01",
+      "change": "relative navigation updated; historical findings unchanged"
+    },
+    {
+      "source": "memory/tasks/viewer-analysis.md",
+      "archive": "achieve/2026-11-01/analysis-rv2/snapshots/memory/tasks/viewer-analysis.md",
+      "sha256": "48e6858294dfdd0554c9a1744144c36c282a9df55dc8ac7a62bb11017c5e2581",
+      "change": "byte-identical snapshot; source will be shortened separately"
+    },
+    {
+      "source": "memory/CURRENT.md",
+      "archive": "achieve/2026-11-01/analysis-rv2/snapshots/memory/CURRENT.md",
+      "sha256": "621e42c4b695a21567e4e927ccc358fdbfc11bf6e7b7f8a701d17fdaec87233f",
+      "change": "byte-identical snapshot; source will be shortened separately"
+    },
+    {
+      "source": "memory/CURRENT.md",
+      "archive": "achieve/2026-11-01/analysis-rv2/snapshots/memory/CURRENT.before-rv2-closeout.md",
+      "sha256": "621e42c4b695a21567e4e927ccc358fdbfc11bf6e7b7f8a701d17fdaec87233f",
+      "change": "byte-identical latest shared state before compacting history"
+    }
+  ]
+}

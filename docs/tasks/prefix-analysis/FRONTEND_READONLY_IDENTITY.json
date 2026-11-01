@@ -1,0 +1,348 @@
+{
+  "receipt": "FE-R-L1",
+  "date": "2026-10-31",
+  "session_id": "01a18be2-7112-7aa2-919b-5137d1f1b1ad",
+  "identity_kind": "current_worktree_files_not_release_commit",
+  "git_head": "5d824b506d9e055bcf397c3846dafc450fcf02e5",
+  "git_branch": "main",
+  "warning": "HEAD does not include all listed worktree files. No Git mutation/push performed. Token private files excluded. Hash of asset lock is not runtime asset verification.",
+  "frozen_manifest_checks": [
+    {
+      "version": "analysis-common-1.0",
+      "mismatches": []
+    },
+    {
+      "version": "diagnostics-http-1",
+      "mismatches": []
+    },
+    {
+      "version": "diagnostics-discovery-1",
+      "mismatches": []
+    }
+  ],
+  "changed_since_local_2": [
+    "src/tokenscope/analysis_common/storage.py"
+  ],
+  "files": [
+    {
+      "path": "docs/contracts/analysis-common-1.0/internal.json",
+      "sha256": "f34db40ed34cf018db897085270eedad949451011a392257de20378ce9e60959",
+      "tracked_in_index": false
+    },
+    {
+      "path": "docs/contracts/analysis-common-1.0/manifest.json",
+      "sha256": "14a925ddee4e5c1dc547013bec1b96a302f9d05fae8abc04e15f7f2e73481ed7",
+      "tracked_in_index": false
+    },
+    {
+      "path": "docs/contracts/analysis-common-1.0/wire.json",
+      "sha256": "0ca27b5fe84048364ae15e471e78e2b835314265fd93b330283699462b7d1dcc",
+      "tracked_in_index": false
+    },
+    {
+      "path": "docs/contracts/diagnostics-discovery-1/examples.json",
+      "sha256": "0e3c95ab4177bc983ed56b4b7418d59fbf0817d794a3e09163f7e2524314b91c",
+      "tracked_in_index": false
+    },
+    {
+      "path": "docs/contracts/diagnostics-discovery-1/manifest.json",
+      "sha256": "fafc5a9637f3b0314a476129f836afc9e1fab3e20dd8fcf6ac7e0840a6e14b0a",
+      "tracked_in_index": false
+    },
+    {
+      "path": "docs/contracts/diagnostics-discovery-1/wire.json",
+      "sha256": "f538aab0842cc43b521f9dfbc2cf9779f8665e0a03e4b851476eb487cc3df4f8",
+      "tracked_in_index": false
+    },
+    {
+      "path": "docs/contracts/diagnostics-http-1/manifest.json",
+      "sha256": "ba98e581474e090f07fd8423a93595a80e7a867e7251d3d97129502824e45fad",
+      "tracked_in_index": false
+    },
+    {
+      "path": "docs/contracts/diagnostics-http-1/wire.json",
+      "sha256": "943a88daa45f6f3de18547bda28f260836d340f8180e03322afa525596161064",
+      "tracked_in_index": false
+    },
+    {
+      "path": "docs/tasks/prefix-analysis/FRONTEND_READONLY_EXAMPLES.json",
+      "sha256": "c3e6efaa1cf335628d39242b351c450ee9713787235af2e2d05790e08b7a9161",
+      "tracked_in_index": false
+    },
+    {
+      "path": "docs/tasks/prefix-analysis/RESOURCE_PROFILE.md",
+      "sha256": "34e7d6d222b85921a547ffdc826ff6913eab10cf6145bbcadfacc66f350c7629",
+      "tracked_in_index": false
+    },
+    {
+      "path": "env/encoding-assets.lock.json",
+      "sha256": "be74503d8a507066cb7a3d6797ba6481b0b9fd716bbbfcff8003c3cddd4e5c98",
+      "tracked_in_index": true
+    },
+    {
+      "path": "env/sources.lock.json",
+      "sha256": "365c017f4278196709ba0595d41709f104635ba2c1c8b6005593f3369aed4386",
+      "tracked_in_index": true
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "ab805cc1799842ee3b2778100015fbcdb6355bbc7d052052a54792e32da4d7a7",
+      "tracked_in_index": true
+    },
+    {
+      "path": "src/tokenscope/analysis_common/__init__.py",
+      "sha256": "642be21a1f624bffb9821a3851ef53731ed296ea83ad668615a822010bd1b4b4",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/bootstrap.py",
+      "sha256": "e788a78a74d50d03de03595bc72ec5a2a985886187431a72fbf2517d7a1b69d4",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/contracts.py",
+      "sha256": "727682c816941156f7c9317bd76d18e76225d4b5c3b24f5be2d47ee64b655139",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/discovery.py",
+      "sha256": "9d9dfa9c3f406f834bfcbe89997fb7badd51c0f25ebe96d5e0bf7fdb06b618ee",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/discovery_contracts.py",
+      "sha256": "689ab059f89c25d6c79fe19fc8d52e6ad5200952107aafad897c98f87225c2f4",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/encoding.py",
+      "sha256": "b0790044bbbc474c4390bd8300ccae0462cf0cd68e5e0db9957573af794d8b54",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/evaluation.py",
+      "sha256": "0028dfaa07b2ca674967afca276fedf48e3917a452d158245d32cdda534688ec",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/modifications.py",
+      "sha256": "3ef332e2b23b8d78d910a784df4fd3591bf43446a513dd114c0418e20bfdf881",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/plugins.py",
+      "sha256": "87d580f14c460d4f13cdf53929e6b59bf90884c5a89e8dcc564b327173ba0c8d",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/presentation.py",
+      "sha256": "286bacf9d2ae2fb78a48a1c516eefdc1aa764fa70ea8484f77d519cdaa11a7aa",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/runtime.py",
+      "sha256": "92cc0a2e412ea173ed59cfff19828a8fc1dccc705ab2a71fa3421aaabaab5832",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/schema.py",
+      "sha256": "be7ca79738e57eff2e085e6494ea187bff6a2ca0cc202f0dd876adbdd603c858",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/service.py",
+      "sha256": "5930837fc4b53f74ab8ed7686be91ac5ea4f7427afa71770a7fbb3dff326ce55",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/source.py",
+      "sha256": "036ea9346441707dc5569e30e6b549d2d90aa4bc20282f8823cb02e0f2e42413",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/storage.py",
+      "sha256": "da96661086e3c3ebe30cddad38d87180b7e8d41d541ce040be83f715c3cfc890",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/analysis_common/wire.py",
+      "sha256": "1cae6722ce0a708fbf4ac6d920cd209dbd9d9f14e00bb77c11c44dd321d2ca63",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/api/app.py",
+      "sha256": "ac85eb8bafe0f90dd86f788ba470a55809d9e12fedba17680ab8acd199268842",
+      "tracked_in_index": true
+    },
+    {
+      "path": "src/tokenscope/api/diagnostic_discovery.py",
+      "sha256": "c1b1579a5b5fe7aab8f2410c5a3fbfb2f6df0d99eb4e08aeb54dcd54a930e527",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/api/diagnostics.py",
+      "sha256": "c1aef77bbf0f0234721a4d0de97662d67d13baee1b30279ec442f84a8af71eec",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/cli.py",
+      "sha256": "d5160b3b59b660c409ccec2c045374bf537f4d8a6f68bba0ed534273f480bfe1",
+      "tracked_in_index": true
+    },
+    {
+      "path": "src/tokenscope/monitoring/dispatcher.py",
+      "sha256": "625128f62f0eed84d0be0053edeefa647cab1d5175b8051f6a5055947b58c16e",
+      "tracked_in_index": true
+    },
+    {
+      "path": "src/tokenscope/prefix_analysis/__init__.py",
+      "sha256": "6c6d1b6270cc43a644e7b45693d11c8bb68d90a4f2ea80bdd70b2f7b9282567d",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/prefix_analysis/candidates.py",
+      "sha256": "392a522551bc2ca5fd8748d2977fbdf5721e65d3f834428499c92c0ee6614d3f",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/prefix_analysis/comparison.py",
+      "sha256": "366de3b5c49a8b8740ef28a73e3ea50df8fbfc7b7ed8450e3e1a015147bfd6d1",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/prefix_analysis/detection.py",
+      "sha256": "d4b8c19d92357b9d747a5509ac67dfd284b3bcd6a29465929ebe2d42b9663ffc",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/prefix_analysis/dynamic.py",
+      "sha256": "3d948322e368e2a47178ddc8837d447291d2c738e3950de7b772012e2f4549aa",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/prefix_analysis/experiments.py",
+      "sha256": "37b6eaaab0d592d2ea4013290524f10886099172845aec64679bdf4b2f1af05a",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/prefix_analysis/history.py",
+      "sha256": "e4360831692f953890ffc0814699f930df2935b5afae078a41574896576b3d21",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/prefix_analysis/service.py",
+      "sha256": "7070ede8786f203ef99823525b45e3be4f3adff8f34cd2117bbc451ea0e9bcad",
+      "tracked_in_index": false
+    },
+    {
+      "path": "src/tokenscope/prefix_analysis/structure.py",
+      "sha256": "2380f61a6676f8945da9124281bd096165e07163414dca536afdc2e3484338f6",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/integration/analysis/test_diagnostic_combinations.py",
+      "sha256": "03728ea6082e7e809354f802eeb4760f78fe63a399ce5897528144f7af8c91cf",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/integration/analysis/test_diagnostic_http.py",
+      "sha256": "3ae84477e45de8d717b9ed0b18fe2ceea5c8cfd9543e7a66c6f6093169bbcd98",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/integration/analysis/test_diagnostic_resources.py",
+      "sha256": "042db02875c1eee8f543bf199eabd29251586c78130f304a06ddbe3d10d6c537",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/integration/analysis/test_diagnostic_tasks.py",
+      "sha256": "293f9d2f11fbdf4ff83b73c14ec666b7a5ef26b9beeeeab898dedef56aa51d48",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/integration/analysis/test_discovery_http.py",
+      "sha256": "901496127f2ac9d66dded3870993a627ec1b14be4533068f80c304a6fcc1c0dc",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/integration/analysis/test_dynamic_replay.py",
+      "sha256": "460dd2d90a5c0ac0b4f6f50cea6721e22b27c95f613dac4b4ebed319080fdac3",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/integration/analysis/test_evaluation.py",
+      "sha256": "83a8964b042c7c438a1354c67490a7b5068a327ff91e509d7fc22a06b49160b0",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/integration/analysis/test_experiments.py",
+      "sha256": "85fb79c8a53f55d58304e16595a067e57e66bbabc0e5c175e25c455da5f5f7a2",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/integration/analysis/test_l2_replay.py",
+      "sha256": "afe9a27e5b0cedb423a609b8b66a389df2fc48a708ed02ce81b5a45b3c50094f",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/integration/analysis/test_source.py",
+      "sha256": "72c669387053780e3bb9e25e84242f9697be29064dd5250faba082645e0c0876",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/unit/analysis_common/test_contracts.py",
+      "sha256": "cba3ade6fe8d01a0477fa8a2303bbeed99d9f682ea8a138cf207011f864ecca4",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/unit/analysis_common/test_discovery.py",
+      "sha256": "66058cfcc0f61a49efb3be80609853b54074f516aba32acab158ab768894a297",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/unit/analysis_common/test_http_schema.py",
+      "sha256": "333eb279a15c76d1e4a9fd949e081ef61e8829aa6f3465c97a3025a2eb76b82b",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/unit/analysis_common/test_modifications.py",
+      "sha256": "555b1ca1d8af1d457d81e06be8c39b889d3ee316a33cab90fc6943c2f9fe6b64",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/unit/analysis_common/test_runtime_limits.py",
+      "sha256": "36bc65c700970b8c8b4197032b506ad1eb85767ef7a098645233e9f1a832a019",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/unit/analysis_common/test_runtime_storage.py",
+      "sha256": "a406a571beef383897c09a15a355997972532d764d1964acdc6ed72ffb820294",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/unit/analysis_common/test_schema.py",
+      "sha256": "8fdb8e2a3829d05dc5ad72487465d44f17402705d89e0068bbc3d15706d5c2e2",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/unit/prefix_analysis/test_dynamic.py",
+      "sha256": "3c785d20322b966062ea2309115333b9cd3d80097edb7d83a4e4a005ddbba703",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/unit/prefix_analysis/test_history.py",
+      "sha256": "13e0ef5f257a4cd1ac2f52bfa79a3916435d92e3c2ce2256a37a6d6e38c467a7",
+      "tracked_in_index": false
+    },
+    {
+      "path": "tests/unit/prefix_analysis/test_l2.py",
+      "sha256": "9fa82c4ad334d201b19ff8e58e3fd79a9428fb2813d10aff01b0a54935cb1d19",
+      "tracked_in_index": false
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "1a0ec180617a6a1ae003ebe70c56df0d56a0d8cc6f6479fd99cfaa5d2a938884",
+      "tracked_in_index": true
+    }
+  ]
+}

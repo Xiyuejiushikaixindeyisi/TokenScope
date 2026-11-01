@@ -1,0 +1,8 @@
+{
+  "files": {
+    "docs/contracts/diagnostics-http-1/wire.json": "943a88daa45f6f3de18547bda28f260836d340f8180e03322afa525596161064",
+    "src/tokenscope/analysis_common/runtime.py": "92cc0a2e412ea173ed59cfff19828a8fc1dccc705ab2a71fa3421aaabaab5832",
+    "src/tokenscope/api/diagnostics.py": "c1aef77bbf0f0234721a4d0de97662d67d13baee1b30279ec442f84a8af71eec"
+  },
+  "version": "diagnostics-http-1"
+}

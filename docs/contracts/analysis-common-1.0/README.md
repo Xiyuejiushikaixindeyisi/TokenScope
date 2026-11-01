@@ -1,0 +1,31 @@
+# analysis-common-1.0：H0提供方接口
+
+2026-10-31，LH000提供方交付。这里冻结公共数据结构和插件调用面，不宣称HTTP/worker/真实源接入已完成。机器可读定义见internal.json与wire.json；实际源码/Schema摘要见manifest.json。HTTP具体路径装配在LH008，消费方不应从此推断端点已存在。
+
+## 数据对象与编码
+
+src/tokenscope/analysis_common/contracts.py提供SourceSelection/Identity、AnalysisScope、RequestKey/View、BaselineMetrics、Location/EmbeddedLocation/TextRange、Participation、ContentUnit、Observation、Coverage/RuleResult、FindingCandidate/ModificationCandidate、TargetLocation/PreparedMutation/ModificationPlan、AnalysisFragment、AggregateMetrics/EvaluationResult、RequestComparison、DiagnosticRequest/TaskReceipt。
+
+模型为strict/frozen/extra=forbid；深层载荷采用不可变JsonText字符串、序列采用tuple，消费时可解析自己的副本，不暴露可写源DB。raw_body保留原字节对应字符串，raw_sha256必校验。字段命名以机器Schema/源码为准。
+
+内部计数为int。外部只使用wire.to_wire/from_wire；所有整数为规范十进制字符串，布尔保持布尔。嵌入的JsonText不转换其内部数字。internal.json用于内部模型，wire.json用于外部结构；x-integer-*约束仍由from_wire后的内部校验执行。正例source_record_index="100000000000000000000"；01、+1、-0、1.0和数值类型拒绝。浮点收益不能用来判门槛，实际P/H精确分数比较。
+
+canonical_metadata为UTF-8、对象key确定序、无多余空白、整数十进制字符串；例如空对象字节{}的SHA256为44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a。Location身份不含规则，ContentUnit身份不含facets，Observation含规则/策略及排序去重单元。位置、正文摘要及编码身份分别存，不以hash_id作请求身份。
+
+## 插件调用与变换
+
+plugins.py提供AnalysisPlugin Protocol、PluginDescriptor、PluginSelection、EvidenceCapabilities、BudgetSpec、RunControl、MutationPreparation与PluginRegistry。静态注册一个token_content插件；规则在内部选择。describe、validate_selection、analyze_request、prepare_mutation签名以Protocol为准。analyze_request返回AnalysisFragment，由公共层持久化；prepare_mutation返回prepared+非空operations或blocked+无operations。
+
+MutationCandidate带parameters_json及business_basis_ref，处理器不编码、不回放、不执行工具。内嵌JSON编译为PreparedMutation的replace_value，replacement_json是完整外层替换值的JSON编码（字符串替换需要JSON引号）；remove_value不带replacement。source_operations_json记录准确内层操作，outer_string_guard保护原始外层字符串。复杂投影、排序、数组删除可先编译为准确父容器替换，由invariants_json/manifest_fragment_json保存约束与变更明细；不新增运行时任意代码接口。
+
+BudgetSpec所有限制必须显式给定，H0不设未经校准的生产默认值。RunControl.consume接收max_units等预算字段名，累计超限抛ANALYSIS_BUDGET_EXHAUSTED，checkpoint在取消时抛ANALYSIS_INTERRUPTED。每请求上下文由公共调度器建立；深度/单请求字节的调用者先检查相应上限，不将不同请求深度相加。公共调度另管任务整体资源。现阶段不增加取消HTTP。
+
+## 状态、门槛及失败
+
+任务queued→running→ready/partial/empty/failed/interrupted；retry新attempt。规则completed/not_applicable/partial/failed/not_checked与met/not_met/unknown分开。完整Coverage必须checked=eligible；未知eligible不能标complete。插件异常归方向失败；源失配归共用任务失败。GET只读是后续服务必须遵守的行为契约。
+
+available评估必须完整且前后请求数相同；blocked/failed/not_run/interrupted无after。未评估不是0；O没有修改后字段。low_hit的pilot/full严格ΔR>1pp，gate_passed和display_eligible为只读派生属性，序列化结果时公共视图补出；Token/combined不自动套用此门槛。L4/L5RequestComparison引用两条完整原文及摘要，数据范围/真实读取在LH001/LH008实现。
+
+## 验证和接收状态
+
+公共单测17项与Token已有消费测试11项（合计28）通过，ruff及mypy通过。测试覆盖严格门槛、身份/来源、wire、大整数、原子发布条件、参与unknown、位置引用、预算。Token完整新Schema消费签收待实际确认；不将现有11项基础测试称为完整插件联调。H1–H4尚待后续实现。后续不兼容变化必须另存版本并交接，不静默改本目录冻结Schema。

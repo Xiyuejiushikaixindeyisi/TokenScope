@@ -13,6 +13,10 @@ from fastapi.responses import JSONResponse, Response
 from starlette.staticfiles import StaticFiles
 
 from tokenscope import __version__
+from tokenscope.analysis_common.bootstrap import build_diagnostics
+from tokenscope.api.diagnostic_discovery import router as diagnostic_discovery_router
+from tokenscope.api.diagnostic_recommendations import router as diagnostic_recommendations_router
+from tokenscope.api.diagnostics import router as diagnostics_router
 from tokenscope.api.ma import router as ma_router
 from tokenscope.api.openapi import install as install_openapi
 from tokenscope.api.user import router as user_router
@@ -38,6 +42,8 @@ def create_app(
     dispatcher = Dispatcher(service.processor, ma.processor, state_root=service.state_root)
     user = UserRunService(service)
     dispatcher.register(user)
+    diagnostics = build_diagnostics(service, user)
+    dispatcher.register(diagnostics)
 
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
@@ -107,6 +113,10 @@ def create_app(
     app.include_router(view_router(service))
     app.include_router(ma_router(ma))
     app.include_router(user_router(user))
+    app.include_router(diagnostics_router(diagnostics, user.service_id))
+    app.include_router(diagnostic_discovery_router(diagnostics, user.service_id))
+    app.include_router(diagnostic_recommendations_router(diagnostics, user.service_id))
+    app.state.diagnostics = diagnostics
     app.state.user = user
     app.state.ma = ma
     app.state.dispatcher = dispatcher

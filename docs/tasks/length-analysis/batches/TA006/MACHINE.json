@@ -1,0 +1,26 @@
+[
+  {
+    "field": "Architecture:",
+    "data": "x86_64"
+  },
+  {
+    "field": "CPU(s):",
+    "data": "16"
+  },
+  {
+    "field": "Model name:",
+    "data": "13th Gen Intel(R) Core(TM) i7-13620H"
+  },
+  {
+    "field": "Thread(s) per core:",
+    "data": "2"
+  },
+  {
+    "field": "Core(s) per socket:",
+    "data": "8"
+  },
+  {
+    "field": "Socket(s):",
+    "data": "1"
+  }
+]

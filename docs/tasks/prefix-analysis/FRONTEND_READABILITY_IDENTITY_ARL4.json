@@ -1,0 +1,40 @@
+{
+  "identity": "arpc-local-2",
+  "parent": "arpc-local-1",
+  "session_id": "01a18be2-7112-7aa2-919b-5137d1f1b1ad",
+  "date": "2026-10-31",
+  "files": {
+    "src/tokenscope/analysis_common/recommendation_evidence.py": "92b8e818aae9ff8c565d1865c3145d996c8d3b04920725e0fe66362eca086c5c",
+    "src/tokenscope/analysis_common/recommendation_engine.py": "01fde28e490926505a8fc159b4956ac63e4bcc4e5d84a6afc1e323dbd72b2efe",
+    "src/tokenscope/analysis_common/recommendation_publication.py": "18903a6d6a2e19fd08cf0593011d1ee7187a50f9412aa0dad6a9414ad6eee417",
+    "src/tokenscope/prefix_analysis/recommendation_groups.py": "cb6c4059d417857db60f9488df8d991d4a974cfb6307d04c841b5b8ff28a5e16",
+    "tests/unit/analysis_common/test_evidence_locator.py": "b2ed30450344f34a803a4fd8e2781f76734a28714fb9b3c72ab9419a99e723d0",
+    "tests/integration/analysis/test_recommendation_engine.py": "bc6e9a05015f0d9e9dd08818fa013c80c11b9a65e3201008c5d17b98c6119c49",
+    "tests/integration/analysis/test_recommendation_frontend_reports.py": "9d3eaa3cd452ef856c2b086c271f2f3573b4116955fdbe279f56a4a9f961d5ed",
+    "docs/tasks/prefix-analysis/FRONTEND_READABILITY_HANDOFF_ARL4.md": "03ddfdb1c708c1ccfa72bad8fdaa18fb639aaac7d26cf48a4727fa3257649724",
+    "docs/tasks/prefix-analysis/FRONTEND_REWORK_READABILITY_EXAMPLES_ARL4.json": "2bfe36e86db78990f1e37f8f668b878266720743637d0a08898d0960827fb328"
+  },
+  "previous_file_digests": {
+    "src/tokenscope/analysis_common/recommendation_evidence.py": "8e9ef67104497a3fe73caf583f38dedeb0aab35374b33a1b49e547529e2c8943",
+    "src/tokenscope/analysis_common/recommendation_engine.py": "5b3e9dedfc944706cd0a0b38da3204b7fc0223950c30e8855f1707e8b5379862",
+    "src/tokenscope/analysis_common/recommendation_publication.py": "43e7a4fc0e4c115b81a087b06e0af5f58bec547ed4bcaa6056f8c0603de79678",
+    "src/tokenscope/prefix_analysis/recommendation_groups.py": "bb768aa01d848993494a9b45fad6b1ea96b8d7b841732ae91f5eda3f1e0f25e8",
+    "tests/unit/analysis_common/test_evidence_locator.py": "161b84c57bb4e6018569a029abe8b54e7908b8de54ecc6554cce7a6903fd0770",
+    "tests/integration/analysis/test_recommendation_engine.py": "a875f8085dc6e3583a1a73907d65bc8adc2cdf7e43e45d239f65e791859246fd",
+    "tests/integration/analysis/test_recommendation_frontend_reports.py": "476594b996bd1dd9ce41e2c78c2bce26e0811f4458dc6be26b27fe3af0e17b29"
+  },
+  "unchanged_schema_files": {
+    "docs/contracts/analysis-recommendations-1/public-views.json": "d22400804ca91cbde6124488416c4aad988cb15401a5c90b9d8d6468cde4de01",
+    "docs/contracts/analysis-recommendations-1/http-manifest.json": "340ed449f59722ce2b0be33d6f1ddf5ec9ec02c07e5ddb00a23f52ecfa98b8b2",
+    "docs/contracts/analysis-recommendations-1/examples.json": "7a5b5b44fa7c0d556d9f9dc19a0ec4d6ebacf9bea17661e3f40f1d118a6873d1",
+    "docs/contracts/analysis-recommendations-1/manifest.json": "ca9bc2ec1ca82a685514ac7bd2d57d2ae33a7d322462d6704fcf9f8a6ac6a817",
+    "docs/contracts/analysis-recommendations-1/internal.json": "17687f9706fe49922ce9520bd53b17750d5f7eedba9a9734fd1a59a8cb9bb1d6",
+    "docs/contracts/analysis-recommendations-1/wire.json": "9d71609b946ff46c38cf8bb128e5462f0d0d88cfe1ac6527e56bd7b85d50b4ea"
+  },
+  "test_evidence": {
+    "artifacts/validation/arl4-tests-20261031.txt": "b68d341669db34040d20066c65fcaca2fe9215bccc1afd0d3b997682f98f2bd1",
+    "artifacts/validation/arl4-focus-tests-20261031.txt": "76a1bb641e0d8c7192b8f56833f3f90b87d5ec2394407a5c6c50a998f0f86d7b"
+  },
+  "old_frozen_reports_modified": false,
+  "token_private_source_modified": false
+}

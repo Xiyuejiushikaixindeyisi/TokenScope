@@ -1,0 +1,82 @@
+{
+  "version": "analysis-ui04",
+  "date": "2026-10-31",
+  "status": "user_approved_visual_baseline",
+  "file": "tokenscope-analysis-ui04.html",
+  "sha256": "779e6665985fe02e6df9e7d0483ef8111a16a49c2b61fdb27aacbef58d624f5f",
+  "baseline": "docs/tasks/viewer/analysis/prototypes/analysis-ui03/tokenscope-analysis-ui03.html",
+  "baseline_sha256": "e6fa9f96c946e066f2ed52a439b07350cb07d78a290427c6a1670f4662b56869",
+  "css": "All three UI-03 style blocks retained verbatim; local metric and evidence presentation extensions only.",
+  "sources": [
+    {
+      "path": "docs/tasks/prefix-analysis/FRONTEND_REWORK_EXAMPLES_ARL2.json",
+      "sha256": "c004da866a87536d235d73e82b2c01c68a5618b5ef6d12c3b1fb330e7acc22e8"
+    },
+    {
+      "path": "docs/tasks/length-analysis/FRONTEND_REWORK_EXAMPLES_ART2.json",
+      "sha256": "fc9edbc8add15bc1f253db3152fddaf08e03d92f7b7a468efa742e2a62965c94"
+    }
+  ],
+  "fixtures": "backend_confirmed_synthetic_design_examples_not_measured_results",
+  "cards": [
+    {
+      "id": "L1",
+      "scope": "动态时间场景",
+      "sourceRef": "proposal:94ab8ec01132c85b3ec60c7d63e80e2c8600829f2805df2865ec83a1938c0b03"
+    },
+    {
+      "id": "L4",
+      "scope": "动态时间场景",
+      "sourceRef": "synthetic-l4-group"
+    },
+    {
+      "id": "L5",
+      "scope": "独立 JSON 场景",
+      "sourceRef": "synthetic-l5-group"
+    },
+    {
+      "id": "T1",
+      "scope": "Token 优化场景",
+      "sourceRef": "synthetic-rec-T1"
+    },
+    {
+      "id": "T2",
+      "scope": "Token 优化场景",
+      "sourceRef": "synthetic-rec-T2"
+    },
+    {
+      "id": "T3",
+      "scope": "Token 优化场景",
+      "sourceRef": "synthetic-rec-T3"
+    },
+    {
+      "id": "T4",
+      "scope": "Token 优化场景",
+      "sourceRef": "synthetic-rec-T4"
+    }
+  ],
+  "scope": "7 representative cards and readonly local details; no official frontend changes; not a full product demo",
+  "generator": "artifacts/prototypes/analysis-v1/ui04/build.cjs",
+  "browser_validation": {
+    "checks": 38,
+    "desktop": "1440x1050",
+    "mobile": "390x844",
+    "script_errors": 0,
+    "network_requests": 0,
+    "record": "artifacts/validation/viewer/analysis/AR02/ui04-checks.json",
+    "visual_review": "assistant_inspected_screenshots_user_approval_pending"
+  },
+  "approval_date": "2026-10-31",
+  "approval_quote": "这版卡片的信息结构我认可。把 UI-04 记录为新的视觉基线",
+  "approval_scope": "UI-04配色布局及影响范围、预期变化、局部证据、具体改法的信息结构。原HTML作为审批证据保留；最新范围覆盖其中T1卡片：Token仅T2/T3/T4，编号不重排，工具说明精简暂缓。",
+  "scope_override": {
+    "date": "2026-10-31",
+    "user_choice": "本轮移除 Token T1；低命中保留顺序/定义变化分析，工具说明精简暂缓（推荐）",
+    "active_token_rules": [
+      "T2",
+      "T3",
+      "T4"
+    ],
+    "historical_T1_not_current_scope": true
+  }
+}

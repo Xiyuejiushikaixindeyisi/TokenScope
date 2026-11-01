@@ -1,3 +1,4 @@
+import { AnalysisApp } from './features/analysis/AnalysisApp';
 import { useCallback, useEffect, useState, useSyncExternalStore } from 'react';
 import { ViewStore } from './state/view-store';
 import { SnapshotCache } from './storage/snapshot-cache';
@@ -26,6 +27,7 @@ function currentPage() { return window.location.hash.slice(2) || 'overview'; }
 export function App() {
   const route = useSyncExternalStore(subscribe, currentPage);
   const page = route.split('?')[0] ?? 'users';
+  if (page === 'analysis') return <AnalysisApp/>;
   if (!window.location.hash || page.startsWith('users') || page.startsWith('ma')) return <V2App page={page}/>;
   return <LegacyApp/>;
 }

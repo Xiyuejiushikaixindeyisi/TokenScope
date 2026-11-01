@@ -1,0 +1,1619 @@
+{
+  "notice": "CONSTRUCTED STATIC RESPONSES ONLY. No server, task, tokenizer, model assets or replay were started. IDs/times/metrics are fixtures. Do not combine alternative scenarios or treat them as measured results.",
+  "digest_provenance": {
+    "raw_sha256": "computed from the included exact UTF-8 raw strings",
+    "source_manifest_text": "{\"type\":\"synthetic fixture manifest\",\"real_assets\":false}",
+    "source_manifest_sha256": "60d53201aa48b816ca08e61cabbc8644829583525d3179716d8618fe2c06ba2b",
+    "report_manifest": {
+      "report.json": "2b6c3679e671febd1472d48a351c59a22db31349c2589e315dd6b96ff1b3b223"
+    },
+    "report_digest": "d2527ffcfbb2d5362f8340160ac1167b3ff156f3a738462ff09cb059f66a0edd",
+    "warning": "These digests refer only to fixture text, not actual source/asset/server seals. Asset/encoder/algorithm identities explicitly synthetic."
+  },
+  "ready_chain": {
+    "responses": {
+      "/diagnostics/tasks/fixture-ready": {
+        "status": 200,
+        "body": {
+          "task_id": "fixture-ready",
+          "attempt": "1",
+          "status": "ready",
+          "active_direction": null,
+          "report_ref": "fixture-ready",
+          "error_code": null
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/report": {
+        "status": 200,
+        "body": {
+          "version": "diagnostics-report-1",
+          "status": "ready",
+          "scope": {
+            "source": {
+              "base_run_id": "fixture-run",
+              "user_run_id": null,
+              "common_name": null,
+              "model_id": "GLM-5.2",
+              "manifest_sha256": "60d53201aa48b816ca08e61cabbc8644829583525d3179716d8618fe2c06ba2b",
+              "asset_identity": "synthetic-no-model-asset",
+              "encoder_identity": "synthetic-no-encoder",
+              "profile_json": "{}",
+              "settings_json": "{}",
+              "algorithm_version": "synthetic-no-replay"
+            },
+            "appid": "fixture-app",
+            "window": null,
+            "request_count": "4",
+            "request_keys_digest": "e777e9f97776fa1bbe521b852dd3f9c4cae5a69a8c696f66ada06770cf4122e4",
+            "baseline_origin": "original_run_window"
+          },
+          "scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+          "stages": [
+            {
+              "direction": "low_hit",
+              "ruleset_version": "prefix-detectors-1",
+              "status": "completed",
+              "checked_requests": "4",
+              "candidate_coverage_partial": false,
+              "rule_scope": "dates_paths_known_billing_header_tools_history_json_representation"
+            },
+            {
+              "direction": "token_content",
+              "status": "completed",
+              "checked_requests": "4"
+            }
+          ],
+          "runtime_options": {
+            "version": "diagnostics-runtime-1",
+            "token_selection": {
+              "rule_ids": [
+                "T1",
+                "T2",
+                "T3",
+                "T4"
+              ],
+              "policies_json": "[]",
+              "budget": {
+                "max_request_bytes": "1048576",
+                "max_units": "10000",
+                "max_comparison_bytes": "1000000",
+                "max_depth": "64",
+                "max_candidates": "1000",
+                "max_encoding_calls": "100"
+              }
+            },
+            "candidate_limit": "128",
+            "pilot_limit": "2",
+            "max_source_requests": "100",
+            "max_source_bytes": "10000000",
+            "max_findings": "1000",
+            "max_experiments": "8",
+            "max_combinations": "2",
+            "max_encoding_calls": "100",
+            "max_plan_bytes": "16777216"
+          },
+          "encoding_calls": "10"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/finding": {
+        "status": 200,
+        "body": {
+          "items": [
+            {
+              "id": "fixture-finding-L2",
+              "data": {
+                "finding_id": "fixture-finding-L2",
+                "rule_id": "L2",
+                "rule_version": "1",
+                "comparison": {
+                  "left": {
+                    "base_run_id": "fixture-run",
+                    "source_record_index": "1"
+                  },
+                  "right": {
+                    "base_run_id": "fixture-run",
+                    "source_record_index": "2"
+                  },
+                  "left_raw_sha256": "07518eda5dc0c57e8e86193b9286450cd338fdcbaf04cc9c28c65b31c1b7bfeb",
+                  "right_raw_sha256": "9df9281ba9a5507834523f0d37ff6cf5126e7c0e5bfb54adce5c9612f02291f7",
+                  "difference_pointers": [
+                    "/tools"
+                  ],
+                  "association_ref": null,
+                  "lcp_tokens": null
+                },
+                "source_pointer": "/tools",
+                "advice": "对同一完整工具集合固定排列，保留全部定义。",
+                "recipe_json": "{\"kind\":\"sort_tools\",\"set_digest\":\"09bfbb82792c04f304040d45311f6257b3c41c7b532927c1b3b59a992a55cf2b\"}",
+                "evidence_status": "source_order_and_input_difference"
+              }
+            }
+          ],
+          "offset": "0"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/finding/fixture-finding-L2": {
+        "status": 200,
+        "body": {
+          "finding_id": "fixture-finding-L2",
+          "rule_id": "L2",
+          "rule_version": "1",
+          "comparison": {
+            "left": {
+              "base_run_id": "fixture-run",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "fixture-run",
+              "source_record_index": "2"
+            },
+            "left_raw_sha256": "07518eda5dc0c57e8e86193b9286450cd338fdcbaf04cc9c28c65b31c1b7bfeb",
+            "right_raw_sha256": "9df9281ba9a5507834523f0d37ff6cf5126e7c0e5bfb54adce5c9612f02291f7",
+            "difference_pointers": [
+              "/tools"
+            ],
+            "association_ref": null,
+            "lcp_tokens": null
+          },
+          "source_pointer": "/tools",
+          "advice": "对同一完整工具集合固定排列，保留全部定义。",
+          "recipe_json": "{\"kind\":\"sort_tools\",\"set_digest\":\"09bfbb82792c04f304040d45311f6257b3c41c7b532927c1b3b59a992a55cf2b\"}",
+          "evidence_status": "source_order_and_input_difference"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/plan": {
+        "status": 200,
+        "body": {
+          "items": [
+            {
+              "id": "fixture-plan-pilot",
+              "data": {
+                "plan_id": "fixture-plan-pilot",
+                "version": "1",
+                "source_scope_id": "scope:1bd2df17b3fbd3fd2ffa7a3d8af38c86330d7d15652d807022f9968d16015070",
+                "transformation_digest": "5541f8f5914ceeb321aa2316cfdb64ff2d4a3a4c5c804c1ebf4498ee4816be1d",
+                "direction": "low_hit",
+                "action_class": "stabilization",
+                "finding_refs": [
+                  "fixture-finding-L2"
+                ],
+                "operations": [
+                  {
+                    "operation_id": "op:9c1f8138cfa33734e828426763351083ee4ac531c5364491c366e459cfa0cdd3",
+                    "handler_id": "low_hit.sort_tools",
+                    "handler_version": "1",
+                    "target": {
+                      "location": {
+                        "request_key": {
+                          "base_run_id": "fixture-run",
+                          "source_record_index": "2"
+                        },
+                        "raw_sha256": "9df9281ba9a5507834523f0d37ff6cf5126e7c0e5bfb54adce5c9612f02291f7",
+                        "source_pointer": "/tools",
+                        "embedded": null,
+                        "text_range": null
+                      },
+                      "original_type": "array",
+                      "value_guard": "5c82239b5fd021d1fca34660bf0d00b58779873a35622ce12000c0df13f83361",
+                      "outer_string_guard": null
+                    },
+                    "public_primitive": "replace_value",
+                    "replacement_json": "[{\"type\": \"function\", \"function\": {\"name\": \"a\", \"description\": \"fixture a\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}, {\"type\": \"function\", \"function\": {\"name\": \"b\", \"description\": \"fixture b\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}]",
+                    "source_operations_json": "[]",
+                    "invariants_json": "{}",
+                    "business_basis_ref": null,
+                    "manifest_fragment_json": "{}"
+                  }
+                ],
+                "combination_refs": []
+              }
+            },
+            {
+              "id": "fixture-plan-full",
+              "data": {
+                "plan_id": "fixture-plan-full",
+                "version": "1",
+                "source_scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+                "transformation_digest": "5541f8f5914ceeb321aa2316cfdb64ff2d4a3a4c5c804c1ebf4498ee4816be1d",
+                "direction": "low_hit",
+                "action_class": "stabilization",
+                "finding_refs": [
+                  "fixture-finding-L2"
+                ],
+                "operations": [
+                  {
+                    "operation_id": "op:9c1f8138cfa33734e828426763351083ee4ac531c5364491c366e459cfa0cdd3",
+                    "handler_id": "low_hit.sort_tools",
+                    "handler_version": "1",
+                    "target": {
+                      "location": {
+                        "request_key": {
+                          "base_run_id": "fixture-run",
+                          "source_record_index": "2"
+                        },
+                        "raw_sha256": "9df9281ba9a5507834523f0d37ff6cf5126e7c0e5bfb54adce5c9612f02291f7",
+                        "source_pointer": "/tools",
+                        "embedded": null,
+                        "text_range": null
+                      },
+                      "original_type": "array",
+                      "value_guard": "5c82239b5fd021d1fca34660bf0d00b58779873a35622ce12000c0df13f83361",
+                      "outer_string_guard": null
+                    },
+                    "public_primitive": "replace_value",
+                    "replacement_json": "[{\"type\": \"function\", \"function\": {\"name\": \"a\", \"description\": \"fixture a\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}, {\"type\": \"function\", \"function\": {\"name\": \"b\", \"description\": \"fixture b\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}]",
+                    "source_operations_json": "[]",
+                    "invariants_json": "{}",
+                    "business_basis_ref": null,
+                    "manifest_fragment_json": "{}"
+                  },
+                  {
+                    "operation_id": "op:c154c7e99d90544404dec391c6dd9ac50911e754e697fbf772d41bce18bece2b",
+                    "handler_id": "low_hit.sort_tools",
+                    "handler_version": "1",
+                    "target": {
+                      "location": {
+                        "request_key": {
+                          "base_run_id": "fixture-run",
+                          "source_record_index": "4"
+                        },
+                        "raw_sha256": "9df9281ba9a5507834523f0d37ff6cf5126e7c0e5bfb54adce5c9612f02291f7",
+                        "source_pointer": "/tools",
+                        "embedded": null,
+                        "text_range": null
+                      },
+                      "original_type": "array",
+                      "value_guard": "5c82239b5fd021d1fca34660bf0d00b58779873a35622ce12000c0df13f83361",
+                      "outer_string_guard": null
+                    },
+                    "public_primitive": "replace_value",
+                    "replacement_json": "[{\"type\": \"function\", \"function\": {\"name\": \"a\", \"description\": \"fixture a\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}, {\"type\": \"function\", \"function\": {\"name\": \"b\", \"description\": \"fixture b\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}]",
+                    "source_operations_json": "[]",
+                    "invariants_json": "{}",
+                    "business_basis_ref": null,
+                    "manifest_fragment_json": "{}"
+                  }
+                ],
+                "combination_refs": []
+              }
+            }
+          ],
+          "offset": "0"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/plan/fixture-plan-pilot": {
+        "status": 200,
+        "body": {
+          "plan_id": "fixture-plan-pilot",
+          "version": "1",
+          "source_scope_id": "scope:1bd2df17b3fbd3fd2ffa7a3d8af38c86330d7d15652d807022f9968d16015070",
+          "transformation_digest": "5541f8f5914ceeb321aa2316cfdb64ff2d4a3a4c5c804c1ebf4498ee4816be1d",
+          "direction": "low_hit",
+          "action_class": "stabilization",
+          "finding_refs": [
+            "fixture-finding-L2"
+          ],
+          "operations": [
+            {
+              "operation_id": "op:9c1f8138cfa33734e828426763351083ee4ac531c5364491c366e459cfa0cdd3",
+              "handler_id": "low_hit.sort_tools",
+              "handler_version": "1",
+              "target": {
+                "location": {
+                  "request_key": {
+                    "base_run_id": "fixture-run",
+                    "source_record_index": "2"
+                  },
+                  "raw_sha256": "9df9281ba9a5507834523f0d37ff6cf5126e7c0e5bfb54adce5c9612f02291f7",
+                  "source_pointer": "/tools",
+                  "embedded": null,
+                  "text_range": null
+                },
+                "original_type": "array",
+                "value_guard": "5c82239b5fd021d1fca34660bf0d00b58779873a35622ce12000c0df13f83361",
+                "outer_string_guard": null
+              },
+              "public_primitive": "replace_value",
+              "replacement_json": "[{\"type\": \"function\", \"function\": {\"name\": \"a\", \"description\": \"fixture a\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}, {\"type\": \"function\", \"function\": {\"name\": \"b\", \"description\": \"fixture b\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}]",
+              "source_operations_json": "[]",
+              "invariants_json": "{}",
+              "business_basis_ref": null,
+              "manifest_fragment_json": "{}"
+            }
+          ],
+          "combination_refs": []
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/plan/fixture-plan-full": {
+        "status": 200,
+        "body": {
+          "plan_id": "fixture-plan-full",
+          "version": "1",
+          "source_scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+          "transformation_digest": "5541f8f5914ceeb321aa2316cfdb64ff2d4a3a4c5c804c1ebf4498ee4816be1d",
+          "direction": "low_hit",
+          "action_class": "stabilization",
+          "finding_refs": [
+            "fixture-finding-L2"
+          ],
+          "operations": [
+            {
+              "operation_id": "op:9c1f8138cfa33734e828426763351083ee4ac531c5364491c366e459cfa0cdd3",
+              "handler_id": "low_hit.sort_tools",
+              "handler_version": "1",
+              "target": {
+                "location": {
+                  "request_key": {
+                    "base_run_id": "fixture-run",
+                    "source_record_index": "2"
+                  },
+                  "raw_sha256": "9df9281ba9a5507834523f0d37ff6cf5126e7c0e5bfb54adce5c9612f02291f7",
+                  "source_pointer": "/tools",
+                  "embedded": null,
+                  "text_range": null
+                },
+                "original_type": "array",
+                "value_guard": "5c82239b5fd021d1fca34660bf0d00b58779873a35622ce12000c0df13f83361",
+                "outer_string_guard": null
+              },
+              "public_primitive": "replace_value",
+              "replacement_json": "[{\"type\": \"function\", \"function\": {\"name\": \"a\", \"description\": \"fixture a\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}, {\"type\": \"function\", \"function\": {\"name\": \"b\", \"description\": \"fixture b\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}]",
+              "source_operations_json": "[]",
+              "invariants_json": "{}",
+              "business_basis_ref": null,
+              "manifest_fragment_json": "{}"
+            },
+            {
+              "operation_id": "op:c154c7e99d90544404dec391c6dd9ac50911e754e697fbf772d41bce18bece2b",
+              "handler_id": "low_hit.sort_tools",
+              "handler_version": "1",
+              "target": {
+                "location": {
+                  "request_key": {
+                    "base_run_id": "fixture-run",
+                    "source_record_index": "4"
+                  },
+                  "raw_sha256": "9df9281ba9a5507834523f0d37ff6cf5126e7c0e5bfb54adce5c9612f02291f7",
+                  "source_pointer": "/tools",
+                  "embedded": null,
+                  "text_range": null
+                },
+                "original_type": "array",
+                "value_guard": "5c82239b5fd021d1fca34660bf0d00b58779873a35622ce12000c0df13f83361",
+                "outer_string_guard": null
+              },
+              "public_primitive": "replace_value",
+              "replacement_json": "[{\"type\": \"function\", \"function\": {\"name\": \"a\", \"description\": \"fixture a\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}, {\"type\": \"function\", \"function\": {\"name\": \"b\", \"description\": \"fixture b\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}]",
+              "source_operations_json": "[]",
+              "invariants_json": "{}",
+              "business_basis_ref": null,
+              "manifest_fragment_json": "{}"
+            }
+          ],
+          "combination_refs": []
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/evaluation": {
+        "status": 200,
+        "body": {
+          "items": [
+            {
+              "id": "fixture-eval-pilot",
+              "data": {
+                "evaluation_id": "fixture-eval-pilot",
+                "plan_id": "fixture-plan-pilot",
+                "scope_id": "scope:1bd2df17b3fbd3fd2ffa7a3d8af38c86330d7d15652d807022f9968d16015070",
+                "stage": "pilot",
+                "direction": "low_hit",
+                "status": "available",
+                "baseline_origin": "selected_window_recomputed",
+                "coverage": {
+                  "checked": "2",
+                  "eligible": "2",
+                  "complete": true,
+                  "reasons": [],
+                  "stop_location": null
+                },
+                "before": {
+                  "p": "20000",
+                  "h": "10000",
+                  "c": "10000",
+                  "n": "2",
+                  "j": "21000"
+                },
+                "after": {
+                  "p": "20000",
+                  "h": "12000",
+                  "c": "8000",
+                  "n": "2",
+                  "j": "21000"
+                },
+                "modified_before": {
+                  "p": "10000",
+                  "h": "5000",
+                  "c": "5000",
+                  "n": "1",
+                  "j": "10500"
+                },
+                "modified_after": {
+                  "p": "10000",
+                  "h": "6000",
+                  "c": "4000",
+                  "n": "1",
+                  "j": "10500"
+                },
+                "manifest_ref": "experiments/0/pilot/rows.sqlite3",
+                "reason_codes": [],
+                "gate_passed": true,
+                "display_eligible": false,
+                "gain_percentage_points": {
+                  "numerator": "10",
+                  "denominator": "1"
+                },
+                "compute_tokens_delta": "-2000"
+              }
+            },
+            {
+              "id": "fixture-eval-full",
+              "data": {
+                "evaluation_id": "fixture-eval-full",
+                "plan_id": "fixture-plan-full",
+                "scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+                "stage": "full",
+                "direction": "low_hit",
+                "status": "available",
+                "baseline_origin": "original_run_window",
+                "coverage": {
+                  "checked": "4",
+                  "eligible": "4",
+                  "complete": true,
+                  "reasons": [],
+                  "stop_location": null
+                },
+                "before": {
+                  "p": "40000",
+                  "h": "24000",
+                  "c": "16000",
+                  "n": "4",
+                  "j": "41000"
+                },
+                "after": {
+                  "p": "40000",
+                  "h": "32000",
+                  "c": "8000",
+                  "n": "4",
+                  "j": "41000"
+                },
+                "modified_before": {
+                  "p": "20000",
+                  "h": "12000",
+                  "c": "8000",
+                  "n": "2",
+                  "j": "20500"
+                },
+                "modified_after": {
+                  "p": "20000",
+                  "h": "16000",
+                  "c": "4000",
+                  "n": "2",
+                  "j": "20500"
+                },
+                "manifest_ref": "experiments/0/full/rows.sqlite3",
+                "reason_codes": [],
+                "gate_passed": true,
+                "display_eligible": true,
+                "gain_percentage_points": {
+                  "numerator": "20",
+                  "denominator": "1"
+                },
+                "compute_tokens_delta": "-8000"
+              }
+            }
+          ],
+          "offset": "0"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/evaluation/fixture-eval-pilot": {
+        "status": 200,
+        "body": {
+          "evaluation_id": "fixture-eval-pilot",
+          "plan_id": "fixture-plan-pilot",
+          "scope_id": "scope:1bd2df17b3fbd3fd2ffa7a3d8af38c86330d7d15652d807022f9968d16015070",
+          "stage": "pilot",
+          "direction": "low_hit",
+          "status": "available",
+          "baseline_origin": "selected_window_recomputed",
+          "coverage": {
+            "checked": "2",
+            "eligible": "2",
+            "complete": true,
+            "reasons": [],
+            "stop_location": null
+          },
+          "before": {
+            "p": "20000",
+            "h": "10000",
+            "c": "10000",
+            "n": "2",
+            "j": "21000"
+          },
+          "after": {
+            "p": "20000",
+            "h": "12000",
+            "c": "8000",
+            "n": "2",
+            "j": "21000"
+          },
+          "modified_before": {
+            "p": "10000",
+            "h": "5000",
+            "c": "5000",
+            "n": "1",
+            "j": "10500"
+          },
+          "modified_after": {
+            "p": "10000",
+            "h": "6000",
+            "c": "4000",
+            "n": "1",
+            "j": "10500"
+          },
+          "manifest_ref": "experiments/0/pilot/rows.sqlite3",
+          "reason_codes": [],
+          "gate_passed": true,
+          "display_eligible": false,
+          "gain_percentage_points": {
+            "numerator": "10",
+            "denominator": "1"
+          },
+          "compute_tokens_delta": "-2000"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/evaluation/fixture-eval-full": {
+        "status": 200,
+        "body": {
+          "evaluation_id": "fixture-eval-full",
+          "plan_id": "fixture-plan-full",
+          "scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+          "stage": "full",
+          "direction": "low_hit",
+          "status": "available",
+          "baseline_origin": "original_run_window",
+          "coverage": {
+            "checked": "4",
+            "eligible": "4",
+            "complete": true,
+            "reasons": [],
+            "stop_location": null
+          },
+          "before": {
+            "p": "40000",
+            "h": "24000",
+            "c": "16000",
+            "n": "4",
+            "j": "41000"
+          },
+          "after": {
+            "p": "40000",
+            "h": "32000",
+            "c": "8000",
+            "n": "4",
+            "j": "41000"
+          },
+          "modified_before": {
+            "p": "20000",
+            "h": "12000",
+            "c": "8000",
+            "n": "2",
+            "j": "20500"
+          },
+          "modified_after": {
+            "p": "20000",
+            "h": "16000",
+            "c": "4000",
+            "n": "2",
+            "j": "20500"
+          },
+          "manifest_ref": "experiments/0/full/rows.sqlite3",
+          "reason_codes": [],
+          "gate_passed": true,
+          "display_eligible": true,
+          "gain_percentage_points": {
+            "numerator": "20",
+            "denominator": "1"
+          },
+          "compute_tokens_delta": "-8000"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/optimization": {
+        "status": 200,
+        "body": {
+          "items": [
+            {
+              "id": "fixture-eval-full",
+              "data": {
+                "evaluation_id": "fixture-eval-full",
+                "plan_id": "fixture-plan-full",
+                "scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+                "stage": "full",
+                "direction": "low_hit",
+                "status": "available",
+                "baseline_origin": "original_run_window",
+                "coverage": {
+                  "checked": "4",
+                  "eligible": "4",
+                  "complete": true,
+                  "reasons": [],
+                  "stop_location": null
+                },
+                "before": {
+                  "p": "40000",
+                  "h": "24000",
+                  "c": "16000",
+                  "n": "4",
+                  "j": "41000"
+                },
+                "after": {
+                  "p": "40000",
+                  "h": "32000",
+                  "c": "8000",
+                  "n": "4",
+                  "j": "41000"
+                },
+                "modified_before": {
+                  "p": "20000",
+                  "h": "12000",
+                  "c": "8000",
+                  "n": "2",
+                  "j": "20500"
+                },
+                "modified_after": {
+                  "p": "20000",
+                  "h": "16000",
+                  "c": "4000",
+                  "n": "2",
+                  "j": "20500"
+                },
+                "manifest_ref": "experiments/0/full/rows.sqlite3",
+                "reason_codes": [],
+                "gate_passed": true,
+                "display_eligible": true,
+                "gain_percentage_points": {
+                  "numerator": "20",
+                  "denominator": "1"
+                },
+                "compute_tokens_delta": "-8000"
+              }
+            }
+          ],
+          "offset": "0"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/optimization/fixture-eval-full": {
+        "status": 200,
+        "body": {
+          "evaluation_id": "fixture-eval-full",
+          "plan_id": "fixture-plan-full",
+          "scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+          "stage": "full",
+          "direction": "low_hit",
+          "status": "available",
+          "baseline_origin": "original_run_window",
+          "coverage": {
+            "checked": "4",
+            "eligible": "4",
+            "complete": true,
+            "reasons": [],
+            "stop_location": null
+          },
+          "before": {
+            "p": "40000",
+            "h": "24000",
+            "c": "16000",
+            "n": "4",
+            "j": "41000"
+          },
+          "after": {
+            "p": "40000",
+            "h": "32000",
+            "c": "8000",
+            "n": "4",
+            "j": "41000"
+          },
+          "modified_before": {
+            "p": "20000",
+            "h": "12000",
+            "c": "8000",
+            "n": "2",
+            "j": "20500"
+          },
+          "modified_after": {
+            "p": "20000",
+            "h": "16000",
+            "c": "4000",
+            "n": "2",
+            "j": "20500"
+          },
+          "manifest_ref": "experiments/0/full/rows.sqlite3",
+          "reason_codes": [],
+          "gate_passed": true,
+          "display_eligible": true,
+          "gain_percentage_points": {
+            "numerator": "20",
+            "denominator": "1"
+          },
+          "compute_tokens_delta": "-8000"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/experiment": {
+        "status": 200,
+        "body": {
+          "items": [
+            {
+              "id": "0",
+              "data": {
+                "finding_ids": [
+                  "fixture-finding-L2"
+                ],
+                "status": "full_qualified",
+                "selection_method": "contiguous-anchor-1",
+                "pilot_scope": {
+                  "source": {
+                    "base_run_id": "fixture-run",
+                    "user_run_id": null,
+                    "common_name": null,
+                    "model_id": "GLM-5.2",
+                    "manifest_sha256": "60d53201aa48b816ca08e61cabbc8644829583525d3179716d8618fe2c06ba2b",
+                    "asset_identity": "synthetic-no-model-asset",
+                    "encoder_identity": "synthetic-no-encoder",
+                    "profile_json": "{}",
+                    "settings_json": "{}",
+                    "algorithm_version": "synthetic-no-replay"
+                  },
+                  "appid": "fixture-app",
+                  "window": {
+                    "start_ns": "0",
+                    "end_ns": "2"
+                  },
+                  "request_count": "2",
+                  "request_keys_digest": "60f09540d6f4b265b2e7908acfc0e88edc5942b1fa8acbaa457960d7d1133d40",
+                  "baseline_origin": "selected_window_recomputed"
+                },
+                "pilot": {
+                  "evaluation_id": "fixture-eval-pilot",
+                  "plan_id": "fixture-plan-pilot",
+                  "scope_id": "scope:1bd2df17b3fbd3fd2ffa7a3d8af38c86330d7d15652d807022f9968d16015070",
+                  "stage": "pilot",
+                  "direction": "low_hit",
+                  "status": "available",
+                  "baseline_origin": "selected_window_recomputed",
+                  "coverage": {
+                    "checked": "2",
+                    "eligible": "2",
+                    "complete": true,
+                    "reasons": [],
+                    "stop_location": null
+                  },
+                  "before": {
+                    "p": "20000",
+                    "h": "10000",
+                    "c": "10000",
+                    "n": "2",
+                    "j": "21000"
+                  },
+                  "after": {
+                    "p": "20000",
+                    "h": "12000",
+                    "c": "8000",
+                    "n": "2",
+                    "j": "21000"
+                  },
+                  "modified_before": {
+                    "p": "10000",
+                    "h": "5000",
+                    "c": "5000",
+                    "n": "1",
+                    "j": "10500"
+                  },
+                  "modified_after": {
+                    "p": "10000",
+                    "h": "6000",
+                    "c": "4000",
+                    "n": "1",
+                    "j": "10500"
+                  },
+                  "manifest_ref": "experiments/0/pilot/rows.sqlite3",
+                  "reason_codes": []
+                },
+                "full": {
+                  "evaluation_id": "fixture-eval-full",
+                  "plan_id": "fixture-plan-full",
+                  "scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+                  "stage": "full",
+                  "direction": "low_hit",
+                  "status": "available",
+                  "baseline_origin": "original_run_window",
+                  "coverage": {
+                    "checked": "4",
+                    "eligible": "4",
+                    "complete": true,
+                    "reasons": [],
+                    "stop_location": null
+                  },
+                  "before": {
+                    "p": "40000",
+                    "h": "24000",
+                    "c": "16000",
+                    "n": "4",
+                    "j": "41000"
+                  },
+                  "after": {
+                    "p": "40000",
+                    "h": "32000",
+                    "c": "8000",
+                    "n": "4",
+                    "j": "41000"
+                  },
+                  "modified_before": {
+                    "p": "20000",
+                    "h": "12000",
+                    "c": "8000",
+                    "n": "2",
+                    "j": "20500"
+                  },
+                  "modified_after": {
+                    "p": "20000",
+                    "h": "16000",
+                    "c": "4000",
+                    "n": "2",
+                    "j": "20500"
+                  },
+                  "manifest_ref": "experiments/0/full/rows.sqlite3",
+                  "reason_codes": []
+                },
+                "reason_codes": [],
+                "confidence_basis": "pilot_gain_gt_1pp"
+              }
+            }
+          ],
+          "offset": "0"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/comparisons/fixture-finding-L2": {
+        "status": 200,
+        "body": {
+          "comparison": {
+            "left": {
+              "base_run_id": "fixture-run",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "fixture-run",
+              "source_record_index": "2"
+            },
+            "left_raw_sha256": "07518eda5dc0c57e8e86193b9286450cd338fdcbaf04cc9c28c65b31c1b7bfeb",
+            "right_raw_sha256": "9df9281ba9a5507834523f0d37ff6cf5126e7c0e5bfb54adce5c9612f02291f7",
+            "difference_pointers": [
+              "/tools"
+            ],
+            "association_ref": null,
+            "lcp_tokens": null
+          },
+          "left_raw_body": "{\"messages\":[{\"role\":\"user\",\"content\":\"fixture question\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"a\",\"description\":\"fixture a\",\"parameters\":{\"type\":\"object\",\"properties\":{}}}},{\"type\":\"function\",\"function\":{\"name\":\"b\",\"description\":\"fixture b\",\"parameters\":{\"type\":\"object\",\"properties\":{}}}}],\"enable_thinking\":false}",
+          "right_raw_body": "{\"messages\":[{\"role\":\"user\",\"content\":\"fixture question\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"b\",\"description\":\"fixture b\",\"parameters\":{\"type\":\"object\",\"properties\":{}}}},{\"type\":\"function\",\"function\":{\"name\":\"a\",\"description\":\"fixture a\",\"parameters\":{\"type\":\"object\",\"properties\":{}}}}],\"enable_thinking\":false}",
+          "raw_body_complete": true
+        }
+      },
+      "/diagnostics/discovery/catalog": {
+        "status": 200,
+        "body": {
+          "version": "diagnostics-discovery-1",
+          "service_instance_id": "fixture-instance",
+          "snapshot": "fixture-instance:fixture-epoch:1",
+          "event_cursor": "fixture-instance:fixture-epoch:1",
+          "items": [
+            {
+              "task_id": "fixture-ready",
+              "task_kind": "analysis",
+              "parent_task_id": null,
+              "plan_refs": [],
+              "status": "ready",
+              "error_code": null,
+              "report_published": true,
+              "report_ref": "fixture-ready",
+              "report_digest": "d2527ffcfbb2d5362f8340160ac1167b3ff156f3a738462ff09cb059f66a0edd",
+              "scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+              "scope": {
+                "source": {
+                  "base_run_id": "fixture-run",
+                  "user_run_id": null,
+                  "common_name": null,
+                  "model_id": "GLM-5.2",
+                  "manifest_sha256": "60d53201aa48b816ca08e61cabbc8644829583525d3179716d8618fe2c06ba2b",
+                  "asset_identity": "synthetic-no-model-asset",
+                  "encoder_identity": "synthetic-no-encoder",
+                  "profile_json": "{}",
+                  "settings_json": "{}",
+                  "algorithm_version": "synthetic-no-replay"
+                },
+                "appid": "fixture-app",
+                "window": null,
+                "request_count": "4",
+                "request_keys_digest": "e777e9f97776fa1bbe521b852dd3f9c4cae5a69a8c696f66ada06770cf4122e4",
+                "baseline_origin": "original_run_window"
+              },
+              "binding": {
+                "appid": "fixture-app",
+                "model_id": "GLM-5.2",
+                "common_name": null,
+                "source_kind": "base"
+              },
+              "binding_id": "65fff6932b7301df71775ea68d5474f329b97b1ad99d9b76529c1f5b043712f8",
+              "directions": [
+                "low_hit",
+                "token_content"
+              ],
+              "sequence": "1",
+              "terminal_at": "2026-10-31T00:00:00.000Z",
+              "published_at": "2026-10-31T00:00:00.000Z",
+              "analysis_completed_at": "2026-10-31T00:00:00.000Z",
+              "legacy": false,
+              "default_eligible": true
+            }
+          ],
+          "defaults": [
+            {
+              "binding_id": "65fff6932b7301df71775ea68d5474f329b97b1ad99d9b76529c1f5b043712f8",
+              "direction": "low_hit",
+              "task_id": "fixture-ready",
+              "sequence": "1"
+            },
+            {
+              "binding_id": "65fff6932b7301df71775ea68d5474f329b97b1ad99d9b76529c1f5b043712f8",
+              "direction": "token_content",
+              "task_id": "fixture-ready",
+              "sequence": "1"
+            }
+          ],
+          "next_after": null
+        }
+      }
+    },
+    "walk": [
+      "/diagnostics/discovery/catalog",
+      "/diagnostics/tasks/fixture-ready/report",
+      "/diagnostics/tasks/fixture-ready/items/finding",
+      "/diagnostics/tasks/fixture-ready/items/experiment",
+      "/diagnostics/tasks/fixture-ready/items/optimization",
+      "/diagnostics/tasks/fixture-ready/items/evaluation",
+      "/diagnostics/tasks/fixture-ready/items/plan",
+      "/diagnostics/tasks/fixture-ready/comparisons/fixture-finding-L2"
+    ]
+  },
+  "exact_1pp_pilot": {
+    "standalone_scenario": true,
+    "responses": {
+      "/diagnostics/tasks/fixture-ready/items/evaluation": {
+        "status": 200,
+        "body": {
+          "items": [
+            {
+              "id": "fixture-eval-pilot",
+              "data": {
+                "evaluation_id": "fixture-eval-pilot",
+                "plan_id": "fixture-plan-pilot",
+                "scope_id": "scope:1bd2df17b3fbd3fd2ffa7a3d8af38c86330d7d15652d807022f9968d16015070",
+                "stage": "pilot",
+                "direction": "low_hit",
+                "status": "available",
+                "baseline_origin": "selected_window_recomputed",
+                "coverage": {
+                  "checked": "2",
+                  "eligible": "2",
+                  "complete": true,
+                  "reasons": [],
+                  "stop_location": null
+                },
+                "before": {
+                  "p": "20000",
+                  "h": "10000",
+                  "c": "10000",
+                  "n": "2",
+                  "j": "21000"
+                },
+                "after": {
+                  "p": "20000",
+                  "h": "10200",
+                  "c": "9800",
+                  "n": "2",
+                  "j": "21000"
+                },
+                "modified_before": {
+                  "p": "10000",
+                  "h": "5000",
+                  "c": "5000",
+                  "n": "1",
+                  "j": "10500"
+                },
+                "modified_after": {
+                  "p": "10000",
+                  "h": "5100",
+                  "c": "4900",
+                  "n": "1",
+                  "j": "10500"
+                },
+                "manifest_ref": "experiments/0/pilot/rows.sqlite3",
+                "reason_codes": [],
+                "gate_passed": false,
+                "display_eligible": false,
+                "gain_percentage_points": {
+                  "numerator": "1",
+                  "denominator": "1"
+                },
+                "compute_tokens_delta": "-200"
+              }
+            }
+          ],
+          "offset": "0"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/optimization": {
+        "status": 200,
+        "body": {
+          "items": [],
+          "offset": "0"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/experiment": {
+        "status": 200,
+        "body": {
+          "items": [
+            {
+              "id": "0",
+              "data": {
+                "finding_ids": [
+                  "fixture-finding-L2"
+                ],
+                "status": "pilot_below_gate",
+                "selection_method": "contiguous-anchor-1",
+                "pilot_scope": {
+                  "source": {
+                    "base_run_id": "fixture-run",
+                    "user_run_id": null,
+                    "common_name": null,
+                    "model_id": "GLM-5.2",
+                    "manifest_sha256": "60d53201aa48b816ca08e61cabbc8644829583525d3179716d8618fe2c06ba2b",
+                    "asset_identity": "synthetic-no-model-asset",
+                    "encoder_identity": "synthetic-no-encoder",
+                    "profile_json": "{}",
+                    "settings_json": "{}",
+                    "algorithm_version": "synthetic-no-replay"
+                  },
+                  "appid": "fixture-app",
+                  "window": {
+                    "start_ns": "0",
+                    "end_ns": "2"
+                  },
+                  "request_count": "2",
+                  "request_keys_digest": "60f09540d6f4b265b2e7908acfc0e88edc5942b1fa8acbaa457960d7d1133d40",
+                  "baseline_origin": "selected_window_recomputed"
+                },
+                "pilot": {
+                  "evaluation_id": "fixture-eval-pilot",
+                  "plan_id": "fixture-plan-pilot",
+                  "scope_id": "scope:1bd2df17b3fbd3fd2ffa7a3d8af38c86330d7d15652d807022f9968d16015070",
+                  "stage": "pilot",
+                  "direction": "low_hit",
+                  "status": "available",
+                  "baseline_origin": "selected_window_recomputed",
+                  "coverage": {
+                    "checked": "2",
+                    "eligible": "2",
+                    "complete": true,
+                    "reasons": [],
+                    "stop_location": null
+                  },
+                  "before": {
+                    "p": "20000",
+                    "h": "10000",
+                    "c": "10000",
+                    "n": "2",
+                    "j": "21000"
+                  },
+                  "after": {
+                    "p": "20000",
+                    "h": "10200",
+                    "c": "9800",
+                    "n": "2",
+                    "j": "21000"
+                  },
+                  "modified_before": {
+                    "p": "10000",
+                    "h": "5000",
+                    "c": "5000",
+                    "n": "1",
+                    "j": "10500"
+                  },
+                  "modified_after": {
+                    "p": "10000",
+                    "h": "5100",
+                    "c": "4900",
+                    "n": "1",
+                    "j": "10500"
+                  },
+                  "manifest_ref": "experiments/0/pilot/rows.sqlite3",
+                  "reason_codes": []
+                },
+                "full": null,
+                "reason_codes": [],
+                "confidence_basis": "not_established"
+              }
+            }
+          ],
+          "offset": "0"
+        }
+      },
+      "/diagnostics/tasks/fixture-ready/items/plan": {
+        "status": 200,
+        "body": {
+          "items": [
+            {
+              "id": "fixture-plan-pilot",
+              "data": {
+                "plan_id": "fixture-plan-pilot",
+                "version": "1",
+                "source_scope_id": "scope:1bd2df17b3fbd3fd2ffa7a3d8af38c86330d7d15652d807022f9968d16015070",
+                "transformation_digest": "5541f8f5914ceeb321aa2316cfdb64ff2d4a3a4c5c804c1ebf4498ee4816be1d",
+                "direction": "low_hit",
+                "action_class": "stabilization",
+                "finding_refs": [
+                  "fixture-finding-L2"
+                ],
+                "operations": [
+                  {
+                    "operation_id": "op:9c1f8138cfa33734e828426763351083ee4ac531c5364491c366e459cfa0cdd3",
+                    "handler_id": "low_hit.sort_tools",
+                    "handler_version": "1",
+                    "target": {
+                      "location": {
+                        "request_key": {
+                          "base_run_id": "fixture-run",
+                          "source_record_index": "2"
+                        },
+                        "raw_sha256": "9df9281ba9a5507834523f0d37ff6cf5126e7c0e5bfb54adce5c9612f02291f7",
+                        "source_pointer": "/tools",
+                        "embedded": null,
+                        "text_range": null
+                      },
+                      "original_type": "array",
+                      "value_guard": "5c82239b5fd021d1fca34660bf0d00b58779873a35622ce12000c0df13f83361",
+                      "outer_string_guard": null
+                    },
+                    "public_primitive": "replace_value",
+                    "replacement_json": "[{\"type\": \"function\", \"function\": {\"name\": \"a\", \"description\": \"fixture a\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}, {\"type\": \"function\", \"function\": {\"name\": \"b\", \"description\": \"fixture b\", \"parameters\": {\"type\": \"object\", \"properties\": {}}}}]",
+                    "source_operations_json": "[]",
+                    "invariants_json": "{}",
+                    "business_basis_ref": null,
+                    "manifest_fragment_json": "{}"
+                  }
+                ],
+                "combination_refs": []
+              }
+            }
+          ],
+          "offset": "0"
+        }
+      }
+    },
+    "note": "Use common finding/comparison only; there is no full plan/result in this alternative."
+  },
+  "L4_L5": [
+    {
+      "separate_scenario": true,
+      "finding": {
+        "finding_id": "fixture-L4",
+        "rule_id": "L4",
+        "rule_version": "1",
+        "comparison": {
+          "left": {
+            "base_run_id": "fixture-run",
+            "source_record_index": "1"
+          },
+          "right": {
+            "base_run_id": "fixture-run",
+            "source_record_index": "2"
+          },
+          "left_raw_sha256": "f314566e5387078d8387325ffa9bfcf6d098660616ca1bb65f3fb6f7897dc7f2",
+          "right_raw_sha256": "712e8827cbef1075ec1512e08db24402022cdfaa13c9d6654d8b0d61e8848688",
+          "difference_pointers": [
+            "/messages/1/content"
+          ],
+          "association_ref": null,
+          "lcp_tokens": null
+        },
+        "source_pointer": "/messages/1/content",
+        "advice": "无可靠关联，不认定同一会话改写。",
+        "recipe_json": null,
+        "evidence_status": "needs_association"
+      },
+      "comparison_response": {
+        "comparison": {
+          "left": {
+            "base_run_id": "fixture-run",
+            "source_record_index": "1"
+          },
+          "right": {
+            "base_run_id": "fixture-run",
+            "source_record_index": "2"
+          },
+          "left_raw_sha256": "f314566e5387078d8387325ffa9bfcf6d098660616ca1bb65f3fb6f7897dc7f2",
+          "right_raw_sha256": "712e8827cbef1075ec1512e08db24402022cdfaa13c9d6654d8b0d61e8848688",
+          "difference_pointers": [
+            "/messages/1/content"
+          ],
+          "association_ref": null,
+          "lcp_tokens": null
+        },
+        "left_raw_body": "{\"messages\":[{\"role\":\"system\",\"content\":\"你是助手\"},{\"role\":\"user\",\"content\":\"查询订单A\"},{\"role\":\"assistant\",\"content\":\"处理中\"},{\"role\":\"user\",\"content\":\"继续\"}],\"enable_thinking\":false}",
+        "right_raw_body": "{\"messages\":[{\"role\":\"system\",\"content\":\"你是助手\"},{\"role\":\"user\",\"content\":\"查询订单B\"},{\"role\":\"assistant\",\"content\":\"处理中\"},{\"role\":\"user\",\"content\":\"继续\"}],\"enable_thinking\":false}",
+        "raw_body_complete": true
+      },
+      "optimization": []
+    },
+    {
+      "separate_scenario": true,
+      "finding": {
+        "finding_id": "fixture-L5",
+        "rule_id": "L5",
+        "rule_version": "1",
+        "comparison": {
+          "left": {
+            "base_run_id": "fixture-run",
+            "source_record_index": "1"
+          },
+          "right": {
+            "base_run_id": "fixture-run",
+            "source_record_index": "2"
+          },
+          "left_raw_sha256": "9ab27c3a57a34be184c85b0e972001a7a8854db543bbc56e8d77295fe4adcd55",
+          "right_raw_sha256": "a6900d5c2c5d0f1477151442381dba33692bb49024dd806788e91b6a291baee9",
+          "difference_pointers": [
+            "/messages/2/content"
+          ],
+          "association_ref": null,
+          "lcp_tokens": null
+        },
+        "source_pointer": "/messages/2/content",
+        "advice": "查看两条完整请求的JSON表示差异。",
+        "recipe_json": null,
+        "evidence_status": "source_change_and_input_difference"
+      },
+      "comparison_response": {
+        "comparison": {
+          "left": {
+            "base_run_id": "fixture-run",
+            "source_record_index": "1"
+          },
+          "right": {
+            "base_run_id": "fixture-run",
+            "source_record_index": "2"
+          },
+          "left_raw_sha256": "9ab27c3a57a34be184c85b0e972001a7a8854db543bbc56e8d77295fe4adcd55",
+          "right_raw_sha256": "a6900d5c2c5d0f1477151442381dba33692bb49024dd806788e91b6a291baee9",
+          "difference_pointers": [
+            "/messages/2/content"
+          ],
+          "association_ref": null,
+          "lcp_tokens": null
+        },
+        "left_raw_body": "{\"messages\":[{\"role\":\"user\",\"content\":\"查询订单\"},{\"role\":\"assistant\",\"content\":null,\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"call_1\",\"content\":\"{\\\"id\\\":1,\\\"status\\\":\\\"ok\\\"}\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"parameters\":{\"type\":\"object\",\"properties\":{}}}}],\"enable_thinking\":false}",
+        "right_raw_body": "{\"messages\":[{\"role\":\"user\",\"content\":\"查询订单\"},{\"role\":\"assistant\",\"content\":null,\"tool_calls\":[{\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"call_1\",\"content\":\"{ \\\"id\\\": 1, \\\"status\\\": \\\"ok\\\" }\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"parameters\":{\"type\":\"object\",\"properties\":{}}}}],\"enable_thinking\":false}",
+        "raw_body_complete": true
+      },
+      "optimization": []
+    }
+  ],
+  "catalog_variants": {
+    "partial_only": {
+      "version": "diagnostics-discovery-1",
+      "service_instance_id": "fixture-instance",
+      "snapshot": "fixture-instance:fixture-epoch:1",
+      "event_cursor": "fixture-instance:fixture-epoch:1",
+      "items": [
+        {
+          "task_id": "fixture-ready",
+          "task_kind": "analysis",
+          "parent_task_id": null,
+          "plan_refs": [],
+          "status": "partial",
+          "error_code": null,
+          "report_published": true,
+          "report_ref": "fixture-ready",
+          "report_digest": "d2527ffcfbb2d5362f8340160ac1167b3ff156f3a738462ff09cb059f66a0edd",
+          "scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+          "scope": {
+            "source": {
+              "base_run_id": "fixture-run",
+              "user_run_id": null,
+              "common_name": null,
+              "model_id": "GLM-5.2",
+              "manifest_sha256": "60d53201aa48b816ca08e61cabbc8644829583525d3179716d8618fe2c06ba2b",
+              "asset_identity": "synthetic-no-model-asset",
+              "encoder_identity": "synthetic-no-encoder",
+              "profile_json": "{}",
+              "settings_json": "{}",
+              "algorithm_version": "synthetic-no-replay"
+            },
+            "appid": "fixture-app",
+            "window": null,
+            "request_count": "4",
+            "request_keys_digest": "e777e9f97776fa1bbe521b852dd3f9c4cae5a69a8c696f66ada06770cf4122e4",
+            "baseline_origin": "original_run_window"
+          },
+          "binding": {
+            "appid": "fixture-app",
+            "model_id": "GLM-5.2",
+            "common_name": null,
+            "source_kind": "base"
+          },
+          "binding_id": "65fff6932b7301df71775ea68d5474f329b97b1ad99d9b76529c1f5b043712f8",
+          "directions": [
+            "low_hit",
+            "token_content"
+          ],
+          "sequence": "1",
+          "terminal_at": "2026-10-31T00:00:00.000Z",
+          "published_at": "2026-10-31T00:00:00.000Z",
+          "analysis_completed_at": "2026-10-31T00:00:00.000Z",
+          "legacy": false,
+          "default_eligible": false
+        }
+      ],
+      "defaults": [],
+      "next_after": null
+    },
+    "empty_only": {
+      "version": "diagnostics-discovery-1",
+      "service_instance_id": "fixture-instance",
+      "snapshot": "fixture-instance:fixture-epoch:1",
+      "event_cursor": "fixture-instance:fixture-epoch:1",
+      "items": [
+        {
+          "task_id": "fixture-ready",
+          "task_kind": "analysis",
+          "parent_task_id": null,
+          "plan_refs": [],
+          "status": "empty",
+          "error_code": null,
+          "report_published": true,
+          "report_ref": "fixture-ready",
+          "report_digest": "d2527ffcfbb2d5362f8340160ac1167b3ff156f3a738462ff09cb059f66a0edd",
+          "scope_id": "scope:1d725ede4e0a7ab81a660e05f1139f176133856b7abb99ccdffd3abab9bc7ed9",
+          "scope": {
+            "source": {
+              "base_run_id": "fixture-run",
+              "user_run_id": null,
+              "common_name": null,
+              "model_id": "GLM-5.2",
+              "manifest_sha256": "60d53201aa48b816ca08e61cabbc8644829583525d3179716d8618fe2c06ba2b",
+              "asset_identity": "synthetic-no-model-asset",
+              "encoder_identity": "synthetic-no-encoder",
+              "profile_json": "{}",
+              "settings_json": "{}",
+              "algorithm_version": "synthetic-no-replay"
+            },
+            "appid": "fixture-app",
+            "window": null,
+            "request_count": "0",
+            "request_keys_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "baseline_origin": "original_run_window"
+          },
+          "binding": {
+            "appid": "fixture-app",
+            "model_id": "GLM-5.2",
+            "common_name": null,
+            "source_kind": "base"
+          },
+          "binding_id": "65fff6932b7301df71775ea68d5474f329b97b1ad99d9b76529c1f5b043712f8",
+          "directions": [
+            "low_hit",
+            "token_content"
+          ],
+          "sequence": "1",
+          "terminal_at": "2026-10-31T00:00:00.000Z",
+          "published_at": "2026-10-31T00:00:00.000Z",
+          "analysis_completed_at": "2026-10-31T00:00:00.000Z",
+          "legacy": false,
+          "default_eligible": false
+        }
+      ],
+      "defaults": [],
+      "next_after": null
+    },
+    "legacy_only": {
+      "version": "diagnostics-discovery-1",
+      "service_instance_id": "fixture-instance",
+      "snapshot": "fixture-instance:fixture-epoch:1",
+      "event_cursor": "fixture-instance:fixture-epoch:1",
+      "items": [
+        {
+          "task_id": "fixture-ready",
+          "task_kind": "analysis",
+          "parent_task_id": null,
+          "plan_refs": [],
+          "status": "ready",
+          "error_code": null,
+          "report_published": true,
+          "report_ref": "fixture-ready",
+          "report_digest": "d2527ffcfbb2d5362f8340160ac1167b3ff156f3a738462ff09cb059f66a0edd",
+          "scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+          "scope": {
+            "source": {
+              "base_run_id": "fixture-run",
+              "user_run_id": null,
+              "common_name": null,
+              "model_id": "GLM-5.2",
+              "manifest_sha256": "60d53201aa48b816ca08e61cabbc8644829583525d3179716d8618fe2c06ba2b",
+              "asset_identity": "synthetic-no-model-asset",
+              "encoder_identity": "synthetic-no-encoder",
+              "profile_json": "{}",
+              "settings_json": "{}",
+              "algorithm_version": "synthetic-no-replay"
+            },
+            "appid": "fixture-app",
+            "window": null,
+            "request_count": "4",
+            "request_keys_digest": "e777e9f97776fa1bbe521b852dd3f9c4cae5a69a8c696f66ada06770cf4122e4",
+            "baseline_origin": "original_run_window"
+          },
+          "binding": {
+            "appid": "fixture-app",
+            "model_id": "GLM-5.2",
+            "common_name": null,
+            "source_kind": "base"
+          },
+          "binding_id": "65fff6932b7301df71775ea68d5474f329b97b1ad99d9b76529c1f5b043712f8",
+          "directions": [
+            "low_hit",
+            "token_content"
+          ],
+          "sequence": "1",
+          "terminal_at": null,
+          "published_at": null,
+          "analysis_completed_at": null,
+          "legacy": true,
+          "default_eligible": false
+        }
+      ],
+      "defaults": [],
+      "next_after": null
+    }
+  },
+  "direction_isolation": {
+    "version": "diagnostics-discovery-1",
+    "service_instance_id": "fixture-instance",
+    "snapshot": "fixture-instance:fixture-epoch:2",
+    "event_cursor": "fixture-instance:fixture-epoch:2",
+    "items": [
+      {
+        "task_id": "fixture-ready",
+        "task_kind": "analysis",
+        "parent_task_id": null,
+        "plan_refs": [],
+        "status": "ready",
+        "error_code": null,
+        "report_published": true,
+        "report_ref": "fixture-ready",
+        "report_digest": "d2527ffcfbb2d5362f8340160ac1167b3ff156f3a738462ff09cb059f66a0edd",
+        "scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+        "scope": {
+          "source": {
+            "base_run_id": "fixture-run",
+            "user_run_id": null,
+            "common_name": null,
+            "model_id": "GLM-5.2",
+            "manifest_sha256": "60d53201aa48b816ca08e61cabbc8644829583525d3179716d8618fe2c06ba2b",
+            "asset_identity": "synthetic-no-model-asset",
+            "encoder_identity": "synthetic-no-encoder",
+            "profile_json": "{}",
+            "settings_json": "{}",
+            "algorithm_version": "synthetic-no-replay"
+          },
+          "appid": "fixture-app",
+          "window": null,
+          "request_count": "4",
+          "request_keys_digest": "e777e9f97776fa1bbe521b852dd3f9c4cae5a69a8c696f66ada06770cf4122e4",
+          "baseline_origin": "original_run_window"
+        },
+        "binding": {
+          "appid": "fixture-app",
+          "model_id": "GLM-5.2",
+          "common_name": null,
+          "source_kind": "base"
+        },
+        "binding_id": "65fff6932b7301df71775ea68d5474f329b97b1ad99d9b76529c1f5b043712f8",
+        "directions": [
+          "low_hit",
+          "token_content"
+        ],
+        "sequence": "1",
+        "terminal_at": "2026-10-31T00:00:00.000Z",
+        "published_at": "2026-10-31T00:00:00.000Z",
+        "analysis_completed_at": "2026-10-31T00:00:00.000Z",
+        "legacy": false,
+        "default_eligible": true
+      },
+      {
+        "task_id": "fixture-token-only",
+        "task_kind": "analysis",
+        "parent_task_id": null,
+        "plan_refs": [],
+        "status": "ready",
+        "error_code": null,
+        "report_published": true,
+        "report_ref": "fixture-token-only",
+        "report_digest": "d2527ffcfbb2d5362f8340160ac1167b3ff156f3a738462ff09cb059f66a0edd",
+        "scope_id": "scope:79f2657fdd68658152ebe6eb96de25da620ba191c1a21a9009da85c1f0ca5317",
+        "scope": {
+          "source": {
+            "base_run_id": "fixture-run",
+            "user_run_id": null,
+            "common_name": null,
+            "model_id": "GLM-5.2",
+            "manifest_sha256": "60d53201aa48b816ca08e61cabbc8644829583525d3179716d8618fe2c06ba2b",
+            "asset_identity": "synthetic-no-model-asset",
+            "encoder_identity": "synthetic-no-encoder",
+            "profile_json": "{}",
+            "settings_json": "{}",
+            "algorithm_version": "synthetic-no-replay"
+          },
+          "appid": "fixture-app",
+          "window": null,
+          "request_count": "4",
+          "request_keys_digest": "e777e9f97776fa1bbe521b852dd3f9c4cae5a69a8c696f66ada06770cf4122e4",
+          "baseline_origin": "original_run_window"
+        },
+        "binding": {
+          "appid": "fixture-app",
+          "model_id": "GLM-5.2",
+          "common_name": null,
+          "source_kind": "base"
+        },
+        "binding_id": "65fff6932b7301df71775ea68d5474f329b97b1ad99d9b76529c1f5b043712f8",
+        "directions": [
+          "token_content"
+        ],
+        "sequence": "2",
+        "terminal_at": "2026-10-31T00:00:00.000Z",
+        "published_at": "2026-10-31T00:00:00.000Z",
+        "analysis_completed_at": "2026-10-31T00:00:00.000Z",
+        "legacy": false,
+        "default_eligible": true
+      }
+    ],
+    "defaults": [
+      {
+        "binding_id": "65fff6932b7301df71775ea68d5474f329b97b1ad99d9b76529c1f5b043712f8",
+        "direction": "low_hit",
+        "task_id": "fixture-ready",
+        "sequence": "1"
+      },
+      {
+        "binding_id": "65fff6932b7301df71775ea68d5474f329b97b1ad99d9b76529c1f5b043712f8",
+        "direction": "token_content",
+        "task_id": "fixture-token-only",
+        "sequence": "2"
+      }
+    ],
+    "next_after": null
+  },
+  "read_error": {
+    "status": 409,
+    "body": {
+      "error": {
+        "code": "REPORT_DIGEST_MISMATCH",
+        "message": "Report evidence differs"
+      }
+    }
+  }
+}

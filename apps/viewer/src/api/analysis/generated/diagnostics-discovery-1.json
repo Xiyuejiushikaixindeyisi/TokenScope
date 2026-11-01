@@ -1,0 +1,1233 @@
+{
+  "catalog": {
+    "$defs": {
+      "AnalysisScope": {
+        "additionalProperties": false,
+        "properties": {
+          "source": {
+            "$ref": "#/$defs/SourceIdentity"
+          },
+          "appid": {
+            "minLength": 1,
+            "title": "Appid",
+            "type": "string"
+          },
+          "window": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/TimeWindow"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "request_count": {
+            "title": "Request Count",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "0"
+          },
+          "request_keys_digest": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Request Keys Digest",
+            "type": "string"
+          },
+          "baseline_origin": {
+            "enum": [
+              "original_run_window",
+              "selected_window_recomputed"
+            ],
+            "title": "Baseline Origin",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "appid",
+          "window",
+          "request_count",
+          "request_keys_digest",
+          "baseline_origin"
+        ],
+        "title": "AnalysisScope",
+        "type": "object"
+      },
+      "Binding": {
+        "additionalProperties": false,
+        "properties": {
+          "appid": {
+            "title": "Appid",
+            "type": "string"
+          },
+          "model_id": {
+            "title": "Model Id",
+            "type": "string"
+          },
+          "common_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Common Name"
+          },
+          "source_kind": {
+            "enum": [
+              "base",
+              "user_v2"
+            ],
+            "title": "Source Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "appid",
+          "model_id",
+          "common_name",
+          "source_kind"
+        ],
+        "title": "Binding",
+        "type": "object"
+      },
+      "CatalogEntry": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "task_kind": {
+            "enum": [
+              "analysis",
+              "low_hit_evaluation",
+              "token_evaluation",
+              "token_authorization",
+              "combination"
+            ],
+            "title": "Task Kind",
+            "type": "string"
+          },
+          "parent_task_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Task Id"
+          },
+          "plan_refs": {
+            "items": {
+              "$ref": "#/$defs/PlanRef"
+            },
+            "title": "Plan Refs",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "partial",
+              "empty",
+              "failed",
+              "interrupted"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "report_published": {
+            "title": "Report Published",
+            "type": "boolean"
+          },
+          "report_ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report Ref"
+          },
+          "report_digest": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report Digest"
+          },
+          "scope_id": {
+            "title": "Scope Id",
+            "type": "string"
+          },
+          "binding": {
+            "$ref": "#/$defs/Binding"
+          },
+          "binding_id": {
+            "title": "Binding Id",
+            "type": "string"
+          },
+          "directions": {
+            "items": {
+              "enum": [
+                "low_hit",
+                "token_content"
+              ],
+              "type": "string"
+            },
+            "title": "Directions",
+            "type": "array"
+          },
+          "sequence": {
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Sequence",
+            "type": "string"
+          },
+          "terminal_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Terminal At"
+          },
+          "published_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Published At"
+          },
+          "analysis_completed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Analysis Completed At"
+          },
+          "legacy": {
+            "title": "Legacy",
+            "type": "boolean"
+          },
+          "default_eligible": {
+            "title": "Default Eligible",
+            "type": "boolean"
+          },
+          "scope": {
+            "$ref": "#/$defs/AnalysisScope"
+          }
+        },
+        "required": [
+          "task_id",
+          "task_kind",
+          "parent_task_id",
+          "plan_refs",
+          "status",
+          "error_code",
+          "report_published",
+          "report_ref",
+          "report_digest",
+          "scope_id",
+          "binding",
+          "binding_id",
+          "directions",
+          "sequence",
+          "terminal_at",
+          "published_at",
+          "analysis_completed_at",
+          "legacy",
+          "default_eligible",
+          "scope"
+        ],
+        "title": "CatalogEntry",
+        "type": "object"
+      },
+      "DefaultReference": {
+        "additionalProperties": false,
+        "properties": {
+          "binding_id": {
+            "title": "Binding Id",
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "low_hit",
+              "token_content"
+            ],
+            "title": "Direction",
+            "type": "string"
+          },
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "sequence": {
+            "title": "Sequence",
+            "type": "string"
+          }
+        },
+        "required": [
+          "binding_id",
+          "direction",
+          "task_id",
+          "sequence"
+        ],
+        "title": "DefaultReference",
+        "type": "object"
+      },
+      "PlanRef": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "plan_id": {
+            "title": "Plan Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "plan_id"
+        ],
+        "title": "PlanRef",
+        "type": "object"
+      },
+      "SourceIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "base_run_id": {
+            "minLength": 1,
+            "title": "Base Run Id",
+            "type": "string"
+          },
+          "user_run_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "User Run Id"
+          },
+          "common_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Common Name"
+          },
+          "model_id": {
+            "minLength": 1,
+            "title": "Model Id",
+            "type": "string"
+          },
+          "manifest_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Manifest Sha256",
+            "type": "string"
+          },
+          "asset_identity": {
+            "minLength": 1,
+            "title": "Asset Identity",
+            "type": "string"
+          },
+          "encoder_identity": {
+            "minLength": 1,
+            "title": "Encoder Identity",
+            "type": "string"
+          },
+          "profile_json": {
+            "title": "Profile Json",
+            "type": "string"
+          },
+          "settings_json": {
+            "title": "Settings Json",
+            "type": "string"
+          },
+          "algorithm_version": {
+            "minLength": 1,
+            "title": "Algorithm Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "base_run_id",
+          "model_id",
+          "manifest_sha256",
+          "asset_identity",
+          "encoder_identity",
+          "profile_json",
+          "settings_json",
+          "algorithm_version"
+        ],
+        "title": "SourceIdentity",
+        "type": "object"
+      },
+      "TimeWindow": {
+        "additionalProperties": false,
+        "properties": {
+          "start_ns": {
+            "title": "Start Ns",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$"
+          },
+          "end_ns": {
+            "title": "End Ns",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$"
+          }
+        },
+        "required": [
+          "start_ns",
+          "end_ns"
+        ],
+        "title": "TimeWindow",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "version": {
+        "const": "diagnostics-discovery-1",
+        "title": "Version",
+        "type": "string"
+      },
+      "service_instance_id": {
+        "title": "Service Instance Id",
+        "type": "string"
+      },
+      "snapshot": {
+        "title": "Snapshot",
+        "type": "string"
+      },
+      "event_cursor": {
+        "title": "Event Cursor",
+        "type": "string"
+      },
+      "items": {
+        "items": {
+          "$ref": "#/$defs/CatalogEntry"
+        },
+        "title": "Items",
+        "type": "array"
+      },
+      "defaults": {
+        "items": {
+          "$ref": "#/$defs/DefaultReference"
+        },
+        "title": "Defaults",
+        "type": "array"
+      },
+      "next_after": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next After"
+      }
+    },
+    "required": [
+      "version",
+      "service_instance_id",
+      "snapshot",
+      "event_cursor",
+      "items",
+      "defaults",
+      "next_after"
+    ],
+    "title": "Catalog",
+    "type": "object"
+  },
+  "terminal": {
+    "$defs": {
+      "AnalysisScope": {
+        "additionalProperties": false,
+        "properties": {
+          "source": {
+            "$ref": "#/$defs/SourceIdentity"
+          },
+          "appid": {
+            "minLength": 1,
+            "title": "Appid",
+            "type": "string"
+          },
+          "window": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/TimeWindow"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "request_count": {
+            "title": "Request Count",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "0"
+          },
+          "request_keys_digest": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Request Keys Digest",
+            "type": "string"
+          },
+          "baseline_origin": {
+            "enum": [
+              "original_run_window",
+              "selected_window_recomputed"
+            ],
+            "title": "Baseline Origin",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "appid",
+          "window",
+          "request_count",
+          "request_keys_digest",
+          "baseline_origin"
+        ],
+        "title": "AnalysisScope",
+        "type": "object"
+      },
+      "Binding": {
+        "additionalProperties": false,
+        "properties": {
+          "appid": {
+            "title": "Appid",
+            "type": "string"
+          },
+          "model_id": {
+            "title": "Model Id",
+            "type": "string"
+          },
+          "common_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Common Name"
+          },
+          "source_kind": {
+            "enum": [
+              "base",
+              "user_v2"
+            ],
+            "title": "Source Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "appid",
+          "model_id",
+          "common_name",
+          "source_kind"
+        ],
+        "title": "Binding",
+        "type": "object"
+      },
+      "CatalogEntry": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "task_kind": {
+            "enum": [
+              "analysis",
+              "low_hit_evaluation",
+              "token_evaluation",
+              "token_authorization",
+              "combination"
+            ],
+            "title": "Task Kind",
+            "type": "string"
+          },
+          "parent_task_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Task Id"
+          },
+          "plan_refs": {
+            "items": {
+              "$ref": "#/$defs/PlanRef"
+            },
+            "title": "Plan Refs",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "partial",
+              "empty",
+              "failed",
+              "interrupted"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "report_published": {
+            "title": "Report Published",
+            "type": "boolean"
+          },
+          "report_ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report Ref"
+          },
+          "report_digest": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report Digest"
+          },
+          "scope_id": {
+            "title": "Scope Id",
+            "type": "string"
+          },
+          "binding": {
+            "$ref": "#/$defs/Binding"
+          },
+          "binding_id": {
+            "title": "Binding Id",
+            "type": "string"
+          },
+          "directions": {
+            "items": {
+              "enum": [
+                "low_hit",
+                "token_content"
+              ],
+              "type": "string"
+            },
+            "title": "Directions",
+            "type": "array"
+          },
+          "sequence": {
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Sequence",
+            "type": "string"
+          },
+          "terminal_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Terminal At"
+          },
+          "published_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Published At"
+          },
+          "analysis_completed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Analysis Completed At"
+          },
+          "legacy": {
+            "title": "Legacy",
+            "type": "boolean"
+          },
+          "default_eligible": {
+            "title": "Default Eligible",
+            "type": "boolean"
+          },
+          "scope": {
+            "$ref": "#/$defs/AnalysisScope"
+          }
+        },
+        "required": [
+          "task_id",
+          "task_kind",
+          "parent_task_id",
+          "plan_refs",
+          "status",
+          "error_code",
+          "report_published",
+          "report_ref",
+          "report_digest",
+          "scope_id",
+          "binding",
+          "binding_id",
+          "directions",
+          "sequence",
+          "terminal_at",
+          "published_at",
+          "analysis_completed_at",
+          "legacy",
+          "default_eligible",
+          "scope"
+        ],
+        "title": "CatalogEntry",
+        "type": "object"
+      },
+      "PlanRef": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "plan_id": {
+            "title": "Plan Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "plan_id"
+        ],
+        "title": "PlanRef",
+        "type": "object"
+      },
+      "SourceIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "base_run_id": {
+            "minLength": 1,
+            "title": "Base Run Id",
+            "type": "string"
+          },
+          "user_run_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "User Run Id"
+          },
+          "common_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Common Name"
+          },
+          "model_id": {
+            "minLength": 1,
+            "title": "Model Id",
+            "type": "string"
+          },
+          "manifest_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Manifest Sha256",
+            "type": "string"
+          },
+          "asset_identity": {
+            "minLength": 1,
+            "title": "Asset Identity",
+            "type": "string"
+          },
+          "encoder_identity": {
+            "minLength": 1,
+            "title": "Encoder Identity",
+            "type": "string"
+          },
+          "profile_json": {
+            "title": "Profile Json",
+            "type": "string"
+          },
+          "settings_json": {
+            "title": "Settings Json",
+            "type": "string"
+          },
+          "algorithm_version": {
+            "minLength": 1,
+            "title": "Algorithm Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "base_run_id",
+          "model_id",
+          "manifest_sha256",
+          "asset_identity",
+          "encoder_identity",
+          "profile_json",
+          "settings_json",
+          "algorithm_version"
+        ],
+        "title": "SourceIdentity",
+        "type": "object"
+      },
+      "TimeWindow": {
+        "additionalProperties": false,
+        "properties": {
+          "start_ns": {
+            "title": "Start Ns",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$"
+          },
+          "end_ns": {
+            "title": "End Ns",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$"
+          }
+        },
+        "required": [
+          "start_ns",
+          "end_ns"
+        ],
+        "title": "TimeWindow",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "version": {
+        "const": "diagnostics-discovery-1",
+        "title": "Version",
+        "type": "string"
+      },
+      "service_instance_id": {
+        "title": "Service Instance Id",
+        "type": "string"
+      },
+      "terminal": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/CatalogEntry"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "required": [
+      "version",
+      "service_instance_id",
+      "terminal"
+    ],
+    "title": "Terminal",
+    "type": "object"
+  },
+  "terminal_event": {
+    "$defs": {
+      "Binding": {
+        "additionalProperties": false,
+        "properties": {
+          "appid": {
+            "title": "Appid",
+            "type": "string"
+          },
+          "model_id": {
+            "title": "Model Id",
+            "type": "string"
+          },
+          "common_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Common Name"
+          },
+          "source_kind": {
+            "enum": [
+              "base",
+              "user_v2"
+            ],
+            "title": "Source Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "appid",
+          "model_id",
+          "common_name",
+          "source_kind"
+        ],
+        "title": "Binding",
+        "type": "object"
+      },
+      "PlanRef": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "plan_id": {
+            "title": "Plan Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "plan_id"
+        ],
+        "title": "PlanRef",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "version": {
+        "const": "diagnostics-discovery-1",
+        "title": "Version",
+        "type": "string"
+      },
+      "service_instance_id": {
+        "title": "Service Instance Id",
+        "type": "string"
+      },
+      "task_id": {
+        "title": "Task Id",
+        "type": "string"
+      },
+      "task_kind": {
+        "enum": [
+          "analysis",
+          "low_hit_evaluation",
+          "token_evaluation",
+          "token_authorization",
+          "combination"
+        ],
+        "title": "Task Kind",
+        "type": "string"
+      },
+      "parent_task_id": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Parent Task Id"
+      },
+      "plan_refs": {
+        "items": {
+          "$ref": "#/$defs/PlanRef"
+        },
+        "title": "Plan Refs",
+        "type": "array"
+      },
+      "status": {
+        "enum": [
+          "ready",
+          "partial",
+          "empty",
+          "failed",
+          "interrupted"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "error_code": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Error Code"
+      },
+      "report_published": {
+        "title": "Report Published",
+        "type": "boolean"
+      },
+      "report_ref": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Report Ref"
+      },
+      "report_digest": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Report Digest"
+      },
+      "scope_id": {
+        "title": "Scope Id",
+        "type": "string"
+      },
+      "binding": {
+        "$ref": "#/$defs/Binding"
+      },
+      "binding_id": {
+        "title": "Binding Id",
+        "type": "string"
+      },
+      "directions": {
+        "items": {
+          "enum": [
+            "low_hit",
+            "token_content"
+          ],
+          "type": "string"
+        },
+        "title": "Directions",
+        "type": "array"
+      },
+      "sequence": {
+        "pattern": "^[1-9][0-9]*$",
+        "title": "Sequence",
+        "type": "string"
+      },
+      "terminal_at": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Terminal At"
+      },
+      "published_at": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Published At"
+      },
+      "analysis_completed_at": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Analysis Completed At"
+      },
+      "legacy": {
+        "title": "Legacy",
+        "type": "boolean"
+      },
+      "default_eligible": {
+        "title": "Default Eligible",
+        "type": "boolean"
+      },
+      "event_id": {
+        "title": "Event Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "version",
+      "service_instance_id",
+      "task_id",
+      "task_kind",
+      "parent_task_id",
+      "plan_refs",
+      "status",
+      "error_code",
+      "report_published",
+      "report_ref",
+      "report_digest",
+      "scope_id",
+      "binding",
+      "binding_id",
+      "directions",
+      "sequence",
+      "terminal_at",
+      "published_at",
+      "analysis_completed_at",
+      "legacy",
+      "default_eligible",
+      "event_id"
+    ],
+    "title": "TerminalEvent",
+    "type": "object"
+  },
+  "reset": {
+    "additionalProperties": false,
+    "properties": {
+      "version": {
+        "const": "diagnostics-discovery-1",
+        "title": "Version",
+        "type": "string"
+      },
+      "service_instance_id": {
+        "title": "Service Instance Id",
+        "type": "string"
+      },
+      "reason": {
+        "title": "Reason",
+        "type": "string"
+      },
+      "catalog_url": {
+        "const": "/diagnostics/discovery/catalog",
+        "title": "Catalog Url",
+        "type": "string"
+      }
+    },
+    "required": [
+      "version",
+      "service_instance_id",
+      "reason",
+      "catalog_url"
+    ],
+    "title": "Reset",
+    "type": "object"
+  },
+  "error": {
+    "$defs": {
+      "ErrorDetail": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ErrorDetail",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "error": {
+        "$ref": "#/$defs/ErrorDetail"
+      }
+    },
+    "required": [
+      "error"
+    ],
+    "title": "Error",
+    "type": "object"
+  }
+}

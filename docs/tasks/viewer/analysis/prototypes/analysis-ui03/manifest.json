@@ -1,0 +1,17 @@
+{
+  "version": "analysis-ui03",
+  "date": "2026-10-31",
+  "status": "user_approved_visual_baseline",
+  "file": "tokenscope-analysis-ui03.html",
+  "sha256": "e6fa9f96c946e066f2ed52a439b07350cb07d78a290427c6a1670f4662b56869",
+  "previous": "docs/tasks/viewer/analysis/prototypes/analysis-ui02-r1/tokenscope-analysis-ui02-r1.html",
+  "previous_sha256": "1c3f5011717f48e1a2d93ce65853cbb380c90dab0c6ff6ecde2cf6bbf119bf81",
+  "change": "移除单项评估表单/授权/提交/结果选择及事件处理，仅保留只读问题、建议、已有收益；原CSS与页面骨架保留",
+  "self_contained": true,
+  "fixtures": "constructed_not_real_backend",
+  "browser_visual_check": "not_performed_prior_file_protocol_block",
+  "generator": "artifacts/prototypes/analysis-v1/ui03/build.cjs",
+  "approval_date": "2026-10-31",
+  "approval_quote": "这版只读 DEMO 和轻量缓存、历史切换、详情返回方案我认可。",
+  "approval_scope": "只读展示及已讨论轻量浏览方向；不含正式代码开发授权"
+}

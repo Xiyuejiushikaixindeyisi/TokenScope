@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-31",
+  "identity_kind": "TA-S1_document_scope_revision_not_runtime",
+  "active_token_rules": [
+    "T2",
+    "T3",
+    "T4"
+  ],
+  "runtime_t1_removed": false,
+  "code_changed_by_this_task": false,
+  "public_contract_design": "analysis-recommendations-1",
+  "files": [
+    {
+      "path": "docs/tasks/length-analysis/SCOPE_REVISION_T234.md",
+      "sha256": "ee6611ed9ae457cd4e312629e1586cb1f70dbf9075f7c9bfd86345c674b65f34"
+    },
+    {
+      "path": "docs/tasks/length-analysis/BATCH_PLAN_ARTA.md",
+      "sha256": "f03017ae8c97763e907f3bf97af90954bc19e5aef5eba65708459034ccd59d2c"
+    },
+    {
+      "path": "docs/tasks/length-analysis/DESIGN.md",
+      "sha256": "c703946c92d9e4867d6ca23cf0b76b2fb0567c84c7590e2cb6b070f274ed24a3"
+    },
+    {
+      "path": "docs/tasks/length-analysis/ARTA000_ALIGNMENT.md",
+      "sha256": "33f6e8e359278ca6b4297999b3c3d28975eadf4cf9d119af5120a4a5dca26b1f"
+    },
+    {
+      "path": "docs/tasks/length-analysis/ARTA000_RESULT.md",
+      "sha256": "c64bb8c029ce8b419e4c97950d6ecb9c7cb80448f6ed4aea1bff8becf9ef7067"
+    },
+    {
+      "path": "docs/tasks/length-analysis/FRONTEND_REWORK_EXAMPLES_ART3.json",
+      "sha256": "4c28a53f8dc217ee49b6c8536729f00241c549caaf2c4b2cf39fa61a33ce87ba"
+    }
+  ],
+  "historical_files_preserved": [
+    {
+      "path": "docs/tasks/length-analysis/FRONTEND_REWORK_EXAMPLES_ART2.json",
+      "sha256": "fc9edbc8add15bc1f253db3152fddaf08e03d92f7b7a468efa742e2a62965c94"
+    },
+    {
+      "path": "docs/tasks/length-analysis/FRONTEND_REWORK_IDENTITY_ART2.json",
+      "sha256": "9468daba28bdceabdbfc9e1a7bde894b740062dff0c869aba1e2972e7e026c82"
+    },
+    {
+      "path": "docs/tasks/length-analysis/batches/TA006/CODE_IDENTITY.json",
+      "sha256": "32b904db8b256443a4f1a3749b7ff8e8b31d99977ffcf572ffef2ba5c6ee4ada"
+    }
+  ]
+}

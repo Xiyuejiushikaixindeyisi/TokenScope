@@ -1,0 +1,25 @@
+{
+  "identity": "arpc-local-3",
+  "parent": "arpc-local-2",
+  "session_id": "01a18be2-7112-7aa2-919b-5137d1f1b1ad",
+  "files": {
+    "src/tokenscope/prefix_analysis/recommendation_projection.py": "89acccd133637c45759c02d7d437883e008e2da7dc3408770dffb1afda127f14",
+    "tests/unit/prefix_analysis/test_recommendation_copy.py": "467f0239965eb0524c73f6d79c1845d2e1431a71c030d6e30834fdd6c134ca8d",
+    "tests/integration/analysis/test_recommendation_frontend_reports.py": "837aab3739c7783bd16b757be6e27824082c0039e4511b2e2e67d1294c2af3fa",
+    "docs/tasks/prefix-analysis/FRONTEND_COPY_HANDOFF_ARL5.md": "bac2bbfaf7019d409e2563fa13b5ea87e0dde6e1313f2d586def3dd4126f0887",
+    "docs/tasks/prefix-analysis/FRONTEND_REWORK_COPY_EXAMPLES_ARL5.json": "567b48bea773e43fa64f4345767664a21fbdf9572797c3ebe987f2dce94571e1"
+  },
+  "unchanged_schema_files": {
+    "docs/contracts/analysis-recommendations-1/public-views.json": "d22400804ca91cbde6124488416c4aad988cb15401a5c90b9d8d6468cde4de01",
+    "docs/contracts/analysis-recommendations-1/http-manifest.json": "340ed449f59722ce2b0be33d6f1ddf5ec9ec02c07e5ddb00a23f52ecfa98b8b2",
+    "docs/contracts/analysis-recommendations-1/examples.json": "7a5b5b44fa7c0d556d9f9dc19a0ec4d6ebacf9bea17661e3f40f1d118a6873d1",
+    "docs/contracts/analysis-recommendations-1/manifest.json": "ca9bc2ec1ca82a685514ac7bd2d57d2ae33a7d322462d6704fcf9f8a6ac6a817",
+    "docs/contracts/analysis-recommendations-1/internal.json": "17687f9706fe49922ce9520bd53b17750d5f7eedba9a9734fd1a59a8cb9bb1d6",
+    "docs/contracts/analysis-recommendations-1/wire.json": "9d71609b946ff46c38cf8bb128e5462f0d0d88cfe1ac6527e56bd7b85d50b4ea"
+  },
+  "test_evidence": {
+    "artifacts/validation/arl5-tests-20261031.txt": "9e5650dc75c74731ec44b98ea2e864673bbc6834fca536cd049f84cce806a590"
+  },
+  "schema_changed": false,
+  "old_reports_modified": false
+}

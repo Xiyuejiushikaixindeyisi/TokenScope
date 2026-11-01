@@ -1,0 +1,3631 @@
+{
+  "models": {
+    "Basis": {
+      "$defs": {
+        "BasisAuthority": {
+          "additionalProperties": false,
+          "properties": {
+            "source_digest": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Source Digest",
+              "type": "string"
+            },
+            "source_kind": {
+              "minLength": 1,
+              "title": "Source Kind",
+              "type": "string"
+            },
+            "source_ref": {
+              "minLength": 1,
+              "title": "Source Ref",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "verified",
+                "missing",
+                "invalid"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_kind",
+            "source_ref",
+            "source_digest",
+            "status"
+          ],
+          "title": "BasisAuthority",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "assumptions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "authority": {
+          "$ref": "#/$defs/BasisAuthority"
+        },
+        "digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Digest",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "business_policy",
+            "offline_hypothesis",
+            "explicit_authorization"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "limitations": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "ref": {
+          "minLength": 1,
+          "title": "Ref",
+          "type": "string"
+        },
+        "revision": {
+          "minLength": 1,
+          "title": "Revision",
+          "type": "string"
+        },
+        "scope_selector": {
+          "title": "Scope Selector",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "ref",
+        "revision",
+        "digest",
+        "scope_selector",
+        "authority"
+      ],
+      "title": "Basis",
+      "type": "object"
+    },
+    "BasisAuthority": {
+      "additionalProperties": false,
+      "properties": {
+        "source_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Source Digest",
+          "type": "string"
+        },
+        "source_kind": {
+          "minLength": 1,
+          "title": "Source Kind",
+          "type": "string"
+        },
+        "source_ref": {
+          "minLength": 1,
+          "title": "Source Ref",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "missing",
+            "invalid"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_kind",
+        "source_ref",
+        "source_digest",
+        "status"
+      ],
+      "title": "BasisAuthority",
+      "type": "object"
+    },
+    "BudgetConsumption": {
+      "additionalProperties": false,
+      "properties": {
+        "encoding_calls": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Encoding Calls",
+          "type": "integer"
+        },
+        "prepared_operations": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Prepared Operations",
+          "type": "integer"
+        },
+        "proposals": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Proposals",
+          "type": "integer"
+        },
+        "recommendations": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Recommendations",
+          "type": "integer"
+        },
+        "token_evaluations": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Token Evaluations",
+          "type": "integer"
+        },
+        "total_plan_bytes": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Total Plan Bytes",
+          "type": "integer"
+        }
+      },
+      "title": "BudgetConsumption",
+      "type": "object"
+    },
+    "DifferenceGroup": {
+      "$defs": {
+        "ObjectRef": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "minLength": 1,
+              "title": "Id",
+              "type": "string"
+            },
+            "task_id": {
+              "minLength": 1,
+              "title": "Task Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "task_id",
+            "id"
+          ],
+          "title": "ObjectRef",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "minimum": 0,
+              "title": "Source Record Index",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "change_summary": {
+          "title": "Change Summary",
+          "type": "string"
+        },
+        "display_order": {
+          "minimum": 0,
+          "title": "Display Order",
+          "type": "integer"
+        },
+        "example_refs": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ObjectRef"
+          },
+          "maxItems": 3,
+          "title": "Example Refs",
+          "type": "array"
+        },
+        "finding_ids": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Finding Ids",
+          "type": "array"
+        },
+        "group_basis_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Group Basis Digest",
+          "type": "string"
+        },
+        "group_id": {
+          "minLength": 1,
+          "title": "Group Id",
+          "type": "string"
+        },
+        "member_requests": {
+          "items": {
+            "$ref": "#/$defs/RequestKey"
+          },
+          "minItems": 1,
+          "title": "Member Requests",
+          "type": "array"
+        },
+        "members_complete": {
+          "title": "Members Complete",
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "rule_id": {
+          "enum": [
+            "L4",
+            "L5"
+          ],
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "scope_id": {
+          "minLength": 1,
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "task_id": {
+          "minLength": 1,
+          "title": "Task Id",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "version": {
+          "const": "recommendation-group-1",
+          "default": "recommendation-group-1",
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "group_id",
+        "task_id",
+        "scope_id",
+        "rule_id",
+        "title",
+        "change_summary",
+        "group_basis_digest",
+        "finding_ids",
+        "member_requests",
+        "members_complete",
+        "display_order"
+      ],
+      "title": "DifferenceGroup",
+      "type": "object"
+    },
+    "EvidenceSpan": {
+      "additionalProperties": false,
+      "properties": {
+        "end": {
+          "minimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "title": "EvidenceSpan",
+      "type": "object"
+    },
+    "Impact": {
+      "additionalProperties": false,
+      "properties": {
+        "count_basis": {
+          "const": "raw_body_changed",
+          "default": "raw_body_changed",
+          "title": "Count Basis",
+          "type": "string"
+        },
+        "evaluation_complete": {
+          "title": "Evaluation Complete",
+          "type": "boolean"
+        },
+        "match_complete": {
+          "title": "Match Complete",
+          "type": "boolean"
+        },
+        "matched_checked_requests": {
+          "minimum": 0,
+          "title": "Matched Checked Requests",
+          "type": "integer"
+        },
+        "matched_requests": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Matched Requests"
+        },
+        "modified_requests": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Modified Requests"
+        },
+        "total_requests": {
+          "minimum": 0,
+          "title": "Total Requests",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "total_requests",
+        "matched_requests",
+        "matched_checked_requests",
+        "match_complete",
+        "modified_requests",
+        "evaluation_complete"
+      ],
+      "title": "Impact",
+      "type": "object"
+    },
+    "LocalEvidence": {
+      "$defs": {
+        "EmbeddedLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "format": {
+              "const": "json",
+              "default": "json",
+              "title": "Format",
+              "type": "string"
+            },
+            "parser_version": {
+              "minLength": 1,
+              "title": "Parser Version",
+              "type": "string"
+            },
+            "pointer": {
+              "title": "Pointer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "parser_version",
+            "pointer"
+          ],
+          "title": "EmbeddedLocation",
+          "type": "object"
+        },
+        "EvidenceSpan": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "minimum": 0,
+              "title": "End",
+              "type": "integer"
+            },
+            "start": {
+              "minimum": 0,
+              "title": "Start",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "EvidenceSpan",
+          "type": "object"
+        },
+        "Location": {
+          "additionalProperties": false,
+          "properties": {
+            "embedded": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EmbeddedLocation"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "source_pointer": {
+              "title": "Source Pointer",
+              "type": "string"
+            },
+            "text_range": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TextRange"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "request_key",
+            "raw_sha256",
+            "source_pointer"
+          ],
+          "title": "Location",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "minimum": 0,
+              "title": "Source Record Index",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "minimum": 0,
+              "title": "End",
+              "type": "integer"
+            },
+            "start": {
+              "minimum": 0,
+              "title": "Start",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "context_after": {
+          "default": "",
+          "title": "Context After",
+          "type": "string"
+        },
+        "context_before": {
+          "default": "",
+          "title": "Context Before",
+          "type": "string"
+        },
+        "decoded_span": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvidenceSpan"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "excerpt": {
+          "title": "Excerpt",
+          "type": "string"
+        },
+        "locator_version": {
+          "const": "evidence-locator-1",
+          "default": "evidence-locator-1",
+          "title": "Locator Version",
+          "type": "string"
+        },
+        "offset_unit": {
+          "const": "unicode_codepoint",
+          "default": "unicode_codepoint",
+          "title": "Offset Unit",
+          "type": "string"
+        },
+        "omitted_after": {
+          "default": false,
+          "title": "Omitted After",
+          "type": "boolean"
+        },
+        "omitted_before": {
+          "default": false,
+          "title": "Omitted Before",
+          "type": "boolean"
+        },
+        "raw_span": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvidenceSpan"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reason_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "source": {
+          "$ref": "#/$defs/Location"
+        }
+      },
+      "required": [
+        "source",
+        "raw_span",
+        "excerpt"
+      ],
+      "title": "LocalEvidence",
+      "type": "object"
+    },
+    "ObjectRef": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "task_id": {
+          "minLength": 1,
+          "title": "Task Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id",
+        "id"
+      ],
+      "title": "ObjectRef",
+      "type": "object"
+    },
+    "Proposal": {
+      "$defs": {
+        "Basis": {
+          "additionalProperties": false,
+          "properties": {
+            "assumptions": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Assumptions",
+              "type": "array"
+            },
+            "authority": {
+              "$ref": "#/$defs/BasisAuthority"
+            },
+            "digest": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Digest",
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "business_policy",
+                "offline_hypothesis",
+                "explicit_authorization"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "limitations": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Limitations",
+              "type": "array"
+            },
+            "ref": {
+              "minLength": 1,
+              "title": "Ref",
+              "type": "string"
+            },
+            "revision": {
+              "minLength": 1,
+              "title": "Revision",
+              "type": "string"
+            },
+            "scope_selector": {
+              "title": "Scope Selector",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "ref",
+            "revision",
+            "digest",
+            "scope_selector",
+            "authority"
+          ],
+          "title": "Basis",
+          "type": "object"
+        },
+        "BasisAuthority": {
+          "additionalProperties": false,
+          "properties": {
+            "source_digest": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Source Digest",
+              "type": "string"
+            },
+            "source_kind": {
+              "minLength": 1,
+              "title": "Source Kind",
+              "type": "string"
+            },
+            "source_ref": {
+              "minLength": 1,
+              "title": "Source Ref",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "verified",
+                "missing",
+                "invalid"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_kind",
+            "source_ref",
+            "source_digest",
+            "status"
+          ],
+          "title": "BasisAuthority",
+          "type": "object"
+        },
+        "EmbeddedLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "format": {
+              "const": "json",
+              "default": "json",
+              "title": "Format",
+              "type": "string"
+            },
+            "parser_version": {
+              "minLength": 1,
+              "title": "Parser Version",
+              "type": "string"
+            },
+            "pointer": {
+              "title": "Pointer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "parser_version",
+            "pointer"
+          ],
+          "title": "EmbeddedLocation",
+          "type": "object"
+        },
+        "Location": {
+          "additionalProperties": false,
+          "properties": {
+            "embedded": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EmbeddedLocation"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "source_pointer": {
+              "title": "Source Pointer",
+              "type": "string"
+            },
+            "text_range": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TextRange"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "request_key",
+            "raw_sha256",
+            "source_pointer"
+          ],
+          "title": "Location",
+          "type": "object"
+        },
+        "ProposalTarget": {
+          "additionalProperties": false,
+          "properties": {
+            "location": {
+              "$ref": "#/$defs/Location"
+            },
+            "parameters_json": {
+              "title": "Parameters Json",
+              "type": "string"
+            }
+          },
+          "required": [
+            "location",
+            "parameters_json"
+          ],
+          "title": "ProposalTarget",
+          "type": "object"
+        },
+        "Recipe": {
+          "additionalProperties": false,
+          "properties": {
+            "basis": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Basis"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "category_rules": {
+              "items": {
+                "enum": [
+                  "L1",
+                  "L2",
+                  "L3",
+                  "T2",
+                  "T3",
+                  "T4"
+                ],
+                "type": "string"
+              },
+              "title": "Category Rules",
+              "type": "array"
+            },
+            "change_summary": {
+              "minLength": 1,
+              "title": "Change Summary",
+              "type": "string"
+            },
+            "conditions": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Conditions",
+              "type": "array"
+            },
+            "handler_id": {
+              "minLength": 1,
+              "title": "Handler Id",
+              "type": "string"
+            },
+            "handler_version": {
+              "minLength": 1,
+              "title": "Handler Version",
+              "type": "string"
+            },
+            "limitations": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Limitations",
+              "type": "array"
+            },
+            "parameter_generator_json": {
+              "title": "Parameter Generator Json",
+              "type": "string"
+            },
+            "primary_rule": {
+              "enum": [
+                "L1",
+                "L2",
+                "L3",
+                "T2",
+                "T3",
+                "T4"
+              ],
+              "title": "Primary Rule",
+              "type": "string"
+            },
+            "recipe_id": {
+              "minLength": 1,
+              "title": "Recipe Id",
+              "type": "string"
+            },
+            "revision": {
+              "minLength": 1,
+              "title": "Revision",
+              "type": "string"
+            },
+            "selector_json": {
+              "title": "Selector Json",
+              "type": "string"
+            },
+            "title": {
+              "minLength": 1,
+              "title": "Title",
+              "type": "string"
+            }
+          },
+          "required": [
+            "recipe_id",
+            "revision",
+            "primary_rule",
+            "category_rules",
+            "handler_id",
+            "handler_version",
+            "selector_json",
+            "parameter_generator_json",
+            "basis",
+            "title",
+            "change_summary"
+          ],
+          "title": "Recipe",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "minimum": 0,
+              "title": "Source Record Index",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "SupportRef": {
+          "additionalProperties": false,
+          "properties": {
+            "finding_ids": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Finding Ids",
+              "type": "array"
+            },
+            "fragment_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Fragment Id"
+            },
+            "kind": {
+              "enum": [
+                "prefix_finding",
+                "token_observation"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "location_ids": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Location Ids",
+              "type": "array"
+            },
+            "observation_ids": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Observation Ids",
+              "type": "array"
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "scope_id": {
+              "minLength": 1,
+              "title": "Scope Id",
+              "type": "string"
+            },
+            "task_id": {
+              "minLength": 1,
+              "title": "Task Id",
+              "type": "string"
+            },
+            "unit_ids": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Unit Ids",
+              "type": "array"
+            }
+          },
+          "required": [
+            "kind",
+            "task_id",
+            "scope_id",
+            "request_key",
+            "raw_sha256"
+          ],
+          "title": "SupportRef",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "minimum": 0,
+              "title": "End",
+              "type": "integer"
+            },
+            "start": {
+              "minimum": 0,
+              "title": "Start",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "adapter_version": {
+          "const": "token-auto-proposals-1",
+          "default": "token-auto-proposals-1",
+          "title": "Adapter Version",
+          "type": "string"
+        },
+        "applicability": {
+          "enum": [
+            "matched",
+            "advice_only",
+            "not_applicable"
+          ],
+          "title": "Applicability",
+          "type": "string"
+        },
+        "reason_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "recipe": {
+          "$ref": "#/$defs/Recipe"
+        },
+        "request_targets": {
+          "items": {
+            "$ref": "#/$defs/ProposalTarget"
+          },
+          "title": "Request Targets",
+          "type": "array"
+        },
+        "support_refs": {
+          "items": {
+            "$ref": "#/$defs/SupportRef"
+          },
+          "minItems": 1,
+          "title": "Support Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "recipe",
+        "support_refs",
+        "request_targets",
+        "applicability"
+      ],
+      "title": "Proposal",
+      "type": "object"
+    },
+    "ProposalDescriptor": {
+      "additionalProperties": false,
+      "properties": {
+        "basis_kinds": {
+          "items": {
+            "enum": [
+              "business_policy",
+              "explicit_authorization",
+              "offline_hypothesis"
+            ],
+            "type": "string"
+          },
+          "title": "Basis Kinds",
+          "type": "array"
+        },
+        "generator_identity": {
+          "minLength": 1,
+          "title": "Generator Identity",
+          "type": "string"
+        },
+        "rule_ids": {
+          "items": {
+            "enum": [
+              "T2",
+              "T3",
+              "T4"
+            ],
+            "type": "string"
+          },
+          "title": "Rule Ids",
+          "type": "array"
+        },
+        "version": {
+          "const": "token-auto-proposals-1",
+          "default": "token-auto-proposals-1",
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "generator_identity",
+        "rule_ids",
+        "basis_kinds"
+      ],
+      "title": "ProposalDescriptor",
+      "type": "object"
+    },
+    "ProposalTarget": {
+      "$defs": {
+        "EmbeddedLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "format": {
+              "const": "json",
+              "default": "json",
+              "title": "Format",
+              "type": "string"
+            },
+            "parser_version": {
+              "minLength": 1,
+              "title": "Parser Version",
+              "type": "string"
+            },
+            "pointer": {
+              "title": "Pointer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "parser_version",
+            "pointer"
+          ],
+          "title": "EmbeddedLocation",
+          "type": "object"
+        },
+        "Location": {
+          "additionalProperties": false,
+          "properties": {
+            "embedded": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EmbeddedLocation"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "source_pointer": {
+              "title": "Source Pointer",
+              "type": "string"
+            },
+            "text_range": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TextRange"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "request_key",
+            "raw_sha256",
+            "source_pointer"
+          ],
+          "title": "Location",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "minimum": 0,
+              "title": "Source Record Index",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "minimum": 0,
+              "title": "End",
+              "type": "integer"
+            },
+            "start": {
+              "minimum": 0,
+              "title": "Start",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "location": {
+          "$ref": "#/$defs/Location"
+        },
+        "parameters_json": {
+          "title": "Parameters Json",
+          "type": "string"
+        }
+      },
+      "required": [
+        "location",
+        "parameters_json"
+      ],
+      "title": "ProposalTarget",
+      "type": "object"
+    },
+    "ReasonDetail": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "minLength": 1,
+          "title": "Code",
+          "type": "string"
+        },
+        "explanation": {
+          "default": "",
+          "title": "Explanation",
+          "type": "string"
+        },
+        "missing_requirement": {
+          "anyOf": [
+            {
+              "enum": [
+                "template",
+                "retention_rule",
+                "reference_or_delete_agreement",
+                "replacement_rule"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Missing Requirement"
+        },
+        "rule_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rule Id"
+        }
+      },
+      "required": [
+        "code"
+      ],
+      "title": "ReasonDetail",
+      "type": "object"
+    },
+    "Recipe": {
+      "$defs": {
+        "Basis": {
+          "additionalProperties": false,
+          "properties": {
+            "assumptions": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Assumptions",
+              "type": "array"
+            },
+            "authority": {
+              "$ref": "#/$defs/BasisAuthority"
+            },
+            "digest": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Digest",
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "business_policy",
+                "offline_hypothesis",
+                "explicit_authorization"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "limitations": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Limitations",
+              "type": "array"
+            },
+            "ref": {
+              "minLength": 1,
+              "title": "Ref",
+              "type": "string"
+            },
+            "revision": {
+              "minLength": 1,
+              "title": "Revision",
+              "type": "string"
+            },
+            "scope_selector": {
+              "title": "Scope Selector",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "ref",
+            "revision",
+            "digest",
+            "scope_selector",
+            "authority"
+          ],
+          "title": "Basis",
+          "type": "object"
+        },
+        "BasisAuthority": {
+          "additionalProperties": false,
+          "properties": {
+            "source_digest": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Source Digest",
+              "type": "string"
+            },
+            "source_kind": {
+              "minLength": 1,
+              "title": "Source Kind",
+              "type": "string"
+            },
+            "source_ref": {
+              "minLength": 1,
+              "title": "Source Ref",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "verified",
+                "missing",
+                "invalid"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_kind",
+            "source_ref",
+            "source_digest",
+            "status"
+          ],
+          "title": "BasisAuthority",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Basis"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "category_rules": {
+          "items": {
+            "enum": [
+              "L1",
+              "L2",
+              "L3",
+              "T2",
+              "T3",
+              "T4"
+            ],
+            "type": "string"
+          },
+          "title": "Category Rules",
+          "type": "array"
+        },
+        "change_summary": {
+          "minLength": 1,
+          "title": "Change Summary",
+          "type": "string"
+        },
+        "conditions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Conditions",
+          "type": "array"
+        },
+        "handler_id": {
+          "minLength": 1,
+          "title": "Handler Id",
+          "type": "string"
+        },
+        "handler_version": {
+          "minLength": 1,
+          "title": "Handler Version",
+          "type": "string"
+        },
+        "limitations": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "parameter_generator_json": {
+          "title": "Parameter Generator Json",
+          "type": "string"
+        },
+        "primary_rule": {
+          "enum": [
+            "L1",
+            "L2",
+            "L3",
+            "T2",
+            "T3",
+            "T4"
+          ],
+          "title": "Primary Rule",
+          "type": "string"
+        },
+        "recipe_id": {
+          "minLength": 1,
+          "title": "Recipe Id",
+          "type": "string"
+        },
+        "revision": {
+          "minLength": 1,
+          "title": "Revision",
+          "type": "string"
+        },
+        "selector_json": {
+          "title": "Selector Json",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        }
+      },
+      "required": [
+        "recipe_id",
+        "revision",
+        "primary_rule",
+        "category_rules",
+        "handler_id",
+        "handler_version",
+        "selector_json",
+        "parameter_generator_json",
+        "basis",
+        "title",
+        "change_summary"
+      ],
+      "title": "Recipe",
+      "type": "object"
+    },
+    "RecipeBundle": {
+      "$defs": {
+        "Basis": {
+          "additionalProperties": false,
+          "properties": {
+            "assumptions": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Assumptions",
+              "type": "array"
+            },
+            "authority": {
+              "$ref": "#/$defs/BasisAuthority"
+            },
+            "digest": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Digest",
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "business_policy",
+                "offline_hypothesis",
+                "explicit_authorization"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "limitations": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Limitations",
+              "type": "array"
+            },
+            "ref": {
+              "minLength": 1,
+              "title": "Ref",
+              "type": "string"
+            },
+            "revision": {
+              "minLength": 1,
+              "title": "Revision",
+              "type": "string"
+            },
+            "scope_selector": {
+              "title": "Scope Selector",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "ref",
+            "revision",
+            "digest",
+            "scope_selector",
+            "authority"
+          ],
+          "title": "Basis",
+          "type": "object"
+        },
+        "BasisAuthority": {
+          "additionalProperties": false,
+          "properties": {
+            "source_digest": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Source Digest",
+              "type": "string"
+            },
+            "source_kind": {
+              "minLength": 1,
+              "title": "Source Kind",
+              "type": "string"
+            },
+            "source_ref": {
+              "minLength": 1,
+              "title": "Source Ref",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "verified",
+                "missing",
+                "invalid"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_kind",
+            "source_ref",
+            "source_digest",
+            "status"
+          ],
+          "title": "BasisAuthority",
+          "type": "object"
+        },
+        "Recipe": {
+          "additionalProperties": false,
+          "properties": {
+            "basis": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Basis"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "category_rules": {
+              "items": {
+                "enum": [
+                  "L1",
+                  "L2",
+                  "L3",
+                  "T2",
+                  "T3",
+                  "T4"
+                ],
+                "type": "string"
+              },
+              "title": "Category Rules",
+              "type": "array"
+            },
+            "change_summary": {
+              "minLength": 1,
+              "title": "Change Summary",
+              "type": "string"
+            },
+            "conditions": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Conditions",
+              "type": "array"
+            },
+            "handler_id": {
+              "minLength": 1,
+              "title": "Handler Id",
+              "type": "string"
+            },
+            "handler_version": {
+              "minLength": 1,
+              "title": "Handler Version",
+              "type": "string"
+            },
+            "limitations": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Limitations",
+              "type": "array"
+            },
+            "parameter_generator_json": {
+              "title": "Parameter Generator Json",
+              "type": "string"
+            },
+            "primary_rule": {
+              "enum": [
+                "L1",
+                "L2",
+                "L3",
+                "T2",
+                "T3",
+                "T4"
+              ],
+              "title": "Primary Rule",
+              "type": "string"
+            },
+            "recipe_id": {
+              "minLength": 1,
+              "title": "Recipe Id",
+              "type": "string"
+            },
+            "revision": {
+              "minLength": 1,
+              "title": "Revision",
+              "type": "string"
+            },
+            "selector_json": {
+              "title": "Selector Json",
+              "type": "string"
+            },
+            "title": {
+              "minLength": 1,
+              "title": "Title",
+              "type": "string"
+            }
+          },
+          "required": [
+            "recipe_id",
+            "revision",
+            "primary_rule",
+            "category_rules",
+            "handler_id",
+            "handler_version",
+            "selector_json",
+            "parameter_generator_json",
+            "basis",
+            "title",
+            "change_summary"
+          ],
+          "title": "Recipe",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "bundle_id": {
+          "minLength": 1,
+          "title": "Bundle Id",
+          "type": "string"
+        },
+        "recipes": {
+          "items": {
+            "$ref": "#/$defs/Recipe"
+          },
+          "title": "Recipes",
+          "type": "array"
+        },
+        "revision": {
+          "minLength": 1,
+          "title": "Revision",
+          "type": "string"
+        },
+        "version": {
+          "const": "token-auto-proposals-1",
+          "default": "token-auto-proposals-1",
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "bundle_id",
+        "revision",
+        "recipes"
+      ],
+      "title": "RecipeBundle",
+      "type": "object"
+    },
+    "Recommendation": {
+      "$defs": {
+        "AggregateMetrics": {
+          "additionalProperties": false,
+          "properties": {
+            "c": {
+              "minimum": 0,
+              "title": "C",
+              "type": "integer"
+            },
+            "h": {
+              "minimum": 0,
+              "title": "H",
+              "type": "integer"
+            },
+            "j": {
+              "minimum": 0,
+              "title": "J",
+              "type": "integer"
+            },
+            "n": {
+              "minimum": 0,
+              "title": "N",
+              "type": "integer"
+            },
+            "p": {
+              "minimum": 0,
+              "title": "P",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "p",
+            "h",
+            "c",
+            "n",
+            "j"
+          ],
+          "title": "AggregateMetrics",
+          "type": "object"
+        },
+        "Basis": {
+          "additionalProperties": false,
+          "properties": {
+            "assumptions": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Assumptions",
+              "type": "array"
+            },
+            "authority": {
+              "$ref": "#/$defs/BasisAuthority"
+            },
+            "digest": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Digest",
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "business_policy",
+                "offline_hypothesis",
+                "explicit_authorization"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "limitations": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Limitations",
+              "type": "array"
+            },
+            "ref": {
+              "minLength": 1,
+              "title": "Ref",
+              "type": "string"
+            },
+            "revision": {
+              "minLength": 1,
+              "title": "Revision",
+              "type": "string"
+            },
+            "scope_selector": {
+              "title": "Scope Selector",
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "ref",
+            "revision",
+            "digest",
+            "scope_selector",
+            "authority"
+          ],
+          "title": "Basis",
+          "type": "object"
+        },
+        "BasisAuthority": {
+          "additionalProperties": false,
+          "properties": {
+            "source_digest": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Source Digest",
+              "type": "string"
+            },
+            "source_kind": {
+              "minLength": 1,
+              "title": "Source Kind",
+              "type": "string"
+            },
+            "source_ref": {
+              "minLength": 1,
+              "title": "Source Ref",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "verified",
+                "missing",
+                "invalid"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source_kind",
+            "source_ref",
+            "source_digest",
+            "status"
+          ],
+          "title": "BasisAuthority",
+          "type": "object"
+        },
+        "Coverage": {
+          "additionalProperties": false,
+          "properties": {
+            "checked": {
+              "minimum": 0,
+              "title": "Checked",
+              "type": "integer"
+            },
+            "complete": {
+              "title": "Complete",
+              "type": "boolean"
+            },
+            "eligible": {
+              "anyOf": [
+                {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Eligible"
+            },
+            "reasons": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Reasons",
+              "type": "array"
+            },
+            "stop_location": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Stop Location"
+            }
+          },
+          "required": [
+            "checked",
+            "eligible",
+            "complete"
+          ],
+          "title": "Coverage",
+          "type": "object"
+        },
+        "EvaluationResult": {
+          "additionalProperties": false,
+          "properties": {
+            "after": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/AggregateMetrics"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "baseline_origin": {
+              "enum": [
+                "original_run_window",
+                "selected_window_recomputed"
+              ],
+              "title": "Baseline Origin",
+              "type": "string"
+            },
+            "before": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/AggregateMetrics"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "coverage": {
+              "$ref": "#/$defs/Coverage"
+            },
+            "direction": {
+              "enum": [
+                "low_hit",
+                "token_content",
+                "combined"
+              ],
+              "title": "Direction",
+              "type": "string"
+            },
+            "evaluation_id": {
+              "minLength": 1,
+              "title": "Evaluation Id",
+              "type": "string"
+            },
+            "manifest_ref": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Manifest Ref"
+            },
+            "modified_after": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/AggregateMetrics"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "modified_before": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/AggregateMetrics"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "plan_id": {
+              "minLength": 1,
+              "title": "Plan Id",
+              "type": "string"
+            },
+            "reason_codes": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Reason Codes",
+              "type": "array"
+            },
+            "scope_id": {
+              "minLength": 1,
+              "title": "Scope Id",
+              "type": "string"
+            },
+            "stage": {
+              "enum": [
+                "pilot",
+                "full",
+                "direct_full"
+              ],
+              "title": "Stage",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "available",
+                "blocked",
+                "failed",
+                "not_run",
+                "interrupted"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "required": [
+            "evaluation_id",
+            "plan_id",
+            "scope_id",
+            "stage",
+            "direction",
+            "status",
+            "baseline_origin",
+            "coverage"
+          ],
+          "title": "EvaluationResult",
+          "type": "object"
+        },
+        "Impact": {
+          "additionalProperties": false,
+          "properties": {
+            "count_basis": {
+              "const": "raw_body_changed",
+              "default": "raw_body_changed",
+              "title": "Count Basis",
+              "type": "string"
+            },
+            "evaluation_complete": {
+              "title": "Evaluation Complete",
+              "type": "boolean"
+            },
+            "match_complete": {
+              "title": "Match Complete",
+              "type": "boolean"
+            },
+            "matched_checked_requests": {
+              "minimum": 0,
+              "title": "Matched Checked Requests",
+              "type": "integer"
+            },
+            "matched_requests": {
+              "anyOf": [
+                {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Matched Requests"
+            },
+            "modified_requests": {
+              "anyOf": [
+                {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Modified Requests"
+            },
+            "total_requests": {
+              "minimum": 0,
+              "title": "Total Requests",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "total_requests",
+            "matched_requests",
+            "matched_checked_requests",
+            "match_complete",
+            "modified_requests",
+            "evaluation_complete"
+          ],
+          "title": "Impact",
+          "type": "object"
+        },
+        "ObjectRef": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "minLength": 1,
+              "title": "Id",
+              "type": "string"
+            },
+            "task_id": {
+              "minLength": 1,
+              "title": "Task Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "task_id",
+            "id"
+          ],
+          "title": "ObjectRef",
+          "type": "object"
+        },
+        "ReasonDetail": {
+          "additionalProperties": false,
+          "properties": {
+            "code": {
+              "minLength": 1,
+              "title": "Code",
+              "type": "string"
+            },
+            "explanation": {
+              "default": "",
+              "title": "Explanation",
+              "type": "string"
+            },
+            "missing_requirement": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "template",
+                    "retention_rule",
+                    "reference_or_delete_agreement",
+                    "replacement_rule"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Missing Requirement"
+            },
+            "rule_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Rule Id"
+            }
+          },
+          "required": [
+            "code"
+          ],
+          "title": "ReasonDetail",
+          "type": "object"
+        },
+        "Recipe": {
+          "additionalProperties": false,
+          "properties": {
+            "basis": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Basis"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "category_rules": {
+              "items": {
+                "enum": [
+                  "L1",
+                  "L2",
+                  "L3",
+                  "T2",
+                  "T3",
+                  "T4"
+                ],
+                "type": "string"
+              },
+              "title": "Category Rules",
+              "type": "array"
+            },
+            "change_summary": {
+              "minLength": 1,
+              "title": "Change Summary",
+              "type": "string"
+            },
+            "conditions": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Conditions",
+              "type": "array"
+            },
+            "handler_id": {
+              "minLength": 1,
+              "title": "Handler Id",
+              "type": "string"
+            },
+            "handler_version": {
+              "minLength": 1,
+              "title": "Handler Version",
+              "type": "string"
+            },
+            "limitations": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Limitations",
+              "type": "array"
+            },
+            "parameter_generator_json": {
+              "title": "Parameter Generator Json",
+              "type": "string"
+            },
+            "primary_rule": {
+              "enum": [
+                "L1",
+                "L2",
+                "L3",
+                "T2",
+                "T3",
+                "T4"
+              ],
+              "title": "Primary Rule",
+              "type": "string"
+            },
+            "recipe_id": {
+              "minLength": 1,
+              "title": "Recipe Id",
+              "type": "string"
+            },
+            "revision": {
+              "minLength": 1,
+              "title": "Revision",
+              "type": "string"
+            },
+            "selector_json": {
+              "title": "Selector Json",
+              "type": "string"
+            },
+            "title": {
+              "minLength": 1,
+              "title": "Title",
+              "type": "string"
+            }
+          },
+          "required": [
+            "recipe_id",
+            "revision",
+            "primary_rule",
+            "category_rules",
+            "handler_id",
+            "handler_version",
+            "selector_json",
+            "parameter_generator_json",
+            "basis",
+            "title",
+            "change_summary"
+          ],
+          "title": "Recipe",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "minimum": 0,
+              "title": "Source Record Index",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "SupportRef": {
+          "additionalProperties": false,
+          "properties": {
+            "finding_ids": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Finding Ids",
+              "type": "array"
+            },
+            "fragment_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Fragment Id"
+            },
+            "kind": {
+              "enum": [
+                "prefix_finding",
+                "token_observation"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "location_ids": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Location Ids",
+              "type": "array"
+            },
+            "observation_ids": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Observation Ids",
+              "type": "array"
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "scope_id": {
+              "minLength": 1,
+              "title": "Scope Id",
+              "type": "string"
+            },
+            "task_id": {
+              "minLength": 1,
+              "title": "Task Id",
+              "type": "string"
+            },
+            "unit_ids": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Unit Ids",
+              "type": "array"
+            }
+          },
+          "required": [
+            "kind",
+            "task_id",
+            "scope_id",
+            "request_key",
+            "raw_sha256"
+          ],
+          "title": "SupportRef",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "direction": {
+          "enum": [
+            "low_hit",
+            "token_content"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "display_order": {
+          "minimum": 0,
+          "title": "Display Order",
+          "type": "integer"
+        },
+        "display_qualification": {
+          "enum": [
+            "low_hit_optimization",
+            "token_evaluated",
+            "token_advice",
+            "not_eligible"
+          ],
+          "title": "Display Qualification",
+          "type": "string"
+        },
+        "evaluation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EvaluationResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "evaluation_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "evaluation_reused": {
+          "default": false,
+          "title": "Evaluation Reused",
+          "type": "boolean"
+        },
+        "evaluation_status": {
+          "enum": [
+            "not_required",
+            "not_run",
+            "available",
+            "blocked",
+            "failed",
+            "interrupted"
+          ],
+          "title": "Evaluation Status",
+          "type": "string"
+        },
+        "example_refs": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ObjectRef"
+          },
+          "maxItems": 3,
+          "title": "Example Refs",
+          "type": "array"
+        },
+        "execution_fingerprint": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Execution Fingerprint"
+        },
+        "execution_plan_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "generator_identity": {
+          "minLength": 1,
+          "title": "Generator Identity",
+          "type": "string"
+        },
+        "group_basis_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Group Basis Digest",
+          "type": "string"
+        },
+        "impact": {
+          "$ref": "#/$defs/Impact"
+        },
+        "matched_set_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Matched Set Digest",
+          "type": "string"
+        },
+        "members_complete": {
+          "title": "Members Complete",
+          "type": "boolean"
+        },
+        "preparation_status": {
+          "enum": [
+            "not_required",
+            "not_run",
+            "prepared",
+            "blocked",
+            "failed"
+          ],
+          "title": "Preparation Status",
+          "type": "string"
+        },
+        "prepared_plan_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ObjectRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "proposal_status": {
+          "enum": [
+            "matched",
+            "advice_only",
+            "not_applicable",
+            "partial",
+            "failed"
+          ],
+          "title": "Proposal Status",
+          "type": "string"
+        },
+        "reason_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "reason_details": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ReasonDetail"
+          },
+          "title": "Reason Details",
+          "type": "array"
+        },
+        "recipe": {
+          "$ref": "#/$defs/Recipe"
+        },
+        "recipe_key": {
+          "minLength": 1,
+          "title": "Recipe Key",
+          "type": "string"
+        },
+        "recommendation_id": {
+          "minLength": 1,
+          "title": "Recommendation Id",
+          "type": "string"
+        },
+        "scope_id": {
+          "minLength": 1,
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "available",
+            "advice_only",
+            "blocked",
+            "not_run",
+            "failed",
+            "interrupted"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "support_refs": {
+          "items": {
+            "$ref": "#/$defs/SupportRef"
+          },
+          "minItems": 1,
+          "title": "Support Refs",
+          "type": "array"
+        },
+        "support_set_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Support Set Digest",
+          "type": "string"
+        },
+        "task_id": {
+          "minLength": 1,
+          "title": "Task Id",
+          "type": "string"
+        },
+        "version": {
+          "const": "analysis-recommendations-1",
+          "default": "analysis-recommendations-1",
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "recommendation_id",
+        "task_id",
+        "scope_id",
+        "direction",
+        "generator_identity",
+        "recipe_key",
+        "group_basis_digest",
+        "recipe",
+        "support_refs",
+        "matched_set_digest",
+        "support_set_digest",
+        "members_complete",
+        "impact",
+        "proposal_status",
+        "preparation_status",
+        "evaluation_status",
+        "status",
+        "display_qualification",
+        "display_order"
+      ],
+      "title": "Recommendation",
+      "type": "object"
+    },
+    "RecommendationBudget": {
+      "additionalProperties": false,
+      "properties": {
+        "max_context_codepoints": {
+          "default": 128,
+          "minimum": 0,
+          "title": "Max Context Codepoints",
+          "type": "integer"
+        },
+        "max_example_bytes_per_group": {
+          "default": 24576,
+          "minimum": 1,
+          "title": "Max Example Bytes Per Group",
+          "type": "integer"
+        },
+        "max_examples_per_group": {
+          "default": 3,
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Max Examples Per Group",
+          "type": "integer"
+        },
+        "max_excerpt_codepoints": {
+          "default": 1024,
+          "minimum": 1,
+          "title": "Max Excerpt Codepoints",
+          "type": "integer"
+        },
+        "max_plan_bytes": {
+          "default": 16777216,
+          "minimum": 1,
+          "title": "Max Plan Bytes",
+          "type": "integer"
+        },
+        "max_prepared_operations": {
+          "default": 10000,
+          "minimum": 1,
+          "title": "Max Prepared Operations",
+          "type": "integer"
+        },
+        "max_proposal_bytes": {
+          "default": 1048576,
+          "minimum": 1,
+          "title": "Max Proposal Bytes",
+          "type": "integer"
+        },
+        "max_proposals": {
+          "default": 256,
+          "minimum": 1,
+          "title": "Max Proposals",
+          "type": "integer"
+        },
+        "max_recommendations": {
+          "default": 32,
+          "minimum": 1,
+          "title": "Max Recommendations",
+          "type": "integer"
+        },
+        "max_token_evaluations": {
+          "default": 8,
+          "minimum": 1,
+          "title": "Max Token Evaluations",
+          "type": "integer"
+        },
+        "max_total_plan_bytes": {
+          "default": 67108864,
+          "minimum": 1,
+          "title": "Max Total Plan Bytes",
+          "type": "integer"
+        },
+        "version": {
+          "const": "recommendation-budget-1",
+          "default": "recommendation-budget-1",
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "title": "RecommendationBudget",
+      "type": "object"
+    },
+    "RecommendationExample": {
+      "$defs": {
+        "EmbeddedLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "format": {
+              "const": "json",
+              "default": "json",
+              "title": "Format",
+              "type": "string"
+            },
+            "parser_version": {
+              "minLength": 1,
+              "title": "Parser Version",
+              "type": "string"
+            },
+            "pointer": {
+              "title": "Pointer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "parser_version",
+            "pointer"
+          ],
+          "title": "EmbeddedLocation",
+          "type": "object"
+        },
+        "EvidenceSpan": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "minimum": 0,
+              "title": "End",
+              "type": "integer"
+            },
+            "start": {
+              "minimum": 0,
+              "title": "Start",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "EvidenceSpan",
+          "type": "object"
+        },
+        "LocalEvidence": {
+          "additionalProperties": false,
+          "properties": {
+            "context_after": {
+              "default": "",
+              "title": "Context After",
+              "type": "string"
+            },
+            "context_before": {
+              "default": "",
+              "title": "Context Before",
+              "type": "string"
+            },
+            "decoded_span": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EvidenceSpan"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "excerpt": {
+              "title": "Excerpt",
+              "type": "string"
+            },
+            "locator_version": {
+              "const": "evidence-locator-1",
+              "default": "evidence-locator-1",
+              "title": "Locator Version",
+              "type": "string"
+            },
+            "offset_unit": {
+              "const": "unicode_codepoint",
+              "default": "unicode_codepoint",
+              "title": "Offset Unit",
+              "type": "string"
+            },
+            "omitted_after": {
+              "default": false,
+              "title": "Omitted After",
+              "type": "boolean"
+            },
+            "omitted_before": {
+              "default": false,
+              "title": "Omitted Before",
+              "type": "boolean"
+            },
+            "raw_span": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EvidenceSpan"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "reason_codes": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Reason Codes",
+              "type": "array"
+            },
+            "source": {
+              "$ref": "#/$defs/Location"
+            }
+          },
+          "required": [
+            "source",
+            "raw_span",
+            "excerpt"
+          ],
+          "title": "LocalEvidence",
+          "type": "object"
+        },
+        "Location": {
+          "additionalProperties": false,
+          "properties": {
+            "embedded": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EmbeddedLocation"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "source_pointer": {
+              "title": "Source Pointer",
+              "type": "string"
+            },
+            "text_range": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TextRange"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "request_key",
+            "raw_sha256",
+            "source_pointer"
+          ],
+          "title": "Location",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "minimum": 0,
+              "title": "Source Record Index",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "minimum": 0,
+              "title": "End",
+              "type": "integer"
+            },
+            "start": {
+              "minimum": 0,
+              "title": "Start",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "after": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/LocalEvidence"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "before": {
+          "$ref": "#/$defs/LocalEvidence"
+        },
+        "comparison": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/LocalEvidence"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "example_id": {
+          "minLength": 1,
+          "title": "Example Id",
+          "type": "string"
+        },
+        "owner_id": {
+          "minLength": 1,
+          "title": "Owner Id",
+          "type": "string"
+        },
+        "scope_id": {
+          "minLength": 1,
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "task_id": {
+          "minLength": 1,
+          "title": "Task Id",
+          "type": "string"
+        },
+        "version": {
+          "const": "analysis-recommendations-1",
+          "default": "analysis-recommendations-1",
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "example_id",
+        "task_id",
+        "scope_id",
+        "owner_id",
+        "before"
+      ],
+      "title": "RecommendationExample",
+      "type": "object"
+    },
+    "RecommendationSummary": {
+      "$defs": {
+        "BudgetConsumption": {
+          "additionalProperties": false,
+          "properties": {
+            "encoding_calls": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Encoding Calls",
+              "type": "integer"
+            },
+            "prepared_operations": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Prepared Operations",
+              "type": "integer"
+            },
+            "proposals": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Proposals",
+              "type": "integer"
+            },
+            "recommendations": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Recommendations",
+              "type": "integer"
+            },
+            "token_evaluations": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Token Evaluations",
+              "type": "integer"
+            },
+            "total_plan_bytes": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Total Plan Bytes",
+              "type": "integer"
+            }
+          },
+          "title": "BudgetConsumption",
+          "type": "object"
+        },
+        "RecommendationBudget": {
+          "additionalProperties": false,
+          "properties": {
+            "max_context_codepoints": {
+              "default": 128,
+              "minimum": 0,
+              "title": "Max Context Codepoints",
+              "type": "integer"
+            },
+            "max_example_bytes_per_group": {
+              "default": 24576,
+              "minimum": 1,
+              "title": "Max Example Bytes Per Group",
+              "type": "integer"
+            },
+            "max_examples_per_group": {
+              "default": 3,
+              "maximum": 3,
+              "minimum": 1,
+              "title": "Max Examples Per Group",
+              "type": "integer"
+            },
+            "max_excerpt_codepoints": {
+              "default": 1024,
+              "minimum": 1,
+              "title": "Max Excerpt Codepoints",
+              "type": "integer"
+            },
+            "max_plan_bytes": {
+              "default": 16777216,
+              "minimum": 1,
+              "title": "Max Plan Bytes",
+              "type": "integer"
+            },
+            "max_prepared_operations": {
+              "default": 10000,
+              "minimum": 1,
+              "title": "Max Prepared Operations",
+              "type": "integer"
+            },
+            "max_proposal_bytes": {
+              "default": 1048576,
+              "minimum": 1,
+              "title": "Max Proposal Bytes",
+              "type": "integer"
+            },
+            "max_proposals": {
+              "default": 256,
+              "minimum": 1,
+              "title": "Max Proposals",
+              "type": "integer"
+            },
+            "max_recommendations": {
+              "default": 32,
+              "minimum": 1,
+              "title": "Max Recommendations",
+              "type": "integer"
+            },
+            "max_token_evaluations": {
+              "default": 8,
+              "minimum": 1,
+              "title": "Max Token Evaluations",
+              "type": "integer"
+            },
+            "max_total_plan_bytes": {
+              "default": 67108864,
+              "minimum": 1,
+              "title": "Max Total Plan Bytes",
+              "type": "integer"
+            },
+            "version": {
+              "const": "recommendation-budget-1",
+              "default": "recommendation-budget-1",
+              "title": "Version",
+              "type": "string"
+            }
+          },
+          "title": "RecommendationBudget",
+          "type": "object"
+        },
+        "StageCoverage": {
+          "additionalProperties": false,
+          "properties": {
+            "advice_only": {
+              "minimum": 0,
+              "title": "Advice Only",
+              "type": "integer"
+            },
+            "blocked": {
+              "minimum": 0,
+              "title": "Blocked",
+              "type": "integer"
+            },
+            "checked": {
+              "minimum": 0,
+              "title": "Checked",
+              "type": "integer"
+            },
+            "complete": {
+              "title": "Complete",
+              "type": "boolean"
+            },
+            "completed": {
+              "minimum": 0,
+              "title": "Completed",
+              "type": "integer"
+            },
+            "eligible": {
+              "anyOf": [
+                {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Eligible"
+            },
+            "failed": {
+              "minimum": 0,
+              "title": "Failed",
+              "type": "integer"
+            },
+            "not_run": {
+              "minimum": 0,
+              "title": "Not Run",
+              "type": "integer"
+            },
+            "reason_codes": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Reason Codes",
+              "type": "array"
+            }
+          },
+          "required": [
+            "eligible",
+            "checked",
+            "completed",
+            "advice_only",
+            "blocked",
+            "not_run",
+            "failed",
+            "complete"
+          ],
+          "title": "StageCoverage",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "availability": {
+          "enum": [
+            "computed",
+            "not_computed"
+          ],
+          "title": "Availability",
+          "type": "string"
+        },
+        "budget": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RecommendationBudget"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "budget_digest": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Budget Digest"
+        },
+        "configured_recipe_count": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Configured Recipe Count"
+        },
+        "consumed": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BudgetConsumption"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "difference_group_count": {
+          "minimum": 0,
+          "title": "Difference Group Count",
+          "type": "integer"
+        },
+        "evaluation_coverage": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StageCoverage"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "proposal_coverage": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StageCoverage"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reason_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "recommendation_count": {
+          "minimum": 0,
+          "title": "Recommendation Count",
+          "type": "integer"
+        },
+        "scope_id": {
+          "minLength": 1,
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "stop_location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stop Location"
+        },
+        "task_id": {
+          "minLength": 1,
+          "title": "Task Id",
+          "type": "string"
+        },
+        "version": {
+          "const": "analysis-recommendations-1",
+          "default": "analysis-recommendations-1",
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id",
+        "scope_id",
+        "availability",
+        "configured_recipe_count",
+        "recommendation_count",
+        "difference_group_count",
+        "proposal_coverage",
+        "evaluation_coverage",
+        "budget",
+        "budget_digest",
+        "consumed"
+      ],
+      "title": "RecommendationSummary",
+      "type": "object"
+    },
+    "StageCoverage": {
+      "additionalProperties": false,
+      "properties": {
+        "advice_only": {
+          "minimum": 0,
+          "title": "Advice Only",
+          "type": "integer"
+        },
+        "blocked": {
+          "minimum": 0,
+          "title": "Blocked",
+          "type": "integer"
+        },
+        "checked": {
+          "minimum": 0,
+          "title": "Checked",
+          "type": "integer"
+        },
+        "complete": {
+          "title": "Complete",
+          "type": "boolean"
+        },
+        "completed": {
+          "minimum": 0,
+          "title": "Completed",
+          "type": "integer"
+        },
+        "eligible": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Eligible"
+        },
+        "failed": {
+          "minimum": 0,
+          "title": "Failed",
+          "type": "integer"
+        },
+        "not_run": {
+          "minimum": 0,
+          "title": "Not Run",
+          "type": "integer"
+        },
+        "reason_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "eligible",
+        "checked",
+        "completed",
+        "advice_only",
+        "blocked",
+        "not_run",
+        "failed",
+        "complete"
+      ],
+      "title": "StageCoverage",
+      "type": "object"
+    },
+    "SupportRef": {
+      "$defs": {
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "minimum": 0,
+              "title": "Source Record Index",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "finding_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Finding Ids",
+          "type": "array"
+        },
+        "fragment_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fragment Id"
+        },
+        "kind": {
+          "enum": [
+            "prefix_finding",
+            "token_observation"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "location_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Location Ids",
+          "type": "array"
+        },
+        "observation_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Observation Ids",
+          "type": "array"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "request_key": {
+          "$ref": "#/$defs/RequestKey"
+        },
+        "scope_id": {
+          "minLength": 1,
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "task_id": {
+          "minLength": 1,
+          "title": "Task Id",
+          "type": "string"
+        },
+        "unit_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Unit Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "task_id",
+        "scope_id",
+        "request_key",
+        "raw_sha256"
+      ],
+      "title": "SupportRef",
+      "type": "object"
+    }
+  },
+  "version": "analysis-recommendations-1"
+}

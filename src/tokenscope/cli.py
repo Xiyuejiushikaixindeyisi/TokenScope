@@ -8,6 +8,7 @@ from typing import Any
 
 from pydantic import ValidationError
 
+from tokenscope.analysis_common.bootstrap import build_diagnostics
 from tokenscope.api.app import create_app
 from tokenscope.domain import RunSubmission, SettingsUpdate
 from tokenscope.errors import TokenScopeError
@@ -109,7 +110,9 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "work-once":
             ma = MaService(service)
             dispatcher = Dispatcher(service.processor, ma.processor, state_root=service.state_root)
-            dispatcher.register(UserRunService(service))
+            user = UserRunService(service)
+            dispatcher.register(user)
+            dispatcher.register(build_diagnostics(service, user))
             processed = dispatcher.process_next()
             result = processed.model_dump(mode="json") if processed else None
         elif args.command.startswith("ma-"):

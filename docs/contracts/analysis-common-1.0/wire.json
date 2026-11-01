@@ -1,0 +1,4341 @@
+{
+  "models": {
+    "AggregateMetrics": {
+      "additionalProperties": false,
+      "properties": {
+        "c": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "C",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "h": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "H",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "j": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "J",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "n": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "N",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "p": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "P",
+          "type": "string",
+          "x-integer-minimum": "0"
+        }
+      },
+      "required": [
+        "p",
+        "h",
+        "c",
+        "n",
+        "j"
+      ],
+      "title": "AggregateMetrics",
+      "type": "object"
+    },
+    "AnalysisFragment": {
+      "$defs": {
+        "ContentUnit": {
+          "additionalProperties": false,
+          "properties": {
+            "container_unit_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Container Unit Id"
+            },
+            "content_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Content Sha256",
+              "type": "string"
+            },
+            "facets": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Facets",
+              "type": "array"
+            },
+            "location_id": {
+              "minLength": 1,
+              "title": "Location Id",
+              "type": "string"
+            },
+            "measured_value": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Measured Value",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "measurement_unit": {
+              "minLength": 1,
+              "title": "Measurement Unit",
+              "type": "string"
+            },
+            "measurement_version": {
+              "minLength": 1,
+              "title": "Measurement Version",
+              "type": "string"
+            },
+            "overlap_relation": {
+              "default": "unknown",
+              "enum": [
+                "none",
+                "contained",
+                "overlapping",
+                "unknown"
+              ],
+              "title": "Overlap Relation",
+              "type": "string"
+            },
+            "parent_unit_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Parent Unit Id"
+            },
+            "participation": {
+              "$ref": "#/$defs/Participation",
+              "default": {
+                "encoding_identity": null,
+                "evidence_method": null,
+                "prompt_token_spans": null,
+                "status": "unknown"
+              }
+            },
+            "representation": {
+              "minLength": 1,
+              "title": "Representation",
+              "type": "string"
+            }
+          },
+          "required": [
+            "location_id",
+            "representation",
+            "measurement_version",
+            "content_sha256",
+            "measurement_unit",
+            "measured_value"
+          ],
+          "title": "ContentUnit",
+          "type": "object"
+        },
+        "Coverage": {
+          "additionalProperties": false,
+          "properties": {
+            "checked": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Checked",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "complete": {
+              "title": "Complete",
+              "type": "boolean"
+            },
+            "eligible": {
+              "anyOf": [
+                {
+                  "pattern": "^(0|-?[1-9][0-9]*)$",
+                  "type": "string",
+                  "x-integer-minimum": "0"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Eligible"
+            },
+            "reasons": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Reasons",
+              "type": "array"
+            },
+            "stop_location": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Stop Location"
+            }
+          },
+          "required": [
+            "checked",
+            "eligible",
+            "complete"
+          ],
+          "title": "Coverage",
+          "type": "object"
+        },
+        "EmbeddedLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "format": {
+              "const": "json",
+              "default": "json",
+              "title": "Format",
+              "type": "string"
+            },
+            "parser_version": {
+              "minLength": 1,
+              "title": "Parser Version",
+              "type": "string"
+            },
+            "pointer": {
+              "title": "Pointer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "parser_version",
+            "pointer"
+          ],
+          "title": "EmbeddedLocation",
+          "type": "object"
+        },
+        "FindingCandidate": {
+          "additionalProperties": false,
+          "properties": {
+            "advice": {
+              "title": "Advice",
+              "type": "string"
+            },
+            "category": {
+              "enum": [
+                "construction_issue",
+                "optimization_opportunity",
+                "policy_exceeded",
+                "needs_evidence",
+                "difference_evidence"
+              ],
+              "title": "Category",
+              "type": "string"
+            },
+            "finding_id": {
+              "minLength": 1,
+              "title": "Finding Id",
+              "type": "string"
+            },
+            "observation_ids": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Observation Ids",
+              "type": "array"
+            },
+            "rule_ids": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Rule Ids",
+              "type": "array"
+            },
+            "title": {
+              "minLength": 1,
+              "title": "Title",
+              "type": "string"
+            }
+          },
+          "required": [
+            "finding_id",
+            "rule_ids",
+            "observation_ids",
+            "title",
+            "category",
+            "advice"
+          ],
+          "title": "FindingCandidate",
+          "type": "object"
+        },
+        "Location": {
+          "additionalProperties": false,
+          "properties": {
+            "embedded": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EmbeddedLocation"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "source_pointer": {
+              "title": "Source Pointer",
+              "type": "string"
+            },
+            "text_range": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TextRange"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "request_key",
+            "raw_sha256",
+            "source_pointer"
+          ],
+          "title": "Location",
+          "type": "object"
+        },
+        "ModificationCandidate": {
+          "additionalProperties": false,
+          "properties": {
+            "action_class": {
+              "enum": [
+                "business_information_preserving",
+                "stabilization",
+                "hypothetical_content_removal",
+                "policy_based"
+              ],
+              "title": "Action Class",
+              "type": "string"
+            },
+            "business_basis_ref": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Business Basis Ref"
+            },
+            "candidate_id": {
+              "minLength": 1,
+              "title": "Candidate Id",
+              "type": "string"
+            },
+            "finding_refs": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Finding Refs",
+              "type": "array"
+            },
+            "handler_id": {
+              "minLength": 1,
+              "title": "Handler Id",
+              "type": "string"
+            },
+            "handler_version": {
+              "minLength": 1,
+              "title": "Handler Version",
+              "type": "string"
+            },
+            "locations": {
+              "items": {
+                "$ref": "#/$defs/Location"
+              },
+              "title": "Locations",
+              "type": "array"
+            },
+            "missing_parameters": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Missing Parameters",
+              "type": "array"
+            },
+            "parameters_json": {
+              "title": "Parameters Json",
+              "type": "string"
+            }
+          },
+          "required": [
+            "candidate_id",
+            "finding_refs",
+            "handler_id",
+            "handler_version",
+            "action_class",
+            "locations",
+            "parameters_json"
+          ],
+          "title": "ModificationCandidate",
+          "type": "object"
+        },
+        "Observation": {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "met",
+                "not_met",
+                "unknown"
+              ],
+              "title": "Condition",
+              "type": "string"
+            },
+            "details_json": {
+              "default": "{}",
+              "title": "Details Json",
+              "type": "string"
+            },
+            "method": {
+              "minLength": 1,
+              "title": "Method",
+              "type": "string"
+            },
+            "policy_digest": {
+              "anyOf": [
+                {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Policy Digest"
+            },
+            "predicate": {
+              "minLength": 1,
+              "title": "Predicate",
+              "type": "string"
+            },
+            "rule_id": {
+              "minLength": 1,
+              "title": "Rule Id",
+              "type": "string"
+            },
+            "rule_version": {
+              "minLength": 1,
+              "title": "Rule Version",
+              "type": "string"
+            },
+            "unit_ids": {
+              "items": {
+                "type": "string"
+              },
+              "title": "Unit Ids",
+              "type": "array"
+            }
+          },
+          "required": [
+            "rule_id",
+            "rule_version",
+            "unit_ids",
+            "predicate",
+            "method",
+            "condition"
+          ],
+          "title": "Observation",
+          "type": "object"
+        },
+        "Participation": {
+          "additionalProperties": false,
+          "properties": {
+            "encoding_identity": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Encoding Identity"
+            },
+            "evidence_method": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Evidence Method"
+            },
+            "prompt_token_spans": {
+              "anyOf": [
+                {
+                  "items": {
+                    "$ref": "#/$defs/TextRange"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Prompt Token Spans"
+            },
+            "status": {
+              "default": "unknown",
+              "enum": [
+                "included",
+                "ignored",
+                "unknown"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "title": "Participation",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Source Record Index",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "RuleResult": {
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "enum": [
+                "met",
+                "not_met",
+                "unknown"
+              ],
+              "title": "Condition",
+              "type": "string"
+            },
+            "coverage": {
+              "$ref": "#/$defs/Coverage"
+            },
+            "reason_codes": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Reason Codes",
+              "type": "array"
+            },
+            "rule_id": {
+              "minLength": 1,
+              "title": "Rule Id",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "completed",
+                "not_applicable",
+                "partial",
+                "failed",
+                "not_checked"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "required": [
+            "rule_id",
+            "status",
+            "condition",
+            "coverage"
+          ],
+          "title": "RuleResult",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "start": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "coverage": {
+          "$ref": "#/$defs/Coverage"
+        },
+        "finding_candidates": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/FindingCandidate"
+          },
+          "title": "Finding Candidates",
+          "type": "array"
+        },
+        "locations": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Location"
+          },
+          "title": "Locations",
+          "type": "array"
+        },
+        "modification_candidates": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ModificationCandidate"
+          },
+          "title": "Modification Candidates",
+          "type": "array"
+        },
+        "observations": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Observation"
+          },
+          "title": "Observations",
+          "type": "array"
+        },
+        "plugin_id": {
+          "minLength": 1,
+          "title": "Plugin Id",
+          "type": "string"
+        },
+        "plugin_version": {
+          "minLength": 1,
+          "title": "Plugin Version",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "reason_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "request_key": {
+          "$ref": "#/$defs/RequestKey"
+        },
+        "rule_results": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/RuleResult"
+          },
+          "title": "Rule Results",
+          "type": "array"
+        },
+        "units": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ContentUnit"
+          },
+          "title": "Units",
+          "type": "array"
+        }
+      },
+      "required": [
+        "request_key",
+        "raw_sha256",
+        "plugin_id",
+        "plugin_version",
+        "coverage"
+      ],
+      "title": "AnalysisFragment",
+      "type": "object"
+    },
+    "AnalysisScope": {
+      "$defs": {
+        "SourceIdentity": {
+          "additionalProperties": false,
+          "properties": {
+            "algorithm_version": {
+              "minLength": 1,
+              "title": "Algorithm Version",
+              "type": "string"
+            },
+            "asset_identity": {
+              "minLength": 1,
+              "title": "Asset Identity",
+              "type": "string"
+            },
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "common_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Common Name"
+            },
+            "encoder_identity": {
+              "minLength": 1,
+              "title": "Encoder Identity",
+              "type": "string"
+            },
+            "manifest_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Manifest Sha256",
+              "type": "string"
+            },
+            "model_id": {
+              "minLength": 1,
+              "title": "Model Id",
+              "type": "string"
+            },
+            "profile_json": {
+              "title": "Profile Json",
+              "type": "string"
+            },
+            "settings_json": {
+              "title": "Settings Json",
+              "type": "string"
+            },
+            "user_run_id": {
+              "anyOf": [
+                {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "User Run Id"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "model_id",
+            "manifest_sha256",
+            "asset_identity",
+            "encoder_identity",
+            "profile_json",
+            "settings_json",
+            "algorithm_version"
+          ],
+          "title": "SourceIdentity",
+          "type": "object"
+        },
+        "TimeWindow": {
+          "additionalProperties": false,
+          "properties": {
+            "end_ns": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End Ns",
+              "type": "string"
+            },
+            "start_ns": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start Ns",
+              "type": "string"
+            }
+          },
+          "required": [
+            "start_ns",
+            "end_ns"
+          ],
+          "title": "TimeWindow",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "appid": {
+          "minLength": 1,
+          "title": "Appid",
+          "type": "string"
+        },
+        "baseline_origin": {
+          "enum": [
+            "original_run_window",
+            "selected_window_recomputed"
+          ],
+          "title": "Baseline Origin",
+          "type": "string"
+        },
+        "request_count": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Request Count",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "request_keys_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Request Keys Digest",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceIdentity"
+        },
+        "window": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TimeWindow"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "source",
+        "appid",
+        "window",
+        "request_count",
+        "request_keys_digest",
+        "baseline_origin"
+      ],
+      "title": "AnalysisScope",
+      "type": "object"
+    },
+    "BaselineMetrics": {
+      "additionalProperties": false,
+      "properties": {
+        "c": {
+          "anyOf": [
+            {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "C"
+        },
+        "h": {
+          "anyOf": [
+            {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "H"
+        },
+        "j": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "J",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "o": {
+          "anyOf": [
+            {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "O"
+        },
+        "p": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "P",
+          "type": "string",
+          "x-integer-minimum": "0"
+        }
+      },
+      "required": [
+        "j",
+        "p"
+      ],
+      "title": "BaselineMetrics",
+      "type": "object"
+    },
+    "BudgetSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "max_candidates": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Max Candidates",
+          "type": "string",
+          "x-integer-exclusiveMinimum": "0"
+        },
+        "max_comparison_bytes": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Max Comparison Bytes",
+          "type": "string",
+          "x-integer-exclusiveMinimum": "0"
+        },
+        "max_depth": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Max Depth",
+          "type": "string",
+          "x-integer-exclusiveMinimum": "0"
+        },
+        "max_encoding_calls": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Max Encoding Calls",
+          "type": "string",
+          "x-integer-exclusiveMinimum": "0"
+        },
+        "max_request_bytes": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Max Request Bytes",
+          "type": "string",
+          "x-integer-exclusiveMinimum": "0"
+        },
+        "max_units": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Max Units",
+          "type": "string",
+          "x-integer-exclusiveMinimum": "0"
+        }
+      },
+      "required": [
+        "max_request_bytes",
+        "max_units",
+        "max_comparison_bytes",
+        "max_depth",
+        "max_candidates",
+        "max_encoding_calls"
+      ],
+      "title": "BudgetSpec",
+      "type": "object"
+    },
+    "ContentUnit": {
+      "$defs": {
+        "Participation": {
+          "additionalProperties": false,
+          "properties": {
+            "encoding_identity": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Encoding Identity"
+            },
+            "evidence_method": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Evidence Method"
+            },
+            "prompt_token_spans": {
+              "anyOf": [
+                {
+                  "items": {
+                    "$ref": "#/$defs/TextRange"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Prompt Token Spans"
+            },
+            "status": {
+              "default": "unknown",
+              "enum": [
+                "included",
+                "ignored",
+                "unknown"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "title": "Participation",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "start": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "container_unit_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Container Unit Id"
+        },
+        "content_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Content Sha256",
+          "type": "string"
+        },
+        "facets": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Facets",
+          "type": "array"
+        },
+        "location_id": {
+          "minLength": 1,
+          "title": "Location Id",
+          "type": "string"
+        },
+        "measured_value": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Measured Value",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "measurement_unit": {
+          "minLength": 1,
+          "title": "Measurement Unit",
+          "type": "string"
+        },
+        "measurement_version": {
+          "minLength": 1,
+          "title": "Measurement Version",
+          "type": "string"
+        },
+        "overlap_relation": {
+          "default": "unknown",
+          "enum": [
+            "none",
+            "contained",
+            "overlapping",
+            "unknown"
+          ],
+          "title": "Overlap Relation",
+          "type": "string"
+        },
+        "parent_unit_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Unit Id"
+        },
+        "participation": {
+          "$ref": "#/$defs/Participation",
+          "default": {
+            "encoding_identity": null,
+            "evidence_method": null,
+            "prompt_token_spans": null,
+            "status": "unknown"
+          }
+        },
+        "representation": {
+          "minLength": 1,
+          "title": "Representation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "location_id",
+        "representation",
+        "measurement_version",
+        "content_sha256",
+        "measurement_unit",
+        "measured_value"
+      ],
+      "title": "ContentUnit",
+      "type": "object"
+    },
+    "Coverage": {
+      "additionalProperties": false,
+      "properties": {
+        "checked": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Checked",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "complete": {
+          "title": "Complete",
+          "type": "boolean"
+        },
+        "eligible": {
+          "anyOf": [
+            {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Eligible"
+        },
+        "reasons": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        },
+        "stop_location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stop Location"
+        }
+      },
+      "required": [
+        "checked",
+        "eligible",
+        "complete"
+      ],
+      "title": "Coverage",
+      "type": "object"
+    },
+    "DiagnosticRequest": {
+      "$defs": {
+        "DiagnosticSelection": {
+          "additionalProperties": false,
+          "properties": {
+            "enable_low_hit": {
+              "title": "Enable Low Hit",
+              "type": "boolean"
+            },
+            "enable_token_content": {
+              "title": "Enable Token Content",
+              "type": "boolean"
+            },
+            "reason_codes": {
+              "items": {
+                "enum": [
+                  "low_hit",
+                  "request_length",
+                  "qps"
+                ],
+                "type": "string"
+              },
+              "title": "Reason Codes",
+              "type": "array"
+            }
+          },
+          "required": [
+            "reason_codes",
+            "enable_low_hit",
+            "enable_token_content"
+          ],
+          "title": "DiagnosticSelection",
+          "type": "object"
+        },
+        "SourceSelection": {
+          "additionalProperties": false,
+          "properties": {
+            "appid": {
+              "minLength": 1,
+              "title": "Appid",
+              "type": "string"
+            },
+            "base_run_id": {
+              "anyOf": [
+                {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Base Run Id"
+            },
+            "expected_index_revision": {
+              "anyOf": [
+                {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Expected Index Revision"
+            },
+            "source_kind": {
+              "enum": [
+                "base",
+                "user_v2"
+              ],
+              "title": "Source Kind",
+              "type": "string"
+            },
+            "user_run_id": {
+              "anyOf": [
+                {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "User Run Id"
+            },
+            "window": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TimeWindow"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "source_kind",
+            "appid"
+          ],
+          "title": "SourceSelection",
+          "type": "object"
+        },
+        "TimeWindow": {
+          "additionalProperties": false,
+          "properties": {
+            "end_ns": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End Ns",
+              "type": "string"
+            },
+            "start_ns": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start Ns",
+              "type": "string"
+            }
+          },
+          "required": [
+            "start_ns",
+            "end_ns"
+          ],
+          "title": "TimeWindow",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "reason_note": {
+          "default": "",
+          "title": "Reason Note",
+          "type": "string"
+        },
+        "selection": {
+          "$ref": "#/$defs/DiagnosticSelection"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceSelection"
+        },
+        "submission_key": {
+          "minLength": 1,
+          "title": "Submission Key",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "selection",
+        "submission_key"
+      ],
+      "title": "DiagnosticRequest",
+      "type": "object"
+    },
+    "DiagnosticSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "enable_low_hit": {
+          "title": "Enable Low Hit",
+          "type": "boolean"
+        },
+        "enable_token_content": {
+          "title": "Enable Token Content",
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "items": {
+            "enum": [
+              "low_hit",
+              "request_length",
+              "qps"
+            ],
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "reason_codes",
+        "enable_low_hit",
+        "enable_token_content"
+      ],
+      "title": "DiagnosticSelection",
+      "type": "object"
+    },
+    "DirectionState": {
+      "additionalProperties": false,
+      "properties": {
+        "checked_requests": {
+          "default": "0",
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Checked Requests",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "direction": {
+          "enum": [
+            "low_hit",
+            "token_content"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "not_started",
+            "running",
+            "completed",
+            "partial",
+            "failed",
+            "interrupted"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "direction",
+        "status"
+      ],
+      "title": "DirectionState",
+      "type": "object"
+    },
+    "EmbeddedLocation": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "const": "json",
+          "default": "json",
+          "title": "Format",
+          "type": "string"
+        },
+        "parser_version": {
+          "minLength": 1,
+          "title": "Parser Version",
+          "type": "string"
+        },
+        "pointer": {
+          "title": "Pointer",
+          "type": "string"
+        }
+      },
+      "required": [
+        "parser_version",
+        "pointer"
+      ],
+      "title": "EmbeddedLocation",
+      "type": "object"
+    },
+    "EvaluationResult": {
+      "$defs": {
+        "AggregateMetrics": {
+          "additionalProperties": false,
+          "properties": {
+            "c": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "C",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "h": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "H",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "j": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "J",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "n": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "N",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "p": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "P",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "p",
+            "h",
+            "c",
+            "n",
+            "j"
+          ],
+          "title": "AggregateMetrics",
+          "type": "object"
+        },
+        "Coverage": {
+          "additionalProperties": false,
+          "properties": {
+            "checked": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Checked",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "complete": {
+              "title": "Complete",
+              "type": "boolean"
+            },
+            "eligible": {
+              "anyOf": [
+                {
+                  "pattern": "^(0|-?[1-9][0-9]*)$",
+                  "type": "string",
+                  "x-integer-minimum": "0"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Eligible"
+            },
+            "reasons": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Reasons",
+              "type": "array"
+            },
+            "stop_location": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Stop Location"
+            }
+          },
+          "required": [
+            "checked",
+            "eligible",
+            "complete"
+          ],
+          "title": "Coverage",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "after": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AggregateMetrics"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "baseline_origin": {
+          "enum": [
+            "original_run_window",
+            "selected_window_recomputed"
+          ],
+          "title": "Baseline Origin",
+          "type": "string"
+        },
+        "before": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AggregateMetrics"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "coverage": {
+          "$ref": "#/$defs/Coverage"
+        },
+        "direction": {
+          "enum": [
+            "low_hit",
+            "token_content",
+            "combined"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "evaluation_id": {
+          "minLength": 1,
+          "title": "Evaluation Id",
+          "type": "string"
+        },
+        "manifest_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Manifest Ref"
+        },
+        "modified_after": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AggregateMetrics"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "modified_before": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AggregateMetrics"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "plan_id": {
+          "minLength": 1,
+          "title": "Plan Id",
+          "type": "string"
+        },
+        "reason_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "scope_id": {
+          "minLength": 1,
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "stage": {
+          "enum": [
+            "pilot",
+            "full",
+            "direct_full"
+          ],
+          "title": "Stage",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "available",
+            "blocked",
+            "failed",
+            "not_run",
+            "interrupted"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evaluation_id",
+        "plan_id",
+        "scope_id",
+        "stage",
+        "direction",
+        "status",
+        "baseline_origin",
+        "coverage"
+      ],
+      "title": "EvaluationResult",
+      "type": "object"
+    },
+    "EvidenceCapabilities": {
+      "$defs": {
+        "Participation": {
+          "additionalProperties": false,
+          "properties": {
+            "encoding_identity": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Encoding Identity"
+            },
+            "evidence_method": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Evidence Method"
+            },
+            "prompt_token_spans": {
+              "anyOf": [
+                {
+                  "items": {
+                    "$ref": "#/$defs/TextRange"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Prompt Token Spans"
+            },
+            "status": {
+              "default": "unknown",
+              "enum": [
+                "included",
+                "ignored",
+                "unknown"
+              ],
+              "title": "Status",
+              "type": "string"
+            }
+          },
+          "title": "Participation",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "start": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "available": {
+          "default": [
+            "complete_body",
+            "scope_identity"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Available",
+          "type": "array"
+        },
+        "participation": {
+          "default": [],
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/$defs/Participation"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Participation",
+          "type": "array"
+        }
+      },
+      "title": "EvidenceCapabilities",
+      "type": "object"
+    },
+    "FindingCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "advice": {
+          "title": "Advice",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "construction_issue",
+            "optimization_opportunity",
+            "policy_exceeded",
+            "needs_evidence",
+            "difference_evidence"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "finding_id": {
+          "minLength": 1,
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "observation_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Observation Ids",
+          "type": "array"
+        },
+        "rule_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Rule Ids",
+          "type": "array"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        }
+      },
+      "required": [
+        "finding_id",
+        "rule_ids",
+        "observation_ids",
+        "title",
+        "category",
+        "advice"
+      ],
+      "title": "FindingCandidate",
+      "type": "object"
+    },
+    "InputMetrics": {
+      "additionalProperties": false,
+      "description": "Internal integers; external decimal-string serialization is a separate layer.",
+      "properties": {
+        "c": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "C",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "h": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "H",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "p": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "P",
+          "type": "string",
+          "x-integer-minimum": "0"
+        }
+      },
+      "required": [
+        "p",
+        "h",
+        "c"
+      ],
+      "title": "InputMetrics",
+      "type": "object"
+    },
+    "Location": {
+      "$defs": {
+        "EmbeddedLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "format": {
+              "const": "json",
+              "default": "json",
+              "title": "Format",
+              "type": "string"
+            },
+            "parser_version": {
+              "minLength": 1,
+              "title": "Parser Version",
+              "type": "string"
+            },
+            "pointer": {
+              "title": "Pointer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "parser_version",
+            "pointer"
+          ],
+          "title": "EmbeddedLocation",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Source Record Index",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "start": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "embedded": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EmbeddedLocation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "request_key": {
+          "$ref": "#/$defs/RequestKey"
+        },
+        "source_pointer": {
+          "title": "Source Pointer",
+          "type": "string"
+        },
+        "text_range": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TextRange"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "request_key",
+        "raw_sha256",
+        "source_pointer"
+      ],
+      "title": "Location",
+      "type": "object"
+    },
+    "ModificationCandidate": {
+      "$defs": {
+        "EmbeddedLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "format": {
+              "const": "json",
+              "default": "json",
+              "title": "Format",
+              "type": "string"
+            },
+            "parser_version": {
+              "minLength": 1,
+              "title": "Parser Version",
+              "type": "string"
+            },
+            "pointer": {
+              "title": "Pointer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "parser_version",
+            "pointer"
+          ],
+          "title": "EmbeddedLocation",
+          "type": "object"
+        },
+        "Location": {
+          "additionalProperties": false,
+          "properties": {
+            "embedded": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EmbeddedLocation"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "source_pointer": {
+              "title": "Source Pointer",
+              "type": "string"
+            },
+            "text_range": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TextRange"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "request_key",
+            "raw_sha256",
+            "source_pointer"
+          ],
+          "title": "Location",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Source Record Index",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "start": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "action_class": {
+          "enum": [
+            "business_information_preserving",
+            "stabilization",
+            "hypothetical_content_removal",
+            "policy_based"
+          ],
+          "title": "Action Class",
+          "type": "string"
+        },
+        "business_basis_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Business Basis Ref"
+        },
+        "candidate_id": {
+          "minLength": 1,
+          "title": "Candidate Id",
+          "type": "string"
+        },
+        "finding_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Finding Refs",
+          "type": "array"
+        },
+        "handler_id": {
+          "minLength": 1,
+          "title": "Handler Id",
+          "type": "string"
+        },
+        "handler_version": {
+          "minLength": 1,
+          "title": "Handler Version",
+          "type": "string"
+        },
+        "locations": {
+          "items": {
+            "$ref": "#/$defs/Location"
+          },
+          "title": "Locations",
+          "type": "array"
+        },
+        "missing_parameters": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Parameters",
+          "type": "array"
+        },
+        "parameters_json": {
+          "title": "Parameters Json",
+          "type": "string"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "finding_refs",
+        "handler_id",
+        "handler_version",
+        "action_class",
+        "locations",
+        "parameters_json"
+      ],
+      "title": "ModificationCandidate",
+      "type": "object"
+    },
+    "ModificationPlan": {
+      "$defs": {
+        "EmbeddedLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "format": {
+              "const": "json",
+              "default": "json",
+              "title": "Format",
+              "type": "string"
+            },
+            "parser_version": {
+              "minLength": 1,
+              "title": "Parser Version",
+              "type": "string"
+            },
+            "pointer": {
+              "title": "Pointer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "parser_version",
+            "pointer"
+          ],
+          "title": "EmbeddedLocation",
+          "type": "object"
+        },
+        "Location": {
+          "additionalProperties": false,
+          "properties": {
+            "embedded": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EmbeddedLocation"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "source_pointer": {
+              "title": "Source Pointer",
+              "type": "string"
+            },
+            "text_range": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TextRange"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "request_key",
+            "raw_sha256",
+            "source_pointer"
+          ],
+          "title": "Location",
+          "type": "object"
+        },
+        "PreparedMutation": {
+          "additionalProperties": false,
+          "properties": {
+            "business_basis_ref": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Business Basis Ref"
+            },
+            "handler_id": {
+              "minLength": 1,
+              "title": "Handler Id",
+              "type": "string"
+            },
+            "handler_version": {
+              "minLength": 1,
+              "title": "Handler Version",
+              "type": "string"
+            },
+            "invariants_json": {
+              "default": "{}",
+              "title": "Invariants Json",
+              "type": "string"
+            },
+            "manifest_fragment_json": {
+              "default": "{}",
+              "title": "Manifest Fragment Json",
+              "type": "string"
+            },
+            "operation_id": {
+              "minLength": 1,
+              "title": "Operation Id",
+              "type": "string"
+            },
+            "public_primitive": {
+              "enum": [
+                "replace_value",
+                "remove_value"
+              ],
+              "title": "Public Primitive",
+              "type": "string"
+            },
+            "replacement_json": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Replacement Json"
+            },
+            "source_operations_json": {
+              "default": "[]",
+              "title": "Source Operations Json",
+              "type": "string"
+            },
+            "target": {
+              "$ref": "#/$defs/TargetLocation"
+            }
+          },
+          "required": [
+            "operation_id",
+            "handler_id",
+            "handler_version",
+            "target",
+            "public_primitive"
+          ],
+          "title": "PreparedMutation",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Source Record Index",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "TargetLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "location": {
+              "$ref": "#/$defs/Location"
+            },
+            "original_type": {
+              "enum": [
+                "object",
+                "array",
+                "string",
+                "number",
+                "boolean",
+                "null",
+                "absent"
+              ],
+              "title": "Original Type",
+              "type": "string"
+            },
+            "outer_string_guard": {
+              "anyOf": [
+                {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Outer String Guard"
+            },
+            "value_guard": {
+              "anyOf": [
+                {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                {
+                  "const": "absent",
+                  "type": "string"
+                }
+              ],
+              "title": "Value Guard"
+            }
+          },
+          "required": [
+            "location",
+            "original_type",
+            "value_guard"
+          ],
+          "title": "TargetLocation",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "start": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "action_class": {
+          "title": "Action Class",
+          "type": "string"
+        },
+        "combination_refs": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Combination Refs",
+          "type": "array"
+        },
+        "direction": {
+          "enum": [
+            "low_hit",
+            "token_content",
+            "combined"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "finding_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Finding Refs",
+          "type": "array"
+        },
+        "operations": {
+          "items": {
+            "$ref": "#/$defs/PreparedMutation"
+          },
+          "minItems": 1,
+          "title": "Operations",
+          "type": "array"
+        },
+        "plan_id": {
+          "minLength": 1,
+          "title": "Plan Id",
+          "type": "string"
+        },
+        "source_scope_id": {
+          "minLength": 1,
+          "title": "Source Scope Id",
+          "type": "string"
+        },
+        "transformation_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Transformation Digest",
+          "type": "string"
+        },
+        "version": {
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "plan_id",
+        "version",
+        "source_scope_id",
+        "transformation_digest",
+        "direction",
+        "action_class",
+        "finding_refs",
+        "operations"
+      ],
+      "title": "ModificationPlan",
+      "type": "object"
+    },
+    "MutationPreparation": {
+      "$defs": {
+        "EmbeddedLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "format": {
+              "const": "json",
+              "default": "json",
+              "title": "Format",
+              "type": "string"
+            },
+            "parser_version": {
+              "minLength": 1,
+              "title": "Parser Version",
+              "type": "string"
+            },
+            "pointer": {
+              "title": "Pointer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "parser_version",
+            "pointer"
+          ],
+          "title": "EmbeddedLocation",
+          "type": "object"
+        },
+        "Location": {
+          "additionalProperties": false,
+          "properties": {
+            "embedded": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EmbeddedLocation"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "source_pointer": {
+              "title": "Source Pointer",
+              "type": "string"
+            },
+            "text_range": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TextRange"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "request_key",
+            "raw_sha256",
+            "source_pointer"
+          ],
+          "title": "Location",
+          "type": "object"
+        },
+        "PreparedMutation": {
+          "additionalProperties": false,
+          "properties": {
+            "business_basis_ref": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Business Basis Ref"
+            },
+            "handler_id": {
+              "minLength": 1,
+              "title": "Handler Id",
+              "type": "string"
+            },
+            "handler_version": {
+              "minLength": 1,
+              "title": "Handler Version",
+              "type": "string"
+            },
+            "invariants_json": {
+              "default": "{}",
+              "title": "Invariants Json",
+              "type": "string"
+            },
+            "manifest_fragment_json": {
+              "default": "{}",
+              "title": "Manifest Fragment Json",
+              "type": "string"
+            },
+            "operation_id": {
+              "minLength": 1,
+              "title": "Operation Id",
+              "type": "string"
+            },
+            "public_primitive": {
+              "enum": [
+                "replace_value",
+                "remove_value"
+              ],
+              "title": "Public Primitive",
+              "type": "string"
+            },
+            "replacement_json": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Replacement Json"
+            },
+            "source_operations_json": {
+              "default": "[]",
+              "title": "Source Operations Json",
+              "type": "string"
+            },
+            "target": {
+              "$ref": "#/$defs/TargetLocation"
+            }
+          },
+          "required": [
+            "operation_id",
+            "handler_id",
+            "handler_version",
+            "target",
+            "public_primitive"
+          ],
+          "title": "PreparedMutation",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Source Record Index",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "TargetLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "location": {
+              "$ref": "#/$defs/Location"
+            },
+            "original_type": {
+              "enum": [
+                "object",
+                "array",
+                "string",
+                "number",
+                "boolean",
+                "null",
+                "absent"
+              ],
+              "title": "Original Type",
+              "type": "string"
+            },
+            "outer_string_guard": {
+              "anyOf": [
+                {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Outer String Guard"
+            },
+            "value_guard": {
+              "anyOf": [
+                {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                {
+                  "const": "absent",
+                  "type": "string"
+                }
+              ],
+              "title": "Value Guard"
+            }
+          },
+          "required": [
+            "location",
+            "original_type",
+            "value_guard"
+          ],
+          "title": "TargetLocation",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "start": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "operations": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/PreparedMutation"
+          },
+          "title": "Operations",
+          "type": "array"
+        },
+        "reason_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "prepared",
+            "blocked"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "MutationPreparation",
+      "type": "object"
+    },
+    "Observation": {
+      "additionalProperties": false,
+      "properties": {
+        "condition": {
+          "enum": [
+            "met",
+            "not_met",
+            "unknown"
+          ],
+          "title": "Condition",
+          "type": "string"
+        },
+        "details_json": {
+          "default": "{}",
+          "title": "Details Json",
+          "type": "string"
+        },
+        "method": {
+          "minLength": 1,
+          "title": "Method",
+          "type": "string"
+        },
+        "policy_digest": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Policy Digest"
+        },
+        "predicate": {
+          "minLength": 1,
+          "title": "Predicate",
+          "type": "string"
+        },
+        "rule_id": {
+          "minLength": 1,
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "rule_version": {
+          "minLength": 1,
+          "title": "Rule Version",
+          "type": "string"
+        },
+        "unit_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unit Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "rule_id",
+        "rule_version",
+        "unit_ids",
+        "predicate",
+        "method",
+        "condition"
+      ],
+      "title": "Observation",
+      "type": "object"
+    },
+    "Participation": {
+      "$defs": {
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "start": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "encoding_identity": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Encoding Identity"
+        },
+        "evidence_method": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Method"
+        },
+        "prompt_token_spans": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/TextRange"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prompt Token Spans"
+        },
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "included",
+            "ignored",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "title": "Participation",
+      "type": "object"
+    },
+    "PluginDescriptor": {
+      "$defs": {
+        "VersionedName": {
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "minLength": 1,
+              "title": "Name",
+              "type": "string"
+            },
+            "version": {
+              "minLength": 1,
+              "title": "Version",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "version"
+          ],
+          "title": "VersionedName",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "analysis-common-1.0",
+          "default": "analysis-common-1.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "handlers": {
+          "items": {
+            "$ref": "#/$defs/VersionedName"
+          },
+          "title": "Handlers",
+          "type": "array"
+        },
+        "measurement_version": {
+          "minLength": 1,
+          "title": "Measurement Version",
+          "type": "string"
+        },
+        "optional_capabilities": {
+          "default": [
+            "participation",
+            "exact_spans"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Optional Capabilities",
+          "type": "array"
+        },
+        "parser_version": {
+          "minLength": 1,
+          "title": "Parser Version",
+          "type": "string"
+        },
+        "plugin_id": {
+          "enum": [
+            "low_hit",
+            "token_content"
+          ],
+          "title": "Plugin Id",
+          "type": "string"
+        },
+        "policy_schema_version": {
+          "minLength": 1,
+          "title": "Policy Schema Version",
+          "type": "string"
+        },
+        "required_capabilities": {
+          "default": [
+            "complete_body",
+            "scope_identity"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Capabilities",
+          "type": "array"
+        },
+        "rule_versions": {
+          "items": {
+            "$ref": "#/$defs/VersionedName"
+          },
+          "title": "Rule Versions",
+          "type": "array"
+        },
+        "version": {
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "plugin_id",
+        "version",
+        "parser_version",
+        "measurement_version",
+        "rule_versions",
+        "policy_schema_version",
+        "handlers"
+      ],
+      "title": "PluginDescriptor",
+      "type": "object"
+    },
+    "PluginSelection": {
+      "$defs": {
+        "BudgetSpec": {
+          "additionalProperties": false,
+          "properties": {
+            "max_candidates": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Max Candidates",
+              "type": "string",
+              "x-integer-exclusiveMinimum": "0"
+            },
+            "max_comparison_bytes": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Max Comparison Bytes",
+              "type": "string",
+              "x-integer-exclusiveMinimum": "0"
+            },
+            "max_depth": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Max Depth",
+              "type": "string",
+              "x-integer-exclusiveMinimum": "0"
+            },
+            "max_encoding_calls": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Max Encoding Calls",
+              "type": "string",
+              "x-integer-exclusiveMinimum": "0"
+            },
+            "max_request_bytes": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Max Request Bytes",
+              "type": "string",
+              "x-integer-exclusiveMinimum": "0"
+            },
+            "max_units": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Max Units",
+              "type": "string",
+              "x-integer-exclusiveMinimum": "0"
+            }
+          },
+          "required": [
+            "max_request_bytes",
+            "max_units",
+            "max_comparison_bytes",
+            "max_depth",
+            "max_candidates",
+            "max_encoding_calls"
+          ],
+          "title": "BudgetSpec",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "budget": {
+          "$ref": "#/$defs/BudgetSpec"
+        },
+        "policies_json": {
+          "default": "[]",
+          "title": "Policies Json",
+          "type": "string"
+        },
+        "rule_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Rule Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "rule_ids",
+        "budget"
+      ],
+      "title": "PluginSelection",
+      "type": "object"
+    },
+    "PreparedMutation": {
+      "$defs": {
+        "EmbeddedLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "format": {
+              "const": "json",
+              "default": "json",
+              "title": "Format",
+              "type": "string"
+            },
+            "parser_version": {
+              "minLength": 1,
+              "title": "Parser Version",
+              "type": "string"
+            },
+            "pointer": {
+              "title": "Pointer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "parser_version",
+            "pointer"
+          ],
+          "title": "EmbeddedLocation",
+          "type": "object"
+        },
+        "Location": {
+          "additionalProperties": false,
+          "properties": {
+            "embedded": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EmbeddedLocation"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "source_pointer": {
+              "title": "Source Pointer",
+              "type": "string"
+            },
+            "text_range": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TextRange"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "request_key",
+            "raw_sha256",
+            "source_pointer"
+          ],
+          "title": "Location",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Source Record Index",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "TargetLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "location": {
+              "$ref": "#/$defs/Location"
+            },
+            "original_type": {
+              "enum": [
+                "object",
+                "array",
+                "string",
+                "number",
+                "boolean",
+                "null",
+                "absent"
+              ],
+              "title": "Original Type",
+              "type": "string"
+            },
+            "outer_string_guard": {
+              "anyOf": [
+                {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Outer String Guard"
+            },
+            "value_guard": {
+              "anyOf": [
+                {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                {
+                  "const": "absent",
+                  "type": "string"
+                }
+              ],
+              "title": "Value Guard"
+            }
+          },
+          "required": [
+            "location",
+            "original_type",
+            "value_guard"
+          ],
+          "title": "TargetLocation",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "start": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "business_basis_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Business Basis Ref"
+        },
+        "handler_id": {
+          "minLength": 1,
+          "title": "Handler Id",
+          "type": "string"
+        },
+        "handler_version": {
+          "minLength": 1,
+          "title": "Handler Version",
+          "type": "string"
+        },
+        "invariants_json": {
+          "default": "{}",
+          "title": "Invariants Json",
+          "type": "string"
+        },
+        "manifest_fragment_json": {
+          "default": "{}",
+          "title": "Manifest Fragment Json",
+          "type": "string"
+        },
+        "operation_id": {
+          "minLength": 1,
+          "title": "Operation Id",
+          "type": "string"
+        },
+        "public_primitive": {
+          "enum": [
+            "replace_value",
+            "remove_value"
+          ],
+          "title": "Public Primitive",
+          "type": "string"
+        },
+        "replacement_json": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Replacement Json"
+        },
+        "source_operations_json": {
+          "default": "[]",
+          "title": "Source Operations Json",
+          "type": "string"
+        },
+        "target": {
+          "$ref": "#/$defs/TargetLocation"
+        }
+      },
+      "required": [
+        "operation_id",
+        "handler_id",
+        "handler_version",
+        "target",
+        "public_primitive"
+      ],
+      "title": "PreparedMutation",
+      "type": "object"
+    },
+    "RequestComparison": {
+      "$defs": {
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Source Record Index",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "association_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Association Ref"
+        },
+        "difference_pointers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Difference Pointers",
+          "type": "array"
+        },
+        "lcp_tokens": {
+          "anyOf": [
+            {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lcp Tokens"
+        },
+        "left": {
+          "$ref": "#/$defs/RequestKey"
+        },
+        "left_raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Left Raw Sha256",
+          "type": "string"
+        },
+        "right": {
+          "$ref": "#/$defs/RequestKey"
+        },
+        "right_raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Right Raw Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "left",
+        "right",
+        "left_raw_sha256",
+        "right_raw_sha256",
+        "difference_pointers"
+      ],
+      "title": "RequestComparison",
+      "type": "object"
+    },
+    "RequestKey": {
+      "additionalProperties": false,
+      "properties": {
+        "base_run_id": {
+          "minLength": 1,
+          "title": "Base Run Id",
+          "type": "string"
+        },
+        "source_record_index": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Source Record Index",
+          "type": "string",
+          "x-integer-minimum": "0"
+        }
+      },
+      "required": [
+        "base_run_id",
+        "source_record_index"
+      ],
+      "title": "RequestKey",
+      "type": "object"
+    },
+    "RequestView": {
+      "$defs": {
+        "BaselineMetrics": {
+          "additionalProperties": false,
+          "properties": {
+            "c": {
+              "anyOf": [
+                {
+                  "pattern": "^(0|-?[1-9][0-9]*)$",
+                  "type": "string",
+                  "x-integer-minimum": "0"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "C"
+            },
+            "h": {
+              "anyOf": [
+                {
+                  "pattern": "^(0|-?[1-9][0-9]*)$",
+                  "type": "string",
+                  "x-integer-minimum": "0"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "H"
+            },
+            "j": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "J",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "o": {
+              "anyOf": [
+                {
+                  "pattern": "^(0|-?[1-9][0-9]*)$",
+                  "type": "string",
+                  "x-integer-minimum": "0"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "O"
+            },
+            "p": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "P",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "j",
+            "p"
+          ],
+          "title": "BaselineMetrics",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Source Record Index",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "appid": {
+          "minLength": 1,
+          "title": "Appid",
+          "type": "string"
+        },
+        "asset_identity": {
+          "minLength": 1,
+          "title": "Asset Identity",
+          "type": "string"
+        },
+        "association_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Association Ref"
+        },
+        "baseline_metrics": {
+          "$ref": "#/$defs/BaselineMetrics"
+        },
+        "capture_truncation": {
+          "default": "unknown",
+          "enum": [
+            "known_truncated",
+            "known_complete",
+            "unknown"
+          ],
+          "title": "Capture Truncation",
+          "type": "string"
+        },
+        "effective_options_json": {
+          "title": "Effective Options Json",
+          "type": "string"
+        },
+        "encoder_identity": {
+          "minLength": 1,
+          "title": "Encoder Identity",
+          "type": "string"
+        },
+        "hash_id": {
+          "title": "Hash Id",
+          "type": "string"
+        },
+        "light_evidence_json": {
+          "default": "{}",
+          "title": "Light Evidence Json",
+          "type": "string"
+        },
+        "raw_body": {
+          "title": "Raw Body",
+          "type": "string"
+        },
+        "raw_body_complete": {
+          "title": "Raw Body Complete",
+          "type": "boolean"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "request_key": {
+          "$ref": "#/$defs/RequestKey"
+        },
+        "scope_id": {
+          "minLength": 1,
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "time_ns": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Time Ns",
+          "type": "string"
+        },
+        "token_slice_json": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Token Slice Json"
+        }
+      },
+      "required": [
+        "request_key",
+        "scope_id",
+        "appid",
+        "time_ns",
+        "hash_id",
+        "raw_body",
+        "raw_sha256",
+        "raw_body_complete",
+        "baseline_metrics",
+        "encoder_identity",
+        "asset_identity",
+        "effective_options_json"
+      ],
+      "title": "RequestView",
+      "type": "object"
+    },
+    "RuleResult": {
+      "$defs": {
+        "Coverage": {
+          "additionalProperties": false,
+          "properties": {
+            "checked": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Checked",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "complete": {
+              "title": "Complete",
+              "type": "boolean"
+            },
+            "eligible": {
+              "anyOf": [
+                {
+                  "pattern": "^(0|-?[1-9][0-9]*)$",
+                  "type": "string",
+                  "x-integer-minimum": "0"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Eligible"
+            },
+            "reasons": {
+              "default": [],
+              "items": {
+                "type": "string"
+              },
+              "title": "Reasons",
+              "type": "array"
+            },
+            "stop_location": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Stop Location"
+            }
+          },
+          "required": [
+            "checked",
+            "eligible",
+            "complete"
+          ],
+          "title": "Coverage",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "condition": {
+          "enum": [
+            "met",
+            "not_met",
+            "unknown"
+          ],
+          "title": "Condition",
+          "type": "string"
+        },
+        "coverage": {
+          "$ref": "#/$defs/Coverage"
+        },
+        "reason_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "rule_id": {
+          "minLength": 1,
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "completed",
+            "not_applicable",
+            "partial",
+            "failed",
+            "not_checked"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rule_id",
+        "status",
+        "condition",
+        "coverage"
+      ],
+      "title": "RuleResult",
+      "type": "object"
+    },
+    "SourceIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "algorithm_version": {
+          "minLength": 1,
+          "title": "Algorithm Version",
+          "type": "string"
+        },
+        "asset_identity": {
+          "minLength": 1,
+          "title": "Asset Identity",
+          "type": "string"
+        },
+        "base_run_id": {
+          "minLength": 1,
+          "title": "Base Run Id",
+          "type": "string"
+        },
+        "common_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Common Name"
+        },
+        "encoder_identity": {
+          "minLength": 1,
+          "title": "Encoder Identity",
+          "type": "string"
+        },
+        "manifest_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Manifest Sha256",
+          "type": "string"
+        },
+        "model_id": {
+          "minLength": 1,
+          "title": "Model Id",
+          "type": "string"
+        },
+        "profile_json": {
+          "title": "Profile Json",
+          "type": "string"
+        },
+        "settings_json": {
+          "title": "Settings Json",
+          "type": "string"
+        },
+        "user_run_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "User Run Id"
+        }
+      },
+      "required": [
+        "base_run_id",
+        "model_id",
+        "manifest_sha256",
+        "asset_identity",
+        "encoder_identity",
+        "profile_json",
+        "settings_json",
+        "algorithm_version"
+      ],
+      "title": "SourceIdentity",
+      "type": "object"
+    },
+    "SourceSelection": {
+      "$defs": {
+        "TimeWindow": {
+          "additionalProperties": false,
+          "properties": {
+            "end_ns": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End Ns",
+              "type": "string"
+            },
+            "start_ns": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start Ns",
+              "type": "string"
+            }
+          },
+          "required": [
+            "start_ns",
+            "end_ns"
+          ],
+          "title": "TimeWindow",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "appid": {
+          "minLength": 1,
+          "title": "Appid",
+          "type": "string"
+        },
+        "base_run_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Base Run Id"
+        },
+        "expected_index_revision": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Index Revision"
+        },
+        "source_kind": {
+          "enum": [
+            "base",
+            "user_v2"
+          ],
+          "title": "Source Kind",
+          "type": "string"
+        },
+        "user_run_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "User Run Id"
+        },
+        "window": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TimeWindow"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "source_kind",
+        "appid"
+      ],
+      "title": "SourceSelection",
+      "type": "object"
+    },
+    "TargetLocation": {
+      "$defs": {
+        "EmbeddedLocation": {
+          "additionalProperties": false,
+          "properties": {
+            "format": {
+              "const": "json",
+              "default": "json",
+              "title": "Format",
+              "type": "string"
+            },
+            "parser_version": {
+              "minLength": 1,
+              "title": "Parser Version",
+              "type": "string"
+            },
+            "pointer": {
+              "title": "Pointer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "parser_version",
+            "pointer"
+          ],
+          "title": "EmbeddedLocation",
+          "type": "object"
+        },
+        "Location": {
+          "additionalProperties": false,
+          "properties": {
+            "embedded": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/EmbeddedLocation"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            },
+            "raw_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "title": "Raw Sha256",
+              "type": "string"
+            },
+            "request_key": {
+              "$ref": "#/$defs/RequestKey"
+            },
+            "source_pointer": {
+              "title": "Source Pointer",
+              "type": "string"
+            },
+            "text_range": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/TextRange"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "request_key",
+            "raw_sha256",
+            "source_pointer"
+          ],
+          "title": "Location",
+          "type": "object"
+        },
+        "RequestKey": {
+          "additionalProperties": false,
+          "properties": {
+            "base_run_id": {
+              "minLength": 1,
+              "title": "Base Run Id",
+              "type": "string"
+            },
+            "source_record_index": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Source Record Index",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "base_run_id",
+            "source_record_index"
+          ],
+          "title": "RequestKey",
+          "type": "object"
+        },
+        "TextRange": {
+          "additionalProperties": false,
+          "properties": {
+            "end": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "End",
+              "type": "string",
+              "x-integer-minimum": "0"
+            },
+            "start": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "title": "Start",
+              "type": "string",
+              "x-integer-minimum": "0"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "title": "TextRange",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "location": {
+          "$ref": "#/$defs/Location"
+        },
+        "original_type": {
+          "enum": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null",
+            "absent"
+          ],
+          "title": "Original Type",
+          "type": "string"
+        },
+        "outer_string_guard": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Outer String Guard"
+        },
+        "value_guard": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": "absent",
+              "type": "string"
+            }
+          ],
+          "title": "Value Guard"
+        }
+      },
+      "required": [
+        "location",
+        "original_type",
+        "value_guard"
+      ],
+      "title": "TargetLocation",
+      "type": "object"
+    },
+    "TaskReceipt": {
+      "additionalProperties": false,
+      "properties": {
+        "active_direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "low_hit",
+                "token_content"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Active Direction"
+        },
+        "attempt": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Attempt",
+          "type": "string",
+          "x-integer-minimum": "1"
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error Code"
+        },
+        "report_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Report Ref"
+        },
+        "status": {
+          "enum": [
+            "queued",
+            "running",
+            "ready",
+            "partial",
+            "empty",
+            "failed",
+            "interrupted"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "task_id": {
+          "minLength": 1,
+          "title": "Task Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id",
+        "attempt",
+        "status"
+      ],
+      "title": "TaskReceipt",
+      "type": "object"
+    },
+    "TextRange": {
+      "additionalProperties": false,
+      "properties": {
+        "end": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "End",
+          "type": "string",
+          "x-integer-minimum": "0"
+        },
+        "start": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Start",
+          "type": "string",
+          "x-integer-minimum": "0"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "title": "TextRange",
+      "type": "object"
+    },
+    "TimeWindow": {
+      "additionalProperties": false,
+      "properties": {
+        "end_ns": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "End Ns",
+          "type": "string"
+        },
+        "start_ns": {
+          "pattern": "^(0|-?[1-9][0-9]*)$",
+          "title": "Start Ns",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_ns",
+        "end_ns"
+      ],
+      "title": "TimeWindow",
+      "type": "object"
+    },
+    "VersionedName": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "version": {
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "title": "VersionedName",
+      "type": "object"
+    }
+  },
+  "version": "analysis-common-1.0"
+}

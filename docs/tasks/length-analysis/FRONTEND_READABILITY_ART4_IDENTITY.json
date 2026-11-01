@@ -1,0 +1,18 @@
+{
+  "identity": "art4-readable-local-1",
+  "session_id": "01a18fcd-0464-7cf1-b435-4f394bd33e66",
+  "contract": "analysis-recommendations-1",
+  "scope": "new synthetic fixture and actual sealed GET evidence only; no production implementation/API change",
+  "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+  "service_instance_id": "2fceceeb-ea9d-4d67-9c63-da25cca35c1e",
+  "verification": "1 passed / 10.77s; ruff passed; no full-suite rerun for new fixture only",
+  "files": {
+    "tests/integration/token_content/test_readability_art4.py": "b910ebbe46e8a73eb0a6faf47f60d6af11934506e8cf4fc124e3bf4205373a43",
+    "docs/tasks/length-analysis/FRONTEND_READABILITY_ART4_EXAMPLES.json": "ad821b738eb4462eda6f9519e290695820548752cecc8f3489ae17eb9096c3db",
+    "artifacts/validation/art4-readable-20261031-01/test_chinese_recipes_actual_se0/synthetic-recipes.json": "cdd32229de4deee9dd72b5c0ac72bf2db426fcbeacc0f380e191a37da0d5a3a3",
+    "artifacts/validation/art4-readable-20261031-01/test_chinese_recipes_actual_se0/synthetic-reference-map.json": "24948651e8424186a97d1492e3bf308fe5428e5fc9d55a2dc4c15c3dbb6e56f3",
+    "artifacts/validation/art4-readable-20261031-01/test_chinese_recipes_actual_se0/inputs/synthetic-orders.csv": "00ba36185707e56dc5d3d47d5c2f726aa603bbbd6b1ab545869d851f99c39fe1",
+    "artifacts/validation/art4-readable-20261031-01/test_chinese_recipes_actual_se0/state/diagnostics/716967b3-3e69-4f58-82e8-37f5e7715b8d/report.json": "5239ee6305b84c4964db1ffa48e368d1c15e5fc6d153d5d00bbafb8b8f4ede2d",
+    "artifacts/validation/art4-readable-20261031-01/test_chinese_recipes_actual_se0/state/diagnostics/716967b3-3e69-4f58-82e8-37f5e7715b8d/items.sqlite3": "834fe62646242a0470b4af3bd442f29628e7dd5a653414a958b8005781170db9"
+  }
+}

@@ -1,0 +1,1080 @@
+{
+  "notice": "AR-L2 VISUAL PROPOSAL ONLY, not an implemented API/schema or measured replay. All IDs, counts, timestamps and gains are synthetic. Source strings below exist only to validate excerpts, never render full request in business UI. L5 is a separate scenario/scope.",
+  "six_request_case": {
+    "recommendation": {
+      "object_status": "PROPOSAL_NOT_IMPLEMENTED",
+      "recommendation_id": "proposal:94ab8ec01132c85b3ec60c7d63e80e2c8600829f2805df2865ec83a1938c0b03",
+      "task_id": "synthetic-analysis-six",
+      "scope_id": "synthetic-scope-six",
+      "direction": "low_hit",
+      "rule_refs": [
+        "L1@1"
+      ],
+      "group_basis": {
+        "scope": "synthetic-scope-six",
+        "rule": "L1@1",
+        "recipe": {
+          "kind": "dynamic_remove",
+          "pattern": "timestamp",
+          "slot_index": 0,
+          "shape": [
+            "Time: ",
+            "timestamp",
+            "\nUse the stable business instructions below."
+          ],
+          "slot_key": "L1:/messages/0/content"
+        },
+        "handler_version": "1"
+      },
+      "member_finding_ids": [
+        "synthetic-L1-1-2",
+        "synthetic-L1-1-3",
+        "synthetic-L1-1-4",
+        "synthetic-L1-1-5",
+        "synthetic-L1-1-6",
+        "synthetic-L1-2-3",
+        "synthetic-L1-2-4",
+        "synthetic-L1-2-5",
+        "synthetic-L1-2-6",
+        "synthetic-L1-3-4",
+        "synthetic-L1-3-5",
+        "synthetic-L1-3-6",
+        "synthetic-L1-4-5",
+        "synthetic-L1-4-6",
+        "synthetic-L1-5-6"
+      ],
+      "representative_finding_id": "synthetic-L1-1-2",
+      "experiment_ref": "synthetic-experiment-0",
+      "plan_ref": "synthetic-full-plan",
+      "evaluation_ref": "synthetic-full-evaluation",
+      "status": "full_qualified",
+      "card": {
+        "title": "移除前缀中的动态时间戳",
+        "modified_request_count": "6",
+        "analysis_request_count": "6",
+        "modified_request_ratio": {
+          "numerator": "6",
+          "denominator": "6"
+        },
+        "count_label": "本方案实际修改请求",
+        "before_hit_ratio": {
+          "numerator": "60000",
+          "denominator": "100000"
+        },
+        "after_hit_ratio": {
+          "numerator": "78400",
+          "denominator": "98000"
+        },
+        "gain_percentage_points": {
+          "numerator": "20",
+          "denominator": "1"
+        },
+        "display_eligible": true
+      },
+      "detail": {
+        "proposal": "删除system消息中Time:之后已定位的20字符时间戳；保留其他字符和全部消息。时间信息是否仍有业务用途由业务评估；此为离线删除假设。",
+        "evidence_examples": [
+          {
+            "example_id": "pair-1-2",
+            "kind": "pair_difference",
+            "left_label": "请求A",
+            "right_label": "请求B",
+            "left": {
+              "source_ref": {
+                "task_id": "synthetic-analysis-six",
+                "request_key": {
+                  "base_run_id": "synthetic-run-six",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "9544686f9a081854a997396512441f4585ae39f1110242aa59fd3db882c45fd2"
+              },
+              "pointer": "/messages/0/content",
+              "raw_span": {
+                "start": "47",
+                "end": "67",
+                "unit": "unicode_code_point"
+              },
+              "decoded_span": {
+                "start": "6",
+                "end": "26",
+                "unit": "unicode_code_point"
+              },
+              "text": "2026-10-31T09:00:00Z",
+              "context_before": "Time: ",
+              "context_after": "\nUse the stable business instructions below.",
+              "omitted_before": true,
+              "omitted_after": true,
+              "locator_status": "synthetic_construction_offsets_not_runtime_locator"
+            },
+            "right": {
+              "source_ref": {
+                "task_id": "synthetic-analysis-six",
+                "request_key": {
+                  "base_run_id": "synthetic-run-six",
+                  "source_record_index": "2"
+                },
+                "raw_sha256": "1cab5a8de3e6b1f21e2ef2a4a2893c81804e2bdce4279baedf19a9c4399b7e69"
+              },
+              "pointer": "/messages/0/content",
+              "raw_span": {
+                "start": "47",
+                "end": "67",
+                "unit": "unicode_code_point"
+              },
+              "decoded_span": {
+                "start": "6",
+                "end": "26",
+                "unit": "unicode_code_point"
+              },
+              "text": "2026-10-31T09:00:01Z",
+              "context_before": "Time: ",
+              "context_after": "\nUse the stable business instructions below.",
+              "omitted_before": true,
+              "omitted_after": true,
+              "locator_status": "synthetic_construction_offsets_not_runtime_locator"
+            }
+          }
+        ],
+        "edit_examples": [
+          {
+            "example_id": "edit-1",
+            "kind": "proposed_edit",
+            "source_ref": {
+              "task_id": "synthetic-analysis-six",
+              "request_key": {
+                "base_run_id": "synthetic-run-six",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "9544686f9a081854a997396512441f4585ae39f1110242aa59fd3db882c45fd2"
+            },
+            "pointer": "/messages/0/content",
+            "before": {
+              "text": "Time: 2026-10-31T09:00:00Z\nUse the stable business instructions below.",
+              "omitted_before": true,
+              "omitted_after": true
+            },
+            "after": {
+              "text": "Time: \nUse the stable business instructions below.",
+              "omitted_before": true,
+              "omitted_after": true
+            },
+            "description": "删除system消息中Time:之后已定位的20字符时间戳；保留其他字符和全部消息。时间信息是否仍有业务用途由业务评估；此为离线删除假设。",
+            "basis_kind": "offline_hypothesis"
+          }
+        ],
+        "coverage_complete": true,
+        "assumptions": [
+          "仅固定请求序列离线副本效果",
+          "未证明真实任务质量或未来请求保持一致"
+        ]
+      }
+    },
+    "difference_group": {
+      "object_status": "PROPOSAL_NOT_IMPLEMENTED",
+      "difference_group_id": "synthetic-l4-group",
+      "rule_id": "L4",
+      "scope_id": "synthetic-scope-six",
+      "group_basis": {
+        "paths": [
+          "/messages/0/content"
+        ],
+        "role": "system",
+        "context_shape": [
+          "Time: ",
+          "timestamp",
+          "\nUse the stable business instructions below."
+        ],
+        "association": "unknown"
+      },
+      "member_finding_ids": [
+        "synthetic-L4-1-2",
+        "synthetic-L4-1-3",
+        "synthetic-L4-1-4",
+        "synthetic-L4-1-5",
+        "synthetic-L4-1-6",
+        "synthetic-L4-2-3",
+        "synthetic-L4-2-4",
+        "synthetic-L4-2-5",
+        "synthetic-L4-2-6",
+        "synthetic-L4-3-4",
+        "synthetic-L4-3-5",
+        "synthetic-L4-3-6",
+        "synthetic-L4-4-5",
+        "synthetic-L4-4-6",
+        "synthetic-L4-5-6"
+      ],
+      "card": {
+        "title": "消息中时间字段发生变化",
+        "observed_request_count": "6",
+        "analysis_request_count": "6",
+        "count_label": "已发现涉及的去重请求",
+        "members_complete": true,
+        "discovery_coverage": "bounded_candidate_observations_not_exhaustive_claim"
+      },
+      "detail": {
+        "explanation": "两条请求的system消息内容不同；缺少session关联，不能认定同一会话污染。",
+        "sample_count": "3",
+        "examples": [
+          {
+            "example_id": "pair-1-2",
+            "kind": "pair_difference",
+            "left_label": "请求A",
+            "right_label": "请求B",
+            "left": {
+              "source_ref": {
+                "task_id": "synthetic-analysis-six",
+                "request_key": {
+                  "base_run_id": "synthetic-run-six",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "9544686f9a081854a997396512441f4585ae39f1110242aa59fd3db882c45fd2"
+              },
+              "pointer": "/messages/0/content",
+              "raw_span": {
+                "start": "47",
+                "end": "67",
+                "unit": "unicode_code_point"
+              },
+              "decoded_span": {
+                "start": "6",
+                "end": "26",
+                "unit": "unicode_code_point"
+              },
+              "text": "2026-10-31T09:00:00Z",
+              "context_before": "Time: ",
+              "context_after": "\nUse the stable business instructions below.",
+              "omitted_before": true,
+              "omitted_after": true,
+              "locator_status": "synthetic_construction_offsets_not_runtime_locator"
+            },
+            "right": {
+              "source_ref": {
+                "task_id": "synthetic-analysis-six",
+                "request_key": {
+                  "base_run_id": "synthetic-run-six",
+                  "source_record_index": "2"
+                },
+                "raw_sha256": "1cab5a8de3e6b1f21e2ef2a4a2893c81804e2bdce4279baedf19a9c4399b7e69"
+              },
+              "pointer": "/messages/0/content",
+              "raw_span": {
+                "start": "47",
+                "end": "67",
+                "unit": "unicode_code_point"
+              },
+              "decoded_span": {
+                "start": "6",
+                "end": "26",
+                "unit": "unicode_code_point"
+              },
+              "text": "2026-10-31T09:00:01Z",
+              "context_before": "Time: ",
+              "context_after": "\nUse the stable business instructions below.",
+              "omitted_before": true,
+              "omitted_after": true,
+              "locator_status": "synthetic_construction_offsets_not_runtime_locator"
+            }
+          },
+          {
+            "example_id": "pair-1-3",
+            "kind": "pair_difference",
+            "left_label": "请求A",
+            "right_label": "请求B",
+            "left": {
+              "source_ref": {
+                "task_id": "synthetic-analysis-six",
+                "request_key": {
+                  "base_run_id": "synthetic-run-six",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "9544686f9a081854a997396512441f4585ae39f1110242aa59fd3db882c45fd2"
+              },
+              "pointer": "/messages/0/content",
+              "raw_span": {
+                "start": "47",
+                "end": "67",
+                "unit": "unicode_code_point"
+              },
+              "decoded_span": {
+                "start": "6",
+                "end": "26",
+                "unit": "unicode_code_point"
+              },
+              "text": "2026-10-31T09:00:00Z",
+              "context_before": "Time: ",
+              "context_after": "\nUse the stable business instructions below.",
+              "omitted_before": true,
+              "omitted_after": true,
+              "locator_status": "synthetic_construction_offsets_not_runtime_locator"
+            },
+            "right": {
+              "source_ref": {
+                "task_id": "synthetic-analysis-six",
+                "request_key": {
+                  "base_run_id": "synthetic-run-six",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "48ece021fa88b8db75383c9f661b6f491061ae4a22d833aa51174b1ad2ac2963"
+              },
+              "pointer": "/messages/0/content",
+              "raw_span": {
+                "start": "47",
+                "end": "67",
+                "unit": "unicode_code_point"
+              },
+              "decoded_span": {
+                "start": "6",
+                "end": "26",
+                "unit": "unicode_code_point"
+              },
+              "text": "2026-10-31T09:00:02Z",
+              "context_before": "Time: ",
+              "context_after": "\nUse the stable business instructions below.",
+              "omitted_before": true,
+              "omitted_after": true,
+              "locator_status": "synthetic_construction_offsets_not_runtime_locator"
+            }
+          },
+          {
+            "example_id": "pair-1-4",
+            "kind": "pair_difference",
+            "left_label": "请求A",
+            "right_label": "请求B",
+            "left": {
+              "source_ref": {
+                "task_id": "synthetic-analysis-six",
+                "request_key": {
+                  "base_run_id": "synthetic-run-six",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "9544686f9a081854a997396512441f4585ae39f1110242aa59fd3db882c45fd2"
+              },
+              "pointer": "/messages/0/content",
+              "raw_span": {
+                "start": "47",
+                "end": "67",
+                "unit": "unicode_code_point"
+              },
+              "decoded_span": {
+                "start": "6",
+                "end": "26",
+                "unit": "unicode_code_point"
+              },
+              "text": "2026-10-31T09:00:00Z",
+              "context_before": "Time: ",
+              "context_after": "\nUse the stable business instructions below.",
+              "omitted_before": true,
+              "omitted_after": true,
+              "locator_status": "synthetic_construction_offsets_not_runtime_locator"
+            },
+            "right": {
+              "source_ref": {
+                "task_id": "synthetic-analysis-six",
+                "request_key": {
+                  "base_run_id": "synthetic-run-six",
+                  "source_record_index": "4"
+                },
+                "raw_sha256": "dc63f813fea7cbf4687e7af2d56b5039461d476fb26ad802d3a29bad2ba94672"
+              },
+              "pointer": "/messages/0/content",
+              "raw_span": {
+                "start": "47",
+                "end": "67",
+                "unit": "unicode_code_point"
+              },
+              "decoded_span": {
+                "start": "6",
+                "end": "26",
+                "unit": "unicode_code_point"
+              },
+              "text": "2026-10-31T09:00:03Z",
+              "context_before": "Time: ",
+              "context_after": "\nUse the stable business instructions below.",
+              "omitted_before": true,
+              "omitted_after": true,
+              "locator_status": "synthetic_construction_offsets_not_runtime_locator"
+            }
+          }
+        ],
+        "selection_method": "distinct_pair_signature_then_request_order_v1"
+      },
+      "expected_gain": null
+    },
+    "supporting_findings": {
+      "L1": [
+        {
+          "finding_id": "synthetic-L1-1-2",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "2"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-1-3",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "3"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-1-4",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "4"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-1-5",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "5"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-1-6",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "6"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-2-3",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "2"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "3"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-2-4",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "2"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "4"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-2-5",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "2"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "5"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-2-6",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "2"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "6"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-3-4",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "3"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "4"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-3-5",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "3"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "5"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-3-6",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "3"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "6"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-4-5",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "4"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "5"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-4-6",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "4"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "6"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L1-5-6",
+          "rule_id": "L1",
+          "rule_version": "1",
+          "recipe_json": "{\"kind\":\"dynamic_remove\",\"pattern\":\"timestamp\",\"slot_index\":0,\"shape\":[\"Time: \",\"timestamp\",\"\\nUse the stable business instructions below.\"],\"slot_key\":\"L1:/messages/0/content\"}",
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "5"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "6"
+            }
+          }
+        }
+      ],
+      "L4": [
+        {
+          "finding_id": "synthetic-L4-1-2",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "2"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-1-3",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "3"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-1-4",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "4"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-1-5",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "5"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-1-6",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "1"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "6"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-2-3",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "2"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "3"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-2-4",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "2"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "4"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-2-5",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "2"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "5"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-2-6",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "2"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "6"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-3-4",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "3"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "4"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-3-5",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "3"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "5"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-3-6",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "3"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "6"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-4-5",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "4"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "5"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-4-6",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "4"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "6"
+            }
+          }
+        },
+        {
+          "finding_id": "synthetic-L4-5-6",
+          "rule_id": "L4",
+          "recipe_json": null,
+          "comparison": {
+            "left": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "5"
+            },
+            "right": {
+              "base_run_id": "synthetic-run-six",
+              "source_record_index": "6"
+            }
+          }
+        }
+      ]
+    },
+    "audit_only": {
+      "full_evaluation": {
+        "evaluation_id": "synthetic-full-evaluation",
+        "plan_id": "synthetic-full-plan",
+        "scope_id": "synthetic-scope-six",
+        "stage": "full",
+        "direction": "low_hit",
+        "status": "available",
+        "coverage": {
+          "checked": "6",
+          "eligible": "6",
+          "complete": true
+        },
+        "before": {
+          "n": "6",
+          "j": "110000",
+          "p": "100000",
+          "h": "60000",
+          "c": "40000"
+        },
+        "after": {
+          "n": "6",
+          "j": "108000",
+          "p": "98000",
+          "h": "78400",
+          "c": "19600"
+        },
+        "modified_before": {
+          "n": "6",
+          "j": "110000",
+          "p": "100000",
+          "h": "60000",
+          "c": "40000"
+        },
+        "modified_after": {
+          "n": "6",
+          "j": "108000",
+          "p": "98000",
+          "h": "78400",
+          "c": "19600"
+        },
+        "gain_percentage_points": {
+          "numerator": "20",
+          "denominator": "1"
+        },
+        "display_eligible": true
+      },
+      "pilot": {
+        "scope_count": "3",
+        "gain_percentage_points": {
+          "numerator": "10",
+          "denominator": "1"
+        },
+        "complete": true
+      },
+      "plan_targets": [
+        {
+          "base_run_id": "synthetic-run-six",
+          "source_record_index": "1"
+        },
+        {
+          "base_run_id": "synthetic-run-six",
+          "source_record_index": "2"
+        },
+        {
+          "base_run_id": "synthetic-run-six",
+          "source_record_index": "3"
+        },
+        {
+          "base_run_id": "synthetic-run-six",
+          "source_record_index": "4"
+        },
+        {
+          "base_run_id": "synthetic-run-six",
+          "source_record_index": "5"
+        },
+        {
+          "base_run_id": "synthetic-run-six",
+          "source_record_index": "6"
+        }
+      ],
+      "experiment_finding_refs": [
+        "synthetic-L1-1-2"
+      ],
+      "raw_sources_not_for_ui": {
+        "1": "{\"messages\":[{\"role\":\"system\",\"content\":\"Time: 2026-10-31T09:00:00Z\\nUse the stable business instructions below.\"},{\"role\":\"user\",\"content\":\"请查询订单\"}],\"enable_thinking\":false}",
+        "2": "{\"messages\":[{\"role\":\"system\",\"content\":\"Time: 2026-10-31T09:00:01Z\\nUse the stable business instructions below.\"},{\"role\":\"user\",\"content\":\"请查询订单\"}],\"enable_thinking\":false}",
+        "3": "{\"messages\":[{\"role\":\"system\",\"content\":\"Time: 2026-10-31T09:00:02Z\\nUse the stable business instructions below.\"},{\"role\":\"user\",\"content\":\"请查询订单\"}],\"enable_thinking\":false}",
+        "4": "{\"messages\":[{\"role\":\"system\",\"content\":\"Time: 2026-10-31T09:00:03Z\\nUse the stable business instructions below.\"},{\"role\":\"user\",\"content\":\"请查询订单\"}],\"enable_thinking\":false}",
+        "5": "{\"messages\":[{\"role\":\"system\",\"content\":\"Time: 2026-10-31T09:00:04Z\\nUse the stable business instructions below.\"},{\"role\":\"user\",\"content\":\"请查询订单\"}],\"enable_thinking\":false}",
+        "6": "{\"messages\":[{\"role\":\"system\",\"content\":\"Time: 2026-10-31T09:00:05Z\\nUse the stable business instructions below.\"},{\"role\":\"user\",\"content\":\"请查询订单\"}],\"enable_thinking\":false}"
+      }
+    },
+    "assertions": {
+      "optimization_cards": "1",
+      "L4_difference_cards": "1",
+      "L1_observations": "15",
+      "L4_observations": "15",
+      "unique_requests_across_L1_and_L4": "6",
+      "sum_of_card_counts_must_not_be_used": true
+    }
+  },
+  "L5_separate_case": {
+    "difference_group": {
+      "object_status": "PROPOSAL_NOT_IMPLEMENTED",
+      "difference_group_id": "synthetic-l5-group",
+      "rule_id": "L5",
+      "scope_id": "synthetic-scope-two",
+      "group_basis": {
+        "pointer": "/messages/2/content",
+        "strict_value_context": "id lexeme 9007199254740993 / status ok",
+        "tool_identity": "lookup synthetic fixture",
+        "difference_class": "json_whitespace_only"
+      },
+      "member_finding_ids": [
+        "synthetic-L5-1-2"
+      ],
+      "card": {
+        "title": "工具结果JSON的空白表示不同",
+        "observed_request_count": "2",
+        "analysis_request_count": "2",
+        "count_label": "已发现涉及的去重请求",
+        "members_complete": true,
+        "discovery_coverage": "this_synthetic_pair"
+      },
+      "detail": {
+        "explanation": "结果内容和值一致，空白表示不同；不建议删除业务内容，无预期收益数值。",
+        "sample_count": "1",
+        "examples": [
+          {
+            "kind": "pair_difference",
+            "left_label": "请求A",
+            "right_label": "请求B",
+            "left": {
+              "source_ref": {
+                "task_id": "synthetic-analysis-l5",
+                "request_key": {
+                  "base_run_id": "synthetic-run-l5",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "45c6660a72d6a7d8427eb9ee0348660cc17b9bbe8cf25da5e3227cc6e56951d0"
+              },
+              "pointer": "/messages/2/content",
+              "raw_span": {
+                "start": "242",
+                "end": "287",
+                "unit": "unicode_code_point"
+              },
+              "raw_text": "\"{\\\"id\\\":9007199254740993,\\\"status\\\":\\\"ok\\\"}\"",
+              "decoded_text": "{\"id\":9007199254740993,\"status\":\"ok\"}",
+              "context_before": "role=tool, tool_call_id=synthetic-call, function=lookup",
+              "context_after": "",
+              "omitted_before": true,
+              "omitted_after": true,
+              "locator_status": "synthetic_construction_offsets_not_runtime_locator"
+            },
+            "right": {
+              "source_ref": {
+                "task_id": "synthetic-analysis-l5",
+                "request_key": {
+                  "base_run_id": "synthetic-run-l5",
+                  "source_record_index": "2"
+                },
+                "raw_sha256": "cabe194973ebd35420568fe7a5b0c7843a3bebb5ff22f2bc3235ee0f8bdde0dd"
+              },
+              "pointer": "/messages/2/content",
+              "raw_span": {
+                "start": "242",
+                "end": "292",
+                "unit": "unicode_code_point"
+              },
+              "raw_text": "\"{ \\\"id\\\": 9007199254740993, \\\"status\\\": \\\"ok\\\" }\"",
+              "decoded_text": "{ \"id\": 9007199254740993, \"status\": \"ok\" }",
+              "context_before": "role=tool, tool_call_id=synthetic-call, function=lookup",
+              "context_after": "",
+              "omitted_before": true,
+              "omitted_after": true,
+              "locator_status": "synthetic_construction_offsets_not_runtime_locator"
+            }
+          }
+        ]
+      },
+      "expected_gain": null
+    },
+    "raw_sources_not_for_ui": [
+      "{\"messages\":[{\"role\":\"user\",\"content\":\"查询订单\"},{\"role\":\"assistant\",\"content\":null,\"tool_calls\":[{\"id\":\"synthetic-call\",\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"synthetic-call\",\"content\":\"{\\\"id\\\":9007199254740993,\\\"status\\\":\\\"ok\\\"}\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"parameters\":{\"type\":\"object\",\"properties\":{}}}}],\"enable_thinking\":false}",
+      "{\"messages\":[{\"role\":\"user\",\"content\":\"查询订单\"},{\"role\":\"assistant\",\"content\":null,\"tool_calls\":[{\"id\":\"synthetic-call\",\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"synthetic-call\",\"content\":\"{ \\\"id\\\": 9007199254740993, \\\"status\\\": \\\"ok\\\" }\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"lookup\",\"parameters\":{\"type\":\"object\",\"properties\":{}}}}],\"enable_thinking\":false}"
+    ]
+  },
+  "grouping_counterexamples": [
+    {
+      "rule": "L1",
+      "difference": "same rule but different slot_index or shape",
+      "result": "separate recommendation; do not share gain"
+    },
+    {
+      "rule": "L4",
+      "difference": "different unchanged message/call context",
+      "result": "separate difference group; each may have up to 3 examples"
+    },
+    {
+      "rule": "L5",
+      "difference": "different numeric lexeme or tool/context",
+      "result": "not the same representation group"
+    }
+  ]
+}

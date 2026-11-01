@@ -1,0 +1,369 @@
+{
+  "version": "token-auto-private-config-1",
+  "note": "Each schemas value is an independent JSON Schema root. Cross-model basis/handler checks additionally require TokenProposalAdapter.validate_bundle.",
+  "schemas": {
+    "ResultSelector": {
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "const": "token-result-selector-1",
+          "title": "Version",
+          "type": "string"
+        },
+        "appid": {
+          "minLength": 1,
+          "title": "Appid",
+          "type": "string"
+        },
+        "tool_name": {
+          "minLength": 1,
+          "title": "Tool Name",
+          "type": "string"
+        },
+        "tool_identity": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Tool Identity",
+          "type": "string"
+        },
+        "representation": {
+          "enum": [
+            "text",
+            "structural_json"
+          ],
+          "title": "Representation",
+          "type": "string"
+        },
+        "embedded_pointer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Embedded Pointer"
+        },
+        "retention_unit": {
+          "default": "result_container",
+          "enum": [
+            "result_container",
+            "text_part"
+          ],
+          "title": "Retention Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "version",
+        "appid",
+        "tool_name",
+        "tool_identity",
+        "representation",
+        "embedded_pointer"
+      ],
+      "title": "ResultSelector",
+      "type": "object"
+    },
+    "GeneratorConfig": {
+      "$defs": {
+        "ProjectionGenerator": {
+          "additionalProperties": false,
+          "properties": {
+            "omission_permitted": {
+              "const": true,
+              "title": "Omission Permitted",
+              "type": "boolean"
+            },
+            "version": {
+              "const": "token-result-generator-1",
+              "title": "Version",
+              "type": "string"
+            },
+            "kind": {
+              "const": "project_fields",
+              "title": "Kind",
+              "type": "string"
+            },
+            "fields": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "minItems": 1,
+              "title": "Fields",
+              "type": "array"
+            },
+            "field_level": {
+              "enum": [
+                "object",
+                "array_items"
+              ],
+              "title": "Field Level",
+              "type": "string"
+            }
+          },
+          "required": [
+            "omission_permitted",
+            "version",
+            "kind",
+            "fields",
+            "field_level"
+          ],
+          "title": "ProjectionGenerator",
+          "type": "object"
+        },
+        "RetentionGenerator": {
+          "additionalProperties": false,
+          "properties": {
+            "omission_permitted": {
+              "const": true,
+              "title": "Omission Permitted",
+              "type": "boolean"
+            },
+            "version": {
+              "const": "token-result-generator-1",
+              "title": "Version",
+              "type": "string"
+            },
+            "kind": {
+              "const": "retain_last",
+              "title": "Kind",
+              "type": "string"
+            },
+            "keep_last": {
+              "minimum": 0,
+              "title": "Keep Last",
+              "type": "integer"
+            },
+            "replacement_json": {
+              "title": "Replacement Json",
+              "type": "string"
+            }
+          },
+          "required": [
+            "omission_permitted",
+            "version",
+            "kind",
+            "keep_last",
+            "replacement_json"
+          ],
+          "title": "RetentionGenerator",
+          "type": "object"
+        },
+        "SliceGenerator": {
+          "additionalProperties": false,
+          "properties": {
+            "omission_permitted": {
+              "const": true,
+              "title": "Omission Permitted",
+              "type": "boolean"
+            },
+            "version": {
+              "const": "token-result-generator-1",
+              "title": "Version",
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "select_items",
+                "select_lines"
+              ],
+              "title": "Kind",
+              "type": "string"
+            },
+            "side": {
+              "enum": [
+                "first",
+                "last"
+              ],
+              "title": "Side",
+              "type": "string"
+            },
+            "count": {
+              "minimum": 0,
+              "title": "Count",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "omission_permitted",
+            "version",
+            "kind",
+            "side",
+            "count"
+          ],
+          "title": "SliceGenerator",
+          "type": "object"
+        }
+      },
+      "discriminator": {
+        "mapping": {
+          "project_fields": "#/$defs/ProjectionGenerator",
+          "retain_last": "#/$defs/RetentionGenerator",
+          "select_items": "#/$defs/SliceGenerator",
+          "select_lines": "#/$defs/SliceGenerator"
+        },
+        "propertyName": "kind"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/ProjectionGenerator"
+        },
+        {
+          "$ref": "#/$defs/SliceGenerator"
+        },
+        {
+          "$ref": "#/$defs/RetentionGenerator"
+        }
+      ],
+      "title": "GeneratorConfig"
+    },
+    "DuplicateSelector": {
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "const": "token-duplicate-selector-1",
+          "title": "Version",
+          "type": "string"
+        },
+        "appid": {
+          "minLength": 1,
+          "title": "Appid",
+          "type": "string"
+        },
+        "payload_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Payload Digest",
+          "type": "string"
+        },
+        "target_kind": {
+          "enum": [
+            "argument_field",
+            "ordinary_message"
+          ],
+          "title": "Target Kind",
+          "type": "string"
+        },
+        "tool_identity": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tool Identity"
+        },
+        "argument_pointer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Argument Pointer"
+        },
+        "message_role": {
+          "anyOf": [
+            {
+              "enum": [
+                "user",
+                "assistant"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message Role"
+        }
+      },
+      "required": [
+        "version",
+        "appid",
+        "payload_digest",
+        "target_kind"
+      ],
+      "title": "DuplicateSelector",
+      "type": "object"
+    },
+    "DuplicateGenerator": {
+      "additionalProperties": false,
+      "properties": {
+        "omission_permitted": {
+          "const": true,
+          "title": "Omission Permitted",
+          "type": "boolean"
+        },
+        "version": {
+          "const": "token-duplicate-generator-1",
+          "title": "Version",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "reference",
+            "delete_message"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "reference_key": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reference Key"
+        },
+        "reference_value": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reference Value"
+        },
+        "protocol_ref": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Protocol Ref"
+        }
+      },
+      "required": [
+        "omission_permitted",
+        "version",
+        "kind"
+      ],
+      "title": "DuplicateGenerator",
+      "type": "object"
+    }
+  }
+}

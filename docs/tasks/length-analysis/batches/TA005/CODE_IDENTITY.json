@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-31",
+  "stage": "TA005_partial_consumer",
+  "session_id": "01a18fcd-0464-7cf1-b435-4f394bd33e66",
+  "identity_kind": "shared_worktree_snapshot",
+  "files": [
+    {
+      "path": "src/tokenscope/analysis_common/__init__.py",
+      "sha256": "642be21a1f624bffb9821a3851ef53731ed296ea83ad668615a822010bd1b4b4"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/bootstrap.py",
+      "sha256": "e788a78a74d50d03de03595bc72ec5a2a985886187431a72fbf2517d7a1b69d4"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/contracts.py",
+      "sha256": "727682c816941156f7c9317bd76d18e76225d4b5c3b24f5be2d47ee64b655139"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/encoding.py",
+      "sha256": "b0790044bbbc474c4390bd8300ccae0462cf0cd68e5e0db9957573af794d8b54"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/evaluation.py",
+      "sha256": "ce4a6d3f53d4ed4854e6e29d9f82ea4f1ac12d7e5d647bc1304b27fa462c8ee8"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/modifications.py",
+      "sha256": "3ef332e2b23b8d78d910a784df4fd3591bf43446a513dd114c0418e20bfdf881"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/plugins.py",
+      "sha256": "87d580f14c460d4f13cdf53929e6b59bf90884c5a89e8dcc564b327173ba0c8d"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/presentation.py",
+      "sha256": "286bacf9d2ae2fb78a48a1c516eefdc1aa764fa70ea8484f77d519cdaa11a7aa"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/runtime.py",
+      "sha256": "c6d1b287553afead3b5fc70fc7770cfa0b474f7e36014f98aeef69d2f122490a"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/schema.py",
+      "sha256": "be7ca79738e57eff2e085e6494ea187bff6a2ca0cc202f0dd876adbdd603c858"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/service.py",
+      "sha256": "02a8aafc574cd0a465c1a042bfb20a1be9c00d12352e5f70841b243be1806627"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/source.py",
+      "sha256": "036ea9346441707dc5569e30e6b549d2d90aa4bc20282f8823cb02e0f2e42413"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/storage.py",
+      "sha256": "af2b26bdb594e3aa968c1c9119a86aeeacbcdad3da04c1ca17c6f640ed622a0b"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/wire.py",
+      "sha256": "1cae6722ce0a708fbf4ac6d920cd209dbd9d9f14e00bb77c11c44dd321d2ca63"
+    },
+    {
+      "path": "src/tokenscope/api/diagnostics.py",
+      "sha256": "944b81764ecc04c0f4e8242079a5f9ef48f689e6e2e5ffbdda71300b03ffffe8"
+    },
+    {
+      "path": "tests/integration/token_content/test_real_handlers.py",
+      "sha256": "f54663a4b07179531e2460f46ee54440b0748861c0f5ac1973090a4993c65c9f"
+    },
+    {
+      "path": "tests/integration/token_content/test_task_service.py",
+      "sha256": "532b4cda566f0646e8399beedc87cf7fe31fdd8add93617242c5dbed1949e2a9"
+    },
+    {
+      "path": "tests/integration/token_content/test_token_http.py",
+      "sha256": "b02da9c3e99359d0b8e7bca0bae846a3e74ee3f46c249545bbcc7cc80ed6634e"
+    }
+  ]
+}

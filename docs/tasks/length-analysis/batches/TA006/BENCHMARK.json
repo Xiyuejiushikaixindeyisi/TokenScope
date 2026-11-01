@@ -1,0 +1,803 @@
+[
+  {
+    "scenario": {
+      "requests": 1,
+      "payload_bytes": 16384,
+      "copies": 2
+    },
+    "raw_bytes_per_request": 32848,
+    "units_per_request": 2,
+    "observations_per_request": 3,
+    "wall_seconds": 0.0020834680180996656,
+    "process_peak_rss_kib": 34312,
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.11.16",
+    "plugin": {
+      "plugin_id": "token_content",
+      "version": "token-content-1",
+      "contract_version": "analysis-common-1.0",
+      "parser_version": "json-exact-1",
+      "measurement_version": "content-measures-1",
+      "rule_versions": [
+        {
+          "name": "T1",
+          "version": "1"
+        },
+        {
+          "name": "T2",
+          "version": "1"
+        },
+        {
+          "name": "T3",
+          "version": "1"
+        },
+        {
+          "name": "T4",
+          "version": "1"
+        }
+      ],
+      "policy_schema_version": "token-policy-1",
+      "handlers": [
+        {
+          "name": "replace_tool_description",
+          "version": "1"
+        },
+        {
+          "name": "project_result_fields",
+          "version": "1"
+        },
+        {
+          "name": "select_result_items",
+          "version": "1"
+        },
+        {
+          "name": "select_result_lines",
+          "version": "1"
+        },
+        {
+          "name": "replace_payload_with_reference",
+          "version": "1"
+        },
+        {
+          "name": "remove_authorized_duplicate_message",
+          "version": "1"
+        },
+        {
+          "name": "apply_retention_replacements",
+          "version": "1"
+        }
+      ],
+      "required_capabilities": [
+        "complete_body",
+        "scope_identity"
+      ],
+      "optional_capabilities": [
+        "participation",
+        "exact_spans"
+      ]
+    },
+    "budget": {
+      "max_request_bytes": 1048576,
+      "max_units": 10000,
+      "max_comparison_bytes": 8388608,
+      "max_depth": 64,
+      "max_candidates": 1000,
+      "max_encoding_calls": 100
+    },
+    "low_hit_wait_seconds": 0,
+    "encoding_calls": 0,
+    "source": "synthetic-not-model-token-counts"
+  },
+  {
+    "scenario": {
+      "requests": 10,
+      "payload_bytes": 16384,
+      "copies": 2
+    },
+    "raw_bytes_per_request": 32848,
+    "units_per_request": 2,
+    "observations_per_request": 3,
+    "wall_seconds": 0.01756052501150407,
+    "process_peak_rss_kib": 34780,
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.11.16",
+    "plugin": {
+      "plugin_id": "token_content",
+      "version": "token-content-1",
+      "contract_version": "analysis-common-1.0",
+      "parser_version": "json-exact-1",
+      "measurement_version": "content-measures-1",
+      "rule_versions": [
+        {
+          "name": "T1",
+          "version": "1"
+        },
+        {
+          "name": "T2",
+          "version": "1"
+        },
+        {
+          "name": "T3",
+          "version": "1"
+        },
+        {
+          "name": "T4",
+          "version": "1"
+        }
+      ],
+      "policy_schema_version": "token-policy-1",
+      "handlers": [
+        {
+          "name": "replace_tool_description",
+          "version": "1"
+        },
+        {
+          "name": "project_result_fields",
+          "version": "1"
+        },
+        {
+          "name": "select_result_items",
+          "version": "1"
+        },
+        {
+          "name": "select_result_lines",
+          "version": "1"
+        },
+        {
+          "name": "replace_payload_with_reference",
+          "version": "1"
+        },
+        {
+          "name": "remove_authorized_duplicate_message",
+          "version": "1"
+        },
+        {
+          "name": "apply_retention_replacements",
+          "version": "1"
+        }
+      ],
+      "required_capabilities": [
+        "complete_body",
+        "scope_identity"
+      ],
+      "optional_capabilities": [
+        "participation",
+        "exact_spans"
+      ]
+    },
+    "budget": {
+      "max_request_bytes": 1048576,
+      "max_units": 10000,
+      "max_comparison_bytes": 8388608,
+      "max_depth": 64,
+      "max_candidates": 1000,
+      "max_encoding_calls": 100
+    },
+    "low_hit_wait_seconds": 0,
+    "encoding_calls": 0,
+    "source": "synthetic-not-model-token-counts"
+  },
+  {
+    "scenario": {
+      "requests": 100,
+      "payload_bytes": 16384,
+      "copies": 2
+    },
+    "raw_bytes_per_request": 32848,
+    "units_per_request": 2,
+    "observations_per_request": 3,
+    "wall_seconds": 0.15669251600047573,
+    "process_peak_rss_kib": 34968,
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.11.16",
+    "plugin": {
+      "plugin_id": "token_content",
+      "version": "token-content-1",
+      "contract_version": "analysis-common-1.0",
+      "parser_version": "json-exact-1",
+      "measurement_version": "content-measures-1",
+      "rule_versions": [
+        {
+          "name": "T1",
+          "version": "1"
+        },
+        {
+          "name": "T2",
+          "version": "1"
+        },
+        {
+          "name": "T3",
+          "version": "1"
+        },
+        {
+          "name": "T4",
+          "version": "1"
+        }
+      ],
+      "policy_schema_version": "token-policy-1",
+      "handlers": [
+        {
+          "name": "replace_tool_description",
+          "version": "1"
+        },
+        {
+          "name": "project_result_fields",
+          "version": "1"
+        },
+        {
+          "name": "select_result_items",
+          "version": "1"
+        },
+        {
+          "name": "select_result_lines",
+          "version": "1"
+        },
+        {
+          "name": "replace_payload_with_reference",
+          "version": "1"
+        },
+        {
+          "name": "remove_authorized_duplicate_message",
+          "version": "1"
+        },
+        {
+          "name": "apply_retention_replacements",
+          "version": "1"
+        }
+      ],
+      "required_capabilities": [
+        "complete_body",
+        "scope_identity"
+      ],
+      "optional_capabilities": [
+        "participation",
+        "exact_spans"
+      ]
+    },
+    "budget": {
+      "max_request_bytes": 1048576,
+      "max_units": 10000,
+      "max_comparison_bytes": 8388608,
+      "max_depth": 64,
+      "max_candidates": 1000,
+      "max_encoding_calls": 100
+    },
+    "low_hit_wait_seconds": 0,
+    "encoding_calls": 0,
+    "source": "synthetic-not-model-token-counts"
+  },
+  {
+    "scenario": {
+      "requests": 1,
+      "payload_bytes": 65536,
+      "copies": 2
+    },
+    "raw_bytes_per_request": 131152,
+    "units_per_request": 2,
+    "observations_per_request": 3,
+    "wall_seconds": 0.005240719998255372,
+    "process_peak_rss_kib": 34824,
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.11.16",
+    "plugin": {
+      "plugin_id": "token_content",
+      "version": "token-content-1",
+      "contract_version": "analysis-common-1.0",
+      "parser_version": "json-exact-1",
+      "measurement_version": "content-measures-1",
+      "rule_versions": [
+        {
+          "name": "T1",
+          "version": "1"
+        },
+        {
+          "name": "T2",
+          "version": "1"
+        },
+        {
+          "name": "T3",
+          "version": "1"
+        },
+        {
+          "name": "T4",
+          "version": "1"
+        }
+      ],
+      "policy_schema_version": "token-policy-1",
+      "handlers": [
+        {
+          "name": "replace_tool_description",
+          "version": "1"
+        },
+        {
+          "name": "project_result_fields",
+          "version": "1"
+        },
+        {
+          "name": "select_result_items",
+          "version": "1"
+        },
+        {
+          "name": "select_result_lines",
+          "version": "1"
+        },
+        {
+          "name": "replace_payload_with_reference",
+          "version": "1"
+        },
+        {
+          "name": "remove_authorized_duplicate_message",
+          "version": "1"
+        },
+        {
+          "name": "apply_retention_replacements",
+          "version": "1"
+        }
+      ],
+      "required_capabilities": [
+        "complete_body",
+        "scope_identity"
+      ],
+      "optional_capabilities": [
+        "participation",
+        "exact_spans"
+      ]
+    },
+    "budget": {
+      "max_request_bytes": 1048576,
+      "max_units": 10000,
+      "max_comparison_bytes": 8388608,
+      "max_depth": 64,
+      "max_candidates": 1000,
+      "max_encoding_calls": 100
+    },
+    "low_hit_wait_seconds": 0,
+    "encoding_calls": 0,
+    "source": "synthetic-not-model-token-counts"
+  },
+  {
+    "scenario": {
+      "requests": 1,
+      "payload_bytes": 262144,
+      "copies": 2
+    },
+    "raw_bytes_per_request": 524368,
+    "units_per_request": 2,
+    "observations_per_request": 3,
+    "wall_seconds": 0.01650223901378922,
+    "process_peak_rss_kib": 36724,
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.11.16",
+    "plugin": {
+      "plugin_id": "token_content",
+      "version": "token-content-1",
+      "contract_version": "analysis-common-1.0",
+      "parser_version": "json-exact-1",
+      "measurement_version": "content-measures-1",
+      "rule_versions": [
+        {
+          "name": "T1",
+          "version": "1"
+        },
+        {
+          "name": "T2",
+          "version": "1"
+        },
+        {
+          "name": "T3",
+          "version": "1"
+        },
+        {
+          "name": "T4",
+          "version": "1"
+        }
+      ],
+      "policy_schema_version": "token-policy-1",
+      "handlers": [
+        {
+          "name": "replace_tool_description",
+          "version": "1"
+        },
+        {
+          "name": "project_result_fields",
+          "version": "1"
+        },
+        {
+          "name": "select_result_items",
+          "version": "1"
+        },
+        {
+          "name": "select_result_lines",
+          "version": "1"
+        },
+        {
+          "name": "replace_payload_with_reference",
+          "version": "1"
+        },
+        {
+          "name": "remove_authorized_duplicate_message",
+          "version": "1"
+        },
+        {
+          "name": "apply_retention_replacements",
+          "version": "1"
+        }
+      ],
+      "required_capabilities": [
+        "complete_body",
+        "scope_identity"
+      ],
+      "optional_capabilities": [
+        "participation",
+        "exact_spans"
+      ]
+    },
+    "budget": {
+      "max_request_bytes": 1048576,
+      "max_units": 10000,
+      "max_comparison_bytes": 8388608,
+      "max_depth": 64,
+      "max_candidates": 1000,
+      "max_encoding_calls": 100
+    },
+    "low_hit_wait_seconds": 0,
+    "encoding_calls": 0,
+    "source": "synthetic-not-model-token-counts"
+  },
+  {
+    "scenario": {
+      "requests": 1,
+      "payload_bytes": 409600,
+      "copies": 2
+    },
+    "raw_bytes_per_request": 819280,
+    "units_per_request": 2,
+    "observations_per_request": 3,
+    "wall_seconds": 0.028782249020878226,
+    "process_peak_rss_kib": 38220,
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.11.16",
+    "plugin": {
+      "plugin_id": "token_content",
+      "version": "token-content-1",
+      "contract_version": "analysis-common-1.0",
+      "parser_version": "json-exact-1",
+      "measurement_version": "content-measures-1",
+      "rule_versions": [
+        {
+          "name": "T1",
+          "version": "1"
+        },
+        {
+          "name": "T2",
+          "version": "1"
+        },
+        {
+          "name": "T3",
+          "version": "1"
+        },
+        {
+          "name": "T4",
+          "version": "1"
+        }
+      ],
+      "policy_schema_version": "token-policy-1",
+      "handlers": [
+        {
+          "name": "replace_tool_description",
+          "version": "1"
+        },
+        {
+          "name": "project_result_fields",
+          "version": "1"
+        },
+        {
+          "name": "select_result_items",
+          "version": "1"
+        },
+        {
+          "name": "select_result_lines",
+          "version": "1"
+        },
+        {
+          "name": "replace_payload_with_reference",
+          "version": "1"
+        },
+        {
+          "name": "remove_authorized_duplicate_message",
+          "version": "1"
+        },
+        {
+          "name": "apply_retention_replacements",
+          "version": "1"
+        }
+      ],
+      "required_capabilities": [
+        "complete_body",
+        "scope_identity"
+      ],
+      "optional_capabilities": [
+        "participation",
+        "exact_spans"
+      ]
+    },
+    "budget": {
+      "max_request_bytes": 1048576,
+      "max_units": 10000,
+      "max_comparison_bytes": 8388608,
+      "max_depth": 64,
+      "max_candidates": 1000,
+      "max_encoding_calls": 100
+    },
+    "low_hit_wait_seconds": 0,
+    "encoding_calls": 0,
+    "source": "synthetic-not-model-token-counts"
+  },
+  {
+    "scenario": {
+      "requests": 1,
+      "payload_bytes": 128,
+      "copies": 10
+    },
+    "raw_bytes_per_request": 1624,
+    "units_per_request": 10,
+    "observations_per_request": 3,
+    "wall_seconds": 0.002327572990907356,
+    "process_peak_rss_kib": 34224,
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.11.16",
+    "plugin": {
+      "plugin_id": "token_content",
+      "version": "token-content-1",
+      "contract_version": "analysis-common-1.0",
+      "parser_version": "json-exact-1",
+      "measurement_version": "content-measures-1",
+      "rule_versions": [
+        {
+          "name": "T1",
+          "version": "1"
+        },
+        {
+          "name": "T2",
+          "version": "1"
+        },
+        {
+          "name": "T3",
+          "version": "1"
+        },
+        {
+          "name": "T4",
+          "version": "1"
+        }
+      ],
+      "policy_schema_version": "token-policy-1",
+      "handlers": [
+        {
+          "name": "replace_tool_description",
+          "version": "1"
+        },
+        {
+          "name": "project_result_fields",
+          "version": "1"
+        },
+        {
+          "name": "select_result_items",
+          "version": "1"
+        },
+        {
+          "name": "select_result_lines",
+          "version": "1"
+        },
+        {
+          "name": "replace_payload_with_reference",
+          "version": "1"
+        },
+        {
+          "name": "remove_authorized_duplicate_message",
+          "version": "1"
+        },
+        {
+          "name": "apply_retention_replacements",
+          "version": "1"
+        }
+      ],
+      "required_capabilities": [
+        "complete_body",
+        "scope_identity"
+      ],
+      "optional_capabilities": [
+        "participation",
+        "exact_spans"
+      ]
+    },
+    "budget": {
+      "max_request_bytes": 1048576,
+      "max_units": 10000,
+      "max_comparison_bytes": 8388608,
+      "max_depth": 64,
+      "max_candidates": 1000,
+      "max_encoding_calls": 100
+    },
+    "low_hit_wait_seconds": 0,
+    "encoding_calls": 0,
+    "source": "synthetic-not-model-token-counts"
+  },
+  {
+    "scenario": {
+      "requests": 1,
+      "payload_bytes": 128,
+      "copies": 100
+    },
+    "raw_bytes_per_request": 16114,
+    "units_per_request": 100,
+    "observations_per_request": 3,
+    "wall_seconds": 0.009413300984306261,
+    "process_peak_rss_kib": 34608,
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.11.16",
+    "plugin": {
+      "plugin_id": "token_content",
+      "version": "token-content-1",
+      "contract_version": "analysis-common-1.0",
+      "parser_version": "json-exact-1",
+      "measurement_version": "content-measures-1",
+      "rule_versions": [
+        {
+          "name": "T1",
+          "version": "1"
+        },
+        {
+          "name": "T2",
+          "version": "1"
+        },
+        {
+          "name": "T3",
+          "version": "1"
+        },
+        {
+          "name": "T4",
+          "version": "1"
+        }
+      ],
+      "policy_schema_version": "token-policy-1",
+      "handlers": [
+        {
+          "name": "replace_tool_description",
+          "version": "1"
+        },
+        {
+          "name": "project_result_fields",
+          "version": "1"
+        },
+        {
+          "name": "select_result_items",
+          "version": "1"
+        },
+        {
+          "name": "select_result_lines",
+          "version": "1"
+        },
+        {
+          "name": "replace_payload_with_reference",
+          "version": "1"
+        },
+        {
+          "name": "remove_authorized_duplicate_message",
+          "version": "1"
+        },
+        {
+          "name": "apply_retention_replacements",
+          "version": "1"
+        }
+      ],
+      "required_capabilities": [
+        "complete_body",
+        "scope_identity"
+      ],
+      "optional_capabilities": [
+        "participation",
+        "exact_spans"
+      ]
+    },
+    "budget": {
+      "max_request_bytes": 1048576,
+      "max_units": 10000,
+      "max_comparison_bytes": 8388608,
+      "max_depth": 64,
+      "max_candidates": 1000,
+      "max_encoding_calls": 100
+    },
+    "low_hit_wait_seconds": 0,
+    "encoding_calls": 0,
+    "source": "synthetic-not-model-token-counts"
+  },
+  {
+    "scenario": {
+      "requests": 1,
+      "payload_bytes": 128,
+      "copies": 1000
+    },
+    "raw_bytes_per_request": 161014,
+    "units_per_request": 1000,
+    "observations_per_request": 3,
+    "wall_seconds": 0.08323245201609097,
+    "process_peak_rss_kib": 38672,
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.11.16",
+    "plugin": {
+      "plugin_id": "token_content",
+      "version": "token-content-1",
+      "contract_version": "analysis-common-1.0",
+      "parser_version": "json-exact-1",
+      "measurement_version": "content-measures-1",
+      "rule_versions": [
+        {
+          "name": "T1",
+          "version": "1"
+        },
+        {
+          "name": "T2",
+          "version": "1"
+        },
+        {
+          "name": "T3",
+          "version": "1"
+        },
+        {
+          "name": "T4",
+          "version": "1"
+        }
+      ],
+      "policy_schema_version": "token-policy-1",
+      "handlers": [
+        {
+          "name": "replace_tool_description",
+          "version": "1"
+        },
+        {
+          "name": "project_result_fields",
+          "version": "1"
+        },
+        {
+          "name": "select_result_items",
+          "version": "1"
+        },
+        {
+          "name": "select_result_lines",
+          "version": "1"
+        },
+        {
+          "name": "replace_payload_with_reference",
+          "version": "1"
+        },
+        {
+          "name": "remove_authorized_duplicate_message",
+          "version": "1"
+        },
+        {
+          "name": "apply_retention_replacements",
+          "version": "1"
+        }
+      ],
+      "required_capabilities": [
+        "complete_body",
+        "scope_identity"
+      ],
+      "optional_capabilities": [
+        "participation",
+        "exact_spans"
+      ]
+    },
+    "budget": {
+      "max_request_bytes": 1048576,
+      "max_units": 10000,
+      "max_comparison_bytes": 8388608,
+      "max_depth": 64,
+      "max_candidates": 1000,
+      "max_encoding_calls": 100
+    },
+    "low_hit_wait_seconds": 0,
+    "encoding_calls": 0,
+    "source": "synthetic-not-model-token-counts"
+  }
+]

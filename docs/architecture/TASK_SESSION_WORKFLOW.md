@@ -1,17 +1,19 @@
 # 任务与session协作流程
 
+2026-11-01最新异常分析分工：用户指定原异常前端session为[异常分析功能总负责](../tasks/analysis/COORDINATION_RV2.md)，统筹前端修复、主动请求两个归口后端进行信息收集/复现/测试/debug/修复、联合验证、版本文档归档记忆及GitHub push，最后提供统一审查交付打包prompt。后端业务模块仍由其唯一维护方修改；不因统筹角色接管监控或自行构建交付包。此前本线不发送/不Git发布的阶段限制由此覆盖。
+
 2026-10-31监控V2最新阶段：正式页面验收、三项修复独立复审及main提交推送均已完成；见[当前状态](../tasks/delivery/MONITORING_V2_STATUS.md)。本轮临时测试镜像仅用于本机复测，未交付打包。已闭环评审和交接已归档，当前暂不打包；等待异常分析前后端完成验收后，再按用户安排统一交付。本机通过不代表华为现场通过。
 
 2026-10-30用户最新分工：监控后端两线并行、异常分析先母会话后分线；实际角色/状态以[SESSIONS](../../memory/SESSIONS.md)为准。[旧工作流快照](../../achieve/2026-10-28/snapshots/docs/architecture/TASK_SESSION_WORKFLOW.md)仅供追溯。
 
 ## 当前会话结构与启动顺序
 
-每个session先读AGENTS → CURRENT → SESSIONS → docs/README → 自己的ENTRY，首次明确角色、任务边界、阶段、优先级、依赖和实际ID。fork只继承上下文，不授权接管全部父任务。当前用户要求仅整理并push，本轮不创建会话。
+每个session先读AGENTS → CURRENT → SESSIONS → docs/README → 自己的ENTRY，首次明确角色、任务边界、阶段、优先级、依赖和实际ID。fork只继承上下文，不授权接管全部父任务。当前异常分析已按2026-10-31用户明确许可完成fork、真实身份登记及启动；其他会话按各自最新授权推进。
 
 - V1监控前后端与总设计休眠；审查打包运行中。本V2父会话完成产品交接和版本整理，待后续fork。
 - [用户功能后端](../tasks/monitoring/v2-user/ENTRY.md)：P90 TTFT目标所需最低理想命中率评估＋搜索排行。
 - [MA监控后端](../tasks/monitoring/v2-ma/ENTRY.md)：模型规格×UUID独立采集/回放、理想真实对照和压力观测。两条监控线可并行，不要求一次性完成共同大设计；hybrid暂不做。
-- [异常分析母会话](../tasks/analysis/ENTRY.md)：先调研和产品设计，完成后由用户启动fork[低命中](../tasks/prefix-analysis/ENTRY.md)与[Token异常](../tasks/length-analysis/ENTRY.md)两条设计开发线。异常分析不属于监控功能增加。
+- [异常分析产品](../tasks/analysis/ENTRY.md)：2026-10-31产品v0.4已审批。原主会话继续[低命中](../tasks/prefix-analysis/ENTRY.md)后端设计开发，用户已允许fork，新会话已创建并承接[Token异常](../tasks/length-analysis/ENTRY.md)。Token实际会话01a18fcd-0464-7cf1-b435-4f394bd33e66已登记并启动，主会话进入低命中详细设计；身份、共享维护分工和登记步骤见[分线交接](../tasks/analysis/BACKEND_SPLIT_HANDOFF.md)。
 - 监控V2前端对接两条监控后端；异常分析前端对接两条分析后端。现有UI-01是已认可起点，两前端按下节阶段推进。
 - 两类分析设计和代码均完成后，才按用户决定启动自进化Agent。
 

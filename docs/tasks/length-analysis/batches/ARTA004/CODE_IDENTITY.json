@@ -1,0 +1,36 @@
+{
+  "identity": "arta-local-1",
+  "kind": "working-tree-observed-after-validation-not-git-release",
+  "session_id": "01a18fcd-0464-7cf1-b435-4f394bd33e66",
+  "tests": "162 passed / 64.33s + boundary incremental 1 passed / 5.59s = 163 tested",
+  "files": {
+    "src/tokenscope/token_content/candidates.py": "981d217a6c8ce64cd4f1f8f7b62f489085c47042abca223dd54f92098f7b8806",
+    "src/tokenscope/token_content/rules.py": "80d8469c10bc120131a8d02e1ac1be2c5c877686ca6e831e25be8c4d0b27613b",
+    "src/tokenscope/token_content/__init__.py": "1cef1a362e9130de361a674ffaa00bf0e2b95eaacc0be3f59fc97fb8e232e429",
+    "src/tokenscope/token_content/auto_targets.py": "f8bd44c985ced0151150bace36b293ed56873fe9c08330db1f3326820c3895b9",
+    "src/tokenscope/token_content/current_plugin.py": "16def72a474cd1600e116d57197974508c5d99ba878951021930c5c5c0a7db1d",
+    "src/tokenscope/token_content/json_values.py": "1ce12c48d987e0abe834e468e61a7d483abc99f8719d071eaf9a6327f64bc076",
+    "src/tokenscope/token_content/plugin.py": "43155917fb2ee28140e69dcc940746e0a28ce5c304ee7a5874c908ce963aa4c8",
+    "src/tokenscope/token_content/measurements.py": "644600007aeb82c1f7c78f54d6630c8b1d082c30eec1463167110187d21ec742",
+    "src/tokenscope/token_content/stops.py": "68ef0d559a5d535317a94620a56e444351973e05f1b9abfa00ef7d8afc8ef719",
+    "src/tokenscope/token_content/extraction.py": "0bc914470882ab975398ca6a25b9e01bbe0d690cf2373927000ecd5c52426b87",
+    "src/tokenscope/token_content/auto_config.py": "a134a5095b6543de85c0f7695f172c616541e81435fdd487565db82671ac9de1",
+    "src/tokenscope/token_content/auto_duplicates.py": "48a9f4bf1135e8118fc152065a3d47722014c417a762875c38230491698dfb19",
+    "src/tokenscope/token_content/auto_proposals.py": "d7d0718e86b6e01059e372a53771cb52eb903a8e5731fd7af246e64501319575",
+    "src/tokenscope/token_content/authorizations.py": "2350ace0351a5b81b287e8b2615399b6ec2dad61233d667b183305f06a08e3a9",
+    "src/tokenscope/token_content/policies.py": "4cf1d5c78be470e41a2d90af0455111fee3570eead8b19d80f6ce003552a7768",
+    "src/tokenscope/token_content/duplicates.py": "1229d032470ea5fc5c88c8fed671c1323265abf6832a1f63954a36e26983d282",
+    "src/tokenscope/token_content/transformations.py": "d0ab11e3b9d39e6cba83467092b36f6edd8c7edad101443e2ca6e4d0fa752113",
+    "tests/unit/token_content/test_auto_proposals.py": "5a531552ed365983430b04bf1dfffab34ca2ef629c08039d210c3b5e6e021f37",
+    "tests/unit/token_content/test_auto_duplicates.py": "37717c09112f75737aa8af8a9d806de355ef0311ba432fc11d5b5bd0655725dc",
+    "tests/unit/token_content/test_auto_config.py": "36a1c1bed67ce0e3bdf42dd58d225de1d3557a9f0257d19436567b332faec2d3",
+    "tests/integration/token_content/test_auto_recommendations.py": "cc401fd01d9bcb007a9cf85b7c29923b79892f41aa317e8655802056eec58099",
+    "docs/tasks/length-analysis/batches/ARTA004/ACTUAL_API_EXAMPLES.json": "bac2b4722d7e204ed53a6d4323b66bacb0939517f62957496102ee6608b7ee22",
+    "docs/tasks/length-analysis/AUTO_RECIPE_SCHEMA.json": "a7d87ec0dd905ab4408ca43b2a9edbd34a4b7a4dd1ef3885f42d872a017e5423"
+  },
+  "public_contract_manifest": {
+    "internal.json": "17687f9706fe49922ce9520bd53b17750d5f7eedba9a9734fd1a59a8cb9bb1d6",
+    "wire.json": "9d71609b946ff46c38cf8bb128e5462f0d0d88cfe1ac6527e56bd7b85d50b4ea",
+    "examples.json": "7a5b5b44fa7c0d556d9f9dc19a0ec4d6ebacf9bea17661e3f40f1d118a6873d1"
+  }
+}

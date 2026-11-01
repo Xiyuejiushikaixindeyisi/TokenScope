@@ -1,0 +1,15 @@
+{
+  "version": "analysis-ui02-r1",
+  "date": "2026-10-31",
+  "status": "user_approved_visual_baseline_with_requested_text_removal",
+  "file": "tokenscope-analysis-ui02-r1.html",
+  "sha256": "1c3f5011717f48e1a2d93ce65853cbb380c90dab0c6ff6ecde2cf6bbf119bf81",
+  "previous": "docs/tasks/viewer/analysis/prototypes/analysis-ui02/tokenscope-analysis-ui02.html",
+  "previous_sha256": "e7256e18960f21114126bfa032be2382a8e91054e32a651dc57bb1c50121f6db",
+  "change": "仅删除折叠检查说明内指定的一句话及其p标签；其余字节保持一致",
+  "approval_quote": "这版 DEMO 我认可，但是需要删除”这是支持的检查范围，不代表每次均已完整执行。“",
+  "approval_scope": "用户认可UI-02并指示此唯一文案修订；作为后续视觉基线，不代表正式交互或代码开发已批准",
+  "screenshots": "未采集；浏览器工具先前受阻，不代填桌面/窄屏截图",
+  "self_contained": true,
+  "source_script": "artifacts/prototypes/analysis-v1/ui02/revise-r1.cjs"
+}

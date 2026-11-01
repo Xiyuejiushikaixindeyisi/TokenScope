@@ -1,0 +1,224 @@
+{
+  "identity_kind": "FE-R-T1_static_worktree_snapshot_not_release",
+  "session_id": "01a18fcd-0464-7cf1-b435-4f394bd33e66",
+  "business_tests_rerun": false,
+  "files": [
+    {
+      "path": "docs/tasks/length-analysis/RESOURCE_PROFILE.md",
+      "sha256": "4dcb391f7e9c450effdc70dce6d541585cb61341ad76ac98bc76cb0ae9ba66f7"
+    },
+    {
+      "path": "env/encoding-assets.lock.json",
+      "sha256": "be74503d8a507066cb7a3d6797ba6481b0b9fd716bbbfcff8003c3cddd4e5c98"
+    },
+    {
+      "path": "src/tokenscope/token_content/__init__.py",
+      "sha256": "1cef1a362e9130de361a674ffaa00bf0e2b95eaacc0be3f59fc97fb8e232e429"
+    },
+    {
+      "path": "src/tokenscope/token_content/authorizations.py",
+      "sha256": "2350ace0351a5b81b287e8b2615399b6ec2dad61233d667b183305f06a08e3a9"
+    },
+    {
+      "path": "src/tokenscope/token_content/candidates.py",
+      "sha256": "981d217a6c8ce64cd4f1f8f7b62f489085c47042abca223dd54f92098f7b8806"
+    },
+    {
+      "path": "src/tokenscope/token_content/duplicates.py",
+      "sha256": "1229d032470ea5fc5c88c8fed671c1323265abf6832a1f63954a36e26983d282"
+    },
+    {
+      "path": "src/tokenscope/token_content/extraction.py",
+      "sha256": "0bc914470882ab975398ca6a25b9e01bbe0d690cf2373927000ecd5c52426b87"
+    },
+    {
+      "path": "src/tokenscope/token_content/json_values.py",
+      "sha256": "1ce12c48d987e0abe834e468e61a7d483abc99f8719d071eaf9a6327f64bc076"
+    },
+    {
+      "path": "src/tokenscope/token_content/measurements.py",
+      "sha256": "644600007aeb82c1f7c78f54d6630c8b1d082c30eec1463167110187d21ec742"
+    },
+    {
+      "path": "src/tokenscope/token_content/plugin.py",
+      "sha256": "06339caa8d89bb529f06a25f75a118d3908cec11450fb31d34eec4e18df63762"
+    },
+    {
+      "path": "src/tokenscope/token_content/policies.py",
+      "sha256": "4cf1d5c78be470e41a2d90af0455111fee3570eead8b19d80f6ce003552a7768"
+    },
+    {
+      "path": "src/tokenscope/token_content/rules.py",
+      "sha256": "80d8469c10bc120131a8d02e1ac1be2c5c877686ca6e831e25be8c4d0b27613b"
+    },
+    {
+      "path": "src/tokenscope/token_content/stops.py",
+      "sha256": "68ef0d559a5d535317a94620a56e444351973e05f1b9abfa00ef7d8afc8ef719"
+    },
+    {
+      "path": "src/tokenscope/token_content/transformations.py",
+      "sha256": "d0ab11e3b9d39e6cba83467092b36f6edd8c7edad101443e2ca6e4d0fa752113"
+    },
+    {
+      "path": "tests/integration/token_content/benchmark_content.py",
+      "sha256": "1916137af06a2da7cda3cf4a3bc457090ba6b0e8704327d69510903329e09e1d"
+    },
+    {
+      "path": "tests/integration/token_content/test_authorization_http.py",
+      "sha256": "590427b0c7e7ef9e6396fa1ed7669ef8756e0a4a72079b6afa42ab9c0ee40979"
+    },
+    {
+      "path": "tests/integration/token_content/test_real_handlers.py",
+      "sha256": "f54663a4b07179531e2460f46ee54440b0748861c0f5ac1973090a4993c65c9f"
+    },
+    {
+      "path": "tests/integration/token_content/test_recovery.py",
+      "sha256": "bd4931befc20dee1837e8934f57a3f900239d1c2c7889963d106066618933c4c"
+    },
+    {
+      "path": "tests/integration/token_content/test_task_service.py",
+      "sha256": "8524aebd9fb7319ffbc54012b7b071b5d125f97b55150b4c24113938309be4c9"
+    },
+    {
+      "path": "tests/integration/token_content/test_token_http.py",
+      "sha256": "b02da9c3e99359d0b8e7bca0bae846a3e74ee3f46c249545bbcc7cc80ed6634e"
+    },
+    {
+      "path": "tests/unit/token_content/test_authorizations.py",
+      "sha256": "f76bcaa5a434604b6a6773974b60a87576c7465cf8645668dd417abce290f5b9"
+    },
+    {
+      "path": "tests/unit/token_content/test_common_baseline.py",
+      "sha256": "22ee779d16ae710d0fc096d7069d1d8622a2d8d13e3c0658e7c0a4bd7611b39f"
+    },
+    {
+      "path": "tests/unit/token_content/test_duplicates_plugin.py",
+      "sha256": "420fad2b537bdbd89ca94f2755ba973687bf2cfe816b793534121acc92f084f4"
+    },
+    {
+      "path": "tests/unit/token_content/test_extraction.py",
+      "sha256": "8a2cbcb003afad9050bb9b3bf0cbd99ed55bcbd4b91dd62ce948ffde94dac696"
+    },
+    {
+      "path": "tests/unit/token_content/test_h0_consumption.py",
+      "sha256": "c431434e9bd26721b65bba2e0f86dc3035e050b26d9c7260db8c438d645adf5a"
+    },
+    {
+      "path": "tests/unit/token_content/test_resource_boundaries.py",
+      "sha256": "67cd9958a4f54c42ed7d05e71c0cb52cdee251c0b3ab69d18846adf903202f71"
+    },
+    {
+      "path": "tests/unit/token_content/test_rules.py",
+      "sha256": "c493f7cd6108817198b940adaca53c14288bb68829d61c204b4388cfce39dc96"
+    },
+    {
+      "path": "tests/unit/token_content/test_transformations.py",
+      "sha256": "68e4c973caa1fc06c2b28d690564bbd186bf1d6d2dda804bf9eeb88f211c13f7"
+    }
+  ],
+  "ta006_comparison": {
+    "unchanged": 40,
+    "changed": [
+      {
+        "path": "src/tokenscope/analysis_common/evaluation.py",
+        "ta006_sha256": "9d7a10978693f76d6c630428f343a3bbde8b0aa4306b90f026e04aa1fc5e231a",
+        "current_sha256": "0028dfaa07b2ca674967afca276fedf48e3917a452d158245d32cdda534688ec"
+      },
+      {
+        "path": "src/tokenscope/analysis_common/service.py",
+        "ta006_sha256": "8e43966c68366c283da9739ebca624d02c8dd694c93743d14620bd3f2b3d1ba6",
+        "current_sha256": "5930837fc4b53f74ab8ed7686be91ac5ea4f7427afa71770a7fbb3dff326ce55"
+      },
+      {
+        "path": "src/tokenscope/analysis_common/storage.py",
+        "ta006_sha256": "2264b7e58181f51077b1ca7833ec01686a2af737f7028127d9d90144d256d24c",
+        "current_sha256": "da96661086e3c3ebe30cddad38d87180b7e8d41d541ce040be83f715c3cfc890"
+      }
+    ]
+  },
+  "public_manifests": [
+    {
+      "path": "docs/contracts/analysis-common-1.0/manifest.json",
+      "sha256": "14a925ddee4e5c1dc547013bec1b96a302f9d05fae8abc04e15f7f2e73481ed7",
+      "file_checks": [
+        {
+          "path": "src/tokenscope/analysis_common/contracts.py",
+          "matches": true,
+          "sha256": "727682c816941156f7c9317bd76d18e76225d4b5c3b24f5be2d47ee64b655139"
+        },
+        {
+          "path": "src/tokenscope/analysis_common/plugins.py",
+          "matches": true,
+          "sha256": "87d580f14c460d4f13cdf53929e6b59bf90884c5a89e8dcc564b327173ba0c8d"
+        },
+        {
+          "path": "src/tokenscope/analysis_common/wire.py",
+          "matches": true,
+          "sha256": "1cae6722ce0a708fbf4ac6d920cd209dbd9d9f14e00bb77c11c44dd321d2ca63"
+        },
+        {
+          "path": "docs/contracts/analysis-common-1.0/internal.json",
+          "matches": true,
+          "sha256": "f34db40ed34cf018db897085270eedad949451011a392257de20378ce9e60959"
+        },
+        {
+          "path": "docs/contracts/analysis-common-1.0/wire.json",
+          "matches": true,
+          "sha256": "0ca27b5fe84048364ae15e471e78e2b835314265fd93b330283699462b7d1dcc"
+        }
+      ]
+    },
+    {
+      "path": "docs/contracts/diagnostics-http-1/manifest.json",
+      "sha256": "ba98e581474e090f07fd8423a93595a80e7a867e7251d3d97129502824e45fad",
+      "file_checks": [
+        {
+          "path": "docs/contracts/diagnostics-http-1/wire.json",
+          "matches": true,
+          "sha256": "943a88daa45f6f3de18547bda28f260836d340f8180e03322afa525596161064"
+        },
+        {
+          "path": "src/tokenscope/analysis_common/runtime.py",
+          "matches": true,
+          "sha256": "92cc0a2e412ea173ed59cfff19828a8fc1dccc705ab2a71fa3421aaabaab5832"
+        },
+        {
+          "path": "src/tokenscope/api/diagnostics.py",
+          "matches": true,
+          "sha256": "c1aef77bbf0f0234721a4d0de97662d67d13baee1b30279ec442f84a8af71eec"
+        }
+      ]
+    },
+    {
+      "path": "docs/contracts/diagnostics-discovery-1/manifest.json",
+      "sha256": "fafc5a9637f3b0314a476129f836afc9e1fab3e20dd8fcf6ac7e0840a6e14b0a",
+      "file_checks": [
+        {
+          "path": "docs/contracts/diagnostics-discovery-1/wire.json",
+          "matches": true,
+          "sha256": "f538aab0842cc43b521f9dfbc2cf9779f8665e0a03e4b851476eb487cc3df4f8"
+        },
+        {
+          "path": "src/tokenscope/analysis_common/discovery.py",
+          "matches": true,
+          "sha256": "9d9dfa9c3f406f834bfcbe89997fb7badd51c0f25ebe96d5e0bf7fdb06b618ee"
+        },
+        {
+          "path": "src/tokenscope/analysis_common/discovery_contracts.py",
+          "matches": true,
+          "sha256": "689ab059f89c25d6c79fe19fc8d52e6ad5200952107aafad897c98f87225c2f4"
+        },
+        {
+          "path": "src/tokenscope/api/diagnostic_discovery.py",
+          "matches": true,
+          "sha256": "c1b1579a5b5fe7aab8f2410c5a3fbfb2f6df0d99eb4e08aeb54dcd54a930e527"
+        },
+        {
+          "path": "src/tokenscope/analysis_common/storage.py",
+          "matches": true,
+          "sha256": "da96661086e3c3ebe30cddad38d87180b7e8d41d541ce040be83f715c3cfc890"
+        }
+      ]
+    }
+  ]
+}

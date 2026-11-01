@@ -1,0 +1,14 @@
+{
+  "version": "analysis-ui02",
+  "date": "2026-10-31",
+  "status": "pending_user_visual_review",
+  "source": "docs\\tasks\\viewer\\prototypes\\tokenscope-v2-demo-ui01.html",
+  "source_sha256": "28518db9eae0f1f2d8921c8a02e6bc66e3d20485804508073026101b0cb916ee",
+  "file": "tokenscope-analysis-ui02.html",
+  "sha256": "e7256e18960f21114126bfa032be2382a8e91054e32a651dc57bb1c50121f6db",
+  "self_contained": true,
+  "original_css_and_shell_preserved": true,
+  "browser_visual_check": "blocked_by_file_protocol_policy",
+  "fixtures": "constructed_not_backend_results",
+  "generator": "artifacts/prototypes/analysis-v1/ui02/build.cjs"
+}

@@ -1,0 +1,11 @@
+{
+  "version": "diagnostics-discovery-1",
+  "identity_kind": "local_worktree_not_deployment",
+  "files": {
+    "docs/contracts/diagnostics-discovery-1/wire.json": "f538aab0842cc43b521f9dfbc2cf9779f8665e0a03e4b851476eb487cc3df4f8",
+    "src/tokenscope/analysis_common/discovery.py": "9d9dfa9c3f406f834bfcbe89997fb7badd51c0f25ebe96d5e0bf7fdb06b618ee",
+    "src/tokenscope/analysis_common/discovery_contracts.py": "689ab059f89c25d6c79fe19fc8d52e6ad5200952107aafad897c98f87225c2f4",
+    "src/tokenscope/api/diagnostic_discovery.py": "c1b1579a5b5fe7aab8f2410c5a3fbfb2f6df0d99eb4e08aeb54dcd54a930e527",
+    "src/tokenscope/analysis_common/storage.py": "da96661086e3c3ebe30cddad38d87180b7e8d41d541ce040be83f715c3cfc890"
+  }
+}

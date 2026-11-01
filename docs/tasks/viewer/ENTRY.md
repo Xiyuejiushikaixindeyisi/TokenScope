@@ -1,12 +1,16 @@
 # TokenScope前端设计开发入口
 
-**当前状态：2026-10-30交接完成，本会话按用户要求暂时休眠。** 待相应产品、后端设计与接口契约固定后，由用户使用下方两份prompt启动新的前端session；不自动创建、唤醒或开展后续设计开发。
+2026-11-01异常分析当前：[RV2联合验证与功能统筹](../analysis/COORDINATION_RV2.md)，由已登记异常前端session兼总负责，正式修复和联合验证完成并进入Git收口；旧“接收准备/未编码”为历史。监控V2维护状态仍见其自身入口。
+
+2026-10-31异常分析后端提供方更新：低命中自审已获用户认可；[公共/低命中前端交接](../prefix-analysis/FRONTEND_HANDOFF.md)与[启动prompt](../../../prompts/sessions/ANOMALY_ANALYSIS_FRONTEND_START.md)已按实际冻结接口更新，并链接Token交接。异常前端已由用户明确授权创建，实际ID为01a19111-344a-75c1-84e0-14db8be08f4f（create_thread返回）；当前仅接收核对、职责理解、补充上下文与接入方案，不代签接收或批准编码。监控V2当前状态以其自身ENTRY为准。
+
+**当前状态：2026-10-30原V1前端会话保持休眠；监控V2前端已由用户指定并登记。** 新会话本轮仅理解职责、接收两线设计/契约入口及更新记忆，见[监控V2前端ENTRY](monitoring-v2/ENTRY.md)与[本线记忆](../../../memory/tasks/viewer-monitoring-v2.md)。异常分析前端已启动接收准备；后续设计开发按阶段推进。
 
 2026-10-30：Token监控V1前后端已获用户验收，见[现场验收交接](../../huawei/MONITORING_V1_ACCEPTANCE_20261030.md)。监控V2与异常分析初版展示原型已生成，**用户认可初版设计，后续优化稿仍按阶段审批**，见[UI-01设计说明](PROTOTYPE_V2_UI_01.md)。已完成两个前端会话的交接，未修改正式代码或冻结接口。功能详细设计与开发归对应新session，本session先负责展示原型及衔接，详见[下一阶段上下文](NEXT_PHASE_CONTEXT.md)。既有HTML不等于正式分析能力或已冻结接口。
 
 ## 后续前端会话交接
 
-[监控V2前端启动prompt](../../../prompts/sessions/TOKEN_MONITORING_V2_FRONTEND_START.md) · [异常分析前端启动prompt](../../../prompts/sessions/ANOMALY_ANALYSIS_FRONTEND_START.md)。新会话角色、就绪条件与审批顺序见[统一工作流](../../architecture/TASK_SESSION_WORKFLOW.md)，实际ID尚未登记。分析前端统一对接两个分析器，不是新增分析算法会话。
+[监控V2前端启动prompt](../../../prompts/sessions/TOKEN_MONITORING_V2_FRONTEND_START.md) · [异常分析前端启动prompt](../../../prompts/sessions/ANOMALY_ANALYSIS_FRONTEND_START.md)。新会话角色与实际ID见[SESSIONS](../../../memory/SESSIONS.md)，就绪条件与审批顺序见[统一工作流](../../architecture/TASK_SESSION_WORKFLOW.md)。监控V2前端已登记，分析前端统一对接两个分析器、已启动接收准备，不是新增分析算法会话。
 
 视觉研究先看[自包含HTML](prototypes/tokenscope-v2-demo-ui01.html)（沉淀于docs，直接本地打开，不依赖HTTP），直接理解风格、配色与布局；无需先读.py或全部脚本。正式实现严格沿用最终获批DEMO，功能测试与视觉验收独立。
 

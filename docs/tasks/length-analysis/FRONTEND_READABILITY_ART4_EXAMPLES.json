@@ -1,0 +1,1415 @@
+{
+  "synthetic": true,
+  "production_authorization": false,
+  "input_root": "/home/zhangxiyue/TokenScope/artifacts/validation/art4-readable-20261031-01/test_chinese_recipes_actual_se0/inputs",
+  "state_root": "/home/zhangxiyue/TokenScope/artifacts/validation/art4-readable-20261031-01/test_chinese_recipes_actual_se0/state",
+  "service_instance_id": "2fceceeb-ea9d-4d67-9c63-da25cca35c1e",
+  "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+  "model": "GLM-5.2",
+  "recommendations": {
+    "version": "analysis-recommendations-1",
+    "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+    "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+    "availability": "computed",
+    "items": [
+      {
+        "id": "rec:5a26d5e6af2f66756293a6388dfdcd4cdfc89bf81d2fa76211c08f6b88f538b9",
+        "data": {
+          "version": "analysis-recommendations-1",
+          "recommendation_id": "rec:5a26d5e6af2f66756293a6388dfdcd4cdfc89bf81d2fa76211c08f6b88f538b9",
+          "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+          "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+          "direction": "token_content",
+          "generator_identity": "token-content-recipes-1",
+          "recipe_key": "recipe:39fb99fd30edf0121a841244d6b0aba7883c9c6398db05ee9fb6413703730a94",
+          "group_basis_digest": "39fb99fd30edf0121a841244d6b0aba7883c9c6398db05ee9fb6413703730a94",
+          "recipe": {
+            "recipe_id": "orders-fields",
+            "revision": "1",
+            "primary_rule": "T2",
+            "category_rules": [
+              "T2"
+            ],
+            "handler_id": "project_result_fields",
+            "handler_version": "1",
+            "basis": {
+              "kind": "business_policy",
+              "ref": "synthetic-policy:orders-fields",
+              "revision": "1",
+              "digest": "d603e3da2e1c4e3f128669800a7b6d7aad6977496bc9183a8692a454cb8ee67a",
+              "authority": {
+                "source_kind": "synthetic_fixture",
+                "source_ref": "orders-fields",
+                "source_digest": "d603e3da2e1c4e3f128669800a7b6d7aad6977496bc9183a8692a454cb8ee67a",
+                "status": "verified"
+              },
+              "assumptions": [],
+              "limitations": [
+                "仅为构造策略验证；不代表生产业务授权、质量等价或真实业务收益。"
+              ],
+              "scope_selector_digest": "82013beab6ba9170d0316af1e1a9046adf8d4f1a678efb866ae768332c345390"
+            },
+            "title": "订单查询结果只保留订单号与状态",
+            "change_summary": "对 query_orders 返回数组的每条订单保留 order_id、status，移除 debug_log；订单条数和顺序保持不变。",
+            "conditions": [
+              "仅适用于 synthetic-orders 构造数据及这里固定的工具定义。"
+            ],
+            "limitations": [],
+            "selector_json_digest": "82013beab6ba9170d0316af1e1a9046adf8d4f1a678efb866ae768332c345390",
+            "parameter_generator_json_digest": "413a251ba26d28ae3c218c8e7ea3f09699e8faee4758099b8c0f4167f25dcae0"
+          },
+          "support_refs": [
+            {
+              "kind": "token_observation",
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+              "request_key": {
+                "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+              "finding_ids": [],
+              "fragment_id": "1",
+              "observation_ids": [
+                "obs:19cafa9a794e096af30f26da5b703cdace56183ec568833082f39214d7ee1f9f",
+                "obs:6e1d677afe09c3d4d0404cb8001b6d2f555a8802bff4277b78906249ede37797"
+              ],
+              "unit_ids": [
+                "unit:27c11b73ac0db2b6d9a4451adb5046284b27ebdb4cd5bb219c2043d0ca59d46c",
+                "unit:eb3a6f6fbd98b7ab3ed07f5ea62665b952c8f0d16e5e4f1c01f3b126a0b33334"
+              ],
+              "location_ids": [
+                "loc:183ed0a5a883555c5a0b9d59ead0cdc480ab988c0399a0a9c7a9741ea3571c09",
+                "loc:581e97bbeb0ad364d51f7811c511b8729f0eaccc9ddc7b9a6353b89621926061"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+              "request_key": {
+                "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+              "finding_ids": [],
+              "fragment_id": "3",
+              "observation_ids": [
+                "obs:a3c85903034c459303a8d171494f2215244fcd0c7644f5dbdf4bf2e109809123",
+                "obs:e3ed95ddf17dee03222517911200d7f0b6f948f7576557da1c6071294d319207"
+              ],
+              "unit_ids": [
+                "unit:6d2422b34c85a56ed17aa8320ace04987aee3f8c3400b26c9e97e609c2e316b2",
+                "unit:a1f5f991523c6ac335df8dd0ebbbfbea481b2bc7977282b2cb8818f84c20b2e2"
+              ],
+              "location_ids": [
+                "loc:05e8aebe8b5dd95aee43336625dd3b671c3ad75ffd27d36de5a12978231fa686",
+                "loc:84b40437b0e7ae943bac987dc63e0a5856a32ff99ee48d31c5a9b01a2f9e5312"
+              ]
+            }
+          ],
+          "matched_set_digest": "a014aeb7d731bd11167f6142165bb736f7826ab18145b9fcb6b66955c69c54b2",
+          "support_set_digest": "5a97604d36eb87053a190d0a5986ec78b2e2b14e515a0faeaa8fd82b8f3debbf",
+          "members_complete": true,
+          "impact": {
+            "total_requests": "2",
+            "matched_requests": "2",
+            "matched_checked_requests": "2",
+            "match_complete": true,
+            "modified_requests": "2",
+            "evaluation_complete": true,
+            "count_basis": "raw_body_changed"
+          },
+          "proposal_status": "matched",
+          "preparation_status": "prepared",
+          "evaluation_status": "available",
+          "status": "available",
+          "reason_codes": [],
+          "reason_details": [],
+          "prepared_plan_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "plan:d68e45717933fc1e647c23cd33002b8b26529d3f5e597b2387df64b939094b24"
+          },
+          "execution_plan_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "plan:d68e45717933fc1e647c23cd33002b8b26529d3f5e597b2387df64b939094b24"
+          },
+          "evaluation_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "0b662a99-8bdf-4f12-8ec8-dbd1ede7d211"
+          },
+          "evaluation_reused": false,
+          "execution_fingerprint": "69224e11986c4eea23592c3b1ff9e3925687d28536c1197a0e2f2c1da06911f6",
+          "evaluation": {
+            "evaluation_id": "0b662a99-8bdf-4f12-8ec8-dbd1ede7d211",
+            "plan_id": "plan:d68e45717933fc1e647c23cd33002b8b26529d3f5e597b2387df64b939094b24",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "stage": "direct_full",
+            "direction": "token_content",
+            "status": "available",
+            "baseline_origin": "original_run_window",
+            "coverage": {
+              "checked": "2",
+              "eligible": "2",
+              "complete": true,
+              "reasons": [],
+              "stop_location": null
+            },
+            "before": {
+              "p": "4144",
+              "h": "1920",
+              "c": "2224",
+              "n": "2",
+              "j": "4390"
+            },
+            "after": {
+              "p": "2388",
+              "h": "1024",
+              "c": "1364",
+              "n": "2",
+              "j": "2482"
+            },
+            "modified_before": {
+              "p": "4144",
+              "h": "1920",
+              "c": "2224",
+              "n": "2",
+              "j": "4390"
+            },
+            "modified_after": {
+              "p": "2388",
+              "h": "1024",
+              "c": "1364",
+              "n": "2",
+              "j": "2482"
+            },
+            "manifest_ref": "token_recommendations/0/rows.sqlite3",
+            "reason_codes": []
+          },
+          "display_qualification": "token_evaluated",
+          "example_refs": [
+            {
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "id": "example:358e252840812b27ebe6189f59b43d2643f75c8b8fd44dca969e13077d02cb3e"
+            },
+            {
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "id": "example:1e347b0272e73a0d837fc61168ad00501c0db15d95ae095f9049583614783df4"
+            }
+          ],
+          "display_order": "0",
+          "metrics": {
+            "gain_percentage_points": {
+              "numerator": "-533600",
+              "denominator": "154623"
+            },
+            "input_tokens_delta": "-1756",
+            "input_tokens_ratio": {
+              "numerator": "-439",
+              "denominator": "1036"
+            },
+            "compute_tokens_delta": "-860",
+            "compute_tokens_ratio": {
+              "numerator": "-215",
+              "denominator": "556"
+            }
+          }
+        }
+      },
+      {
+        "id": "rec:b95a56f24cdee542b2d602f49a6e70b1dc76cde9eda9f707c8ea156b299c6369",
+        "data": {
+          "version": "analysis-recommendations-1",
+          "recommendation_id": "rec:b95a56f24cdee542b2d602f49a6e70b1dc76cde9eda9f707c8ea156b299c6369",
+          "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+          "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+          "direction": "token_content",
+          "generator_identity": "token-content-recipes-1",
+          "recipe_key": "recipe:3f68599e9e17d88615b082b0b99885afe6ef0f7998e898b7bff6dd0575a370ec",
+          "group_basis_digest": "3f68599e9e17d88615b082b0b99885afe6ef0f7998e898b7bff6dd0575a370ec",
+          "recipe": {
+            "recipe_id": "orders-reference",
+            "revision": "1",
+            "primary_rule": "T3",
+            "category_rules": [
+              "T3"
+            ],
+            "handler_id": "replace_payload_with_reference",
+            "handler_version": "1",
+            "basis": {
+              "kind": "explicit_authorization",
+              "ref": "synthetic-policy:orders-reference",
+              "revision": "1",
+              "digest": "22f64f820ddf9c3533fe1df8f432e31933ba43d17ff775b538481be48df937d7",
+              "authority": {
+                "source_kind": "synthetic_fixture",
+                "source_ref": "orders-reference",
+                "source_digest": "22f64f820ddf9c3533fe1df8f432e31933ba43d17ff775b538481be48df937d7",
+                "status": "verified"
+              },
+              "assumptions": [],
+              "limitations": [
+                "仅为构造策略验证；不代表生产业务授权、质量等价或真实业务收益。"
+              ],
+              "scope_selector_digest": "84307c25615d601b985ce79b14e8ce079da6220a97d383f0e49ef581e2e9702a"
+            },
+            "title": "汇总工具的重复订单全文改为快照引用",
+            "change_summary": "将 summarize_orders 参数 document 中与查询结果完全相同的订单全文，改为 document_ref=fixture://orders/snapshot-001；该引用已在本地构造映射中核对，生产消费协议未验证。",
+            "conditions": [
+              "仅适用于 synthetic-orders 构造数据及这里固定的工具定义。"
+            ],
+            "limitations": [],
+            "selector_json_digest": "84307c25615d601b985ce79b14e8ce079da6220a97d383f0e49ef581e2e9702a",
+            "parameter_generator_json_digest": "f53b9009c97851e9e11c55138283f713cba8e772b2ed4fe9738d74e42134b2bb"
+          },
+          "support_refs": [
+            {
+              "kind": "token_observation",
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+              "request_key": {
+                "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+              "finding_ids": [],
+              "fragment_id": "1",
+              "observation_ids": [
+                "obs:d343743c8481ac97e5d3bb67b7dcfd42bad53030b00d49b2992173947266356c"
+              ],
+              "unit_ids": [
+                "unit:d7d81d6ddce62738eef717965c7b25ece3a479e1172711fa2135f4078cddf36c"
+              ],
+              "location_ids": [
+                "loc:36309393c8e4c2b76f5143e8d543a8e074e62fef2837f876d19347c18bf7c739"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+              "request_key": {
+                "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+              "finding_ids": [],
+              "fragment_id": "3",
+              "observation_ids": [
+                "obs:2a356e515c19c9c67bb4eb3909db0b874b589bec98c095364e9f358eec8d0851"
+              ],
+              "unit_ids": [
+                "unit:b2d877f158c0bc7b1a5109e1b058152be261e1c05b2a7a97c39d69bb9148a6bb"
+              ],
+              "location_ids": [
+                "loc:8ca27ca929e2a7f4bf25fb156af937e3cecb24e50f35cfe585eec258a6d00035"
+              ]
+            }
+          ],
+          "matched_set_digest": "a014aeb7d731bd11167f6142165bb736f7826ab18145b9fcb6b66955c69c54b2",
+          "support_set_digest": "7435e20ad092555b749c09fc55b003ebc9fd49fb7b716501fbf5f9f3782be6a9",
+          "members_complete": true,
+          "impact": {
+            "total_requests": "2",
+            "matched_requests": "2",
+            "matched_checked_requests": "2",
+            "match_complete": true,
+            "modified_requests": "2",
+            "evaluation_complete": true,
+            "count_basis": "raw_body_changed"
+          },
+          "proposal_status": "matched",
+          "preparation_status": "prepared",
+          "evaluation_status": "available",
+          "status": "available",
+          "reason_codes": [],
+          "reason_details": [],
+          "prepared_plan_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "plan:665bcf939a6f7e2d4283285af9f887524827375d99babedeb3fe5b387679ed52"
+          },
+          "execution_plan_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "plan:665bcf939a6f7e2d4283285af9f887524827375d99babedeb3fe5b387679ed52"
+          },
+          "evaluation_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "4331cbff-0c0b-4968-a74f-bc33cadb810d"
+          },
+          "evaluation_reused": false,
+          "execution_fingerprint": "26a977e0e04b17d768cb3e84acde571be72e8f15f62a76cd40a995017f6ab1c4",
+          "evaluation": {
+            "evaluation_id": "4331cbff-0c0b-4968-a74f-bc33cadb810d",
+            "plan_id": "plan:665bcf939a6f7e2d4283285af9f887524827375d99babedeb3fe5b387679ed52",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "stage": "direct_full",
+            "direction": "token_content",
+            "status": "available",
+            "baseline_origin": "original_run_window",
+            "coverage": {
+              "checked": "2",
+              "eligible": "2",
+              "complete": true,
+              "reasons": [],
+              "stop_location": null
+            },
+            "before": {
+              "p": "4144",
+              "h": "1920",
+              "c": "2224",
+              "n": "2",
+              "j": "4390"
+            },
+            "after": {
+              "p": "3224",
+              "h": "1408",
+              "c": "1816",
+              "n": "2",
+              "j": "3264"
+            },
+            "modified_before": {
+              "p": "4144",
+              "h": "1920",
+              "c": "2224",
+              "n": "2",
+              "j": "4390"
+            },
+            "modified_after": {
+              "p": "3224",
+              "h": "1408",
+              "c": "1816",
+              "n": "2",
+              "j": "3264"
+            },
+            "manifest_ref": "token_recommendations/1/rows.sqlite3",
+            "reason_codes": []
+          },
+          "display_qualification": "token_evaluated",
+          "example_refs": [
+            {
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "id": "example:94f2369f041efa79973e1847cec176aff97a70f84ed930525f5709284679690b"
+            },
+            {
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "id": "example:4f810f6776822cddeb2541abdbfcedb29f14d05f9ac5acd4cc45fe405235b0c2"
+            }
+          ],
+          "display_order": "1",
+          "metrics": {
+            "gain_percentage_points": {
+              "numerator": "-277600",
+              "denominator": "104377"
+            },
+            "input_tokens_delta": "-920",
+            "input_tokens_ratio": {
+              "numerator": "-115",
+              "denominator": "518"
+            },
+            "compute_tokens_delta": "-408",
+            "compute_tokens_ratio": {
+              "numerator": "-51",
+              "denominator": "278"
+            }
+          }
+        }
+      },
+      {
+        "id": "rec:8d0eaf45bf6b4ec75f486be0029d739614bb70dc74dfcd616eb7cb5e4c52317f",
+        "data": {
+          "version": "analysis-recommendations-1",
+          "recommendation_id": "rec:8d0eaf45bf6b4ec75f486be0029d739614bb70dc74dfcd616eb7cb5e4c52317f",
+          "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+          "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+          "direction": "token_content",
+          "generator_identity": "token-content-recipes-1",
+          "recipe_key": "recipe:8b5fa9b9eea40c781580b6dc962ef8088a0cc8d5d787ee3fdef019fd08596cfc",
+          "group_basis_digest": "8b5fa9b9eea40c781580b6dc962ef8088a0cc8d5d787ee3fdef019fd08596cfc",
+          "recipe": {
+            "recipe_id": "orders-copy",
+            "revision": "1",
+            "primary_rule": "T3",
+            "category_rules": [
+              "T3"
+            ],
+            "handler_id": "remove_authorized_duplicate_message",
+            "handler_version": "1",
+            "basis": {
+              "kind": "explicit_authorization",
+              "ref": "synthetic-policy:orders-copy",
+              "revision": "1",
+              "digest": "4bbb702c8a8f86a78a08f5a2664a2bab32c03e63f673f3f7413bb116ab9f782f",
+              "authority": {
+                "source_kind": "synthetic_fixture",
+                "source_ref": "orders-copy",
+                "source_digest": "4bbb702c8a8f86a78a08f5a2664a2bab32c03e63f673f3f7413bb116ab9f782f",
+                "status": "verified"
+              },
+              "assumptions": [],
+              "limitations": [
+                "仅为构造策略验证；不代表生产业务授权、质量等价或真实业务收益。"
+              ],
+              "scope_selector_digest": "a5f284814451382b22532c35804db7672e623901eb090ddd6ac0d79d514311fc"
+            },
+            "title": "删除重复粘贴订单全文的普通用户消息",
+            "change_summary": "删除仅包含这份完整订单快照的重复 user 消息；保留最初的汇总指令、query_orders 工具结果和工具调用消息。",
+            "conditions": [
+              "仅适用于 synthetic-orders 构造数据及这里固定的工具定义。"
+            ],
+            "limitations": [],
+            "selector_json_digest": "a5f284814451382b22532c35804db7672e623901eb090ddd6ac0d79d514311fc",
+            "parameter_generator_json_digest": "4052fc321dbbfe04760b434a1e187596a4e2a89ac5f04224a095147fa7864108"
+          },
+          "support_refs": [
+            {
+              "kind": "token_observation",
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+              "request_key": {
+                "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+              "finding_ids": [],
+              "fragment_id": "1",
+              "observation_ids": [
+                "obs:d343743c8481ac97e5d3bb67b7dcfd42bad53030b00d49b2992173947266356c"
+              ],
+              "unit_ids": [
+                "unit:cffd4a87663eff39ad61c9c953052f611b9af28a6a40a9933d90d99e18485f46"
+              ],
+              "location_ids": [
+                "loc:7f7773f40695495fe59de82bd9e67c58e2f041faa04ea49321a3606532dc5421"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+              "request_key": {
+                "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+              "finding_ids": [],
+              "fragment_id": "3",
+              "observation_ids": [
+                "obs:2a356e515c19c9c67bb4eb3909db0b874b589bec98c095364e9f358eec8d0851"
+              ],
+              "unit_ids": [
+                "unit:53934f41ea09ce4f8165b5b271a95d4cb6afba3f257d665172749af197f4a9b9"
+              ],
+              "location_ids": [
+                "loc:280d87e5cd8c87637cab4a654853451c117755816942c78e5a732554a128f434"
+              ]
+            }
+          ],
+          "matched_set_digest": "a014aeb7d731bd11167f6142165bb736f7826ab18145b9fcb6b66955c69c54b2",
+          "support_set_digest": "65b7ec65e980fbedadfffb7bda37db6defeff54df96d80a8ffb4016d0e2536e9",
+          "members_complete": true,
+          "impact": {
+            "total_requests": "2",
+            "matched_requests": "2",
+            "matched_checked_requests": "2",
+            "match_complete": true,
+            "modified_requests": "2",
+            "evaluation_complete": true,
+            "count_basis": "raw_body_changed"
+          },
+          "proposal_status": "matched",
+          "preparation_status": "prepared",
+          "evaluation_status": "available",
+          "status": "available",
+          "reason_codes": [],
+          "reason_details": [],
+          "prepared_plan_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "plan:321f2d41466cd4f8be2c5895f8dc2b7239084901923daec116a8adace43bb0c4"
+          },
+          "execution_plan_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "plan:321f2d41466cd4f8be2c5895f8dc2b7239084901923daec116a8adace43bb0c4"
+          },
+          "evaluation_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "a57f3902-3834-466d-b6b7-9a4c9a2f9b5f"
+          },
+          "evaluation_reused": false,
+          "execution_fingerprint": "0ead714b77337fa9803cce015d6fbbaac20d5a17cfef313997ef56212bfb98d0",
+          "evaluation": {
+            "evaluation_id": "a57f3902-3834-466d-b6b7-9a4c9a2f9b5f",
+            "plan_id": "plan:321f2d41466cd4f8be2c5895f8dc2b7239084901923daec116a8adace43bb0c4",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "stage": "direct_full",
+            "direction": "token_content",
+            "status": "available",
+            "baseline_origin": "original_run_window",
+            "coverage": {
+              "checked": "2",
+              "eligible": "2",
+              "complete": true,
+              "reasons": [],
+              "stop_location": null
+            },
+            "before": {
+              "p": "4144",
+              "h": "1920",
+              "c": "2224",
+              "n": "2",
+              "j": "4390"
+            },
+            "after": {
+              "p": "3206",
+              "h": "1408",
+              "c": "1798",
+              "n": "2",
+              "j": "3282"
+            },
+            "modified_before": {
+              "p": "4144",
+              "h": "1920",
+              "c": "2224",
+              "n": "2",
+              "j": "4390"
+            },
+            "modified_after": {
+              "p": "3206",
+              "h": "1408",
+              "c": "1798",
+              "n": "2",
+              "j": "3282"
+            },
+            "manifest_ref": "token_recommendations/2/rows.sqlite3",
+            "reason_codes": []
+          },
+          "display_qualification": "token_evaluated",
+          "example_refs": [
+            {
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "id": "example:3bac80adbe97f8b056e49dc4679428b51c1af6e470db08282389f911340fb9dd"
+            },
+            {
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "id": "example:783937a5dd568817a5fc725a95c1ff41f627334dfd0e690057c2cfb8cef21c85"
+            }
+          ],
+          "display_order": "2",
+          "metrics": {
+            "gain_percentage_points": {
+              "numerator": "-143200",
+              "denominator": "59311"
+            },
+            "input_tokens_delta": "-938",
+            "input_tokens_ratio": {
+              "numerator": "-67",
+              "denominator": "296"
+            },
+            "compute_tokens_delta": "-426",
+            "compute_tokens_ratio": {
+              "numerator": "-213",
+              "denominator": "1112"
+            }
+          }
+        }
+      },
+      {
+        "id": "rec:656908235395fac16565d2a7f3c12bcb41d48c9de075c080b1a62f7228f0cd39",
+        "data": {
+          "version": "analysis-recommendations-1",
+          "recommendation_id": "rec:656908235395fac16565d2a7f3c12bcb41d48c9de075c080b1a62f7228f0cd39",
+          "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+          "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+          "direction": "token_content",
+          "generator_identity": "token-content-recipes-1",
+          "recipe_key": "recipe:8bf83d460ec6422c0332e4886b008fb796fa9412357d353588081c48bc8cab07",
+          "group_basis_digest": "8bf83d460ec6422c0332e4886b008fb796fa9412357d353588081c48bc8cab07",
+          "recipe": {
+            "recipe_id": "orders-retention",
+            "revision": "1",
+            "primary_rule": "T4",
+            "category_rules": [
+              "T4"
+            ],
+            "handler_id": "apply_retention_replacements",
+            "handler_version": "1",
+            "basis": {
+              "kind": "business_policy",
+              "ref": "synthetic-policy:orders-retention",
+              "revision": "1",
+              "digest": "f557601a9cd797a935a6e9d3b676265bc0e3644827a7a71b125ee60157d45c1e",
+              "authority": {
+                "source_kind": "synthetic_fixture",
+                "source_ref": "orders-retention",
+                "source_digest": "f557601a9cd797a935a6e9d3b676265bc0e3644827a7a71b125ee60157d45c1e",
+                "status": "verified"
+              },
+              "assumptions": [],
+              "limitations": [
+                "仅为构造策略验证；不代表生产业务授权、质量等价或真实业务收益。"
+              ],
+              "scope_selector_digest": "82013beab6ba9170d0316af1e1a9046adf8d4f1a678efb866ae768332c345390"
+            },
+            "title": "保留最近1份订单查询结果，替换较早结果",
+            "change_summary": "在同一请求中保留 query_orders 最近1份完整结果；较早结果替换为 {\"omitted\":true,\"reason\":\"较早订单快照已省略\"}，保留工具消息与调用关系。",
+            "conditions": [
+              "仅适用于 synthetic-orders 构造数据及这里固定的工具定义。"
+            ],
+            "limitations": [],
+            "selector_json_digest": "82013beab6ba9170d0316af1e1a9046adf8d4f1a678efb866ae768332c345390",
+            "parameter_generator_json_digest": "742bf87279679e964c55fc3e7fd920116f45758595f12bc0f485b4f50c2426bf"
+          },
+          "support_refs": [
+            {
+              "kind": "token_observation",
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+              "request_key": {
+                "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                "source_record_index": "1"
+              },
+              "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+              "finding_ids": [],
+              "fragment_id": "1",
+              "observation_ids": [
+                "obs:e03390c030f562968ae0facf7bf1db38b5428bc6af3203eeea619949ee061bd5"
+              ],
+              "unit_ids": [
+                "unit:eb3a6f6fbd98b7ab3ed07f5ea62665b952c8f0d16e5e4f1c01f3b126a0b33334"
+              ],
+              "location_ids": [
+                "loc:581e97bbeb0ad364d51f7811c511b8729f0eaccc9ddc7b9a6353b89621926061"
+              ]
+            },
+            {
+              "kind": "token_observation",
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+              "request_key": {
+                "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                "source_record_index": "3"
+              },
+              "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+              "finding_ids": [],
+              "fragment_id": "3",
+              "observation_ids": [
+                "obs:bc44fc81ca1a5cbb9ecdb7a02dfbb6261009f710652c7167b34e21411cb811fc"
+              ],
+              "unit_ids": [
+                "unit:6d2422b34c85a56ed17aa8320ace04987aee3f8c3400b26c9e97e609c2e316b2"
+              ],
+              "location_ids": [
+                "loc:84b40437b0e7ae943bac987dc63e0a5856a32ff99ee48d31c5a9b01a2f9e5312"
+              ]
+            }
+          ],
+          "matched_set_digest": "a014aeb7d731bd11167f6142165bb736f7826ab18145b9fcb6b66955c69c54b2",
+          "support_set_digest": "b9842892ad30efc2d3e8d4716321785685f51d5cd170f6d8ed2cef73279a4b07",
+          "members_complete": true,
+          "impact": {
+            "total_requests": "2",
+            "matched_requests": "2",
+            "matched_checked_requests": "2",
+            "match_complete": true,
+            "modified_requests": "2",
+            "evaluation_complete": true,
+            "count_basis": "raw_body_changed"
+          },
+          "proposal_status": "matched",
+          "preparation_status": "prepared",
+          "evaluation_status": "available",
+          "status": "available",
+          "reason_codes": [],
+          "reason_details": [],
+          "prepared_plan_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "plan:264dca8160e5e426984d0c6bf75a5bb4f756258a08a6329183dfa9d77350715a"
+          },
+          "execution_plan_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "plan:264dca8160e5e426984d0c6bf75a5bb4f756258a08a6329183dfa9d77350715a"
+          },
+          "evaluation_ref": {
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "id": "57b1ba74-e5a9-44ae-9ee3-59760c217323"
+          },
+          "evaluation_reused": false,
+          "execution_fingerprint": "da4cc7a744815c3b412a58740e831b4a508f61ebaf73b1200a05768c3c686361",
+          "evaluation": {
+            "evaluation_id": "57b1ba74-e5a9-44ae-9ee3-59760c217323",
+            "plan_id": "plan:264dca8160e5e426984d0c6bf75a5bb4f756258a08a6329183dfa9d77350715a",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "stage": "direct_full",
+            "direction": "token_content",
+            "status": "available",
+            "baseline_origin": "original_run_window",
+            "coverage": {
+              "checked": "2",
+              "eligible": "2",
+              "complete": true,
+              "reasons": [],
+              "stop_location": null
+            },
+            "before": {
+              "p": "4144",
+              "h": "1920",
+              "c": "2224",
+              "n": "2",
+              "j": "4390"
+            },
+            "after": {
+              "p": "3240",
+              "h": "1408",
+              "c": "1832",
+              "n": "2",
+              "j": "3332"
+            },
+            "modified_before": {
+              "p": "4144",
+              "h": "1920",
+              "c": "2224",
+              "n": "2",
+              "j": "4390"
+            },
+            "modified_after": {
+              "p": "3240",
+              "h": "1408",
+              "c": "1832",
+              "n": "2",
+              "j": "3332"
+            },
+            "manifest_ref": "token_recommendations/3/rows.sqlite3",
+            "reason_codes": []
+          },
+          "display_qualification": "token_evaluated",
+          "example_refs": [
+            {
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "id": "example:10776571c27a89ffa73a52c280eb295e038775431457d9ec29b929758ad4cd97"
+            },
+            {
+              "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+              "id": "example:b0aed81ee96c8448a7fa25d6fd197565ff600bf87742ac08a9086708aa3f66c7"
+            }
+          ],
+          "display_order": "3",
+          "metrics": {
+            "gain_percentage_points": {
+              "numerator": "-60320",
+              "denominator": "20979"
+            },
+            "input_tokens_delta": "-904",
+            "input_tokens_ratio": {
+              "numerator": "-113",
+              "denominator": "518"
+            },
+            "compute_tokens_delta": "-392",
+            "compute_tokens_ratio": {
+              "numerator": "-49",
+              "denominator": "278"
+            }
+          }
+        }
+      }
+    ],
+    "offset": "0",
+    "next_offset": null
+  },
+  "examples": {
+    "rec:5a26d5e6af2f66756293a6388dfdcd4cdfc89bf81d2fa76211c08f6b88f538b9": {
+      "version": "analysis-recommendations-1",
+      "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+      "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+      "items": [
+        {
+          "id": "example:358e252840812b27ebe6189f59b43d2643f75c8b8fd44dca969e13077d02cb3e",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:358e252840812b27ebe6189f59b43d2643f75c8b8fd44dca969e13077d02cb3e",
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "owner_id": "rec:5a26d5e6af2f66756293a6388dfdcd4cdfc89bf81d2fa76211c08f6b88f538b9",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+                "source_pointer": "/messages/2/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "568",
+                "end": "1402"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "810"
+              },
+              "excerpt": "[{\\\"order_id\\\": \\\"DEMO-001\\\", \\\"status\\\": \\\"已发货\\\", \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\"}, {\\\"order_id\\\": \\\"DEMO-002\\\", \\\"status\\\": \\\"待发货\\\", \\\"debug_log\\\": \\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\"}]",
+              "context_before": "unction\", \"function\": {\"name\": \"query_orders\", \"arguments\": \"{}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"old-query\", \"content\": \"",
+              "context_after": "\"}, {\"role\": \"assistant\", \"content\": \"\", \"tool_calls\": [{\"id\": \"latest-query\", \"type\": \"function\", \"function\": {\"name\": \"query_o",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "2c29a26abfc2382ebf5cb1a706b33d630b8dc974dcf7b8df953f00f750064a36",
+                "source_pointer": "/messages/2/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "519",
+                "end": "614"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "79"
+              },
+              "excerpt": "[{\\\"order_id\\\":\\\"DEMO-001\\\",\\\"status\\\":\\\"已发货\\\"},{\\\"order_id\\\":\\\"DEMO-002\\\",\\\"status\\\":\\\"待发货\\\"}]",
+              "context_before": "\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"old-query\",\"content\":\"",
+              "context_after": "\"},{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"latest-query\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"argu",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "comparison": null
+          }
+        },
+        {
+          "id": "example:1e347b0272e73a0d837fc61168ad00501c0db15d95ae095f9049583614783df4",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:1e347b0272e73a0d837fc61168ad00501c0db15d95ae095f9049583614783df4",
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "owner_id": "rec:5a26d5e6af2f66756293a6388dfdcd4cdfc89bf81d2fa76211c08f6b88f538b9",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+                "source_pointer": "/messages/2/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "568",
+                "end": "1402"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "810"
+              },
+              "excerpt": "[{\\\"order_id\\\": \\\"DEMO-001\\\", \\\"status\\\": \\\"已发货\\\", \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\"}, {\\\"order_id\\\": \\\"DEMO-002\\\", \\\"status\\\": \\\"待发货\\\", \\\"debug_log\\\": \\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\"}]",
+              "context_before": "unction\", \"function\": {\"name\": \"query_orders\", \"arguments\": \"{}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"old-query\", \"content\": \"",
+              "context_after": "\"}, {\"role\": \"assistant\", \"content\": \"\", \"tool_calls\": [{\"id\": \"latest-query\", \"type\": \"function\", \"function\": {\"name\": \"query_o",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "2c29a26abfc2382ebf5cb1a706b33d630b8dc974dcf7b8df953f00f750064a36",
+                "source_pointer": "/messages/2/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "519",
+                "end": "614"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "79"
+              },
+              "excerpt": "[{\\\"order_id\\\":\\\"DEMO-001\\\",\\\"status\\\":\\\"已发货\\\"},{\\\"order_id\\\":\\\"DEMO-002\\\",\\\"status\\\":\\\"待发货\\\"}]",
+              "context_before": "\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"old-query\",\"content\":\"",
+              "context_after": "\"},{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"latest-query\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"argu",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "comparison": null
+          }
+        }
+      ],
+      "next_offset": null
+    },
+    "rec:b95a56f24cdee542b2d602f49a6e70b1dc76cde9eda9f707c8ea156b299c6369": {
+      "version": "analysis-recommendations-1",
+      "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+      "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+      "items": [
+        {
+          "id": "example:94f2369f041efa79973e1847cec176aff97a70f84ed930525f5709284679690b",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:94f2369f041efa79973e1847cec176aff97a70f84ed930525f5709284679690b",
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "owner_id": "rec:b95a56f24cdee542b2d602f49a6e70b1dc76cde9eda9f707c8ea156b299c6369",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+                "source_pointer": "/messages/5/tool_calls/0/function/arguments",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": "/document"
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "2620",
+                "end": "3506"
+              },
+              "decoded_span": {
+                "start": "13",
+                "end": "849"
+              },
+              "excerpt": "\\\"[{\\\\\\\"order_id\\\\\\\": \\\\\\\"DEMO-001\\\\\\\", \\\\\\\"status\\\\\\\": \\\\\\\"已发货\\\\\\\", \\\\\\\"debug_log\\\\\\\": \\\\\\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\\\\\"}, {\\\\\\\"order_id\\\\\\\": \\\\\\\"DEMO-002\\\\\\\", \\\\\\\"status\\\\\\\": \\\\\\\"待发货\\\\\\\", \\\\\\\"debug_log\\\\\\\": \\\\\\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\\\\\"}]\\\"",
+              "context_before": " \"\", \"tool_calls\": [{\"id\": \"summary\", \"type\": \"function\", \"function\": {\"name\": \"summarize_orders\", \"arguments\": \"{\\\"document\\\": ",
+              "context_after": "}\"}}]}, {\"role\": \"user\", \"content\": \"[{\\\"order_id\\\": \\\"DEMO-001\\\", \\\"status\\\": \\\"已发货\\\", \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "c67d51df9260b740e9083cf3ffa0b78a3a85d2585df0abf27be9ff46aa0e473f",
+                "source_pointer": "/messages/5/tool_calls/0/function/arguments",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": "/document"
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": null,
+              "decoded_span": null,
+              "excerpt": "",
+              "context_before": "",
+              "context_after": "",
+              "omitted_before": false,
+              "omitted_after": false,
+              "reason_codes": [
+                "EVIDENCE_LOCATION_UNAVAILABLE"
+              ]
+            },
+            "comparison": null
+          }
+        },
+        {
+          "id": "example:4f810f6776822cddeb2541abdbfcedb29f14d05f9ac5acd4cc45fe405235b0c2",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:4f810f6776822cddeb2541abdbfcedb29f14d05f9ac5acd4cc45fe405235b0c2",
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "owner_id": "rec:b95a56f24cdee542b2d602f49a6e70b1dc76cde9eda9f707c8ea156b299c6369",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+                "source_pointer": "/messages/5/tool_calls/0/function/arguments",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": "/document"
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "2620",
+                "end": "3506"
+              },
+              "decoded_span": {
+                "start": "13",
+                "end": "849"
+              },
+              "excerpt": "\\\"[{\\\\\\\"order_id\\\\\\\": \\\\\\\"DEMO-001\\\\\\\", \\\\\\\"status\\\\\\\": \\\\\\\"已发货\\\\\\\", \\\\\\\"debug_log\\\\\\\": \\\\\\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\\\\\"}, {\\\\\\\"order_id\\\\\\\": \\\\\\\"DEMO-002\\\\\\\", \\\\\\\"status\\\\\\\": \\\\\\\"待发货\\\\\\\", \\\\\\\"debug_log\\\\\\\": \\\\\\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\\\\\"}]\\\"",
+              "context_before": " \"\", \"tool_calls\": [{\"id\": \"summary\", \"type\": \"function\", \"function\": {\"name\": \"summarize_orders\", \"arguments\": \"{\\\"document\\\": ",
+              "context_after": "}\"}}]}, {\"role\": \"user\", \"content\": \"[{\\\"order_id\\\": \\\"DEMO-001\\\", \\\"status\\\": \\\"已发货\\\", \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "c67d51df9260b740e9083cf3ffa0b78a3a85d2585df0abf27be9ff46aa0e473f",
+                "source_pointer": "/messages/5/tool_calls/0/function/arguments",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": "/document"
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": null,
+              "decoded_span": null,
+              "excerpt": "",
+              "context_before": "",
+              "context_after": "",
+              "omitted_before": false,
+              "omitted_after": false,
+              "reason_codes": [
+                "EVIDENCE_LOCATION_UNAVAILABLE"
+              ]
+            },
+            "comparison": null
+          }
+        }
+      ],
+      "next_offset": null
+    },
+    "rec:8d0eaf45bf6b4ec75f486be0029d739614bb70dc74dfcd616eb7cb5e4c52317f": {
+      "version": "analysis-recommendations-1",
+      "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+      "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+      "items": [
+        {
+          "id": "example:3bac80adbe97f8b056e49dc4679428b51c1af6e470db08282389f911340fb9dd",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:3bac80adbe97f8b056e49dc4679428b51c1af6e470db08282389f911340fb9dd",
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "owner_id": "rec:8d0eaf45bf6b4ec75f486be0029d739614bb70dc74dfcd616eb7cb5e4c52317f",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+                "source_pointer": "/messages/6",
+                "embedded": null,
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "3514",
+                "end": "4379"
+              },
+              "decoded_span": null,
+              "excerpt": "{\"role\": \"user\", \"content\": \"[{\\\"order_id\\\": \\\"DEMO-001\\\", \\\"status\\\": \\\"已发货\\\", \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\"}, {\\\"order_id\\\": \\\"DEMO-002\\\", \\\"status\\\": \\\"待发货\\\", \\\"debug_log\\\": \\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\"}]\"}",
+              "context_before": "索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\\\\\"}]\\\"}\"}}]}, ",
+              "context_after": "]}",
+              "omitted_before": true,
+              "omitted_after": false,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "a9c4d9fa34f05732fa9c10a4966b0839a4c708e0660bcd4d193db2b71c891ae9",
+                "source_pointer": "/messages/6",
+                "embedded": null,
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": null,
+              "decoded_span": null,
+              "excerpt": "",
+              "context_before": "",
+              "context_after": "",
+              "omitted_before": false,
+              "omitted_after": false,
+              "reason_codes": [
+                "VALUE_REMOVED"
+              ]
+            },
+            "comparison": null
+          }
+        },
+        {
+          "id": "example:783937a5dd568817a5fc725a95c1ff41f627334dfd0e690057c2cfb8cef21c85",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:783937a5dd568817a5fc725a95c1ff41f627334dfd0e690057c2cfb8cef21c85",
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "owner_id": "rec:8d0eaf45bf6b4ec75f486be0029d739614bb70dc74dfcd616eb7cb5e4c52317f",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+                "source_pointer": "/messages/6",
+                "embedded": null,
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "3514",
+                "end": "4379"
+              },
+              "decoded_span": null,
+              "excerpt": "{\"role\": \"user\", \"content\": \"[{\\\"order_id\\\": \\\"DEMO-001\\\", \\\"status\\\": \\\"已发货\\\", \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\"}, {\\\"order_id\\\": \\\"DEMO-002\\\", \\\"status\\\": \\\"待发货\\\", \\\"debug_log\\\": \\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\"}]\"}",
+              "context_before": "索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\\\\\"}]\\\"}\"}}]}, ",
+              "context_after": "]}",
+              "omitted_before": true,
+              "omitted_after": false,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "a9c4d9fa34f05732fa9c10a4966b0839a4c708e0660bcd4d193db2b71c891ae9",
+                "source_pointer": "/messages/6",
+                "embedded": null,
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": null,
+              "decoded_span": null,
+              "excerpt": "",
+              "context_before": "",
+              "context_after": "",
+              "omitted_before": false,
+              "omitted_after": false,
+              "reason_codes": [
+                "VALUE_REMOVED"
+              ]
+            },
+            "comparison": null
+          }
+        }
+      ],
+      "next_offset": null
+    },
+    "rec:656908235395fac16565d2a7f3c12bcb41d48c9de075c080b1a62f7228f0cd39": {
+      "version": "analysis-recommendations-1",
+      "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+      "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+      "items": [
+        {
+          "id": "example:10776571c27a89ffa73a52c280eb295e038775431457d9ec29b929758ad4cd97",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:10776571c27a89ffa73a52c280eb295e038775431457d9ec29b929758ad4cd97",
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "owner_id": "rec:656908235395fac16565d2a7f3c12bcb41d48c9de075c080b1a62f7228f0cd39",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+                "source_pointer": "/messages/2/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "568",
+                "end": "1402"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "810"
+              },
+              "excerpt": "[{\\\"order_id\\\": \\\"DEMO-001\\\", \\\"status\\\": \\\"已发货\\\", \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\"}, {\\\"order_id\\\": \\\"DEMO-002\\\", \\\"status\\\": \\\"待发货\\\", \\\"debug_log\\\": \\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\"}]",
+              "context_before": "unction\", \"function\": {\"name\": \"query_orders\", \"arguments\": \"{}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"old-query\", \"content\": \"",
+              "context_after": "\"}, {\"role\": \"assistant\", \"content\": \"\", \"tool_calls\": [{\"id\": \"latest-query\", \"type\": \"function\", \"function\": {\"name\": \"query_o",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "1"
+                },
+                "raw_sha256": "17caa537b3d94c89deb5a25294b89f62e7f8855166cff3379403ad5cd292a450",
+                "source_pointer": "/messages/2/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "519",
+                "end": "562"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "37"
+              },
+              "excerpt": "{\\\"omitted\\\":true,\\\"reason\\\":\\\"较早订单快照已省略\\\"}",
+              "context_before": "\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"old-query\",\"content\":\"",
+              "context_after": "\"},{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"latest-query\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"argu",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "comparison": null
+          }
+        },
+        {
+          "id": "example:b0aed81ee96c8448a7fa25d6fd197565ff600bf87742ac08a9086708aa3f66c7",
+          "data": {
+            "version": "analysis-recommendations-1",
+            "example_id": "example:b0aed81ee96c8448a7fa25d6fd197565ff600bf87742ac08a9086708aa3f66c7",
+            "task_id": "716967b3-3e69-4f58-82e8-37f5e7715b8d",
+            "scope_id": "scope:e67c17b43e9d0171ae2d11ed1a6414c30197ecd5b05f7968b57a24b3114bf6cd",
+            "owner_id": "rec:656908235395fac16565d2a7f3c12bcb41d48c9de075c080b1a62f7228f0cd39",
+            "before": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "57725cc1618876aa662d8c995a0e26057b221790d59315b2fe9c68e8fbeb341d",
+                "source_pointer": "/messages/2/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "568",
+                "end": "1402"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "810"
+              },
+              "excerpt": "[{\\\"order_id\\\": \\\"DEMO-001\\\", \\\"status\\\": \\\"已发货\\\", \\\"debug_log\\\": \\\"构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；构造调试明细：逐项查询成功；\\\"}, {\\\"order_id\\\": \\\"DEMO-002\\\", \\\"status\\\": \\\"待发货\\\", \\\"debug_log\\\": \\\"构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；构造内部检索日志；\\\"}]",
+              "context_before": "unction\", \"function\": {\"name\": \"query_orders\", \"arguments\": \"{}\"}}]}, {\"role\": \"tool\", \"tool_call_id\": \"old-query\", \"content\": \"",
+              "context_after": "\"}, {\"role\": \"assistant\", \"content\": \"\", \"tool_calls\": [{\"id\": \"latest-query\", \"type\": \"function\", \"function\": {\"name\": \"query_o",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "after": {
+              "locator_version": "evidence-locator-1",
+              "source": {
+                "request_key": {
+                  "base_run_id": "0d1e7549-9938-46c6-843b-8d73cb40ec68",
+                  "source_record_index": "3"
+                },
+                "raw_sha256": "17caa537b3d94c89deb5a25294b89f62e7f8855166cff3379403ad5cd292a450",
+                "source_pointer": "/messages/2/content",
+                "embedded": {
+                  "format": "json",
+                  "parser_version": "json-exact-1",
+                  "pointer": ""
+                },
+                "text_range": null
+              },
+              "offset_unit": "unicode_codepoint",
+              "raw_span": {
+                "start": "519",
+                "end": "562"
+              },
+              "decoded_span": {
+                "start": "0",
+                "end": "37"
+              },
+              "excerpt": "{\\\"omitted\\\":true,\\\"reason\\\":\\\"较早订单快照已省略\\\"}",
+              "context_before": "\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"tool_call_id\":\"old-query\",\"content\":\"",
+              "context_after": "\"},{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"latest-query\",\"type\":\"function\",\"function\":{\"name\":\"query_orders\",\"argu",
+              "omitted_before": true,
+              "omitted_after": true,
+              "reason_codes": []
+            },
+            "comparison": null
+          }
+        }
+      ],
+      "next_offset": null
+    }
+  },
+  "reference_map_sha256": "24948651e8424186a97d1492e3bf308fe5428e5fc9d55a2dc4c15c3dbb6e56f3"
+}

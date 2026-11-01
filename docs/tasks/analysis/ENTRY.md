@@ -1,19 +1,45 @@
-# 异常分析后端母会话入口
+# 异常分析已批产品与分线交接入口
 
-2026-10-30：待创建/登记。先由一个异常分析后端session进行调研、产品设计，完成后再按用户启动fork“低命中率分析”和“Token异常”两条详细设计/开发线。异常分析不属于Token监控功能增加；本轮未创建会话或开展业务研究。
+2026-11-01当前入口：[功能统筹RV2](COORDINATION_RV2.md) · [联合验证报告](JOINT_VALIDATION_RV2_20261101.md)。两后端已实际实现并完成独立复审，前端已修复L4/L5各一张卡、每类≤3例；Token仅T2–T4，前端只读，无参数/评估表单。用户指定异常前端session兼总负责，统一版本归档与GitHub收口，再给出审查打包prompt。下方v0.4产品/分线过程为历史依据，“待启动/未编码/T1–T4”等不代表当前状态。
 
-## 角色与优先任务
+2026-10-31：用户已审批产品v0.4。原母会话01a18be2-7112-7aa2-919b-5137d1f1b1ad继续负责[低命中率后端](../prefix-analysis/ENTRY.md)；[Token异常后端](../length-analysis/ENTRY.md)由已创建会话01a18fcd-0464-7cf1-b435-4f394bd33e66负责。用户已允许fork，启动prompt已发送且身份复核完成，当前进入两线后端详细设计。[分线交接与prompt](BACKEND_SPLIT_HANDOFF.md)为当前状态依据。
 
-首先明确角色、范围、阶段、实际ID与依赖，登记[SESSIONS](../../../memory/SESSIONS.md)。优先收敛两类诊断的问题、输入、证据/建议/收益表达及分线交接，不在母会话自动提前实现两个分析器。
+## 当前产品入口
 
-低命中诊断复用监控理想命中结果/中间信息；Token异常复用编码计量和来源映射，不维护第二套Tokenizer/Template或缓存算法。报告DEMO是展示起点，不代替后端能力或契约。
+已按用户纠偏重整并获批为v0.4产品基线，覆盖旧v0.3及其增量表述：
 
-## 阅读优先级
+| 阅读顺序 | 文档 |
+| --- | --- |
+| 1 | [产品总览](PRODUCT_PROPOSAL.md)：两个独立页签、现有输入、范围和业务目标 |
+| 2 | [低命中探测器](LOW_HIT_DETECTORS.md)：L1–L5逐项依据、数据能力、判据、建议、评估 |
+| 3 | [Token内容探测器](TOKEN_CONTENT_DETECTORS.md)：T1–T4逐项依据、判据及内容负担/异常边界 |
+| 4 | [流程与评估](PHASE1_PLAN.md)：仅目标appid窗口、原运行/子窗口基线、具体副本和组合评估 |
+| 5 | [业务展示样例](DISPLAY_EXAMPLES.md)：九类规则卡片、零收益/负收益及输入不足 |
+| 6 | [结果字段草案](RESULT_FIELDS_DRAFT.md)：事实、判据、来源、操作及评估分离，未冻结API |
 
-P0：AGENTS → CURRENT → SESSIONS → docs/README → 本入口。
+[纠偏与证据核对](EVIDENCE_AND_SCOPE_REVISION_20261031.md)和[首轮研究](../../research/topics/AGENT_ANOMALY_RESEARCH_2026-10-30.md)保留来源追溯。PrefixLens只作参考，[原报告核对](../../research/implementations/PREFIXLENS_HUAWEI_REVIEW_2026-10-30.md)不决定业务清单或缓存算法。[旧v0.3](../../../achieve/2026-10-31/analysis-v0.3/README.md)已保存快照。
 
-P1：[低命中任务](../prefix-analysis/ENTRY.md)、[Token异常任务](../length-analysis/ENTRY.md)、[V1验收](../../huawei/MONITORING_V1_ACCEPTANCE_20261030.md)、[UI-01](../viewer/PROTOTYPE_V2_UI_01.md)。按需核对监控[DESIGN](../monitoring/DESIGN.md)、[CODEMAP](../monitoring/CODEMAP.md)、[S0](../monitoring/batches/B005.1/S0_CONTRACT.md)及[实际API](../../contracts/MONITORING_IMPLEMENTED_API.md)。P2按问题读PrefixLens等已有材料；P3才读历史。现场取证使用单份md与内嵌脱敏证据，不要求上传生产CSV。
+## 本轮固定的边界
 
-## 分线与前端
+- 只分析/回放目标appid、同服务/编码身份、明确窗口；不要求其他appid或整个生命周期历史。
+- context_check/format_visibility下沉内部校验；用户不修改模型配置。没有固定业务探测优先级。
+- 已知误注入cch元数据清理按业务信息无损处理，同集合定义不变的工具排序按稳定化修复处理。
+- 低命中用输入差异证据，Token内容用具体来源负担/重复/业务策略；无阈值时不发明超限或无用结论。
+- Loop/失败重试/子agent等仍只保留原数据需求，不做过程检测、不新增采集系统。
+- 编码、Tokenizer/Template、理想命中计量由监控维护并复用；页面只读保存结果，不在GET时触发分析。
 
-调研/产品设计放本目录，后续两线沿各自任务目录维护详细设计/开发。增量记忆未来使用memory/tasks/analysis.md，未启动不预建全部文件。[异常分析前端](../../../prompts/sessions/ANOMALY_ANALYSIS_FRONTEND_START.md)统一对接两类后端；产品/后端设计及契约固定后按工作流推进。两类分析设计和代码完成后才按用户启动自进化Agent。
+## 角色接口与依赖
+
+监控提供请求/原文、J/P/H/C/O、IDs/证据及配置身份；分析提出缺口并消费统一能力，不复制算法。已有analysis-runs是监控接口，不代表诊断已实现，signals的pending_consumer同理。
+
+用户已明确两线设计开发职责：主会话继续[低命中](../prefix-analysis/ENTRY.md)，[Token异常](../length-analysis/ENTRY.md)已获准fork并启动；低命中技术设计/CODEMAP已形成草案，Token线自行维护本线进度。[异常前端](../../../prompts/sessions/ANOMALY_ANALYSIS_FRONTEND_START.md)未启动；本次只整理文档，不修改HTML、源码或冻结契约。
+
+当前请求快照不保证session/turn/trace，字段Pointer不保证精确Token归属，源O不提供完整响应内容。这些是各规则降级的依据，不因规划而假定已有能力。
+
+## 恢复与交接
+
+P0：AGENTS → CURRENT → SESSIONS → docs/README → 本入口。P1阅读上述v0.4方案，P2按需核对[监控现场交接](../../huawei/MONITORING_V1_ACCEPTANCE_20261030.md)、[实际API](../../contracts/MONITORING_IMPLEMENTED_API.md)、[S0](../monitoring/batches/B005.1/S0_CONTRACT.md)，不全量读取历史。
+
+本轮文档链接/一致性及展示算术可检查，不能称业务探测器测试或实际回放。后续按本线详细设计和工作流推进开发；本次已完成授权fork并继续详细设计，未编码。详细历史与职责见[本线记忆](../../../memory/tasks/analysis.md)。
+
+后端技术入口：[低命中详细设计](../prefix-analysis/DESIGN.md) · [公共接入草案](BACKEND_COMMON_CONTRACT_DRAFT.md) · [低命中验证设计](../prefix-analysis/TESTS.md)。这些是待评审技术文档，不是已实现或冻结接口。
