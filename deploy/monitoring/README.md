@@ -1,21 +1,20 @@
-# 完整服务交付
+# 完整服务构建与交付
 
-此目录是dev6/F007完整前后端的发布入口，替代已归档的env/docker仅后端准备。CPU linux/amd64，Python3.11.16，前端由同源FastAPI挂载；默认仅绑定宿主127.0.0.1:18000。
+当前发布范围为监控V2/MA及异常分析RV2正式前后端；CPU linux/amd64，同源FastAPI静态资源。旧monitoring-v1-20261028包和manifest冻结，不能覆盖。
 
-基础镜像使用Docker Official Image在ECR的固定摘要，具体值写入交付manifest；不从浮动tag发布。构建前在WSL生成离线wheelhouse，按uv.lock/requirements.runtime.txt校验摘要。prepare_monitoring_context.py只复制明确源码、配置、前端dist、编码锁中资产和wheel，不包含生产输入、状态库、Git、凭据或上游仓库。Docker build使用--network=none和固定BASE_IMAGE。容器运行使用只读根、只读输入、独立可写/state、8CPU/32GiB、专属bridge网络，不依赖GPU或外网。
+有效打包授权后，prepare_monitoring_context.py须指定固定--source-commit；源码、配置、部署文件和版本从Git对象读取，前端在独立快照目录用已安装锁定工具构建，不读共享dirty源码或旧dist。wheelhouse逐包SHA须在requirements.runtime.txt中；模型资产须匹配固定commit编码锁。构建用固定BASE_IMAGE摘要、--network=none及pip --no-index --require-hashes。candidate.json记录实际组合版本、commit、dist、模型与文件摘要。
 
-交付目录包括镜像tar.gz、代码tar.gz、compose.yaml、deployment.env.example、release-manifest.json、SHA256SUMS、华为执行prompt和桌面验收说明。代码包包含可维护源码、前端离线dist、编码资产、离线wheelhouse及来源摘要；不承诺只靠代码包在无基础镜像时离线重建。现场应优先docker load已验证镜像，不要求重新编译。
+Dockerfile包含监控/MA/用户/诊断完整Python源码、正式dist、编码资产和运行依赖，不含生产输入/state、凭据或默认测试策略。运行Compose使用非root、只读root/input、独立可写state、8CPU/32GiB、专属bridge及127.0.0.1端口绑定；默认空业务recipe。
 
-启动前校验SHA256SUMS，docker load后核对manifest的完整image_id。复制环境模板到专用deployment.env，设置image tag、uid/gid、已创建的绝对输入/状态目录及空闲端口。使用：
+先在独立input/state完成容器检查，package_monitoring.py验证合成监控与重启报告、浏览器结果、绑定image_id/source_commit的完整服务validation。代码包git archive固定commit，加同一dist/模型/wheels/candidate，并逐文件核对context；镜像由docker save生成。release-manifest.json、SHA256SUMS、现场prompt及结果一同交付，仅项目artifacts/releases新目录。backup分支仅本地，默认不写桌面、不上传包体。
+
+使用manifest实际tag、宿主UID/GID及新建绝对input/state目录填写deployment.env：
 
 ```sh
-docker compose --env-file deployment.env -p tokenscope-v1 -f compose.yaml config
-docker compose --env-file deployment.env -p tokenscope-v1 -f compose.yaml up -d --pull never
-docker compose --env-file deployment.env -p tokenscope-v1 -f compose.yaml ps
+docker compose --env-file deployment.env -p tokenscope-rv2 -f compose.yaml config
+docker compose --env-file deployment.env -p tokenscope-rv2 -f compose.yaml up -d --pull never
 ```
 
-健康检查使用/healthz。/readyz可能因DeepSeek缺省思考未决返回503，应读取各模型诊断；不能据此静默选择生产思考默认。合成请求显式关闭思考，只代表测试输入。
+现场步骤见包内HUAWEI_AGENT_PROMPT.md。优先docker load，不要求联网安装/重建；代码包虽带wheelhouse/编码资产/dist，不带Docker基础镜像或模型权重。healthz是存活，readyz按模型解释，DeepSeek缺省思考不可擅自置false。默认无Token策略不是故障。现场CPU/磁盘/Docker/Compose须重核，不以V100名称推断GPU依赖。本机通过不代签现场。
 
-首次验收必须使用独立合成input/state。镜像内generate_monitoring_data.py生成固定种子、每模型5appid的泊松数据；verify_service.py显式--submit-synthetic才写入任务，--resume只读核对重启后instance、回执、快照和两格式导出字节。其报告不包含请求正文。浏览器现场检查同源页面、SSE、筛选/详情/导出；普通远端HTTP不能代替安全上下文大文件保存验收，可按现场许可使用SSH本地转发。
-
-回退先停本服务并备份完整state，再加载配套前后端/schema版本；不使用down -v或全局prune。涉及库序号回退必须按项目规则隔离实例。现场旧内核兼容性、资源及生产每文件<7200秒仍须实测。
+回退先停止专属项目并保全state，恢复旧镜像及配套备份state；不让旧版本读取可能升级的新库，不删除旧包，不使用down -v或全局prune。

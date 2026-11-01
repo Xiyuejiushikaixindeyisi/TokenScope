@@ -17,7 +17,7 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 | TokenScope总设计 | 未知，历史未核实 | 休眠 | 用户唤醒后处理总体边界与协调，不代写任务方案 | [总设计](../docs/tasks/product/ENTRY.md) |
 | Token监控后端开发V1 | 01a1682f-956d-7630-afe7-e123ba38dfc0，历史环境登记 | 休眠 | 保留V1能力/现场交接；不自动启动修复或打包 | [监控V1](../docs/tasks/monitoring/ENTRY.md) · [验收](../docs/huawei/MONITORING_V1_ACCEPTANCE_20261030.md) |
 | Token监控前端开发V1 | 01a17811-4c9a-7513-befc-b35723aec96e，前端环境已核实 | 休眠 | F007/UI-01和两份新前端prompt交接完成，保留原型开发起点 | [前端交接](../docs/tasks/viewer/ENTRY.md) · [UI-01](../docs/tasks/viewer/PROTOTYPE_V2_UI_01.md) |
-| 镜像打包和审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d，2026-11-01环境再次核实 | Token T2–T4与公共arpc-local-4独立复审均已完成 | Token164项本线+12项独立边界、ART4只读通过，无阻断；生产策略/用户视觉/现场未代签；等待总负责会话统一收口，本线不打包部署Git发布 | [Token实际报告](../docs/tasks/length-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md) · [公共实际报告](../docs/tasks/prefix-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md) |
+| 镜像打包和审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d，2026-11-01环境再次核实 | 用户明确授权后已接收并启动RV2统一审查；两后端独立复审保持 | P0：固定组合/前端聚合/完整服务审查，问题回总负责协调，独立复验通过后正式镜像/代码包/执行prompt交付；发布工具归口维护，Git由总负责收口；无桌面写入或远端部署 | [当前执行](../docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md) |
 | V2 Token监控后端（原父会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境与应用列表核实 | 历史角色；同一会话已按用户指派转为同事监控后端 | 已完成产品讨论、分线与版本整理；不再以父会话接管两线 | [产品记忆](tasks/monitoring.md) · [检查点](../docs/operations/V2_HANDOFF_20261030.md) |
 | V2 同事监控后端设计与开发（本会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境核实 | MA监控已闭环；现场启动/功能验证与Bug维护 | 2026-10-31用户限定：负责华为机服务启动、功能验证及发现的MA Bug修复；P90 TTFT/校准由用户监控线讨论，不继续扩展本线设计 | [MA入口](../docs/tasks/monitoring/v2-ma/ENTRY.md) · [记忆](tasks/monitoring-v2-ma.md) |
 | V2 用户监控后端—功能设计与开发 | 01a18bc7-cdb5-7830-a185-ad3aa6257b21，环境核实 | U006–U008 closed且源码已push；代码完成，性能校准待完成；前端接入支持 | 2026-10-31最小TTFT模型已实现，契约2.0.0；W覆盖全部非计算、不单列O，证据选填，旧历史兼容。380全量＋最终126测试、类型/静态/契约审计通过；前端交接完成但未改前端，现场/真实校准待完成 | [本线ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md) · [设计](../docs/tasks/monitoring/v2-user/DESIGN.md) · [记忆](tasks/monitoring-v2-user.md) |
@@ -32,7 +32,7 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 
 | 角色 | 实际ID／状态 | 优先任务与范围 | 依赖与入口 |
 | --- | --- | --- | --- |
-| 异常分析功能总负责（兼前端设计与开发） | 01a19111-344a-75c1-84e0-14db8be08f4f，已核实 | RV2修复/联合验证/归档/Git闭环；源码10f4a06已push并核实，L4/L5各一卡≤3例；195单元/组件、18浏览器；两后端实际独立复审通过 | P0：持续承接异常分析前端debug及主动后端归口协调；统一审查打包prompt已准备供用户转交，用户视觉待确认。不代写后端、不自行打包部署 | [Git交接](../docs/tasks/analysis/GIT_HANDOFF_RV2_20261101.md) · [联合报告](../docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md) |
+| 异常分析功能总负责（兼前端设计与开发） | 01a19111-344a-75c1-84e0-14db8be08f4f，已核实 | 用户已认可L4/L5展示并授权统一审查→修复复验→打包交付；prompt已实际发送并获接收，当前跟进审查 | P0：前端及两后端归口修复协调、Git统一收口、最终交付文件/版本/SHA256核验；打包由审查会话执行，无远端部署 | [执行与授权](../docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md) · [联合报告](../docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md) |
 | hybrid attention仿真 | 无session；暂不做 | 不调研设计或开发，不作为监控两线依赖 | 保留现有近似的能力边界 |
 | 自进化Agent | 未知；未启动 | 两类诊断设计与代码均完成后由用户另行启动 | [Agent ENTRY](../docs/tasks/evolution-agent/ENTRY.md) |
 

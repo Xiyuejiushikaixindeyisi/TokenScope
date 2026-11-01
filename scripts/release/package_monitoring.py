@@ -4,6 +4,7 @@ import argparse
 import gzip
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 import tarfile
@@ -25,20 +26,34 @@ def main():
     parser.add_argument("--acceptance", type=Path, required=True)
     parser.add_argument("--restart", type=Path, required=True)
     parser.add_argument("--browser-log", type=Path, required=True)
+    parser.add_argument(
+        "--validation",
+        type=Path,
+        required=True,
+        help="Unified container validation bound to image and commit",
+    )
+    parser.add_argument("--backup-branch", required=True)
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
     candidate = json.loads((args.context / "candidate.json").read_text())
     release_id = candidate["release_id"]
-    if "/" in release_id or release_id in ("", ".", ".."):
+    if not re.fullmatch(r"[a-z0-9][a-z0-9._-]+", release_id):
         raise ValueError("Invalid release ID")
     initial = json.loads(args.acceptance.read_text())
     restart = json.loads(args.restart.read_text())
     assert initial["passed"] and restart["passed"] and restart["restart_verified"]
     assert initial["service_instance_id"] == restart["service_instance_id"]
     assert initial["scopes"] == restart["scopes"]
-    assert (
-        "1 passed" in args.browser_log.read_text() and "failed" not in args.browser_log.read_text()
+    browser_text = args.browser_log.read_text()
+    assert re.search(r"[1-9][0-9]* passed", browser_text) and not re.search(
+        r"[1-9][0-9]* failed", browser_text
     )
+    assert args.backup_branch.startswith("backup/")
+    validation = json.loads(args.validation.read_text())
+    assert (
+        validation["passed"] is True and validation["source_commit"] == candidate["source_commit"]
+    )
+    assert all(validation["checks"].values())
     for name, expected in candidate["files"].items():
         assert digest(args.context / name) == expected, name
     image = json.loads(subprocess.check_output(["docker", "image", "inspect", args.image]))[0]
@@ -46,6 +61,8 @@ def main():
     assert (
         image["Config"]["Labels"]["org.opencontainers.image.revision"] == candidate["source_commit"]
     )
+    assert validation["image_id"] == image["Id"]
+    assert image["Config"]["Labels"]["org.opencontainers.image.version"] == release_id
     out = root / "artifacts/releases" / release_id
     out.mkdir(parents=True, exist_ok=False)
     code_tar = out / (release_id + "-code.tar")
@@ -70,6 +87,21 @@ def main():
             for entry in entries:
                 assert not entry.is_symlink()
                 archive.add(entry, arcname="TokenScope/" + str(entry.relative_to(args.context)))
+    with tarfile.open(code_tar) as archive:
+        members = archive.getmembers()
+        assert len({m.name for m in members}) == len(members)
+        assert all(
+            not m.issym()
+            and not m.islnk()
+            and not m.name.startswith("/")
+            and ".." not in Path(m.name).parts
+            for m in members
+        )
+        for name, expected in candidate["files"].items():
+            assert (
+                hashlib.sha256(archive.extractfile("TokenScope/" + name).read()).hexdigest()
+                == expected
+            ), name
     code_gz = code_tar.with_suffix(".tar.gz")
     with code_tar.open("rb") as source, code_gz.open("wb") as target:
         with gzip.GzipFile(filename="", mode="wb", fileobj=target, mtime=0) as compressed:
@@ -84,14 +116,15 @@ def main():
             shutil.copyfileobj(process.stdout, compressed, 1024 * 1024)
         assert process.wait() == 0, "docker save failed; output is not a release"
     copies = {
-        "compose.yaml": root / "deploy/monitoring/compose.yaml",
-        "deployment.env.example": root / "deploy/monitoring/deployment.env.example",
-        "HUAWEI_AGENT_PROMPT.md": root / "prompts/delivery/HUAWEI_MONITORING_FULL_SERVICE.md",
-        "DEPLOYMENT_README.md": root / "deploy/monitoring/README.md",
+        "compose.yaml": args.context / "deploy/monitoring/compose.yaml",
+        "deployment.env.example": args.context / "deploy/monitoring/deployment.env.example",
+        "HUAWEI_AGENT_PROMPT.md": args.context / "prompts/delivery/HUAWEI_FULL_SERVICE_RV2.md",
+        "DEPLOYMENT_README.md": args.context / "deploy/monitoring/README.md",
         "candidate.json": args.context / "candidate.json",
         "container-acceptance.json": args.acceptance,
         "container-restart.json": args.restart,
         "container-browser.log": args.browser_log,
+        "unified-container-validation.json": args.validation,
     }
     for name, source in copies.items():
         shutil.copyfile(source, out / name)
@@ -111,8 +144,8 @@ def main():
             for p in sorted(out.iterdir())
             if p.is_file()
         },
-        "local_backup_branch": "backup/20261028-monitoring-v1",
-        "desktop_destination": "C:\\Users\\ALIENWARE\\Desktop\\TokenScope-" + release_id,
+        "local_backup_branch": args.backup_branch,
+        "desktop_destination": None,
     }
     (out / "release-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     sums = "".join(f"{digest(p)}  {p.name}\n" for p in sorted(out.iterdir()) if p.is_file())
