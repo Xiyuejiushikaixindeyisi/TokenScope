@@ -1,0 +1,378 @@
+{
+  "date": "2026-11-01",
+  "finalized_at_utc": "2026-11-01T07:38:52.877220+00:00",
+  "session_id": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "status": "passed_local_delivery_onsite_pending",
+  "authorization": "docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md",
+  "report": "docs/tasks/delivery/RV2_UNIFIED_REVIEW_20261101.md",
+  "release_id": "tokenscope-rv2-20261101",
+  "source_commit": "45d9285210dc0b9edeb86c599c7b6bcd942f60b5",
+  "versions": {
+    "version": "analysis-rv2-20261101",
+    "frontend": "viewer-analysis-ui04-local-3",
+    "public_backend": "arpc-local-4",
+    "token_private": "token-review-20261101-1",
+    "token_plugin": "token-content-2"
+  },
+  "source_identity_sha256": "b1a261eb987375f15f341515f9d5f066d99324163070776168bf06b9b132885a",
+  "verified_business_source_files": 179,
+  "image_tag": "tokenscope/full-service:tokenscope-rv2-20261101",
+  "image_id": "sha256:483db762852b38ef54559cff1bb23ef668ea9296a055ce02aac44a809b427ce5",
+  "platform": "linux/amd64",
+  "base_image": "public.ecr.aws/docker/library/python@sha256:a36c24f9cbdf4fd0f52d67f0823eeac19c2028c637cecc392d97f980d4fec56b",
+  "monitoring_contracts": {
+    "s0": "1.0.0",
+    "user": "2.0.0",
+    "ma": "1.0.0"
+  },
+  "analysis_contracts": [
+    "analysis-common-1.0",
+    "diagnostics-http-1",
+    "diagnostics-discovery-1",
+    "analysis-recommendations-1"
+  ],
+  "schemas": {
+    "control": 3,
+    "view": "1"
+  },
+  "release_directory": "/home/zhangxiyue/TokenScope/artifacts/releases/tokenscope-rv2-20261101",
+  "desktop_destination": null,
+  "delivery_files": {
+    "DEPLOYMENT_README.md": {
+      "bytes": 2387,
+      "sha256": "97cbb1c1c798dd9aa38f9276676e73bef377e4b93aaceb27319190992d9169af"
+    },
+    "HUAWEI_AGENT_PROMPT.md": {
+      "bytes": 8609,
+      "sha256": "88955f9613e4c4c5b06047c9c05ee26c76f5d3f6d40488a406bfe991c5664c13"
+    },
+    "candidate.json": {
+      "bytes": 26505,
+      "sha256": "ccb7f98e868c7ccef211870ada9c6fabac656a6dbfb351f8a96a67278cca6095"
+    },
+    "compose.yaml": {
+      "bytes": 1325,
+      "sha256": "cc2d82b1f37d56e6e0ce1b7011f6307444a81e72bda19c666d1ef4761f5a9bb0"
+    },
+    "container-acceptance.json": {
+      "bytes": 6775,
+      "sha256": "335fd8bcefcaacaf23307b1a7b7289a292d831dadcd30928945ac5628a26707c"
+    },
+    "container-browser.log": {
+      "bytes": 9792,
+      "sha256": "b163b4cc9f756421564762c6708521c74bf7d50632b1226157494980438c885c"
+    },
+    "container-restart.json": {
+      "bytes": 6774,
+      "sha256": "71301ca4298decddab4e57ad444433f558928b2357a9a7bc95d2466cf9095ded"
+    },
+    "deployment.env.example": {
+      "bytes": 303,
+      "sha256": "474a89a8c4e61d70b101b6f3afa2ef99a5e769fd37b7e174cef5f0c6bcee8c06"
+    },
+    "docker-save.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "release-manifest.json": {
+      "bytes": 6887,
+      "sha256": "c6493df20d4160e64bb609a74496eabb7605a8f54f86edd9e00e82fec16ce02f"
+    },
+    "tokenscope-rv2-20261101-code.tar.gz": {
+      "bytes": 71071747,
+      "sha256": "3fd0ac85e0ed59598fdd3228a61dd0d90256ae43b2fcb2e6f47f1b665f8410ea"
+    },
+    "tokenscope-rv2-20261101-image.tar.gz": {
+      "bytes": 204553967,
+      "sha256": "951a89a4fd3cf94577239669107e4a8d80aa69426e5d7e005a96929a63a0b3d7"
+    },
+    "unified-container-validation.json": {
+      "bytes": 2095,
+      "sha256": "57d893c1b91891e1e9281fb979fc2790b02067a37a57d4df5f6e4c1f54a42772"
+    }
+  },
+  "sha256sums_sha256": "42811bdab9b9f4558ab7966cb83d395a8b0eb2bfbe56177d018257ad05ca5072",
+  "models": [
+    {
+      "model_id": "Qwen3.6-27B",
+      "source": "https://huggingface.co/Qwen/Qwen3.6-27B",
+      "revision": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9",
+      "license": "apache-2.0",
+      "files": [
+        {
+          "path": "models/qwen36-27b/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer_config.json",
+          "role": "tokenizer_config.json",
+          "sha256": "5186f0defcd7f232382c7f0aebcd2252d073bb921ab240e407b7ae8745d2b29b",
+          "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B/resolve/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer_config.json"
+        },
+        {
+          "path": "models/qwen36-27b/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/chat_template.jinja",
+          "role": "chat_template.jinja",
+          "sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+          "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B/resolve/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/chat_template.jinja"
+        },
+        {
+          "path": "models/qwen36-27b/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer.json",
+          "role": "tokenizer.json",
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+          "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B/resolve/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer.json"
+        }
+      ]
+    },
+    {
+      "model_id": "GLM-5.2",
+      "source": "https://huggingface.co/zai-org/GLM-5.2",
+      "revision": "cf457fa734ab149ffef225f80893eb38c6ff5cdc",
+      "license": "mit",
+      "files": [
+        {
+          "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer_config.json",
+          "role": "tokenizer_config.json",
+          "sha256": "98b1271574f41abf89427ae2dda030d94dc9478f0edc5a8bd240db213c6fd5fc",
+          "source_url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer_config.json"
+        },
+        {
+          "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/chat_template.jinja",
+          "role": "chat_template.jinja",
+          "sha256": "172dc74a35e1752df75ecfb2b2cf9326d2852bb1379868ebeec9571654489679",
+          "source_url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/chat_template.jinja"
+        },
+        {
+          "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer.json",
+          "role": "tokenizer.json",
+          "sha256": "19e773648cb4e65de8660ea6365e10acca112d42a854923df93db4a6f333a82d",
+          "source_url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer.json"
+        }
+      ]
+    },
+    {
+      "model_id": "DeepSeek-V4-Flash-0731",
+      "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+      "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "models/deepseek-v4-flash-0731/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer_config.json",
+          "role": "tokenizer_config.json",
+          "sha256": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547",
+          "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer_config.json"
+        },
+        {
+          "path": "models/deepseek-v4-flash-0731/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer.json",
+          "role": "tokenizer.json",
+          "sha256": "8f9f37ca37fdc4f5fd36d5cf4d3b0e8392edb4e894fd10cc0d70b4957c8633cf",
+          "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer.json"
+        }
+      ]
+    }
+  ],
+  "candidate_files": 182,
+  "wheelhouse_files": 38,
+  "runtime": {
+    "python": "3.11.16",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36",
+    "tokenscope_package": "0.1.0.dev6",
+    "packages": {
+      "fastapi": "0.162.0",
+      "pydantic": "2.14.1",
+      "tokenizers": "0.23.2",
+      "transformers": "5.21.0",
+      "numpy": "2.4.6",
+      "uvicorn": "0.54.0"
+    },
+    "docker": {
+      "Client": {
+        "Version": "26.1.4",
+        "ApiVersion": "1.45",
+        "DefaultAPIVersion": "1.45",
+        "GitCommit": "5650f9b",
+        "GoVersion": "go1.21.11",
+        "Os": "linux",
+        "Arch": "amd64",
+        "BuildTime": "Wed Jun  5 11:27:57 2024",
+        "Context": "default"
+      },
+      "Server": {
+        "Platform": {
+          "Name": "Docker Engine - Community"
+        },
+        "Components": [
+          {
+            "Name": "Engine",
+            "Version": "26.1.4",
+            "Details": {
+              "ApiVersion": "1.45",
+              "Arch": "amd64",
+              "BuildTime": "Wed Jun  5 11:29:25 2024",
+              "Experimental": "false",
+              "GitCommit": "de5c9cf",
+              "GoVersion": "go1.21.11",
+              "KernelVersion": "6.18.33.2-microsoft-standard-WSL2",
+              "MinAPIVersion": "1.24",
+              "Os": "linux"
+            }
+          },
+          {
+            "Name": "containerd",
+            "Version": "v1.7.18",
+            "Details": {
+              "GitCommit": "ae71819c4f5e67bb4d5ae76a6b735f29cc25774e"
+            }
+          },
+          {
+            "Name": "runc",
+            "Version": "1.1.12",
+            "Details": {
+              "GitCommit": "v1.1.12-0-g51d5e94"
+            }
+          },
+          {
+            "Name": "docker-init",
+            "Version": "0.19.0",
+            "Details": {
+              "GitCommit": "de40ad0"
+            }
+          }
+        ],
+        "Version": "26.1.4",
+        "ApiVersion": "1.45",
+        "MinAPIVersion": "1.24",
+        "GitCommit": "de5c9cf",
+        "GoVersion": "go1.21.11",
+        "Os": "linux",
+        "Arch": "amd64",
+        "KernelVersion": "6.18.33.2-microsoft-standard-WSL2",
+        "BuildTime": "2024-06-05T11:29:25.000000000+00:00"
+      }
+    },
+    "compose": "Docker Compose version v2.27.1",
+    "npm_package_label": "0.1.0-f007",
+    "package_labels_note": "Legacy dev6/f007 package labels are retained; actual feature/source identity is pinned by commit and candidate versions."
+  },
+  "results": {
+    "frontend_unit_component": 195,
+    "source_browser": {
+      "total": 18,
+      "controlled_api": 11,
+      "real_service": 7
+    },
+    "source_readonly_gets": 215,
+    "original_rv1_files_unchanged": 84,
+    "original_screenshots_sha256_unchanged": 12,
+    "release_isolated_git_test": 1,
+    "container_browser": {
+      "total": 56,
+      "analysis": 17,
+      "monitoring_user_ma": 39,
+      "excluded_from_container": [
+        "development_redirect_port_4193",
+        "development_src_module_import"
+      ]
+    },
+    "container_readonly_diagnostic_gets": 215,
+    "container_static_dist_files": 4,
+    "monitoring_model_count": 3,
+    "monitoring_scopes": 15,
+    "new_diagnostic_ready_and_sse": true,
+    "configured_recipe_count": 0,
+    "restart_read_urls": 325,
+    "restart_business_schema_and_rows_unchanged": true,
+    "public_owner_sequence_tests": 12,
+    "archive_docker_load": true,
+    "code_archive_members_including_directories": 1708,
+    "code_archive_regular_files": 1365,
+    "received_git_files_verified": 1314,
+    "candidate_files_verified": 182,
+    "checksummed_delivery_files": 13
+  },
+  "issues": [
+    {
+      "id": "URV2-01",
+      "status": "closed",
+      "area": "release_tools",
+      "problem": "Working-tree/stale dist and V1 release identity could contaminate a release",
+      "fix_commit": "2e0c9a588e87ca517947d158e3d6473d2ec4ed8f",
+      "verification": "fixed-commit isolated Git test and final candidate/archive identity"
+    },
+    {
+      "id": "URV2-02",
+      "status": "closed",
+      "area": "onsite_prompt",
+      "problem": "Synthetic generator output directory already exists at mount root",
+      "fix_commit": "45d9285210dc0b9edeb86c599c7b6bcd942f60b5",
+      "verification": "synthetic-generation-fixed.log and final fixed-source build"
+    },
+    {
+      "id": "URV2-03",
+      "status": "nonblocking_closed_with_limitation",
+      "area": "diagnostic_restart",
+      "problem": "SQLite internal AUTOINCREMENT allocation grows on ignored legacy-terminal backfill",
+      "verification": "325 public response digests/business rows unchanged; 12 public-owner pagination/reconnect checks",
+      "limitation": "Internal sqlite_sequence 29 to 34 while terminal rows remain 5; not byte-level database idempotency or large-history startup performance proof"
+    }
+  ],
+  "local_backup": {
+    "branch": "backup/20261101-tokenscope-rv2",
+    "commit": "dd58917b8eecc9b9791fb6f4605394e6cb6a529e",
+    "parent_source": "45d9285210dc0b9edeb86c599c7b6bcd942f60b5",
+    "archives_in_git": false,
+    "pushed": false,
+    "main_and_index_unchanged": true,
+    "tracked_release_files": [
+      "release-manifest.json",
+      "SHA256SUMS"
+    ],
+    "verified_no_upstream": true
+  },
+  "cleanup_evidence": "artifacts/reviews/analysis-rv2-unified/cleanup.json",
+  "evidence_sha256": {
+    "artifacts/reviews/analysis-rv2-unified/identity-start.json": "02841e27a12cf29403e52df7d3bf2f7b8cd993ddf161fd69c70cd1f03683114b",
+    "artifacts/reviews/analysis-rv2-unified/checks.json": "b42130ad4ca292f978a69ed5782da6ab157042b3d4a00450f1b45130ec64955b",
+    "artifacts/reviews/analysis-rv2-unified/unit.log": "9070c7414b4901fff77c52fdbc103beb035822db8fa0d42e54ff8b1043e0dcd5",
+    "artifacts/reviews/analysis-rv2-unified/browser.log": "2c04a9cfed0907787a6354522437b970770e82b08f3f20bbe5eeb683ec5cf9ec",
+    "artifacts/reviews/analysis-rv2-unified/rv2-readonly/rv1-final-readonly.json": "75dc623595389f409c095b1747d3dfd1b062e9dc79a472bd997ae85ea6af0468",
+    "artifacts/reviews/analysis-rv2-unified/screenshot-provenance-audit.json": "7f088d1d6e6e41a1e0618360a26841b2e5bd6e8d43672f10f17931fdd2af594b",
+    "artifacts/reviews/analysis-rv2-unified/release-tools-test.log": "93c97c10af4fc8b54296201243c032c5e8295479ca6b4adc06019033d6f9e282",
+    "artifacts/reviews/analysis-rv2-unified/synthetic-generation.log": "adc2c5a145ac471708b1183c297889d9579345e8432e55308eebc6b38850a8ed",
+    "artifacts/reviews/analysis-rv2-unified/synthetic-generation-fixed.log": "446d3a6a62b11669d92f4d25d734a4e371019fc0c60f75ea3809ba3ca8e8e450",
+    "artifacts/reviews/analysis-rv2-unified/final-build/context.log": "64d8343b7cac24837c20c76929e4db0a4aefb437892429b8445852fb6ab80090",
+    "artifacts/reviews/analysis-rv2-unified/final-build/docker-build.log": "91ef71e6e4e0d96a70532609d5d9aab0eb2e5943464801541ef259f263f24274",
+    "artifacts/reviews/analysis-rv2-unified/final-build/image-inspect.json": "e6cfdc3fdf2a6403242b9638f03170141037b8dab39596e1eef41eb74a55cda1",
+    "artifacts/reviews/analysis-rv2-unified/container-readonly.json": "435de41ab23f6c1141b92f2022943754d15a0006b68be5f514f137a0f6c0bfe3",
+    "artifacts/reviews/analysis-rv2-unified/container-acceptance.json": "335fd8bcefcaacaf23307b1a7b7289a292d831dadcd30928945ac5628a26707c",
+    "artifacts/reviews/analysis-rv2-unified/container-browser-run.log": "b163b4cc9f756421564762c6708521c74bf7d50632b1226157494980438c885c",
+    "artifacts/reviews/analysis-rv2-unified/container-new-diagnostic.json": "bae5b0b61c175230013fbd51142dc2e21c186a43ecb347be2eede6d21b9d2b39",
+    "artifacts/reviews/analysis-rv2-unified/container-restart.json": "71301ca4298decddab4e57ad444433f558928b2357a9a7bc95d2466cf9095ded",
+    "artifacts/reviews/analysis-rv2-unified/container-v2-diagnostic-restart.json": "a0534ff55461ab19b76344b382a402968cad6816fcecd649b8a32cc28afdc97d",
+    "artifacts/reviews/analysis-rv2-unified/diagnostic-sequence-restart.json": "b0be28850a8ae7e05dd07f5208a4444a6e10dfb4387110298f11af135c01096e",
+    "artifacts/reviews/analysis-rv2-unified/unified-container-validation.json": "57d893c1b91891e1e9281fb979fc2790b02067a37a57d4df5f6e4c1f54a42772",
+    "artifacts/reviews/analysis-rv2-unified/public-sequence-check/RESULT.md": "a2d39f06d46513d69527f16aa7867a6c985ab09fa0c9c46e84f49d01cfd167a4",
+    "artifacts/reviews/analysis-rv2-unified/public-sequence-check/test_sequence_gaps.py": "b4ddcd9669f4b617e88b2c0114006000036a4a03094ee8532b3ac4b9adf595d4",
+    "artifacts/reviews/analysis-rv2-unified/public-sequence-check/results.log": "2c1535f0ec5b71f4f1ecc62f679f9f661c2e91c57030139730883fd30af3d3ac",
+    "artifacts/reviews/analysis-rv2-unified/public-sequence-check/identity.json": "863b8f4cceedede13b11781ba08f5ac9e51334ba751e29b2ff076f39b3fd10e1",
+    "artifacts/reviews/analysis-rv2-unified/archive-verification.json": "1767073c5f6c76ccbd702a1bb5d3a6be8261c6966faee7fd1cd606c8498aa547",
+    "artifacts/reviews/analysis-rv2-unified/docker-load.log": "dba009d560b411f24c8d46f6926ff0f2efc480a3af9fb1d171ea8e2c08fdfd67",
+    "artifacts/reviews/analysis-rv2-unified/runtime-environment.json": "8741d9eeb863fe23e56b60c0011ff1525987edeeeb3a022f9944d8eb65ae7cf8",
+    "artifacts/reviews/analysis-rv2-unified/local-backup.json": "dd10deb2ea3b8bbaf8250080026d5fd1c2fcbce6670446ed6851ddbb1ea2c687",
+    "artifacts/reviews/analysis-rv2-unified/cleanup.json": "dc859a0bbe9bf9811c9a4cad153b3251e8636ebcaec0a716218b940f40ef7e0d",
+    "artifacts/validation/analysis-delivery-20261101/received-release-verification.json": "8a4249e2b31e65855d77d6da0b231a88d3356c3fac647baf4d5abdc4b5afaf33"
+  },
+  "boundaries": {
+    "onsite_acceptance": "pending",
+    "remote_deployment": false,
+    "production_policy_approval": false,
+    "production_data_included": false,
+    "model_weights_included": false,
+    "runtime_state_included": false,
+    "credentials_included": false,
+    "default_test_recipe_included": false,
+    "base_image_archive_included": false,
+    "host_offline_rebuild_requires_base_image": true,
+    "ttft_calibration": "pending",
+    "large_history_startup_performance": "not_verified",
+    "legacy_package_labels": "python 0.1.0.dev6 / npm 0.1.0-f007; use fixed commit and component versions for source identity"
+  },
+  "rollback": "Stop only the dedicated new Compose service; restore old image with its matching backed-up state and env on a separate port. Do not open upgraded state with an old image; do not down -v, prune or delete old releases.",
+  "git_handoff_owner": "01a19111-344a-75c1-84e0-14db8be08f4f",
+  "main_commit_or_push_by_reviewer_this_closeout": false
+}

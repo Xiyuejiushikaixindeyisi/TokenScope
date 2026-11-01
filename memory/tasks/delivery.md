@@ -1,6 +1,6 @@
 # 审查与交付维护记忆
 
-更新：2026-11-01。角色：镜像打包和审查；实际环境CODEX_THREAD_ID为`01a1800e-80b4-7400-a78b-a84f5b6e888d`。Token私有T2–T4与公共arpc-local-4独立复审已完成，等待异常分析总负责统一收口及用户验收；本线不打包部署或Git发布。
+更新：2026-11-01。角色：镜像打包和审查；实际环境CODEX_THREAD_ID/CODEX_SESSION_ID均为`01a1800e-80b4-7400-a78b-a84f5b6e888d`。用户认可L4/L5并授权统一审查、修复复验后交付；RV2本机审查与交付实际完成，当前为最终报告/记忆交总负责统一Git收口，华为现场待执行。[最终报告](../../docs/tasks/delivery/RV2_UNIFIED_REVIEW_20261101.md)和[结构化结果](../../docs/tasks/delivery/RV2_DELIVERY_RESULT_20261101.json)为恢复入口。下文历史“等待/暂不打包”仅对应当时阶段，不覆盖本次已完成授权；本次收尾不再构建/改包或自行push main。
 
 监控V2独立复审通过，RV2-01/02/03关闭；173单元/组件、51源码浏览器、39容器及4项受影响复测通过，115个读取地址重启摘要一致。源码cd14fc73b77e7baff4fa9b45f3dc886f7c996272及文档检查点fe7f08387d0aa09bedd531677c7bf68d2c215969已推送main并核实。候选身份、测试边界和Git证据见[当前状态](../../docs/tasks/delivery/MONITORING_V2_STATUS.md)。其他session异常分析改动未纳入该提交。
 
@@ -22,3 +22,13 @@ V1 monitoring-v1-20261028已交付且身份冻结；现场启动/功能验证及
 
 2026-11-01 Token独立复审闭环：私有17源码+19测试匹配候选，65源码/测试起止无漂移；164项/86.05s，mypy17及ruff通过；12项独立边界/0.26s通过，ART4副本14个GET URL、四建议八例和错误实例校验通过，35原文件未变。无阻断缺陷，未改业务代码/契约；null tool_calls保守partial为显式兼容边界，构造策略不代替生产授权。模型8资产/5锁重新核对。原始探针失败及修订版本均保留。报告[Token实际结果](../../docs/tasks/length-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md)与JSON，证据artifacts/reviews/token-independent-20261101。Git收口由用户指定异常分析总负责会话负责，本线不提交当前候选、不打包部署。
 2026-11-01交接已实际发送：通过既有thread工具向Token维护会话01a18fcd-0464-7cf1-b435-4f394bd33e66回传报告、候选/证据摘要、12项独立边界与未覆盖事项，工具返回成功；由其沿已授权RV2-T交总负责会话。本线未发送新的部署或Git执行指令。
+
+## 2026-11-01 RV2统一审查与交付闭环
+
+业务179项匹配固定源码；源码195项单元/组件、18浏览器、215只读GET通过。发布工具发现共享dirty源码/旧dist及V1固定配置问题，归口修复提交2e0c9a5；现场prompt生成目录问题修复为最终45d9285210dc0b9edeb86c599c7b6bcd942f60b5。两项均经实际复验，总负责已push固定源码，本线未改业务/契约。
+
+发布tokenscope-rv2-20261101，镜像sha256:483db762852b38ef54559cff1bb23ef668ea9296a055ce02aac44a809b427ce5。最终容器56浏览器、215诊断GET、3模型15监控范围/导出，新任务ready及SSE、325地址重启摘要通过；SQLite内部allocator增长而业务行/公开游标不变，公共维护方12项核验非阻断。不声称数据库字节不变或大历史启动性能。代码包71,071,747 bytes/SHA3fd0ac85e0ed59598fdd3228a61dd0d90256ae43b2fcb2e6f47f1b665f8410ea；镜像包204,553,967 bytes/SHA951a89a4fd3cf94577239669107e4a8d80aa69426e5d7e005a96929a63a0b3d7。实际docker load与总负责13校验文件、1314固定Git文件、182candidate文件接收通过。
+
+交付仅项目artifacts/releases/tokenscope-rv2-20261101，冻结14文件（SHA256SUMS列其余13个），不写桌面、不上传包、不远端部署。local backup/20261101-tokenscope-rv2提交dd58917b8eecc9b9791fb6f4605394e6cb6a529e仅额外记录manifest/SHA，无包体、无upstream、未push，不合main。测试18061容器与本轮专用daemon已停止，state保留，4191/8016正常。旧V1包、84份RV1原证据及12份旧截图摘要保持。其他session修改/CURRENT/SESSIONS不动。
+
+华为现场、真实MA/TTFT校准与生产策略仍待对应维护方实际验证；代码包无基础镜像tar，不承诺无基础镜像离线重建。回退必须旧镜像匹配旧state，不对升级state降级。精确交付/证据SHA和所有限制见最终报告；Git由异常分析总负责01a19111-344a-75c1-84e0-14db8be08f4f统一收口。本次未追加主线提交或push。
