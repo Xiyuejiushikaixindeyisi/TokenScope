@@ -1,5 +1,7 @@
 # Session 角色与任务登记
 
+2026-11-01最新职责变更：完整服务总负责人交还镜像打包与审查会话，已主动通知并获明确接收；其负责华为启动/验收和直接协调归口修复，覆盖Token监控V2（MA、搜索等）及两类异常。本会话转回异常前端维护支持；[交接及当前权责](../docs/tasks/analysis/ONSITE_COORDINATION_HANDOFF_20261101.md)。此决定覆盖旧MA现场总负责/异常前端总负责分工，业务唯一维护方不变。
+
 2026-11-01最新：用户认可RV2 L4/L5后授权统一审查与复验后打包，审查/发布工具修复/容器验证/交付接收已完成；[交付记录](../docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md)。本条覆盖旧“等待验收/暂不打包”；无远端部署，其他角色范围保持。
 
 ARPC005公共app/bootstrap装配窗口已释放：ARPC006验证完成，当前arpc-local-1交接支持；不修改正式前端、不打包部署。
@@ -19,9 +21,9 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 | TokenScope总设计 | 未知，历史未核实 | 休眠 | 用户唤醒后处理总体边界与协调，不代写任务方案 | [总设计](../docs/tasks/product/ENTRY.md) |
 | Token监控后端开发V1 | 01a1682f-956d-7630-afe7-e123ba38dfc0，历史环境登记 | 休眠 | 保留V1能力/现场交接；不自动启动修复或打包 | [监控V1](../docs/tasks/monitoring/ENTRY.md) · [验收](../docs/huawei/MONITORING_V1_ACCEPTANCE_20261030.md) |
 | Token监控前端开发V1 | 01a17811-4c9a-7513-befc-b35723aec96e，前端环境已核实 | 休眠 | F007/UI-01和两份新前端prompt交接完成，保留原型开发起点 | [前端交接](../docs/tasks/viewer/ENTRY.md) · [UI-01](../docs/tasks/viewer/PROTOTYPE_V2_UI_01.md) |
-| 镜像打包和审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d，2026-11-01环境再次核实 | RV2统一审查、发布归口修复、容器复验及镜像/代码/prompt交付完成；两后端独立复审保持 | tokenscope-rv2-20261101冻结；56容器浏览器、重启/归档load通过；包体只在项目内，Git由总负责收口；无桌面写入或远端部署，现场待执行 | [交付与审查](../docs/tasks/delivery/RV2_UNIFIED_REVIEW_20261101.md) |
+| 镜像打包与审查／完整服务总负责 | 01a1800e-80b4-7400-a78b-a84f5b6e888d，2026-11-01环境再次核实 | 已接回总负责，重新组织完整华为执行prompt；RV2冻结交付已完成 | P0：华为启动、用户监控V2/MA/搜索等及两类异常完整验收，直接协调对应session收集/复现/debug/修复/联合复验，后续版本/Git/交付收口；旧包身份保持 | [最新职责交接](../docs/tasks/analysis/ONSITE_COORDINATION_HANDOFF_20261101.md) · [交付入口](../docs/tasks/delivery/ENTRY.md) |
 | V2 Token监控后端（原父会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境与应用列表核实 | 历史角色；同一会话已按用户指派转为同事监控后端 | 已完成产品讨论、分线与版本整理；不再以父会话接管两线 | [产品记忆](tasks/monitoring.md) · [检查点](../docs/operations/V2_HANDOFF_20261030.md) |
-| V2 同事监控后端设计与开发（本会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境核实 | MA监控已闭环；现场启动/功能验证与Bug维护 | 2026-10-31用户限定：负责华为机服务启动、功能验证及发现的MA Bug修复；P90 TTFT/校准由用户监控线讨论，不继续扩展本线设计 | [MA入口](../docs/tasks/monitoring/v2-ma/ENTRY.md) · [记忆](tasks/monitoring-v2-ma.md) |
+| V2 同事监控后端设计与开发 | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境核实 | MA监控维护；按完整服务总负责协调参与现场验证与Bug修复 | 新决定将华为启动/验收总责交镜像打包与审查；本线仍归口MA收集/复现/修复，不承担全功能总责。P90 TTFT/校准归用户监控线 | [MA入口](../docs/tasks/monitoring/v2-ma/ENTRY.md) · [记忆](tasks/monitoring-v2-ma.md) |
 | V2 用户监控后端—功能设计与开发 | 01a18bc7-cdb5-7830-a185-ad3aa6257b21，环境核实 | U006–U008 closed且源码已push；代码完成，性能校准待完成；前端接入支持 | 2026-10-31最小TTFT模型已实现，契约2.0.0；W覆盖全部非计算、不单列O，证据选填，旧历史兼容。380全量＋最终126测试、类型/静态/契约审计通过；前端交接完成但未改前端，现场/真实校准待完成 | [本线ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md) · [设计](../docs/tasks/monitoring/v2-user/DESIGN.md) · [记忆](tasks/monitoring-v2-user.md) |
 | 低命中率分析后端设计和开发（原异常分析母会话） | 01a18be2-7112-7aa2-919b-5137d1f1b1ad，2026-10-31环境THREAD/SESSION ID一致复核 | arpc-local-4独立复审通过；2026-11-01 RV2-L聚合接入验证闭环，L4/L5各唯一6请求、215只读路由通过；精确提交清单交总负责统一收口，本线不commit/push、不打包部署 | L1–L5后端设计开发；兼任公共分析结果/范围/证据/离线评估封装的单一设计集成维护方，复用监控算法；Token fork已获准创建 | [本线ENTRY](../docs/tasks/prefix-analysis/ENTRY.md) · [记忆](tasks/prefix-analysis.md) · [分线交接](../docs/tasks/analysis/BACKEND_SPLIT_HANDOFF.md) |
 | Token异常分析后端设计和开发 | 01a18fcd-0464-7cf1-b435-4f394bd33e66，环境再次核实 | T2–T4+arpc-local-4独立复审通过（明确限制），164本线+12独立边界+14只读GET，无阻断或业务修改；RV2-T精确清单交总负责统一收口，本线不commit/push、不打包部署 | 唯一维护src/tokenscope/token_content、tests/unit/token_content、tests/integration/token_content及本线文档；不改公共源码；参数错配独立，不打包部署 | [前端交接](../docs/tasks/length-analysis/FRONTEND_HANDOFF.md) · [记忆](tasks/length-analysis.md) |
@@ -34,7 +36,7 @@ P0：AGENTS → CURRENT → 本登记 → docs/README → 本角色ENTRY。首�
 
 | 角色 | 实际ID／状态 | 优先任务与范围 | 依赖与入口 |
 | --- | --- | --- | --- |
-| 异常分析功能总负责（兼前端设计与开发） | 01a19111-344a-75c1-84e0-14db8be08f4f，已核实 | L4/L5获用户认可；已协调统一审查、发布归口修复、公共序号边界核验与交付；固定源码45d9285已push | 最终文件/版本/SHA256独立接收通过，报告/记忆Git收口；13文件、1314固定Git文件及182构建资产匹配，发布目录冻结；后端业务仍原维护方，无远端部署 | [交付及执行](../docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md) · [联合报告](../docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md) |
+| 异常分析前端维护（原本机阶段总负责） | 01a19111-344a-75c1-84e0-14db8be08f4f，已核实 | 本机RV2交付闭环；按用户决定已交还完整服务总负责职责 | 异常前端归口维护、现场问题支持及被协调复验；不继续统一指挥后端或华为验收，不作为新总负责与后端中转；原交付/验证身份保持 | [职责交接](../docs/tasks/analysis/ONSITE_COORDINATION_HANDOFF_20261101.md) · [前端入口](../docs/tasks/viewer/analysis/ENTRY.md) |
 | hybrid attention仿真 | 无session；暂不做 | 不调研设计或开发，不作为监控两线依赖 | 保留现有近似的能力边界 |
 | 自进化Agent | 未知；未启动 | 两类诊断设计与代码均完成后由用户另行启动 | [Agent ENTRY](../docs/tasks/evolution-agent/ENTRY.md) |
 

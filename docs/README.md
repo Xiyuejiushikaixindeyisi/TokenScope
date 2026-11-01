@@ -1,6 +1,6 @@
 # 文档入口
 
-异常分析当前由[功能总负责RV2入口](tasks/analysis/COORDINATION_RV2.md)统筹修复、联合验证与Git收口；历史AF阶段已[归档](../achieve/2026-11-01/analysis-rv2/README.md)。
+完整服务总负责已按2026-11-01用户决定交回镜像打包与审查会话，负责华为启动/完整验收及归口修复协调；[职责交接](tasks/analysis/ONSITE_COORDINATION_HANDOFF_20261101.md)。现场范围包括Token监控V2（用户监控、MA、搜索等）和两类异常。异常前端转为维护支持；原[RV2本机统筹](tasks/analysis/COORDINATION_RV2.md)与[AF归档](../achieve/2026-11-01/analysis-rv2/README.md)保留历史依据。
 
 监控V2评审与修复已闭环并归档：[当前状态](tasks/delivery/MONITORING_V2_STATUS.md)。2026-11-01用户认可异常分析L4/L5展示，已授权[统一审查、修复复验后完整服务打包交付](tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md)。
 
