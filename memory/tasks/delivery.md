@@ -1,5 +1,7 @@
 # 审查与交付维护记忆
 
+2026-11-02后续：按用户明确授权，完整新版目录已复制至 `C:\Users\ALIENWARE\Desktop\tokenscope-rv2-fs01-20261102`；15文件逐一SHA256与WSL原件一致，14条SHA256SUMS及清单自身摘要通过，WSL原包保留且未改写。未重新构建或上传。复制证据：`artifacts/reviews/rv2-fs01-20261102/desktop-copy-20261102.json`；[完整SHA256记录副本](../../docs/tasks/delivery/FS01_DESKTOP_COPY_20261102.json)随本轮文档提交，包体/镜像及backup分支不推送。
+
 2026-11-02：本session实际ID01a1800e-80b4-7400-a78b-a84f5b6e888d再次核实。FS-01正式源码0263d784已push，WSL发布`tokenscope-rv2-fs01-20261102`通过71浏览器、15范围、新诊断、546地址重启与docker load；项目内交付，旧包/证据及8份其他session修改保持，本地backup分支不推送。[文件/版本/SHA与回退](../../docs/tasks/delivery/FS01_DELIVERY_20261102.md)。P0下一步为按全功能prompt组织华为实际验收，不把本机通过写成现场通过。
 
 2026-11-01最新：完整本机合成E2E候选通过；实际session仍01a1800e-80b4-7400-a78b-a84f5b6e888d。新state真实worker覆盖监控V2/搜索/MA/L1–L5/T2–T4及恢复，发现SourceLink的user_run_id/run参数错配FS-01，已直接归口异常前端一行修复。独立71浏览器/203单元组件通过，476地址重启摘要/业务控制表一致。候选dist只读挂载原483db762后端镜像，不是新镜像；旧14交付文件SHA不变。证据/输入/state在artifacts/reviews/full-service-synthetic-20261101保留，专属18062与daemon已关闭，4191/8016健康。[完整结果](../../docs/tasks/delivery/FULL_SERVICE_SYNTHETIC_E2E_20261101.md)和[新版完整华为prompt](../../prompts/delivery/HUAWEI_FULL_SERVICE_ACCEPTANCE_V2_20261101.md)为恢复入口；仍待正式修复版本交付/现场真实数据与TTFT校准，本轮无commit/push/打包/部署。其他8份脏文档保留，其中MA2份并发增量独立记录。
