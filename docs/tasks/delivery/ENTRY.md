@@ -1,6 +1,6 @@
 # 镜像打包和审查入口
 
-2026-11-02当前：[FS-01正式版本发布](FS01_DELIVERY_20261102.md)，用户已授权提交/push和新版WSL构建；旧包保持。现场执行改用[本版全功能prompt](../../../prompts/delivery/HUAWEI_FULL_SERVICE_FS01_20261102.md)。下方11-01的“未重新打包”是当时阶段结论。
+2026-11-02当前：[FS-01正式交付完成](FS01_DELIVERY_20261102.md)，固定源码0263d784已push，新版tokenscope-rv2-fs01-20261102的71浏览器/15范围/新诊断/546地址恢复及归档校验通过。旧包保持，本地备份不push；现场改用[本版完整华为prompt](../../../prompts/delivery/HUAWEI_FULL_SERVICE_FS01_20261102.md)，并携带同版合成材料。华为现场仍待执行。下方11-01“未重新打包”是历史阶段。
 
 2026-11-01最新：[完整本机合成E2E](FULL_SERVICE_SYNTHETIC_E2E_20261101.md)通过修复候选71浏览器/203单元组件，476地址重启一致；[FS-01来源跳转缺陷](FULL_SERVICE_E2E_ISSUES_20261101.md)已归口修复并独立复验。旧RV2镜像/代码包未含修复，保持冻结，本轮未重新打包/推送/部署。新版[完整华为prompt](../../../prompts/delivery/HUAWEI_FULL_SERVICE_ACCEPTANCE_V2_20261101.md)及[结构化身份/结果](FULL_SERVICE_SYNTHETIC_RESULT_20261101.json)为下轮入口。总负责仍为本session，后续正式修复交付及华为全功能验收由本线协调。
 

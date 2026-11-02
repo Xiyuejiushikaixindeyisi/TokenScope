@@ -1,6 +1,6 @@
 # 当前状态
 
-2026-11-02用户明确授权FS-01正式版本提交/push、新镜像与代码交付。审查打包会话正按固定提交构建，旧包保留，其他session修改保留；[本次发布记录](../docs/tasks/delivery/FS01_DELIVERY_20261102.md)。
+2026-11-02 FS-01正式交付已完成：`tokenscope-rv2-fs01-20261102`，源码`0263d784b4603cf693b30b809bec2d9311b2732e`已push；新镜像71浏览器/15范围/新诊断及546地址重启通过，归档load和SHA核验通过。[文件/版本/校验/回退](../docs/tasks/delivery/FS01_DELIVERY_20261102.md)。旧包和其他session修改保持；包体仅本地备份管理，华为全功能验收仍待执行。
 
 2026-11-01本机全功能合成E2E已完成：[验收结果](../docs/tasks/delivery/FULL_SERVICE_SYNTHETIC_E2E_20261101.md)。发现来源跳转FS-01，归口修复后独立71浏览器/203单元组件通过，476地址重启摘要一致；修复dist仅只读挂载冻结后端验证。旧RV2镜像/代码包未含修复，未重新打包/推送/现场部署；[新华为prompt](../prompts/delivery/HUAWEI_FULL_SERVICE_ACCEPTANCE_V2_20261101.md)要求修复版正式交付后再完整现场验收。证据/state保留，测试容器及专用daemon已关闭；其他session修改保留。
 

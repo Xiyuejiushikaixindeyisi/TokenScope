@@ -1,0 +1,143 @@
+{
+  "release_id": "tokenscope-rv2-fs01-20261102",
+  "source_commit": "0263d784b4603cf693b30b809bec2d9311b2732e",
+  "source_pushed_to_main": true,
+  "image_tag": "tokenscope/full-service:tokenscope-rv2-fs01-20261102",
+  "image_id": "sha256:037a641839b4f7d6ae0572f3af0fafc18a8b5e4c269bb9e19998819abce78710",
+  "location": "/home/zhangxiyue/TokenScope/artifacts/releases/tokenscope-rv2-fs01-20261102",
+  "files": {
+    "DEPLOYMENT_README.md": {
+      "sha256": "97cbb1c1c798dd9aa38f9276676e73bef377e4b93aaceb27319190992d9169af",
+      "bytes": 2387
+    },
+    "HUAWEI_AGENT_PROMPT.md": {
+      "sha256": "14f2701995afb97c4cc58f8287c104f338e5dcb51c6d88bc8a375fe68b74ae7f",
+      "bytes": 16414
+    },
+    "SHA256SUMS": {
+      "sha256": "b50e6126a86c9ce7eec0469c2edda84f3b53521ac9d446a413283a1c6faf6c91",
+      "bytes": 1273
+    },
+    "SYNTHETIC_ACCEPTANCE.tar.gz": {
+      "sha256": "8c2e894f081697c43cf9e8a2d82d6c88813cf68f9e2770d18cf6d5a185a306d7",
+      "bytes": 247380
+    },
+    "candidate.json": {
+      "sha256": "1482bc36431bd6bd8b0bb87c446f686ce803552273a0e411c93be8f0c3ea23b1",
+      "bytes": 26684
+    },
+    "compose.yaml": {
+      "sha256": "cc2d82b1f37d56e6e0ce1b7011f6307444a81e72bda19c666d1ef4761f5a9bb0",
+      "bytes": 1325
+    },
+    "container-acceptance.json": {
+      "sha256": "af3b2933460364bb58ab75079fcc3efd8bc6106c7b162b3d62726f8a0f1e8157",
+      "bytes": 6775
+    },
+    "container-browser.log": {
+      "sha256": "d4a544470b2afacf04879cbe56f5b019b90c0d51d6b88a7c122aa6aa96b992b3",
+      "bytes": 11993
+    },
+    "container-restart.json": {
+      "sha256": "b5ac0517d29b7e8158868089b41e10205d486bfb3c439db9534b79d36e1f36df",
+      "bytes": 6774
+    },
+    "deployment.env.example": {
+      "sha256": "474a89a8c4e61d70b101b6f3afa2ef99a5e769fd37b7e174cef5f0c6bcee8c06",
+      "bytes": 303
+    },
+    "docker-save.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "release-manifest.json": {
+      "sha256": "e9b7854c413dc8043fd82b65f5d0e223e27963746fe26b5281d313455a4f8ae8",
+      "bytes": 7237
+    },
+    "tokenscope-rv2-fs01-20261102-code.tar.gz": {
+      "sha256": "012ba7e6877da4700d70560fb0ebbc8aeb5e6c2b350083fdeefa4ab859371b27",
+      "bytes": 71137917
+    },
+    "tokenscope-rv2-fs01-20261102-image.tar.gz": {
+      "sha256": "534460f1de2b8713ec242e9fcb9cf0078e106098a621c7d9fffaccd508cf7986",
+      "bytes": 204552977
+    },
+    "unified-container-validation.json": {
+      "sha256": "3ff76abd08188444686d476b1eacfdf5c071be75f1e21206b5bfc359fb7e4bd7",
+      "bytes": 2828
+    }
+  },
+  "source_identity_sha256": "69819ec7772ef29d3cce6325a5a401b149cb09aba382096edb1be8c19616bd10",
+  "checks": {
+    "browser": {
+      "passed": 71,
+      "skipped": 0
+    },
+    "fixed_source_release_tool_tests": 2,
+    "fresh_monitoring_scopes": 15,
+    "fresh_diagnostic": {
+      "passed": true,
+      "new_task_id": "93815a7d-ab68-4ed4-b512-cc40111fb371",
+      "status": "ready",
+      "configured_recipe_count": "0",
+      "recommendations": 0,
+      "user_run_id": "ur-e409fc1a87ef4bcebcee168fcf20d51b",
+      "kit_helper_sha256": "0956bb680a70d757f3e65279ecf4b347e4a563b6f0549540de7235bc5e12eb61"
+    },
+    "restart_addresses": 546,
+    "docker_load": true,
+    "context_file_hashes": 182,
+    "git_archive_files": 1328,
+    "old_release_unchanged": 14,
+    "prior_evidence_unchanged": 320,
+    "other_session_files_preserved": 8
+  },
+  "local_backup": {
+    "branch": "backup/20261102-tokenscope-rv2-fs01",
+    "commit": "d5fabfbcc54643263157c5699410a54a0480efdf",
+    "parent_source": "0263d784b4603cf693b30b809bec2d9311b2732e",
+    "archives_in_git": false,
+    "pushed": false,
+    "main_and_index_unchanged": true,
+    "tracked_release_files": [
+      "release-manifest.json",
+      "SHA256SUMS"
+    ]
+  },
+  "evidence_root": "/home/zhangxiyue/TokenScope/artifacts/reviews/rv2-fs01-20261102",
+  "evidence_manifest_sha256": "77458f866785eb8f98a7638884b533ead361cb0c9c3d42d94fbcb8367270384c",
+  "cleanup": {
+    "own_compose_project": "tokenscope-fs01-acceptance",
+    "own_container_removed": true,
+    "private_daemon_pending_stop": false,
+    "state_and_evidence_retained": true,
+    "shared_services": {
+      "http://127.0.0.1:4191/": 200,
+      "http://127.0.0.1:8016/healthz": 200
+    },
+    "no_other_running_private_containers": true,
+    "private_daemon": {
+      "pid": 2285449,
+      "verified_command": [
+        "dockerd",
+        "--data-root",
+        "/home/zhangxiyue/TokenScope/artifacts/docker/data",
+        "--exec-root",
+        "/home/zhangxiyue/TokenScope/artifacts/docker/run",
+        "--pidfile",
+        "/home/zhangxiyue/TokenScope/artifacts/docker/dockerd.pid",
+        "--host",
+        "unix:///home/zhangxiyue/TokenScope/artifacts/docker/docker.sock",
+        "--group",
+        "zhangxiyue"
+      ],
+      "stopped": true,
+      "other_running_containers_before_stop": 0
+    },
+    "shared_services_after_daemon_stop": true
+  },
+  "onsite_acceptance": "pending",
+  "desktop_destination": null,
+  "production_strategy_approval": "not_granted_by_synthetic_tests",
+  "source_docs_note": "Image/code use source_commit above; this result is a later documentation-only closeout, not a new runtime source."
+}
