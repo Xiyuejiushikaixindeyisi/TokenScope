@@ -1,0 +1,97 @@
+{
+  "status": "local_synthetic_candidate_passed",
+  "session": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "date": "2026-11-01",
+  "candidate": "viewer-analysis-source-link-fix-20261101",
+  "source_base": "45d9285210dc0b9edeb86c599c7b6bcd942f60b5",
+  "git_head": "0ee61f595d283efb3f4e89a9d26dc5831bf95da5",
+  "source_change": {
+    "apps/viewer/src/features/analysis/SourceLink.tsx": "23bc15b0cc4d188def35ce2906b4c8ba8ed45ce40a7a66b183f2fa1336ac4b14"
+  },
+  "container_base_image": "sha256:483db762852b38ef54559cff1bb23ef668ea9296a055ce02aac44a809b427ce5",
+  "candidate_dist_mode": "readonly bind mount on frozen backend image; not newly built image",
+  "dist": {
+    "assets/export-validator-rZ4O78aZ.js": {
+      "sha256": "e52838c80a214d465b29b1e6049fabe887e80d8077fc5ce121061c8f109e9d41",
+      "bytes": 214958
+    },
+    "assets/index-B0NF97xZ.css": {
+      "sha256": "f12a494a33195ad0cf0822c69642b285f2ec4389e3c6b7ee3b4d07b5c8873fd5",
+      "bytes": 84533
+    },
+    "assets/index-DHpQ3Bex.js": {
+      "sha256": "35c3178466d735a379d593d3e4cd24fbbde1c2f5f09a945a4553995f6a52982b",
+      "bytes": 933006
+    },
+    "index.html": {
+      "sha256": "55ad4d514b8ccd81e60bca978d6839e1876f41dacfd84848460116df60c7a88c",
+      "bytes": 377
+    }
+  },
+  "browser": {
+    "startTime": "2026-11-01T09:54:13.889Z",
+    "duration": 128115.64399999999,
+    "expected": 71,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "unit_component_tests": 203,
+  "base_model_scopes": 15,
+  "restart_paths": 476,
+  "blocking_issue_found": "FS-01 wrong user source URL parameter",
+  "blocking_issue_candidate_closed": true,
+  "frozen_release_contains_fix": false,
+  "new_package_created": false,
+  "onsite_executed": false,
+  "git_commit_push_performed": false,
+  "other_session_changes_preserved": true,
+  "concurrent_other_session_doc_updates": {
+    "docs/tasks/monitoring/v2-ma/ENTRY.md": {
+      "before": "dffbbe4fe0be8001c0f418f7a7a8d69d674c47ad8972a30f411a75c6dae4c34a",
+      "after": "1bf623ab9bef2047834be0d2265196a676f6f9bf4a2652ee7daea2b386150736"
+    },
+    "memory/tasks/monitoring-v2-ma.md": {
+      "before": "2f3d7314816d34b471001dd2a1650db5de0912971347153fc2002caba576787f",
+      "after": "e9a25d167f4ac47b6078a79e866c0691da9073e049a010e53f54b44a839862e0"
+    }
+  },
+  "prompt": {
+    "version": "full-service-onsite-v2-20261101",
+    "path": "prompts/delivery/HUAWEI_FULL_SERVICE_ACCEPTANCE_V2_20261101.md",
+    "sha256": "809cb35673d749d31e6ad1f88d76c507e41f7a869725d2d126460dd059e958e3",
+    "release_gate": "requires formally delivered version containing FS-01; frozen rv2 bundle unchanged"
+  },
+  "evidence": {
+    "artifacts/reviews/full-service-synthetic-20261101/identity-start.json": "2853c90beecd949cf66596acb6c01765140d4fa5809a4d745e39e905e7440d47",
+    "artifacts/reviews/full-service-synthetic-20261101/identity-final.json": "33242819f98c341c0a08bb1be39f91d7ee634434cd4d3b50c81a3868697a04f0",
+    "artifacts/reviews/full-service-synthetic-20261101/base-acceptance.json": "a15dc2856529bbd6c58aea8ea5940bfa30b8ec819005b34fba7d01385690e241",
+    "artifacts/reviews/full-service-synthetic-20261101/real-search-api.json": "ffdee97ac542fd424693b4883765a1587e554582b1eafbe185ff191058b70d14",
+    "artifacts/reviews/full-service-synthetic-20261101/real-search-browser-final.json": "69b920a0f57d3317218b513ca39dc6a52ca31ab0a01c2b326523a60d74537ba8",
+    "artifacts/reviews/full-service-synthetic-20261101/ma-independent-actual.json": "884e268e985a84f719361f7ae8c8c65b29ac5df64cec26e75c966ce8993c5782",
+    "artifacts/reviews/full-service-synthetic-20261101/ma-independent-result.json": "55608043aa11fecf42e2c1e9dcda5c3e803c6a9b21a2d0d8c61a5fb14bd243a6",
+    "artifacts/reviews/full-service-synthetic-20261101/diagnostic-sse-result.json": "1e5071d0cfb24b83aae0d38d6b4fb115f9c4303da35b4431971d9c4663a5f758",
+    "artifacts/reviews/full-service-synthetic-20261101/token-boundary-result.json": "447b09843639ba5dc8759ffee9e79e45c8ee0f992c93e25142da406520587e22",
+    "artifacts/reviews/full-service-synthetic-20261101/token-boundary-actual.json": "dc2b891f956156763e798598bee733dd7c40f0b41060b6b95da7469f1e564615",
+    "artifacts/reviews/full-service-synthetic-20261101/default-empty-recipe.json": "dc73166a79404f7546334ee3dc3d003579e3aeeba825d51e9dddc02d057e6609",
+    "artifacts/reviews/full-service-synthetic-20261101/new-L2-L3-result.json": "9e86f431fdc0d7cf59a2734c0a5eaad6a09786019c027b523c55d60e61e4f3a9",
+    "artifacts/reviews/full-service-synthetic-20261101/settings-real-cas-final.json": "67701324f6c098b1cfbb551cd5525b7fba162f8b47bdb135dfdf4ea6f645e120",
+    "artifacts/reviews/full-service-synthetic-20261101/queue-concurrency-final.json": "af83d7e0e53479a3b5b7c4d565422f1e6b1f3245ff693b28d2d587d2d5670670",
+    "artifacts/reviews/full-service-synthetic-20261101/crash-recovery-result.json": "c6eb838b69d036a33fd019402beecc59540989f5c69d0f32cfdf3e48f9405035",
+    "artifacts/reviews/full-service-synthetic-20261101/full-service-restart.json": "46b124e0244e4022c46add46aa7003278c245308776ee204203824ff5a3337b7",
+    "artifacts/reviews/full-service-synthetic-20261101/diagnostic-sequence-restart.json": "4193a1d70463c7b05443bd50518e67a4949b987f5e8f2ba91787439c6fbeddf5",
+    "artifacts/reviews/full-service-synthetic-20261101/candidate-overlay-identity.json": "61e7b072a8976ac79df6a23a09cdb929e7f015be7febda1755cb4ccc42064425",
+    "artifacts/reviews/full-service-synthetic-20261101/candidate-all-browser.json": "5671491269d92ca0b93bfebcc27ff11121c70e38f7c198a630b282553fe71ee5",
+    "artifacts/reviews/full-service-synthetic-20261101/candidate-unit.log": "5085366a05bd34a2668d573269c9376a403edfcdc381cbd160b4fa8e93121f31",
+    "artifacts/reviews/full-service-synthetic-20261101/cleanup.json": "3fd1e74bd38a74f21f437f05e20118dc2a191e269fac7df33b5a79cc5edefe86",
+    "artifacts/reviews/full-service-synthetic-20261101/public-fixture-handoff/prepared-config/actual-http.json": "af456d81b292ffb1540ef70439e80ea15dd1174939c9e603972db958efbf1313"
+  },
+  "pending": [
+    "formal source/Git/release closeout as next work",
+    "new image/code package including FS-01 before full Huawei acceptance",
+    "actual Huawei environment and full feature execution",
+    "real data MA windows/UUID/model specification",
+    "TTFT real performance calibration",
+    "production recipe authorization/content quality/remote reference service"
+  ]
+}

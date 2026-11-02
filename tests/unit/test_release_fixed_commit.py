@@ -8,8 +8,11 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
 
-def test_fixed_commit_ignores_dirty_source_and_dist(tmp_path):
+
+@pytest.mark.parametrize("custom_metadata", [False, True])
+def test_fixed_commit_ignores_dirty_source_and_dist(tmp_path, custom_metadata):
     root = tmp_path / "repo"
     root.mkdir()
     source = Path(__file__).resolve().parents[2]
@@ -60,6 +63,13 @@ def test_fixed_commit_ignores_dirty_source_and_dist(tmp_path):
     }
     put("docs/tasks/analysis/VERSION_RV2_20261101.json", json.dumps(version))
 
+    if custom_metadata:
+        put(
+            "docs/tasks/delivery/new-version.json",
+            json.dumps({**version, "version": "new-version"}),
+        )
+        put("prompts/delivery/new-prompt.md", "new-prompt-fixed")
+
     def git(*args):
         return subprocess.check_output(
             ["git", *args], cwd=root, stderr=subprocess.STDOUT, text=True
@@ -77,6 +87,9 @@ def test_fixed_commit_ignores_dirty_source_and_dist(tmp_path):
         "fixture",
     )
     commit = git("rev-parse", "HEAD")
+    if custom_metadata:
+        put("prompts/delivery/new-prompt.md", "UNCOMMITTED-prompt")
+        put("docs/tasks/delivery/new-version.json", "UNCOMMITTED-version")
     put("src/test.py", "UNCOMMITTED-source")
     put("apps/viewer/src/main.ts", "UNCOMMITTED-frontend")
     put("apps/viewer/dist/index.html", "STALE-dist")
@@ -106,6 +119,13 @@ def test_fixed_commit_ignores_dirty_source_and_dist(tmp_path):
         "--source-commit",
         commit,
     ]
+    if custom_metadata:
+        command += [
+            "--version-file",
+            "docs/tasks/delivery/new-version.json",
+            "--onsite-prompt",
+            "prompts/delivery/new-prompt.md",
+        ]
     subprocess.run(command, cwd=root, env=env, check=True, capture_output=True)
     assert (out / "src/test.py").read_text() == "fixed-source"
     assert (out / "apps/viewer/dist/index.html").read_text() == "fixed-frontend"
@@ -113,6 +133,10 @@ def test_fixed_commit_ignores_dirty_source_and_dist(tmp_path):
     assert (root / "apps/viewer/dist/index.html").read_text() == "STALE-dist"
     candidate = json.loads((out / "candidate.json").read_text())
     assert candidate["source_commit"] == candidate["frontend_built_from_commit"] == commit
+    if custom_metadata:
+        assert candidate["versions"]["version"] == "new-version"
+        assert (out / candidate["onsite_prompt"]).read_text() == "new-prompt-fixed"
+        assert (root / "prompts/delivery/new-prompt.md").read_text() == "UNCOMMITTED-prompt"
     assert not (out / "wheels").exists()
     for file, expected in candidate["files"].items():
         assert hashlib.sha256((out / file).read_bytes()).hexdigest() == expected

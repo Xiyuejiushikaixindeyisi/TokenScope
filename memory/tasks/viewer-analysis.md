@@ -1,5 +1,7 @@
 # 异常分析前端维护与本机统筹历史
 
+2026-11-01维护：总负责在新18062合成E2E发现user_v2来源跳转写user_run_id而监控读run；本线仅SourceLink一行改为run，原身份/abort/base来源保持。203单元组件及3真实生产候选dist浏览器通过，覆盖冷浏览器、另一最近运行、刷新和base回归；独立候选在artifacts/validation/viewer/analysis/source-link-20261101/dist，共享dist不变。当前交总负责独立复审，不commit/push/Docker，不改CURRENT/SESSIONS或冻结包。[交接](../../docs/tasks/viewer/analysis/SOURCE_LINK_FIX_20261101.md)。
+
 2026-11-01最新职责：用户将总负责权柄交还镜像打包与审查`01a1800e-80b4-7400-a78b-a84f5b6e888d`，已主动发送并收到其明确接受。该会话负责华为启动与完整服务验收、直接协调各session修复复验、版本/Git/交付收口，正在另存完整现场prompt，范围覆盖Token监控V2的MA/搜索等及两类异常。本会话现在仅异常分析前端维护和被协调支持；[交接](../../docs/tasks/analysis/ONSITE_COORDINATION_HANDOFF_20261101.md)。后文总负责称谓均是已完成本机阶段历史，不继续套用。
 
 2026-11-01最新：用户认可RV2 L4/L5展示并授权主动发送prompt、统一审查→归口修复→复验→打包交付，现已完成。发布工具和现场prompt两项问题已归口修复并push；最终固定源码`45d9285210dc0b9edeb86c599c7b6bcd942f60b5`，交付`tokenscope-rv2-20261101`。最终镜像56浏览器、215诊断读取、15范围监控与重启325地址检查通过；公共后端12项核验确认内部自增序号空洞不影响SSE/目录，保留元数据变化事实。docker load及总负责独立校验13交付文件、1314固定Git文件、182 candidate文件通过，发布目录冻结。文件/版本/SHA见[交付记录](../../docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md)。无远端部署，生产策略与华为现场不代签。下文此前“只产出prompt/未发送/不打包”是旧开发收口时点。

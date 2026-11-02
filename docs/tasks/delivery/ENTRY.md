@@ -1,5 +1,9 @@
 # 镜像打包和审查入口
 
+2026-11-02当前：[FS-01正式版本发布](FS01_DELIVERY_20261102.md)，用户已授权提交/push和新版WSL构建；旧包保持。现场执行改用[本版全功能prompt](../../../prompts/delivery/HUAWEI_FULL_SERVICE_FS01_20261102.md)。下方11-01的“未重新打包”是当时阶段结论。
+
+2026-11-01最新：[完整本机合成E2E](FULL_SERVICE_SYNTHETIC_E2E_20261101.md)通过修复候选71浏览器/203单元组件，476地址重启一致；[FS-01来源跳转缺陷](FULL_SERVICE_E2E_ISSUES_20261101.md)已归口修复并独立复验。旧RV2镜像/代码包未含修复，保持冻结，本轮未重新打包/推送/部署。新版[完整华为prompt](../../../prompts/delivery/HUAWEI_FULL_SERVICE_ACCEPTANCE_V2_20261101.md)及[结构化身份/结果](FULL_SERVICE_SYNTHETIC_RESULT_20261101.json)为下轮入口。总负责仍为本session，后续正式修复交付及华为全功能验收由本线协调。
+
 2026-11-01最新：用户认可RV2 L4/L5并授权后，统一审查、发布修复复验、WSL构建、最终容器及归档load、总负责独立接收均已完成。固定源码`45d9285210dc0b9edeb86c599c7b6bcd942f60b5`，发布`tokenscope-rv2-20261101`，交付目录冻结。[最终审查/文件/版本/校验与回退](RV2_UNIFIED_REVIEW_20261101.md) · [结构化结果](RV2_DELIVERY_RESULT_20261101.json) · [授权及总负责执行](../analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md)。本次没有远端部署或桌面写入；华为现场待执行。下方“等待/暂不打包”是本次授权前历史，不再指当前已完成交付；后续新打包按新安排执行。
 
 ## 前序审查依据

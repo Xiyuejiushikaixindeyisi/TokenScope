@@ -1,5 +1,7 @@
 # 异常分析前端入口
 
+2026-11-01维护：完整服务总负责派发的user_v2来源跳转P1已在本线修复，待其独立复审。[交接与独立候选dist](SOURCE_LINK_FIX_20261101.md)；仅SourceLink URL参数一行变更，203单元/组件及3真实浏览器回归通过，未提交/push或更新冻结镜像。
+
 2026-11-01最新：用户已认可RV2 L4/L5展示，本机统一审查/交付已闭环。总负责权柄已交还镜像打包与审查会话，由其组织华为启动、监控V2及异常分析完整验收和归口修复；本session回到异常分析前端维护支持。[职责交接](../../analysis/ONSITE_COORDINATION_HANDOFF_20261101.md) · [冻结交付](../../analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md)。原[本机统筹](../../analysis/COORDINATION_RV2.md)为历史，不继续指挥后端。
 
 2026-10-31；session `01a19111-344a-75c1-84e0-14db8be08f4f`，Windows环境CODEX_THREAD_ID与CODEX_SESSION_ID一致复核，独立于创建方及两后端。

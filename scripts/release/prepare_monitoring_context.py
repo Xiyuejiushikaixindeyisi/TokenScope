@@ -20,7 +20,12 @@ def main():
     parser.add_argument("--release-id", required=True)
     parser.add_argument("--base-image", required=True)
     parser.add_argument("--source-commit", required=True)
+    parser.add_argument("--version-file", default="docs/tasks/analysis/VERSION_RV2_20261101.json")
+    parser.add_argument("--onsite-prompt", default="prompts/delivery/HUAWEI_FULL_SERVICE_RV2.md")
     args = parser.parse_args()
+    for name in (args.version_file, args.onsite_prompt):
+        if Path(name).is_absolute() or ".." in Path(name).parts:
+            parser.error("Version and prompt must be repository-relative paths")
     root = Path(__file__).resolve().parents[2]
     out = args.output.resolve()
     if not out.is_relative_to(root / "artifacts/builds"):
@@ -77,8 +82,8 @@ def main():
         "env/sources.lock.json",
         "scripts/validation/generate_monitoring_data.py",
         "scripts/release/verify_service.py",
-        "prompts/delivery/HUAWEI_FULL_SERVICE_RV2.md",
-        "docs/tasks/analysis/VERSION_RV2_20261101.json",
+        args.onsite_prompt,
+        args.version_file,
     ]
     files += [p for p in tracked if p.startswith(("src/", "configs/", "deploy/monitoring/"))]
     for name in sorted(set(files)):
@@ -104,12 +109,14 @@ def main():
     for wheel in wheels:
         assert not wheel.is_symlink() and digest(wheel) in allowed, wheel.name
         shutil.copyfile(wheel, out / "wheelhouse" / wheel.name)
-    version = json.loads(blob("docs/tasks/analysis/VERSION_RV2_20261101.json"))
+    version = json.loads(blob(args.version_file))
     for name, sha in version["source_and_dependency_files"].items():
         assert hashlib.sha256(blob(name)).hexdigest() == sha, name
     candidate = {
         "release_id": args.release_id,
         "source_commit": commit,
+        "version_file": args.version_file,
+        "onsite_prompt": args.onsite_prompt,
         "base_image": args.base_image,
         "versions": {
             k: version[k]

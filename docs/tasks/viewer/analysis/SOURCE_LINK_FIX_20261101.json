@@ -1,0 +1,86 @@
+{
+  "candidate": "viewer-analysis-source-link-fix-20261101",
+  "status": "owner_verified_pending_independent_review",
+  "responsible_session": "01a19111-344a-75c1-84e0-14db8be08f4f",
+  "review_owner_session": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "source_base_commit": "0ee61f595d283efb3f4e89a9d26dc5831bf95da5",
+  "frozen_release_source": "45d9285210dc0b9edeb86c599c7b6bcd942f60b5",
+  "created_at_utc": "2026-11-01T09:54:18.620508+00:00",
+  "files": {
+    "apps/viewer/src/features/analysis/SourceLink.tsx": {
+      "sha256": "23bc15b0cc4d188def35ce2906b4c8ba8ed45ce40a7a66b183f2fa1336ac4b14",
+      "bytes": 2648
+    },
+    "apps/viewer/tests/component/analysis-source-link.test.tsx": {
+      "sha256": "1dcf6ff72bfe20e75aaced56f2f0a844fc39a4f37bc26f9bf1c8d6f648a41b66",
+      "bytes": 5444
+    },
+    "apps/viewer/tests/browser/analysis-source-link.spec.ts": {
+      "sha256": "0815e68b6b6b0164b97541d5ed6b8eb4834a600cde61b512a9c1dd65824b6859",
+      "bytes": 4740
+    },
+    "docs/tasks/viewer/analysis/SOURCE_LINK_FIX_20261101.md": {
+      "sha256": "b4213a26ce13fcddb80999993458f0a91ca021149072fdef2443dec865bee497",
+      "bytes": 4352
+    },
+    "docs/tasks/viewer/analysis/ENTRY.md": {
+      "sha256": "8514725c603a590cb0812a67b1310bec344b7665f3dabc31292dd37379727b2f",
+      "bytes": 5137
+    },
+    "memory/tasks/viewer-analysis.md": {
+      "sha256": "da3f92391e0bc9caed673b990d13b0736574a07d1101c72d6582d3c970ba7c8b",
+      "bytes": 4971
+    }
+  },
+  "dist": {
+    "assets/export-validator-rZ4O78aZ.js": {
+      "sha256": "e52838c80a214d465b29b1e6049fabe887e80d8077fc5ce121061c8f109e9d41",
+      "bytes": 214958
+    },
+    "assets/index-B0NF97xZ.css": {
+      "sha256": "f12a494a33195ad0cf0822c69642b285f2ec4389e3c6b7ee3b4d07b5c8873fd5",
+      "bytes": 84533
+    },
+    "assets/index-DHpQ3Bex.js": {
+      "sha256": "35c3178466d735a379d593d3e4cd24fbbde1c2f5f09a945a4553995f6a52982b",
+      "bytes": 933006
+    },
+    "index.html": {
+      "sha256": "55ad4d514b8ccd81e60bca978d6839e1876f41dacfd84848460116df60c7a88c",
+      "bytes": 377
+    }
+  },
+  "dist_directory": "/home/zhangxiyue/TokenScope/artifacts/validation/viewer/analysis/source-link-20261101/dist",
+  "validation": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "unit_component": "203 passed; 23 files",
+    "targeted_new_component_tests": 8,
+    "real_browser": "3 passed in 9.5s",
+    "browser": "Windows Chrome",
+    "frontend": "independent production dist preview4196",
+    "backend": "existing synthetic18062",
+    "writes_to_backend": false,
+    "shared_dist_unchanged": true,
+    "only_production_source_change": "SourceLink URL query user_run_id -> run",
+    "preview_stopped": true
+  },
+  "evidence": {
+    "artifacts/validation/viewer/analysis/source-link-20261101/build-inputs.json": "b2db6d959ba2c169a05c47eb79f1d343e642eb2d600f84a004f4dad09c4f35df",
+    "artifacts/validation/viewer/analysis/source-link-20261101/fixture.json": "9ba81dd284ab02eee75df810f77f6005ddee7c51eef543d325914abdaf5a2245",
+    "artifacts/validation/viewer/analysis/source-link-20261101/checks.log": "9dd43a7cdeae8e88210c7f3e414a3f8cf5d62415634a35cef992de83e113c711",
+    "artifacts/validation/viewer/analysis/source-link-20261101/final-checks.log": "cd79d0d72ff5de2691035aa5353dae45d129965fc1f9444b9cedf9235813e577",
+    "artifacts/validation/viewer/analysis/source-link-20261101/final-static.log": "b38fed0da87f12462276538025274531ed43906584b1e72b81379b82331aaea0",
+    "artifacts/validation/viewer/analysis/source-link-20261101/browser.log": "c3ba89315d6708155367e9d49e7ed3da7b0ef4a804be75ade872825fa9f848f9",
+    "artifacts/validation/viewer/analysis/source-link-20261101/browser-final.log": "fc938c41556653f33c1a90339507b63495d4a7d04f1e1062bd09227c65e0ce65",
+    "artifacts/validation/viewer/analysis/source-link-20261101/preview.json": "a8606d21ed1fddc0de4a3cf1e42fdcac47292680010b36237a700ac32b6d2964",
+    "artifacts/validation/viewer/analysis/source-link-20261101/preview-cleanup.json": "97a979dc284dbfacc473c37414f48904a2340df1924754b3029362cd5e014896"
+  },
+  "not_performed": [
+    "commit",
+    "push",
+    "Docker build",
+    "frozen package update",
+    "CURRENT/SESSIONS edits"
+  ]
+}

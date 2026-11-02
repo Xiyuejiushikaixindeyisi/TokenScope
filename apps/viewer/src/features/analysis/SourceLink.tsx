@@ -30,7 +30,7 @@ export function SourceLink({ entry }: {
                 const receipt = await client.request('user', 'Receipt', `/runs/${encodeURIComponent(str(source.user_run_id))}`, { signal });
                 if (receipt.base_run_id !== source.base_run_id || receipt.common_name !== source.common_name || receipt.model_id !== source.model_id)
                     throw Error('监控来源身份不匹配');
-                q.set('user_run_id', str(source.user_run_id));
+                q.set('run', str(source.user_run_id));
                 signal.throwIfAborted();
                 location.hash = `#/users?${q}`;
             }
