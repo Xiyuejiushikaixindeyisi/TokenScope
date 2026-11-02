@@ -1,11 +1,11 @@
 # 当前状态
 
-2026-11-02用户最新决定：认可V2可以交付；UIR-03暂不修、留V3，不再作为V2阻断。已授权Git整理/push main、WSL Docker/代码和镜像打包、本地backup管理及Windows桌面验收；审查打包session正在执行，不将授权提前写成完成。[本轮交付记录](../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
+2026-11-02：V2批准版`tokenscope-v2-approved-20261102`已完成固定源码push、WSL构建、容器独立复验、代码/镜像打包和Windows桌面14文件SHA一致交付。WSL原件/旧包保留，backup仅本地；华为真实数据尚未执行。[版本/文件/校验与回退](../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
 
-已复审候选viewer-uir01-pointer-fix-20261102-c1：UIR-01/02闭环，四入口、批准HTML和L4/L5保持；226单元组件、85浏览器、135独立鼠标点及120地址恢复通过。新镜像仍需实际容器复验，不能沿用普通进程测试充数。[归档链](../achieve/2026-11-02/v2-approved-delivery/README.md)。
+源码`b17cdc07b0a351d0f5c4fb1b26f0e05be2b3a0af`，镜像`sha256:a38d0ab2cfe26154c96adb5e876538893005e5cb100fc5c53640823c391683a8`。容器85浏览器、135鼠标点、15范围、120地址恢复通过，11重启复测不累加；四入口/批准HTML/L4L5与已复审c1资源一致。UIR-01/02闭环，UIR-03按用户决定留V3、不修、不阻断V2。
 
-华为只用真实数据：Trace目录3CSV用于用户监控及扩展异常分析；MA目录18CSV独立字段核对。顺序：用户监控/搜索/P90 TTFT→MA→第一次用户验收→用户指定appid→两类异常→第二次验收。SSH18002访问，最终仅一份关键源码和证据嵌正文的Markdown。[执行prompt](../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md)。现场尚未执行，本机不代签。
+华为只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）再MA→第一次用户验收→用户指定appid→两类异常→第二次验收。SSH18002；唯一Markdown嵌关键源码/diff/问题复现和证据。[当前执行prompt](../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md)。真实TTFT参数/校准、MA配对、编码模式和业务依据现场核实，不能造数或代签。
 
-每次新版本验收先停旧服务/进程，独立空state/new dist/新浏览器；旧包和证据保留，其他session未完成修改不混入发布。前述展示漂移、环境混淆、旧记忆/计划/prompt错误不得重复：[长期教训](DELIVERY_LESSONS.md) · [固定规则](../docs/operations/DELIVERY_ACCEPTANCE_RULES.md)。
+本地测试容器/本次私有daemon已停、Windows/WSL端口关闭，证据与state保留。每次新候选验收先停旧服务，空state/new dist/新浏览器；[长期教训](DELIVERY_LESSONS.md) · [固定规则](../docs/operations/DELIVERY_ACCEPTANCE_RULES.md)禁止再犯展示偏移、旧服务混淆、记忆滞后、改用户计划和不合格prompt。
 
-[SESSIONS](SESSIONS.md)为角色权威；V1前后端与总设计休眠，hybrid/自进化Agent未启动。TTFT功能已实现，现场真实参数与性能校准仍需依据；不擅填默认。历史详细状态在[原文快照](../achieve/2026-11-02/v2-approved-delivery/snapshots/memory/CURRENT.md)。
+[SESSIONS](SESSIONS.md)为角色权威，其他8份未完成修改保留；V1/总设计休眠，hybrid/自进化Agent未启动。[闭环归档](../achieve/2026-11-02/v2-approved-delivery/README.md)保存历史原文，最新决定优先。

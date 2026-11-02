@@ -1,6 +1,6 @@
 # V2 用户监控后端功能入口
 
-2026-11-02统一交付同步：用户认可V2可交付，UIR-03暂不修、留V3，不作V2阻断。本角色职责/休眠状态不变；当前发布与实际结果见[交付记录](../../delivery/V2_APPROVED_DELIVERY_20261102.md)。现场只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）和MA，第一次用户验收并指定appid后才两类异常；SSH18002，唯一Markdown嵌关键源码/证据。[当前prompt](../../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../../../operations/DELIVERY_ACCEPTANCE_RULES.md)。下方旧开发/交接状态按历史阅读，不覆盖本决定。
+2026-11-02统一交付同步：V2已完成WSL打包、桌面全文件SHA核对，华为真实数据待验；用户认可V2可交付，UIR-03暂不修、留V3，不作V2阻断。本角色职责/休眠状态不变；当前发布与实际结果见[交付记录](../../delivery/V2_APPROVED_DELIVERY_20261102.md)。现场只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）和MA，第一次用户验收并指定appid后才两类异常；SSH18002，唯一Markdown嵌关键源码/证据。[当前prompt](../../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../../../operations/DELIVERY_ACCEPTANCE_RULES.md)。下方旧开发/交接状态按历史阅读，不覆盖本决定。
 
 当前TTFT状态：**代码完成，性能校准待完成**。新最小模型已实现：W覆盖全部非计算耗时、不单列O；证据材料选填，缺必要参数不出比例、W不默认0。当前用户契约2.0.0，旧1.0.1历史兼容；[前端接入](TTFT_FRONTEND_HANDOFF.md)尚待前端实施/验收。
 2026-10-30：用户已认可最终设计并授权连续开发。**U000–U005 closed，本地用户后端统一验收完成**；289全量回归及最终增量15项恢复测试通过，真实MA联合通过。未部署、打包或修改V1运行配置；前端、真实TTFT校准及现场仍pending。

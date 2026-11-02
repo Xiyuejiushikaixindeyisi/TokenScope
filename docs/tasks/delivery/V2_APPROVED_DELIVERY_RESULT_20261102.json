@@ -1,0 +1,327 @@
+{
+  "release_id": "tokenscope-v2-approved-20261102",
+  "source_commit": "b17cdc07b0a351d0f5c4fb1b26f0e05be2b3a0af",
+  "source_pushed_main": "b17cdc07b0a351d0f5c4fb1b26f0e05be2b3a0af",
+  "image_tag": "tokenscope/full-service:tokenscope-v2-approved-20261102",
+  "image_id": "sha256:a38d0ab2cfe26154c96adb5e876538893005e5cb100fc5c53640823c391683a8",
+  "built_in": "WSL Ubuntu-22.04",
+  "platform": "linux/amd64",
+  "candidate": {
+    "release_id": "tokenscope-v2-approved-20261102",
+    "source_commit": "b17cdc07b0a351d0f5c4fb1b26f0e05be2b3a0af",
+    "version_file": "docs/tasks/delivery/VERSION_V2_APPROVED_20261102.json",
+    "onsite_prompt": "prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md",
+    "base_image": "public.ecr.aws/docker/library/python@sha256:a36c24f9cbdf4fd0f52d67f0823eeac19c2028c637cecc392d97f980d4fec56b",
+    "versions": {
+      "version": "tokenscope-v2-approved-20261102",
+      "frontend": "viewer-uir01-pointer-fix-20261102-c1",
+      "public_backend": "arpc-local-4",
+      "token_private": "token-review-20261101-1",
+      "token_plugin": "token-content-2"
+    },
+    "source_identity_sha256": "7e71bbe89bf96ea42c3c7f7a94787faabe4d4e1b38dbe7dc28187b9a061dd4e6",
+    "monitoring_contracts": {
+      "s0": "1.0.0",
+      "user": "2.0.0",
+      "ma": "1.0.0"
+    },
+    "control_schema": 3,
+    "view_schema": "1",
+    "frontend_built_from_commit": "b17cdc07b0a351d0f5c4fb1b26f0e05be2b3a0af",
+    "frontend_build_node": "v22.22.2",
+    "models": [
+      {
+        "model_id": "Qwen3.6-27B",
+        "source": "https://huggingface.co/Qwen/Qwen3.6-27B",
+        "revision": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9",
+        "license": "apache-2.0",
+        "files": [
+          {
+            "path": "models/qwen36-27b/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer_config.json",
+            "role": "tokenizer_config.json",
+            "sha256": "5186f0defcd7f232382c7f0aebcd2252d073bb921ab240e407b7ae8745d2b29b",
+            "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B/resolve/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer_config.json"
+          },
+          {
+            "path": "models/qwen36-27b/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/chat_template.jinja",
+            "role": "chat_template.jinja",
+            "sha256": "e84f32a23fdda27689f868aa4a1a5621f41133e51a48d7f3efcbea2839574259",
+            "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B/resolve/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/chat_template.jinja"
+          },
+          {
+            "path": "models/qwen36-27b/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer.json",
+            "role": "tokenizer.json",
+            "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+            "source_url": "https://huggingface.co/Qwen/Qwen3.6-27B/resolve/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/tokenizer.json"
+          }
+        ]
+      },
+      {
+        "model_id": "GLM-5.2",
+        "source": "https://huggingface.co/zai-org/GLM-5.2",
+        "revision": "cf457fa734ab149ffef225f80893eb38c6ff5cdc",
+        "license": "mit",
+        "files": [
+          {
+            "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer_config.json",
+            "role": "tokenizer_config.json",
+            "sha256": "98b1271574f41abf89427ae2dda030d94dc9478f0edc5a8bd240db213c6fd5fc",
+            "source_url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer_config.json"
+          },
+          {
+            "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/chat_template.jinja",
+            "role": "chat_template.jinja",
+            "sha256": "172dc74a35e1752df75ecfb2b2cf9326d2852bb1379868ebeec9571654489679",
+            "source_url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/chat_template.jinja"
+          },
+          {
+            "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer.json",
+            "role": "tokenizer.json",
+            "sha256": "19e773648cb4e65de8660ea6365e10acca112d42a854923df93db4a6f333a82d",
+            "source_url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer.json"
+          }
+        ]
+      },
+      {
+        "model_id": "DeepSeek-V4-Flash-0731",
+        "source": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+        "license": "MIT",
+        "files": [
+          {
+            "path": "models/deepseek-v4-flash-0731/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer_config.json",
+            "role": "tokenizer_config.json",
+            "sha256": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547",
+            "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer_config.json"
+          },
+          {
+            "path": "models/deepseek-v4-flash-0731/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer.json",
+            "role": "tokenizer.json",
+            "sha256": "8f9f37ca37fdc4f5fd36d5cf4d3b0e8392edb4e894fd10cc0d70b4957c8633cf",
+            "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/resolve/7872f01b1d1fe23eabc4c98b48bffcef5a386062/tokenizer.json"
+          }
+        ]
+      }
+    ],
+    "image_tag": "tokenscope/full-service:tokenscope-v2-approved-20261102",
+    "image_id": "sha256:a38d0ab2cfe26154c96adb5e876538893005e5cb100fc5c53640823c391683a8",
+    "platform": "linux/amd64",
+    "image_archive": "tokenscope-v2-approved-20261102-image.tar.gz",
+    "code_archive": "tokenscope-v2-approved-20261102-code.tar.gz",
+    "built_in": "WSL Ubuntu-22.04",
+    "container_acceptance": "passed",
+    "onsite_acceptance": "pending",
+    "production_data_included": false,
+    "local_backup_branch": "backup/20261102-tokenscope-v2-approved",
+    "desktop_destination": "C:\\Users\\ALIENWARE\\Desktop\\tokenscope-v2-approved-20261102",
+    "wsl_original_retained": true,
+    "synthetic_acceptance_kit_included": false
+  },
+  "local_validation": {
+    "passed": true,
+    "release_id": "tokenscope-v2-approved-20261102",
+    "source_commit": "b17cdc07b0a351d0f5c4fb1b26f0e05be2b3a0af",
+    "image_id": "sha256:a38d0ab2cfe26154c96adb5e876538893005e5cb100fc5c53640823c391683a8",
+    "checks": {
+      "fixed_pushed_commit": true,
+      "actual_image_resource_identity": true,
+      "default_empty_state_no_synthetic_recipe": true,
+      "monitoring_three_models_fifteen_scopes": true,
+      "browser_85_passed": true,
+      "independent_pointer_135": true,
+      "history_delayed_response_fixed_scope": true,
+      "forty_visual_captures": true,
+      "normal_stop_port_release_and_restart": true,
+      "restart_120_routes_business_GET_read_only": true,
+      "restart_11_browser_passed": true,
+      "preserved_scopes_instance": true
+    },
+    "test_kind": "Local synthetic container verification; not Huawei real-data acceptance",
+    "browser_counts": {
+      "monitoring": 42,
+      "analysis": 18,
+      "source": 3,
+      "joint": 8,
+      "fixes": 10,
+      "pointer": 4,
+      "restart-source": 3,
+      "restart-fixes": 4,
+      "restart-pointer": 4
+    },
+    "service_instance_id": "bf9a6f1f-5eaa-4fd1-af9f-ef1d675a916d",
+    "frontend_resource_sha256": {
+      "index.html": "e4c7e4e0969e52c39bbdc78bb6c48641742d0d75cc79605ef9aed2ae21fa46d6",
+      "assets/index-BN_hqTE_.js": "1d18c395fb5aca91bc77b469e58376a087a204f46c786d5bf9502c3ad6e55072",
+      "assets/export-validator-rZ4O78aZ.js": "e52838c80a214d465b29b1e6049fabe887e80d8077fc5ce121061c8f109e9d41",
+      "assets/index-BxqENh7v.css": "7de15a1ce92dc92d4d93a96c70425c1ea22663c5c4653c98cb4d9122ef0254a5"
+    },
+    "UIR03": "User defers to V3; no V2 fix or blocking criterion",
+    "onsite_acceptance": "pending",
+    "local_test_configuration": "Default image verified empty without test recipe. Isolated local override fixture only for synthetic coverage; not included in release or onsite deployment.",
+    "evidence_root": "/home/zhangxiyue/TokenScope/artifacts/reviews/v2-approved-20261102"
+  },
+  "archive_verification": {
+    "passed": true,
+    "source_commit": "b17cdc07b0a351d0f5c4fb1b26f0e05be2b3a0af",
+    "image_id": "sha256:a38d0ab2cfe26154c96adb5e876538893005e5cb100fc5c53640823c391683a8",
+    "code_members": 1884,
+    "context_file_hashes_checked": 182,
+    "docker_load_verified": true,
+    "safe_archive_paths": true,
+    "code_archive_bytes": 71491773,
+    "image_archive_bytes": 204548673
+  },
+  "local_backup": {
+    "branch": "backup/20261102-tokenscope-v2-approved",
+    "commit": "4b71d52ac979ce2b5a3157d8176083549c753fc0",
+    "parent_source": "b17cdc07b0a351d0f5c4fb1b26f0e05be2b3a0af",
+    "archives_in_git": false,
+    "pushed": false,
+    "main_and_index_unchanged": true,
+    "tracked_release_files": [
+      "release-manifest.json",
+      "SHA256SUMS"
+    ]
+  },
+  "desktop_copy": {
+    "passed": true,
+    "release_id": "tokenscope-v2-approved-20261102",
+    "copied_at": "2026-11-02T08:23:19.774048+00:00",
+    "source": "/home/zhangxiyue/TokenScope/artifacts/releases/tokenscope-v2-approved-20261102",
+    "desktop": "C:\\Users\\ALIENWARE\\Desktop\\tokenscope-v2-approved-20261102",
+    "wsl_original_retained": true,
+    "old_desktop_deliveries_untouched": true,
+    "all_files_including_SHA256SUMS_checked": true,
+    "file_count": 14,
+    "SHA256SUMS_entries": 13,
+    "files": {
+      "DEPLOYMENT_README.md": {
+        "sha256": "7d8e12a1e89548253ede767e4c4e9598ea3eaf18c7cff7cb848ccb4045e8d764",
+        "bytes": 2668,
+        "matches_wsl": true
+      },
+      "HUAWEI_AGENT_PROMPT.md": {
+        "sha256": "c8348f59b00a554e97ae680f08a9690546334e781ad432747b1be54d0f0e000a",
+        "bytes": 21748,
+        "matches_wsl": true
+      },
+      "SHA256SUMS": {
+        "sha256": "5bff93eb831c1cacb3726c62180bc4d9ea3c6525f4b8da207c50571de4be2a74",
+        "bytes": 1185,
+        "matches_wsl": true
+      },
+      "candidate.json": {
+        "sha256": "e8ebd049b090da4b5f2a6d182107a6ef54f867c2a484e3342232226d35d70ebe",
+        "bytes": 26690,
+        "matches_wsl": true
+      },
+      "compose.yaml": {
+        "sha256": "134d6d9665615b4246ac472714df8d533a43c99dc0b407399a96d11ca2d56dd3",
+        "bytes": 1325,
+        "matches_wsl": true
+      },
+      "container-acceptance.json": {
+        "sha256": "c258e723541821d862f1f0e9ffcda65e8c5973802bbffa5ea92de9d3e1806acf",
+        "bytes": 6775,
+        "matches_wsl": true
+      },
+      "container-browser.log": {
+        "sha256": "4d67030254c4b3bb43474929e061afd6b299044fa0cf466cf38914856ecf4272",
+        "bytes": 17274,
+        "matches_wsl": true
+      },
+      "container-restart.json": {
+        "sha256": "a8ddb462d78085b7608308deeb532a24f33acb6722133afeb78d72cd6138e467",
+        "bytes": 6774,
+        "matches_wsl": true
+      },
+      "deployment.env.example": {
+        "sha256": "4fc2077b94d48d163e673d187df85e11ced08ab6d6cd48a7e6d4f1d8dc95ec02",
+        "bytes": 303,
+        "matches_wsl": true
+      },
+      "docker-save.log": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "matches_wsl": true
+      },
+      "release-manifest.json": {
+        "sha256": "ef17629c4a30f0a0de69c0c71a5a7b1f1853eafd65e26ed3e4a10f5c6b57c9ad",
+        "bytes": 7877,
+        "matches_wsl": true
+      },
+      "tokenscope-v2-approved-20261102-code.tar.gz": {
+        "sha256": "d7609dfaf9eaae0db01e00b563d608efbcee06c70705ccbab4b590d4d03f317b",
+        "bytes": 71491773,
+        "matches_wsl": true
+      },
+      "tokenscope-v2-approved-20261102-image.tar.gz": {
+        "sha256": "1996e82c0053985441ded8fbe8af93480130998290f95612732258fbfe954f5e",
+        "bytes": 204548673,
+        "matches_wsl": true
+      },
+      "unified-container-validation.json": {
+        "sha256": "1923dea2c82ae82a24883cb534f1051437923167ad8a13a01569846ad0f803b3",
+        "bytes": 1938,
+        "matches_wsl": true
+      }
+    },
+    "source_commit": "b17cdc07b0a351d0f5c4fb1b26f0e05be2b3a0af",
+    "image_id": "sha256:a38d0ab2cfe26154c96adb5e876538893005e5cb100fc5c53640823c391683a8"
+  },
+  "service_cleanup": {
+    "wsl": {
+      "passed": true,
+      "container": "tokenscope-v2-approved-acceptance-monitoring-1",
+      "image_id": "sha256:a38d0ab2cfe26154c96adb5e876538893005e5cb100fc5c53640823c391683a8",
+      "compose_down_without_volume_deletion": true,
+      "own_private_daemon_pid": 3133330,
+      "daemon_argv": [
+        "dockerd",
+        "--data-root",
+        "/home/zhangxiyue/TokenScope/artifacts/docker/data",
+        "--exec-root",
+        "/home/zhangxiyue/TokenScope/artifacts/docker/run",
+        "--pidfile",
+        "/home/zhangxiyue/TokenScope/artifacts/docker/dockerd.pid",
+        "--host",
+        "unix:///home/zhangxiyue/TokenScope/artifacts/docker/docker.sock",
+        "--group",
+        "zhangxiyue"
+      ],
+      "private_daemon_exited": true,
+      "wsl_ports_closed": {
+        "4191": true,
+        "4193": true,
+        "8016": true,
+        "4175": true,
+        "18002": true,
+        "18061": true,
+        "18062": true,
+        "18063": true,
+        "18064": true,
+        "18065": true
+      },
+      "state_and_evidence_retained": true,
+      "unrelated_services_stopped": false
+    },
+    "windows": {
+      "passed": true,
+      "windows_ports_closed": {
+        "18063": true,
+        "8016": true,
+        "18061": true,
+        "4175": true,
+        "18065": true,
+        "18002": true,
+        "18064": true,
+        "4191": true,
+        "18062": true,
+        "4193": true
+      }
+    }
+  },
+  "UIR03": "用户明确留V3，不修复、不作为V2阻断",
+  "onsite": "未执行；真实数据两阶段用户验收仍待华为agent执行",
+  "raw_evidence_root": "/home/zhangxiyue/TokenScope/artifacts/reviews/v2-approved-20261102"
+}

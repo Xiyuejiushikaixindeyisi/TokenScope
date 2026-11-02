@@ -1,6 +1,6 @@
 # 镜像打包与审查／完整服务交付入口
 
-2026-11-02当前：[V2批准交付](V2_APPROVED_DELIVERY_20261102.md)执行中；用户认可V2可交付，UIR-03留V3，不阻断、不扩展修复。已授权Git整理/push、WSL构建与代码/镜像包、本地backup管理及Windows桌面验收；状态按该记录更新，不能把授权当实际完成。
+2026-11-02当前：[V2批准交付](V2_APPROVED_DELIVERY_20261102.md)已完成WSL构建/容器复验/桌面全SHA交付，华为真实数据待验；用户认可V2可交付，UIR-03留V3，不阻断、不扩展修复。已授权Git整理/push、WSL构建与代码/镜像包、本地backup管理及Windows桌面验收；文件/镜像身份、全部SHA、实际测试与回退按该记录读取。
 
 P0：[CURRENT](../../../memory/CURRENT.md) → [SESSIONS](../../../memory/SESSIONS.md) → [交付规则](../../operations/DELIVERY_ACCEPTANCE_RULES.md)与[长期教训](../../../memory/DELIVERY_LESSONS.md)。P1：[本版现场prompt](../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md)、[部署工具](../../../deploy/monitoring/README.md)、[Git约定](../../operations/GIT_WORKFLOW.md)、[V100历史环境报告](../../huawei/TOKEN_SCOPE_V100_ENVIRONMENT_REPORT.md)。现场需实测，不直接继承历史可用性。
 

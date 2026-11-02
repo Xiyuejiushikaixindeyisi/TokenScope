@@ -1,6 +1,6 @@
 # 异常分析前端维护与本机统筹历史
 
-2026-11-02当前交付决定：用户认可V2可交付，UIR-03留V3、不阻断；审查打包获Git/push、WSL构建/包体/桌面授权并执行。角色职责保持，以下旧暂停/阻断/合成现场计划只是历史。现场真实数据、两次人工验收、SSH18002、唯一Markdown要求及不得再犯的问题见[长期记忆](../DELIVERY_LESSONS.md)；当前结果看[交付记录](../../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
+2026-11-02当前交付决定：用户认可V2可交付，UIR-03留V3、不阻断；审查打包已完成源码push、WSL构建/包体与桌面全SHA交付；华为真实数据待验。角色职责保持，以下旧暂停/阻断/合成现场计划只是历史。现场真实数据、两次人工验收、SSH18002、唯一Markdown要求及不得再犯的问题见[长期记忆](../DELIVERY_LESSONS.md)；当前结果看[交付记录](../../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
 
 2026-11-02 UIR-01鼠标单项修复完成自测，候选viewer-uir01-pointer-fix-20261102-c1；[交接](../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/viewer/monitoring-v2/UIR01_POINTER_FIX_HANDOFF_20261102.md)。仅用SVG实际screen CTM逆变换修正指针，布局/后端不变。226单元组件、85不同浏览器用例、144真实圆点检查通过；c2负向2项按预期失败；118地址重启一致，重启7项通过。原18项/UIR-02/排行/L4L5/T2–T4保持，窗口释放交审查会话独立复审，未提交/push/打包，不代用户认可。实际session 01a19111-344a-75c1-84e0-14db8be08f4f。
 

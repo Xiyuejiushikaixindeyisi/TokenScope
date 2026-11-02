@@ -1,6 +1,6 @@
 2026-11-01 当前：Token T2–T4 与 arpc-local-4 独立复审通过（保留明确限制），无阻断、无业务源码修复；164项本线、12项独立边界及14个ART4只读GET验证通过。[实际复审报告](INDEPENDENT_REVIEW_RESULT_20261101.md) · [RV2-T最终交接与精确清单](RV2_TOKEN_HANDOFF_20261101.md)。总负责会话统一Git收口，本线不commit/push、不打包部署；下方准备/待复审为历史。
 
-2026-11-02统一交付同步：用户认可V2可交付，UIR-03暂不修、留V3，不作V2阻断。本角色职责/休眠状态不变；当前发布与实际结果见[交付记录](../delivery/V2_APPROVED_DELIVERY_20261102.md)。现场只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）和MA，第一次用户验收并指定appid后才两类异常；SSH18002，唯一Markdown嵌关键源码/证据。[当前prompt](../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../../operations/DELIVERY_ACCEPTANCE_RULES.md)。下方旧开发/交接状态按历史阅读，不覆盖本决定。
+2026-11-02统一交付同步：V2已完成WSL打包、桌面全文件SHA核对，华为真实数据待验；用户认可V2可交付，UIR-03暂不修、留V3，不作V2阻断。本角色职责/休眠状态不变；当前发布与实际结果见[交付记录](../delivery/V2_APPROVED_DELIVERY_20261102.md)。现场只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）和MA，第一次用户验收并指定appid后才两类异常；SSH18002，唯一Markdown嵌关键源码/证据。[当前prompt](../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../../operations/DELIVERY_ACCEPTANCE_RULES.md)。下方旧开发/交接状态按历史阅读，不覆盖本决定。
 
 2026-11-01 独立复审交接已准备：[交接文档](INDEPENDENT_REVIEW_HANDOFF.md) · [完整prompt](../../../prompts/sessions/TOKEN_CONTENT_BACKEND_INDEPENDENT_REVIEW.md) · [当前工作树身份](INDEPENDENT_REVIEW_IDENTITY_20261101.json)。候选token-review-20261101-1；本轮仅摘要/入口核对，未启动复审、重跑业务测试、打包部署或Git发布。
 
