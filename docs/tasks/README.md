@@ -1,6 +1,8 @@
 # 任务与session入口
 
-2026-11-01当前异常分析：已进入[功能总负责RV2修复、联合验证与版本收口](analysis/COORDINATION_RV2.md)，由原异常前端session统筹；低命中/公共arpc-local-4及Token私有T2–T4独立复审均已有实际通过报告。下表早期“待创建/未编码/T1–T4”仅历史分线记录，实际角色/范围以最新SESSIONS与各线ENTRY为准。
+2026-11-02当前：[V2批准交付](delivery/V2_APPROVED_DELIVERY_20261102.md) · [华为真实数据两阶段执行prompt](../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../operations/DELIVERY_ACCEPTANCE_RULES.md) · [闭环归档](../../achieve/2026-11-02/v2-approved-delivery/README.md)。UIR-03由用户留V3，不是V2阻断；旧记录只作历史。
+
+2026-11-01当前异常分析：已进入[功能总负责RV2修复、联合验证与版本收口](../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/COORDINATION_RV2.md)，由原异常前端session统筹；低命中/公共arpc-local-4及Token私有T2–T4独立复审均已有实际通过报告。下表早期“待创建/未编码/T1–T4”仅历史分线记录，实际角色/范围以最新SESSIONS与各线ENTRY为准。
 
 2026-10-30最新分线；[SESSIONS](../../memory/SESSIONS.md)维护实际ID、角色、状态与优先级。每个session先明确任务/角色再工作，未知ID不编造；异常分析已获用户许可完成fork并启动Token线，主会话继续低命中详细设计；其他线以各自最新授权为准。
 
@@ -17,7 +19,7 @@
 | 低命中后端设计和开发 | 当前主会话L1–L5详细设计及公共接入草案已形成；未编码 | [本线](prefix-analysis/ENTRY.md) · [prompt](../../prompts/sessions/LOW_HIT_BACKEND_START.md) |
 | Token异常后端设计和开发 | T1–T4；实际会话01a18fcd-0464-7cf1-b435-4f394bd33e66已创建启动并登记 | [本线](length-analysis/ENTRY.md) · [prompt](../../prompts/sessions/TOKEN_ANOMALY_BACKEND_FORK_START.md) |
 | 监控V2前端 | 已登记；本轮仅职责理解、两线设计/契约入口接收与记忆整理 | [本线ENTRY](viewer/monitoring-v2/ENTRY.md) · [启动prompt](../../prompts/sessions/TOKEN_MONITORING_V2_FRONTEND_START.md) |
-| 异常分析功能总负责（兼前端） | 已登记01a19111-344a-75c1-84e0-14db8be08f4f；前端修复、后端协调、联合验证和Git收口 | [当前统筹](analysis/COORDINATION_RV2.md) · [前端](viewer/analysis/ENTRY.md) |
+| 异常分析功能总负责（兼前端） | 已登记01a19111-344a-75c1-84e0-14db8be08f4f；前端修复、后端协调、联合验证和Git收口 | [当前统筹](../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/COORDINATION_RV2.md) · [前端](viewer/analysis/ENTRY.md) |
 | hybrid | 暂不做 | [监控交接](monitoring/ENTRY.md) |
 | 自进化Agent | 两类分析设计和代码完成后按用户启动 | [Agent](evolution-agent/ENTRY.md) |
 

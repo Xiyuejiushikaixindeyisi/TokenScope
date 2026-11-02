@@ -1,5 +1,7 @@
 # V2 同事侧MA监控后端入口
 
+2026-11-02统一交付同步：用户认可V2可交付，UIR-03暂不修、留V3，不作V2阻断。本角色职责/休眠状态不变；当前发布与实际结果见[交付记录](../../delivery/V2_APPROVED_DELIVERY_20261102.md)。现场只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）和MA，第一次用户验收并指定appid后才两类异常；SSH18002，唯一Markdown嵌关键源码/证据。[当前prompt](../../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../../../operations/DELIVERY_ACCEPTANCE_RULES.md)。下方旧开发/交接状态按历史阅读，不覆盖本决定。
+
 2026-10-30：用户将原V2 Token监控后端会话指派为本线，已登记实际ID；见[SESSIONS](../../../../memory/SESSIONS.md)。已按最新授权完成两线交叉检查和[MA最终设计v1.0](DESIGN.md)，M000–M005已按授权完成开发及统一验收；[最终报告](batches/M005/RESULT.md)、[已实现API](IMPLEMENTED_API.md)、[代码地图](CODEMAP.md)和[设计对照](batches/M005/DESIGN_CHECK.md)为当前入口。235项测试通过，未部署或打包。
 
 ## 版本与前端接收

@@ -12,10 +12,13 @@ test('J01/J04: every group metrics, all 1029 bins and quantiles equal real backe
     const s = await (await request.get(`/analysis-runs/${item.active_run_id}/view-snapshot`, { params: { appid: item.appid } })).json();
     await page.goto(`/#/overview?appid=${item.appid}&model=${encodeURIComponent(item.model_id)}`);
     await expect(page.locator('.metric-grid')).toBeVisible();
-    await expect(page.getByText('当前范围：', { exact:false })).toContainText(s.identity.run_id);
+    await expect(page.locator('.metadata-body')).toContainText(s.identity.run_id);
     const values = [s.metrics.ideal_hit_rate === null ? '—' : (s.metrics.ideal_hit_rate*100).toFixed(2)+'%', fmt(s.metrics.request_count), ...Object.values(s.metrics.totals).map(v => v)];
     const labels = ['json_tokens','prompt_tokens','ideal_cached_input_tokens','ideal_compute_input_tokens','completion_tokens'];
-    expect(await page.locator('.metric strong').allTextContents()).toEqual([values[0],values[1],...labels.map(k=>fmt(s.metrics.totals[k]))]);
+    await expect(page.locator('.metric.hit strong')).toHaveText(String(values[0]));
+    await expect(page.locator('.metric').nth(1).locator('strong')).toHaveText(values[1]+'条');
+    expect(await page.locator('.exact-values dd').allTextContents()).toEqual(labels.map(k=>fmt(s.metrics.totals[k])));
+    expect(await page.locator('.bar-legend b').allTextContents()).toEqual([fmt(s.metrics.totals.ideal_cached_input_tokens),fmt(s.metrics.totals.ideal_compute_input_tokens)]);
     for (const width of ['1000','2000','5000']) {
       await page.getByLabel('分箱宽度').selectOption(width);
       for (const [i, key] of ['json_tokens','prompt_tokens','ideal_compute_input_tokens'].entries()) {
@@ -28,7 +31,7 @@ test('J01/J04: every group metrics, all 1029 bins and quantiles equal real backe
       }
     }
     const time = new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).format(new Date(s.provenance.data_range_utc.start));
-    await expect(page.locator('.identity')).toContainText(time);
+    await expect(page.locator('.metadata-body')).toContainText(time);
     evidence.push({ run:s.identity.run_id, appid:item.appid, model:item.model_id, checkedBins:1029 });
   }
   await info.attach('all-groups', {body:JSON.stringify(evidence),contentType:'application/json'});
@@ -48,10 +51,10 @@ test('J02/J03/J05: real SSE publication pins edits; real CAS; immutable historic
   await page.getByRole('button',{name:'确认以新版本保存当前草稿'}).click(); await expect(page.getByText('已保存，仅对下一次启动运行生效；当前结果保持原设置。')).toBeVisible();
   const run=await (await request.post('/analysis-runs',{data:{file_ref:'model-1.csv',model_id:models[0],submission_key:'joint-pin-'+Date.now()}})).json();
   await expect(page.getByText('新结果可查看。',{exact:false})).toBeVisible({timeout:60000});
-  await expect(page.getByText('当前范围：',{exact:false})).toContainText(item.active_run_id);
+  await expect(page.locator('.metadata-body')).toContainText(item.active_run_id);
   expect(await (await request.get(url)).body()).toEqual(old);
-  await page.getByRole('button',{name:'切换到新完整结果'}).click();await expect(page.getByText('当前范围：',{exact:false})).toContainText(run.run_id);
-  await page.getByRole('link',{name:'监控概览'}).click(); await expect(page.locator('.identity')).toContainText('Block size 256');
+  await page.getByRole('button',{name:'切换到新完整结果'}).click();await expect(page.locator('.metadata-body')).toContainText(run.run_id);
+  await page.getByRole('link',{name:'监控概览'}).click(); await expect(page.locator('.config-meta')).toContainText('Block 256');
   let fetches=0;page.on('request',r=>{if(r.url().includes('/view-snapshot'))fetches++;});
   await page.getByRole('link',{name:'请求长度分布'}).click();await page.getByRole('link',{name:'监控概览'}).click();expect(fetches).toBe(0);
   await page.context().setOffline(true); await expect(page.locator('.metric-grid')).toBeVisible(); await page.context().setOffline(false);

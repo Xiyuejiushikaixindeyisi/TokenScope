@@ -1,6 +1,6 @@
 # 新session启动prompt：异常分析模块前端设计与开发
 
-> 2026-11-01：此启动阶段已完成，本文件仅保留历史交接。当前角色为异常分析功能总负责，当前只读UI-04/RV2、L4/L5各一张卡及T2–T4自动收益以[统筹入口](../../docs/tasks/analysis/COORDINATION_RV2.md)为准。不要根据下文旧完整请求、单项评估说明恢复已撤回范围；新的统一审查交付使用[RV2 prompt](ANALYSIS_UNIFIED_REVIEW_DELIVERY_RV2.md)。
+> 2026-11-01：此启动阶段已完成，本文件仅保留历史交接。当前角色为异常分析功能总负责，当前只读UI-04/RV2、L4/L5各一张卡及T2–T4自动收益以[统筹入口](../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/COORDINATION_RV2.md)为准。不要根据下文旧完整请求、单项评估说明恢复已撤回范围；新的统一审查交付使用[RV2 prompt](ANALYSIS_UNIFIED_REVIEW_DELIVERY_RV2.md)。
 
 2026-10-31接入更新：两类后端已完成本地实现与交接，低命中/公共层完整自审已获用户认可。当前主入口是 `docs/tasks/prefix-analysis/FRONTEND_HANDOFF.md`，对齐 `docs/tasks/length-analysis/BACKEND_HANDOFF.md` 与 `IMPLEMENTED_API.md`。公共 analysis-common-1.0、HTTP diagnostics-http-1 已冻结；低命中源码身份 low-hit-backend-local-2，Token 插件 token-content-1。不要恢复早期“尚无后端契约”的状态。本prompt由后端提供，不代表前端会话已创建、接收或取得正式编码授权。
 

@@ -1,5 +1,7 @@
 # 华为机文档
 
+2026-11-02当前：[V2批准交付](../tasks/delivery/V2_APPROVED_DELIVERY_20261102.md) · [华为真实数据两阶段执行prompt](../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../operations/DELIVERY_ACCEPTANCE_RULES.md) · [闭环归档](../../achieve/2026-11-02/v2-approved-delivery/README.md)。UIR-03由用户留V3，不是V2阻断；旧记录只作历史。
+
 本目录保存华为机调查、事实核对、版本差异和验收结论。收到的报告、源码或日志原件放 evidence/huawei 或 evidence/source_drops，文件摘要放 evidence/manifests。
 
 每份结论说明来源、日期、适用源码或镜像版本，以及“用户提供”“材料描述”“本机核对”“现场验证”等证据状态。内网路径可用于来源索引，需要的关键结论仍应有可阅读证据。

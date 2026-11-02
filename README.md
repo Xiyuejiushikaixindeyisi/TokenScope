@@ -1,5 +1,7 @@
 # TokenScope
 
+2026-11-02当前：[V2批准交付](docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md) · [华为真实数据两阶段执行prompt](prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](docs/operations/DELIVERY_ACCEPTANCE_RULES.md) · [闭环归档](achieve/2026-11-02/v2-approved-delivery/README.md)。UIR-03由用户留V3，不是V2阻断；旧记录只作历史。
+
 离线 CSV Token 监控：统一编码与 Chat Template、按 appid × 模型回放理想前缀复用、统计和直方图、阈值信号，以及同源 Web 前端。
 
 ## 当前版本

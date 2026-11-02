@@ -1,3 +1,4 @@
+import { AppShell } from './components/AppShell';
 import { AnalysisApp } from './features/analysis/AnalysisApp';
 import { useCallback, useEffect, useState, useSyncExternalStore } from 'react';
 import { ViewStore } from './state/view-store';
@@ -42,7 +43,12 @@ function LegacyApp() {
     const receipts = new ReceiptStore(message => store.update({ cacheWarning: message }));
     const submissions = new SubmissionCoordinator(receipts);
     const publication = new PublicationClient({
-      catalog: value => coordinator.catalog(value),
+      catalog: value => {
+        // Reconciliation must honor a cold deep link before choosing the latest catalog result.
+        const query = new URLSearchParams(window.location.hash.split('?')[1]);
+        const appid = query.get('appid'), model_id = query.get('model');
+        coordinator.catalog(value, appid && model_id ? { appid, model_id, run_id: query.get('run') ?? undefined } : undefined);
+      },
       connection: value => store.update({ connection: value }),
       ready: (instance, epoch) => { void submissions.ready(instance, epoch); },
       terminal: event => { void submissions.terminal(event); },
@@ -68,12 +74,10 @@ function LegacyApp() {
   };
   const snapshot = state.snapshot;
   const title = pages.find(([id]) => id === page)?.[1];
-  return <div className="shell">
-    <a className="skip" href="#main">跳至内容</a>
-    <aside className="sidebar"><div className="brand"><span className="brandmark" aria-hidden="true"><i /><i /><i /></span>TokenScope</div><nav aria-label="监控导航"><div className="nav-caption">WORKSPACE</div>{pages.map(([id, label], index) => <a className="nav-item" key={id} href={`#/${id}${query ? '?' + query : ''}`} aria-current={page === id ? 'page' : undefined}><svg className="icon" viewBox="0 0 24 24" aria-hidden="true"><path d={['M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z', 'M3 3v18h18 M7 16v-4 M12 16V7 M17 16V4', 'M8 6h13 M8 12h13 M8 18h13 M3 6h1 M3 12h1 M3 18h1', 'M5 17h14l-2-3V9a5 5 0 0 0-10 0v5z M10 21h4', 'M4 6h16 M4 12h16 M4 18h16 M8 3v6 M16 9v6 M10 15v6', 'M12 4v16 M4 12h16'][index]} /></svg>{label}</a>)}</nav><div className="sidebar-bottom"><b>Token 监控 · V1</b><p>按租户与模型观察<br />输入规模与前缀复用</p></div></aside>
-    <div className="workspace"><header className="topbar"><div className="crumb">工作空间 <span>/</span><strong>Token 监控</strong></div><span className={`badge ${state.connection === 'connected' ? 'success' : ''}`}>{state.connection === 'connected' ? '通知已连接' : '通知待连接'}</span></header>
+  return <AppShell page={page} status={<span className="badge">{state.connection === 'connected' ? '通知已连接' : '通知待连接'}</span>}>
     <main id="main" tabIndex={-1}>
       <div className="page-head"><div><h1>{title ?? '页面不存在'}</h1><p>按租户与模型查看输入规模、前缀复用和长度分布</p></div><div className="actions"><details className="action-menu"><summary className="btn">指标口径</summary><div className="popover"><h2>指标口径</h2><p>原始 JSON 包含字段名、标点、空白和参数；模板后输入为模型实际输入。理想命中率 = 理想复用 Token / 模板后输入 Token。</p><p>每个 CSV 从空缓存开始，租户隔离、无限容量，前请求可缓存输入立即可用。输出量单独统计。</p></div></details>{snapshot && page === 'overview' && <details className="action-menu" key={snapshot.identity.run_id + snapshot.identity.appid}><summary className="btn">导出</summary><div className="popover"><Exports snapshot={snapshot} /></div></details>}<button className="primary" onClick={() => navigate('submissions')}>提交任务</button></div></div>
+      <nav className="subpage-links" aria-label="监控操作"><a href="#/users">返回用户监控</a>{pages.map(([id,label]) => <a key={id} href={`#/${id}${query ? '?' + query : ''}`} aria-current={page === id ? 'page' : undefined}>{label}</a>)}</nav>
       {state.error && <p role="alert">{state.error} <button onClick={() => void runtime.publication.start()}>重新连接</button></p>}
       {state.cacheWarning && <p className="muted">{state.cacheWarning}</p>}
       {state.catalog && <section className="filter-panel" aria-label="结果范围"><div className="filter-main"><div className="model-field"><span className="field-caption">模型</span><div className="model-tabs" role="group" aria-label="选择模型">{state.catalog.items.filter(i => i.appid === state.selection?.appid).map(item => <button key={item.model_id} aria-pressed={state.selection?.model_id === item.model_id} onClick={() => navigate(page, state.selection?.appid, item.model_id)}>{item.model_id}</button>)}</div></div><label className="filter-field"><span className="field-caption">租户 APPID</span><select aria-label="appid" value={state.selection?.appid ?? ''} onChange={event => { const first = state.catalog!.items.find(i => i.appid === event.target.value); if (first) navigate(page, first.appid, first.model_id); }}>{[...new Set(state.catalog.items.map(i => i.appid))].map(id => <option key={id}>{id}</option>)}</select></label><div className="filter-field run"><span className="field-caption">分析结果 · 北京时间</span>{snapshot && <span className="window-label">{formatBeijing(snapshot.provenance.data_range_utc.start)} — {formatBeijing(snapshot.provenance.data_range_utc.end)}</span>}<History catalog={state.catalog} appid={state.selection?.appid} model={state.selection?.model_id} onSelect={run => navigate(page, state.selection?.appid, state.selection?.model_id, run)} />{historyRun && <button onClick={() => navigate(page)}>返回最新完整结果</button>}{state.loading && <span role="status">正在读取完整版本…</span>}</div></div>
@@ -92,6 +96,6 @@ function LegacyApp() {
         <p className="muted">只展示已发布的完整结果</p>
       </section>}
     </main>
-    <footer><span>时间展示：北京时间（UTC+8）</span><span>每个 CSV 从空缓存开始 · appid 隔离 · 无限容量</span></footer></div>
-  </div>;
+    <footer><span>时间展示：北京时间（UTC+8）</span><span>每个 CSV 从空缓存开始 · appid 隔离 · 无限容量</span></footer>
+  </AppShell>;
 }

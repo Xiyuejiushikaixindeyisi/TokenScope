@@ -19,10 +19,12 @@
 ## 开发和交付
 
 - 功能先在项目本地环境实现并测试。打包前必须取得用户同意，之后再构建镜像和交付包；不以反复构建 Docker 镜像作为日常开发循环。
+- 每次新版本端到端验收前，核实并停止TokenScope旧版服务、相关进程和测试容器，确认退出及端口释放后，用候选源码、独立新state和全新浏览器环境冷启动；不以另换端口保留旧版并行验收。保留旧包/state/证据，不误停无关项目；具体步骤见docs/architecture/TASK_SESSION_WORKFLOW.md。
 - 华为交付包含镜像、代码和执行 prompt，记录对应版本、配置身份和校验摘要。当前监控交付目标为已有环境报告的华为V100；其他机器独立核实，不能按“华为机”名称推断为Ascend/NPU。
 - upstream 保存固定来源，env/sources.lock.json 记录已引入源码身份。自有实现放 src 或 crates；必要上游补丁放 patches，不能仅留在上游工作树中。
 - Tokenizer 与 Chat Template 绑定模型 revision、配置模式和文件摘要。真实数据与生成产物默认不进入 Git，必要来源清单和验证记录另行维护。
 - 原始证据不改写；核对、勘误和结论放 docs 并指向证据。历史版本不覆盖当前入口。
+- 交付必须保持用户批准四入口HTML与L4/L5；现场真实数据/两阶段人工验收/SSH18002/单Markdown回传的固定要求见 docs/operations/DELIVERY_ACCEPTANCE_RULES.md 和 memory/DELIVERY_LESSONS.md。最新用户范围决定优先，不把历史评审意见或旧prompt当当前阻断/执行计划。
 
 - session实际角色、状态、优先级和入口统一见memory/SESSIONS.md：V1前后端及总设计休眠；V2后端待拆为用户功能/MA监控两线，两前端分别承接监控V2/异常分析；审查打包负责统一审查及授权后交付。休眠角色不自动唤醒，未来职责不等于已经启动或批准实施。
 - 当前监控维护/现场入口为docs/tasks/monitoring/ENTRY.md，交付入口为docs/tasks/delivery/ENTRY.md。B005.1计划/设计/TESTS和冻结S0是维护依据，已完成审批不重复申请。

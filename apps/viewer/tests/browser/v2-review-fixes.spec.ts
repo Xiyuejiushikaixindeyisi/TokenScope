@@ -17,8 +17,8 @@ for (const path of ['catalog', 'snapshot', 'receipt'] as const) test(`RV2-01 rea
   test.setTimeout(90000);
   await page.goto('/#/ma'); const run = await seedMA(page);
   await openMA(page, run.ma_run_id);
-  await expect(page.getByRole('button', { name: '查看画像' })).toHaveCount(13);
-  await page.getByRole('button', { name: '查看画像' }).first().click();
+  await expect(page.getByRole('button', { name: /展开详情|收起详情/ })).toHaveCount(13);
+  await page.getByRole('button', { name: /展开详情|收起详情/ }).first().click();
   let posts = 0, requests = 0, errorCode = '';
   page.on('request', r => { if (r.method() === 'POST') posts++; });
   let release!: () => void; const gate = new Promise<void>(r => { release = r; });
@@ -41,7 +41,7 @@ for (const path of ['catalog', 'snapshot', 'receipt'] as const) test(`RV2-01 rea
   await expect(page.getByRole('button', { name: '重新连接' })).toBeVisible();
   expect(errorCode).toBe('SERVICE_INSTANCE_CHANGED');
   await expect(page.locator('.ma-table')).toHaveCount(0);
-  await expect(page.getByRole('button', { name: '查看画像' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: /展开详情|收起详情/ })).toHaveCount(0);
   const count = requests; release(); await page.clock.fastForward(180000);
   await expect(page.locator('.ma-table')).toHaveCount(0);
   expect(requests).toBe(count); expect(requests).toBeLessThanOrEqual(path === 'snapshot' ? 4 : 1); expect(posts).toBe(0);
@@ -49,20 +49,20 @@ for (const path of ['catalog', 'snapshot', 'receipt'] as const) test(`RV2-01 rea
 });
 test('RV2-01 ordinary 503 and offline catalog keep historical rows', async ({ page }) => {
   await page.goto('/#/ma'); const run = await seedMA(page); await openMA(page, run.ma_run_id);
-  await expect(page.getByRole('button', { name: '查看画像' })).toHaveCount(13);
+  await expect(page.getByRole('button', { name: /展开详情|收起详情/ })).toHaveCount(13);
   let offline = false;
   await page.route('**/monitoring/ma/catalog?*', route => offline ? route.abort() : route.fulfill({ status: 503, json: { error: { code: 'UNAVAILABLE', message: 'temporary' } } }));
   for (const value of [false, true]) {
     offline = value; await page.getByRole('button', { name: '刷新目录' }).click();
     await expect(page.getByRole('alert')).toBeVisible();
     await expect(page.getByRole('button', { name: '刷新目录' })).toBeEnabled();
-    await expect(page.getByRole('button', { name: '查看画像' })).toHaveCount(13);
+    await expect(page.getByRole('button', { name: /展开详情|收起详情/ })).toHaveCount(13);
     await expect(page.getByRole('button', { name: '重新连接' })).toHaveCount(0);
   }
 });
 test('RV2-01 active MA poll receives real identity error and never polls again', async ({ page }) => {
   await page.goto('/#/ma'); const run = await seedMA(page); await openMA(page, run.ma_run_id);
-  await expect(page.getByRole('button', { name: '查看画像' })).toHaveCount(13);
+  await expect(page.getByRole('button', { name: /展开详情|收起详情/ })).toHaveCount(13);
   let reads = 0, posts = 0;
   page.on('request', r => { if (r.method() === 'POST') posts++; });
   await page.route(`**/monitoring/ma/runs/${run.ma_run_id}`, async route => {

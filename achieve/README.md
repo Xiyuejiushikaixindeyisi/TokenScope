@@ -1,5 +1,7 @@
 # achieve归档索引
 
+2026-11-02当前：[V2批准交付](../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md) · [华为真实数据两阶段执行prompt](../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../docs/operations/DELIVERY_ACCEPTANCE_RULES.md) · [闭环归档](2026-11-02/v2-approved-delivery/README.md)。UIR-03由用户留V3，不是V2阻断；旧记录只作历史。
+
 2026-11-01：[异常分析RV2历史归档](2026-11-01/analysis-rv2/README.md)，8份AF闭环材料/旧prompt及3份记忆快照；HTML、冻结契约和原始证据保持原位。
 
 2026-10-31：[监控V2闭环审查与修复交接](2026-10-31/monitoring-v2-review/README.md)，8份归档、6份原文快照；原始证据不移动。

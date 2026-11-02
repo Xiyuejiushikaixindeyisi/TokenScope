@@ -1,6 +1,6 @@
 # Prompt入口
 
-2026-11-01当前异常分析：[RV2统一审查与交付打包prompt](sessions/ANALYSIS_UNIFIED_REVIEW_DELIVERY_RV2.md)，由功能总负责准备供用户转交，尚未自动发送/启动新打包任务。两后端实际独立复审已通过，见[联合报告](../docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md)；下方“Token仅准备/未启动”是旧阶段。
+2026-11-01当前异常分析：[RV2统一审查与交付打包prompt](sessions/ANALYSIS_UNIFIED_REVIEW_DELIVERY_RV2.md)，由功能总负责准备供用户转交，尚未自动发送/启动新打包任务。两后端实际独立复审已通过，见[联合报告](../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md)；下方“Token仅准备/未启动”是旧阶段。
 
 2026-11-01 Token后端独立复审：[完整prompt](sessions/TOKEN_CONTENT_BACKEND_INDEPENDENT_REVIEW.md) · [候选与交接](../docs/tasks/length-analysis/INDEPENDENT_REVIEW_HANDOFF.md)。仅准备，未发送/启动；对齐当前T2–T4自动建议、公共AR-L5和前端UI-04，不打包部署。
 

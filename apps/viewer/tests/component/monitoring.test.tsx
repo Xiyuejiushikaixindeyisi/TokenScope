@@ -16,7 +16,7 @@ it('highlights all backend mode indices and puts percentiles outside SVG', () =>
   const { container } = render(<Distributions snapshot={s} onSelect={vi.fn()} />);
   expect(container.querySelectorAll('rect[data-mode="true"]')).toHaveLength(6);
   for (const svg of container.querySelectorAll('svg')) expect(svg.textContent).not.toContain('P50');
-  expect(screen.getAllByText(/P50/)).toHaveLength(3);
+  expect(screen.getAllByText(/^P50$/)).toHaveLength(3);
 });
 it('selects half-open ordinary and open overflow ranges via keyboard', () => {
   const select = vi.fn(); const { container } = render(<Distributions snapshot={sample()} onSelect={select} />);

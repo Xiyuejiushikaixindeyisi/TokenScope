@@ -24,14 +24,14 @@ export class SnapshotCoordinator {
     const { appid, model_id } = packet.snapshot.identity;
     this.store.update({ selection: { appid, model_id }, snapshot: packet.snapshot, cacheWarning: '上次缓存结果，待确认连接。' });
   }
-  catalog(catalog: Dto<'CatalogResponse'>) {
+  catalog(catalog: Dto<'CatalogResponse'>, requested?: { appid: string; model_id: string; run_id?: string | undefined }) {
     const old = this.store.getSnapshot();
     const priorInstance = old.catalog?.service_instance_id ?? old.snapshot?.identity.service_instance_id;
     const changed = priorInstance !== undefined && priorInstance !== catalog.service_instance_id;
     if (changed) { this.epoch++; this.cache.protect(null); this.store.update({ snapshot: null, pending: null, pinned: false }); }
     this.store.update({ catalog, ...(old.cacheWarning === '上次缓存结果，待确认连接。' ? { cacheWarning: null } : {}) });
-    const selection = old.selection ?? (catalog.items[0] ? { appid: catalog.items[0].appid, model_id: catalog.items[0].model_id } : null);
-    if (selection) void this.select(selection.appid, selection.model_id, true);
+    const selection = requested ?? old.selection ?? (catalog.items[0] ? { appid: catalog.items[0].appid, model_id: catalog.items[0].model_id } : null);
+    if (selection) void this.select(selection.appid, selection.model_id, true, requested?.run_id);
   }
   async select(appid: string, model_id: string, preservePin = false, historyRun?: string) {
     const epoch = ++this.epoch;

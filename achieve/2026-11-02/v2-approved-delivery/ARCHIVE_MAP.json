@@ -1,0 +1,140 @@
+{
+  "docs/tasks/delivery/VISUAL_ACCEPTANCE_DISPUTE_20261102.md": {
+    "original_sha256": "15e021eece4d0babf614172f33543cef9591c5475486078ec986b01885744957",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/delivery/VISUAL_ACCEPTANCE_DISPUTE_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/delivery/VISUAL_ACCEPTANCE_DISPUTE_20261102.md",
+    "stub": "docs/tasks/delivery/VISUAL_ACCEPTANCE_DISPUTE_20261102.md"
+  },
+  "docs/tasks/delivery/VISUAL_AUDIT_20261102.md": {
+    "original_sha256": "44bda9b6bb30a238973f1e79003f84eae56f4a40d22f2ea2fb32373f27d75e21",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/delivery/VISUAL_AUDIT_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/delivery/VISUAL_AUDIT_20261102.md",
+    "stub": "docs/tasks/delivery/VISUAL_AUDIT_20261102.md"
+  },
+  "docs/tasks/delivery/APPROVED_UI_INDEPENDENT_REVIEW_20261102.md": {
+    "original_sha256": "c5a11f05924a5fe2001e92a3af84694f1f478e1c254f99b304b7aad6382c7c61",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/delivery/APPROVED_UI_INDEPENDENT_REVIEW_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/delivery/APPROVED_UI_INDEPENDENT_REVIEW_20261102.md",
+    "stub": "docs/tasks/delivery/APPROVED_UI_INDEPENDENT_REVIEW_20261102.md"
+  },
+  "docs/tasks/delivery/APPROVED_UI_FIXES_INDEPENDENT_REVIEW_20261102.md": {
+    "original_sha256": "d5e23449e6d021582b681e656e4b49a00a34c8551e7b6958bae650a959d1930f",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/delivery/APPROVED_UI_FIXES_INDEPENDENT_REVIEW_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/delivery/APPROVED_UI_FIXES_INDEPENDENT_REVIEW_20261102.md",
+    "stub": "docs/tasks/delivery/APPROVED_UI_FIXES_INDEPENDENT_REVIEW_20261102.md"
+  },
+  "docs/tasks/delivery/UIR01_POINTER_INDEPENDENT_REVIEW_20261102.md": {
+    "original_sha256": "d946b814377ce9317d02acce0d3bce33a9c18d578823ad347490507cafeec3ea",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/delivery/UIR01_POINTER_INDEPENDENT_REVIEW_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/delivery/UIR01_POINTER_INDEPENDENT_REVIEW_20261102.md",
+    "stub": "docs/tasks/delivery/UIR01_POINTER_INDEPENDENT_REVIEW_20261102.md"
+  },
+  "docs/tasks/delivery/FS01_DELIVERY_20261102.md": {
+    "original_sha256": "a33fdbebef90e0949f54a1f5e58644c96f7ff811e67248b9d7917a64ae42d457",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/delivery/FS01_DELIVERY_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/delivery/FS01_DELIVERY_20261102.md",
+    "stub": "docs/tasks/delivery/FS01_DELIVERY_20261102.md"
+  },
+  "docs/tasks/delivery/FULL_SERVICE_SYNTHETIC_E2E_20261101.md": {
+    "original_sha256": "1596dd1a7262a67cfd56597dabb5d097b1e7a6ec0bf53d4fe53b38bb3a50ea09",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/delivery/FULL_SERVICE_SYNTHETIC_E2E_20261101.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/delivery/FULL_SERVICE_SYNTHETIC_E2E_20261101.md",
+    "stub": "docs/tasks/delivery/FULL_SERVICE_SYNTHETIC_E2E_20261101.md"
+  },
+  "docs/tasks/delivery/FULL_SERVICE_E2E_ISSUES_20261101.md": {
+    "original_sha256": "f822178868d7e20bf17a4298c1e2fc2aa30145b6ff917158831ec7e4ee95fd5f",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/delivery/FULL_SERVICE_E2E_ISSUES_20261101.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/delivery/FULL_SERVICE_E2E_ISSUES_20261101.md",
+    "stub": "docs/tasks/delivery/FULL_SERVICE_E2E_ISSUES_20261101.md"
+  },
+  "docs/tasks/delivery/RV2_UNIFIED_REVIEW_20261101.md": {
+    "original_sha256": "aaaac0d8adea50fee7b3f1e2ada25b866055f2dc772f7957116daa590381bbc2",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/delivery/RV2_UNIFIED_REVIEW_20261101.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/delivery/RV2_UNIFIED_REVIEW_20261101.md",
+    "stub": "docs/tasks/delivery/RV2_UNIFIED_REVIEW_20261101.md"
+  },
+  "docs/tasks/viewer/monitoring-v2/APPROVED_UI_RESTORATION_HANDOFF_20261102.md": {
+    "original_sha256": "9392417656e046cfc427dc6a6a42f9c77ec58c981068ce8786f3ef028e86e3a9",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/viewer/monitoring-v2/APPROVED_UI_RESTORATION_HANDOFF_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/viewer/monitoring-v2/APPROVED_UI_RESTORATION_HANDOFF_20261102.md",
+    "stub": "docs/tasks/viewer/monitoring-v2/APPROVED_UI_RESTORATION_HANDOFF_20261102.md"
+  },
+  "docs/tasks/viewer/monitoring-v2/APPROVED_UI_REVIEW_FIX_HANDOFF_20261102.md": {
+    "original_sha256": "816173b4720b918adfc178522f0ee3a2c12f20dd0e4eb0d5a55f37d022c48ae9",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/viewer/monitoring-v2/APPROVED_UI_REVIEW_FIX_HANDOFF_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/viewer/monitoring-v2/APPROVED_UI_REVIEW_FIX_HANDOFF_20261102.md",
+    "stub": "docs/tasks/viewer/monitoring-v2/APPROVED_UI_REVIEW_FIX_HANDOFF_20261102.md"
+  },
+  "docs/tasks/viewer/monitoring-v2/UIR01_POINTER_FIX_HANDOFF_20261102.md": {
+    "original_sha256": "2f201941475efa8b6b8374a643999cf1181c2741a66a0339b3ed30d84f2fd8a5",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/viewer/monitoring-v2/UIR01_POINTER_FIX_HANDOFF_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/viewer/monitoring-v2/UIR01_POINTER_FIX_HANDOFF_20261102.md",
+    "stub": "docs/tasks/viewer/monitoring-v2/UIR01_POINTER_FIX_HANDOFF_20261102.md"
+  },
+  "docs/tasks/viewer/analysis/SOURCE_LINK_FIX_20261101.md": {
+    "original_sha256": "b4213a26ce13fcddb80999993458f0a91ca021149072fdef2443dec865bee497",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/viewer/analysis/SOURCE_LINK_FIX_20261101.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/viewer/analysis/SOURCE_LINK_FIX_20261101.md",
+    "stub": "docs/tasks/viewer/analysis/SOURCE_LINK_FIX_20261101.md"
+  },
+  "prompts/sessions/FRONTEND_APPROVED_UI_RESTORATION_20261102.md": {
+    "original_sha256": "0578744e465f6a54a8da727c54daf97bc212900f01044fea3ee1b14a75425274",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/prompts/sessions/FRONTEND_APPROVED_UI_RESTORATION_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/prompts/sessions/FRONTEND_APPROVED_UI_RESTORATION_20261102.md",
+    "stub": "prompts/sessions/FRONTEND_APPROVED_UI_RESTORATION_20261102.md"
+  },
+  "prompts/sessions/FRONTEND_APPROVED_UI_REVIEW_FIXES_20261102.md": {
+    "original_sha256": "04fbbb76a9dbde052c79c17f239de331a497b46186f14d2bbc84bf2e15ddca72",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/prompts/sessions/FRONTEND_APPROVED_UI_REVIEW_FIXES_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/prompts/sessions/FRONTEND_APPROVED_UI_REVIEW_FIXES_20261102.md",
+    "stub": "prompts/sessions/FRONTEND_APPROVED_UI_REVIEW_FIXES_20261102.md"
+  },
+  "prompts/sessions/FRONTEND_UIR01_POINTER_FIX_20261102.md": {
+    "original_sha256": "a54fe95281462eab78b1362c12f3cfb6084af4b17f02a6afbb4d8571c860952a",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/prompts/sessions/FRONTEND_UIR01_POINTER_FIX_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/prompts/sessions/FRONTEND_UIR01_POINTER_FIX_20261102.md",
+    "stub": "prompts/sessions/FRONTEND_UIR01_POINTER_FIX_20261102.md"
+  },
+  "prompts/delivery/HUAWEI_FULL_SERVICE_ACCEPTANCE_V2_20261101.md": {
+    "original_sha256": "809cb35673d749d31e6ad1f88d76c507e41f7a869725d2d126460dd059e958e3",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/prompts/delivery/HUAWEI_FULL_SERVICE_ACCEPTANCE_V2_20261101.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/prompts/delivery/HUAWEI_FULL_SERVICE_ACCEPTANCE_V2_20261101.md",
+    "stub": "prompts/delivery/HUAWEI_FULL_SERVICE_ACCEPTANCE_V2_20261101.md"
+  },
+  "prompts/delivery/HUAWEI_FULL_SERVICE_FS01_20261102.md": {
+    "original_sha256": "14f2701995afb97c4cc58f8287c104f338e5dcb51c6d88bc8a375fe68b74ae7f",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/prompts/delivery/HUAWEI_FULL_SERVICE_FS01_20261102.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/prompts/delivery/HUAWEI_FULL_SERVICE_FS01_20261102.md",
+    "stub": "prompts/delivery/HUAWEI_FULL_SERVICE_FS01_20261102.md"
+  },
+  "prompts/delivery/HUAWEI_FULL_SERVICE_RV2.md": {
+    "original_sha256": "88955f9613e4c4c5b06047c9c05ee26c76f5d3f6d40488a406bfe991c5664c13",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/prompts/delivery/HUAWEI_FULL_SERVICE_RV2.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/prompts/delivery/HUAWEI_FULL_SERVICE_RV2.md",
+    "stub": "prompts/delivery/HUAWEI_FULL_SERVICE_RV2.md"
+  },
+  "docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md": {
+    "original_sha256": "554f94d54742c1806b72b3baa87cae99cd49d12877c4723a91d1b0ae9c3e1d6b",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md",
+    "stub": "docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md"
+  },
+  "docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md": {
+    "original_sha256": "dcbbc2fffe1a12e4c34fe8a84ee59b17ae237868ecc90f2e157bf820065718f4",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md",
+    "stub": "docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md"
+  },
+  "docs/tasks/analysis/GIT_HANDOFF_RV2_20261101.md": {
+    "original_sha256": "a4d70e7ed40711a3373af9d40df62ec48ff9f0831e234443331c41417972b459",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/analysis/GIT_HANDOFF_RV2_20261101.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/GIT_HANDOFF_RV2_20261101.md",
+    "stub": "docs/tasks/analysis/GIT_HANDOFF_RV2_20261101.md"
+  },
+  "docs/tasks/analysis/COORDINATION_RV2.md": {
+    "original_sha256": "305d96b93d2f318c48f4e1e1f312b0b7e736dc3445c9d19a92a8e905cdc0b4a8",
+    "snapshot": "achieve/2026-11-02/v2-approved-delivery/snapshots/docs/tasks/analysis/COORDINATION_RV2.md",
+    "archive": "achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/COORDINATION_RV2.md",
+    "stub": "docs/tasks/analysis/COORDINATION_RV2.md"
+  }
+}

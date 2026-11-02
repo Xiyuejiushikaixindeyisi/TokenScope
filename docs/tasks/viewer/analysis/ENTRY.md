@@ -1,8 +1,16 @@
 # 异常分析前端入口
 
-2026-11-01维护：完整服务总负责派发的user_v2来源跳转P1已在本线修复，待其独立复审。[交接与独立候选dist](SOURCE_LINK_FIX_20261101.md)；仅SourceLink URL参数一行变更，203单元/组件及3真实浏览器回归通过，未提交/push或更新冻结镜像。
+2026-11-02统一交付同步：用户认可V2可交付，UIR-03暂不修、留V3，不作V2阻断。本角色职责/休眠状态不变；当前发布与实际结果见[交付记录](../../delivery/V2_APPROVED_DELIVERY_20261102.md)。现场只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）和MA，第一次用户验收并指定appid后才两类异常；SSH18002，唯一Markdown嵌关键源码/证据。[当前prompt](../../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../../../operations/DELIVERY_ACCEPTANCE_RULES.md)。下方旧开发/交接状态按历史阅读，不覆盖本决定。
 
-2026-11-01最新：用户已认可RV2 L4/L5展示，本机统一审查/交付已闭环。总负责权柄已交还镜像打包与审查会话，由其组织华为启动、监控V2及异常分析完整验收和归口修复；本session回到异常分析前端维护支持。[职责交接](../../analysis/ONSITE_COORDINATION_HANDOFF_20261101.md) · [冻结交付](../../analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md)。原[本机统筹](../../analysis/COORDINATION_RV2.md)为历史，不继续指挥后端。
+2026-11-02 UIR-01鼠标单项修复完成自测，候选viewer-uir01-pointer-fix-20261102-c1；[交接](../../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/viewer/monitoring-v2/UIR01_POINTER_FIX_HANDOFF_20261102.md)。仅用SVG实际screen CTM逆变换修正指针，布局/后端不变。226单元组件、85不同浏览器用例、144真实圆点检查通过；c2负向2项按预期失败；118地址重启一致，重启7项通过。原18项/UIR-02/排行/L4L5/T2–T4保持，窗口释放交审查会话独立复审，未提交/push/打包，不代用户认可。实际session 01a19111-344a-75c1-84e0-14db8be08f4f。
+
+2026-11-02 UIR-01/02补充修复已完成自测，候选 viewer-approved-ui-review-fixes-20261102-c2；[补充交接](../../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/viewer/monitoring-v2/APPROVED_UI_REVIEW_FIX_HANDOFF_20261102.md)。恢复降序读数与不改路由的键盘跳转，另修最近运行覆盖排行路由；222单元组件、81不同浏览器用例、118地址重启通过，重启后13项复测通过。原18项/四入口/L4-L5/T2-T4及后端契约保持。前端窗口释放，交镜像打包与审查独立复审，未提交/合并/push/打包，不代签用户视觉认可。实际session仍01a19111-344a-75c1-84e0-14db8be08f4f。
+
+2026-11-02 四入口/UI-02/UI-04 恢复自测交接：[统一交接](../../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/viewer/monitoring-v2/APPROVED_UI_RESTORATION_HANDOFF_20261102.md)。215单元/组件、71不同浏览器用例通过，111地址重启摘要一致；18项有逐项依据。唯一候选4191，未提交/push/打包，待审查方重新冷启动独立复审，不代签用户视觉验收。
+
+2026-11-01维护：完整服务总负责派发的user_v2来源跳转P1已在本线修复，待其独立复审。[交接与独立候选dist](../../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/viewer/analysis/SOURCE_LINK_FIX_20261101.md)；仅SourceLink URL参数一行变更，203单元/组件及3真实浏览器回归通过，未提交/push或更新冻结镜像。
+
+2026-11-01最新：用户已认可RV2 L4/L5展示，本机统一审查/交付已闭环。总负责权柄已交还镜像打包与审查会话，由其组织华为启动、监控V2及异常分析完整验收和归口修复；本session回到异常分析前端维护支持。[职责交接](../../analysis/ONSITE_COORDINATION_HANDOFF_20261101.md) · [冻结交付](../../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md)。原[本机统筹](../../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/COORDINATION_RV2.md)为历史，不继续指挥后端。
 
 2026-10-31；session `01a19111-344a-75c1-84e0-14db8be08f4f`，Windows环境CODEX_THREAD_ID与CODEX_SESSION_ID一致复核，独立于创建方及两后端。
 
@@ -10,7 +18,7 @@
 
 当前后端：[低命中/公共arpc-local-4独立复审通过](../../prefix-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md)；[Token私有T2–T4独立复审通过](../../length-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md)。同一RV1封存状态不变，实际源码身份和验证层级见联合报告。
 
-- **[当前统一功能/视觉验收与联合报告 RV2](../../analysis/JOINT_VALIDATION_RV2_20261101.md)** · [版本清单](../../analysis/VERSION_RV2_20261101.json) · [统一审查交付prompt](../../../../prompts/sessions/ANALYSIS_UNIFIED_REVIEW_DELIVERY_RV2.md)。
+- **[当前统一功能/视觉验收与联合报告 RV2](../../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md)** · [版本清单](../../analysis/VERSION_RV2_20261101.json) · [统一审查交付prompt](../../../../prompts/sessions/ANALYSIS_UNIFIED_REVIEW_DELIVERY_RV2.md)。
 - [前轮RV1](ACCEPTANCE_RV1.md) · [前轮独立复审报告](INDEPENDENT_REVIEW_20261101.md)：6项问题关闭记录保持，其191/17为历史计数。旧[UI-04双实例验收](ACCEPTANCE_UI04.md)已被用户拒绝。
 - [前轮执行与验证 ARF000–004](FRONTEND_REWORK_EXECUTION_ARF.md) · [两后端协调及接收 AR-03](REWORK_COORDINATION_AR03.md)。其190项单元/组件、8项浏览器场景为旧验证记录，最新结果以上方RV2为准。
 

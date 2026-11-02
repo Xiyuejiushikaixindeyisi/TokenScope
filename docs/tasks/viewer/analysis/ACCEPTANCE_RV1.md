@@ -1,6 +1,6 @@
 # RV1：统一入口及前端独立复审修复验收
 
-2026-11-01后续RV2已取代本文件作为当前验收：L4/L5各一张卡、每类≤3例，见[联合报告](../../analysis/JOINT_VALIDATION_RV2_20261101.md)。当前8016已加载arpc-local-4、运行PID见RV2 service.json；本文件原测试和版本身份保持历史，不改写成新执行。
+2026-11-01后续RV2已取代本文件作为当前验收：L4/L5各一张卡、每类≤3例，见[联合报告](../../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md)。当前8016已加载arpc-local-4、运行PID见RV2 service.json；本文件原测试和版本身份保持历史，不改写成新执行。
 
 2026-11-01，`viewer-analysis-ui04-local-2`。本轮依据用户拒绝双入口并要求独立复审/修复BUG的指令执行。UI-04配色布局保持，未改批准HTML、后端业务源码或接口，未打包部署。
 

@@ -1,5 +1,7 @@
 # Token监控V2前端记忆
 
+2026-11-02当前交付决定：用户认可V2可交付，UIR-03留V3、不阻断；审查打包获Git/push、WSL构建/包体/桌面授权并执行。角色职责保持，以下旧暂停/阻断/合成现场计划只是历史。现场真实数据、两次人工验收、SSH18002、唯一Markdown要求及不得再犯的问题见[长期记忆](../DELIVERY_LESSONS.md)；当前结果看[交付记录](../../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
+
 2026-10-31审查方结果同步：三项修复已独立复审通过且推送main，见[当前状态](../../docs/tasks/delivery/MONITORING_V2_STATUS.md)。下方“待复审/未提交”为历史记录；修复交接已归档，原始证据保持原位。本线职责不变。
 
 **2026-10-31最新：前端修复及自测完成，待独立复审。** [RV2修复交接](../../achieve/2026-10-31/monitoring-v2-review/docs/tasks/viewer/monitoring-v2/REVIEW_FIX_HANDOFF_20261031.md)。RV2-01客户端同时识别两身份错误、同步取消lifetime/请求池、阻断迟到连接；RV2-02完整导出scope隔离并取消、旧回调不写新状态，离开到排行也卸载导出；RV2-03只在实际生效搜索变化时重置页码。冷环境用例显式建任务并等待ready/completed；原校验和20+5/大整数/null/revision/众数断言保留。全量173单元/组件及typecheck/lint/build通过；选定50浏览器、最终受影响30浏览器、冷state排行1项分别通过，集合重叠不加总。文件选择器/写入API为受控替身，真实HTTP/Worker与下载回退另行实测，不声称原生磁盘验收。证据artifacts/validation/viewer/RV2-FIX-20261031，HEAD仍5c619f80631dbd0efdcbadffa7eedbf314bb678e，21个前端文件未提交；不改后端/冻结契约/UI-02，原审查证据摘要一致。自有18041/14183、18042/14184已停止，输入/state保留；原8000/4173仍HTTP200。未构建镜像、打包、部署、Git收口或发跨会话消息。由用户转“镜像打包和审查”独立复审；原候选不通过不由本线关闭。

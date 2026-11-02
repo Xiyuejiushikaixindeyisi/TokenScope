@@ -30,12 +30,12 @@
 
 | 已有范围 | 不能遗漏的验证 | 依据 |
 | --- | --- | --- |
-| 服务与编码配置 | 包/镜像/配置身份，真实宿主预检，输入只读与state可写，同源前后端，三模型模式/别名/时间转换，任务提交/幂等/恢复 | [交付报告](../delivery/RV2_UNIFIED_REVIEW_20261101.md)、[部署说明](../../../deploy/monitoring/README.md) |
+| 服务与编码配置 | 包/镜像/配置身份，真实宿主预检，输入只读与state可写，同源前后端，三模型模式/别名/时间转换，任务提交/幂等/恢复 | [交付报告](../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/delivery/RV2_UNIFIED_REVIEW_20261101.md)、[部署说明](../../../deploy/monitoring/README.md) |
 | 用户监控V2 | GB的appid×common_name隔离，运行/历史，指标与图表、明细/导出、质量说明，已实现TTFT情景与不可变历史 | [前端交互](../viewer/monitoring-v2/INTERACTION_V2.md)、[用户后端](../monitoring/v2-user/ENTRY.md)、[用户契约](../../contracts/user-monitoring-v2/README.md) |
 | 搜索与排行 | APPID大小写敏感字面子串、%/_非通配符，命中/无结果，四项排序与AND上下界，稳定分页与revision冲突，切范围/返回定位，精确整数及NULL | [后端接入](../monitoring/v2-user/FRONTEND_HANDOFF.md)、[搜索实现批次](../viewer/monitoring-v2/batches/MV2-F003/PLAN.md) |
 | MA监控 | GF规格×UUID，前后连续时间窗输入，全部UUID/实例展开，理想与实际对照、趋势/分布、质量/缺失/零区别，失败保留旧结果 | [MA设计与验收](../monitoring/v2-ma/ENTRY.md)、[MA契约](../../contracts/ma-monitoring-v2/CONTRACT.md) |
-| 两类异常分析 | 同实例/同appid切方向，低命中L1–L3建议与L4/L5各一卡≤3例，Token T2–T4影响/建议/量化变化/局部证据，完成通知后拉取，历史/partial保留旧报告，详情返回，页面不触发分析 | [联合验证](JOINT_VALIDATION_RV2_20261101.md)、[统一审查](../delivery/RV2_UNIFIED_REVIEW_20261101.md) |
-| 跨功能恢复与结果报告 | 重启/断连/身份切换/错误重试/导出取消；现场证据与版本绑定，问题→归口修复→本地复验→必要新版本→现场复验，失败回退 | [协作流程](../../architecture/TASK_SESSION_WORKFLOW.md)、[最新执行记录](UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md) |
+| 两类异常分析 | 同实例/同appid切方向，低命中L1–L3建议与L4/L5各一卡≤3例，Token T2–T4影响/建议/量化变化/局部证据，完成通知后拉取，历史/partial保留旧报告，详情返回，页面不触发分析 | [联合验证](../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md)、[统一审查](../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/delivery/RV2_UNIFIED_REVIEW_20261101.md) |
+| 跨功能恢复与结果报告 | 重启/断连/身份切换/错误重试/导出取消；现场证据与版本绑定，问题→归口修复→本地复验→必要新版本→现场复验，失败回退 | [协作流程](../../architecture/TASK_SESSION_WORKFLOW.md)、[最新执行记录](../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md) |
 
 本机容器通过、SPA或capabilities返回200不能代替现场业务验收；合成数据与真实数据、功能正确性与TTFT真实性能校准分别记录。缺少现场访问、数据、生产策略或配置时列明具体缺口，不能把未执行项写成通过，也不能因只具备异常样例而省略监控V2。
 

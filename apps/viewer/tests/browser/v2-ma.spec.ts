@@ -19,13 +19,13 @@ test('real MA completion, all UUIDs, row retry, independent charts and quality',
     const row = page.locator('.ma-table tbody tr').filter({ hasText: 'uuid-00' });
     await expect(row.getByRole('button', { name: '重试此行' })).toBeVisible();
     await row.getByRole('button', { name: '重试此行' }).click();
-    await expect(row.getByRole('button', { name: '查看画像' })).toBeVisible();
-    await row.getByRole('button', { name: '查看画像' }).click();
+    await expect(row.getByRole('button', { name: /展开详情|收起详情/ })).toBeVisible();
+    await row.getByRole('button', { name: /展开详情|收起详情/ }).click();
     await expect(page.getByRole('img', { name: '请求压力（req/s），12个5分钟桶' })).toBeVisible();
     await page.getByRole('button', { name: '长度分布', exact: true }).click();
     await expect(page.getByRole('img', { name: '实际未命中长度分布' })).toBeVisible();
     await page.getByLabel('MA分布箱宽').selectOption('1000');
-    await page.getByRole('button', { name: '运行质量记录', exact: true }).click();
+    await page.getByRole('button', { name: '数据质量', exact: true }).click();
     await expect(page.getByText('整次运行pre/now质量记录，不按当前UUID过滤。')).toBeVisible();
     await expect(page.locator('table').last()).toContainText('now');
     await page.setViewportSize({ width: 390, height: 844 });

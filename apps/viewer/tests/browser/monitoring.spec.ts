@@ -22,9 +22,9 @@ test('synthetic contract dashboard: scope, histogram cache, requests, safe detai
   await expect(page.locator('.metric-grid')).toContainText('80');
   const snapshotCount = snapshots;
   await page.getByRole('link', { name: '请求长度分布' }).click();
-  await page.getByLabel('分箱宽度').selectOption('1000'); await expect(page.locator('svg rect')).toHaveCount(603);
-  await page.getByLabel('分箱宽度').selectOption('2000'); await expect(page.locator('svg rect')).toHaveCount(303);
-  await page.getByLabel('分箱宽度').selectOption('5000'); await page.getByLabel('显示请求占比').check();
+  await page.getByLabel('分箱宽度').selectOption('1000'); await expect(page.locator('.distributions svg rect')).toHaveCount(603);
+  await page.getByLabel('分箱宽度').selectOption('2000'); await expect(page.locator('.distributions svg rect')).toHaveCount(303);
+  await page.getByLabel('分箱宽度').selectOption('5000'); await page.getByLabel('分布纵轴').selectOption('share');
   expect(snapshots).toBe(snapshotCount);
   await page.getByRole('button', { name: /≥200K Token/ }).first().click();
   await expect(page.getByRole('heading', { name: '请求明细', exact: true }).first()).toBeVisible();

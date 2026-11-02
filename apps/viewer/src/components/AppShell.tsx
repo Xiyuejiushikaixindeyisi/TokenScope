@@ -1,0 +1,11 @@
+import type { ReactNode } from 'react';
+import './app-shell.css';
+const entries = [['users', '用户监控'], ['users/ranking', '搜索与排行'], ['analysis', '异常分析'], ['ma', 'MA集群监控']] as const;
+function Icon({ index }: { index: number }) {
+  return <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">{index === 0 || index === 3 ? <>{[[3,3],[14,3],[3,14],[14,14]].map(([x,y]) => <rect key={`${x}/${y}`} x={x} y={y} width="7" height="7" rx="1"/>)}</> : <path d={index === 1 ? 'M8 5h13M8 12h13M8 19h13M3 5h.1M3 12h.1M3 19h.1' : 'M3 3v18h18M6 9l5 4 4-7 6 3'}/>}</svg>;
+}
+export function AppShell({ page, children, variant = 'v2', status }: { page: string; children: ReactNode; variant?: string; status?: ReactNode }) {
+  const active = page === 'analysis' ? 2 : page.startsWith('ma') ? 3 : page === 'users/ranking' ? 1 : 0;
+  const link = (index: number) => { const [route,label] = entries[index]!; return <a key={route} className="nav-item" href={`#/${route}`} aria-current={active === index ? 'page' : undefined}><Icon index={index}/>{label}</a>; };
+  return <div className={`shell unified-shell ${variant}`}><a className="skip" href={page === 'analysis' ? '#analysis-main' : '#main'} onClick={event => { event.preventDefault(); const main = event.currentTarget.closest('.shell')?.querySelector('main'); if (main) { main.tabIndex = -1; main.focus({ preventScroll: true }); main.scrollIntoView({ block: 'start' }); } }}>跳至内容</a><aside className="sidebar" aria-label="主导航"><div className="brand"><span className="brandmark" aria-hidden="true"><i/><i/><i/></span>TokenScope</div><nav aria-label="用户工作台"><div className="nav-caption">用户工作台</div><div className="nav-links">{[0,1,2].map(link)}</div></nav><nav aria-label="同事工作台"><div className="nav-caption">同事工作台</div><div className="nav-links">{link(3)}</div></nav><div className="sidebar-bottom"><b>TokenScope · 工作台</b><p>读取已发布分析结果<br/>按范围查看监控与优化建议</p></div></aside><div className="workspace"><header className="topbar"><div className="crumb"><span>工作台</span><span>/</span><strong>{entries[active]![1]}</strong></div><div className="top-right">{status}<span className="small muted">北京时间 UTC+8</span><span className="avatar">TS</span></div></header><nav className="unified-mobile" aria-label="移动导航">{[0,1,2,3].map(link)}</nav>{children}</div></div>;
+}

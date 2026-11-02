@@ -71,7 +71,7 @@ test('MA visual, failed task and reload preserve historical UUIDs', async ({ pag
     await page.getByLabel('MA运行ID').fill(entry.ma_run_id);
     await page.getByRole('button', { name: '打开MA运行' }).click();
     await expect(page.locator('.ma-table tbody tr')).toHaveCount(13);
-    await expect(page.getByRole('button', { name: '查看画像' })).toHaveCount(13);
+    await expect(page.getByRole('button', { name: /展开详情|收起详情/ })).toHaveCount(13);
     await page.setViewportSize({ width: 1440, height: 1000 });
     await page.screenshot({ path: test.info().outputPath('ma-desktop.png'), fullPage: true });
     await page.setViewportSize({ width: 390, height: 844 });

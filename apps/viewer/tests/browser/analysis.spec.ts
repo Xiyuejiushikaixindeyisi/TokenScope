@@ -1,7 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
-const out = path.resolve('../../artifacts/validation/viewer/analysis/rv2-20261101/browser');
+const out = path.resolve(process.env.TOKENSCOPE_ANALYSIS_SCREENSHOTS ?? '../../artifacts/validation/viewer/analysis/rv2-20261101/browser');
 const lowURL = process.env.TOKENSCOPE_TEST_BASE_URL ?? 'http://localhost:4191';
 const tokenURL = lowURL; // Both directions must use the same service and origin.
 async function shot(page: Page, options: Parameters<Page['screenshot']>[0]) { const y = await page.evaluate(() => scrollY); await page.evaluate(() => scrollTo(0, 0)); await page.screenshot(options); await page.evaluate(value => scrollTo(0, value), y); }
@@ -61,7 +61,7 @@ test('completed report waits for notifications without polling; reconnect preser
 
 test('analysis navigation preserves monitoring and MA routes', async ({ page }) => {
     const errors: string[] = []; page.on('pageerror', e => errors.push(e.message)); await page.goto(tokenURL + '/#/analysis?direction=token_content'); await expect(page.locator('.solution-card')).toHaveCount(4);
-    await page.getByRole('link', { name: '返回监控', exact: true }).click(); await expect(page.locator('.shell.v2')).toBeVisible(); await page.goto(tokenURL + '/#/ma'); await expect(page.locator('.shell.v2')).toBeVisible(); await page.goto(tokenURL + '/#/overview'); await expect(page.getByRole('heading', { level: 1 })).toHaveText('监控概览'); expect(errors).toEqual([]);
+    await page.getByRole('link', { name: '返回监控', exact: true }).click(); await expect(page.locator('.shell.v2')).toBeVisible(); await page.goto(tokenURL + '/#/ma'); await expect(page.locator('.shell.v2')).toBeVisible(); await page.goto(tokenURL + '/#/overview'); await expect(page.getByRole('heading', { level: 1 })).toHaveText('监控概览'); await expect(page.locator('.sidebar a')).toHaveText(['用户监控','搜索与排行','异常分析','MA集群监控']); await expect(page.locator('.sidebar-bottom')).not.toContainText('V1'); expect(errors).toEqual([]);
 });
 
 test('one origin keeps both directions, pinned history and ready default after partial', async ({ page }) => {
@@ -105,8 +105,9 @@ test('one origin keeps both directions, pinned history and ready default after p
     expect([...instances]).toEqual([fixture.service_instance_id]);
 });
 
-test('old Token acceptance port redirects to the unified entry', async ({ page }) => {
-    await page.goto('http://localhost:4193/#/analysis?direction=token_content');
+test('retired Token port is stopped and unified entry preserves both directions', async ({ page }) => {
+    await expect(page.request.get('http://localhost:4193/', { timeout: 3000 })).rejects.toThrow();
+    await page.goto(lowURL + '/#/analysis?direction=token_content');
     await expect(page).toHaveURL(new RegExp('^' + lowURL.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '/#'));
     await expect(page.locator('.solution-card')).toHaveCount(4);
     await page.getByRole('button', { name: '低命中率分析', exact: true }).click();

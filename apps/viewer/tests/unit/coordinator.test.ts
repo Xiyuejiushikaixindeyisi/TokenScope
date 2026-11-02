@@ -59,3 +59,13 @@ it('failed next version preserves complete old snapshot only in same scope', asy
   const newer = cat(); newer.items[0]!.active_run_id = '33333333-3333-4333-8333-333333333333'; coordinator.catalog(newer); await tick();
   expect(store.getSnapshot().snapshot).toBe(value.snapshot); expect(store.getSnapshot().error).not.toBeNull();
 });
+
+it('cold explicit history survives catalog reconciliation while its read is pending', async () => {
+ const store=new ViewStore(),disk=cache(),run='33333333-3333-4333-8333-333333333333';
+ let release!: (value:ReturnType<typeof packet>)=>void;
+ const read=vi.fn().mockImplementation(()=>new Promise(resolve=>{release=resolve;}));
+ const coordinator=new SnapshotCoordinator(store,disk,read), requested={appid:'synthetic-app-1',model_id:'GLM-5.2',run_id:run};
+ coordinator.catalog(cat(),requested);await tick();coordinator.catalog(cat(),requested);await tick();
+ expect(read).toHaveBeenCalledTimes(1);expect(read.mock.calls[0]![0].run_id).toBe(run);
+ release(packet(requested.appid,run));await tick();expect(store.getSnapshot().snapshot!.identity.run_id).toBe(run);expect(store.getSnapshot().pinned).toBe(true);
+});

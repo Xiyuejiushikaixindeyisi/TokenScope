@@ -1,6 +1,8 @@
 # 异常分析已批产品与分线交接入口
 
-2026-11-01当前入口：[功能统筹RV2](COORDINATION_RV2.md) · [联合验证报告](JOINT_VALIDATION_RV2_20261101.md)。两后端已实际实现并完成独立复审，前端已修复L4/L5各一张卡、每类≤3例；Token仅T2–T4，前端只读，无参数/评估表单。用户指定异常前端session兼总负责，统一版本归档与GitHub收口，再给出审查打包prompt。下方v0.4产品/分线过程为历史依据，“待启动/未编码/T1–T4”等不代表当前状态。
+2026-11-02统一交付同步：用户认可V2可交付，UIR-03暂不修、留V3，不作V2阻断。本角色职责/休眠状态不变；当前发布与实际结果见[交付记录](../delivery/V2_APPROVED_DELIVERY_20261102.md)。现场只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）和MA，第一次用户验收并指定appid后才两类异常；SSH18002，唯一Markdown嵌关键源码/证据。[当前prompt](../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../../operations/DELIVERY_ACCEPTANCE_RULES.md)。下方旧开发/交接状态按历史阅读，不覆盖本决定。
+
+2026-11-01当前入口：[功能统筹RV2](../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/COORDINATION_RV2.md) · [联合验证报告](../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/JOINT_VALIDATION_RV2_20261101.md)。两后端已实际实现并完成独立复审，前端已修复L4/L5各一张卡、每类≤3例；Token仅T2–T4，前端只读，无参数/评估表单。用户指定异常前端session兼总负责，统一版本归档与GitHub收口，再给出审查打包prompt。下方v0.4产品/分线过程为历史依据，“待启动/未编码/T1–T4”等不代表当前状态。
 
 2026-10-31：用户已审批产品v0.4。原母会话01a18be2-7112-7aa2-919b-5137d1f1b1ad继续负责[低命中率后端](../prefix-analysis/ENTRY.md)；[Token异常后端](../length-analysis/ENTRY.md)由已创建会话01a18fcd-0464-7cf1-b435-4f394bd33e66负责。用户已允许fork，启动prompt已发送且身份复核完成，当前进入两线后端详细设计。[分线交接与prompt](BACKEND_SPLIT_HANDOFF.md)为当前状态依据。
 

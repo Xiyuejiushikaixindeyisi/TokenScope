@@ -1,31 +1,11 @@
-# 镜像打包和审查入口
+# 镜像打包与审查／完整服务交付入口
 
-2026-11-02当前：[FS-01正式交付完成](FS01_DELIVERY_20261102.md)，固定源码0263d784已push，新版tokenscope-rv2-fs01-20261102的71浏览器/15范围/新诊断/546地址恢复及归档校验通过。旧包保持，本地备份不push；现场改用[本版完整华为prompt](../../../prompts/delivery/HUAWEI_FULL_SERVICE_FS01_20261102.md)，并携带同版合成材料。华为现场仍待执行。下方11-01“未重新打包”是历史阶段。
+2026-11-02当前：[V2批准交付](V2_APPROVED_DELIVERY_20261102.md)执行中；用户认可V2可交付，UIR-03留V3，不阻断、不扩展修复。已授权Git整理/push、WSL构建与代码/镜像包、本地backup管理及Windows桌面验收；状态按该记录更新，不能把授权当实际完成。
 
-2026-11-01最新：[完整本机合成E2E](FULL_SERVICE_SYNTHETIC_E2E_20261101.md)通过修复候选71浏览器/203单元组件，476地址重启一致；[FS-01来源跳转缺陷](FULL_SERVICE_E2E_ISSUES_20261101.md)已归口修复并独立复验。旧RV2镜像/代码包未含修复，保持冻结，本轮未重新打包/推送/部署。新版[完整华为prompt](../../../prompts/delivery/HUAWEI_FULL_SERVICE_ACCEPTANCE_V2_20261101.md)及[结构化身份/结果](FULL_SERVICE_SYNTHETIC_RESULT_20261101.json)为下轮入口。总负责仍为本session，后续正式修复交付及华为全功能验收由本线协调。
+P0：[CURRENT](../../../memory/CURRENT.md) → [SESSIONS](../../../memory/SESSIONS.md) → [交付规则](../../operations/DELIVERY_ACCEPTANCE_RULES.md)与[长期教训](../../../memory/DELIVERY_LESSONS.md)。P1：[本版现场prompt](../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md)、[部署工具](../../../deploy/monitoring/README.md)、[Git约定](../../operations/GIT_WORKFLOW.md)、[V100历史环境报告](../../huawei/TOKEN_SCOPE_V100_ENVIRONMENT_REPORT.md)。现场需实测，不直接继承历史可用性。
 
-2026-11-01最新：用户认可RV2 L4/L5并授权后，统一审查、发布修复复验、WSL构建、最终容器及归档load、总负责独立接收均已完成。固定源码`45d9285210dc0b9edeb86c599c7b6bcd942f60b5`，发布`tokenscope-rv2-20261101`，交付目录冻结。[最终审查/文件/版本/校验与回退](RV2_UNIFIED_REVIEW_20261101.md) · [结构化结果](RV2_DELIVERY_RESULT_20261101.json) · [授权及总负责执行](../analysis/UNIFIED_REVIEW_DELIVERY_EXECUTION_20261101.md)。本次没有远端部署或桌面写入；华为现场待执行。下方“等待/暂不打包”是本次授权前历史，不再指当前已完成交付；后续新打包按新安排执行。
+前置审查：UIR-01/02闭环、四入口和L4/L5保持；[复审及修复原文链](../../../achieve/2026-11-02/v2-approved-delivery/README.md)。源码/锁/契约/模型/实际资源固定后构建，不读共享dirty或旧dist。每个新候选先核实停旧服务/进程，独立空state/新浏览器。其他session业务修改归原维护方；不擅自改变用户计划或展示。
 
-## 前序审查依据
+交付：WSL artifacts/releases/tokenscope-v2-approved-20261102，新目录保留旧包；完整复制Windows桌面，所有SHA逐项一致。包体/镜像不上GitHub，backup仅本地不合main；源码和非敏感交付记录精确push main，无PR。华为先用户监控/搜索/TTFT后MA，第一次用户验收后才指定appid两类分析，唯一Markdown回传。
 
-2026-11-01：[Token T2–T4实际独立复审](../length-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md)通过；164项本线+12项独立边界、ART4只读核验，无阻断。当前后端结论包含本报告与下方公共报告；不代签用户前端验收/生产策略/华为现场。异常分析总负责统一Git收口，本审查线不打包部署发布。
-
-2026-11-01：[低命中/公共arpc-local-4实际独立复审](../prefix-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md)已通过，两项独立发现经维护方修复和复验关闭。本结论不代表异常分析前端用户验收、Token私有全范围复审或现场通过；仍暂不打包、部署或Git发布。
-
-当前：[监控V2审查通过与Git收口状态](MONITORING_V2_STATUS.md)。本轮闭环评审、修复交接和本地验收记录已[归档](../../../achieve/2026-10-31/monitoring-v2-review/README.md)，原始证据不移动。
-
-原等待阶段：异常分析前后端验收和统一交付已按上述新授权完成。本session负责统一审查、获授权后的Docker构建、镜像/代码包及执行prompt、版本配置摘要和本地backup管理；业务缺陷回对应前后端，不暗改契约或代用户验收。
-
-## 当前阅读顺序
-
-- [CURRENT](../../../memory/CURRENT.md)、[SESSIONS](../../../memory/SESSIONS.md)、[本线记忆](../../../memory/tasks/delivery.md)。
-- [统一流程](../../architecture/TASK_SESSION_WORKFLOW.md)、[Git约定](../../operations/GIT_WORKFLOW.md)；无PR，backup仅本地，包体不上GitHub，含产物分支不合main。
-- 当前发布先读上述最终报告及结构化结果；后续候选按[异常分析入口](../analysis/ENTRY.md)、[监控前端入口](../viewer/monitoring-v2/ENTRY.md)及各后端入口核对范围与验收证据。
-
-## 已发布V1与交付工具
-
-monitoring-v1-20261028发布身份不变；[现场接收](../../huawei/MONITORING_V1_ACCEPTANCE_20261030.md)、[B006结果](../monitoring/batches/B006/RESULT_20261028.md)、[审查](../monitoring/batches/B006/PREPACKAGE_REVIEW_20261028.md)、[B006计划](../monitoring/batches/B006/PLAN.md)。
-
-[构建运行入口](../../../deploy/monitoring/README.md)、[发布脚本](../../../scripts/release/README.md)、[V1现场prompt](../../../prompts/delivery/HUAWEI_MONITORING_FULL_SERVICE.md)保留为工具和历史版本依据，不是V2部署指令。
-
-已有交付目录：`C:\Users\ALIENWARE\Desktop\TokenScope-monitoring-v1-20261028`。WSL原产物指针、代码包/镜像/manifest及桌面prompt保持冻结，本轮未重新打包。现场启动验收和失败debug沿[监控维护入口](../monitoring/ENTRY.md)及当前MA分工。
+历史：[本次归档](../../../achieve/2026-11-02/v2-approved-delivery/README.md) · [监控V2前序状态](MONITORING_V2_STATUS.md) · [V1现场验收](../../huawei/MONITORING_V1_ACCEPTANCE_20261030.md) · [B006工具计划](../monitoring/batches/B006/PLAN.md)。原始证据、冻结契约和旧发布包保持身份；旧合成/额外附件/旧服务并行策略不再适用。
