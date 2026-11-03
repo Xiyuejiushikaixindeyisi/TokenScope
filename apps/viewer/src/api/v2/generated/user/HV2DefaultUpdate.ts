@@ -1,0 +1,21 @@
+/* Generated from frozen user 2.1.0; do not edit. */
+
+export type SubmissionKey = string;
+export type CommonName = string;
+export type ModelId = "GLM-5.2" | "Qwen3.6-27B" | "DeepSeek-V4-Flash-0731";
+export type ExpectedRevision = string;
+export type ChunkTokens = string;
+export type ChunkSeconds = string | null;
+export type TauReferenceChunkTokens = string;
+export type SourceDescription = string;
+
+export interface DefaultUpdate {
+  submission_key: SubmissionKey;
+  common_name: CommonName;
+  model_id: ModelId;
+  expected_revision: ExpectedRevision;
+  chunk_tokens?: ChunkTokens;
+  chunk_seconds: ChunkSeconds;
+  tau_reference_chunk_tokens?: TauReferenceChunkTokens;
+  source_description: SourceDescription;
+}

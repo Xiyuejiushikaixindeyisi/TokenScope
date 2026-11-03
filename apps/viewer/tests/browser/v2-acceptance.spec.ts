@@ -19,8 +19,7 @@ test('three real models and read-only visual captures', async ({ page }) => {
             await page.screenshot({ path: test.info().outputPath('user-desktop.png'), fullPage: true });
             await page.screenshot({ path: test.info().outputPath('user-viewport.png') });
             await page.getByRole('button', { name: '设置评估条件' }).click();
-            await page.getByRole('button', { name: '新建情景', exact: true }).click();
-            await page.screenshot({ path: test.info().outputPath('scenario-desktop.png') });
+            await page.screenshot({ path: test.info().outputPath('ttft-defaults-desktop.png') });
             await page.getByRole('button', { name: '关闭弹窗' }).click();
             await page.setViewportSize({ width: 390, height: 844 });
             await page.screenshot({ path: test.info().outputPath('user-mobile.png'), fullPage: true });
@@ -34,6 +33,7 @@ test('active task checks once at 60 seconds, failure survives reload, later succ
     await page.goto('/#/users');
     const old = await user(page);
     await openUser(page, old.user_run_id);
+    await expect(page.locator('.filter-panel .filter-meta')).toContainText(old.user_run_id);
     await expect(page.locator('.metric-grid')).toBeVisible();
     const oldMetrics = await page.locator('.metric-grid').innerText();
     let calls = 0;

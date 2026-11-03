@@ -1,13 +1,25 @@
 import Ajv2020 from 'ajv/dist/2020';
 import addFormats from 'ajv-formats';
 import userSchemas from './generated/user/schemas.json';
+import hv2Schemas from './generated/user/hv2-schemas.json';
+import type { DiscoveryPage } from './generated/user/HV2DiscoveryPage';
+import type { DefaultPage } from './generated/user/HV2DefaultPage';
+import type { AutoEvaluation } from './generated/user/HV2AutoEvaluation';
+import { assertUserContract } from './user-contract';
 import maSchemas from './generated/ma/schemas.json';
+import maAvailability from './generated/ma/AvailabilityResponse.json';
+import maAvailabilityContract from './generated/ma/availability.openapi.json';
+import type { AvailabilityResponse } from './generated/ma/AvailabilityResponse';
 import { apiPath, ApiError } from '../client';
 import { ProtocolError } from '../validate';
+import { resolvedOperationSignature } from './openapi-equivalence';
 import type * as U from './generated/user';
 import type * as M from './generated/ma';
 export type Kind = 'user' | 'ma';
 type User = {
+    DiscoveryPage: DiscoveryPage;
+    DefaultPage: DefaultPage;
+    AutoEvaluation: AutoEvaluation;
     Receipt: U.Receipt;
     Ranking: U.Ranking;
     Modes: U.Modes;
@@ -15,6 +27,7 @@ type User = {
     Evaluation: U.Evaluation;
 };
 type Ma = {
+    AvailabilityResponse: AvailabilityResponse;
     Receipt: M.Receipt;
     Catalog: M.Catalog;
     Snapshot: M.Snapshot;
@@ -31,7 +44,7 @@ export function validateV2<K extends Kind, N extends keyof Contract[K] & string>
     const key = `${kind}/${name}`;
     let validator = validators.get(key);
     if (!validator) {
-        const schemas: Record<string, object> = kind === 'user' ? userSchemas : maSchemas;
+        const schemas: Record<string, object> = kind === 'user' ? { ...hv2Schemas, ...userSchemas } : { ...maSchemas, AvailabilityResponse: maAvailability };
         const schema = kind === 'user' && name === 'Scenario' ? { $defs: userSchemas.Scenario.$defs, anyOf: [{ $ref: '#/$defs/Scenario' }, { $ref: '#/$defs/BatchScenario' }] } : schemas[name];
         if (!schema)
             throw new ProtocolError(key);
@@ -43,6 +56,15 @@ export function validateV2<K extends Kind, N extends keyof Contract[K] & string>
     return value as Contract[K][N];
 }
 export class V2Client {
+    private maAvailabilityHandshake: Promise<void> | undefined;
+    private verifyMAAvailability() {
+        return this.maAvailabilityHandshake ??= (async () => {
+            const response = await this.fetcher(apiPath('/openapi.json'), { signal: this.signal, cache: 'no-store', credentials: 'same-origin', redirect: 'error' });
+            if (!response.ok) throw new ProtocolError('MA availability OpenAPI');
+            const doc = await response.json() as { paths?: Record<string, { get?: unknown }>; components?: { schemas?: Record<string, unknown> } };
+            if (resolvedOperationSignature(doc.paths?.[maAvailabilityContract.path]?.get, doc.components?.schemas ?? {}) !== resolvedOperationSignature(maAvailabilityContract.operation, maAvailabilityContract.components)) throw new ProtocolError('MA availability contract mismatch');
+        })().catch(error => { this.maAvailabilityHandshake = undefined; throw error; });
+    }
     private readonly lifetime = new AbortController();
     get signal() { return this.lifetime.signal; }
     private identityChanged() {
@@ -58,6 +80,7 @@ export class V2Client {
     } = {}): Promise<Contract[K][N]> {
         const signal = options.signal ? AbortSignal.any([options.signal, this.lifetime.signal]) : this.lifetime.signal;
         signal.throwIfAborted();
+        if (kind === 'ma' && name === 'AvailabilityResponse') { await this.verifyMAAvailability(); signal.throwIfAborted(); }
         const path = `/monitoring/${kind === 'user' ? 'user-v2' : 'ma'}${suffix}`;
         const response = await this.fetcher(apiPath(path, options.query), {
             method: options.body === undefined ? 'GET' : 'POST', credentials: 'same-origin', redirect: 'error', cache: 'no-store',
@@ -96,20 +119,5 @@ export async function verifyUserContract() {
     const response = await fetch(apiPath('/openapi.json'), { cache: 'no-store', credentials: 'same-origin', redirect: 'error' });
     if (!response.ok)
         throw new ProtocolError('OpenAPI');
-    const document = await response.json() as {
-        paths?: Record<string, Record<string, {
-            'x-user-contract-version'?: string;
-        }>>;
-    };
-    let count = 0;
-    for (const [path, methods] of Object.entries(document.paths ?? {}))
-        if (path.startsWith('/monitoring/user-v2/'))
-            for (const [method, operation] of Object.entries(methods))
-                if (['get', 'post'].includes(method)) {
-                    count++;
-                    if (operation['x-user-contract-version'] !== '2.0.0')
-                        throw new ProtocolError('用户接口版本不是2.0.0');
-                }
-    if (count !== 9)
-        throw new ProtocolError('用户接口操作不完整');
+    assertUserContract(await response.json());
 }

@@ -1,26 +1,24 @@
 # 任务与session入口
 
-2026-11-02当前：[V2批准交付](delivery/V2_APPROVED_DELIVERY_20261102.md) · [华为真实数据两阶段执行prompt](../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../operations/DELIVERY_ACCEPTANCE_RULES.md) · [闭环归档](../../achieve/2026-11-02/v2-approved-delivery/README.md)。UIR-03由用户留V3，不是V2阻断；旧记录只作历史。
+2026-11-03最新阶段：异常公共层及四项后端已独立验收冻结，两前端接入完成，HV2-AF-01和HV2-MF-02已闭环；根339项前端、88项最终浏览器、135项鼠标核对及156资源重启一致性通过。源码版本整理/容器交付待继续，当前未发布本轮包体；现场真实数据仍待验。 下方执行日志和前序状态按时间追溯，以本段及当前入口为准。
 
-2026-11-01当前异常分析：已进入[功能总负责RV2修复、联合验证与版本收口](../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/COORDINATION_RV2.md)，由原异常前端session统筹；低命中/公共arpc-local-4及Token私有T2–T4独立复审均已有实际通过报告。下表早期“待创建/未编码/T1–T4”仅历史分线记录，实际角色/范围以最新SESSIONS与各线ENTRY为准。
+2026-11-03当前：[执行板](delivery/HV2_REPAIR_EXECUTION_20261103.md) · [独立验收](delivery/HV2_INDEPENDENT_ACCEPTANCE_20261103.md) · [六线总计划](delivery/V2_REPAIR_COORDINATION_PLAN_20261103.md)。华为调查已收到并实际派发任务；公共层及全部相关后端已独立通过并冻结，两个前端正式接入中。后续完整E2E→固定commit/push→WSL构建/容器复验→本地包体/桌面SHA按既有授权执行。目前未完成本轮完整验收或产品发布，不把旧本机通过当现场通过。
 
-2026-10-30最新分线；[SESSIONS](../../memory/SESSIONS.md)维护实际ID、角色、状态与优先级。每个session先明确任务/角色再工作，未知ID不编造；异常分析已获用户许可完成fork并启动Token线，主会话继续低命中详细设计；其他线以各自最新授权为准。
-
-| 任务 | 当前状态与范围 | 入口 |
+| 任务 | 职责与依赖 | 入口 |
 | --- | --- | --- |
-| 总设计 | 休眠，总体边界/协调 | [总设计](product/ENTRY.md) |
-| 监控V1后端 | 休眠，已验收基线与现场交接 | [监控](monitoring/ENTRY.md) |
-| 监控V1前端 | 休眠，F007/UI-01与prompt交接 | [前端](viewer/ENTRY.md) |
-| 审查打包 | 运行中，统一审查及授权后交付 | [交付](delivery/ENTRY.md) |
-| V2监控父会话 | 运行中，版本整理；待fork | [监控产品记忆](../../memory/tasks/monitoring.md) |
-| V2用户监控后端 | 待fork/登记，TTFT命中需求评估与搜索排行 | [用户功能](monitoring/v2-user/ENTRY.md) |
-| V2同事监控后端 | 待fork/登记，MA独立采集/回放及对照；与用户功能并行 | [MA监控](monitoring/v2-ma/ENTRY.md) |
-| 异常分析已批产品/共同交接 | v0.4已审批；主会话转任低命中后端，Token线已fork启动 | [产品](analysis/ENTRY.md) · [分线交接](analysis/BACKEND_SPLIT_HANDOFF.md) |
-| 低命中后端设计和开发 | 当前主会话L1–L5详细设计及公共接入草案已形成；未编码 | [本线](prefix-analysis/ENTRY.md) · [prompt](../../prompts/sessions/LOW_HIT_BACKEND_START.md) |
-| Token异常后端设计和开发 | T1–T4；实际会话01a18fcd-0464-7cf1-b435-4f394bd33e66已创建启动并登记 | [本线](length-analysis/ENTRY.md) · [prompt](../../prompts/sessions/TOKEN_ANOMALY_BACKEND_FORK_START.md) |
-| 监控V2前端 | 已登记；本轮仅职责理解、两线设计/契约入口接收与记忆整理 | [本线ENTRY](viewer/monitoring-v2/ENTRY.md) · [启动prompt](../../prompts/sessions/TOKEN_MONITORING_V2_FRONTEND_START.md) |
-| 异常分析功能总负责（兼前端） | 已登记01a19111-344a-75c1-84e0-14db8be08f4f；前端修复、后端协调、联合验证和Git收口 | [当前统筹](../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/analysis/COORDINATION_RV2.md) · [前端](viewer/analysis/ENTRY.md) |
-| hybrid | 暂不做 | [监控交接](monitoring/ENTRY.md) |
-| 自进化Agent | 两类分析设计和代码完成后按用户启动 | [Agent](evolution-agent/ENTRY.md) |
+| V2版本总设计师（原审查打包） | 规划分配、公共层与模块独立验收、E2E、Docker/代码镜像、归档记忆、版本push与华为统筹 | [总计划](delivery/V2_REPAIR_COORDINATION_PLAN_20261103.md) · [工作入口](delivery/ENTRY.md) |
+| 异常分析前端 | 异常发现/读取/状态与批准展示；依赖公共层及分析后端通过和契约冻结 | [异常前端](viewer/analysis/ENTRY.md) |
+| MA监控后端 | 独立MA模型制品/UUID/pre-now数据、四指标缺数与质量 | [MA后端](monitoring/v2-ma/ENTRY.md) |
+| Token异常后端 | Token私有探测/预算/证据；依赖先验收的异常公共层，当前T2–T4，研究不自动恢复T1 | [Token后端](length-analysis/ENTRY.md) |
+| 低命中后端与异常公共层 | 公共层唯一设计集成维护方，先验收公共层，再完成低命中私有规则；基于真实调查确定修复 | [低命中/公共](prefix-analysis/ENTRY.md) |
+| Token监控V2前端 | 用户、搜索排行、MA和TTFT前端；各自依赖对应已通过的后端及冻结契约 | [监控前端](viewer/monitoring-v2/ENTRY.md) |
+| 用户监控V2后端 | 同APPID多模型访问、搜索/排行、同Trace异常衔接、逐模型TTFT默认参数及计算 | [用户后端](monitoring/v2-user/ENTRY.md) |
+| 历史全项目总设计 | 保持休眠，不因V2总设计指派自动唤醒 | [历史入口](product/ENTRY.md) |
+| 监控V1前后端 | 保持休眠，已验收源码/契约和批准HTML依据 | [后端](monitoring/ENTRY.md) · [前端](viewer/ENTRY.md) |
+| hybrid / 自进化Agent | 未启动，不因当前修复自动开展 | [Agent入口](evolution-agent/ENTRY.md) |
 
-P0：AGENTS → CURRENT → SESSIONS → docs/README → 自己的ENTRY；P1本线产品/设计/契约及直接依赖，P2按问题读证据/源码，P3才读历史。共享契约与原始证据不随整理改写。完整边界见[工作流](../architecture/TASK_SESSION_WORKFLOW.md)。
+用户监控与异常共用Trace模型规格，MA使用独立制品数据；TTFT由用户逐模型提供chunked seconds，K默认8192可选改，日常页面只填等待时间和SLO。详情和未输入参数见总计划，不把新需求当已实现。
+
+P0：AGENTS → CURRENT → SESSIONS → docs/README → 本线ENTRY；P1当前总计划、本线设计/契约及派发任务，P2按问题读源码/证据，P3才追历史。六线ENTRY内旧开发/交付状态保留对应版本事实，恢复时以CURRENT和本次任务派发为准。[工作流](../architecture/TASK_SESSION_WORKFLOW.md) · [交付固定规则](../operations/DELIVERY_ACCEPTANCE_RULES.md)。
+
+历史：[2026-11-02交付](delivery/V2_APPROVED_DELIVERY_20261102.md) · [闭环归档](../../achieve/2026-11-02/v2-approved-delivery/README.md) · [分线交接](analysis/BACKEND_SPLIT_HANDOFF.md)。UIR-03留V3，四入口HTML/L4L5保持；当前调查和未闭环问题不提前归档，原始证据和冻结契约不改。

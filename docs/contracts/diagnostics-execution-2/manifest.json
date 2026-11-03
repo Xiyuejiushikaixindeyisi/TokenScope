@@ -1,0 +1,38 @@
+{
+  "candidate": "hv2-common-local-1",
+  "status": "pending_independent_acceptance",
+  "owned_source_and_tests": {
+    "src/tokenscope/analysis_common/execution_v2.py": "f29101bb062e54f600033a3884bd49fc8e790ba7313eef767935ba935a40064e",
+    "src/tokenscope/analysis_common/runtime_control.py": "6046059caf35e68322eb4b358e42179b68a672ecef0cc06f7ec7fc096f3e9e0f",
+    "src/tokenscope/analysis_common/telemetry.py": "5a8a831f44673312e1070e8dd444769f18b0da3468a04546ba8fa27c0df01bc4",
+    "src/tokenscope/analysis_common/source_observation.py": "7736b08cddc8176cb40b1b108702861250667e797bb6c536291778454e1c8210",
+    "src/tokenscope/analysis_common/discovery_v2.py": "6c8e69034d7337008b20116abde09074cd1a6ec623cd0c880440333b8315facb",
+    "src/tokenscope/analysis_common/service.py": "e217dc4d3e8f2a1d32a5271905cbbdcd40d3a63c192dd7ba1081672c2a2c6953",
+    "src/tokenscope/analysis_common/recommendation_runtime.py": "ddd08d43a1faca4c55cbec72c3347fc049d2bf27cfadb1298ab9b06007ccc363",
+    "src/tokenscope/analysis_common/recommendation_pipeline.py": "5d5f8de3ea3b50ea549a393068fa18c90f34a5b305005fa677f7b5a61d30f254",
+    "src/tokenscope/analysis_common/recommendation_engine.py": "8a11af222a0e7bddf9655fe40533c3c181d780f8585f5f7d7acda5b2ea9ca9aa",
+    "src/tokenscope/api/diagnostics_v2.py": "5106a85e1a33dace3242fcdb95f62e140c7a768b83234f53994335df992cb3d1",
+    "src/tokenscope/prefix_analysis/service.py": "14df6bcb23c54a558bf7717c9b5bc3800d02c45d685b2082f530af825ded8bcc",
+    "src/tokenscope/prefix_analysis/detection.py": "a2a399829bc0b3d4ec3fc9bd24d67889ade705db20026764e34f56799111b663",
+    "tests/unit/analysis_common/test_execution_v2.py": "91ecc23941243b148bec24eac0a623a805235ba346fe31d5edb40ee9e63de845",
+    "tests/integration/analysis/test_execution_v2_integration.py": "83d2bf88998d27e7303b340e4fb120bc2d20e8306431406693069599a3a9e192"
+  },
+  "designer_owned_dependencies": {
+    "src/tokenscope/api/app.py": "845214ffe917fcac8b6af7331d9ffba977c5e4b60eda22fa9df850bad00c8cb3"
+  },
+  "contracts": {
+    "docs/contracts/diagnostics-execution-2/examples.json": "77d248778cd62d6a6bf8d32e0d2b4eed2283e4485b11b3fac4b6f134776a156a",
+    "docs/contracts/diagnostics-execution-2/README.md": "d300a43c2eaf8e2073eae9c79803003ce63a7afc25a0c1dbb96e4d870431ae4f",
+    "docs/contracts/diagnostics-execution-2/wire.json": "0394829eaefbce540bafca552134d9c5e77f0f49b32839a7c9c8faca09b37c1f"
+  },
+  "test_evidence": {
+    "artifacts/reviews/hv2-repair-20261103/common-final-start.json": "1e008253ea3bf05f7ab584408bbf17548d1c5a6186c76c09d9729be63f4d8f33",
+    "artifacts/reviews/hv2-repair-20261103/common-final-end.json": "1e008253ea3bf05f7ab584408bbf17548d1c5a6186c76c09d9729be63f4d8f33",
+    "artifacts/reviews/hv2-repair-20261103/common-final-run.json": "f8036ff59f1948cc3ebde49c5052955c9bf0f9e97e523ae3467d9e1a94c85b67",
+    "artifacts/reviews/hv2-repair-20261103/common-final-suite.log": "491e80582de0039da1e4a8f597747cfa8e4f0c96ec4b5a1c37d79a60a60a5d20",
+    "artifacts/reviews/hv2-repair-20261103/common-terminal-final.log": "5c2a6e8e70edc001c0343a375c8a3751ed1ae179f66698154e6553f416130eb3",
+    "artifacts/reviews/hv2-repair-20261103/common-mypy-terminal.log": "a97cee1ee1bdb5e2d1ca7098f7b33a6c6a21263225643192fdeb78654687ed89",
+    "artifacts/reviews/hv2-repair-20261103/common-ruff-terminal.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "artifacts/reviews/hv2-repair-20261103/common-frozen-verification.json": "3f215ba6b05cba0369b7a6a0222df2a057b500064da7a200c9c4c8a462630e18"
+  }
+}

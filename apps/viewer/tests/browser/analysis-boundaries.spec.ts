@@ -2,12 +2,13 @@ import { test, expect, type Page, type Route } from '@playwright/test';
 import fs from 'node:fs';
 import legacy from '../../../../docs/tasks/prefix-analysis/FRONTEND_READONLY_EXAMPLES.json' with { type: 'json' };
 import schemas from '../../src/api/analysis/generated/analysis-recommendations-1.json' with { type: 'json' };
+import { catalogV2, executionCapabilities, legacyExecution, scopeBinding, taskFromPath } from './analysis-v2-fixtures';
 type O = Record<string, unknown>;
 type Sample = { task_id: string; report_sha256: string; report: O; responses: Record<string, O>; examples: Record<string, O> };
 const datasets = (JSON.parse(fs.readFileSync('../../docs/tasks/prefix-analysis/FRONTEND_REWORK_READABILITY_EXAMPLES_ARL4.json', 'utf8')) as { datasets: { name: string; tasks: Sample[] }[] }).datasets;
 const source = datasets[0]!.tasks.find(x => (x.report.scope as O).appid === 'a')!;
 const base = legacy.ready_chain.responses['/diagnostics/discovery/catalog'].body;
-const item = { ...base.items[0]!, task_id: source.task_id, scope: source.report.scope, scope_id: source.report.scope_id, report_digest: source.report_sha256, directions: ['low_hit'], binding: { ...base.items[0]!.binding, appid: 'a' } };
+const item = { ...base.items[0]!, task_id: source.task_id, scope: source.report.scope, scope_id: source.report.scope_id, report_digest: source.report_sha256, directions: ['low_hit'], binding: scopeBinding(source.report.scope as O) };
 const initial = { ...base, items: [item], defaults: [{ ...base.defaults.find(x => x.direction === 'low_hit')!, task_id: source.task_id }] };
 const recommendation = (source.responses.recommendations!.items as O[])[0]!;
 function rebind(value: unknown, task: string): unknown {
@@ -17,14 +18,21 @@ function rebind(value: unknown, task: string): unknown {
 }
 async function intercept(page: Page, options: { catalog?: () => unknown; event?: (route: Route) => Promise<void>; failTask?: string; examplesFail?: () => boolean } = {}) {
     const calls: string[] = [];
+    let directory = catalogV2(initial);
     await page.route('**/diagnostics/**', async route => {
         const req = route.request(), u = new URL(req.url()), p = decodeURIComponent(u.pathname); calls.push(req.method() + ' ' + p);
+        if (p === '/diagnostics/v2/capabilities') return route.fulfill({ json: executionCapabilities });
         if (p === '/diagnostics/recommendations/capabilities') return route.fulfill({ json: { version: 'analysis-recommendations-1', service_instance_id: 'fixture-instance', read_only: true, token_rule_ids: ['T2', 'T3', 'T4'], schemas: schemas.models } });
         if (p.endsWith('/capabilities')) return route.fulfill({ json: p.includes('/discovery/') ? { version: 'diagnostics-discovery-1', service_instance_id: 'fixture-instance' } : { contract_version: 'analysis-common-1.0', http_version: 'diagnostics-http-1', service_instance_id: 'fixture-instance' } });
         if (p.endsWith('/events')) { if (options.event) await options.event(route); return; }
-        if (p.endsWith('/catalog')) return route.fulfill({ json: options.catalog?.() ?? initial });
-        const task = p.split('/')[3]!;
+        if (p === '/diagnostics/v2/catalog') { directory = catalogV2(options.catalog?.() ?? initial); return route.fulfill({ json: directory }); }
+        const task = taskFromPath(p);
+        if (!task) return route.fulfill({ status: 404, json: { error: { code: 'NOT_FOUND', message: 'unknown diagnostic route' } } });
         if (task === options.failTask) return route.fulfill({ status: 503, json: { error: { code: 'UNAVAILABLE', message: 'history read failure' } } });
+        if (p === `/diagnostics/v2/tasks/${task}/execution`) {
+            const selected = directory.items.find(x => x.task_id === task);
+            return selected ? route.fulfill({ json: legacyExecution(selected) }) : route.fulfill({ status: 404, json: { error: { code: 'NOT_FOUND', message: 'unknown task' } } });
+        }
         const original = p.replace('/' + task + '/', '/' + source.task_id + '/');
         let response: unknown;
         if (p.endsWith('/report')) response = source.report;
@@ -47,9 +55,9 @@ test('history failure retains current result, time and a refreshable detail rout
     await page.getByRole('button', { name: '查看最新', exact: true }).first().click(); await page.locator('.solution-card[data-rule="L1"] button').click(); await page.reload(); await expect(page.locator('.finding-body')).toContainText('预期命中率提升'); await page.getByRole('button', { name: '← 返回卡片列表' }).click(); await expect(page.locator('.solution-card')).toHaveCount(2);
 });
 
-test('first partial has no automatic default and can be selected explicitly', async ({ page }) => {
+test('first published partial is automatically readable with partial status and can be pinned explicitly', async ({ page }) => {
     await intercept(page, { catalog: () => ({ ...initial, items: [{ ...item, status: 'partial', default_eligible: false }], defaults: [] }) });
-    await page.goto('/#/analysis'); await expect(page.getByText('当前没有默认完整报告，请选择历史报告。')).toBeVisible(); await expect(page.locator('.solution-card')).toHaveCount(0); await page.getByLabel('历史报告', { exact: true }).selectOption(source.task_id); await expect(page.locator('.solution-card')).toHaveCount(2);
+    await page.goto('/#/analysis'); await expect(page.locator('.solution-card')).toHaveCount(2); await expect(page.locator('.notice').filter({ hasText: '部分结果' }).first()).toBeVisible(); await expect(page.getByText('当前没有默认完整报告，请选择历史报告。')).toHaveCount(0); await expect(page.getByLabel('历史报告', { exact: true })).toHaveValue(source.task_id); await page.getByLabel('历史报告', { exact: true }).selectOption(source.task_id); await expect(page.locator('.solution-card')).toHaveCount(2); expect(page.url()).toContain('mode=history'); expect(page.url()).toContain(source.task_id);
 });
 
 test('evidence read failure keeps benefit and retries only the local examples', async ({ page }) => {

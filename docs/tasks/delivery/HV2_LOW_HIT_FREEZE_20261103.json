@@ -1,0 +1,34 @@
+{
+  "status": "low_hit_private_independently_accepted",
+  "session": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "identity": "10f643bc56fa59936dcfd7d17f4aabf1163aba4d479c47662366d13c879e011b",
+  "files": {
+    "docs/tasks/prefix-analysis/hv2_profile.py": "b36c16f0c763948746494e7936d1cfa0be1e2eab4d447216d452b1bd453db15c",
+    "docs/tasks/prefix-analysis/hv2_profile_summary.py": "5ef204639657d5d1613a0b09a719ecb9b70a0333c12b1166d4dda69c35fcfc22",
+    "src/tokenscope/prefix_analysis/__init__.py": "6c6d1b6270cc43a644e7b45693d11c8bb68d90a4f2ea80bdd70b2f7b9282567d",
+    "src/tokenscope/prefix_analysis/candidates.py": "392a522551bc2ca5fd8748d2977fbdf5721e65d3f834428499c92c0ee6614d3f",
+    "src/tokenscope/prefix_analysis/comparison.py": "366de3b5c49a8b8740ef28a73e3ea50df8fbfc7b7ed8450e3e1a015147bfd6d1",
+    "src/tokenscope/prefix_analysis/detection.py": "b99a19a509b88b391b4451d048c9b20d843828b84af44877835af0b99bee2cd2",
+    "src/tokenscope/prefix_analysis/dynamic.py": "9a420c0b288910f73b5a6fb4cf36e9a7c7cfde51ca6720daaffb844d914114df",
+    "src/tokenscope/prefix_analysis/experiments.py": "37b6eaaab0d592d2ea4013290524f10886099172845aec64679bdf4b2f1af05a",
+    "src/tokenscope/prefix_analysis/history.py": "e4360831692f953890ffc0814699f930df2935b5afae078a41574896576b3d21",
+    "src/tokenscope/prefix_analysis/recommendation_groups.py": "cb6c4059d417857db60f9488df8d991d4a974cfb6307d04c841b5b8ff28a5e16",
+    "src/tokenscope/prefix_analysis/recommendation_projection.py": "5f71344e2dfe43e1710bfd54a143893dc1585017e9c55ccab549ac5595d0946f",
+    "src/tokenscope/prefix_analysis/service.py": "fd0bdf569b0b62d5d75f4e0855d1dc636f1e5e7269fd3b675b93bfc2fc2ddbd4",
+    "src/tokenscope/prefix_analysis/structure.py": "2380f61a6676f8945da9124281bd096165e07163414dca536afdc2e3484338f6",
+    "tests/integration/prefix_analysis/test_hv2_coverage.py": "80c271398d23db99d4b238a46255156a90f2a715ef4c7132bc2d0b3f0a6cf64c",
+    "tests/unit/prefix_analysis/test_dynamic.py": "f737669a6925723bc1098ac9d6f2a4a8c596029973ba711e9d76f6beaebb8e8b"
+  },
+  "scope": "reason merge and equal-text fast path; original L1-L5/replay/gain gate unchanged",
+  "supersedes_private_files_in_common_freeze": [
+    "src/tokenscope/prefix_analysis/service.py",
+    "src/tokenscope/prefix_analysis/detection.py"
+  ],
+  "evidence": {
+    "artifacts/reviews/hv2-repair-20261103/lowhit-independent/result.txt": "2b73271b9b845318b28ab9efd10f6b390dee5be8384d2eb42100214fb273d28b",
+    "artifacts/reviews/hv2-repair-20261103/lowhit-independent/results.xml": "5f6a86cc99b91a1b4de416285e219a10fd4c1779efe1b938599e9bfafa126722",
+    "artifacts/reviews/hv2-repair-20261103/lowhit-independent/source-before.json": "f99a2e0187f9103034f196a4d850e26a37d5c19b6312ab12fe76896d90d843c1",
+    "artifacts/reviews/hv2-repair-20261103/lowhit-independent/source-after.json": "f99a2e0187f9103034f196a4d850e26a37d5c19b6312ab12fe76896d90d843c1"
+  },
+  "tests": "62 passed/201.93s; candidate source unchanged before/after; maintainer 24 profile equivalence cases and 276 evidence files verified"
+}

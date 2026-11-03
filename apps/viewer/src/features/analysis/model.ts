@@ -13,6 +13,8 @@ export interface Card {
 }
 export interface LoadedReport {
     entry: Obj; report: Obj; summary: Obj; cards: Card[]; direction: Direction;
+    execution?: Obj | null;
+    ruleCoverage?: Obj[];
     offsets: Record<ResultKind, string | null>; hasMore: boolean;
 }
 export const checks = {
@@ -117,9 +119,13 @@ export async function loadCardExamples(api: AnalysisClient, report: LoadedReport
     return selected;
 }
 export async function loadReport(api: AnalysisClient, entry: Obj, direction: Direction, signal?: AbortSignal): Promise<LoadedReport> {
-    const [report, s] = await Promise.all([api.report(entry, signal), summary(api, entry, signal)]);
-    const data: LoadedReport = { entry, report, summary: s, direction, cards: [], offsets: { recommendation: '0', difference_group: null }, hasMore: false };
-    if (s.availability === 'not_computed') return { ...data, offsets: { recommendation: null, difference_group: null } };
+    const [report, s, execution] = await Promise.all([api.report(entry, signal), summary(api, entry, signal), api.execution(entry, signal)]);
+    const ruleCoverage = execution?.availability === 'computed' && direction === 'low_hit' ? (await api.all(str(entry.task_id), 'rule_coverage', signal)).map(x => x.data) : [];
+    for (const row of ruleCoverage) {
+        if (!arr(row.supported_rules).every(rule => ['L1', 'L2', 'L3', 'L4', 'L5'].includes(str(rule))) || row.applicable_pairs !== null || row.applicability_status !== 'not_separately_classified_by_detector' || !/^(0|[1-9]\d*)$/.test(str(row.candidate_comparisons))) throw Error('INVALID_RULE_COVERAGE');
+    }
+    const data: LoadedReport = { entry, report, summary: s, execution, ruleCoverage, direction, cards: [], offsets: { recommendation: '0', difference_group: null }, hasMore: false };
+    if (s.availability === 'not_computed') return { ...data, cards: direction === 'low_hit' ? await loadDifferenceCards(api, entry, s, signal) : [], offsets: { recommendation: null, difference_group: null } };
     const [loaded, differences] = await Promise.all([readPages(api, data, signal), direction === 'low_hit' ? loadDifferenceCards(api, entry, s, signal) : Promise.resolve([])]);
     return { ...loaded, cards: [...loaded.cards, ...differences] };
 }

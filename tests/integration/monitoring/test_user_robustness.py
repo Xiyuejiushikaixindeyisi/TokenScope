@@ -1,5 +1,6 @@
 import json
 import sqlite3
+from pathlib import Path
 
 import pytest
 from conftest import csv_bytes, valid_row
@@ -84,7 +85,17 @@ def test_invalid_inputs_safe_errors_and_runtime_contract(service):
     assert response.status_code == 404 and response.json()["error"]["code"] == "RESOURCE_NOT_FOUND"
     spec = client.get("/openapi.json").json()
     paths = {p: v for p, v in spec["paths"].items() if p.startswith(prefix)}
-    assert sum(len(ops) for ops in paths.values()) == 9
+    assert sum(len(ops) for ops in paths.values()) == 14
+    frozen = json.loads(
+        Path("docs/contracts/user-monitoring-v2/2.0.0/runtime.openapi.json").read_text()
+    )
+    old_paths = {p: ops for p, ops in frozen["paths"].items() if p.startswith(prefix)}
+    assert sum(len(ops) for ops in old_paths.values()) == 9
+    for path, methods in old_paths.items():
+        for method, operation in methods.items():
+            current = paths[path][method]
+            assert current.get("requestBody") == operation.get("requestBody")
+            assert current["responses"] == operation["responses"]
     for operations in paths.values():
         for operation in operations.values():
             assert any(

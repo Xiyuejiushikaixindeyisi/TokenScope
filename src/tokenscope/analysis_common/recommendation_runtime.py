@@ -17,7 +17,17 @@ class RecommendationSettings:
     bundle: RecipeBundle | Path
     budget: RecommendationBudget = field(default_factory=RecommendationBudget)
 
-    def snapshot(self) -> dict[str, Any]:
+    def snapshot(self, token_enabled: bool = True) -> dict[str, Any]:
+        if not token_enabled:
+            bundle = RecipeBundle(bundle_id="token-direction-disabled", revision="1", recipes=())
+            return {
+                "version": "analysis-recommendations-1",
+                "bundle": bundle.model_dump(mode="json"),
+                "bundle_digest": digest(bundle),
+                "budget": self.budget.model_dump(mode="json"),
+                "budget_digest": digest(self.budget),
+                "adapter": None,
+            }
         if isinstance(self.bundle, Path) and self.bundle.stat().st_size > 8 * 1024 * 1024:
             raise ValueError("RECIPE_BUNDLE_BYTES_EXHAUSTED")
         bundle = (

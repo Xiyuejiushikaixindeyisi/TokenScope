@@ -1,0 +1,26 @@
+{
+  "status": "backend_independently_accepted",
+  "scope": "MA availability additive resource; original replay/statistics unchanged; not frontend/onsite acceptance",
+  "session": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "git_head": "d55df94b6e58117a698dbd14667b7836e67cd50f",
+  "files": {
+    "docs/contracts/ma-monitoring-v2/manifest.json": "b29e3edfac5ce5fc6cf9d46f11df0b0cbd71b1738bb898ef3b423c309faa81e9",
+    "docs/tasks/monitoring/batches/B005.1/S0_CONTRACT.md": "973f202c54b72b798f292af78b8fe8596e8f65d415b803bebe9b879ccca8b130",
+    "docs/tasks/monitoring/v2-ma/hv2-availability/candidate.openapi.json": "40fc27b9e5c93be42b394e7a0288b3fbae21f2d233017c559023159ebcdaab20",
+    "docs/tasks/monitoring/v2-ma/hv2-availability/examples.json": "70477b8c01c1e1a908694a642d2ce717167e6636c66539e6c9fd45ed5a5e3491",
+    "docs/tasks/monitoring/v2-ma/hv2-availability/schema.json": "6871b4ecac1a29c8fe9b72f93122589cbde8af883cf57a5893ff4e27f997e7f8",
+    "docs/tasks/monitoring/v2-ma/hv2-availability/source-manifest.json": "9881d952002fd75f32927d92e13cbbc5f560c9061e1c4721a2f6e0a66e720bd5",
+    "env/encoding-assets.lock.json": "be74503d8a507066cb7a3d6797ba6481b0b9fd716bbbfcff8003c3cddd4e5c98",
+    "env/sources.lock.json": "365c017f4278196709ba0595d41709f104635ba2c1c8b6005593f3369aed4386",
+    "scripts/contracts/validate_ma_availability.py": "8e11108cc134a975447df26301b529bea71f11114be668c0f84b674c1f29ea06",
+    "scripts/contracts/validate_ma_contract.py": "3b8ddd4754db8d474d44c3fa9cb5c0e7411191f3796538b6e1808c31a0cb92fd",
+    "src/tokenscope/api/ma.py": "4ad6dcb5d63df652bb70fbe39fcd974f72424418e010dd621997272ddbd84f9b",
+    "src/tokenscope/monitoring/ma/availability.py": "0c53a51574ec36807b2116ce9df8efb1533b867955e8f76a18788119703ba9ae",
+    "src/tokenscope/monitoring/ma/ingest.py": "96b7900026a4d35ace2df7dbe09dd17d4bfddb4cd97194190f021e71df13fde0",
+    "src/tokenscope/monitoring/ma/service.py": "c17d2039dceec621aa170bd83f59a29f370e31d1e5d6d7444407a3614af9d2f3",
+    "src/tokenscope/monitoring/ma/statistics.py": "58dcba8f2321d54a1fa586471fc604d7e33f25b266862a2f8ed06feb3d3d51ed",
+    "tests/unit/ma/test_availability.py": "a68383a96d5b15a47464fa92fd07d8e7fd165d3febaf9e1e37425c494566290e",
+    "tests/unit/ma/test_contract_tools.py": "8cdca6db012fadb4c7efd423582d0f06919b151be3ec0bea5eef4a03d9a9814f"
+  },
+  "identity": "9b48fb244963ce153b009a9a2d0d9050d084bd6c1bb43eec27ddf49f313fd9fa"
+}

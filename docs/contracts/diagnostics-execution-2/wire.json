@@ -1,0 +1,1288 @@
+{
+  "submission": {
+    "$defs": {
+      "BudgetSpec": {
+        "additionalProperties": false,
+        "properties": {
+          "max_request_bytes": {
+            "title": "Max Request Bytes",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-exclusiveMinimum": "0"
+          },
+          "max_units": {
+            "title": "Max Units",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-exclusiveMinimum": "0"
+          },
+          "max_comparison_bytes": {
+            "title": "Max Comparison Bytes",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-exclusiveMinimum": "0"
+          },
+          "max_depth": {
+            "title": "Max Depth",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-exclusiveMinimum": "0"
+          },
+          "max_candidates": {
+            "title": "Max Candidates",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-exclusiveMinimum": "0"
+          },
+          "max_encoding_calls": {
+            "title": "Max Encoding Calls",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-exclusiveMinimum": "0"
+          }
+        },
+        "required": [
+          "max_request_bytes",
+          "max_units",
+          "max_comparison_bytes",
+          "max_depth",
+          "max_candidates",
+          "max_encoding_calls"
+        ],
+        "title": "BudgetSpec",
+        "type": "object"
+      },
+      "PluginSelection": {
+        "additionalProperties": false,
+        "properties": {
+          "rule_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Rule Ids",
+            "type": "array"
+          },
+          "policies_json": {
+            "default": "[]",
+            "title": "Policies Json",
+            "type": "string"
+          },
+          "budget": {
+            "$ref": "#/$defs/BudgetSpec"
+          }
+        },
+        "required": [
+          "rule_ids",
+          "budget"
+        ],
+        "title": "PluginSelection",
+        "type": "object"
+      },
+      "RequestV2": {
+        "additionalProperties": false,
+        "properties": {
+          "source": {
+            "$ref": "#/$defs/SourceSelection"
+          },
+          "selection": {
+            "$ref": "#/$defs/SelectionV2"
+          },
+          "reason_note": {
+            "default": "",
+            "title": "Reason Note",
+            "type": "string"
+          },
+          "submission_key": {
+            "minLength": 1,
+            "title": "Submission Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "selection",
+          "submission_key"
+        ],
+        "title": "RequestV2",
+        "type": "object"
+      },
+      "RuntimeV2": {
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "const": "diagnostics-runtime-2",
+            "default": "diagnostics-runtime-2",
+            "title": "Version",
+            "type": "string"
+          },
+          "token_selection": {
+            "$ref": "#/$defs/PluginSelection"
+          },
+          "candidate_limit": {
+            "title": "Candidate Limit",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "1",
+            "x-integer-maximum": "128"
+          },
+          "pilot_limit": {
+            "title": "Pilot Limit",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "2"
+          },
+          "max_source_requests": {
+            "title": "Max Source Requests",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "1"
+          },
+          "max_source_bytes": {
+            "title": "Max Source Bytes",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "1"
+          },
+          "max_findings": {
+            "title": "Max Findings",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "5"
+          },
+          "max_experiments": {
+            "title": "Max Experiments",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "1"
+          },
+          "max_combinations": {
+            "title": "Max Combinations",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "0"
+          },
+          "max_encoding_calls": {
+            "title": "Max Encoding Calls",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "1"
+          },
+          "max_plan_bytes": {
+            "default": "16777216",
+            "title": "Max Plan Bytes",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "1"
+          },
+          "max_retained_bytes": {
+            "default": "4194304",
+            "title": "Max Retained Bytes",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "5"
+          },
+          "max_comparisons": {
+            "default": "100000",
+            "title": "Max Comparisons",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "1"
+          },
+          "max_fragment_bytes": {
+            "default": "8388608",
+            "title": "Max Fragment Bytes",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "1"
+          },
+          "max_total_fragment_bytes": {
+            "default": "67108864",
+            "title": "Max Total Fragment Bytes",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "1"
+          }
+        },
+        "required": [
+          "token_selection",
+          "candidate_limit",
+          "pilot_limit",
+          "max_source_requests",
+          "max_source_bytes",
+          "max_findings",
+          "max_experiments",
+          "max_combinations",
+          "max_encoding_calls"
+        ],
+        "title": "RuntimeV2",
+        "type": "object"
+      },
+      "SelectionV2": {
+        "additionalProperties": false,
+        "properties": {
+          "reason_codes": {
+            "items": {
+              "enum": [
+                "low_hit",
+                "request_length",
+                "qps"
+              ],
+              "type": "string"
+            },
+            "title": "Reason Codes",
+            "type": "array"
+          },
+          "enable_low_hit": {
+            "title": "Enable Low Hit",
+            "type": "boolean"
+          },
+          "enable_token_content": {
+            "title": "Enable Token Content",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "reason_codes",
+          "enable_low_hit",
+          "enable_token_content"
+        ],
+        "title": "SelectionV2",
+        "type": "object"
+      },
+      "SourceSelection": {
+        "additionalProperties": false,
+        "properties": {
+          "source_kind": {
+            "enum": [
+              "base",
+              "user_v2"
+            ],
+            "title": "Source Kind",
+            "type": "string"
+          },
+          "base_run_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Base Run Id"
+          },
+          "user_run_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "User Run Id"
+          },
+          "appid": {
+            "minLength": 1,
+            "title": "Appid",
+            "type": "string"
+          },
+          "window": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/TimeWindow"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "expected_index_revision": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Expected Index Revision"
+          }
+        },
+        "required": [
+          "source_kind",
+          "appid"
+        ],
+        "title": "SourceSelection",
+        "type": "object"
+      },
+      "TimeWindow": {
+        "additionalProperties": false,
+        "properties": {
+          "start_ns": {
+            "title": "Start Ns",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$"
+          },
+          "end_ns": {
+            "title": "End Ns",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$"
+          }
+        },
+        "required": [
+          "start_ns",
+          "end_ns"
+        ],
+        "title": "TimeWindow",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "version": {
+        "const": "diagnostics-execution-2",
+        "default": "diagnostics-execution-2",
+        "title": "Version",
+        "type": "string"
+      },
+      "request": {
+        "$ref": "#/$defs/RequestV2"
+      },
+      "options": {
+        "$ref": "#/$defs/RuntimeV2"
+      }
+    },
+    "required": [
+      "request",
+      "options"
+    ],
+    "title": "SubmissionV2",
+    "type": "object"
+  },
+  "catalog": {
+    "$defs": {
+      "AnalysisScope": {
+        "additionalProperties": false,
+        "properties": {
+          "source": {
+            "$ref": "#/$defs/SourceIdentity"
+          },
+          "appid": {
+            "minLength": 1,
+            "title": "Appid",
+            "type": "string"
+          },
+          "window": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/TimeWindow"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "request_count": {
+            "title": "Request Count",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "x-integer-minimum": "0"
+          },
+          "request_keys_digest": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Request Keys Digest",
+            "type": "string"
+          },
+          "baseline_origin": {
+            "enum": [
+              "original_run_window",
+              "selected_window_recomputed"
+            ],
+            "title": "Baseline Origin",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "appid",
+          "window",
+          "request_count",
+          "request_keys_digest",
+          "baseline_origin"
+        ],
+        "title": "AnalysisScope",
+        "type": "object"
+      },
+      "Binding": {
+        "additionalProperties": false,
+        "properties": {
+          "appid": {
+            "title": "Appid",
+            "type": "string"
+          },
+          "model_id": {
+            "title": "Model Id",
+            "type": "string"
+          },
+          "common_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Common Name"
+          },
+          "source_kind": {
+            "enum": [
+              "base",
+              "user_v2"
+            ],
+            "title": "Source Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "appid",
+          "model_id",
+          "common_name",
+          "source_kind"
+        ],
+        "title": "Binding",
+        "type": "object"
+      },
+      "CatalogEntry": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "task_kind": {
+            "enum": [
+              "analysis",
+              "low_hit_evaluation",
+              "token_evaluation",
+              "token_authorization",
+              "combination"
+            ],
+            "title": "Task Kind",
+            "type": "string"
+          },
+          "parent_task_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Task Id"
+          },
+          "plan_refs": {
+            "items": {
+              "$ref": "#/$defs/PlanRef"
+            },
+            "title": "Plan Refs",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "partial",
+              "empty",
+              "failed",
+              "interrupted"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "report_published": {
+            "title": "Report Published",
+            "type": "boolean"
+          },
+          "report_ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report Ref"
+          },
+          "report_digest": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report Digest"
+          },
+          "scope_id": {
+            "title": "Scope Id",
+            "type": "string"
+          },
+          "binding": {
+            "$ref": "#/$defs/Binding"
+          },
+          "binding_id": {
+            "title": "Binding Id",
+            "type": "string"
+          },
+          "directions": {
+            "items": {
+              "enum": [
+                "low_hit",
+                "token_content"
+              ],
+              "type": "string"
+            },
+            "title": "Directions",
+            "type": "array"
+          },
+          "sequence": {
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Sequence",
+            "type": "string"
+          },
+          "terminal_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Terminal At"
+          },
+          "published_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Published At"
+          },
+          "analysis_completed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Analysis Completed At"
+          },
+          "legacy": {
+            "title": "Legacy",
+            "type": "boolean"
+          },
+          "default_eligible": {
+            "title": "Default Eligible",
+            "type": "boolean"
+          },
+          "scope": {
+            "$ref": "#/$defs/AnalysisScope"
+          }
+        },
+        "required": [
+          "task_id",
+          "task_kind",
+          "parent_task_id",
+          "plan_refs",
+          "status",
+          "error_code",
+          "report_published",
+          "report_ref",
+          "report_digest",
+          "scope_id",
+          "binding",
+          "binding_id",
+          "directions",
+          "sequence",
+          "terminal_at",
+          "published_at",
+          "analysis_completed_at",
+          "legacy",
+          "default_eligible",
+          "scope"
+        ],
+        "title": "CatalogEntry",
+        "type": "object"
+      },
+      "DefaultReference": {
+        "additionalProperties": false,
+        "properties": {
+          "binding_id": {
+            "title": "Binding Id",
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "low_hit",
+              "token_content"
+            ],
+            "title": "Direction",
+            "type": "string"
+          },
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "sequence": {
+            "title": "Sequence",
+            "type": "string"
+          }
+        },
+        "required": [
+          "binding_id",
+          "direction",
+          "task_id",
+          "sequence"
+        ],
+        "title": "DefaultReference",
+        "type": "object"
+      },
+      "PlanRef": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "plan_id": {
+            "title": "Plan Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "plan_id"
+        ],
+        "title": "PlanRef",
+        "type": "object"
+      },
+      "SelectedReport": {
+        "additionalProperties": false,
+        "properties": {
+          "binding_id": {
+            "title": "Binding Id",
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "low_hit",
+              "token_content"
+            ],
+            "title": "Direction",
+            "type": "string"
+          },
+          "task_id": {
+            "title": "Task Id",
+            "type": "string"
+          },
+          "sequence": {
+            "title": "Sequence",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "partial"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "selection_kind": {
+            "enum": [
+              "ready",
+              "published_partial_fallback"
+            ],
+            "title": "Selection Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "binding_id",
+          "direction",
+          "task_id",
+          "sequence",
+          "status",
+          "selection_kind"
+        ],
+        "title": "SelectedReport",
+        "type": "object"
+      },
+      "SourceIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "base_run_id": {
+            "minLength": 1,
+            "title": "Base Run Id",
+            "type": "string"
+          },
+          "user_run_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "User Run Id"
+          },
+          "common_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Common Name"
+          },
+          "model_id": {
+            "minLength": 1,
+            "title": "Model Id",
+            "type": "string"
+          },
+          "manifest_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Manifest Sha256",
+            "type": "string"
+          },
+          "asset_identity": {
+            "minLength": 1,
+            "title": "Asset Identity",
+            "type": "string"
+          },
+          "encoder_identity": {
+            "minLength": 1,
+            "title": "Encoder Identity",
+            "type": "string"
+          },
+          "profile_json": {
+            "title": "Profile Json",
+            "type": "string"
+          },
+          "settings_json": {
+            "title": "Settings Json",
+            "type": "string"
+          },
+          "algorithm_version": {
+            "minLength": 1,
+            "title": "Algorithm Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "base_run_id",
+          "model_id",
+          "manifest_sha256",
+          "asset_identity",
+          "encoder_identity",
+          "profile_json",
+          "settings_json",
+          "algorithm_version"
+        ],
+        "title": "SourceIdentity",
+        "type": "object"
+      },
+      "TimeWindow": {
+        "additionalProperties": false,
+        "properties": {
+          "start_ns": {
+            "title": "Start Ns",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$"
+          },
+          "end_ns": {
+            "title": "End Ns",
+            "type": "string",
+            "pattern": "^(0|-?[1-9][0-9]*)$"
+          }
+        },
+        "required": [
+          "start_ns",
+          "end_ns"
+        ],
+        "title": "TimeWindow",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "version": {
+        "const": "diagnostics-discovery-2",
+        "title": "Version",
+        "type": "string"
+      },
+      "service_instance_id": {
+        "title": "Service Instance Id",
+        "type": "string"
+      },
+      "snapshot": {
+        "title": "Snapshot",
+        "type": "string"
+      },
+      "event_cursor": {
+        "title": "Event Cursor",
+        "type": "string"
+      },
+      "items": {
+        "items": {
+          "$ref": "#/$defs/CatalogEntry"
+        },
+        "title": "Items",
+        "type": "array"
+      },
+      "defaults": {
+        "items": {
+          "$ref": "#/$defs/DefaultReference"
+        },
+        "title": "Defaults",
+        "type": "array"
+      },
+      "next_after": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next After"
+      },
+      "selected_reports": {
+        "items": {
+          "$ref": "#/$defs/SelectedReport"
+        },
+        "title": "Selected Reports",
+        "type": "array"
+      }
+    },
+    "required": [
+      "version",
+      "service_instance_id",
+      "snapshot",
+      "event_cursor",
+      "items",
+      "defaults",
+      "next_after",
+      "selected_reports"
+    ],
+    "title": "CatalogV2",
+    "type": "object"
+  },
+  "execution": {
+    "$defs": {
+      "MetricsV2": {
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "const": "diagnostics-telemetry-2",
+            "title": "Version",
+            "type": "string"
+          },
+          "clock": {
+            "const": "perf_counter_ns",
+            "title": "Clock",
+            "type": "string"
+          },
+          "elapsed_ns": {
+            "additionalProperties": {
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            "title": "Elapsed Ns",
+            "type": "object"
+          },
+          "counts": {
+            "additionalProperties": {
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            "title": "Counts",
+            "type": "object"
+          }
+        },
+        "required": [
+          "version",
+          "clock",
+          "elapsed_ns",
+          "counts"
+        ],
+        "title": "MetricsV2",
+        "type": "object"
+      },
+      "StageV2": {
+        "additionalProperties": false,
+        "properties": {
+          "direction": {
+            "enum": [
+              "low_hit",
+              "token_content"
+            ],
+            "title": "Direction",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "completed",
+              "partial"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "stage": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Stage"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Reason"
+          },
+          "reason_codes": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Reason Codes",
+            "type": "array"
+          },
+          "checked_requests": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(0|-?[1-9][0-9]*)$",
+                "x-integer-minimum": "0"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Checked Requests"
+          },
+          "eligible_requests": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(0|-?[1-9][0-9]*)$",
+                "x-integer-minimum": "0"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Eligible Requests"
+          },
+          "scan_complete": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Scan Complete"
+          },
+          "comparison_complete": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Comparison Complete"
+          },
+          "retention_complete": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Retention Complete"
+          },
+          "fragments_complete": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Fragments Complete"
+          },
+          "retained_requests": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(0|-?[1-9][0-9]*)$",
+                "x-integer-minimum": "0"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Retained Requests"
+          },
+          "retained_bytes": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(0|-?[1-9][0-9]*)$",
+                "x-integer-minimum": "0"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Retained Bytes"
+          },
+          "detected_by_rule": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "pattern": "^(0|[1-9][0-9]*)$",
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Detected By Rule"
+          },
+          "retained_by_rule": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "pattern": "^(0|[1-9][0-9]*)$",
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Retained By Rule"
+          },
+          "rule_status_counts": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "additionalProperties": {
+                    "pattern": "^(0|[1-9][0-9]*)$",
+                    "type": "string"
+                  },
+                  "type": "object"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Rule Status Counts"
+          },
+          "ruleset_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Ruleset Version"
+          },
+          "candidate_coverage_partial": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Candidate Coverage Partial"
+          },
+          "rule_scope": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Rule Scope"
+          }
+        },
+        "required": [
+          "direction",
+          "status"
+        ],
+        "title": "StageV2",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "version": {
+        "const": "diagnostics-execution-2",
+        "title": "Version",
+        "type": "string"
+      },
+      "task_id": {
+        "title": "Task Id",
+        "type": "string"
+      },
+      "scope_id": {
+        "title": "Scope Id",
+        "type": "string"
+      },
+      "status": {
+        "enum": [
+          "ready",
+          "partial",
+          "empty"
+        ],
+        "title": "Status",
+        "type": "string"
+      },
+      "availability": {
+        "enum": [
+          "computed",
+          "not_computed"
+        ],
+        "title": "Availability",
+        "type": "string"
+      },
+      "selected_directions": {
+        "anyOf": [
+          {
+            "items": {
+              "enum": [
+                "low_hit",
+                "token_content"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Selected Directions"
+      },
+      "stages": {
+        "items": {
+          "$ref": "#/$defs/StageV2"
+        },
+        "title": "Stages",
+        "type": "array"
+      },
+      "telemetry": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/MetricsV2"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "required": [
+      "version",
+      "task_id",
+      "scope_id",
+      "status",
+      "availability",
+      "selected_directions",
+      "stages",
+      "telemetry"
+    ],
+    "title": "ExecutionViewV2",
+    "type": "object"
+  }
+}

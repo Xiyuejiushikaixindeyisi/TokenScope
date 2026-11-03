@@ -1,0 +1,3307 @@
+{
+  "provenance": {
+    "path": "artifacts/reviews/hv2-repair-20261103/full-runtime-openapi.json",
+    "sha256": "80f7572ed8a137182eb59f21c5c81d10fc971403d300228a4ddb13ba4a41c639"
+  },
+  "paths": {
+    "/monitoring/user-v2/runs": {
+      "get": {
+        "summary": "Runs",
+        "operationId": "runs_monitoring_user_v2_runs_get",
+        "parameters": [
+          {
+            "name": "appid",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4096
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Appid"
+            }
+          },
+          {
+            "name": "common_name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4096
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Common Name"
+            }
+          },
+          {
+            "name": "model_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "GLM-5.2",
+                    "Qwen3.6-27B",
+                    "DeepSeek-V4-Flash-0731"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Model Id"
+            }
+          },
+          {
+            "name": "user_run_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4096
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "User Run Id"
+            }
+          },
+          {
+            "name": "snapshot",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Snapshot"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 18,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "default": "0",
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveryPage"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      },
+      "post": {
+        "summary": "Submit",
+        "operationId": "submit_monitoring_user_v2_runs_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__Submit"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__Receipt"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    },
+    "/monitoring/user-v2/ttft/defaults": {
+      "get": {
+        "summary": "Default Configs",
+        "operationId": "default_configs_monitoring_user_v2_ttft_defaults_get",
+        "parameters": [
+          {
+            "name": "common_name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4096
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Common Name"
+            }
+          },
+          {
+            "name": "model_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "GLM-5.2",
+                    "Qwen3.6-27B",
+                    "DeepSeek-V4-Flash-0731"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Model Id"
+            }
+          },
+          {
+            "name": "revision",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 18,
+                  "pattern": "^(0|[1-9][0-9]*)$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Revision"
+            }
+          },
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultPage"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      },
+      "post": {
+        "summary": "Update Defaults",
+        "operationId": "update_defaults_monitoring_user_v2_ttft_defaults_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DefaultUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultConfig"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    },
+    "/monitoring/user-v2/ttft/evaluations": {
+      "post": {
+        "summary": "Auto Evaluate",
+        "operationId": "auto_evaluate_monitoring_user_v2_ttft_evaluations_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AutoEvaluationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AutoEvaluation"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    },
+    "/monitoring/user-v2/ttft/evaluations/{evaluation_id}": {
+      "get": {
+        "summary": "Auto Evaluation",
+        "operationId": "auto_evaluation_monitoring_user_v2_ttft_evaluations__evaluation_id__get",
+        "parameters": [
+          {
+            "name": "evaluation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Evaluation Id"
+            }
+          },
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AutoEvaluation"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    },
+    "/monitoring/user-v2/bindings": {
+      "post": {
+        "summary": "Bind",
+        "operationId": "bind_monitoring_user_v2_bindings_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Bind"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__Receipt"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    },
+    "/monitoring/user-v2/runs/{user_run_id}": {
+      "get": {
+        "summary": "Receipt",
+        "operationId": "receipt_monitoring_user_v2_runs__user_run_id__get",
+        "parameters": [
+          {
+            "name": "user_run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Run Id"
+            }
+          },
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__Receipt"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    },
+    "/monitoring/user-v2/runs/{user_run_id}/rankings": {
+      "get": {
+        "summary": "Rankings",
+        "operationId": "rankings_monitoring_user_v2_runs__user_run_id__rankings_get",
+        "parameters": [
+          {
+            "name": "user_run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Run Id"
+            }
+          },
+          {
+            "name": "bin_width",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                1000,
+                2000,
+                5000
+              ],
+              "type": "integer",
+              "default": 5000,
+              "title": "Bin Width"
+            }
+          },
+          {
+            "name": "index_revision",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Index Revision"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 20,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "default": "0",
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "appid_contains",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Appid Contains"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "request_count",
+                "ideal_hit_rate",
+                "total_ideal_compute_tokens",
+                "typical_ideal_compute_tokens"
+              ],
+              "type": "string",
+              "default": "request_count",
+              "title": "Sort"
+            }
+          },
+          {
+            "name": "direction",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "default": "desc",
+              "title": "Direction"
+            }
+          },
+          {
+            "name": "request_count_min",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 128,
+                  "pattern": "^(0|[1-9][0-9]*)$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Request Count Min"
+            }
+          },
+          {
+            "name": "request_count_max",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 128,
+                  "pattern": "^(0|[1-9][0-9]*)$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Request Count Max"
+            }
+          },
+          {
+            "name": "ideal_hit_rate_min",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 128,
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ideal Hit Rate Min"
+            }
+          },
+          {
+            "name": "ideal_hit_rate_max",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 128,
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ideal Hit Rate Max"
+            }
+          },
+          {
+            "name": "total_ideal_compute_tokens_min",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 128,
+                  "pattern": "^(0|[1-9][0-9]*)$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Total Ideal Compute Tokens Min"
+            }
+          },
+          {
+            "name": "total_ideal_compute_tokens_max",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 128,
+                  "pattern": "^(0|[1-9][0-9]*)$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Total Ideal Compute Tokens Max"
+            }
+          },
+          {
+            "name": "typical_ideal_compute_tokens_min",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 128,
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Typical Ideal Compute Tokens Min"
+            }
+          },
+          {
+            "name": "typical_ideal_compute_tokens_max",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 128,
+                  "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Typical Ideal Compute Tokens Max"
+            }
+          },
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ranking"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    },
+    "/monitoring/user-v2/runs/{user_run_id}/modes": {
+      "get": {
+        "summary": "Modes",
+        "operationId": "modes_monitoring_user_v2_runs__user_run_id__modes_get",
+        "parameters": [
+          {
+            "name": "user_run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Run Id"
+            }
+          },
+          {
+            "name": "bin_width",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                1000,
+                2000,
+                5000
+              ],
+              "type": "integer",
+              "default": 5000,
+              "title": "Bin Width"
+            }
+          },
+          {
+            "name": "index_revision",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Index Revision"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 20,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "default": "0",
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 1000,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "appid",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "title": "Appid"
+            }
+          },
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Modes"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    },
+    "/monitoring/user-v2/scenarios": {
+      "post": {
+        "summary": "Put Scenario",
+        "operationId": "put_scenario_monitoring_user_v2_scenarios_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/Scenario"
+                  },
+                  {
+                    "$ref": "#/components/schemas/BatchScenario"
+                  }
+                ],
+                "title": "Body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Scenario"
+                    },
+                    {
+                      "$ref": "#/components/schemas/BatchScenario"
+                    }
+                  ],
+                  "title": "Response Put Scenario Monitoring User V2 Scenarios Post"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    },
+    "/monitoring/user-v2/scenarios/{scenario_id}/{revision}": {
+      "get": {
+        "summary": "Scenario",
+        "operationId": "scenario_monitoring_user_v2_scenarios__scenario_id___revision__get",
+        "parameters": [
+          {
+            "name": "scenario_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Scenario Id"
+            }
+          },
+          {
+            "name": "revision",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Revision"
+            }
+          },
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Scenario"
+                    },
+                    {
+                      "$ref": "#/components/schemas/BatchScenario"
+                    }
+                  ],
+                  "title": "Response Scenario Monitoring User V2 Scenarios  Scenario Id   Revision  Get"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    },
+    "/monitoring/user-v2/evaluations": {
+      "post": {
+        "summary": "Evaluate",
+        "operationId": "evaluate_monitoring_user_v2_evaluations_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EvaluationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Evaluation"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    },
+    "/monitoring/user-v2/evaluations/{evaluation_id}": {
+      "get": {
+        "summary": "Evaluation",
+        "operationId": "evaluation_monitoring_user_v2_evaluations__evaluation_id__get",
+        "parameters": [
+          {
+            "name": "evaluation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Evaluation Id"
+            }
+          },
+          {
+            "name": "X-TokenScope-Instance-Id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Evaluation"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__ErrorEnvelope"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "x-runtime-implemented": true,
+        "x-user-contract-version": "2.1.0"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DiscoveryPage": {
+        "properties": {
+          "service_instance_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Service Instance Id"
+          },
+          "contract_version": {
+            "type": "string",
+            "const": "2.1.0",
+            "title": "Contract Version",
+            "default": "2.1.0"
+          },
+          "snapshot": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Snapshot"
+          },
+          "default_policy": {
+            "type": "string",
+            "const": "latest_registered_published_run_per_appid_model_service",
+            "title": "Default Policy",
+            "default": "latest_registered_published_run_per_appid_model_service"
+          },
+          "total": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Total"
+          },
+          "next_offset": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Offset"
+          },
+          "entries": {
+            "items": {
+              "$ref": "#/components/schemas/DiscoveryEntry"
+            },
+            "type": "array",
+            "title": "Entries"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "service_instance_id",
+          "snapshot",
+          "total",
+          "next_offset",
+          "entries"
+        ],
+        "title": "DiscoveryPage"
+      },
+      "DiscoveryEntry": {
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/TraceSource"
+          },
+          "appid": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4096,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Appid"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "empty"
+            ],
+            "title": "State"
+          },
+          "registration_order": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Registration Order"
+          },
+          "is_default": {
+            "type": "boolean",
+            "title": "Is Default"
+          },
+          "request_count": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Request Count"
+          },
+          "prompt_p90": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt P90"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source",
+          "appid",
+          "state",
+          "registration_order",
+          "is_default",
+          "request_count",
+          "prompt_p90"
+        ],
+        "title": "DiscoveryEntry"
+      },
+      "TraceSource": {
+        "properties": {
+          "dataset_kind": {
+            "type": "string",
+            "const": "trace",
+            "title": "Dataset Kind",
+            "default": "trace"
+          },
+          "source_kind": {
+            "type": "string",
+            "const": "user_v2",
+            "title": "Source Kind",
+            "default": "user_v2"
+          },
+          "base_run_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Base Run Id"
+          },
+          "user_run_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "User Run Id"
+          },
+          "common_name": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Common Name"
+          },
+          "model_id": {
+            "type": "string",
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id"
+          },
+          "index_revision": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Index Revision"
+          },
+          "input_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Input Sha256"
+          },
+          "manifest_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Manifest Sha256"
+          },
+          "settings_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Settings Sha256"
+          },
+          "encoder_identity": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Encoder Identity"
+          },
+          "asset_identity": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Asset Identity"
+          },
+          "file_observed_time_range_utc": {
+            "prefixItems": [
+              {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "maxLength": 4096,
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "maxLength": 4096,
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "File Observed Time Range Utc"
+          },
+          "range_kind": {
+            "type": "string",
+            "const": "entire_appid_valid_set",
+            "title": "Range Kind",
+            "default": "entire_appid_valid_set"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "base_run_id",
+          "user_run_id",
+          "common_name",
+          "model_id",
+          "index_revision",
+          "input_sha256",
+          "manifest_sha256",
+          "settings_sha256",
+          "encoder_identity",
+          "asset_identity",
+          "file_observed_time_range_utc"
+        ],
+        "title": "TraceSource"
+      },
+      "tokenscope__user_monitoring__contracts__ErrorEnvelope": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/tokenscope__user_monitoring__contracts__Error"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "title": "ErrorEnvelope"
+      },
+      "tokenscope__user_monitoring__contracts__Error": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Message"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "Error"
+      },
+      "tokenscope__user_monitoring__contracts__Submit": {
+        "properties": {
+          "submission_key": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Submission Key"
+          },
+          "file_ref": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "File Ref"
+          },
+          "common_name": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Common Name"
+          },
+          "model_id": {
+            "type": "string",
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "submission_key",
+          "file_ref",
+          "common_name",
+          "model_id"
+        ],
+        "title": "Submit"
+      },
+      "tokenscope__user_monitoring__contracts__Receipt": {
+        "properties": {
+          "service_instance_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Service Instance Id"
+          },
+          "user_run_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "User Run Id"
+          },
+          "base_run_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4096,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Base Run Id"
+          },
+          "common_name": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Common Name"
+          },
+          "model_id": {
+            "type": "string",
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id"
+          },
+          "state": {
+            "$ref": "#/components/schemas/UserState"
+          },
+          "index_revision": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4096,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Index Revision"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4096,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "service_instance_id",
+          "user_run_id",
+          "base_run_id",
+          "common_name",
+          "model_id",
+          "state",
+          "index_revision",
+          "error_code"
+        ],
+        "title": "Receipt"
+      },
+      "UserState": {
+        "type": "string",
+        "enum": [
+          "accepted",
+          "base_pending",
+          "indexing",
+          "ready",
+          "empty",
+          "failed",
+          "interrupted"
+        ],
+        "title": "UserState"
+      },
+      "DefaultPage": {
+        "properties": {
+          "service_instance_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Service Instance Id"
+          },
+          "contract_version": {
+            "type": "string",
+            "const": "2.1.0",
+            "title": "Contract Version",
+            "default": "2.1.0"
+          },
+          "configs": {
+            "items": {
+              "$ref": "#/components/schemas/DefaultConfig"
+            },
+            "type": "array",
+            "title": "Configs"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "service_instance_id",
+          "configs"
+        ],
+        "title": "DefaultPage"
+      },
+      "DefaultConfig": {
+        "properties": {
+          "common_name": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Common Name"
+          },
+          "model_id": {
+            "type": "string",
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id"
+          },
+          "revision": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Revision"
+          },
+          "chunk_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Chunk Tokens"
+          },
+          "chunk_seconds": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chunk Seconds"
+          },
+          "tau_reference_chunk_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Tau Reference Chunk Tokens"
+          },
+          "source": {
+            "type": "string",
+            "const": "user_provided",
+            "title": "Source",
+            "default": "user_provided"
+          },
+          "source_description": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Source Description"
+          },
+          "recorded_at": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Recorded At"
+          },
+          "calibrated": {
+            "type": "boolean",
+            "const": false,
+            "title": "Calibrated",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "common_name",
+          "model_id",
+          "revision",
+          "chunk_tokens",
+          "chunk_seconds",
+          "tau_reference_chunk_tokens",
+          "source_description",
+          "recorded_at"
+        ],
+        "title": "DefaultConfig"
+      },
+      "DefaultUpdate": {
+        "properties": {
+          "submission_key": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Submission Key"
+          },
+          "common_name": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Common Name"
+          },
+          "model_id": {
+            "type": "string",
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id"
+          },
+          "expected_revision": {
+            "type": "string",
+            "maxLength": 18,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Expected Revision"
+          },
+          "chunk_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Chunk Tokens",
+            "default": "8192"
+          },
+          "chunk_seconds": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chunk Seconds"
+          },
+          "tau_reference_chunk_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Tau Reference Chunk Tokens",
+            "default": "8192"
+          },
+          "source_description": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Source Description"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "submission_key",
+          "common_name",
+          "model_id",
+          "expected_revision",
+          "chunk_seconds",
+          "source_description"
+        ],
+        "title": "DefaultUpdate"
+      },
+      "AutoEvaluationRequest": {
+        "properties": {
+          "submission_key": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Submission Key"
+          },
+          "user_run_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "User Run Id"
+          },
+          "appid": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Appid"
+          },
+          "index_revision": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Index Revision"
+          },
+          "target_seconds": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+            "title": "Target Seconds"
+          },
+          "waiting_seconds": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+            "title": "Waiting Seconds"
+          },
+          "comparator": {
+            "type": "string",
+            "enum": [
+              "le",
+              "lt"
+            ],
+            "title": "Comparator",
+            "default": "le"
+          },
+          "chunk_tokens": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^[1-9][0-9]*$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chunk Tokens"
+          },
+          "default_revision": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 18,
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Default Revision"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "submission_key",
+          "user_run_id",
+          "appid",
+          "index_revision",
+          "target_seconds",
+          "waiting_seconds"
+        ],
+        "title": "AutoEvaluationRequest"
+      },
+      "AutoEvaluation": {
+        "properties": {
+          "evaluation_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Evaluation Id"
+          },
+          "service_instance_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Service Instance Id"
+          },
+          "contract_version": {
+            "type": "string",
+            "const": "2.1.0",
+            "title": "Contract Version",
+            "default": "2.1.0"
+          },
+          "request": {
+            "$ref": "#/components/schemas/AutoEvaluationRequest"
+          },
+          "source": {
+            "$ref": "#/components/schemas/TraceSource"
+          },
+          "defaults": {
+            "$ref": "#/components/schemas/DefaultConfig"
+          },
+          "chunk_tokens_origin": {
+            "type": "string",
+            "enum": [
+              "model_default",
+              "request_override"
+            ],
+            "title": "Chunk Tokens Origin"
+          },
+          "tau_scaled": {
+            "type": "boolean",
+            "const": false,
+            "title": "Tau Scaled",
+            "default": false
+          },
+          "evaluation": {
+            "$ref": "#/components/schemas/Evaluation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "evaluation_id",
+          "service_instance_id",
+          "request",
+          "source",
+          "defaults",
+          "chunk_tokens_origin",
+          "evaluation"
+        ],
+        "title": "AutoEvaluation"
+      },
+      "Evaluation": {
+        "properties": {
+          "evaluation_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Evaluation Id"
+          },
+          "service_instance_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Service Instance Id"
+          },
+          "request": {
+            "$ref": "#/components/schemas/EvaluationRequest"
+          },
+          "scenario": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Scenario"
+              },
+              {
+                "$ref": "#/components/schemas/BatchScenario"
+              }
+            ],
+            "title": "Scenario"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "reference",
+              "reference_with_limit",
+              "no_budget",
+              "out_of_scope",
+              "unavailable"
+            ],
+            "title": "Status"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4096,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "request_count": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Request Count"
+          },
+          "prompt_p90": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt P90"
+          },
+          "allowed_chunks": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 256,
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allowed Chunks"
+          },
+          "computable_tokens": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Computable Tokens"
+          },
+          "required_hit_fraction": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Fraction"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "required_hit_rate": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Required Hit Rate"
+          },
+          "limitations": {
+            "items": {
+              "type": "string",
+              "maxLength": 4096,
+              "minLength": 1
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "evaluation_id",
+          "service_instance_id",
+          "request",
+          "scenario",
+          "status",
+          "reason",
+          "request_count",
+          "prompt_p90",
+          "allowed_chunks",
+          "computable_tokens",
+          "required_hit_fraction",
+          "required_hit_rate",
+          "limitations"
+        ],
+        "title": "Evaluation"
+      },
+      "EvaluationRequest": {
+        "properties": {
+          "submission_key": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Submission Key"
+          },
+          "user_run_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "User Run Id"
+          },
+          "appid": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Appid"
+          },
+          "scenario_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Scenario Id"
+          },
+          "scenario_revision": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Scenario Revision"
+          },
+          "target_seconds": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+            "title": "Target Seconds"
+          },
+          "waiting_seconds": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+            "title": "Waiting Seconds"
+          },
+          "comparator": {
+            "type": "string",
+            "enum": [
+              "le",
+              "lt"
+            ],
+            "title": "Comparator"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "submission_key",
+          "user_run_id",
+          "appid",
+          "scenario_id",
+          "scenario_revision",
+          "target_seconds",
+          "waiting_seconds",
+          "comparator"
+        ],
+        "title": "EvaluationRequest"
+      },
+      "Scenario": {
+        "properties": {
+          "scenario_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Scenario Id"
+          },
+          "revision": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Revision"
+          },
+          "model_id": {
+            "type": "string",
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id"
+          },
+          "common_name": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Common Name"
+          },
+          "deployment": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Deployment"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "user_assumption",
+              "verified_measurement"
+            ],
+            "title": "Source"
+          },
+          "source_description": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Source Description"
+          },
+          "evidence_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Evidence Sha256"
+          },
+          "measurement_boundary": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Measurement Boundary"
+          },
+          "workload_description": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Workload Description"
+          },
+          "thinking_mode": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Thinking Mode"
+          },
+          "min_prompt_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Min Prompt Tokens"
+          },
+          "max_prompt_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Max Prompt Tokens"
+          },
+          "chunk_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Chunk Tokens"
+          },
+          "chunk_seconds": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+            "title": "Chunk Seconds"
+          },
+          "overhead_seconds": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+            "title": "Overhead Seconds"
+          },
+          "sample_count": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Sample Count"
+          },
+          "calibration_notes": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Calibration Notes"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "scenario_id",
+          "revision",
+          "model_id",
+          "common_name",
+          "deployment",
+          "source",
+          "source_description",
+          "evidence_sha256",
+          "measurement_boundary",
+          "workload_description",
+          "thinking_mode",
+          "min_prompt_tokens",
+          "max_prompt_tokens",
+          "chunk_tokens",
+          "chunk_seconds",
+          "overhead_seconds",
+          "sample_count",
+          "calibration_notes"
+        ],
+        "title": "Scenario"
+      },
+      "BatchScenario": {
+        "properties": {
+          "timing_model": {
+            "type": "string",
+            "const": "batch_reference_total_noncompute_v1",
+            "title": "Timing Model"
+          },
+          "scenario_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Scenario Id"
+          },
+          "revision": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Revision"
+          },
+          "model_id": {
+            "type": "string",
+            "enum": [
+              "GLM-5.2",
+              "Qwen3.6-27B",
+              "DeepSeek-V4-Flash-0731"
+            ],
+            "title": "Model Id"
+          },
+          "common_name": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Common Name"
+          },
+          "deployment": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Deployment"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "user_assumption",
+              "verified_measurement"
+            ],
+            "title": "Source"
+          },
+          "source_description": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Source Description"
+          },
+          "chunk_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Chunk Tokens"
+          },
+          "chunk_seconds": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+            "title": "Chunk Seconds"
+          },
+          "measurement_boundary": {
+            "type": "string",
+            "const": "GF dispatch to first token",
+            "title": "Measurement Boundary",
+            "default": "GF dispatch to first token"
+          },
+          "workload_description": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4096,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Workload Description"
+          },
+          "thinking_mode": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4096,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Thinking Mode"
+          },
+          "min_prompt_tokens": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min Prompt Tokens"
+          },
+          "max_prompt_tokens": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^[1-9][0-9]*$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Prompt Tokens"
+          },
+          "evidence_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Evidence Sha256"
+          },
+          "sample_count": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sample Count"
+          },
+          "calibration_notes": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4096,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calibration Notes"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "timing_model",
+          "scenario_id",
+          "revision",
+          "model_id",
+          "common_name",
+          "deployment",
+          "source",
+          "source_description",
+          "chunk_tokens",
+          "chunk_seconds"
+        ],
+        "title": "BatchScenario",
+        "description": "Explicit total-noncompute reference; batch budget is assumed per-request progress."
+      },
+      "Fraction": {
+        "properties": {
+          "numerator": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Numerator"
+          },
+          "denominator": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Denominator"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "numerator",
+          "denominator"
+        ],
+        "title": "Fraction"
+      },
+      "Bind": {
+        "properties": {
+          "submission_key": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Submission Key"
+          },
+          "base_run_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Base Run Id"
+          },
+          "common_name": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Common Name"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "submission_key",
+          "base_run_id",
+          "common_name"
+        ],
+        "title": "Bind"
+      },
+      "Ranking": {
+        "properties": {
+          "service_instance_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Service Instance Id"
+          },
+          "user_run_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "User Run Id"
+          },
+          "common_name": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Common Name"
+          },
+          "index_revision": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Index Revision"
+          },
+          "bin_width": {
+            "type": "integer",
+            "enum": [
+              1000,
+              2000,
+              5000
+            ],
+            "title": "Bin Width"
+          },
+          "total": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Total"
+          },
+          "next_offset": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Offset"
+          },
+          "file_quality": {
+            "$ref": "#/components/schemas/Quality"
+          },
+          "rows": {
+            "items": {
+              "$ref": "#/components/schemas/RankRow"
+            },
+            "type": "array",
+            "title": "Rows"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "service_instance_id",
+          "user_run_id",
+          "common_name",
+          "index_revision",
+          "bin_width",
+          "total",
+          "next_offset",
+          "file_quality",
+          "rows"
+        ],
+        "title": "Ranking"
+      },
+      "Quality": {
+        "properties": {
+          "read_rows": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Read Rows"
+          },
+          "valid_rows": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Valid Rows"
+          },
+          "skipped_rows": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Skipped Rows"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "read_rows",
+          "valid_rows",
+          "skipped_rows"
+        ],
+        "title": "Quality"
+      },
+      "RankRow": {
+        "properties": {
+          "appid": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Appid"
+          },
+          "request_count": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Request Count"
+          },
+          "total_prompt_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Total Prompt Tokens"
+          },
+          "total_ideal_cached_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Total Ideal Cached Tokens"
+          },
+          "total_ideal_compute_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Total Ideal Compute Tokens"
+          },
+          "ideal_hit_rate": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ideal Hit Rate"
+          },
+          "prompt_p90": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Prompt P90"
+          },
+          "typical_compute_tokens": {
+            "$ref": "#/components/schemas/Fraction"
+          },
+          "representative_bin": {
+            "$ref": "#/components/schemas/ModeBin"
+          },
+          "tie_count": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Tie Count"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "appid",
+          "request_count",
+          "total_prompt_tokens",
+          "total_ideal_cached_tokens",
+          "total_ideal_compute_tokens",
+          "ideal_hit_rate",
+          "prompt_p90",
+          "typical_compute_tokens",
+          "representative_bin",
+          "tie_count"
+        ],
+        "title": "RankRow"
+      },
+      "ModeBin": {
+        "properties": {
+          "lower": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Lower"
+          },
+          "upper": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Upper"
+          },
+          "count": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[1-9][0-9]*$",
+            "title": "Count"
+          },
+          "sum_compute_tokens": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Sum Compute Tokens"
+          },
+          "share": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Share"
+          },
+          "mean": {
+            "$ref": "#/components/schemas/Fraction"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "lower",
+          "upper",
+          "count",
+          "sum_compute_tokens",
+          "share",
+          "mean"
+        ],
+        "title": "ModeBin"
+      },
+      "Modes": {
+        "properties": {
+          "user_run_id": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "User Run Id"
+          },
+          "appid": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Appid"
+          },
+          "index_revision": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Index Revision"
+          },
+          "bin_width": {
+            "type": "integer",
+            "enum": [
+              1000,
+              2000,
+              5000
+            ],
+            "title": "Bin Width"
+          },
+          "total": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "title": "Total"
+          },
+          "next_offset": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128,
+                "pattern": "^(0|[1-9][0-9]*)$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Offset"
+          },
+          "bins": {
+            "items": {
+              "$ref": "#/components/schemas/ModeBin"
+            },
+            "type": "array",
+            "title": "Bins"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "user_run_id",
+          "appid",
+          "index_revision",
+          "bin_width",
+          "total",
+          "next_offset",
+          "bins"
+        ],
+        "title": "Modes"
+      }
+    }
+  }
+}

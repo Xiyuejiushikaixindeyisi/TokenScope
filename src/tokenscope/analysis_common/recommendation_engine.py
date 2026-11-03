@@ -37,10 +37,11 @@ from tokenscope.analysis_common.recommendations import (
 )
 from tokenscope.analysis_common.source import ResolvedSource
 from tokenscope.analysis_common.storage import ResultWriter
+from tokenscope.analysis_common.telemetry import Telemetry
 from tokenscope.analysis_common.wire import from_wire, to_wire
 
 
-def run_token_recommendations(
+def _run_token_recommendations(
     *,
     source: ResolvedSource,
     writer: ResultWriter,
@@ -191,7 +192,10 @@ def run_token_recommendations(
                     control.consume("token_evaluations")
                     execution_plan = prepared_plan
                     path = workspace / "token_recommendations" / str(order)
-                    evaluation = evaluate_plan(source, prepared_plan, path, control=control.task)
+                    with getattr(control.task, "telemetry", Telemetry()).span("token_evaluation"):
+                        evaluation = evaluate_plan(
+                            source, prepared_plan, path, control=control.task
+                        )
                     if evaluation.manifest_ref:
                         evaluation = evaluation.model_copy(
                             update={
@@ -336,3 +340,9 @@ def run_token_recommendations(
         **outcomes,
         "complete": not (outcomes["blocked"] or outcomes["failed"] or outcomes["not_run"]),
     }
+
+
+def run_token_recommendations(**kwargs: Any) -> dict[str, Any]:
+    control = kwargs["control"]
+    with getattr(control.task, "telemetry", Telemetry()).span("token_proposal_prepare_evaluation"):
+        return _run_token_recommendations(**kwargs)

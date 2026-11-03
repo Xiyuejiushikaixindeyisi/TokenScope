@@ -33,13 +33,14 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
-    for name, value in artifacts().items():
-        text = json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
-        path = DEST / name
-        if args.write:
-            path.write_text(text)
-        elif path.read_text() != text:
-            raise SystemExit(f"Stale protocol artifact: {name}")
+    if args.write:
+        parser.error("MA 1.0.0 is frozen; --write cannot overwrite its artifacts or manifest")
+    validate_frozen_identity()
+    runtime = artifacts()
+    validate_legacy(runtime)
+    from validate_ma_availability import validate_extension
+
+    validate_extension(runtime["design.openapi.json"])
     payload = dict(
         submission_key="example",
         pre_file_ref="pre.csv",
@@ -78,19 +79,33 @@ def main() -> None:
     if frontend.exists():
         for example in json.loads(frontend.read_text())["examples"]:
             getattr(c, example["type"]).model_validate(example["payload"])
-    if args.write:
-        (DEST / "examples.json").write_text(json.dumps(examples, indent=2) + "\n")
-        files = [*DEST.glob("*.json"), ROOT / "src/tokenscope/monitoring/ma/contracts.py"]
-        manifest = {
-            str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
-            for p in files
-            if p.name != "manifest.json"
-        }
-        (DEST / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    else:
-        for name, sha in json.loads((DEST / "manifest.json").read_text()).items():
-            assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == sha, name
-    print("MA schema/artifacts valid; 2 positive examples, 4 negative submissions")
+    for name, sha in json.loads((DEST / "manifest.json").read_text()).items():
+        assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == sha, name
+    print("MA frozen compatibility + candidate extension valid; 2 positive, 4 negative submissions")
+
+
+def validate_legacy(runtime: dict[str, object], destination: Path = DEST) -> None:
+    schema = json.loads((destination / "schema.json").read_text())
+    assert runtime["schema.json"] == schema, "Frozen MA schema changed"
+    old = json.loads((destination / "design.openapi.json").read_text())
+    new = runtime["design.openapi.json"]
+    assert isinstance(new, dict)
+    for key in old.keys() - {"paths", "components"}:
+        assert new[key] == old[key], f"Frozen OpenAPI metadata changed: {key}"
+    for path, operations in old["paths"].items():
+        assert new["paths"][path] == operations, f"Frozen path changed: {path}"
+    for group, definitions in old["components"].items():
+        for name, definition in definitions.items():
+            assert new["components"][group][name] == definition, f"Frozen component changed: {name}"
+
+
+def validate_frozen_identity(root: Path = ROOT, destination: Path = DEST) -> None:
+    manifest = destination / "manifest.json"
+    assert hashlib.sha256(manifest.read_bytes()).hexdigest() == (
+        "b29e3edfac5ce5fc6cf9d46f11df0b0cbd71b1738bb898ef3b423c309faa81e9"
+    ), "Frozen manifest identity changed"
+    for name, sha in json.loads(manifest.read_text()).items():
+        assert hashlib.sha256((root / name).read_bytes()).hexdigest() == sha, name
 
 
 if __name__ == "__main__":

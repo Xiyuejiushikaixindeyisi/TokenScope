@@ -8,7 +8,9 @@ from tokenscope.analysis_common.contracts import ModificationPlan, RequestCompar
 from tokenscope.analysis_common.modifications import value_digest
 from tokenscope.analysis_common.plugins import ExecutionStopped
 from tokenscope.analysis_common.runtime import TaskControl
+from tokenscope.analysis_common.runtime_control import retain_finding
 from tokenscope.analysis_common.source import ResolvedSource
+from tokenscope.analysis_common.wire import to_wire
 from tokenscope.prefix_analysis.candidates import CandidateIndex
 from tokenscope.prefix_analysis.dynamic import (
     comparable_slots,
@@ -74,6 +76,8 @@ def collect_dynamics(
             )
             candidates, truncated = index.lookup("structure", fingerprint)
             partial |= truncated
+            if truncated and "CANDIDATE_LOOKUP_TRUNCATED" not in reasons:
+                reasons += ("CANDIDATE_LOOKUP_TRUNCATED",)
             current_ids = None
             for key in candidates:
                 prior = source.read_request(key)
@@ -115,34 +119,36 @@ def collect_dynamics(
                         difference_pointers=differences,
                         lcp_tokens=common_prefix(prior_ids, current_ids),
                     )
-                    if control:
-                        control.finding()
-                    findings.append(
-                        PrefixFinding(
-                            finding_id=stable_id("finding", [rule, "1", comparison, recipe]),
-                            rule_id=rule,
-                            comparison=comparison,
-                            source_pointer=path,
-                            recipe_json=recipe,
-                            evidence_status="needs_association"
-                            if rule == "L4"
-                            else "source_change_and_input_difference",
-                            advice="评估删除已定位动态片段后的命中率，由业务决定采用。"
-                            if recipe
-                            else "可比请求历史内容不同；无可靠关联，不认定同一会话改写。"
-                            if rule == "L4"
-                            else "工具结果JSON结构一致、表示不同；查看两条完整请求。"
-                            if rule == "L5"
-                            else "工具定义或集合发生变化；查看完整差异，不假定版本变更错误。",
-                        )
+                    finding = PrefixFinding(
+                        finding_id=stable_id("finding", [rule, "1", comparison, recipe]),
+                        rule_id=rule,
+                        comparison=comparison,
+                        source_pointer=path,
+                        recipe_json=recipe,
+                        evidence_status="needs_association"
+                        if rule == "L4"
+                        else "source_change_and_input_difference",
+                        advice="评估删除已定位动态片段后的命中率，由业务决定采用。"
+                        if recipe
+                        else "可比请求历史内容不同；无可靠关联，不认定同一会话改写。"
+                        if rule == "L4"
+                        else "工具结果JSON结构一致、表示不同；查看两条完整请求。"
+                        if rule == "L5"
+                        else "工具定义或集合发生变化；查看完整差异，不假定版本变更错误。",
                     )
+                    if retain_finding(
+                        control,
+                        rule,
+                        len(json.dumps(to_wire(finding), ensure_ascii=False).encode()),
+                    ):
+                        findings.append(finding)
             index.insert(current.request_key, {"structure": fingerprint})
             checked += 1
     except ExecutionStopped as exc:
         if exc.code == "ANALYSIS_INTERRUPTED":
             raise
         partial = True
-        reasons = (exc.code,)
+        reasons = tuple(dict.fromkeys((*reasons, exc.code)))
     finally:
         index.close()
     return PrefixReport(

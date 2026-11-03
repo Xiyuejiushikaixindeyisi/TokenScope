@@ -1,0 +1,4527 @@
+{
+  "provenance": "Synthetic 4096-token identical shards; not Huawei evidence",
+  "cases": [
+    {
+      "name": "source_cached_missing",
+      "synthetic": true,
+      "pre": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T07:01:00Z",
+          "model_handle_start_time": "2026-10-20T07:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "now": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T08:01:00Z",
+          "model_handle_start_time": "2026-10-20T08:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "response": {
+        "service_instance_id": "synthetic-service",
+        "ma_run_id": "synthetic-source_cached_missing",
+        "binding": {
+          "submission_key": "one",
+          "pre_file_ref": "pre.csv",
+          "now_file_ref": "now.csv",
+          "model_standard_name": "q-64K",
+          "model_id": "Qwen3.6-27B",
+          "pre_start": "2026-10-20T07:00:00Z",
+          "now_start": "2026-10-20T08:00:00Z",
+          "now_end": "2026-10-20T09:00:00Z",
+          "source_timezone": "UTC"
+        },
+        "availability": {
+          "schema_version": "1.0.0",
+          "instance_uuid": "A",
+          "model_standard_name": "q-64K",
+          "coverage": {
+            "assigned": "1",
+            "production_input": "1",
+            "real": "0",
+            "encoded": "1",
+            "paired": "0"
+          },
+          "metrics": {
+            "paired_ideal_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "source_cached_missing",
+                "no_real_samples",
+                "no_paired_samples"
+              ]
+            },
+            "paired_real_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "source_cached_missing",
+                "no_real_samples",
+                "no_paired_samples"
+              ]
+            },
+            "independent_ideal_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "3072",
+              "denominator": "4096",
+              "denominator_unit": "input_tokens",
+              "reasons": []
+            },
+            "independent_real_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "source_cached_missing",
+                "no_real_samples"
+              ]
+            },
+            "actual_uncached_tokens": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": null,
+              "denominator_unit": "none",
+              "reasons": [
+                "source_cached_missing",
+                "no_real_samples"
+              ]
+            },
+            "hour_uncached_tokens_per_second": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "3600",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "source_cached_missing",
+                "no_real_samples"
+              ]
+            }
+          },
+          "bins": [
+            {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "no_real_samples"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            }
+          ],
+          "now_field_issues": [
+            {
+              "field": "cached_tokens",
+              "code": "MISSING_TOKEN_VALUE",
+              "count": "1"
+            }
+          ],
+          "warmup": {
+            "encoded_pre_count": "1",
+            "encoded_now_count": "1",
+            "pre_max_handle_time": "2026-10-20T07:01:00.000000000Z",
+            "now_min_handle_time": "2026-10-20T08:01:00.000000000Z",
+            "comparison": "pre_max_gt_now_min",
+            "equal_time_order": "pre_first_then_source_record_index"
+          }
+        }
+      },
+      "snapshot_excerpt": {
+        "schema_version": "1.0.0",
+        "instance_uuid": "A",
+        "model_standard_name": "q-64K",
+        "coverage": {
+          "assigned": "1",
+          "production_input": "1",
+          "real": "0",
+          "encoded": "1",
+          "paired": "0"
+        },
+        "pre_assigned": "1",
+        "pre_encoded": "1",
+        "ideal_status": "available",
+        "production_input_tokens": "100",
+        "real": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "ideal": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "4096",
+            "cached_tokens": "3072",
+            "uncached_tokens": "1024"
+          },
+          "hit_rate": 0.75
+        },
+        "paired_real": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "paired_ideal": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "mismatched_input_count": "0",
+        "paired_request_coverage": null,
+        "paired_input_coverage": null,
+        "hour": {
+          "seconds": 3600,
+          "request_count": "1",
+          "real_count": "0",
+          "uncached_tokens": null,
+          "requests_per_second": 0.0002777777777777778,
+          "uncached_tokens_per_second": null
+        },
+        "bins": [
+          {
+            "index": 0,
+            "start": "2026-10-20T08:00:00.000000000Z",
+            "end": "2026-10-20T08:05:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "1",
+              "real_count": "0",
+              "uncached_tokens": null,
+              "requests_per_second": 0.0033333333333333335,
+              "uncached_tokens_per_second": null
+            }
+          },
+          {
+            "index": 1,
+            "start": "2026-10-20T08:05:00.000000000Z",
+            "end": "2026-10-20T08:10:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 2,
+            "start": "2026-10-20T08:10:00.000000000Z",
+            "end": "2026-10-20T08:15:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 3,
+            "start": "2026-10-20T08:15:00.000000000Z",
+            "end": "2026-10-20T08:20:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 4,
+            "start": "2026-10-20T08:20:00.000000000Z",
+            "end": "2026-10-20T08:25:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 5,
+            "start": "2026-10-20T08:25:00.000000000Z",
+            "end": "2026-10-20T08:30:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 6,
+            "start": "2026-10-20T08:30:00.000000000Z",
+            "end": "2026-10-20T08:35:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 7,
+            "start": "2026-10-20T08:35:00.000000000Z",
+            "end": "2026-10-20T08:40:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 8,
+            "start": "2026-10-20T08:40:00.000000000Z",
+            "end": "2026-10-20T08:45:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 9,
+            "start": "2026-10-20T08:45:00.000000000Z",
+            "end": "2026-10-20T08:50:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 10,
+            "start": "2026-10-20T08:50:00.000000000Z",
+            "end": "2026-10-20T08:55:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 11,
+            "start": "2026-10-20T08:55:00.000000000Z",
+            "end": "2026-10-20T09:00:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          }
+        ],
+        "zero_uncached_count": "0",
+        "handle_time_min": "2026-10-20T08:01:00.000000000Z",
+        "handle_time_max": "2026-10-20T08:01:00.000000000Z",
+        "handle_outside_window_count": "0",
+        "limitations": [
+          "finite_prewarm_not_production_upper_bound",
+          "provided_records_not_full_traffic",
+          "request_time_event_unknown",
+          "chained_approximation_not_hybrid",
+          "equal_lengths_do_not_prove_token_identity",
+          "gf_encoding_equivalence_unverified",
+          "production_topology_and_glm_cp_mapping_not_reproduced"
+        ]
+      }
+    },
+    {
+      "name": "warmup_order_conflict",
+      "synthetic": true,
+      "pre": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T07:01:00Z",
+          "model_handle_start_time": "2026-10-20T08:02:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "now": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T08:01:00Z",
+          "model_handle_start_time": "2026-10-20T08:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "response": {
+        "service_instance_id": "synthetic-service",
+        "ma_run_id": "synthetic-warmup_order_conflict",
+        "binding": {
+          "submission_key": "one",
+          "pre_file_ref": "pre.csv",
+          "now_file_ref": "now.csv",
+          "model_standard_name": "q-64K",
+          "model_id": "Qwen3.6-27B",
+          "pre_start": "2026-10-20T07:00:00Z",
+          "now_start": "2026-10-20T08:00:00Z",
+          "now_end": "2026-10-20T09:00:00Z",
+          "source_timezone": "UTC"
+        },
+        "availability": {
+          "schema_version": "1.0.0",
+          "instance_uuid": "A",
+          "model_standard_name": "q-64K",
+          "coverage": {
+            "assigned": "1",
+            "production_input": "1",
+            "real": "1",
+            "encoded": "0",
+            "paired": "0"
+          },
+          "metrics": {
+            "paired_ideal_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "warmup_order_conflict",
+                "no_ideal_samples",
+                "no_paired_samples"
+              ]
+            },
+            "paired_real_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "warmup_order_conflict",
+                "no_ideal_samples",
+                "no_paired_samples"
+              ]
+            },
+            "independent_ideal_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "warmup_order_conflict",
+                "no_ideal_samples"
+              ]
+            },
+            "independent_real_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "25",
+              "denominator": "100",
+              "denominator_unit": "input_tokens",
+              "reasons": []
+            },
+            "actual_uncached_tokens": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "75",
+              "denominator": null,
+              "denominator_unit": "none",
+              "reasons": []
+            },
+            "hour_uncached_tokens_per_second": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "75",
+              "denominator": "3600",
+              "denominator_unit": "seconds",
+              "reasons": []
+            }
+          },
+          "bins": [
+            {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "75",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": []
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            }
+          ],
+          "now_field_issues": [],
+          "warmup": {
+            "encoded_pre_count": "1",
+            "encoded_now_count": "1",
+            "pre_max_handle_time": "2026-10-20T08:02:00.000000000Z",
+            "now_min_handle_time": "2026-10-20T08:01:00.000000000Z",
+            "comparison": "pre_max_gt_now_min",
+            "equal_time_order": "pre_first_then_source_record_index"
+          }
+        }
+      },
+      "snapshot_excerpt": {
+        "schema_version": "1.0.0",
+        "instance_uuid": "A",
+        "model_standard_name": "q-64K",
+        "coverage": {
+          "assigned": "1",
+          "production_input": "1",
+          "real": "1",
+          "encoded": "0",
+          "paired": "0"
+        },
+        "pre_assigned": "1",
+        "pre_encoded": "1",
+        "ideal_status": "warmup_order_conflict",
+        "production_input_tokens": "100",
+        "real": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "100",
+            "cached_tokens": "25",
+            "uncached_tokens": "75"
+          },
+          "hit_rate": 0.25
+        },
+        "ideal": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "paired_real": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "paired_ideal": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "mismatched_input_count": "0",
+        "paired_request_coverage": 0.0,
+        "paired_input_coverage": 0.0,
+        "hour": {
+          "seconds": 3600,
+          "request_count": "1",
+          "real_count": "1",
+          "uncached_tokens": "75",
+          "requests_per_second": 0.0002777777777777778,
+          "uncached_tokens_per_second": 0.020833333333333332
+        },
+        "bins": [
+          {
+            "index": 0,
+            "start": "2026-10-20T08:00:00.000000000Z",
+            "end": "2026-10-20T08:05:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "1",
+              "real_count": "1",
+              "uncached_tokens": "75",
+              "requests_per_second": 0.0033333333333333335,
+              "uncached_tokens_per_second": 0.25
+            }
+          },
+          {
+            "index": 1,
+            "start": "2026-10-20T08:05:00.000000000Z",
+            "end": "2026-10-20T08:10:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 2,
+            "start": "2026-10-20T08:10:00.000000000Z",
+            "end": "2026-10-20T08:15:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 3,
+            "start": "2026-10-20T08:15:00.000000000Z",
+            "end": "2026-10-20T08:20:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 4,
+            "start": "2026-10-20T08:20:00.000000000Z",
+            "end": "2026-10-20T08:25:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 5,
+            "start": "2026-10-20T08:25:00.000000000Z",
+            "end": "2026-10-20T08:30:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 6,
+            "start": "2026-10-20T08:30:00.000000000Z",
+            "end": "2026-10-20T08:35:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 7,
+            "start": "2026-10-20T08:35:00.000000000Z",
+            "end": "2026-10-20T08:40:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 8,
+            "start": "2026-10-20T08:40:00.000000000Z",
+            "end": "2026-10-20T08:45:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 9,
+            "start": "2026-10-20T08:45:00.000000000Z",
+            "end": "2026-10-20T08:50:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 10,
+            "start": "2026-10-20T08:50:00.000000000Z",
+            "end": "2026-10-20T08:55:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 11,
+            "start": "2026-10-20T08:55:00.000000000Z",
+            "end": "2026-10-20T09:00:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          }
+        ],
+        "zero_uncached_count": "0",
+        "handle_time_min": "2026-10-20T08:01:00.000000000Z",
+        "handle_time_max": "2026-10-20T08:01:00.000000000Z",
+        "handle_outside_window_count": "0",
+        "limitations": [
+          "finite_prewarm_not_production_upper_bound",
+          "provided_records_not_full_traffic",
+          "request_time_event_unknown",
+          "chained_approximation_not_hybrid",
+          "equal_lengths_do_not_prove_token_identity",
+          "gf_encoding_equivalence_unverified",
+          "production_topology_and_glm_cp_mapping_not_reproduced"
+        ]
+      }
+    },
+    {
+      "name": "no_valid_prompt",
+      "synthetic": true,
+      "pre": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T07:01:00Z",
+          "model_handle_start_time": "2026-10-20T07:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "now": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T08:01:00Z",
+          "model_handle_start_time": "2026-10-20T08:01:00Z",
+          "prompt_tokens": "",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "bad"
+        }
+      ],
+      "response": {
+        "service_instance_id": "synthetic-service",
+        "ma_run_id": "synthetic-no_valid_prompt",
+        "binding": {
+          "submission_key": "one",
+          "pre_file_ref": "pre.csv",
+          "now_file_ref": "now.csv",
+          "model_standard_name": "q-64K",
+          "model_id": "Qwen3.6-27B",
+          "pre_start": "2026-10-20T07:00:00Z",
+          "now_start": "2026-10-20T08:00:00Z",
+          "now_end": "2026-10-20T09:00:00Z",
+          "source_timezone": "UTC"
+        },
+        "availability": {
+          "schema_version": "1.0.0",
+          "instance_uuid": "A",
+          "model_standard_name": "q-64K",
+          "coverage": {
+            "assigned": "1",
+            "production_input": "0",
+            "real": "0",
+            "encoded": "0",
+            "paired": "0"
+          },
+          "metrics": {
+            "paired_ideal_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "no_valid_prompt",
+                "invalid_prompt",
+                "no_real_samples",
+                "no_ideal_samples",
+                "no_paired_samples"
+              ]
+            },
+            "paired_real_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "no_valid_prompt",
+                "invalid_prompt",
+                "no_real_samples",
+                "no_ideal_samples",
+                "no_paired_samples"
+              ]
+            },
+            "independent_ideal_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "no_ideal_samples"
+              ]
+            },
+            "independent_real_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "no_valid_prompt",
+                "invalid_prompt",
+                "no_real_samples"
+              ]
+            },
+            "actual_uncached_tokens": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": null,
+              "denominator_unit": "none",
+              "reasons": [
+                "no_valid_prompt",
+                "invalid_prompt",
+                "no_real_samples"
+              ]
+            },
+            "hour_uncached_tokens_per_second": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "3600",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "no_valid_prompt",
+                "invalid_prompt",
+                "no_real_samples"
+              ]
+            }
+          },
+          "bins": [
+            {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "no_real_samples"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            }
+          ],
+          "now_field_issues": [
+            {
+              "field": "prompt_tokens",
+              "code": "MISSING_TOKEN_VALUE",
+              "count": "1"
+            },
+            {
+              "field": "request_input",
+              "code": "INVALID_JSON",
+              "count": "1"
+            }
+          ],
+          "warmup": {
+            "encoded_pre_count": "1",
+            "encoded_now_count": "0",
+            "pre_max_handle_time": "2026-10-20T07:01:00.000000000Z",
+            "now_min_handle_time": null,
+            "comparison": "pre_max_gt_now_min",
+            "equal_time_order": "pre_first_then_source_record_index"
+          }
+        }
+      },
+      "snapshot_excerpt": {
+        "schema_version": "1.0.0",
+        "instance_uuid": "A",
+        "model_standard_name": "q-64K",
+        "coverage": {
+          "assigned": "1",
+          "production_input": "0",
+          "real": "0",
+          "encoded": "0",
+          "paired": "0"
+        },
+        "pre_assigned": "1",
+        "pre_encoded": "1",
+        "ideal_status": "available",
+        "production_input_tokens": "0",
+        "real": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "ideal": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "paired_real": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "paired_ideal": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "mismatched_input_count": "0",
+        "paired_request_coverage": null,
+        "paired_input_coverage": null,
+        "hour": {
+          "seconds": 3600,
+          "request_count": "1",
+          "real_count": "0",
+          "uncached_tokens": null,
+          "requests_per_second": 0.0002777777777777778,
+          "uncached_tokens_per_second": null
+        },
+        "bins": [
+          {
+            "index": 0,
+            "start": "2026-10-20T08:00:00.000000000Z",
+            "end": "2026-10-20T08:05:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "1",
+              "real_count": "0",
+              "uncached_tokens": null,
+              "requests_per_second": 0.0033333333333333335,
+              "uncached_tokens_per_second": null
+            }
+          },
+          {
+            "index": 1,
+            "start": "2026-10-20T08:05:00.000000000Z",
+            "end": "2026-10-20T08:10:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 2,
+            "start": "2026-10-20T08:10:00.000000000Z",
+            "end": "2026-10-20T08:15:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 3,
+            "start": "2026-10-20T08:15:00.000000000Z",
+            "end": "2026-10-20T08:20:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 4,
+            "start": "2026-10-20T08:20:00.000000000Z",
+            "end": "2026-10-20T08:25:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 5,
+            "start": "2026-10-20T08:25:00.000000000Z",
+            "end": "2026-10-20T08:30:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 6,
+            "start": "2026-10-20T08:30:00.000000000Z",
+            "end": "2026-10-20T08:35:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 7,
+            "start": "2026-10-20T08:35:00.000000000Z",
+            "end": "2026-10-20T08:40:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 8,
+            "start": "2026-10-20T08:40:00.000000000Z",
+            "end": "2026-10-20T08:45:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 9,
+            "start": "2026-10-20T08:45:00.000000000Z",
+            "end": "2026-10-20T08:50:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 10,
+            "start": "2026-10-20T08:50:00.000000000Z",
+            "end": "2026-10-20T08:55:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 11,
+            "start": "2026-10-20T08:55:00.000000000Z",
+            "end": "2026-10-20T09:00:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          }
+        ],
+        "zero_uncached_count": "0",
+        "handle_time_min": "2026-10-20T08:01:00.000000000Z",
+        "handle_time_max": "2026-10-20T08:01:00.000000000Z",
+        "handle_outside_window_count": "0",
+        "limitations": [
+          "finite_prewarm_not_production_upper_bound",
+          "provided_records_not_full_traffic",
+          "request_time_event_unknown",
+          "chained_approximation_not_hybrid",
+          "equal_lengths_do_not_prove_token_identity",
+          "gf_encoding_equivalence_unverified",
+          "production_topology_and_glm_cp_mapping_not_reproduced"
+        ]
+      }
+    },
+    {
+      "name": "valid_zero_cached",
+      "synthetic": true,
+      "pre": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T07:01:00Z",
+          "model_handle_start_time": "2026-10-20T07:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "now": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T08:01:00Z",
+          "model_handle_start_time": "2026-10-20T08:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "0",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "response": {
+        "service_instance_id": "synthetic-service",
+        "ma_run_id": "synthetic-valid_zero_cached",
+        "binding": {
+          "submission_key": "one",
+          "pre_file_ref": "pre.csv",
+          "now_file_ref": "now.csv",
+          "model_standard_name": "q-64K",
+          "model_id": "Qwen3.6-27B",
+          "pre_start": "2026-10-20T07:00:00Z",
+          "now_start": "2026-10-20T08:00:00Z",
+          "now_end": "2026-10-20T09:00:00Z",
+          "source_timezone": "UTC"
+        },
+        "availability": {
+          "schema_version": "1.0.0",
+          "instance_uuid": "A",
+          "model_standard_name": "q-64K",
+          "coverage": {
+            "assigned": "1",
+            "production_input": "1",
+            "real": "1",
+            "encoded": "1",
+            "paired": "1"
+          },
+          "metrics": {
+            "paired_ideal_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "3072",
+              "denominator": "4096",
+              "denominator_unit": "input_tokens",
+              "reasons": []
+            },
+            "paired_real_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "0",
+              "denominator": "100",
+              "denominator_unit": "input_tokens",
+              "reasons": []
+            },
+            "independent_ideal_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "3072",
+              "denominator": "4096",
+              "denominator_unit": "input_tokens",
+              "reasons": []
+            },
+            "independent_real_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "0",
+              "denominator": "100",
+              "denominator_unit": "input_tokens",
+              "reasons": []
+            },
+            "actual_uncached_tokens": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "100",
+              "denominator": null,
+              "denominator_unit": "none",
+              "reasons": []
+            },
+            "hour_uncached_tokens_per_second": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "100",
+              "denominator": "3600",
+              "denominator_unit": "seconds",
+              "reasons": []
+            }
+          },
+          "bins": [
+            {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "100",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": []
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            }
+          ],
+          "now_field_issues": [],
+          "warmup": {
+            "encoded_pre_count": "1",
+            "encoded_now_count": "1",
+            "pre_max_handle_time": "2026-10-20T07:01:00.000000000Z",
+            "now_min_handle_time": "2026-10-20T08:01:00.000000000Z",
+            "comparison": "pre_max_gt_now_min",
+            "equal_time_order": "pre_first_then_source_record_index"
+          }
+        }
+      },
+      "snapshot_excerpt": {
+        "schema_version": "1.0.0",
+        "instance_uuid": "A",
+        "model_standard_name": "q-64K",
+        "coverage": {
+          "assigned": "1",
+          "production_input": "1",
+          "real": "1",
+          "encoded": "1",
+          "paired": "1"
+        },
+        "pre_assigned": "1",
+        "pre_encoded": "1",
+        "ideal_status": "available",
+        "production_input_tokens": "100",
+        "real": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "100",
+            "cached_tokens": "0",
+            "uncached_tokens": "100"
+          },
+          "hit_rate": 0.0
+        },
+        "ideal": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "4096",
+            "cached_tokens": "3072",
+            "uncached_tokens": "1024"
+          },
+          "hit_rate": 0.75
+        },
+        "paired_real": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "100",
+            "cached_tokens": "0",
+            "uncached_tokens": "100"
+          },
+          "hit_rate": 0.0
+        },
+        "paired_ideal": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "4096",
+            "cached_tokens": "3072",
+            "uncached_tokens": "1024"
+          },
+          "hit_rate": 0.75
+        },
+        "mismatched_input_count": "1",
+        "paired_request_coverage": 1.0,
+        "paired_input_coverage": 1.0,
+        "hour": {
+          "seconds": 3600,
+          "request_count": "1",
+          "real_count": "1",
+          "uncached_tokens": "100",
+          "requests_per_second": 0.0002777777777777778,
+          "uncached_tokens_per_second": 0.027777777777777776
+        },
+        "bins": [
+          {
+            "index": 0,
+            "start": "2026-10-20T08:00:00.000000000Z",
+            "end": "2026-10-20T08:05:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "1",
+              "real_count": "1",
+              "uncached_tokens": "100",
+              "requests_per_second": 0.0033333333333333335,
+              "uncached_tokens_per_second": 0.3333333333333333
+            }
+          },
+          {
+            "index": 1,
+            "start": "2026-10-20T08:05:00.000000000Z",
+            "end": "2026-10-20T08:10:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 2,
+            "start": "2026-10-20T08:10:00.000000000Z",
+            "end": "2026-10-20T08:15:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 3,
+            "start": "2026-10-20T08:15:00.000000000Z",
+            "end": "2026-10-20T08:20:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 4,
+            "start": "2026-10-20T08:20:00.000000000Z",
+            "end": "2026-10-20T08:25:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 5,
+            "start": "2026-10-20T08:25:00.000000000Z",
+            "end": "2026-10-20T08:30:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 6,
+            "start": "2026-10-20T08:30:00.000000000Z",
+            "end": "2026-10-20T08:35:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 7,
+            "start": "2026-10-20T08:35:00.000000000Z",
+            "end": "2026-10-20T08:40:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 8,
+            "start": "2026-10-20T08:40:00.000000000Z",
+            "end": "2026-10-20T08:45:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 9,
+            "start": "2026-10-20T08:45:00.000000000Z",
+            "end": "2026-10-20T08:50:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 10,
+            "start": "2026-10-20T08:50:00.000000000Z",
+            "end": "2026-10-20T08:55:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 11,
+            "start": "2026-10-20T08:55:00.000000000Z",
+            "end": "2026-10-20T09:00:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          }
+        ],
+        "zero_uncached_count": "0",
+        "handle_time_min": "2026-10-20T08:01:00.000000000Z",
+        "handle_time_max": "2026-10-20T08:01:00.000000000Z",
+        "handle_outside_window_count": "0",
+        "limitations": [
+          "finite_prewarm_not_production_upper_bound",
+          "provided_records_not_full_traffic",
+          "request_time_event_unknown",
+          "chained_approximation_not_hybrid",
+          "equal_lengths_do_not_prove_token_identity",
+          "gf_encoding_equivalence_unverified",
+          "production_topology_and_glm_cp_mapping_not_reproduced",
+          "input_measurement_mismatch"
+        ]
+      }
+    },
+    {
+      "name": "zero_denominator",
+      "synthetic": true,
+      "pre": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T07:01:00Z",
+          "model_handle_start_time": "2026-10-20T07:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "now": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T08:01:00Z",
+          "model_handle_start_time": "2026-10-20T08:01:00Z",
+          "prompt_tokens": "0",
+          "cached_tokens": "0",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "response": {
+        "service_instance_id": "synthetic-service",
+        "ma_run_id": "synthetic-zero_denominator",
+        "binding": {
+          "submission_key": "one",
+          "pre_file_ref": "pre.csv",
+          "now_file_ref": "now.csv",
+          "model_standard_name": "q-64K",
+          "model_id": "Qwen3.6-27B",
+          "pre_start": "2026-10-20T07:00:00Z",
+          "now_start": "2026-10-20T08:00:00Z",
+          "now_end": "2026-10-20T09:00:00Z",
+          "source_timezone": "UTC"
+        },
+        "availability": {
+          "schema_version": "1.0.0",
+          "instance_uuid": "A",
+          "model_standard_name": "q-64K",
+          "coverage": {
+            "assigned": "1",
+            "production_input": "1",
+            "real": "1",
+            "encoded": "1",
+            "paired": "1"
+          },
+          "metrics": {
+            "paired_ideal_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "3072",
+              "denominator": "4096",
+              "denominator_unit": "input_tokens",
+              "reasons": []
+            },
+            "paired_real_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "0",
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "zero_input_denominator"
+              ]
+            },
+            "independent_ideal_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "3072",
+              "denominator": "4096",
+              "denominator_unit": "input_tokens",
+              "reasons": []
+            },
+            "independent_real_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "0",
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "zero_input_denominator"
+              ]
+            },
+            "actual_uncached_tokens": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "0",
+              "denominator": null,
+              "denominator_unit": "none",
+              "reasons": []
+            },
+            "hour_uncached_tokens_per_second": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "0",
+              "denominator": "3600",
+              "denominator_unit": "seconds",
+              "reasons": []
+            }
+          },
+          "bins": [
+            {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": []
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            }
+          ],
+          "now_field_issues": [],
+          "warmup": {
+            "encoded_pre_count": "1",
+            "encoded_now_count": "1",
+            "pre_max_handle_time": "2026-10-20T07:01:00.000000000Z",
+            "now_min_handle_time": "2026-10-20T08:01:00.000000000Z",
+            "comparison": "pre_max_gt_now_min",
+            "equal_time_order": "pre_first_then_source_record_index"
+          }
+        }
+      },
+      "snapshot_excerpt": {
+        "schema_version": "1.0.0",
+        "instance_uuid": "A",
+        "model_standard_name": "q-64K",
+        "coverage": {
+          "assigned": "1",
+          "production_input": "1",
+          "real": "1",
+          "encoded": "1",
+          "paired": "1"
+        },
+        "pre_assigned": "1",
+        "pre_encoded": "1",
+        "ideal_status": "available",
+        "production_input_tokens": "0",
+        "real": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "ideal": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "4096",
+            "cached_tokens": "3072",
+            "uncached_tokens": "1024"
+          },
+          "hit_rate": 0.75
+        },
+        "paired_real": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "paired_ideal": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "4096",
+            "cached_tokens": "3072",
+            "uncached_tokens": "1024"
+          },
+          "hit_rate": 0.75
+        },
+        "mismatched_input_count": "1",
+        "paired_request_coverage": 1.0,
+        "paired_input_coverage": null,
+        "hour": {
+          "seconds": 3600,
+          "request_count": "1",
+          "real_count": "1",
+          "uncached_tokens": "0",
+          "requests_per_second": 0.0002777777777777778,
+          "uncached_tokens_per_second": 0.0
+        },
+        "bins": [
+          {
+            "index": 0,
+            "start": "2026-10-20T08:00:00.000000000Z",
+            "end": "2026-10-20T08:05:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "1",
+              "real_count": "1",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0033333333333333335,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 1,
+            "start": "2026-10-20T08:05:00.000000000Z",
+            "end": "2026-10-20T08:10:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 2,
+            "start": "2026-10-20T08:10:00.000000000Z",
+            "end": "2026-10-20T08:15:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 3,
+            "start": "2026-10-20T08:15:00.000000000Z",
+            "end": "2026-10-20T08:20:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 4,
+            "start": "2026-10-20T08:20:00.000000000Z",
+            "end": "2026-10-20T08:25:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 5,
+            "start": "2026-10-20T08:25:00.000000000Z",
+            "end": "2026-10-20T08:30:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 6,
+            "start": "2026-10-20T08:30:00.000000000Z",
+            "end": "2026-10-20T08:35:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 7,
+            "start": "2026-10-20T08:35:00.000000000Z",
+            "end": "2026-10-20T08:40:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 8,
+            "start": "2026-10-20T08:40:00.000000000Z",
+            "end": "2026-10-20T08:45:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 9,
+            "start": "2026-10-20T08:45:00.000000000Z",
+            "end": "2026-10-20T08:50:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 10,
+            "start": "2026-10-20T08:50:00.000000000Z",
+            "end": "2026-10-20T08:55:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 11,
+            "start": "2026-10-20T08:55:00.000000000Z",
+            "end": "2026-10-20T09:00:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          }
+        ],
+        "zero_uncached_count": "1",
+        "handle_time_min": "2026-10-20T08:01:00.000000000Z",
+        "handle_time_max": "2026-10-20T08:01:00.000000000Z",
+        "handle_outside_window_count": "0",
+        "limitations": [
+          "finite_prewarm_not_production_upper_bound",
+          "provided_records_not_full_traffic",
+          "request_time_event_unknown",
+          "chained_approximation_not_hybrid",
+          "equal_lengths_do_not_prove_token_identity",
+          "gf_encoding_equivalence_unverified",
+          "production_topology_and_glm_cp_mapping_not_reproduced",
+          "input_measurement_mismatch"
+        ]
+      }
+    },
+    {
+      "name": "bad_json_real_valid",
+      "synthetic": true,
+      "pre": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T07:01:00Z",
+          "model_handle_start_time": "2026-10-20T07:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "now": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T08:01:00Z",
+          "model_handle_start_time": "2026-10-20T08:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "bad",
+          "request_input": "bad"
+        }
+      ],
+      "response": {
+        "service_instance_id": "synthetic-service",
+        "ma_run_id": "synthetic-bad_json_real_valid",
+        "binding": {
+          "submission_key": "one",
+          "pre_file_ref": "pre.csv",
+          "now_file_ref": "now.csv",
+          "model_standard_name": "q-64K",
+          "model_id": "Qwen3.6-27B",
+          "pre_start": "2026-10-20T07:00:00Z",
+          "now_start": "2026-10-20T08:00:00Z",
+          "now_end": "2026-10-20T09:00:00Z",
+          "source_timezone": "UTC"
+        },
+        "availability": {
+          "schema_version": "1.0.0",
+          "instance_uuid": "A",
+          "model_standard_name": "q-64K",
+          "coverage": {
+            "assigned": "1",
+            "production_input": "1",
+            "real": "1",
+            "encoded": "0",
+            "paired": "0"
+          },
+          "metrics": {
+            "paired_ideal_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "no_ideal_samples",
+                "no_paired_samples"
+              ]
+            },
+            "paired_real_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "no_ideal_samples",
+                "no_paired_samples"
+              ]
+            },
+            "independent_ideal_hit_rate": {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "no_ideal_samples"
+              ]
+            },
+            "independent_real_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "25",
+              "denominator": "100",
+              "denominator_unit": "input_tokens",
+              "reasons": []
+            },
+            "actual_uncached_tokens": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "75",
+              "denominator": null,
+              "denominator_unit": "none",
+              "reasons": []
+            },
+            "hour_uncached_tokens_per_second": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "75",
+              "denominator": "3600",
+              "denominator_unit": "seconds",
+              "reasons": []
+            }
+          },
+          "bins": [
+            {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "75",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": []
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            }
+          ],
+          "now_field_issues": [
+            {
+              "field": "completion_tokens",
+              "code": "INVALID_TOKEN_INTEGER",
+              "count": "1"
+            },
+            {
+              "field": "request_input",
+              "code": "INVALID_JSON",
+              "count": "1"
+            }
+          ],
+          "warmup": {
+            "encoded_pre_count": "1",
+            "encoded_now_count": "0",
+            "pre_max_handle_time": "2026-10-20T07:01:00.000000000Z",
+            "now_min_handle_time": null,
+            "comparison": "pre_max_gt_now_min",
+            "equal_time_order": "pre_first_then_source_record_index"
+          }
+        }
+      },
+      "snapshot_excerpt": {
+        "schema_version": "1.0.0",
+        "instance_uuid": "A",
+        "model_standard_name": "q-64K",
+        "coverage": {
+          "assigned": "1",
+          "production_input": "1",
+          "real": "1",
+          "encoded": "0",
+          "paired": "0"
+        },
+        "pre_assigned": "1",
+        "pre_encoded": "1",
+        "ideal_status": "available",
+        "production_input_tokens": "100",
+        "real": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "100",
+            "cached_tokens": "25",
+            "uncached_tokens": "75"
+          },
+          "hit_rate": 0.25
+        },
+        "ideal": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "paired_real": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "paired_ideal": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "mismatched_input_count": "0",
+        "paired_request_coverage": 0.0,
+        "paired_input_coverage": 0.0,
+        "hour": {
+          "seconds": 3600,
+          "request_count": "1",
+          "real_count": "1",
+          "uncached_tokens": "75",
+          "requests_per_second": 0.0002777777777777778,
+          "uncached_tokens_per_second": 0.020833333333333332
+        },
+        "bins": [
+          {
+            "index": 0,
+            "start": "2026-10-20T08:00:00.000000000Z",
+            "end": "2026-10-20T08:05:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "1",
+              "real_count": "1",
+              "uncached_tokens": "75",
+              "requests_per_second": 0.0033333333333333335,
+              "uncached_tokens_per_second": 0.25
+            }
+          },
+          {
+            "index": 1,
+            "start": "2026-10-20T08:05:00.000000000Z",
+            "end": "2026-10-20T08:10:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 2,
+            "start": "2026-10-20T08:10:00.000000000Z",
+            "end": "2026-10-20T08:15:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 3,
+            "start": "2026-10-20T08:15:00.000000000Z",
+            "end": "2026-10-20T08:20:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 4,
+            "start": "2026-10-20T08:20:00.000000000Z",
+            "end": "2026-10-20T08:25:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 5,
+            "start": "2026-10-20T08:25:00.000000000Z",
+            "end": "2026-10-20T08:30:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 6,
+            "start": "2026-10-20T08:30:00.000000000Z",
+            "end": "2026-10-20T08:35:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 7,
+            "start": "2026-10-20T08:35:00.000000000Z",
+            "end": "2026-10-20T08:40:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 8,
+            "start": "2026-10-20T08:40:00.000000000Z",
+            "end": "2026-10-20T08:45:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 9,
+            "start": "2026-10-20T08:45:00.000000000Z",
+            "end": "2026-10-20T08:50:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 10,
+            "start": "2026-10-20T08:50:00.000000000Z",
+            "end": "2026-10-20T08:55:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 11,
+            "start": "2026-10-20T08:55:00.000000000Z",
+            "end": "2026-10-20T09:00:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          }
+        ],
+        "zero_uncached_count": "0",
+        "handle_time_min": "2026-10-20T08:01:00.000000000Z",
+        "handle_time_max": "2026-10-20T08:01:00.000000000Z",
+        "handle_outside_window_count": "0",
+        "limitations": [
+          "finite_prewarm_not_production_upper_bound",
+          "provided_records_not_full_traffic",
+          "request_time_event_unknown",
+          "chained_approximation_not_hybrid",
+          "equal_lengths_do_not_prove_token_identity",
+          "gf_encoding_equivalence_unverified",
+          "production_topology_and_glm_cp_mapping_not_reproduced"
+        ]
+      }
+    },
+    {
+      "name": "empty_now",
+      "synthetic": true,
+      "pre": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T07:01:00Z",
+          "model_handle_start_time": "2026-10-20T07:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "now": [],
+      "response": {
+        "service_instance_id": "synthetic-service",
+        "ma_run_id": "synthetic-empty_now",
+        "binding": {
+          "submission_key": "one",
+          "pre_file_ref": "pre.csv",
+          "now_file_ref": "now.csv",
+          "model_standard_name": "q-64K",
+          "model_id": "Qwen3.6-27B",
+          "pre_start": "2026-10-20T07:00:00Z",
+          "now_start": "2026-10-20T08:00:00Z",
+          "now_end": "2026-10-20T09:00:00Z",
+          "source_timezone": "UTC"
+        },
+        "availability": {
+          "schema_version": "1.0.0",
+          "instance_uuid": "A",
+          "model_standard_name": "q-64K",
+          "coverage": {
+            "assigned": "0",
+            "production_input": "0",
+            "real": "0",
+            "encoded": "0",
+            "paired": "0"
+          },
+          "metrics": {
+            "paired_ideal_hit_rate": {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "empty_now"
+              ]
+            },
+            "paired_real_hit_rate": {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "empty_now"
+              ]
+            },
+            "independent_ideal_hit_rate": {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "empty_now"
+              ]
+            },
+            "independent_real_hit_rate": {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": null,
+              "denominator": "0",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "empty_now"
+              ]
+            },
+            "actual_uncached_tokens": {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": null,
+              "denominator_unit": "none",
+              "reasons": [
+                "empty_now"
+              ]
+            },
+            "hour_uncached_tokens_per_second": {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "3600",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_now"
+              ]
+            }
+          },
+          "bins": [
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            }
+          ],
+          "now_field_issues": [],
+          "warmup": {
+            "encoded_pre_count": "1",
+            "encoded_now_count": "0",
+            "pre_max_handle_time": "2026-10-20T07:01:00.000000000Z",
+            "now_min_handle_time": null,
+            "comparison": "pre_max_gt_now_min",
+            "equal_time_order": "pre_first_then_source_record_index"
+          }
+        }
+      },
+      "snapshot_excerpt": {
+        "schema_version": "1.0.0",
+        "instance_uuid": "A",
+        "model_standard_name": "q-64K",
+        "coverage": {
+          "assigned": "0",
+          "production_input": "0",
+          "real": "0",
+          "encoded": "0",
+          "paired": "0"
+        },
+        "pre_assigned": "1",
+        "pre_encoded": "1",
+        "ideal_status": "empty_now",
+        "production_input_tokens": "0",
+        "real": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "ideal": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "paired_real": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "paired_ideal": {
+          "sample_count": "0",
+          "totals": {
+            "input_tokens": "0",
+            "cached_tokens": "0",
+            "uncached_tokens": "0"
+          },
+          "hit_rate": null
+        },
+        "mismatched_input_count": "0",
+        "paired_request_coverage": null,
+        "paired_input_coverage": null,
+        "hour": {
+          "seconds": 3600,
+          "request_count": "0",
+          "real_count": "0",
+          "uncached_tokens": "0",
+          "requests_per_second": 0.0,
+          "uncached_tokens_per_second": 0.0
+        },
+        "bins": [
+          {
+            "index": 0,
+            "start": "2026-10-20T08:00:00.000000000Z",
+            "end": "2026-10-20T08:05:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 1,
+            "start": "2026-10-20T08:05:00.000000000Z",
+            "end": "2026-10-20T08:10:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 2,
+            "start": "2026-10-20T08:10:00.000000000Z",
+            "end": "2026-10-20T08:15:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 3,
+            "start": "2026-10-20T08:15:00.000000000Z",
+            "end": "2026-10-20T08:20:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 4,
+            "start": "2026-10-20T08:20:00.000000000Z",
+            "end": "2026-10-20T08:25:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 5,
+            "start": "2026-10-20T08:25:00.000000000Z",
+            "end": "2026-10-20T08:30:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 6,
+            "start": "2026-10-20T08:30:00.000000000Z",
+            "end": "2026-10-20T08:35:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 7,
+            "start": "2026-10-20T08:35:00.000000000Z",
+            "end": "2026-10-20T08:40:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 8,
+            "start": "2026-10-20T08:40:00.000000000Z",
+            "end": "2026-10-20T08:45:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 9,
+            "start": "2026-10-20T08:45:00.000000000Z",
+            "end": "2026-10-20T08:50:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 10,
+            "start": "2026-10-20T08:50:00.000000000Z",
+            "end": "2026-10-20T08:55:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 11,
+            "start": "2026-10-20T08:55:00.000000000Z",
+            "end": "2026-10-20T09:00:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          }
+        ],
+        "zero_uncached_count": "0",
+        "handle_time_min": null,
+        "handle_time_max": null,
+        "handle_outside_window_count": "0",
+        "limitations": [
+          "finite_prewarm_not_production_upper_bound",
+          "provided_records_not_full_traffic",
+          "request_time_event_unknown",
+          "chained_approximation_not_hybrid",
+          "equal_lengths_do_not_prove_token_identity",
+          "gf_encoding_equivalence_unverified",
+          "production_topology_and_glm_cp_mapping_not_reproduced"
+        ]
+      }
+    },
+    {
+      "name": "no_valid_prewarm",
+      "synthetic": true,
+      "pre": [],
+      "now": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T08:01:00Z",
+          "model_handle_start_time": "2026-10-20T08:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "response": {
+        "service_instance_id": "synthetic-service",
+        "ma_run_id": "synthetic-no_valid_prewarm",
+        "binding": {
+          "submission_key": "one",
+          "pre_file_ref": "pre.csv",
+          "now_file_ref": "now.csv",
+          "model_standard_name": "q-64K",
+          "model_id": "Qwen3.6-27B",
+          "pre_start": "2026-10-20T07:00:00Z",
+          "now_start": "2026-10-20T08:00:00Z",
+          "now_end": "2026-10-20T09:00:00Z",
+          "source_timezone": "UTC"
+        },
+        "availability": {
+          "schema_version": "1.0.0",
+          "instance_uuid": "A",
+          "model_standard_name": "q-64K",
+          "coverage": {
+            "assigned": "1",
+            "production_input": "1",
+            "real": "1",
+            "encoded": "1",
+            "paired": "1"
+          },
+          "metrics": {
+            "paired_ideal_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "0",
+              "denominator": "4096",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "no_valid_prewarm"
+              ]
+            },
+            "paired_real_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "25",
+              "denominator": "100",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "no_valid_prewarm"
+              ]
+            },
+            "independent_ideal_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "0",
+              "denominator": "4096",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "no_valid_prewarm"
+              ]
+            },
+            "independent_real_hit_rate": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "25",
+              "denominator": "100",
+              "denominator_unit": "input_tokens",
+              "reasons": []
+            },
+            "actual_uncached_tokens": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "75",
+              "denominator": null,
+              "denominator_unit": "none",
+              "reasons": []
+            },
+            "hour_uncached_tokens_per_second": {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "75",
+              "denominator": "3600",
+              "denominator_unit": "seconds",
+              "reasons": []
+            }
+          },
+          "bins": [
+            {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "75",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": []
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            }
+          ],
+          "now_field_issues": [],
+          "warmup": {
+            "encoded_pre_count": "0",
+            "encoded_now_count": "1",
+            "pre_max_handle_time": null,
+            "now_min_handle_time": "2026-10-20T08:01:00.000000000Z",
+            "comparison": "pre_max_gt_now_min",
+            "equal_time_order": "pre_first_then_source_record_index"
+          }
+        }
+      },
+      "snapshot_excerpt": {
+        "schema_version": "1.0.0",
+        "instance_uuid": "A",
+        "model_standard_name": "q-64K",
+        "coverage": {
+          "assigned": "1",
+          "production_input": "1",
+          "real": "1",
+          "encoded": "1",
+          "paired": "1"
+        },
+        "pre_assigned": "0",
+        "pre_encoded": "0",
+        "ideal_status": "no_valid_prewarm",
+        "production_input_tokens": "100",
+        "real": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "100",
+            "cached_tokens": "25",
+            "uncached_tokens": "75"
+          },
+          "hit_rate": 0.25
+        },
+        "ideal": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "4096",
+            "cached_tokens": "0",
+            "uncached_tokens": "4096"
+          },
+          "hit_rate": 0.0
+        },
+        "paired_real": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "100",
+            "cached_tokens": "25",
+            "uncached_tokens": "75"
+          },
+          "hit_rate": 0.25
+        },
+        "paired_ideal": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "4096",
+            "cached_tokens": "0",
+            "uncached_tokens": "4096"
+          },
+          "hit_rate": 0.0
+        },
+        "mismatched_input_count": "1",
+        "paired_request_coverage": 1.0,
+        "paired_input_coverage": 1.0,
+        "hour": {
+          "seconds": 3600,
+          "request_count": "1",
+          "real_count": "1",
+          "uncached_tokens": "75",
+          "requests_per_second": 0.0002777777777777778,
+          "uncached_tokens_per_second": 0.020833333333333332
+        },
+        "bins": [
+          {
+            "index": 0,
+            "start": "2026-10-20T08:00:00.000000000Z",
+            "end": "2026-10-20T08:05:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "1",
+              "real_count": "1",
+              "uncached_tokens": "75",
+              "requests_per_second": 0.0033333333333333335,
+              "uncached_tokens_per_second": 0.25
+            }
+          },
+          {
+            "index": 1,
+            "start": "2026-10-20T08:05:00.000000000Z",
+            "end": "2026-10-20T08:10:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 2,
+            "start": "2026-10-20T08:10:00.000000000Z",
+            "end": "2026-10-20T08:15:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 3,
+            "start": "2026-10-20T08:15:00.000000000Z",
+            "end": "2026-10-20T08:20:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 4,
+            "start": "2026-10-20T08:20:00.000000000Z",
+            "end": "2026-10-20T08:25:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 5,
+            "start": "2026-10-20T08:25:00.000000000Z",
+            "end": "2026-10-20T08:30:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 6,
+            "start": "2026-10-20T08:30:00.000000000Z",
+            "end": "2026-10-20T08:35:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 7,
+            "start": "2026-10-20T08:35:00.000000000Z",
+            "end": "2026-10-20T08:40:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 8,
+            "start": "2026-10-20T08:40:00.000000000Z",
+            "end": "2026-10-20T08:45:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 9,
+            "start": "2026-10-20T08:45:00.000000000Z",
+            "end": "2026-10-20T08:50:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 10,
+            "start": "2026-10-20T08:50:00.000000000Z",
+            "end": "2026-10-20T08:55:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 11,
+            "start": "2026-10-20T08:55:00.000000000Z",
+            "end": "2026-10-20T09:00:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          }
+        ],
+        "zero_uncached_count": "0",
+        "handle_time_min": "2026-10-20T08:01:00.000000000Z",
+        "handle_time_max": "2026-10-20T08:01:00.000000000Z",
+        "handle_outside_window_count": "0",
+        "limitations": [
+          "finite_prewarm_not_production_upper_bound",
+          "provided_records_not_full_traffic",
+          "request_time_event_unknown",
+          "chained_approximation_not_hybrid",
+          "equal_lengths_do_not_prove_token_identity",
+          "gf_encoding_equivalence_unverified",
+          "production_topology_and_glm_cp_mapping_not_reproduced",
+          "input_measurement_mismatch"
+        ]
+      }
+    },
+    {
+      "name": "partial_observations",
+      "synthetic": true,
+      "pre": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T07:01:00Z",
+          "model_handle_start_time": "2026-10-20T07:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "now": [
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T08:01:00Z",
+          "model_handle_start_time": "2026-10-20T08:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "25",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        },
+        {
+          "instance_uuid": "A",
+          "hash_id": "same",
+          "appid": "tenant",
+          "request_time": "2026-10-20T08:05:00Z",
+          "model_handle_start_time": "2026-10-20T08:01:00Z",
+          "prompt_tokens": "100",
+          "cached_tokens": "",
+          "completion_tokens": "10",
+          "request_input": "{\"model\": \"Qwen3.6-27B\", \"messages\": [{\"role\": \"user\", \"content\": \"hello\"}]}"
+        }
+      ],
+      "response": {
+        "service_instance_id": "synthetic-service",
+        "ma_run_id": "synthetic-partial_observations",
+        "binding": {
+          "submission_key": "one",
+          "pre_file_ref": "pre.csv",
+          "now_file_ref": "now.csv",
+          "model_standard_name": "q-64K",
+          "model_id": "Qwen3.6-27B",
+          "pre_start": "2026-10-20T07:00:00Z",
+          "now_start": "2026-10-20T08:00:00Z",
+          "now_end": "2026-10-20T09:00:00Z",
+          "source_timezone": "UTC"
+        },
+        "availability": {
+          "schema_version": "1.0.0",
+          "instance_uuid": "A",
+          "model_standard_name": "q-64K",
+          "coverage": {
+            "assigned": "2",
+            "production_input": "2",
+            "real": "1",
+            "encoded": "2",
+            "paired": "1"
+          },
+          "metrics": {
+            "paired_ideal_hit_rate": {
+              "state": "partial",
+              "sample_count": "1",
+              "population_count": "2",
+              "numerator": "3072",
+              "denominator": "4096",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "source_cached_missing",
+                "partial_sample_coverage"
+              ]
+            },
+            "paired_real_hit_rate": {
+              "state": "partial",
+              "sample_count": "1",
+              "population_count": "2",
+              "numerator": "25",
+              "denominator": "100",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "source_cached_missing",
+                "partial_sample_coverage"
+              ]
+            },
+            "independent_ideal_hit_rate": {
+              "state": "available",
+              "sample_count": "2",
+              "population_count": "2",
+              "numerator": "6144",
+              "denominator": "8192",
+              "denominator_unit": "input_tokens",
+              "reasons": []
+            },
+            "independent_real_hit_rate": {
+              "state": "partial",
+              "sample_count": "1",
+              "population_count": "2",
+              "numerator": "25",
+              "denominator": "100",
+              "denominator_unit": "input_tokens",
+              "reasons": [
+                "source_cached_missing",
+                "partial_sample_coverage"
+              ]
+            },
+            "actual_uncached_tokens": {
+              "state": "partial",
+              "sample_count": "1",
+              "population_count": "2",
+              "numerator": "75",
+              "denominator": null,
+              "denominator_unit": "none",
+              "reasons": [
+                "source_cached_missing",
+                "partial_sample_coverage"
+              ]
+            },
+            "hour_uncached_tokens_per_second": {
+              "state": "partial",
+              "sample_count": "1",
+              "population_count": "2",
+              "numerator": "75",
+              "denominator": "3600",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "source_cached_missing",
+                "partial_sample_coverage"
+              ]
+            }
+          },
+          "bins": [
+            {
+              "state": "available",
+              "sample_count": "1",
+              "population_count": "1",
+              "numerator": "75",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": []
+            },
+            {
+              "state": "unavailable",
+              "sample_count": "0",
+              "population_count": "1",
+              "numerator": null,
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "no_real_samples"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            },
+            {
+              "state": "empty",
+              "sample_count": "0",
+              "population_count": "0",
+              "numerator": "0",
+              "denominator": "300",
+              "denominator_unit": "seconds",
+              "reasons": [
+                "empty_bin"
+              ]
+            }
+          ],
+          "now_field_issues": [
+            {
+              "field": "cached_tokens",
+              "code": "MISSING_TOKEN_VALUE",
+              "count": "1"
+            }
+          ],
+          "warmup": {
+            "encoded_pre_count": "1",
+            "encoded_now_count": "2",
+            "pre_max_handle_time": "2026-10-20T07:01:00.000000000Z",
+            "now_min_handle_time": "2026-10-20T08:01:00.000000000Z",
+            "comparison": "pre_max_gt_now_min",
+            "equal_time_order": "pre_first_then_source_record_index"
+          }
+        }
+      },
+      "snapshot_excerpt": {
+        "schema_version": "1.0.0",
+        "instance_uuid": "A",
+        "model_standard_name": "q-64K",
+        "coverage": {
+          "assigned": "2",
+          "production_input": "2",
+          "real": "1",
+          "encoded": "2",
+          "paired": "1"
+        },
+        "pre_assigned": "1",
+        "pre_encoded": "1",
+        "ideal_status": "available",
+        "production_input_tokens": "200",
+        "real": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "100",
+            "cached_tokens": "25",
+            "uncached_tokens": "75"
+          },
+          "hit_rate": 0.25
+        },
+        "ideal": {
+          "sample_count": "2",
+          "totals": {
+            "input_tokens": "8192",
+            "cached_tokens": "6144",
+            "uncached_tokens": "2048"
+          },
+          "hit_rate": 0.75
+        },
+        "paired_real": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "100",
+            "cached_tokens": "25",
+            "uncached_tokens": "75"
+          },
+          "hit_rate": 0.25
+        },
+        "paired_ideal": {
+          "sample_count": "1",
+          "totals": {
+            "input_tokens": "4096",
+            "cached_tokens": "3072",
+            "uncached_tokens": "1024"
+          },
+          "hit_rate": 0.75
+        },
+        "mismatched_input_count": "1",
+        "paired_request_coverage": 1.0,
+        "paired_input_coverage": 1.0,
+        "hour": {
+          "seconds": 3600,
+          "request_count": "2",
+          "real_count": "1",
+          "uncached_tokens": "75",
+          "requests_per_second": 0.0005555555555555556,
+          "uncached_tokens_per_second": 0.020833333333333332
+        },
+        "bins": [
+          {
+            "index": 0,
+            "start": "2026-10-20T08:00:00.000000000Z",
+            "end": "2026-10-20T08:05:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "1",
+              "real_count": "1",
+              "uncached_tokens": "75",
+              "requests_per_second": 0.0033333333333333335,
+              "uncached_tokens_per_second": 0.25
+            }
+          },
+          {
+            "index": 1,
+            "start": "2026-10-20T08:05:00.000000000Z",
+            "end": "2026-10-20T08:10:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "1",
+              "real_count": "0",
+              "uncached_tokens": null,
+              "requests_per_second": 0.0033333333333333335,
+              "uncached_tokens_per_second": null
+            }
+          },
+          {
+            "index": 2,
+            "start": "2026-10-20T08:10:00.000000000Z",
+            "end": "2026-10-20T08:15:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 3,
+            "start": "2026-10-20T08:15:00.000000000Z",
+            "end": "2026-10-20T08:20:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 4,
+            "start": "2026-10-20T08:20:00.000000000Z",
+            "end": "2026-10-20T08:25:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 5,
+            "start": "2026-10-20T08:25:00.000000000Z",
+            "end": "2026-10-20T08:30:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 6,
+            "start": "2026-10-20T08:30:00.000000000Z",
+            "end": "2026-10-20T08:35:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 7,
+            "start": "2026-10-20T08:35:00.000000000Z",
+            "end": "2026-10-20T08:40:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 8,
+            "start": "2026-10-20T08:40:00.000000000Z",
+            "end": "2026-10-20T08:45:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 9,
+            "start": "2026-10-20T08:45:00.000000000Z",
+            "end": "2026-10-20T08:50:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 10,
+            "start": "2026-10-20T08:50:00.000000000Z",
+            "end": "2026-10-20T08:55:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          },
+          {
+            "index": 11,
+            "start": "2026-10-20T08:55:00.000000000Z",
+            "end": "2026-10-20T09:00:00.000000000Z",
+            "pressure": {
+              "seconds": 300,
+              "request_count": "0",
+              "real_count": "0",
+              "uncached_tokens": "0",
+              "requests_per_second": 0.0,
+              "uncached_tokens_per_second": 0.0
+            }
+          }
+        ],
+        "zero_uncached_count": "0",
+        "handle_time_min": "2026-10-20T08:01:00.000000000Z",
+        "handle_time_max": "2026-10-20T08:01:00.000000000Z",
+        "handle_outside_window_count": "0",
+        "limitations": [
+          "finite_prewarm_not_production_upper_bound",
+          "provided_records_not_full_traffic",
+          "request_time_event_unknown",
+          "chained_approximation_not_hybrid",
+          "equal_lengths_do_not_prove_token_identity",
+          "gf_encoding_equivalence_unverified",
+          "production_topology_and_glm_cp_mapping_not_reproduced",
+          "input_measurement_mismatch"
+        ]
+      }
+    }
+  ]
+}

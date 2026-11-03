@@ -1,0 +1,80 @@
+import { expect, test, type Page } from '@playwright/test';
+import { validateV2 } from '../../src/api/v2/client';
+import { entryKey, modelScopeKey } from '../../src/features/v2/user-discovery';
+test.beforeEach(() => test.skip(process.env.TOKENSCOPE_REAL_BACKEND !== '1', 'Coordinator-owned clean real HTTP environment'));
+async function seed(page: Page, key: string, index: number) {
+    const catalog = await (await page.request.get('/monitoring/catalog')).json();
+    const headers = { 'X-TokenScope-Instance-Id': catalog.service_instance_id };
+    const response = await page.request.post('/monitoring/user-v2/runs', { headers, data: { submission_key: key, file_ref: `hv2-user-${index}.csv`, common_name: ['GLM-V5.2', 'Qwen-V3.6-27B', 'DeepSeek-V4-Flash'][index - 1], model_id: ['GLM-5.2', 'Qwen3.6-27B', 'DeepSeek-V4-Flash-0731'][index - 1] } });
+    expect(response.ok()).toBe(true); const receipt = validateV2('user', 'Receipt', await response.json());
+    await expect.poll(async () => (await (await page.request.get(`/monitoring/user-v2/runs/${receipt.user_run_id}`, { headers })).json()).state, { timeout: 90000, intervals: [250, 500, 1000] }).toBe('ready');
+    return { receipt, headers };
+}
+test('cold shared APPID discovers all three models; selected historical run survives new publication and reload', async ({ page }, info) => {
+    test.setTimeout(240000); await page.goto('/#/users');
+    const old = await seed(page, 'hv2-user-old', 2);
+    await seed(page, 'hv2-user-glm', 1); await seed(page, 'hv2-user-ds', 3); await seed(page, 'hv2-user-new', 2);
+    await page.evaluate(() => localStorage.clear()); let posts = 0;
+    page.on('request', r => { if (r.method() === 'POST') posts++; });
+    await page.goto('/#/users?appid=hv2-shared'); await page.reload();
+    await expect(page.locator('.metric-grid .metric')).toHaveCount(6);
+    await expect(page.getByLabel('用户模型服务').locator('option')).toHaveCount(4);
+    const directory = validateV2('user', 'DiscoveryPage', await (await page.request.get('/monitoring/user-v2/runs?appid=hv2-shared&limit=1000', { headers: old.headers })).json());
+    const historic = directory.entries.find(e => e.source.user_run_id === old.receipt.user_run_id)!; expect(historic.is_default).toBe(false);
+    await page.getByRole('button', { name: '打开运行', exact: true }).click();
+    await page.getByRole('button', { name: new RegExp(old.receipt.user_run_id + '.*历史') }).click();
+    await expect(page.locator('.filter-panel .filter-meta')).toContainText(old.receipt.user_run_id);
+    await seed(page, 'hv2-user-newest', 2);
+    await page.getByRole('button', { name: '打开运行', exact: true }).click(); await page.getByText('刷新目录', { exact: true }).click();
+    await expect(page.getByText('正在读取完整目录…')).toHaveCount(0); await page.getByLabel('关闭弹窗').click();
+    await expect(page.locator('.filter-panel .filter-meta')).toContainText(old.receipt.user_run_id);
+    const glm = directory.entries.find(e => e.source.model_id === 'GLM-5.2')!;
+    await page.getByLabel('用户模型服务').selectOption(modelScopeKey(glm)); await expect(page.locator('.filter-panel .filter-meta')).toContainText(glm.source.user_run_id);
+    await page.getByLabel('用户模型服务').selectOption(modelScopeKey(historic)); await expect(page.locator('.filter-panel .filter-meta')).toContainText(old.receipt.user_run_id);
+    await page.reload(); await expect(page.locator('.filter-panel .filter-meta')).toContainText(old.receipt.user_run_id);
+    expect(page.url()).toContain(`revision=${historic.source.index_revision}`); expect(posts).toBe(0);
+    await page.getByText('数据质量与版本', { exact: true }).click();
+    await expect(page.getByRole('link', { name: '固定监控来源链接' })).toHaveAttribute('href', new RegExp(`revision=${historic.source.index_revision}`));
+    await info.attach('selected-real-source', { body: JSON.stringify({ historic, entryKey: entryKey(historic) }), contentType: 'application/json' });
+    await page.screenshot({ path: info.outputPath('user-multimodel-fixed.png'), fullPage: true });
+});
+test('real automatic TTFT all defaults, explicit W, K override/revert and stored history', async ({ page }, info) => {
+    test.setTimeout(240000); await page.goto('/#/users');
+    for (const index of [1, 2, 3]) {
+        const { receipt, headers } = await seed(page, `hv2-auto-${index}`, index);
+        await page.goto(`/#/users?run=${receipt.user_run_id}&appid=hv2-shared`); await page.reload();
+        await expect(page.locator('.filter-panel .filter-meta')).toContainText(receipt.user_run_id);
+        await expect(page.locator('.ttft-panel')).toBeVisible();
+        const defaults = validateV2('user', 'DefaultPage', await (await page.request.get(`/monitoring/user-v2/ttft/defaults?${new URLSearchParams({ model_id: receipt.model_id, common_name: receipt.common_name })}`, { headers })).json());
+        await page.getByLabel('TTFT目标秒').fill('8'); await expect(page.getByRole('button', { name: '评估', exact: true })).toBeDisabled();
+        await page.getByLabel('非计算耗时W').fill('0'); await page.getByText('设置评估条件', { exact: true }).click();
+        await expect(page.locator('dialog')).toContainText(`τ=${defaults.configs[0]!.chunk_seconds}s`);
+        await page.getByLabel('覆盖K').fill('4096');
+        const pending = page.waitForResponse(r => r.url().endsWith('/ttft/evaluations') && r.request().method() === 'POST');
+        await page.getByText('按当前条件评估', { exact: true }).click();
+        const result = validateV2('user', 'AutoEvaluation', await (await pending).json());
+        expect(result.defaults.chunk_seconds).toBe(defaults.configs[0]!.chunk_seconds); expect(result.chunk_tokens_origin).toBe('request_override'); expect(result.tau_scaled).toBe(false);
+        await expect(page.locator('.ttft-foot')).toContainText(result.evaluation_id);
+        await expect(page.locator('.ttft-foot')).toContainText(result.evaluation.required_hit_fraction ? `${result.evaluation.required_hit_fraction.numerator}/${result.evaluation.required_hit_fraction.denominator}` : '精确比例 —');
+        await page.getByText('设置评估条件', { exact: true }).click(); await page.getByText('恢复模型默认K').click();
+        const next = page.waitForResponse(r => r.url().endsWith('/ttft/evaluations') && r.request().method() === 'POST');
+        await page.getByText('按当前条件评估', { exact: true }).click(); const restored = validateV2('user', 'AutoEvaluation', await (await next).json());
+        expect(restored.chunk_tokens_origin).toBe('model_default'); expect(restored.evaluation.scenario.chunk_tokens).toBe(defaults.configs[0]!.chunk_tokens);
+        await page.getByText('设置评估条件', { exact: true }).click(); await page.getByText('历史评估与情景（只读）').click(); await page.getByLabel('历史ID').fill(result.evaluation_id);
+        const history = page.waitForResponse(r => r.url().endsWith(`/ttft/evaluations/${result.evaluation_id}`));
+        await page.getByText('读取历史', { exact: true }).click(); expect((await history).ok()).toBe(true); await expect(page.locator('article.notice')).toContainText(result.evaluation_id);
+        await info.attach(`automatic-ttft-model-${index}`, { body: JSON.stringify({ defaults, result, restored }), contentType: 'application/json' });
+    }
+});
+test('real delayed TTFT response cannot restore result after switching model', async ({ page }) => {
+    test.setTimeout(180000); await page.goto('/#/users'); const old = await seed(page, 'hv2-delayed-old', 2), next = await seed(page, 'hv2-delayed-next', 1);
+    await page.goto(`/#/users?run=${old.receipt.user_run_id}&appid=hv2-shared`); await page.reload();
+    await expect(page.locator('.filter-panel .filter-meta')).toContainText(old.receipt.user_run_id);
+    await page.getByLabel('TTFT目标秒').fill('8'); await page.getByLabel('非计算耗时W').fill('0');
+    let release!: () => void; const gate = new Promise<void>(r => { release = r; }); let reached = false;
+    await page.route('**/ttft/evaluations', async route => { const response = await route.fetch(); reached = true; await gate; await route.fulfill({ response }).catch(() => {}); });
+    await page.getByRole('button', { name: '评估', exact: true }).click(); await expect.poll(() => reached).toBe(true);
+    await page.getByRole('button', { name: '打开运行', exact: true }).click(); await page.locator('input[name=run]').fill(next.receipt.user_run_id); await page.getByRole('button', { name: '打开', exact: true }).click();
+    await expect(page.locator('.filter-panel .filter-meta')).toContainText(next.receipt.user_run_id); release();
+    await expect(page.locator('.ttft-foot')).not.toContainText('评估ID'); await expect(page.getByLabel('非计算耗时W')).toHaveValue('');
+});

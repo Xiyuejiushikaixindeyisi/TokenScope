@@ -2,6 +2,7 @@
 
 from fastapi import APIRouter, Depends, Request, Response
 
+from tokenscope.monitoring.ma.availability import AvailabilityResponse
 from tokenscope.monitoring.ma.contracts import (
     Catalog,
     ErrorEnvelope,
@@ -54,5 +55,12 @@ def router(service: MaService) -> APIRouter:
     @api.get("/runs/{ma_run_id}/quality", response_model=QualityPage)
     def quality(ma_run_id: str, offset: QueryDecimal = 0, limit: int = 100) -> QualityPage:
         return service.quality(ma_run_id, offset, limit)
+
+    @api.get(
+        "/runs/{ma_run_id}/instances/{instance_uuid}/availability",
+        response_model=AvailabilityResponse,
+    )
+    def availability(ma_run_id: str, instance_uuid: str) -> AvailabilityResponse:
+        return service.availability(ma_run_id, instance_uuid)
 
     return api

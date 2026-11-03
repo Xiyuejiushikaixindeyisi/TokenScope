@@ -79,3 +79,15 @@ M005 closed。本机后端最终pytest235 passed/1既有弃用warning/190.03s；
 本线独立候选227测试通过（203.70s）、静态107文件/类型41源码/契约通过。候选未接入main；验证中用户会话完成其获授权的已闭环功能及MA依赖集成并同步，最终源码为9a037466f7211126261ec2026f54b9c19c2e2151，同步记录为3224c4b8d1cf2abb4e22fbdeb505d05d714f3224。已核对MA专属代码及测试与原M005身份一致；app/CLI保留已闭环的用户装配。故本轮改为只追加MA版本、前端交接和本线状态，不重复提交或改写他线历史。未完成的前端/异常分析及其共享记忆继续留在工作区。完整结果和Git身份见GIT_CHECKPOINT；早先“准备独立依赖提交/用户尚未接入”是检查过程的历史时点。
 
 本轮最终复核：已同步集成源码289 passed/1既有警告/234.92s；静态126文件、mypy50源码和协议通过。独立MA候选227项仅作隔离范围核验；本次追加提交严格为10项MA文档/本线状态，不包含新业务代码或他线未完成材料。源码身份9a037466f7211126261ec2026f54b9c19c2e2151，Git同步后的精确文档提交由git log -- GIT_CHECKPOINT.md定位。
+
+## 2026-11-03 HV2-R1-MA修复候选交接
+实际环境THREAD/SESSION均01a18ab2-2600-7ae1-8b0e-979dad9ec3be。已承接V2总设计师直接派发；优先级P0 MA缺数解释/预热审查，当前本线代码与测试完成、待独立验收冻结，不改CURRENT/SESSIONS总文档。入口docs/tasks/monitoring/v2-ma/HV2_MA_BACKEND_HANDOFF_20261103.md。
+新增预计算availability表及独立GET资源，保留旧Snapshot/Schema/原seal；六项解释覆盖四主指标及独立ideal/real，含原因/样本/分母、12桶和成功编码pre/now时间边界。DS缺cached保持真实不可用并保留独立ideal；GLM冲突保留独立real/小时已知量。缺JSON/输出字段不影响真实量，null/0/部分覆盖/空桶明确。旧结果新资源返回AVAILABILITY_NOT_RECORDED，旧GET照常只读，不自动重算。
+预热边界测试未发现实现bug：无效或编码失败pre不入bounds；有效JSON但生产字段坏的pre仍合法；重复hash保留、等时pre优先，request_time归属/handle排序不互换。真正重叠保持whole-UUID停ideal；具体截尾/混排对比例在交接，未擅自实施。
+实际验证：首轮17；MA回归60 passed/1真实监听用例未执行；最终新增/增强测试21 passed；受影响公共计量/HTTP回归40 passed。ruff/format24文件、mypy10源码通过；9个合成候选样例严格校验，旧Schema/原OpenAPI各路径及components不变。源码/测试组合SHA15194270d39e4e51950c83fd10d7694a3282d9c96a0b9ffbfd7c882b3d2f96f5；逐文件见hv2-availability/source-manifest.json。旧全量OpenAPI校验器需总设计师安排冻结工具扩展，未越权改scripts/contracts。现场原件SHA保持；GLM27/26、Qwen完整矩阵、全部18文件SHA和真实冲突边界缺口不编造。另调查将OUTSIDE_WINDOW写成跳过与源码整任务拒绝不同，已列补证。未监听服务/改前端/部署打包/commit/push，原共享改动保留。
+2026-11-03追加：总设计师直接授权契约工具唯一窗口，已修改validate_ma_contract.py并新增validate_ma_availability.py/test_contract_tools.py；保留原manifest全部身份断言，新增manifest自身SHA固定及旧Schema/path/component兼容、扩展完整OpenAPI/DTO/9样例+8负例检查，--write拒绝改冻结字节。两个check命令通过、工具变异13测试通过、ruff/format通过；旧全量OpenAPI工具失配已闭环，原失败日志保留。精确工具SHA与命令在HV2_MA_BACKEND_HANDOFF_20261103.md末节。业务5源码+1测试组合SHA未变；扩展仍候选待总设计师独立验收冻结。本线未push/监听/部署打包或改共享总文档，工具窗口交回。
+## 2026-11-03 总设计师独立验收冻结（最新状态）
+
+V2总设计师01a1800e-80b4-7400-a78b-a84f5b6e888d已明确通知：MA后端及契约工具独立通过，涵盖66项本线、13项工具，以及额外混合UUID原因隔离、0/null、桶与小时守恒核验。冻结清单：docs/tasks/delivery/HV2_MA_FREEZE_20261103.json；组合身份9b48fb244963ce153b009a9a2d0d9050d084bd6c1bb43eec27ddf49f313fd9fa。此状态覆盖前文候选待冻结的历史描述；冻结内容保持原字节。
+
+本次冻结范围为MA新增availability资源及兼容契约工具，原指标和预热策略保持。源码窗口、工具窗口均已关闭；监控前端当前仅接入MA。本线转为等待问题后的归口维护，不再自行测试、提交/push或监听服务。后端独立验收不代表前端或华为现场验收；DS真实观测缺失、GLM真实冲突边界及现场完整证据仍待补证，不代签通过。

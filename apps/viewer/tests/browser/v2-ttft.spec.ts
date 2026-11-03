@@ -1,6 +1,6 @@
 import { readyUser } from './v2-fixtures';
 import { test, expect } from '@playwright/test';
-test('real minimal scenario: explicit W, evaluate and invalidate', async ({ page }) => {
+test('real automatic defaults: explicit W, evaluate and invalidate', async ({ page }) => {
     test.skip(process.env.TOKENSCOPE_REAL_BACKEND !== '1', 'isolated backend');
     await page.goto('/#/users');
     const receipt = await page.evaluate(async () => { const c = await fetch('/monitoring/catalog').then(r => r.json()); return fetch('/monitoring/user-v2/runs', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-TokenScope-Instance-Id': c.service_instance_id }, body: JSON.stringify({ submission_key: 'mv2-f001-user', file_ref: 'model-1.csv', model_id: 'GLM-5.2', common_name: 'GLM-V5.2' }) }).then(r => r.json()); });
@@ -8,31 +8,26 @@ test('real minimal scenario: explicit W, evaluate and invalidate', async ({ page
     await page.getByRole('button', { name: '打开运行', exact: true }).click();
     await page.locator('input[name=run]').fill(receipt.user_run_id);
     await page.getByRole('button', { name: '打开', exact: true }).click();
+    await expect(page.locator('.filter-panel .filter-meta')).toContainText(receipt.user_run_id);
     await expect(page.locator('.ttft-panel')).toBeVisible();
     await page.getByLabel('TTFT目标秒').fill('8');
-    await page.getByRole('button', { name: '设置评估条件' }).click();
-    await page.getByRole('button', { name: '新建情景', exact: true }).click();
-    const id = 'browser-' + Date.now();
-    for (const [k, v] of Object.entries({ scenario_id: id, revision: '1', deployment: 'synthetic-browser-only', source_description: 'Synthetic UI verification; not measurement', chunk_tokens: '8192', chunk_seconds: '1' }))
-        await page.locator(`input[name=${k}]`).fill(v);
-    await page.getByRole('button', { name: '登记情景', exact: true }).click();
-    await expect(page.getByRole('button', { name: '按当前条件评估' })).toBeDisabled();
+    await expect(page.getByRole('button', { name: '评估', exact: true })).toBeDisabled();
     await page.getByLabel('非计算耗时W').fill('0');
-    await page.getByRole('button', { name: '按当前条件评估' }).click();
+    await page.getByRole('button', { name: '评估', exact: true }).click();
     await expect(page.locator('.ttft-foot')).toContainText('评估ID');
     const text = await page.locator('.ttft-foot').innerText();
     expect(text).toContain('W=0s');
     expect(text).not.toContain('O=');
-    await page.getByLabel('TTFT比较符').selectOption('lt');
+    await page.getByLabel('非计算耗时W').fill('1');
     await expect(page.locator('.ttft-body')).toContainText('待评估');
     await page.getByRole('button', { name: '评估', exact: true }).click();
     await expect(page.locator('.ttft-foot')).toContainText('评估ID');
-    let release!:()=>void;
+    let release!:()=>void; let delivered=false;
     const gate=new Promise<void>(resolve=>{release=resolve;});
-    await page.route('**/monitoring/user-v2/evaluations',async route=>{const response=await route.fetch();await gate;await route.fulfill({response});});
+    await page.route('**/monitoring/user-v2/ttft/evaluations',async route=>{const response=await route.fetch();await gate;await route.fulfill({response}).catch(()=>{}); delivered=true;});
     const requested=page.waitForRequest(r=>r.url().endsWith('/evaluations'));
     await page.getByRole('button',{name:'评估',exact:true}).click();await requested;
     await page.getByLabel('TTFT目标秒').fill('9');
-    const returned=page.waitForResponse(r=>r.url().endsWith('/evaluations'));release();await returned;await page.waitForTimeout(200);
+    release(); await expect.poll(()=>delivered).toBe(true);
     await expect(page.locator('.ttft-body')).toContainText('待评估');await expect(page.locator('.ttft-foot')).not.toContainText('评估ID');
 });

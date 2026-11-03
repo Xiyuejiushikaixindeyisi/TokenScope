@@ -1,0 +1,12 @@
+{
+  "identities": {
+    "COMMON": "9ac3e7fd5c5fea9556f957871bb03a0791e79e9404b207462a1cf8e184d7cb8e",
+    "USER": "4d9e2e5d6c7031ff0aaa266114b92dbcb8684b9a80d722d2cfae9de8ad1d7dc0",
+    "TOKEN": "14419e5bba5af85a3ffa20d6330b3fa29c2d926bd81ef1f3462e30b118b4f00d",
+    "LOW_HIT": "10f643bc56fa59936dcfd7d17f4aabf1163aba4d479c47662366d13c879e011b"
+  },
+  "resources": {
+    "diagnostics-execution-2.json": "0394829eaefbce540bafca552134d9c5e77f0f49b32839a7c9c8faca09b37c1f",
+    "diagnostics-execution-2.examples.json": "77d248778cd62d6a6bf8d32e0d2b4eed2283e4485b11b3fac4b6f134776a156a"
+  }
+}

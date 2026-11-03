@@ -45,9 +45,11 @@ test('real legacy TTFT read, new limits, missing W and forbidden O', async ({ pa
     await page.getByRole('button', { name: '打开', exact: true }).click();
     await expect(page.locator('.ttft-panel')).toBeVisible();
     await page.getByRole('button', { name: '设置评估条件' }).click();
-    await page.locator('input[name=evaluation_id]').fill(setup.history.body.evaluation_id);
-    await page.getByRole('button', { name: '读取历史评估' }).click();
-    await expect(page.getByRole('heading', { name: '历史W+O口径 · 只读快照' })).toBeVisible();
+    await page.getByText('历史评估与情景（只读）').click();
+    await page.getByLabel('历史类型').selectOption('legacy');
+    await page.getByLabel('历史ID').fill(setup.history.body.evaluation_id);
+    await page.getByRole('button', { name: '读取历史' }).click();
+    await expect(page.getByRole('heading', { name: /只读快照/ })).toBeVisible();
     await expect(page.locator('article.notice')).toContainText('O=1s');
     await expect(page.getByLabel('非计算耗时W')).toHaveValue('');
 });

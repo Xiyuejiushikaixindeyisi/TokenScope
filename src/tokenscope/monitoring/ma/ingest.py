@@ -57,6 +57,7 @@ def initialize(path: Path) -> None:
         CREATE INDEX quality_order ON issues(role,source_record_index,field,code);
         CREATE TABLE scopes (instance_uuid TEXT PRIMARY KEY,status TEXT NOT NULL);
         CREATE TABLE projections (instance_uuid TEXT PRIMARY KEY,snapshot TEXT NOT NULL);
+        CREATE TABLE availability (instance_uuid TEXT PRIMARY KEY,projection TEXT NOT NULL);
         """)
 
 

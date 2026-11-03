@@ -17,6 +17,18 @@ from tokenscope.user_monitoring.contracts import (
     ScenarioPayload,
     Submit,
 )
+from tokenscope.user_monitoring.defaults import DefaultEstimator
+from tokenscope.user_monitoring.discovery import Discovery
+from tokenscope.user_monitoring.discovery_contracts import (
+    AutoEvaluation,
+    AutoEvaluationRequest,
+    DefaultConfig,
+    DefaultPage,
+    DefaultQuery,
+    DefaultUpdate,
+    DiscoveryPage,
+    DiscoveryQuery,
+)
 from tokenscope.user_monitoring.estimator import EstimatorService
 from tokenscope.user_monitoring.ranking import ModeQuery, RankingService, RankQuery
 from tokenscope.user_monitoring.service import UserRunService
@@ -36,6 +48,28 @@ def router(service: UserRunService) -> APIRouter:
     )
     ranking = RankingService(service)
     estimator = EstimatorService(service)
+    discovery = Discovery(service)
+    defaults = DefaultEstimator(service)
+
+    @api.get("/runs", response_model=DiscoveryPage)
+    def runs(query: Annotated[DiscoveryQuery, Query()]) -> DiscoveryPage:
+        return discovery.catalog(query)
+
+    @api.get("/ttft/defaults", response_model=DefaultPage)
+    def default_configs(query: Annotated[DefaultQuery, Query()]) -> DefaultPage:
+        return defaults.get(query)
+
+    @api.post("/ttft/defaults", response_model=DefaultConfig, status_code=201)
+    def update_defaults(body: DefaultUpdate) -> DefaultConfig:
+        return defaults.update(body)
+
+    @api.post("/ttft/evaluations", response_model=AutoEvaluation, status_code=201)
+    def auto_evaluate(body: AutoEvaluationRequest) -> AutoEvaluation:
+        return defaults.evaluate(body)
+
+    @api.get("/ttft/evaluations/{evaluation_id}", response_model=AutoEvaluation)
+    def auto_evaluation(evaluation_id: str) -> AutoEvaluation:
+        return defaults.evaluation(evaluation_id)
 
     @api.post("/runs", response_model=Receipt, status_code=202)
     def submit(body: Submit) -> Receipt:
@@ -85,6 +119,6 @@ def router(service: UserRunService) -> APIRouter:
                     }
                 ],
                 "x-runtime-implemented": True,
-                "x-user-contract-version": "2.0.0",
+                "x-user-contract-version": "2.1.0",
             }
     return api

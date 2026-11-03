@@ -123,7 +123,9 @@ def main():
             for k in ["version", "frontend", "public_backend", "token_private", "token_plugin"]
         },
         "source_identity_sha256": version["source_identity_sha256"],
-        "monitoring_contracts": {"s0": "1.0.0", "user": "2.0.0", "ma": "1.0.0"},
+        "monitoring_contracts": version.get(
+            "monitoring_contracts", {"s0": "1.0.0", "user": "2.0.0", "ma": "1.0.0"}
+        ),
         "control_schema": 3,
         "view_schema": "1",
         "frontend_built_from_commit": commit,

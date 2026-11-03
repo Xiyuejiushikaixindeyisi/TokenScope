@@ -1,5 +1,13 @@
 # Token监控V2前端记忆
 
+2026-11-03总设计师收口通知：已接收总/MA交接、核对50文件c4280716…，独立审读及6文件75项定点通过2.02s，前后SHA一致；5份新HTTP fixture复制至其新输入目录。**本线源码窗口关闭，待统一冷启动浏览器/视觉及定向问题**，不自行改源码/测试/生成身份，不启动服务/提交/打包。当前仅独立源码与定点通过，不能代签最终前端通过；异常前端仍实施，整合类型/全量由总设计师待其冻结后跑。该75项是总设计师回执，不与本线301项叠加。
+
+2026-11-03最新：HV2-R2-MONITOR-FE-MA与USER均完成本线源码/静态/单元组件自测，冻结候选交回总设计师独立冷启动E2E，**不是整体最终通过**。[总交接](../../docs/tasks/viewer/monitoring-v2/HV2_MONITOR_FRONTEND_HANDOFF_20261103.md)和[MA交接](../../docs/tasks/viewer/monitoring-v2/HV2_MA_FRONTEND_HANDOFF_20261103.md)已存在。HEAD d55df94b6e58117a698dbd14667b7836e67cd50f，50个未提交前端文件组合c4280716635dc0b7e0dd472cf7c98a3f6ac80cacec9125dc02ac09fc09645404，证据artifacts/validation/viewer/HV2-MONITOR-FE-20261103。32文件301项全量、typecheck/lint/build通过；MA34/用户41定点与全量重叠不相加。三模型同APPID与13UUID合成输入已生成到证据inputs，7项新浏览器仅编写未跑，无监听服务/state/Docker/打包/commit/push。用户目录完整snapshot分页、有界冲突重读、固定run/index跨刷新/模型/重载，保持搜索20条/300ms与导出；TTFT后端默认W/T、可选K且不缩放τ，精确Fraction/历史旧命名空间只读。MA独立/配对/null/0/partial及本UUID原因、同池4并发保持；两线握手解析真实聚合refs且保留完整断言。产品去掉异常提交JSON，来源参数文案“用户提供、尚未校准”。SourceLink跨模块revision已派发异常前端，本线不改共享壳/样式/异常/CURRENT/SESSIONS。实际环境两ID仍01a18c49-d9b4-7a33-8c04-e5a72adfcc24。压缩恢复必须以本轮交接/最新总设计师通知继续，不能误回历史RV2/UIR/push。
+
+2026-11-03 MA接入补充：已修总设计师发现的真实聚合OpenAPI命名失配，按本地ref解析结构比较，不删除字段/约束/错误响应断言；循环/缺失/外部/sibling refs拒绝并有资源上限。[本项记录](../../docs/tasks/viewer/monitoring-v2/HV2_MA_OPENAPI_FIX_20261103.md)。定点34项、全量260项及typecheck/lint/build通过，真实服务握手/browser E2E未跑，交总设计师唯一冷环境验证。仅本项修正完成，MA整体与用户2.1接入未据此宣布完成。未动共享CURRENT/SESSIONS，未Git收口/镜像/监听服务。
+
+2026-11-03最新：HV2-R1-MONITOR-FE-PREP准备完成，[接入/复验清单](../../docs/tasks/viewer/monitoring-v2/HV2_FRONTEND_PREP_20261103.md)。环境CODEX_SESSION_ID/THREAD_ID均01a18c49-d9b4-7a33-8c04-e5a72adfcc24，HEAD 7cbe28621f4e46083bf47f9aa14b011b3cb250c4；接受总设计师直接派发，仅本线准备，不改共享CURRENT/SESSIONS/总执行板。UI-02/UI-04及报告SHA核实，源码逐文件快照在artifacts/validation/viewer/HV2-FE-PREP-20261103。V2Records已有50条，缺的是服务端多模型发现，当前没有GET用户run全目录；客户端2.0.0/9操作硬门禁需冻结后统一接入。TTFT用户提供Qwen1s/GLM2.7s/DS2.6s、K默认8192可选覆盖，后端存来源/revision，前端日常W/T，不先硬编码或冒称校准。MA独立可用值不能被paired缺失遮蔽，DS缺cached不补0，GLM冲突真实小时值与DS独立ideal待后续浏览器/现场核对。报告无最终DOM；GLM26/27、审计差622、Qwen完整矩阵/输入SHA等缺口保留，不虚构根因。未改产品/测试/HTML/契约/CSV/锁，未测试/监听/构建/commit/push/打包/部署或跨会话发消息。等待用户/MA后端独立验收冻结及正式接入通知；E2E由总设计师协调唯一环境，先停旧确认端口释放，新state/浏览器，旧并行端口做法失效。四入口/L4L5保持，UIR-03留V3。
+
 2026-11-02当前交付决定：用户认可V2可交付，UIR-03留V3、不阻断；审查打包已完成源码push、WSL构建/包体与桌面全SHA交付；华为真实数据待验。角色职责保持，以下旧暂停/阻断/合成现场计划只是历史。现场真实数据、两次人工验收、SSH18002、唯一Markdown要求及不得再犯的问题见[长期记忆](../DELIVERY_LESSONS.md)；当前结果看[交付记录](../../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
 
 2026-10-31审查方结果同步：三项修复已独立复审通过且推送main，见[当前状态](../../docs/tasks/delivery/MONITORING_V2_STATUS.md)。下方“待复审/未提交”为历史记录；修复交接已归档，原始证据保持原位。本线职责不变。

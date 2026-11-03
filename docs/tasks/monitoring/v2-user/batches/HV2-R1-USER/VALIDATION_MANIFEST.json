@@ -1,0 +1,85 @@
+{
+  "task": "HV2-R1-USER",
+  "status": "candidate_pending_independent_acceptance",
+  "session_id": "01a18bc7-cdb5-7830-a185-ad3aa6257b21",
+  "dispatch_base": "7cbe28621f4e46083bf47f9aa14b011b3cb250c4",
+  "head_at_validation": "d55df94b6e58117a698dbd14667b7836e67cd50f",
+  "implementation_committed": false,
+  "contract_version": "2.1.0",
+  "source_sha256": {
+    "src/tokenscope/api/user.py": "5dd61592088354ab4b020f68fbef8b086b5346844bbaf6caa030f19b0b6c1830",
+    "src/tokenscope/user_monitoring/discovery_contracts.py": "814a58febb41db68ec4bd2bbb7c35569e09742446bbf9cb9502b4c1ea05dfb30",
+    "src/tokenscope/user_monitoring/discovery.py": "7e842a12f46a05095650aca5c4a8a99c92610f40e2cb1957f50c0d0561af90c1",
+    "src/tokenscope/user_monitoring/defaults.py": "e0710a9a3bfda5b3982bb60d53ab662158f19ce9655fc5c6b8e62207c6e75d45"
+  },
+  "test_sha256": {
+    "tests/integration/monitoring/test_user_discovery_defaults.py": "f7ab6c6dda6b6c002400920b09cae5b8d85cea08ff8de26697907165d7308e8f",
+    "tests/integration/monitoring/test_user_trace_filter_audit.py": "a98f7ecb706f31b3b5c148703d1b308854b6882b6aeda3c77bd070ec78698a9f",
+    "tests/integration/monitoring/test_user_robustness.py": "b188e192fb09fe3141248ea5ed194d770b5987384b2dca682319855580a4e8d9"
+  },
+  "documentation_sha256": {
+    "docs/tasks/monitoring/v2-user/ENTRY.md": "61620cf41176def0a7786fed723261c754dc964c9ce7d7bdf9daf1848b23842a",
+    "docs/tasks/monitoring/v2-user/HV2_USER_BACKEND_HANDOFF_20261103.md": "8cbed7eb3588386f4db88cc1552e4505df2b08008a1c62a52e319f0167f87033",
+    "docs/tasks/monitoring/v2-user/GIT_HANDOFF_U008_20261031.md": "3c2e2c503200afe4cafd8080c5c684231b97e7d93e4d2b1256261cf2cba98d5f",
+    "memory/tasks/monitoring-v2-user.md": "747baba35236788ebab82c48872a190a15599380d92ee0789c05eee152aacaab",
+    "docs/tasks/monitoring/v2-user/batches/HV2-R1-USER/ISSUES.md": "2da20fb626edc6a66a10af7f57724551c6721a958635373b08f7efe0e484cca9",
+    "docs/tasks/monitoring/v2-user/batches/HV2-R1-USER/PLAN.md": "f9f16762254432482a3056850c7c6ec1406463bc228a4e7bd37bbac256d21b5a",
+    "docs/tasks/monitoring/v2-user/batches/HV2-R1-USER/RESULT.md": "223468602a3dcfa3e34d5bb9de8c5abb690a5761faeaf03e6d7d88c8a3997f2d",
+    "docs/tasks/monitoring/v2-user/batches/HV2-R1-USER/TESTS.md": "d0b57ceab98fab6a3d4e76d75c63f8e1587765a504665b3eb46a0a2071b36069",
+    "docs/contracts/user-monitoring-v2/2.1.0/README.md": "dcb480fb73a7f86037647b226a375fbd2ab5e2a294b80c0da083a8efbf4bc66d",
+    "docs/contracts/user-monitoring-v2/2.1.0/examples.json": "22454fb39f7e220ae03ad87d61b2d645c03911579018334dc4d69bd6806fe9f4",
+    "docs/contracts/user-monitoring-v2/2.1.0/manifest.json": "4445e342eb40c51b95222fc5f8430f41e66e01a0b4b01253212e2a796a191cec",
+    "docs/contracts/user-monitoring-v2/2.1.0/runtime.openapi.json": "b56317e9bc9e83493458776a579a9fcb12e1b1e934d6254bf3063a9f2cae9a01",
+    "docs/contracts/user-monitoring-v2/2.1.0/schema.json": "bafca55ae1cba4087435046f2c08896f39d50a3f63eaa8d74681a0315d5ad497"
+  },
+  "frozen_2_0_0_unchanged": {
+    "docs/contracts/user-monitoring-v2/2.0.0/README.md": "534038942cc01bce7d62e047ff1e89ae205cc0467789c011c9cbd0ebfd1c22a2",
+    "docs/contracts/user-monitoring-v2/2.0.0/design.openapi.json": "1f0e148dab552126b05ff4276606cb13b5cd758932fa4aa19043d2e978384e75",
+    "docs/contracts/user-monitoring-v2/2.0.0/examples.json": "a54ca1a4a5ffdd238e3efcc9cba01e78ccab0e3b7d21b689a630d99c795b6bd9",
+    "docs/contracts/user-monitoring-v2/2.0.0/manifest.json": "5404e735566ca46ad4e6885e9b9a6a6dc3e54c8a79fa42a929542c258d258e1a",
+    "docs/contracts/user-monitoring-v2/2.0.0/runtime.examples.json": "7bd3d9ba9372980e178e2d21937fb9774243270479bbac7090e5324e5eb6fd18",
+    "docs/contracts/user-monitoring-v2/2.0.0/runtime.openapi.json": "97a71ac19637e1fdbf6911ec55cd5a38f76deabe48a14f74949b0f476b990255",
+    "docs/contracts/user-monitoring-v2/2.0.0/schema.json": "3eee4349acefb3f30d62e4e80cf6ae6f7b94d08fa9003316803218e21999749d"
+  },
+  "test_results": {
+    "regression": {
+      "tests": "271",
+      "failures": "1",
+      "errors": "0",
+      "skipped": "0",
+      "time": "141.758",
+      "sha256": "ed7c817f05d6797717e8d7d5cabf38875e31d060cb71a0030c2d2144227868c8"
+    },
+    "final-targeted": {
+      "tests": "27",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "17.491",
+      "sha256": "2864235791b48763cf9b8866e656a94dd4d1208cd5df8e0037d503ba5bd2345b"
+    },
+    "ingestion-encoding": {
+      "tests": "62",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "46.091",
+      "sha256": "1ef08bb6d47f847f17e1f055e41319411e8df50b913d0a428e0c5c48fb8f90a3"
+    },
+    "final-regression": {
+      "tests": "271",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "151.651",
+      "sha256": "fa79264affaa55e092d88ec034bdf35169ec47c1f5b3ccfadaf8fa0891deb187"
+    }
+  },
+  "excluded": "test_events.py opens real uvicorn sockets; coordinator E2E only",
+  "unresolved": [
+    "622-row onsite discrepancy",
+    "real TTFT accuracy",
+    "large historical catalog scale",
+    "independent contract freeze/browser E2E"
+  ]
+}

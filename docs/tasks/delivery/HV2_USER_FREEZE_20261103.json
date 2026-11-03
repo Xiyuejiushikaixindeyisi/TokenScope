@@ -1,0 +1,31 @@
+{
+  "status": "backend_independently_accepted",
+  "scope": "user monitoring discovery and automatic TTFT 2.1.0; no onsite calibration or frontend acceptance",
+  "session": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "head": "d55df94b6e58117a698dbd14667b7836e67cd50f",
+  "identity": "4d9e2e5d6c7031ff0aaa266114b92dbcb8684b9a80d722d2cfae9de8ad1d7dc0",
+  "files": {
+    "src/tokenscope/api/user.py": "5dd61592088354ab4b020f68fbef8b086b5346844bbaf6caa030f19b0b6c1830",
+    "src/tokenscope/user_monitoring/discovery_contracts.py": "814a58febb41db68ec4bd2bbb7c35569e09742446bbf9cb9502b4c1ea05dfb30",
+    "src/tokenscope/user_monitoring/discovery.py": "7e842a12f46a05095650aca5c4a8a99c92610f40e2cb1957f50c0d0561af90c1",
+    "src/tokenscope/user_monitoring/defaults.py": "e0710a9a3bfda5b3982bb60d53ab662158f19ce9655fc5c6b8e62207c6e75d45",
+    "tests/integration/monitoring/test_user_discovery_defaults.py": "f7ab6c6dda6b6c002400920b09cae5b8d85cea08ff8de26697907165d7308e8f",
+    "tests/integration/monitoring/test_user_trace_filter_audit.py": "a98f7ecb706f31b3b5c148703d1b308854b6882b6aeda3c77bd070ec78698a9f",
+    "tests/integration/monitoring/test_user_robustness.py": "b188e192fb09fe3141248ea5ed194d770b5987384b2dca682319855580a4e8d9",
+    "docs/contracts/user-monitoring-v2/2.0.0/README.md": "534038942cc01bce7d62e047ff1e89ae205cc0467789c011c9cbd0ebfd1c22a2",
+    "docs/contracts/user-monitoring-v2/2.0.0/design.openapi.json": "1f0e148dab552126b05ff4276606cb13b5cd758932fa4aa19043d2e978384e75",
+    "docs/contracts/user-monitoring-v2/2.0.0/examples.json": "a54ca1a4a5ffdd238e3efcc9cba01e78ccab0e3b7d21b689a630d99c795b6bd9",
+    "docs/contracts/user-monitoring-v2/2.0.0/manifest.json": "5404e735566ca46ad4e6885e9b9a6a6dc3e54c8a79fa42a929542c258d258e1a",
+    "docs/contracts/user-monitoring-v2/2.0.0/runtime.examples.json": "7bd3d9ba9372980e178e2d21937fb9774243270479bbac7090e5324e5eb6fd18",
+    "docs/contracts/user-monitoring-v2/2.0.0/runtime.openapi.json": "97a71ac19637e1fdbf6911ec55cd5a38f76deabe48a14f74949b0f476b990255",
+    "docs/contracts/user-monitoring-v2/2.0.0/schema.json": "3eee4349acefb3f30d62e4e80cf6ae6f7b94d08fa9003316803218e21999749d",
+    "docs/contracts/user-monitoring-v2/2.1.0/README.md": "dcb480fb73a7f86037647b226a375fbd2ab5e2a294b80c0da083a8efbf4bc66d",
+    "docs/contracts/user-monitoring-v2/2.1.0/examples.json": "22454fb39f7e220ae03ad87d61b2d645c03911579018334dc4d69bd6806fe9f4",
+    "docs/contracts/user-monitoring-v2/2.1.0/manifest.json": "4445e342eb40c51b95222fc5f8430f41e66e01a0b4b01253212e2a796a191cec",
+    "docs/contracts/user-monitoring-v2/2.1.0/runtime.openapi.json": "b56317e9bc9e83493458776a579a9fcb12e1b1e934d6254bf3063a9f2cae9a01",
+    "docs/contracts/user-monitoring-v2/2.1.0/schema.json": "bafca55ae1cba4087435046f2c08896f39d50a3f63eaa8d74681a0315d5ad497",
+    "env/encoding-assets.lock.json": "be74503d8a507066cb7a3d6797ba6481b0b9fd716bbbfcff8003c3cddd4e5c98",
+    "env/sources.lock.json": "365c017f4278196709ba0595d41709f104635ba2c1c8b6005593f3369aed4386",
+    "docs/tasks/monitoring/batches/B005.1/S0_CONTRACT.md": "973f202c54b72b798f292af78b8fe8596e8f65d415b803bebe9b879ccca8b130"
+  }
+}

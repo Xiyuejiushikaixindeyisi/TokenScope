@@ -1,5 +1,7 @@
 # achieve归档索引
 
+2026-11-03：[HV2实施前过期入口/记忆快照](2026-11-03/hv2-pre-implementation/README.md)；当前[执行板](../docs/tasks/delivery/HV2_REPAIR_EXECUTION_20261103.md)，公共/后端已冻结、前端接入中，完整验收交付未完成。
+
 2026-11-02当前：[V2批准交付](../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md) · [华为真实数据两阶段执行prompt](../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../docs/operations/DELIVERY_ACCEPTANCE_RULES.md) · [闭环归档](2026-11-02/v2-approved-delivery/README.md)。UIR-03由用户留V3，不是V2阻断；旧记录只作历史。
 
 2026-11-01：[异常分析RV2历史归档](2026-11-01/analysis-rv2/README.md)，8份AF闭环材料/旧prompt及3份记忆快照；HTML、冻结契约和原始证据保持原位。
@@ -21,3 +23,5 @@
 [本轮路径/摘要清单](2026-10-28/manifest.json)记录原路径、归档路径及整理前后SHA。归档正文只做导航链接修正，历史结论/批准/失败证据不改写；前后摘要不同不代表重新验收。清单不重算原有S0/验证/交付manifest。
 
 保留当前设计、契约、代码地图、联合报告、B006本轮交付及待现场部分、华为原报告和两类分析HTML参考。原始证据与本机/桌面包体不移动。总设计ID未知，不借用其他session ID。
+
+- [2026-11-03 HV2闭环准备与历史入口](2026-11-03/hv2-closed-preparation/README.md)：原字节保留，当前执行板继续有效。

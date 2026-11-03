@@ -1,0 +1,27 @@
+[
+  {
+    "path": "docs/tasks/length-analysis/HV2_TOKEN_PREP_20261103.md",
+    "archived": "achieve/2026-11-03/hv2-closed-preparation/docs/tasks/length-analysis/HV2_TOKEN_PREP_20261103.md",
+    "sha256": "324004305c5b27641c76edb312b318aaf2b995b18ce0a9eb1f61b2752d820819"
+  },
+  {
+    "path": "docs/tasks/viewer/analysis/HV2_FRONTEND_PREP_20261103.md",
+    "archived": "achieve/2026-11-03/hv2-closed-preparation/docs/tasks/viewer/analysis/HV2_FRONTEND_PREP_20261103.md",
+    "sha256": "fb0b5e951c3f8c7bf862a5d2d1cdd88fd2c003882426243b45404ab27d9cfe5f"
+  },
+  {
+    "path": "docs/tasks/viewer/monitoring-v2/HV2_FRONTEND_PREP_20261103.md",
+    "archived": "achieve/2026-11-03/hv2-closed-preparation/docs/tasks/viewer/monitoring-v2/HV2_FRONTEND_PREP_20261103.md",
+    "sha256": "4f48756c17f6802488593052d0e10f3b7ca73bbfd5127a97355577bada1ac5dd"
+  },
+  {
+    "path": "prompts/delivery/HUAWEI_V2_READONLY_INVESTIGATION_20261103.md",
+    "archived": "achieve/2026-11-03/hv2-closed-preparation/prompts/delivery/HUAWEI_V2_READONLY_INVESTIGATION_20261103.md",
+    "sha256": "ffe613b70b374250283d7a09ac6a72ee31a8ea17870668dcceb9a2d2e5cbe8a4"
+  },
+  {
+    "path": "docs/tasks/delivery/MONITORING_V2_STATUS.md",
+    "archived": "achieve/2026-11-03/hv2-closed-preparation/docs/tasks/delivery/MONITORING_V2_STATUS.md",
+    "sha256": "ae0bc4fa36bf29de5a3e21f0bbb2cd95de6075eb55e03916de0ea29f6cb5e58a"
+  }
+]

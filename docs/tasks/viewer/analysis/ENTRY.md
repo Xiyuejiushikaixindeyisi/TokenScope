@@ -1,5 +1,13 @@
 # 异常分析前端入口
 
+2026-11-03总设计师阶段同步：五项后端已独立验收冻结，两前端接入及HV2-AF-01/MF-02修复完成；根339项前端、88项最终浏览器通过（原失败与测试修正分别保留）。本线窗口关闭，统一版本与容器交付由V2总设计师继续；华为真实数据仍待验。[实际独立验收](../../delivery/HV2_INDEPENDENT_ACCEPTANCE_20261103.md)。下方旧阶段按历史阅读。
+
+2026-11-03定向测试增量完成：仅适配analysis-boundaries/review-regressions浏览器fixture及新增analysis-v2-fixtures辅助文件，显式v2握手/目录、精确scope绑定和旧not_computed execution，partial-only按新契约验收自动可读及部分状态。typecheck及无浏览器四组Schema校验通过，原断言除已批准partial期望外全部保留；c3产品与原18项本线SHA未变。测试SHA与边界见[交接顶部addendum](HV2_FRONTEND_HANDOFF_20261103.md)，测试窗口已关闭，浏览器由总设计师统一运行，本线未开服务/Git/打包。
+
+2026-11-03 HV2-R3正式接入完成，源码窗口关闭，交总设计师独立复审：[最终交接](HV2_FRONTEND_HANDOFF_20261103.md)。候选viewer-analysis-hv2-r3-20261103-c3，本线18项组合SHA `61a430bf0ffe931fa5e91713e1a5455b0d518fc2e1293620ed1373cbe105735c`。335单元/组件、typecheck/lint/独立dist build通过，240前端输入前后一致；1项无监听TestClient及实际响应消费通过。已修v2 selected_reports/partial发现、执行原因、HV2-AF-01分页缓存与v2元数据隔离、来源封存身份/revision核验。not_computed当前后端仍0差异组，不造结果、不放松一致性。未启动HTTP/browser E2E、提交/push/Docker/打包；冷浏览器与视觉由总设计师独立验收，UIR-03保持V3。
+
+2026-11-03 HV2-R1：异常前端只读接入准备完成，见 [HV2_FRONTEND_PREP](HV2_FRONTEND_PREP_20261103.md)。已核对批准HTML/现场原件SHA、实际目录与报告读取链，列出partial-only发现、ready优先、方向/历史隔离、空建议原因及L4/L5验收方案。未改产品/测试代码、未启动服务或构建，等待公共层及相关后端独立验收、契约冻结和正式接入任务。当前不是重做旧UIR，以下交付记录为历史。
+
 2026-11-02统一交付同步：V2已完成WSL打包、桌面全文件SHA核对，华为真实数据待验；用户认可V2可交付，UIR-03暂不修、留V3，不作V2阻断。本角色职责/休眠状态不变；当前发布与实际结果见[交付记录](../../delivery/V2_APPROVED_DELIVERY_20261102.md)。现场只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）和MA，第一次用户验收并指定appid后才两类异常；SSH18002，唯一Markdown嵌关键源码/证据。[当前prompt](../../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../../../operations/DELIVERY_ACCEPTANCE_RULES.md)。下方旧开发/交接状态按历史阅读，不覆盖本决定。
 
 2026-11-02 UIR-01鼠标单项修复完成自测，候选viewer-uir01-pointer-fix-20261102-c1；[交接](../../../../achieve/2026-11-02/v2-approved-delivery/docs/tasks/viewer/monitoring-v2/UIR01_POINTER_FIX_HANDOFF_20261102.md)。仅用SVG实际screen CTM逆变换修正指针，布局/后端不变。226单元组件、85不同浏览器用例、144真实圆点检查通过；c2负向2项按预期失败；118地址重启一致，重启7项通过。原18项/UIR-02/排行/L4L5/T2–T4保持，窗口释放交审查会话独立复审，未提交/push/打包，不代用户认可。实际session 01a19111-344a-75c1-84e0-14db8be08f4f。

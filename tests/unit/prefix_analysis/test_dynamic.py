@@ -57,3 +57,40 @@ def test_tool_path_and_real_source_pointer():
     assert any(rule == "L3" and recipe is None for rule, _, recipe in matches)
     assert pair_dynamics({"messages": []}, after) == [("L3", "/tools", None)]
     assert pair_dynamics(before, {"messages": [], "tools": []}) == [("L3", "/tools", None)]
+
+
+def test_identical_and_changed_text_fast_path_matches_original():
+    import random
+
+    from tokenscope.prefix_analysis.dynamic import dynamic_recipes, slots_in_text, text_shape
+
+    def original(left, right):
+        before, after = slots_in_text(left), slots_in_text(right)
+        shape = text_shape(right, after)
+        if len(before) != len(after) or text_shape(left, before) != shape:
+            return []
+        return [
+            {"kind": "dynamic_remove", "pattern": b[2], "slot_index": i, "shape": shape}
+            for i, (a, b) in enumerate(zip(before, after, strict=True))
+            if a[3] != b[3]
+        ]
+
+    values = [
+        "",
+        "中文 😀",
+        "same schema " * 100,
+        "2026-11-03",
+        "/tmp/job-1",
+        "x-anthropic-billing-header: cc_version=1; cch=abc;\n",
+        "escaped \\ path",
+        "2026-11-03 /tmp/a",
+    ]
+    rng = random.Random(20261103)
+    values += [
+        f"prefix {rng.randrange(10)} /tmp/job-{rng.randrange(10)} "
+        f"2026-11-{rng.randrange(1, 29):02d}"
+        for _ in range(24)
+    ]
+    for left in values:
+        for right in values:
+            assert dynamic_recipes(left, right) == original(left, right)

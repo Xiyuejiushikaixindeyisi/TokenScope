@@ -1,0 +1,1323 @@
+{
+  "$defs": {
+    "AutoEvaluation": {
+      "additionalProperties": false,
+      "properties": {
+        "evaluation_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Evaluation Id",
+          "type": "string"
+        },
+        "service_instance_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Service Instance Id",
+          "type": "string"
+        },
+        "contract_version": {
+          "const": "2.1.0",
+          "default": "2.1.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "request": {
+          "$ref": "#/$defs/AutoEvaluationRequest"
+        },
+        "source": {
+          "$ref": "#/$defs/TraceSource"
+        },
+        "defaults": {
+          "$ref": "#/$defs/DefaultConfig"
+        },
+        "chunk_tokens_origin": {
+          "enum": [
+            "model_default",
+            "request_override"
+          ],
+          "title": "Chunk Tokens Origin",
+          "type": "string"
+        },
+        "tau_scaled": {
+          "const": false,
+          "default": false,
+          "title": "Tau Scaled",
+          "type": "boolean"
+        },
+        "evaluation": {
+          "$ref": "#/$defs/Evaluation"
+        }
+      },
+      "required": [
+        "evaluation_id",
+        "service_instance_id",
+        "request",
+        "source",
+        "defaults",
+        "chunk_tokens_origin",
+        "evaluation"
+      ],
+      "title": "AutoEvaluation",
+      "type": "object"
+    },
+    "AutoEvaluationRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "submission_key": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Submission Key",
+          "type": "string"
+        },
+        "user_run_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "User Run Id",
+          "type": "string"
+        },
+        "appid": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Appid",
+          "type": "string"
+        },
+        "index_revision": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Index Revision",
+          "type": "string"
+        },
+        "target_seconds": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+          "title": "Target Seconds",
+          "type": "string"
+        },
+        "waiting_seconds": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+          "title": "Waiting Seconds",
+          "type": "string"
+        },
+        "comparator": {
+          "default": "le",
+          "enum": [
+            "le",
+            "lt"
+          ],
+          "title": "Comparator",
+          "type": "string"
+        },
+        "chunk_tokens": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Chunk Tokens"
+        },
+        "default_revision": {
+          "anyOf": [
+            {
+              "maxLength": 18,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Default Revision"
+        }
+      },
+      "required": [
+        "submission_key",
+        "user_run_id",
+        "appid",
+        "index_revision",
+        "target_seconds",
+        "waiting_seconds"
+      ],
+      "title": "AutoEvaluationRequest",
+      "type": "object"
+    },
+    "BatchScenario": {
+      "additionalProperties": false,
+      "description": "Explicit total-noncompute reference; batch budget is assumed per-request progress.",
+      "properties": {
+        "timing_model": {
+          "const": "batch_reference_total_noncompute_v1",
+          "title": "Timing Model",
+          "type": "string"
+        },
+        "scenario_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "revision": {
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Revision",
+          "type": "string"
+        },
+        "model_id": {
+          "enum": [
+            "GLM-5.2",
+            "Qwen3.6-27B",
+            "DeepSeek-V4-Flash-0731"
+          ],
+          "title": "Model Id",
+          "type": "string"
+        },
+        "common_name": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Common Name",
+          "type": "string"
+        },
+        "deployment": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Deployment",
+          "type": "string"
+        },
+        "source": {
+          "enum": [
+            "user_assumption",
+            "verified_measurement"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "source_description": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Source Description",
+          "type": "string"
+        },
+        "chunk_tokens": {
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Chunk Tokens",
+          "type": "string"
+        },
+        "chunk_seconds": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+          "title": "Chunk Seconds",
+          "type": "string"
+        },
+        "measurement_boundary": {
+          "const": "GF dispatch to first token",
+          "default": "GF dispatch to first token",
+          "title": "Measurement Boundary",
+          "type": "string"
+        },
+        "workload_description": {
+          "anyOf": [
+            {
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Workload Description"
+        },
+        "thinking_mode": {
+          "anyOf": [
+            {
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Thinking Mode"
+        },
+        "min_prompt_tokens": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Prompt Tokens"
+        },
+        "max_prompt_tokens": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "pattern": "^[1-9][0-9]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Prompt Tokens"
+        },
+        "evidence_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Sha256"
+        },
+        "sample_count": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sample Count"
+        },
+        "calibration_notes": {
+          "anyOf": [
+            {
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Calibration Notes"
+        }
+      },
+      "required": [
+        "timing_model",
+        "scenario_id",
+        "revision",
+        "model_id",
+        "common_name",
+        "deployment",
+        "source",
+        "source_description",
+        "chunk_tokens",
+        "chunk_seconds"
+      ],
+      "title": "BatchScenario",
+      "type": "object"
+    },
+    "DefaultConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "common_name": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Common Name",
+          "type": "string"
+        },
+        "model_id": {
+          "enum": [
+            "GLM-5.2",
+            "Qwen3.6-27B",
+            "DeepSeek-V4-Flash-0731"
+          ],
+          "title": "Model Id",
+          "type": "string"
+        },
+        "revision": {
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Revision",
+          "type": "string"
+        },
+        "chunk_tokens": {
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Chunk Tokens",
+          "type": "string"
+        },
+        "chunk_seconds": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Chunk Seconds"
+        },
+        "tau_reference_chunk_tokens": {
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Tau Reference Chunk Tokens",
+          "type": "string"
+        },
+        "source": {
+          "const": "user_provided",
+          "default": "user_provided",
+          "title": "Source",
+          "type": "string"
+        },
+        "source_description": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Source Description",
+          "type": "string"
+        },
+        "recorded_at": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Recorded At",
+          "type": "string"
+        },
+        "calibrated": {
+          "const": false,
+          "default": false,
+          "title": "Calibrated",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "common_name",
+        "model_id",
+        "revision",
+        "chunk_tokens",
+        "chunk_seconds",
+        "tau_reference_chunk_tokens",
+        "source_description",
+        "recorded_at"
+      ],
+      "title": "DefaultConfig",
+      "type": "object"
+    },
+    "DefaultPage": {
+      "additionalProperties": false,
+      "properties": {
+        "service_instance_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Service Instance Id",
+          "type": "string"
+        },
+        "contract_version": {
+          "const": "2.1.0",
+          "default": "2.1.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "configs": {
+          "items": {
+            "$ref": "#/$defs/DefaultConfig"
+          },
+          "title": "Configs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "service_instance_id",
+        "configs"
+      ],
+      "title": "DefaultPage",
+      "type": "object"
+    },
+    "DefaultQuery": {
+      "additionalProperties": false,
+      "properties": {
+        "common_name": {
+          "anyOf": [
+            {
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Common Name"
+        },
+        "model_id": {
+          "anyOf": [
+            {
+              "enum": [
+                "GLM-5.2",
+                "Qwen3.6-27B",
+                "DeepSeek-V4-Flash-0731"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Id"
+        },
+        "revision": {
+          "anyOf": [
+            {
+              "maxLength": 18,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Revision"
+        }
+      },
+      "title": "DefaultQuery",
+      "type": "object"
+    },
+    "DefaultUpdate": {
+      "additionalProperties": false,
+      "properties": {
+        "submission_key": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Submission Key",
+          "type": "string"
+        },
+        "common_name": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Common Name",
+          "type": "string"
+        },
+        "model_id": {
+          "enum": [
+            "GLM-5.2",
+            "Qwen3.6-27B",
+            "DeepSeek-V4-Flash-0731"
+          ],
+          "title": "Model Id",
+          "type": "string"
+        },
+        "expected_revision": {
+          "maxLength": 18,
+          "pattern": "^(0|[1-9][0-9]*)$",
+          "title": "Expected Revision",
+          "type": "string"
+        },
+        "chunk_tokens": {
+          "default": "8192",
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Chunk Tokens",
+          "type": "string"
+        },
+        "chunk_seconds": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Chunk Seconds"
+        },
+        "tau_reference_chunk_tokens": {
+          "default": "8192",
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Tau Reference Chunk Tokens",
+          "type": "string"
+        },
+        "source_description": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Source Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "submission_key",
+        "common_name",
+        "model_id",
+        "expected_revision",
+        "chunk_seconds",
+        "source_description"
+      ],
+      "title": "DefaultUpdate",
+      "type": "object"
+    },
+    "DiscoveryEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/TraceSource"
+        },
+        "appid": {
+          "anyOf": [
+            {
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Appid"
+        },
+        "state": {
+          "enum": [
+            "ready",
+            "empty"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "registration_order": {
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Registration Order",
+          "type": "string"
+        },
+        "is_default": {
+          "title": "Is Default",
+          "type": "boolean"
+        },
+        "request_count": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)$",
+          "title": "Request Count",
+          "type": "string"
+        },
+        "prompt_p90": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Prompt P90"
+        }
+      },
+      "required": [
+        "source",
+        "appid",
+        "state",
+        "registration_order",
+        "is_default",
+        "request_count",
+        "prompt_p90"
+      ],
+      "title": "DiscoveryEntry",
+      "type": "object"
+    },
+    "DiscoveryPage": {
+      "additionalProperties": false,
+      "properties": {
+        "service_instance_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Service Instance Id",
+          "type": "string"
+        },
+        "contract_version": {
+          "const": "2.1.0",
+          "default": "2.1.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "snapshot": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Snapshot",
+          "type": "string"
+        },
+        "default_policy": {
+          "const": "latest_registered_published_run_per_appid_model_service",
+          "default": "latest_registered_published_run_per_appid_model_service",
+          "title": "Default Policy",
+          "type": "string"
+        },
+        "total": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)$",
+          "title": "Total",
+          "type": "string"
+        },
+        "next_offset": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Next Offset"
+        },
+        "entries": {
+          "items": {
+            "$ref": "#/$defs/DiscoveryEntry"
+          },
+          "title": "Entries",
+          "type": "array"
+        }
+      },
+      "required": [
+        "service_instance_id",
+        "snapshot",
+        "total",
+        "next_offset",
+        "entries"
+      ],
+      "title": "DiscoveryPage",
+      "type": "object"
+    },
+    "DiscoveryQuery": {
+      "additionalProperties": false,
+      "properties": {
+        "appid": {
+          "anyOf": [
+            {
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Appid"
+        },
+        "common_name": {
+          "anyOf": [
+            {
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Common Name"
+        },
+        "model_id": {
+          "anyOf": [
+            {
+              "enum": [
+                "GLM-5.2",
+                "Qwen3.6-27B",
+                "DeepSeek-V4-Flash-0731"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Id"
+        },
+        "user_run_id": {
+          "anyOf": [
+            {
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "User Run Id"
+        },
+        "snapshot": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Snapshot"
+        },
+        "offset": {
+          "default": "0",
+          "maxLength": 18,
+          "pattern": "^(0|[1-9][0-9]*)$",
+          "title": "Offset",
+          "type": "string"
+        },
+        "limit": {
+          "default": 100,
+          "maximum": 1000,
+          "minimum": 1,
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "title": "DiscoveryQuery",
+      "type": "object"
+    },
+    "Evaluation": {
+      "additionalProperties": false,
+      "properties": {
+        "evaluation_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Evaluation Id",
+          "type": "string"
+        },
+        "service_instance_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Service Instance Id",
+          "type": "string"
+        },
+        "request": {
+          "$ref": "#/$defs/EvaluationRequest"
+        },
+        "scenario": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Scenario"
+            },
+            {
+              "$ref": "#/$defs/BatchScenario"
+            }
+          ],
+          "title": "Scenario"
+        },
+        "status": {
+          "enum": [
+            "reference",
+            "reference_with_limit",
+            "no_budget",
+            "out_of_scope",
+            "unavailable"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "maxLength": 4096,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reason"
+        },
+        "request_count": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)$",
+          "title": "Request Count",
+          "type": "string"
+        },
+        "prompt_p90": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Prompt P90"
+        },
+        "allowed_chunks": {
+          "anyOf": [
+            {
+              "maxLength": 256,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Allowed Chunks"
+        },
+        "computable_tokens": {
+          "anyOf": [
+            {
+              "maxLength": 128,
+              "pattern": "^(0|[1-9][0-9]*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Computable Tokens"
+        },
+        "required_hit_fraction": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Fraction"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "required_hit_rate": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Required Hit Rate"
+        },
+        "limitations": {
+          "items": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "evaluation_id",
+        "service_instance_id",
+        "request",
+        "scenario",
+        "status",
+        "reason",
+        "request_count",
+        "prompt_p90",
+        "allowed_chunks",
+        "computable_tokens",
+        "required_hit_fraction",
+        "required_hit_rate",
+        "limitations"
+      ],
+      "title": "Evaluation",
+      "type": "object"
+    },
+    "EvaluationRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "submission_key": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Submission Key",
+          "type": "string"
+        },
+        "user_run_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "User Run Id",
+          "type": "string"
+        },
+        "appid": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Appid",
+          "type": "string"
+        },
+        "scenario_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "scenario_revision": {
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Scenario Revision",
+          "type": "string"
+        },
+        "target_seconds": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+          "title": "Target Seconds",
+          "type": "string"
+        },
+        "waiting_seconds": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+          "title": "Waiting Seconds",
+          "type": "string"
+        },
+        "comparator": {
+          "enum": [
+            "le",
+            "lt"
+          ],
+          "title": "Comparator",
+          "type": "string"
+        }
+      },
+      "required": [
+        "submission_key",
+        "user_run_id",
+        "appid",
+        "scenario_id",
+        "scenario_revision",
+        "target_seconds",
+        "waiting_seconds",
+        "comparator"
+      ],
+      "title": "EvaluationRequest",
+      "type": "object"
+    },
+    "Fraction": {
+      "additionalProperties": false,
+      "properties": {
+        "numerator": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)$",
+          "title": "Numerator",
+          "type": "string"
+        },
+        "denominator": {
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Denominator",
+          "type": "string"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "title": "Fraction",
+      "type": "object"
+    },
+    "Scenario": {
+      "additionalProperties": false,
+      "properties": {
+        "scenario_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "revision": {
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Revision",
+          "type": "string"
+        },
+        "model_id": {
+          "enum": [
+            "GLM-5.2",
+            "Qwen3.6-27B",
+            "DeepSeek-V4-Flash-0731"
+          ],
+          "title": "Model Id",
+          "type": "string"
+        },
+        "common_name": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Common Name",
+          "type": "string"
+        },
+        "deployment": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Deployment",
+          "type": "string"
+        },
+        "source": {
+          "enum": [
+            "user_assumption",
+            "verified_measurement"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "source_description": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Source Description",
+          "type": "string"
+        },
+        "evidence_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Evidence Sha256"
+        },
+        "measurement_boundary": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Measurement Boundary",
+          "type": "string"
+        },
+        "workload_description": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Workload Description",
+          "type": "string"
+        },
+        "thinking_mode": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Thinking Mode",
+          "type": "string"
+        },
+        "min_prompt_tokens": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)$",
+          "title": "Min Prompt Tokens",
+          "type": "string"
+        },
+        "max_prompt_tokens": {
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Max Prompt Tokens",
+          "type": "string"
+        },
+        "chunk_tokens": {
+          "maxLength": 128,
+          "pattern": "^[1-9][0-9]*$",
+          "title": "Chunk Tokens",
+          "type": "string"
+        },
+        "chunk_seconds": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+          "title": "Chunk Seconds",
+          "type": "string"
+        },
+        "overhead_seconds": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+          "title": "Overhead Seconds",
+          "type": "string"
+        },
+        "sample_count": {
+          "maxLength": 128,
+          "pattern": "^(0|[1-9][0-9]*)$",
+          "title": "Sample Count",
+          "type": "string"
+        },
+        "calibration_notes": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Calibration Notes",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scenario_id",
+        "revision",
+        "model_id",
+        "common_name",
+        "deployment",
+        "source",
+        "source_description",
+        "evidence_sha256",
+        "measurement_boundary",
+        "workload_description",
+        "thinking_mode",
+        "min_prompt_tokens",
+        "max_prompt_tokens",
+        "chunk_tokens",
+        "chunk_seconds",
+        "overhead_seconds",
+        "sample_count",
+        "calibration_notes"
+      ],
+      "title": "Scenario",
+      "type": "object"
+    },
+    "TraceSource": {
+      "additionalProperties": false,
+      "properties": {
+        "dataset_kind": {
+          "const": "trace",
+          "default": "trace",
+          "title": "Dataset Kind",
+          "type": "string"
+        },
+        "source_kind": {
+          "const": "user_v2",
+          "default": "user_v2",
+          "title": "Source Kind",
+          "type": "string"
+        },
+        "base_run_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Base Run Id",
+          "type": "string"
+        },
+        "user_run_id": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "User Run Id",
+          "type": "string"
+        },
+        "common_name": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Common Name",
+          "type": "string"
+        },
+        "model_id": {
+          "enum": [
+            "GLM-5.2",
+            "Qwen3.6-27B",
+            "DeepSeek-V4-Flash-0731"
+          ],
+          "title": "Model Id",
+          "type": "string"
+        },
+        "index_revision": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Index Revision",
+          "type": "string"
+        },
+        "input_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Input Sha256",
+          "type": "string"
+        },
+        "manifest_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Manifest Sha256",
+          "type": "string"
+        },
+        "settings_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Settings Sha256",
+          "type": "string"
+        },
+        "encoder_identity": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Encoder Identity",
+          "type": "string"
+        },
+        "asset_identity": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Asset Identity",
+          "type": "string"
+        },
+        "file_observed_time_range_utc": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "anyOf": [
+                {
+                  "maxLength": 4096,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            {
+              "anyOf": [
+                {
+                  "maxLength": 4096,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          ],
+          "title": "File Observed Time Range Utc",
+          "type": "array"
+        },
+        "range_kind": {
+          "const": "entire_appid_valid_set",
+          "default": "entire_appid_valid_set",
+          "title": "Range Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "base_run_id",
+        "user_run_id",
+        "common_name",
+        "model_id",
+        "index_revision",
+        "input_sha256",
+        "manifest_sha256",
+        "settings_sha256",
+        "encoder_identity",
+        "asset_identity",
+        "file_observed_time_range_utc"
+      ],
+      "title": "TraceSource",
+      "type": "object"
+    }
+  },
+  "title": "User monitoring 2.1.0 candidate",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,11 +1,13 @@
 # 当前状态
 
-2026-11-02：V2批准版`tokenscope-v2-approved-20261102`已完成固定源码push、WSL构建、容器独立复验、代码/镜像打包和Windows桌面14文件SHA一致交付。WSL原件/旧包保留，backup仅本地；华为真实数据尚未执行。[版本/文件/校验与回退](../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
+2026-11-03：本会话 `01a1800e-80b4-7400-a78b-a84f5b6e888d` 为用户指定的**V2版本总设计师**。已实际向六个既有session派发，先独立验收异常公共层，再冻结用户/MA/低命中/Token后端后安排前端接入；五关及两前端均已闭环。根339项前端检查、新候选88项浏览器、135项鼠标数值核对及156资源/业务行重启一致性通过；最终视觉收尾后统一提交/push、WSL固定commit构建和桌面交付。**当前未发布本轮源码或包体；容器/桌面/现场仍待完成。** 用户已连续授权后续工作，不重复索取同范围批准。[执行板](../docs/tasks/delivery/HV2_REPAIR_EXECUTION_20261103.md) · [独立验收](../docs/tasks/delivery/HV2_INDEPENDENT_ACCEPTANCE_20261103.md) · [版本身份](../docs/tasks/delivery/VERSION_HV2_20261103.json)。
 
-源码`b17cdc07b0a351d0f5c4fb1b26f0e05be2b3a0af`，镜像`sha256:a38d0ab2cfe26154c96adb5e876538893005e5cb100fc5c53640823c391683a8`。容器85浏览器、135鼠标点、15范围、120地址恢复通过，11重启复测不累加；四入口/批准HTML/L4L5与已复审c1资源一致。UIR-01/02闭环，UIR-03按用户决定留V3、不修、不阻断V2。
+修复覆盖：同APPID全部模型与固定历史发现、异常方向/扫描及保留预算/partial成果发现、MA独立与配对指标缺数解释、自动TTFT默认值。审查另闭环HV2-AF-01分页缓存版本键与HV2-MF-02自动恢复关闭用户新表单。原失败日志、测试适配及修复负向控制保留，不能把所有超时当选择器问题。
 
-华为只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）再MA→第一次用户验收→用户指定appid→两类异常→第二次验收。SSH18002；唯一Markdown嵌关键源码/diff/问题复现和证据。[当前执行prompt](../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md)。真实TTFT参数/校准、MA配对、编码模式和业务依据现场核实，不能造数或代签。
+TTFT用户提供默认：Qwen-V3.6-27B **1s**、GLM-V5.2 **2.7s**、DeepSeek-V4-Flash **2.6s**；K=8192、可选修改，不随K自动缩放τ，日常只填等待时间W和SLO。参数是用户假设、未性能校准。用户监控和异常分析使用同一Trace模型规格；MA使用独立数据集/模型制品。
 
-本地测试容器/本次私有daemon已停、Windows/WSL端口关闭，证据与state保留。每次新候选验收先停旧服务，空state/new dist/新浏览器；[长期教训](DELIVERY_LESSONS.md) · [固定规则](../docs/operations/DELIVERY_ACCEPTANCE_RULES.md)禁止再犯展示偏移、旧服务混淆、记忆滞后、改用户计划和不合格prompt。
+[二次验收](../docs/huawei/HUAWEI_V2_ACCEPTANCE_REPORT.md)及[调查原件](../docs/huawei/HUAWEI_V2_INVESTIGATION_REPORT_20261103.md)只读保持。真实量级/预算、622条差异、MA完整SHA与UUID/冲突边界、DeepSeek原始cached缺失、新tools/messages探测器正反例和收益依据仍需现场补证；本机合成通过不代签现场。partial不改ready，缺失不补0，不按品牌判根因，不擅自新增recipe/T1/hybrid/Agent。
 
-[SESSIONS](SESSIONS.md)为角色权威，其他8份未完成修改保留；V1/总设计休眠，hybrid/自进化Agent未启动。[闭环归档](../achieve/2026-11-02/v2-approved-delivery/README.md)保存历史原文，最新决定优先。
+保持批准四入口UI-02/UI-04和L4/L5；UIR-03按用户留V3。每个新候选必须停旧服务/进程/容器、确认端口释放，空state/新浏览器。华为真实Trace3/MA18 CSV，先用户监控（搜索/排序/TTFT）后MA，第一次用户验收后由用户指定appid/模型/方向才做异常分析；SSH18002，最终唯一Markdown嵌关键源码/diff/证据。[新版现场prompt](../prompts/delivery/HUAWEI_V2_HV2_REAL_DATA_20261103.md)仅随同名已校验实包执行。[固定规则](../docs/operations/DELIVERY_ACCEPTANCE_RULES.md) · [教训](DELIVERY_LESSONS.md)。
+
+旧包/state/证据和本地backup均保留：[回退身份](../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。交付包不上GitHub；精确main提交保留其他session原有8份未提交修改。六线维护窗口已关闭，历史全项目总设计及V1继续休眠。[SESSIONS](SESSIONS.md) · [闭环准备归档](../achieve/2026-11-03/hv2-closed-preparation/README.md)。

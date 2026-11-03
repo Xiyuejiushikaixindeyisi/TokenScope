@@ -1,5 +1,14 @@
 # 低命中后端与公共层当前记忆
 
+2026-11-03最新：HV2-R2-LOWHIT已由总设计师独立验收通过，冻结identity `10f643bc56fa59936dcfd7d17f4aabf1163aba4d479c47662366d13c879e011b`，本次逐文件核对匹配。按独立验收回执：62项通过/201.93s，源码前后稳定，公共冻结仅两份已授权prefix适配变化；该结果归审查方，本次未重跑测试。异常前端接入已正式派发，**后端源码窗口关闭**，仅待总设计师E2E发现问题后定向修复，不自行恢复开发/复测/旧arpc或RV2提交任务。现场预算、真实正反例、生产收益与容量缺口保持，本机profile不代表现场通过。不改冻结源码/测试/交接身份，不commit/push、监听、打包部署。[权威冻结](../../docs/tasks/delivery/HV2_LOW_HIT_FREEZE_20261103.json)。下方待验收文字为历史时点；本次仅增量更新ENTRY及本线记忆，历史身份清单不回写。
+
+
+2026-11-03 HV2-R2-LOWHIT本线完成、待第二关独立验收：公共第一关已通过且窗口关闭；低命中3源码最小修复（保留候选截断及硬停止双原因、相同字符串跳过无效正则）。47项本线/公共调用＋15项gate/资源回归通过，11源码mypy/ruff通过；60个合成profile、24检测配置前后证据一致。仅本线源码/测试/文档记忆，原公共冻结不回写；华为预算/抽样prompt已提供，Qwen仍仅low_hit，未代签现场/前端，不commit/push、打包部署。[实际交接](../../docs/tasks/prefix-analysis/HV2_LOW_HIT_BACKEND_HANDOFF_20261103.md)。
+
+
+2026-11-03 HV2-R1-COMMON本线实施完成，候选hv2-common-local-1待总设计师独立验收：显式v2方向、规则保留/比较与方向预算隔离、published partial fallback、空recipe快路径、实测遥测及真实create_app接入。331项公共/低命中/Token联合通过；末项empty投影修正后23项v2专项、46源码mypy/ruff通过，旧27项冻结身份保持。只改公共及必要低命中调用适配，未改Token私有/前端；公共第一关通过前不进入私有第二阶段。不commit/push、打包部署。[实际交接](../../docs/tasks/prefix-analysis/HV2_COMMON_HANDOFF_20261103.md)。下方arpc/RV1/RV2是历史，不代替本轮验收。
+
+
 2026-11-02当前交付决定：用户认可V2可交付，UIR-03留V3、不阻断；审查打包已完成源码push、WSL构建/包体与桌面全SHA交付；华为真实数据待验。角色职责保持，以下旧暂停/阻断/合成现场计划只是历史。现场真实数据、两次人工验收、SSH18002、唯一Markdown要求及不得再犯的问题见[长期记忆](../DELIVERY_LESSONS.md)；当前结果看[交付记录](../../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
 
 2026-11-01 Token依赖复审回执已核对：[实际报告](../../docs/tasks/length-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md)确认T2–T4+arpc-local-4通过并保留限制，164本线/12独立边界/14 ART4 GET，无阻断或源码修复，未占公共窗口。RV2-L清单中“Token复审进行中”为交接时点，现以本报告更新；冻结清单不回写。本记忆为清单后增量，总负责提交前重新计摘要。tool_calls:null保守partial、生产策略/引用/用户及现场验收限制保持。

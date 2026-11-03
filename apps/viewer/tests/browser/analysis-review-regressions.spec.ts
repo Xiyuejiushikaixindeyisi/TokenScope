@@ -2,6 +2,7 @@ import { test, expect, type Page, type Route } from '@playwright/test';
 import fs from 'node:fs';
 import legacy from '../../../../docs/tasks/prefix-analysis/FRONTEND_READONLY_EXAMPLES.json' with { type: 'json' };
 import schemas from '../../src/api/analysis/generated/analysis-recommendations-1.json' with { type: 'json' };
+import { catalogV2, executionCapabilities, legacyExecution, scopeBinding, taskFromPath } from './analysis-v2-fixtures';
 
 type O = Record<string, unknown>;
 type Sample = { task_id: string; report_sha256: string; report: O; responses: Record<string, O>; examples: Record<string, O> };
@@ -10,23 +11,30 @@ const samples = datasets.datasets[0]!.tasks;
 const a = samples.find(x => (x.report.scope as O).appid === 'a')!;
 const b = samples.find(x => (x.report.scope as O).appid === 'representation')!;
 const base = legacy.ready_chain.responses['/diagnostics/discovery/catalog'].body;
-const entry = (s: Sample, i: number) => ({ ...base.items[0]!, task_id: s.task_id, scope: s.report.scope, scope_id: s.report.scope_id, report_digest: s.report_sha256, sequence: String(i + 1), directions: ['low_hit'], binding_id: `review-binding-${i}`, binding: { ...base.items[0]!.binding, appid: (s.report.scope as O).appid } });
+const entry = (s: Sample, i: number) => ({ ...base.items[0]!, task_id: s.task_id, scope: s.report.scope, scope_id: s.report.scope_id, report_digest: s.report_sha256, sequence: String(i + 1), directions: ['low_hit'], binding_id: `review-binding-${i}`, binding: scopeBinding(s.report.scope as O) });
 const items = [entry(a, 0), entry(b, 1)];
 const catalog = { ...base, items, defaults: items.map(x => ({ ...base.defaults.find(d => d.direction === 'low_hit')!, binding_id: x.binding_id, task_id: x.task_id, sequence: x.sequence })) };
 const delay = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
 
 async function intercept(page: Page, options: { catalog?: unknown; report?: (route: Route) => Promise<void>; recommendations?: (route: Route, body: O) => Promise<void> } = {}) {
     const calls: string[] = [];
+    const directory = catalogV2(options.catalog ?? catalog);
     await page.route('**/diagnostics/**', async route => {
         const u = new URL(route.request().url()), p = decodeURIComponent(u.pathname);
         calls.push(p);
+        if (p === '/diagnostics/v2/capabilities') return route.fulfill({ json: executionCapabilities });
         if (p === '/diagnostics/recommendations/capabilities') return route.fulfill({ json: { version: 'analysis-recommendations-1', service_instance_id: 'fixture-instance', read_only: true, token_rule_ids: ['T2', 'T3', 'T4'], schemas: schemas.models } });
         if (p.endsWith('/capabilities')) return route.fulfill({ json: p.includes('/discovery/') ? { version: 'diagnostics-discovery-1', service_instance_id: 'fixture-instance' } : { contract_version: 'analysis-common-1.0', http_version: 'diagnostics-http-1', service_instance_id: 'fixture-instance' } });
         // Hold the subscription open; these tests exercise UI races, not synthetic SSE completion.
         if (p.endsWith('/events')) return;
-        if (p.endsWith('/catalog')) return route.fulfill({ json: options.catalog ?? catalog });
-        const s = samples.find(x => x.task_id === p.split('/')[3]);
+        if (p === '/diagnostics/v2/catalog') return route.fulfill({ json: directory });
+        const task = taskFromPath(p);
+        const s = samples.find(x => x.task_id === task);
         if (!s) return route.fulfill({ status: 404, json: { error: { code: 'NOT_FOUND', message: 'unknown task' } } });
+        if (p === `/diagnostics/v2/tasks/${task}/execution`) {
+            const selected = directory.items.find(x => x.task_id === task);
+            return selected ? route.fulfill({ json: legacyExecution(selected) }) : route.fulfill({ status: 404, json: { error: { code: 'NOT_FOUND', message: 'task absent from directory' } } });
+        }
         if (p.endsWith('/report')) return options.report ? options.report(route) : route.fulfill({ json: s.report });
         if (s.examples[p]) return route.fulfill({ json: s.examples[p] });
         const kind = p.split('/').at(-1)!;

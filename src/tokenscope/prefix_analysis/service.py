@@ -16,7 +16,9 @@ from tokenscope.analysis_common.contracts import (
 from tokenscope.analysis_common.modifications import value_digest
 from tokenscope.analysis_common.plugins import ExecutionStopped
 from tokenscope.analysis_common.runtime import TaskControl
+from tokenscope.analysis_common.runtime_control import retain_finding
 from tokenscope.analysis_common.source import ResolvedSource
+from tokenscope.analysis_common.wire import to_wire
 from tokenscope.prefix_analysis.candidates import CandidateIndex
 from tokenscope.prefix_analysis.structure import common_prefix, sorted_tools, tool_set_fingerprint
 
@@ -91,6 +93,8 @@ def collect_l2(
                 channels["tools"] = channel_key
                 candidates, truncated = index.lookup("tools", channel_key)
                 partial |= truncated
+                if truncated and "CANDIDATE_LOOKUP_TRUNCATED" not in reasons:
+                    reasons += ("CANDIDATE_LOOKUP_TRUNCATED",)
                 current_ids = None
                 for key in candidates:
                     prior = source.read_request(key)
@@ -116,28 +120,28 @@ def collect_l2(
                         difference_pointers=("/tools",),
                         lcp_tokens=common_prefix(prior_ids, current_ids),
                     )
-                    if control:
-                        control.finding()
-                    findings.append(
-                        PrefixFinding(
-                            finding_id=stable_id("finding", ["L2", "1", comparison]),
-                            rule_id="L2",
-                            comparison=comparison,
-                            source_pointer="/tools",
-                            advice="对同一完整工具集合固定排列，保留全部定义。",
-                            recipe_json=json.dumps(
-                                {"kind": "sort_tools", "set_digest": fingerprint}
-                            ),
-                            evidence_status="source_order_and_input_difference",
-                        )
+                    finding = PrefixFinding(
+                        finding_id=stable_id("finding", ["L2", "1", comparison]),
+                        rule_id="L2",
+                        comparison=comparison,
+                        source_pointer="/tools",
+                        advice="对同一完整工具集合固定排列，保留全部定义。",
+                        recipe_json=json.dumps({"kind": "sort_tools", "set_digest": fingerprint}),
+                        evidence_status="source_order_and_input_difference",
                     )
+                    if retain_finding(
+                        control,
+                        "L2",
+                        len(json.dumps(to_wire(finding), ensure_ascii=False).encode()),
+                    ):
+                        findings.append(finding)
             index.insert(current.request_key, channels)
             checked += 1
     except ExecutionStopped as exc:
         if exc.code == "ANALYSIS_INTERRUPTED":
             raise
         partial = True
-        reasons = (exc.code,)
+        reasons = tuple(dict.fromkeys((*reasons, exc.code)))
     finally:
         index.close()
     return PrefixReport(

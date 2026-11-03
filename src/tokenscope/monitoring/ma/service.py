@@ -4,6 +4,7 @@ import json
 
 from tokenscope.domain import capability
 from tokenscope.errors import TokenScopeError
+from tokenscope.monitoring.ma.availability import AvailabilityResponse
 from tokenscope.monitoring.ma.contracts import (
     Catalog,
     CatalogEntry,
@@ -111,6 +112,41 @@ class MaService:
                 instance=json.loads(row[0]),
                 file_quality=summary["file_quality"],
                 runtime=summary["runtime"],
+            )
+        )
+
+    def availability(self, run_id: str, uuid: str) -> AvailabilityResponse:
+        summary = self.store.summary(run_id)
+        with connect(self.processor.runs / run_id / "requests.sqlite3", readonly=True) as db:
+            if (
+                db.execute("SELECT 1 FROM projections WHERE instance_uuid=?", (uuid,)).fetchone()
+                is None
+            ):
+                raise TokenScopeError("INSTANCE_NOT_FOUND", "Unknown MA instance in this run", 404)
+            if (
+                db.execute(
+                    "SELECT 1 FROM sqlite_master WHERE type='table' AND name='availability'"
+                ).fetchone()
+                is None
+            ):
+                raise TokenScopeError(
+                    "AVAILABILITY_NOT_RECORDED",
+                    "Historical result has no availability projection",
+                    409,
+                )
+            row = db.execute(
+                "SELECT projection FROM availability WHERE instance_uuid=?", (uuid,)
+            ).fetchone()
+        if row is None:
+            raise TokenScopeError(
+                "AVAILABILITY_NOT_RECORDED", "Result has no availability projection", 409
+            )
+        return AvailabilityResponse.model_validate(
+            dict(
+                service_instance_id=self.service_id,
+                ma_run_id=run_id,
+                binding=summary["binding"],
+                availability=json.loads(row[0]),
             )
         )
 

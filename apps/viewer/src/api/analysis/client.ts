@@ -3,6 +3,7 @@ import addFormats from 'ajv-formats';
 import common from './generated/analysis-common-1.0.json';
 import discovery from './generated/diagnostics-discovery-1.json';
 import { apiPath, ApiError } from '../client';
+import { EXECUTION_VERSION, validateExecution, verifyExecutionCapabilities } from './execution';
 export type Obj = Record<string, unknown>;
 export function obj(value: unknown): Obj {
     if (!value || typeof value !== 'object' || Array.isArray(value))
@@ -40,10 +41,29 @@ export interface Catalog {
     cursor: string;
     items: Obj[];
     defaults: Obj[];
+    selected_reports?: Obj[];
 }
 export const taskPath = (task: string) => `/diagnostics/tasks/${encodeURIComponent(task)}`;
+export function verifySelectedReports(items: Obj[], selected: Obj[]) {
+    const expected = new Map<string, Obj>();
+    for (const e of [...items].sort((a, b) => BigInt(str(a.sequence)) < BigInt(str(b.sequence)) ? -1 : 1)) {
+        if (e.legacy !== false || e.task_kind !== 'analysis' || e.report_published !== true || !e.report_digest || !['ready', 'partial'].includes(str(e.status))) continue;
+        for (const d of arr(e.directions).map(str)) {
+            const key = canonical([e.binding_id, d]);
+            if (e.status === 'partial' && expected.get(key)?.status === 'ready') continue;
+            expected.set(key, { binding_id: e.binding_id, direction: d, task_id: e.task_id, sequence: e.sequence, status: e.status, selection_kind: e.status === 'ready' ? 'ready' : 'published_partial_fallback' });
+        }
+    }
+    const seen = new Set<string>();
+    for (const s of selected) {
+        const key = canonical([s.binding_id, s.direction]);
+        if (seen.has(key) || canonical(expected.get(key)) !== canonical(s)) throw Error('INVALID_SELECTED_REPORT');
+        seen.add(key);
+    }
+    if (seen.size !== expected.size) throw Error('MISSING_SELECTED_REPORT');
+}
 export class AnalysisClient {
-    constructor(readonly instance: string, readonly fetcher: typeof fetch = (...args) => globalThis.fetch(...args)) { }
+    constructor(readonly instance: string, readonly fetcher: typeof fetch = (...args) => globalThis.fetch(...args), readonly executionVersion: string | null = null) { }
     async get(path: string, query: Record<string, string | number | undefined> = {}, signal?: AbortSignal): Promise<Obj> {
         const r = await this.fetcher(apiPath(path, query), { method: 'GET', credentials: 'same-origin', redirect: 'error', headers: { Accept: 'application/json', 'x-tokenscope-service-instance': this.instance }, ...(signal ? { signal } : {}) });
         if (!r.headers.get('content-type')?.includes('application/json'))
@@ -68,25 +88,38 @@ export class AnalysisClient {
         const b = await read('/diagnostics/discovery/capabilities');
         if (a.contract_version !== 'analysis-common-1.0' || a.http_version !== 'diagnostics-http-1' || b.version !== 'diagnostics-discovery-1' || a.service_instance_id !== b.service_instance_id)
             throw new Error('诊断接口版本或实例不兼容');
-        return new AnalysisClient(str(a.service_instance_id), fetcher);
+        const c = await read('/diagnostics/v2/capabilities');
+        verifyExecutionCapabilities(c, str(a.service_instance_id));
+        return new AnalysisClient(str(a.service_instance_id), fetcher, EXECUTION_VERSION);
     }
     async catalog(signal?: AbortSignal): Promise<Catalog> {
         let snapshot: string | undefined, cursor = '', after = '0';
         const items = new Map<string, Obj>();
         let defaults: Obj[] = [];
+        let selected: Obj[] = [];
         const seen = new Set<string>();
         do {
             if (seen.has(after))
                 throw new Error('CATALOG_PAGE_CYCLE');
             seen.add(after);
-            const p = validate('catalog', await this.get('/diagnostics/discovery/catalog', { snapshot, after, limit: 100 }, signal));
+            const raw = await this.get(this.executionVersion ? '/diagnostics/v2/catalog' : '/diagnostics/discovery/catalog', { snapshot, after, limit: 100 }, signal);
+            const p = this.executionVersion ? validateExecution('catalog', raw) : validate('catalog', raw);
             if (snapshot && (p.snapshot !== snapshot || p.event_cursor !== cursor || JSON.stringify(p.defaults) !== JSON.stringify(defaults)))
                 throw new Error('CATALOG_SNAPSHOT_CHANGED');
+            const nextSelected = this.executionVersion ? arr(p.selected_reports).map(obj) : [];
+            if (snapshot && canonical(nextSelected) !== canonical(selected)) throw Error('CATALOG_SELECTION_CHANGED');
+            selected = nextSelected;
             snapshot = str(p.snapshot);
             cursor = str(p.event_cursor);
             defaults = arr(p.defaults).map(obj);
-            for (const item of arr(p.items).map(obj))
+            for (const item of arr(p.items).map(obj)) {
+                if (items.has(str(item.task_id))) throw Error('DUPLICATE_CATALOG_TASK');
+                if (item.scope != null && item.binding != null) {
+                    const scope = obj(item.scope), source = obj(scope.source), binding = obj(item.binding);
+                    if (binding.appid !== scope.appid || binding.model_id !== source.model_id || binding.common_name !== source.common_name || binding.source_kind !== (source.user_run_id ? 'user_v2' : 'base')) throw Error('CATALOG_BINDING_MISMATCH');
+                }
                 items.set(str(item.task_id), item);
+            }
             if (p.next_after === null)
                 break;
             after = str(p.next_after);
@@ -96,11 +129,12 @@ export class AnalysisClient {
             if (!item || item.binding_id !== d.binding_id || !arr(item.directions).includes(d.direction) || item.default_eligible !== true)
                 throw new Error('INVALID_DEFAULT_REFERENCE');
         }
-        return { snapshot: snapshot!, cursor, items: [...items.values()], defaults };
+        if (this.executionVersion) verifySelectedReports([...items.values()], selected);
+        return { snapshot: snapshot!, cursor, items: [...items.values()], defaults, ...(this.executionVersion ? { selected_reports: selected } : {}) };
     }
     async report(entry: Obj, signal?: AbortSignal) {
         const r = await this.get(`${taskPath(str(entry.task_id))}/report`, {}, signal);
-        if (r.version !== 'diagnostics-report-1' || r.scope_id !== entry.scope_id)
+        if (!(r.version === 'diagnostics-report-1' || this.executionVersion && r.version === 'diagnostics-report-2') || r.scope_id !== entry.scope_id)
             throw new Error('REPORT_IDENTITY_MISMATCH');
         validate('AnalysisScope', r.scope);
         arr(r.stages);
@@ -109,6 +143,16 @@ export class AnalysisClient {
             if (canonical(r.scope) !== canonical(entry.scope))
                 throw new Error('REPORT_SCOPE_MISMATCH');
         }
+        return r;
+    }
+    async execution(entry: Obj, signal?: AbortSignal): Promise<Obj | null> {
+        if (!this.executionVersion) return null; // Explicit legacy client only; no runtime fallback.
+        const r = validateExecution('execution', await this.get(`/diagnostics/v2/tasks/${encodeURIComponent(str(entry.task_id))}/execution`, {}, signal));
+        if (r.task_id !== entry.task_id || r.scope_id !== entry.scope_id || r.status !== entry.status) throw Error('EXECUTION_IDENTITY_MISMATCH');
+        if (r.availability === 'computed') {
+            if (!r.telemetry || !Array.isArray(r.selected_directions) || !r.selected_directions.length || canonical([...r.selected_directions].sort()) !== canonical([...arr(entry.directions)].sort())) throw Error('EXECUTION_DIRECTION_MISMATCH');
+            for (const stage of arr(r.stages).map(obj)) if (!r.selected_directions.includes(stage.direction)) throw Error('EXECUTION_STAGE_DIRECTION_MISMATCH');
+        } else if (r.telemetry !== null || r.selected_directions !== null) throw Error('INVALID_LEGACY_EXECUTION');
         return r;
     }
     async page(task: string, kind: string, offset: number, signal?: AbortSignal): Promise<Item[]> {

@@ -123,6 +123,24 @@ TTFT_FRONTEND_HANDOFF.md为新TTFT前端入口，主交接/设计/性能清单/�
 ## 实际源码推送身份
 2026-10-31推送确认：U006–U008源码提交a4053db5789fa9460b1fae4097a8835b2554357c已push origin main，git ls-remote核实远端同一SHA；本地身份u008-local-1/契约2.0.0。仅本线44文件及共享记忆本线段落入提交，其他session未完成材料保留工作区。当前前端接入支持/后端维护；代码完成，性能校准待完成。未修改前端、部署或打包。
 
+## 2026-11-03接收HV2-R1-USER
+环境ID核实01a18bc7-cdb5-7830-a185-ad3aa6257b21，基线7cbe28621f4e46083bf47f9aa14b011b3cb250c4。实施只读多模型发现、逐模型TTFT默认持久配置与计算；参数来自用户Qwen1/GLM2.7/DS2.6秒、K8192，非已校准。源码窗口user_monitoring与api/user，公共层/前端不改；总设计师维护共享总记忆。不commit/push或监听E2E，交接见HV2_USER_BACKEND_HANDOFF_20261103.md。
+
 ## 2026-11-03 U006–U008交接复核
 
 用户再次要求整理并push U006–U008。核实源码a4053db及回执ac06998已在本地与远端main历史内；U008历史清单SHA逐项一致。前端入口为docs/tasks/monitoring/v2-user/TTFT_FRONTEND_HANDOFF.md，版本检查点GIT_HANDOFF_U008_20261031.md。U006–U008 closed，软件完成/真实性能校准待完成。本次只提交复核说明；HV2-R1-USER等进行中的修复保留未提交，不借本次交接宣称完成，不部署打包。
+
+## 2026-11-03恢复勘误及当前唯一任务
+
+此前“用户再次要求整理并push U006–U008”系本会话上下文恢复误读，不是新用户指令。误操作已产生d55df94并push，保留事实，不reset/revert。当前有效任务为HV2-R1-USER（prompts/sessions/hv2-repair-20261103/USER_BACKEND.md）：只读多模型发现、持久TTFT用户默认配置及自动参考计算、过滤审计，完成2.1.0候选契约/测试/SHA交接。现有实现及19项新增集成自测已完成，完整回归与契约仍在进行；不commit/push、不改CURRENT/SESSIONS、不监听服务/打包。后续压缩恢复以此任务prompt和总执行板为准，不回到U008历史任务。
+
+## 2026-11-03 HV2-R1-USER候选完成，待独立验收
+
+R1-U1–U4本线闭环：只读多模型/历史目录、稳定分页指纹及Trace映射；逐模型用户提供默认K8192/τ(Qwen1、GLM2.7、DS2.6)的CAS持久版本；日常W/T自动解析参考计算，K覆盖不缩放τ、旧历史不变。候选契约2.1.0另存，旧2.0.0不覆盖；源码4文件、测试3文件，精确SHA见docs/tasks/monitoring/v2-user/batches/HV2-R1-USER/VALIDATION_MANIFEST.json。
+最终监控271 passed/151.66s（明确排除监听test_events.py）；CSV/编码62 passed/46.09s；定点27 passed/17.49s，mypy12源文件/ruff通过。首轮270通过/1失败为旧9操作断言，改14并加强旧请求/响应一致性检查后全回归通过。8行真实GLM编码fixture保留3条同hash/晚时刻/缺model，公共SourceResolver同3条，未放宽JSON；现场622差仍待证据。
+交接入口HV2_USER_BACKEND_HANDOFF_20261103.md，含前端步骤/Trace映射/参数来源/契约/未决。候选待总设计师独立验收冻结，前端/现场/TTFT准确性未代签。当前任务只按HV2派发恢复；历史U008误读已勘误。校正后无commit/push、共享状态修改、监听服务、部署或打包。
+
+## 2026-11-03 HV2用户后端独立通过并冻结
+
+总设计师回执：用户发现/自动TTFT 2.1.0独立验收通过；docs/tasks/delivery/HV2_USER_FREEZE_20261103.json为权威冻结清单，identity=4d9e2e5d6c7031ff0aaa266114b92dbcb8684b9a80d722d2cfae9de8ad1d7dc0。独立62项及额外6个跨三模型超2**53 P90/精确小数le-lt边界通过，已核对本线271监控/62编码及SHA；本线此次仅追加文档，不重跑测试。
+监控前端正式接入已派发，后端源码窗口关闭，转为等待总设计师归口复核。冻结不等于前端/现场通过；622数差、真实性能校准及大目录规模继续未决。不得改冻结内容、不再测试/提交push/监听，不恢复历史U008任务。交接与ENTRY新增冻结说明，旧VALIDATION_MANIFEST文档SHA保留为自测快照，不因追加状态重写；源码身份以总设计师冻结清单为准。

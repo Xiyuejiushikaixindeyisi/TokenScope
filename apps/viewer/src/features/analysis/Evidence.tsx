@@ -11,7 +11,7 @@ export function useExamples(api: AnalysisClient, data: LoadedReport, card: Card,
     useEffect(() => {
         const c = new AbortController(); setRows(null); setError('');
         if (!enabled) return () => c.abort();
-        const key = canonical([data.entry.task_id, data.entry.scope_id, data.entry.report_digest, card.kind, card.id]);
+        const key = canonical([api.executionVersion, data.direction, data.entry.task_id, data.entry.scope_id, data.entry.report_digest, card.kind, card.id]);
         const saved = cache.get(api)?.get(key);
         const read = saved && !attempt ? Promise.resolve(saved) : loadCardExamples(api, data, card, c.signal);
         void read.then(value => {

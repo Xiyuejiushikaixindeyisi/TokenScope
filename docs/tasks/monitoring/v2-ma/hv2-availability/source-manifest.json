@@ -1,0 +1,14 @@
+{
+  "baseline_head": "7cbe28621f4e46083bf47f9aa14b011b3cb250c4",
+  "status": "candidate_not_frozen",
+  "identity_algorithm": "sha256(canonical sorted path-to-sha256 JSON, compact separators)",
+  "source_and_test_identity": "15194270d39e4e51950c83fd10d7694a3282d9c96a0b9ffbfd7c882b3d2f96f5",
+  "files": {
+    "src/tokenscope/api/ma.py": "4ad6dcb5d63df652bb70fbe39fcd974f72424418e010dd621997272ddbd84f9b",
+    "src/tokenscope/monitoring/ma/availability.py": "0c53a51574ec36807b2116ce9df8efb1533b867955e8f76a18788119703ba9ae",
+    "src/tokenscope/monitoring/ma/ingest.py": "96b7900026a4d35ace2df7dbe09dd17d4bfddb4cd97194190f021e71df13fde0",
+    "src/tokenscope/monitoring/ma/service.py": "c17d2039dceec621aa170bd83f59a29f370e31d1e5d6d7444407a3614af9d2f3",
+    "src/tokenscope/monitoring/ma/statistics.py": "58dcba8f2321d54a1fa586471fc604d7e33f25b266862a2f8ed06feb3d3d51ed",
+    "tests/unit/ma/test_availability.py": "a68383a96d5b15a47464fa92fd07d8e7fd165d3febaf9e1e37425c494566290e"
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "submission": {
+    "version": "diagnostics-execution-2",
+    "request": {
+      "source": {
+        "source_kind": "base",
+        "base_run_id": "622b863e-c8d4-4f3b-8338-8ce3c7517134",
+        "user_run_id": null,
+        "appid": "a",
+        "window": null,
+        "expected_index_revision": null
+      },
+      "selection": {
+        "reason_codes": [
+          "low_hit"
+        ],
+        "enable_low_hit": true,
+        "enable_token_content": false
+      },
+      "reason_note": "",
+      "submission_key": "v2"
+    },
+    "options": {
+      "version": "diagnostics-runtime-2",
+      "token_selection": {
+        "rule_ids": [
+          "T1",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "policies_json": "[]",
+        "budget": {
+          "max_request_bytes": "1048576",
+          "max_units": "10000",
+          "max_comparison_bytes": "1000000",
+          "max_depth": "64",
+          "max_candidates": "1000",
+          "max_encoding_calls": "100"
+        }
+      },
+      "candidate_limit": "16",
+      "pilot_limit": "3",
+      "max_source_requests": "100",
+      "max_source_bytes": "10000000",
+      "max_findings": "5",
+      "max_experiments": "8",
+      "max_combinations": "2",
+      "max_encoding_calls": "1000",
+      "max_plan_bytes": "16777216",
+      "max_retained_bytes": "4194304",
+      "max_comparisons": "100000",
+      "max_fragment_bytes": "8388608",
+      "max_total_fragment_bytes": "67108864"
+    }
+  },
+  "catalog": {
+    "version": "diagnostics-discovery-2",
+    "service_instance_id": "7ac3b7e3-12fe-4c98-b20c-644aa6b9b269",
+    "snapshot": "7ac3b7e3-12fe-4c98-b20c-644aa6b9b269:52c3fa6e-122f-40de-b152-1d0a0547701c:1",
+    "event_cursor": "7ac3b7e3-12fe-4c98-b20c-644aa6b9b269:52c3fa6e-122f-40de-b152-1d0a0547701c:1",
+    "items": [
+      {
+        "task_id": "15b22fd9-0589-401c-8af3-5df98044c85b",
+        "task_kind": "analysis",
+        "parent_task_id": null,
+        "plan_refs": [],
+        "status": "partial",
+        "error_code": null,
+        "report_published": true,
+        "report_ref": "15b22fd9-0589-401c-8af3-5df98044c85b",
+        "report_digest": "64f13a6c2d766557cb0faf8ef39774f5ee84eb8ecc4fa4b21466faa628d07d0c",
+        "scope_id": "scope:3a05ff2c5b85c91385d3e4e7e3fec5d7fd6e7b8f09ffebb99e85846892cd3107",
+        "scope": {
+          "source": {
+            "base_run_id": "622b863e-c8d4-4f3b-8338-8ce3c7517134",
+            "user_run_id": null,
+            "common_name": null,
+            "model_id": "GLM-5.2",
+            "manifest_sha256": "bb17622ef08cabdca46c8f9b697ba2ff399e5c0686625a9ecf2b3c7499782693",
+            "asset_identity": "c8bf2cc61113194473ec5502ac3116dcad8611dc95d469a5d4995d3a75150a43",
+            "encoder_identity": "7e6e71933f9278ad86c56fafe919abd4f4eab23ca57123aefa03f3415275ce63",
+            "profile_json": "{\"name\": \"default\", \"cpu_budget\": 8, \"default_thinking\": null, \"template_options\": {}}",
+            "settings_json": "{\"model_id\":\"GLM-5.2\",\"revision\":1,\"block_size\":128,\"block_size_unit\":\"simulation_input_tokens\",\"cp_world_size\":1,\"mtp\":true,\"prefix_cache_enabled\":true,\"hybrid_enabled\":false,\"cache_mode\":\"full_block\",\"model_aliases\":[\"glm-5.2\",\"GLM-V5.2\",\"GLM-V5.2-32K\",\"GLM-V5.2-64K\",\"GLM-V5.2-128K\"],\"encoding_profile\":\"default\"}",
+            "algorithm_version": "full-block-mtp-v1"
+          },
+          "appid": "a",
+          "window": null,
+          "request_count": "6",
+          "request_keys_digest": "80a759f89130278c03ba6db6c3317dfe2b8d79731bc7e79c958743dc0cdf02ad",
+          "baseline_origin": "original_run_window"
+        },
+        "binding": {
+          "appid": "a",
+          "model_id": "GLM-5.2",
+          "common_name": null,
+          "source_kind": "base"
+        },
+        "binding_id": "76ef771bdc2ebabad5d823af9bf04e42ded8c6c5599f9f39e8783938323dcd28",
+        "directions": [
+          "low_hit"
+        ],
+        "sequence": "1",
+        "terminal_at": "2026-11-03T11:57:17.383Z",
+        "published_at": "2026-11-03T11:57:17.383Z",
+        "analysis_completed_at": "2026-11-03T11:57:17.383Z",
+        "legacy": false,
+        "default_eligible": false
+      }
+    ],
+    "defaults": [],
+    "next_after": null,
+    "selected_reports": [
+      {
+        "binding_id": "76ef771bdc2ebabad5d823af9bf04e42ded8c6c5599f9f39e8783938323dcd28",
+        "direction": "low_hit",
+        "task_id": "15b22fd9-0589-401c-8af3-5df98044c85b",
+        "sequence": "1",
+        "status": "partial",
+        "selection_kind": "published_partial_fallback"
+      }
+    ]
+  },
+  "execution": {
+    "version": "diagnostics-execution-2",
+    "task_id": "15b22fd9-0589-401c-8af3-5df98044c85b",
+    "scope_id": "scope:3a05ff2c5b85c91385d3e4e7e3fec5d7fd6e7b8f09ffebb99e85846892cd3107",
+    "status": "partial",
+    "availability": "computed",
+    "selected_directions": [
+      "low_hit"
+    ],
+    "stages": [
+      {
+        "direction": "low_hit",
+        "ruleset_version": "prefix-detectors-1",
+        "status": "partial",
+        "checked_requests": "6",
+        "candidate_coverage_partial": true,
+        "rule_scope": "dates_paths_known_billing_header_tools_history_json_representation",
+        "eligible_requests": "6",
+        "scan_complete": true,
+        "comparison_complete": true,
+        "retention_complete": false,
+        "detected_by_rule": {
+          "L1": "15",
+          "L4": "15"
+        },
+        "retained_by_rule": {
+          "L1": "1",
+          "L4": "1"
+        },
+        "reason_codes": [
+          "FINDING_RETENTION_TRUNCATED"
+        ]
+      }
+    ],
+    "telemetry": {
+      "version": "diagnostics-telemetry-2",
+      "clock": "perf_counter_ns",
+      "elapsed_ns": {
+        "low_hit_detection.dynamics": "53815753",
+        "low_hit_detection.l2": "30024889",
+        "low_hit_evaluation": "4652271441",
+        "low_hit_publication": "85151077",
+        "low_hit_retention": "83626",
+        "recommendation_extension": "85541597",
+        "source_decode_and_identity": "13560495",
+        "source_fetch": "55569154",
+        "source_initial_verification": "1983773",
+        "source_preflight": "2880198",
+        "source_token_read_inclusive": "24210814",
+        "source_verification": "9082095"
+      },
+      "counts": {
+        "low_hit.L1.detected": "15",
+        "low_hit.L1.omitted": "14",
+        "low_hit.L1.retained": "1",
+        "low_hit.L4.detected": "15",
+        "low_hit.L4.omitted": "14",
+        "low_hit.L4.retained": "1",
+        "low_hit.dynamics.comparisons": "15",
+        "low_hit.encoding_calls": "18",
+        "low_hit.l2.comparisons": "15",
+        "low_hit.retained_bytes": "3870",
+        "recommendations.prepared_operations": "9",
+        "recommendations.recommendations": "1",
+        "recommendations.total_plan_bytes": "26395",
+        "source.raw_bytes_read": "289311",
+        "source.rows_read": "121",
+        "source.token_ids_read": "12992",
+        "source_preflight.bytes": "14346",
+        "source_preflight.requests": "6"
+      }
+    }
+  }
+}

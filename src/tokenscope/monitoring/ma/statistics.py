@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from tokenscope.ingestion.csv_reader import parse_utc
+from tokenscope.monitoring.ma.availability import explain
 from tokenscope.monitoring.ma.contracts import FileQuality, InstanceSnapshot, Submit
 from tokenscope.monitoring.ma.ingest import connect
 from tokenscope.monitoring.statistics import WIDTHS, distribution
@@ -208,3 +209,7 @@ def aggregate(path: Path, binding: Submit) -> None:
                 )
             )
             db.execute("INSERT INTO projections VALUES (?,?)", (uuid, result.model_dump_json()))
+            explanation = explain(db, result)
+            db.execute(
+                "INSERT INTO availability VALUES (?,?)", (uuid, explanation.model_dump_json())
+            )

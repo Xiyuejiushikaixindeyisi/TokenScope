@@ -1,6 +1,10 @@
 # 华为机文档
 
-2026-11-02当前：[V2批准交付](../tasks/delivery/V2_APPROVED_DELIVERY_20261102.md) · [华为真实数据两阶段执行prompt](../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../operations/DELIVERY_ACCEPTANCE_RULES.md) · [闭环归档](../../achieve/2026-11-02/v2-approved-delivery/README.md)。UIR-03由用户留V3，不是V2阻断；旧记录只作历史。
+2026-11-03后续执行更新：华为调查已收到，用户已要求开始修复与实际任务派发。当前状态、证据勘误、源码窗口和阶段门槛以[本轮执行板](../tasks/delivery/HV2_REPAIR_EXECUTION_20261103.md)为准；下方“等待回传/尚未派发”保留为前序规划记录。公共层先验收，后端通过冻结后前端，最终完整验收交付。
+
+2026-11-03当前：[V2回传原件](HUAWEI_V2_ACCEPTANCE_REPORT.md) · [核对方案](HUAWEI_V2_REVIEW_AND_RESEARCH_PLAN_20261103.md) · [只读调查prompt](../../prompts/delivery/HUAWEI_V2_READONLY_INVESTIGATION_20261103.md)。该prompt的新调查报告尚未收到，现场是否执行未取得新证据；本地当前仅规划与记忆。用户已指定本会话为V2版本总设计师，回传后按[六线修复与交付计划](../tasks/delivery/V2_REPAIR_COORDINATION_PLAN_20261103.md)实施公共层/后端先验收、契约冻结后前端及最终完整验收交付；不因此放宽当前调查只读边界。用户明确第二次验收不通过，多模型访问、异常空结果与MA缺数仍待闭环。
+
+2026-11-02已交付版本参考：[V2批准交付](../tasks/delivery/V2_APPROVED_DELIVERY_20261102.md) · [华为真实数据两阶段执行prompt](../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../operations/DELIVERY_ACCEPTANCE_RULES.md) · [闭环归档](../../achieve/2026-11-02/v2-approved-delivery/README.md)。UIR-03由用户留V3，不是V2阻断；旧记录只作历史。
 
 本目录保存华为机调查、事实核对、版本差异和验收结论。收到的报告、源码或日志原件放 evidence/huawei 或 evidence/source_drops，文件摘要放 evidence/manifests。
 

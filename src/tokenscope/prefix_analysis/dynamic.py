@@ -50,6 +50,8 @@ def text_shape(value: str, slots: list[tuple[int, int, str, str]]) -> list[str]:
 
 
 def dynamic_recipes(left: str, right: str) -> list[dict[str, Any]]:
+    if left == right:
+        return []
     before, after = slots_in_text(left), slots_in_text(right)
     shape = text_shape(right, after)
     if len(before) != len(after) or text_shape(left, before) != shape:

@@ -1,0 +1,287 @@
+[
+  {
+    "model": "DiscoveryPage",
+    "value": {
+      "service_instance_id": "a84815d6-7dd1-421d-9883-7dc6921914b6",
+      "contract_version": "2.1.0",
+      "snapshot": "fd59f789f06388fa006ec57d4a8e2ab559fca22f4379525de73671b6efc14fe7",
+      "default_policy": "latest_registered_published_run_per_appid_model_service",
+      "total": "2",
+      "next_offset": null,
+      "entries": [
+        {
+          "source": {
+            "dataset_kind": "trace",
+            "source_kind": "user_v2",
+            "base_run_id": "33045670-7eb7-4b84-b65b-f641a608c2b3",
+            "user_run_id": "ur-908b7c8e095c49a6a873be01cac54fbb",
+            "common_name": "Qwen-V3.6-27B",
+            "model_id": "Qwen3.6-27B",
+            "index_revision": "d2d221e3110071a36fc6abbf30d65a22f7848254486e7f903d4c275f20e06092",
+            "input_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "manifest_sha256": "a372f804f25bb81a4155ba2a53582ac72c7f7fd174396143b1c979bd231eefe9",
+            "settings_sha256": "1e8025706b2ac21e9c21efb94f19723a65fc7571a915911d33d6c96ffe13e8d2",
+            "encoder_identity": "synthetic-encoder",
+            "asset_identity": "synthetic-assets",
+            "file_observed_time_range_utc": [
+              "2026-10-20T07:00:00Z",
+              "2026-10-20T09:18:57Z"
+            ],
+            "range_kind": "entire_appid_valid_set"
+          },
+          "appid": "shared",
+          "state": "ready",
+          "registration_order": "1",
+          "is_default": true,
+          "request_count": "2",
+          "prompt_p90": "32768"
+        },
+        {
+          "source": {
+            "dataset_kind": "trace",
+            "source_kind": "user_v2",
+            "base_run_id": "33045670-7eb7-4b84-b65b-f641a608c2b3",
+            "user_run_id": "ur-908b7c8e095c49a6a873be01cac54fbb",
+            "common_name": "Qwen-V3.6-27B",
+            "model_id": "Qwen3.6-27B",
+            "index_revision": "d2d221e3110071a36fc6abbf30d65a22f7848254486e7f903d4c275f20e06092",
+            "input_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "manifest_sha256": "a372f804f25bb81a4155ba2a53582ac72c7f7fd174396143b1c979bd231eefe9",
+            "settings_sha256": "1e8025706b2ac21e9c21efb94f19723a65fc7571a915911d33d6c96ffe13e8d2",
+            "encoder_identity": "synthetic-encoder",
+            "asset_identity": "synthetic-assets",
+            "file_observed_time_range_utc": [
+              "2026-10-20T07:00:00Z",
+              "2026-10-20T09:18:57Z"
+            ],
+            "range_kind": "entire_appid_valid_set"
+          },
+          "appid": "single",
+          "state": "ready",
+          "registration_order": "1",
+          "is_default": true,
+          "request_count": "1",
+          "prompt_p90": "100"
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "model": "DefaultPage",
+    "value": {
+      "service_instance_id": "a84815d6-7dd1-421d-9883-7dc6921914b6",
+      "contract_version": "2.1.0",
+      "configs": [
+        {
+          "common_name": "DeepSeek-V4-Flash",
+          "model_id": "DeepSeek-V4-Flash-0731",
+          "revision": "1",
+          "chunk_tokens": "8192",
+          "chunk_seconds": "2.6",
+          "tau_reference_chunk_tokens": "8192",
+          "source": "user_provided",
+          "source_description": "User-provided 2026-11-03 via HV2-R1-USER; K=8192; reference assumptions, not measured calibration.",
+          "recorded_at": "2026-11-03T11:54:50.599220+00:00",
+          "calibrated": false
+        },
+        {
+          "common_name": "GLM-V5.2",
+          "model_id": "GLM-5.2",
+          "revision": "1",
+          "chunk_tokens": "8192",
+          "chunk_seconds": "2.7",
+          "tau_reference_chunk_tokens": "8192",
+          "source": "user_provided",
+          "source_description": "User-provided 2026-11-03 via HV2-R1-USER; K=8192; reference assumptions, not measured calibration.",
+          "recorded_at": "2026-11-03T11:54:50.598639+00:00",
+          "calibrated": false
+        },
+        {
+          "common_name": "Qwen-V3.6-27B",
+          "model_id": "Qwen3.6-27B",
+          "revision": "1",
+          "chunk_tokens": "8192",
+          "chunk_seconds": "1",
+          "tau_reference_chunk_tokens": "8192",
+          "source": "user_provided",
+          "source_description": "User-provided 2026-11-03 via HV2-R1-USER; K=8192; reference assumptions, not measured calibration.",
+          "recorded_at": "2026-11-03T11:54:50.598111+00:00",
+          "calibrated": false
+        }
+      ]
+    },
+    "valid": true
+  },
+  {
+    "model": "AutoEvaluationRequest",
+    "value": {
+      "submission_key": "candidate-example",
+      "user_run_id": "ur-908b7c8e095c49a6a873be01cac54fbb",
+      "appid": "shared",
+      "index_revision": "d2d221e3110071a36fc6abbf30d65a22f7848254486e7f903d4c275f20e06092",
+      "waiting_seconds": "5",
+      "target_seconds": "8"
+    },
+    "valid": true
+  },
+  {
+    "model": "AutoEvaluation",
+    "value": {
+      "evaluation_id": "ua-15c97676855f46fcbca553c8c8894e94",
+      "service_instance_id": "a84815d6-7dd1-421d-9883-7dc6921914b6",
+      "contract_version": "2.1.0",
+      "request": {
+        "submission_key": "candidate-example",
+        "user_run_id": "ur-908b7c8e095c49a6a873be01cac54fbb",
+        "appid": "shared",
+        "index_revision": "d2d221e3110071a36fc6abbf30d65a22f7848254486e7f903d4c275f20e06092",
+        "target_seconds": "8",
+        "waiting_seconds": "5",
+        "comparator": "le",
+        "chunk_tokens": null,
+        "default_revision": null
+      },
+      "source": {
+        "dataset_kind": "trace",
+        "source_kind": "user_v2",
+        "base_run_id": "33045670-7eb7-4b84-b65b-f641a608c2b3",
+        "user_run_id": "ur-908b7c8e095c49a6a873be01cac54fbb",
+        "common_name": "Qwen-V3.6-27B",
+        "model_id": "Qwen3.6-27B",
+        "index_revision": "d2d221e3110071a36fc6abbf30d65a22f7848254486e7f903d4c275f20e06092",
+        "input_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "manifest_sha256": "a372f804f25bb81a4155ba2a53582ac72c7f7fd174396143b1c979bd231eefe9",
+        "settings_sha256": "1e8025706b2ac21e9c21efb94f19723a65fc7571a915911d33d6c96ffe13e8d2",
+        "encoder_identity": "synthetic-encoder",
+        "asset_identity": "synthetic-assets",
+        "file_observed_time_range_utc": [
+          "2026-10-20T07:00:00Z",
+          "2026-10-20T09:18:57Z"
+        ],
+        "range_kind": "entire_appid_valid_set"
+      },
+      "defaults": {
+        "common_name": "Qwen-V3.6-27B",
+        "model_id": "Qwen3.6-27B",
+        "revision": "1",
+        "chunk_tokens": "8192",
+        "chunk_seconds": "1",
+        "tau_reference_chunk_tokens": "8192",
+        "source": "user_provided",
+        "source_description": "User-provided 2026-11-03 via HV2-R1-USER; K=8192; reference assumptions, not measured calibration.",
+        "recorded_at": "2026-11-03T11:54:50.598111+00:00",
+        "calibrated": false
+      },
+      "chunk_tokens_origin": "model_default",
+      "tau_scaled": false,
+      "evaluation": {
+        "evaluation_id": "ua-15c97676855f46fcbca553c8c8894e94",
+        "service_instance_id": "a84815d6-7dd1-421d-9883-7dc6921914b6",
+        "request": {
+          "submission_key": "candidate-example",
+          "user_run_id": "ur-908b7c8e095c49a6a873be01cac54fbb",
+          "appid": "shared",
+          "scenario_id": "auto-default-cb6834d378cde6e05905dc5765132a42dfba566a38c0e8ae84c8e6b7c7b84051",
+          "scenario_revision": "1",
+          "target_seconds": "8",
+          "waiting_seconds": "5",
+          "comparator": "le"
+        },
+        "scenario": {
+          "timing_model": "batch_reference_total_noncompute_v1",
+          "scenario_id": "auto-default-cb6834d378cde6e05905dc5765132a42dfba566a38c0e8ae84c8e6b7c7b84051",
+          "revision": "1",
+          "model_id": "Qwen3.6-27B",
+          "common_name": "Qwen-V3.6-27B",
+          "deployment": "Selected Trace model; user-provided reference configuration",
+          "source": "user_assumption",
+          "source_description": "User-provided 2026-11-03 via HV2-R1-USER; K=8192; reference assumptions, not measured calibration.",
+          "chunk_tokens": "8192",
+          "chunk_seconds": "1",
+          "measurement_boundary": "GF dispatch to first token",
+          "workload_description": null,
+          "thinking_mode": null,
+          "min_prompt_tokens": null,
+          "max_prompt_tokens": null,
+          "evidence_sha256": null,
+          "sample_count": null,
+          "calibration_notes": null
+        },
+        "status": "reference",
+        "reason": null,
+        "request_count": "2",
+        "prompt_p90": "32768",
+        "allowed_chunks": "3",
+        "computable_tokens": "24576",
+        "required_hit_fraction": {
+          "numerator": "1",
+          "denominator": "4"
+        },
+        "required_hit_rate": 0.25,
+        "limitations": [
+          "P90-length reference only; not an aggregate ideal-hit-rate pass/fail threshold.",
+          "Fixed waiting/chunk assumptions; waiting/computation percentiles do not add.",
+          "GB service flow is hypothetical for this deployment, not a production instance replay.",
+          "User assumption; not calibrated performance evidence.",
+          "W covers all non-compute time from GF dispatch to first token; no separate O.",
+          "Whole-batch token budget is assumed to be per-request progress, not measured.",
+          "Batch timing alone does not validate end-to-end reference accuracy.",
+          "Full-block/MTP restrictions or inaccurate W may make the reference unattainable.",
+          "Detailed workload and thinking-mode evidence is optional for assumption scenarios.",
+          "Prompt-length applicability range is unverified."
+        ]
+      }
+    },
+    "valid": true
+  },
+  {
+    "model": "AutoEvaluationRequest",
+    "value": {
+      "submission_key": "candidate-example",
+      "user_run_id": "ur-908b7c8e095c49a6a873be01cac54fbb",
+      "appid": "shared",
+      "index_revision": "d2d221e3110071a36fc6abbf30d65a22f7848254486e7f903d4c275f20e06092",
+      "target_seconds": "8"
+    },
+    "valid": false
+  },
+  {
+    "model": "AutoEvaluationRequest",
+    "value": {
+      "submission_key": "candidate-example",
+      "user_run_id": "ur-908b7c8e095c49a6a873be01cac54fbb",
+      "appid": "shared",
+      "index_revision": "d2d221e3110071a36fc6abbf30d65a22f7848254486e7f903d4c275f20e06092",
+      "waiting_seconds": "5",
+      "target_seconds": "8",
+      "chunk_tokens": "0"
+    },
+    "valid": false
+  },
+  {
+    "model": "AutoEvaluationRequest",
+    "value": {
+      "submission_key": "candidate-example",
+      "user_run_id": "ur-908b7c8e095c49a6a873be01cac54fbb",
+      "appid": "shared",
+      "index_revision": "d2d221e3110071a36fc6abbf30d65a22f7848254486e7f903d4c275f20e06092",
+      "waiting_seconds": "5",
+      "target_seconds": "8",
+      "overhead_seconds": "0"
+    },
+    "valid": false
+  },
+  {
+    "model": "DefaultUpdate",
+    "value": {
+      "submission_key": "update-example",
+      "model_id": "Qwen3.6-27B",
+      "common_name": "Qwen-V3.6-27B",
+      "expected_revision": "1",
+      "chunk_seconds": "1",
+      "source_description": "Synthetic update example"
+    },
+    "valid": true
+  }
+]

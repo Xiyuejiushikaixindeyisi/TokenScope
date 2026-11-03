@@ -20,6 +20,7 @@ from tokenscope.analysis_common.contracts import (
     metadata_wire,
 )
 from tokenscope.analysis_common.evaluation import evaluate_plan
+from tokenscope.analysis_common.execution_v2 import RequestV2, runtime_from_json
 from tokenscope.analysis_common.plugins import (
     EvidenceCapabilities,
     ExecutionStopped,
@@ -29,8 +30,10 @@ from tokenscope.analysis_common.plugins import (
 from tokenscope.analysis_common.presentation import evaluation_view
 from tokenscope.analysis_common.recommendation_pipeline import run_extension
 from tokenscope.analysis_common.recommendation_runtime import RecommendationSettings
-from tokenscope.analysis_common.runtime import RuntimeOptions, TaskControl
+from tokenscope.analysis_common.runtime import RuntimeOptions
+from tokenscope.analysis_common.runtime_control import TaskControl
 from tokenscope.analysis_common.source import ResolvedSource, SourceResolver
+from tokenscope.analysis_common.source_observation import ObservedSource
 from tokenscope.analysis_common.storage import DiagnosticStore, ResultWriter, read_items
 from tokenscope.analysis_common.wire import from_wire, to_wire
 from tokenscope.errors import TokenScopeError
@@ -53,15 +56,21 @@ class DiagnosticService:
         self.recommendations = recommendations
         self.store = DiagnosticStore(self.base.state_root / "diagnostics")
 
-    def submit(self, request: DiagnosticRequest, options: RuntimeOptions) -> TaskReceipt:
-        if self.recommendations is not None:
+    def submit(
+        self, request: DiagnosticRequest | RequestV2, options: RuntimeOptions
+    ) -> TaskReceipt:
+        if self.recommendations is not None and request.selection.enable_token_content:
             # T1 stays readable in historical tasks, but is deliberately disabled in new profiles.
             selection = options.token_selection.model_copy(
                 update={"rule_ids": tuple(r for r in options.token_selection.rule_ids if r != "T1")}
             )
             options = options.model_copy(update={"token_selection": selection})
         try:
-            plugin = self.registry.get("token_content")
+            plugin = (
+                self.registry.get("token_content")
+                if request.selection.enable_token_content
+                else None
+            )
         except ExecutionStopped:
             plugin = None  # Capability absence is an explicit stage outcome, not empty success.
         if plugin:
@@ -83,7 +92,9 @@ class DiagnosticService:
                     intent["recommendations"] = frozen
             else:
                 try:
-                    intent["recommendations"] = self.recommendations.snapshot()
+                    intent["recommendations"] = self.recommendations.snapshot(
+                        request.selection.enable_token_content
+                    )
                 except (ValueError, OSError) as exc:
                     raise TokenScopeError(
                         "RECIPE_BUNDLE_INVALID", "Invalid recommendation configuration", 422
@@ -236,10 +247,16 @@ class DiagnosticService:
             try:
                 workspace.mkdir()
                 writer = ResultWriter(workspace)
-                source = self.source(row)
-                options = RuntimeOptions.model_validate_json(row["options"])
+                options = runtime_from_json(row["options"])
                 control = TaskControl(options, lambda: bool(self.store.row(task_id)["cancel"]))
-                self._preflight(source, control)
+                with control.telemetry.span("source_initial_verification"):
+                    source = self.source(row)
+                if control.v2:
+                    source = ObservedSource(
+                        source.service, source.scope, source.directory, control.telemetry
+                    )
+                with control.telemetry.span("source_preflight"):
+                    self._preflight(source, control)
                 intent = json.loads(row["intent"])
                 plan: ModificationPlan | None
                 if intent["kind"] == "analysis":
@@ -322,6 +339,9 @@ class DiagnosticService:
                     runtime_options=to_wire(options),
                     encoding_calls=str(control.encoding_calls),
                 )
+                if control.v2:
+                    report["version"] = "diagnostics-report-2"
+                    report["telemetry"] = control.telemetry.view()
                 writer.close()
                 closed = True
                 status = "empty" if source.scope.request_count == 0 else report["status"]
@@ -357,6 +377,9 @@ class DiagnosticService:
             if length > control.options.token_selection.budget.max_request_bytes:
                 raise ExecutionStopped("REQUEST_BYTES_EXHAUSTED")
             total += length
+            if isinstance(control, TaskControl):
+                control.telemetry.count("source_preflight.requests")
+                control.telemetry.count("source_preflight.bytes", length)
             if total > control.options.max_source_bytes:
                 raise ExecutionStopped("SOURCE_BYTES_EXHAUSTED")
             depth = 0
@@ -390,18 +413,21 @@ class DiagnosticService:
     ) -> dict[str, Any]:
         selection = intent["request"]["selection"]
         stages: list[dict[str, Any]] = []
+        low_control = control.fork("low_hit") if control.v2 else control
+        token_control = control.fork("token_content") if control.v2 else control
         if selection["enable_low_hit"]:
             self.store.update(task_id, active="low_hit")
             try:
-                stage = self._low_hit(
-                    source,
-                    options,
-                    control,
-                    writer,
-                    workspace,
-                    automatic_combinations="recommendations" not in intent,
+                stages.append(
+                    self._low_hit(
+                        source,
+                        options,
+                        low_control,
+                        writer,
+                        workspace,
+                        automatic_combinations="recommendations" not in intent,
+                    )
                 )
-                stages.append(stage)
             except (
                 ExecutionStopped,
                 ValueError,
@@ -420,21 +446,86 @@ class DiagnosticService:
                     }
                 )
         control.checkpoint()
-        source.verify()  # Shared corruption must not continue into the next direction.
-        self.store.update(task_id, active="token_content")
+        source.verify()
+        if selection["enable_token_content"]:
+            self.store.update(task_id, active="token_content")
+            with control.telemetry.span("token_detection_and_retention"):
+                stages.append(self._token_stage(source, intent, options, token_control, writer))
+        if "recommendations" in intent:
+            with control.telemetry.span("recommendation_extension"):
+                extension_complete = run_extension(
+                    source,
+                    writer,
+                    workspace,
+                    task_id,
+                    intent["recommendations"],
+                    self.recommendations,
+                    token_control,
+                    all(s["status"] == "completed" for s in stages if s["direction"] == "low_hit"),
+                    enable_low_hit=selection["enable_low_hit"],
+                    enable_token_content=selection["enable_token_content"],
+                    low_task=low_control,
+                )
+            if not extension_complete:
+                stages.append(
+                    {
+                        "direction": "token_content"
+                        if selection["enable_token_content"]
+                        else "low_hit",
+                        "stage": "recommendations",
+                        "status": "partial",
+                    }
+                )
+        if control.v2:
+            control.encoding_calls = low_control.encoding_calls + token_control.encoding_calls
+        return {
+            "status": "ready" if all(s["status"] == "completed" for s in stages) else "partial",
+            "stages": stages,
+            "version": "diagnostics-report-1",
+            **(
+                {
+                    "selected_directions": [
+                        d
+                        for d, f in (
+                            ("low_hit", selection["enable_low_hit"]),
+                            ("token_content", selection["enable_token_content"]),
+                        )
+                        if f
+                    ]
+                }
+                if control.v2
+                else {}
+            ),
+        }
+
+    def _token_stage(
+        self,
+        source: ResolvedSource,
+        intent: dict[str, Any],
+        options: RuntimeOptions,
+        control: TaskControl,
+        writer: ResultWriter,
+    ) -> dict[str, Any]:
+        checked = retained = retained_bytes = 0
+        complete = retention_complete = True
+        fragment_incomplete = False
+        reason = None
+        fragment_reasons: set[str] = set()
+        rule_counts: dict[str, dict[str, int]] = {}
         try:
             plugin = self.registry.get("token_content")
             if json.loads(plugin.describe().model_dump_json()) != intent["plugin"]:
                 raise ExecutionStopped("PLUGIN_IDENTITY_CHANGED")
-            checked, complete = 0, True
             for request in source.iter_requests():
                 control.request(request)
-                fragment = plugin.analyze_request(
-                    request,
-                    options.token_selection,
-                    EvidenceCapabilities(),
-                    RunControl(options.token_selection.budget, control.cancelled),
-                )
+                control.telemetry.count("token_content.read_bytes", len(request.raw_body.encode()))
+                request_control = RunControl(options.token_selection.budget, control.cancelled)
+                with control.telemetry.span("token_detection"):
+                    fragment = plugin.analyze_request(
+                        request, options.token_selection, EvidenceCapabilities(), request_control
+                    )
+                for resource, amount in request_control.consumed.items():
+                    control.telemetry.count("token_content.request_budget." + resource, amount)
                 fragment = AnalysisFragment.model_validate_json(fragment.model_dump_json())
                 location_ids = {item.location_id for item in fragment.locations}
                 finding_ids = {item.finding_id for item in fragment.finding_candidates}
@@ -451,58 +542,78 @@ class DiagnosticService:
                     or fragment.raw_sha256 != request.raw_sha256
                 ):
                     raise ValueError("Plugin returned foreign evidence")
-                writer.add(
-                    "fragment", str(request.request_key.source_record_index), to_wire(fragment)
+                fragment_wire = to_wire(fragment)
+                index_wire = {
+                    "location_ids": [item.location_id for item in fragment.locations],
+                    "unit_ids": [item.unit_id for item in fragment.units],
+                    "observation_ids": [item.observation_id for item in fragment.observations],
+                }
+                size = sum(
+                    len(json.dumps(v, ensure_ascii=False).encode())
+                    for v in (fragment_wire, index_wire)
                 )
-                writer.add(
-                    "fragment_index",
-                    str(request.request_key.source_record_index),
-                    {
-                        "location_ids": [item.location_id for item in fragment.locations],
-                        "unit_ids": [item.unit_id for item in fragment.units],
-                        "observation_ids": [item.observation_id for item in fragment.observations],
-                    },
+                keep = not control.v2 or (
+                    size <= control.limit("max_fragment_bytes")
+                    and retained_bytes + size <= control.limit("max_total_fragment_bytes")
                 )
                 checked += 1
                 complete &= fragment.coverage.complete
+                fragment_incomplete |= not fragment.coverage.complete
+                fragment_reasons.update(fragment.coverage.reasons)
+                fragment_reasons.update(fragment.reason_codes)
+                for rule in fragment.rule_results:
+                    counts = rule_counts.setdefault(rule.rule_id, {})
+                    counts[rule.status] = counts.get(rule.status, 0) + 1
+                    control.telemetry.count(
+                        "token_content.rule." + rule.rule_id + "." + rule.status
+                    )
+
+                control.telemetry.count("token_content.checked_requests")
+                if not keep:
+                    retention_complete = False
+                    control.telemetry.count("token_content.omitted_fragments")
+                    continue
+                retained_bytes += size
+                retained += 1
+                control.telemetry.count("token_content.retained_fragments")
+                control.telemetry.count("token_content.retained_bytes", size)
+                with control.telemetry.span("token_retention"):
+                    writer.add(
+                        "fragment", str(request.request_key.source_record_index), fragment_wire
+                    )
+                    writer.add(
+                        "fragment_index", str(request.request_key.source_record_index), index_wire
+                    )
                 control.checkpoint()
-            stages.append(
-                {
-                    "direction": "token_content",
-                    "status": "completed" if complete else "partial",
-                    "checked_requests": str(checked),
-                }
-            )
         except (ExecutionStopped, ValueError, RuntimeError, KeyError, IndexError, TypeError) as exc:
             if getattr(exc, "code", "") == "ANALYSIS_INTERRUPTED":
                 raise
-            stages.append(
-                {
-                    "direction": "token_content",
-                    "status": "partial",
-                    "reason": getattr(exc, "code", "TOKEN_PLUGIN_FAILED"),
-                }
-            )
-        if "recommendations" in intent:
-            extension_complete = run_extension(
-                source,
-                writer,
-                workspace,
-                task_id,
-                intent["recommendations"],
-                self.recommendations,
-                control,
-                all(s["status"] == "completed" for s in stages if s["direction"] == "low_hit"),
-            )
-            if not extension_complete:
-                stages.append(
-                    {"direction": "token_content", "stage": "recommendations", "status": "partial"}
-                )
-        return {
-            "status": "ready" if all(s["status"] == "completed" for s in stages) else "partial",
-            "stages": stages,
-            "version": "diagnostics-report-1",
+            complete = False
+            reason = getattr(exc, "code", "TOKEN_PLUGIN_FAILED")
+        result: dict[str, Any] = {
+            "direction": "token_content",
+            "status": "completed" if complete and retention_complete else "partial",
+            "checked_requests": str(checked),
         }
+        if reason:
+            result["reason"] = reason
+        if control.v2:
+            result.update(
+                eligible_requests=str(source.scope.request_count),
+                scan_complete=checked == source.scope.request_count,
+                fragments_complete=complete,
+                retention_complete=retention_complete,
+                retained_requests=str(retained),
+                retained_bytes=str(retained_bytes),
+                rule_status_counts={
+                    k: {s: str(n) for s, n in v.items()} for k, v in rule_counts.items()
+                },
+                reason_codes=sorted(fragment_reasons)
+                + ([reason] if reason else [])
+                + ([] if retention_complete else ["FRAGMENT_RETENTION_TRUNCATED"])
+                + (["TOKEN_FRAGMENT_INCOMPLETE"] if fragment_incomplete else []),
+            )
+        return result
 
     @staticmethod
     def _low_hit(
@@ -513,18 +624,26 @@ class DiagnosticService:
         workspace: Path,
         automatic_combinations: bool = True,
     ) -> dict[str, Any]:
-        reports = [
-            collect_l2(
-                source, workspace / "l2", candidate_limit=options.candidate_limit, control=control
-            ),
-            collect_dynamics(
-                source,
-                workspace / "dynamics",
-                candidate_limit=options.candidate_limit,
-                include_history=True,
-                control=control,
-            ),
-        ]
+        reports = []
+        for lane in ("l2", "dynamics"):
+            control.lane = lane
+            with control.telemetry.span("low_hit_detection." + lane):
+                reports.append(
+                    collect_l2(
+                        source,
+                        workspace / "l2",
+                        candidate_limit=options.candidate_limit,
+                        control=control,
+                    )
+                    if lane == "l2"
+                    else collect_dynamics(
+                        source,
+                        workspace / "dynamics",
+                        candidate_limit=options.candidate_limit,
+                        include_history=True,
+                        control=control,
+                    )
+                )
         recipes: dict[str, PrefixFinding] = {}
         for report in reports:
             writer.add(
@@ -539,10 +658,26 @@ class DiagnosticService:
                     "candidate_comparisons": str(report.candidate_comparisons),
                     "partial": report.candidate_coverage_partial,
                     "reason_codes": list(report.reason_codes),
+                    **(
+                        {
+                            "eligible_requests": str(source.scope.request_count),
+                            "supported_rules": ["L2"]
+                            if report is reports[0]
+                            else ["L1", "L3", "L4", "L5"],
+                            "applicable_pairs": None,
+                            "applicability_status": "not_separately_classified_by_detector",
+                            "scan_complete": report.checked_requests == source.scope.request_count,
+                            "comparison_complete": not report.candidate_coverage_partial,
+                            "retention_complete": control.retention_complete,
+                        }
+                        if control.v2
+                        else {}
+                    ),
                 },
             )
             for finding in report.findings:
-                writer.add("finding", finding.finding_id, to_wire(finding))
+                with control.telemetry.span("low_hit_retention"):
+                    writer.add("finding", finding.finding_id, to_wire(finding))
                 if finding.recipe_json:
                     recipes.setdefault(finding.recipe_json, finding)
         groups: list[tuple[PrefixFinding, ...]] = [(f,) for f in recipes.values()]
@@ -552,7 +687,8 @@ class DiagnosticService:
                 break
             groups.append(pair)
         partial = (
-            any(r.candidate_coverage_partial for r in reports)
+            not control.retention_complete
+            or any(r.candidate_coverage_partial for r in reports)
             or len(groups) > options.max_experiments
             or (
                 automatic_combinations
@@ -574,9 +710,10 @@ class DiagnosticService:
                 )
                 continue
             directory = workspace / "experiments" / str(i)
-            result = run_experiment(
-                source, findings, directory, pilot_limit=options.pilot_limit, control=control
-            )
+            with control.telemetry.span("low_hit_evaluation"):
+                result = run_experiment(
+                    source, findings, directory, pilot_limit=options.pilot_limit, control=control
+                )
             payload = metadata_wire(asdict(result))
             payload["confidence_basis"] = (
                 "pilot_gain_gt_1pp"
@@ -616,6 +753,24 @@ class DiagnosticService:
             "checked_requests": str(min(r.checked_requests for r in reports)),
             "candidate_coverage_partial": partial,
             "rule_scope": "dates_paths_known_billing_header_tools_history_json_representation",
+            **(
+                {
+                    "eligible_requests": str(source.scope.request_count),
+                    "scan_complete": all(
+                        r.checked_requests == source.scope.request_count for r in reports
+                    ),
+                    "comparison_complete": not any(r.candidate_coverage_partial for r in reports),
+                    "retention_complete": control.retention_complete,
+                    "detected_by_rule": {k: str(v) for k, v in control.detected.items()},
+                    "retained_by_rule": {k: str(v) for k, v in control.retained.items()},
+                    "reason_codes": sorted(
+                        {c for r in reports for c in r.reason_codes}
+                        | (set() if control.retention_complete else {"FINDING_RETENTION_TRUNCATED"})
+                    ),
+                }
+                if control.v2
+                else {}
+            ),
         }
 
     def _token_evaluate(

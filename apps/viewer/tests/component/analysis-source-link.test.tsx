@@ -2,14 +2,15 @@ import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { SourceLink } from '../../src/features/analysis/SourceLink';
 
-const api = vi.hoisted(() => ({ catalog: vi.fn(), receipt: vi.fn(), contract: vi.fn() }));
+const api = vi.hoisted(() => ({ catalog: vi.fn(), receipt: vi.fn(), directory: vi.fn(), contract: vi.fn() }));
 vi.mock('../../src/api/client', () => ({ getJson: api.catalog }));
 vi.mock('../../src/api/v2/client', () => ({
     verifyUserContract: api.contract,
-    V2Client: class { request = api.receipt; },
+    V2Client: class { request(...args: unknown[]) { return (args[1] === 'DiscoveryPage' ? api.directory : api.receipt)(...args); } },
 }));
 
-const source = { user_run_id: 'ur-original', base_run_id: 'base-original', common_name: 'service-original', model_id: 'GLM-5.2' };
+const source = { user_run_id: 'ur-original', base_run_id: 'base-original', common_name: 'service-original', model_id: 'GLM-5.2', manifest_sha256: 'manifest', asset_identity: 'asset', encoder_identity: 'encoder' };
+const receipt = { ...source, index_revision: 'fixed-index-revision' };
 const entry = { scope: { appid: 'search & long', source } };
 const origin = '#/analysis?task=original';
 function deferred<T>() {
@@ -21,10 +22,11 @@ const click = () => fireEvent.click(screen.getByRole('button', { name: '查看�
 
 beforeEach(() => {
     vi.resetAllMocks();
+    api.directory.mockImplementation((_kind, _name, _path, { query }) => ({ total: '1', next_offset: null, entries: [{ appid: entry.scope.appid, source: { ...receipt, user_run_id: query.user_run_id, base_run_id: query.user_run_id === 'ur-next' ? 'base-next' : source.base_run_id } }] }));
     history.replaceState(null, '', `/${origin}`);
     api.catalog.mockResolvedValue({ service_instance_id: 'instance-original' });
     api.contract.mockResolvedValue(undefined);
-    api.receipt.mockResolvedValue(source);
+    api.receipt.mockResolvedValue(receipt);
 });
 
 describe('historical monitoring source navigation', () => {
@@ -35,6 +37,7 @@ describe('historical monitoring source navigation', () => {
         const query = new URLSearchParams(location.hash.split('?')[1]);
         expect(query.get('run')).toBe(source.user_run_id);
         expect(query.get('appid')).toBe(entry.scope.appid);
+        expect(query.get('revision')).toBe(receipt.index_revision);
         expect(query.has('user_run_id')).toBe(false);
         expect(api.receipt).toHaveBeenCalledWith('user', 'Receipt', '/runs/ur-original', { signal: expect.any(AbortSignal) });
     });
@@ -52,19 +55,25 @@ describe('historical monitoring source navigation', () => {
         expect(api.receipt).not.toHaveBeenCalled();
     });
 
-    it.each(['base_run_id', 'common_name', 'model_id'] as const)('refuses a mismatched %s without navigating', async field => {
-        api.receipt.mockResolvedValue({ ...source, [field]: 'different' });
+    it.each(['base_run_id', 'common_name', 'model_id', 'user_run_id'] as const)('refuses a mismatched %s without navigating', async field => {
+        api.receipt.mockResolvedValue({ ...receipt, [field]: 'different' });
         render(<SourceLink entry={entry} />);
         click();
         expect(await screen.findByRole('alert')).toHaveTextContent('监控来源身份不匹配');
         expect(location.hash).toBe(origin);
         expect(screen.getByRole('button')).toBeEnabled();
     });
+    it.each(['manifest_sha256', 'asset_identity', 'encoder_identity', 'index_revision'] as const)('refuses a changed source publication %s', async field => {
+        api.directory.mockResolvedValue({ total: '1', next_offset: null, entries: [{ appid: entry.scope.appid, source: { ...receipt, [field]: 'changed' } }] });
+        render(<SourceLink entry={entry}/>); click();
+        expect(await screen.findByRole('alert')).toHaveTextContent('监控来源发布身份不匹配');
+        expect(location.hash).toBe(origin);
+    });
 
     it('cancels a late old receipt and cannot replace the newly selected source', async () => {
-        const late = deferred<typeof source>();
+        const late = deferred<typeof receipt>();
         const next = { ...source, user_run_id: 'ur-next', base_run_id: 'base-next' };
-        api.receipt.mockImplementationOnce(() => late.promise).mockResolvedValue(next);
+        api.receipt.mockImplementationOnce(() => late.promise).mockResolvedValue({ ...next, index_revision: receipt.index_revision });
         const view = render(<SourceLink entry={entry} />);
         click();
         await waitFor(() => expect(api.receipt).toHaveBeenCalledTimes(1));
@@ -74,7 +83,7 @@ describe('historical monitoring source navigation', () => {
         click();
         await waitFor(() => expect(new URLSearchParams(location.hash.split('?')[1]).get('run')).toBe(next.user_run_id));
         const selected = location.hash;
-        await act(async () => { late.resolve(source); await late.promise; });
+        await act(async () => { late.resolve(receipt); await late.promise; });
         expect(location.hash).toBe(selected);
         expect(screen.queryByRole('alert')).toBeNull();
     });

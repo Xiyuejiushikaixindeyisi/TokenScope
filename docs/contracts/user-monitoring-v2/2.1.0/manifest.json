@@ -1,0 +1,11 @@
+{
+  "contract_version": "2.1.0",
+  "status": "candidate_pending_independent_acceptance",
+  "fixture": "synthetic; examples are not production data",
+  "operations": 14,
+  "sha256": {
+    "examples.json": "22454fb39f7e220ae03ad87d61b2d645c03911579018334dc4d69bd6806fe9f4",
+    "runtime.openapi.json": "b56317e9bc9e83493458776a579a9fcb12e1b1e934d6254bf3063a9f2cae9a01",
+    "schema.json": "bafca55ae1cba4087435046f2c08896f39d50a3f63eaa8d74681a0315d5ad497"
+  }
+}

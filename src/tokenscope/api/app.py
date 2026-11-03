@@ -17,6 +17,7 @@ from tokenscope.analysis_common.bootstrap import build_diagnostics
 from tokenscope.api.diagnostic_discovery import router as diagnostic_discovery_router
 from tokenscope.api.diagnostic_recommendations import router as diagnostic_recommendations_router
 from tokenscope.api.diagnostics import router as diagnostics_router
+from tokenscope.api.diagnostics_v2 import router as diagnostics_v2_router
 from tokenscope.api.ma import router as ma_router
 from tokenscope.api.openapi import install as install_openapi
 from tokenscope.api.user import router as user_router
@@ -114,6 +115,7 @@ def create_app(
     app.include_router(ma_router(ma))
     app.include_router(user_router(user))
     app.include_router(diagnostics_router(diagnostics, user.service_id))
+    app.include_router(diagnostics_v2_router(diagnostics, user.service_id))
     app.include_router(diagnostic_discovery_router(diagnostics, user.service_id))
     app.include_router(diagnostic_recommendations_router(diagnostics, user.service_id))
     app.state.diagnostics = diagnostics

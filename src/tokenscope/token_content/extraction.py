@@ -79,7 +79,12 @@ def extract(request: RequestView, evidence: EvidenceCapabilities, control: RunCo
             if embedded is None
             else EmbeddedLocation(parser_version=PARSER_VERSION, pointer=embedded),
         )
-        metrics = measure(value)
+        if isinstance(value, str):
+            metrics = measure(value)
+            canonical = dumps(value, sort_keys=True)
+        else:
+            canonical = dumps(value, sort_keys=True)
+            metrics = measure(value, canonical_json=canonical)
         metric = "utf8_bytes" if isinstance(value, str) else "display_json_utf8_bytes"
         part = participation.get(pointer, Participation()) if embedded is None else Participation()
         if part.encoding_identity != request.encoder_identity:
@@ -88,7 +93,7 @@ def extract(request: RequestView, evidence: EvidenceCapabilities, control: RunCo
             location_id=location.location_id,
             representation="text" if isinstance(value, str) else "structural_json",
             measurement_version=MEASUREMENT_VERSION,
-            content_sha256=digest(dumps(value, sort_keys=True)),
+            content_sha256=digest(canonical),
             facets=facets,
             measurement_unit=metric,
             measured_value=metrics[metric],
