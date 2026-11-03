@@ -122,3 +122,7 @@ TTFT_FRONTEND_HANDOFF.md为新TTFT前端入口，主交接/设计/性能清单/�
 
 ## 实际源码推送身份
 2026-10-31推送确认：U006–U008源码提交a4053db5789fa9460b1fae4097a8835b2554357c已push origin main，git ls-remote核实远端同一SHA；本地身份u008-local-1/契约2.0.0。仅本线44文件及共享记忆本线段落入提交，其他session未完成材料保留工作区。当前前端接入支持/后端维护；代码完成，性能校准待完成。未修改前端、部署或打包。
+
+## 2026-11-03 U006–U008交接复核
+
+用户再次要求整理并push U006–U008。核实源码a4053db及回执ac06998已在本地与远端main历史内；U008历史清单SHA逐项一致。前端入口为docs/tasks/monitoring/v2-user/TTFT_FRONTEND_HANDOFF.md，版本检查点GIT_HANDOFF_U008_20261031.md。U006–U008 closed，软件完成/真实性能校准待完成。本次只提交复核说明；HV2-R1-USER等进行中的修复保留未提交，不借本次交接宣称完成，不部署打包。

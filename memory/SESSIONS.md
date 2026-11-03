@@ -33,3 +33,7 @@ P0：AGENTS→CURRENT→本登记→docs/README→自己的ENTRY；核实实际I
 ## 当前协作边界
 
 各维护方处理本模块设计/代码及归口问题；审查打包负责完整服务复审、授权发布、华为统筹。现在各ENTRY已同步本轮真实数据/两次验收/单文档协议，不代表已向会话下发新编码任务。只按用户实际指定appid开展异常，不自动启动hybrid/自进化Agent。
+
+## 2026-11-03用户后端历史版本交接复核
+
+仅补充用户后端角色（01a18bc7-cdb5-7830-a185-ad3aa6257b21）：U006–U008已closed且源码a4053db与回执ac06998已进入GitHub main；前端历史接入入口为[TTFT交接](../docs/tasks/monitoring/v2-user/TTFT_FRONTEND_HANDOFF.md)，[本次复核](../docs/tasks/monitoring/v2-user/GIT_HANDOFF_U008_20261031.md)。真实性能校准仍待完成。当前HV2-R1-USER属于后续独立修复，仍按执行板推进，不纳入此次历史版本提交，不改变其他session状态。
