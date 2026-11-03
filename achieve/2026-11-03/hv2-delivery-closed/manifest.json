@@ -1,0 +1,121 @@
+{
+  "source_commit": "c1345b6fd7d413a94420642ca1b4099b9ec104b4",
+  "policy": "Exact pre-final-update bytes; mixed MA files archive tracked HEAD only, never foreign uncommitted work. Relative links in originals resolve against their original project paths.",
+  "files": {
+    "docs/tasks/delivery/HV2_REPAIR_EXECUTION_20261103.md": {
+      "sha256": "8868e8806ae4b76aa84fc35a7ede87272d1b17afb43bc64ca81bb5bf455cdbd4",
+      "bytes": 14279,
+      "source": "pre-final-update worktree"
+    },
+    "docs/tasks/delivery/HV2_INDEPENDENT_ACCEPTANCE_20261103.md": {
+      "sha256": "7fbc73cbcbbcb7061ea74a157c99d367db0a1acddc66b16e8b659d36d29ce015",
+      "bytes": 18009,
+      "source": "pre-final-update worktree"
+    },
+    "docs/tasks/delivery/V2_REPAIR_COORDINATION_PLAN_20261103.md": {
+      "sha256": "f4c2ddb17de9d435665770d7a5f2d66fde531d479afc365f4d55e7f0edab90d2",
+      "bytes": 14886,
+      "source": "pre-final-update worktree"
+    },
+    "docs/tasks/monitoring/v2-user/ENTRY.md": {
+      "sha256": "3a415758b28c370bf5dfdbe61fc2b660540a850bbec4deb8f46955877c482773",
+      "bytes": 5852,
+      "source": "pre-final-update worktree"
+    },
+    "docs/tasks/prefix-analysis/ENTRY.md": {
+      "sha256": "e104baf328155f273e63d08a5f6e2fbedf0f8086eeefb8e73f04853829c1ff74",
+      "bytes": 10407,
+      "source": "pre-final-update worktree"
+    },
+    "docs/tasks/length-analysis/ENTRY.md": {
+      "sha256": "2e3c42dfe6d75b4b26ba64a1ec841f528a90cc7c57dbe46f87d3ae54fed925fe",
+      "bytes": 14664,
+      "source": "pre-final-update worktree"
+    },
+    "docs/tasks/viewer/monitoring-v2/ENTRY.md": {
+      "sha256": "009e626e3ac57838ed629340f176931310b171e583017ab0d6e5bcdcff42026a",
+      "bytes": 8075,
+      "source": "pre-final-update worktree"
+    },
+    "docs/tasks/viewer/analysis/ENTRY.md": {
+      "sha256": "c641344d1fd842945110c85c5676d7c202270a4f3207f9228449df5bd4f217ad",
+      "bytes": 10077,
+      "source": "pre-final-update worktree"
+    },
+    "docs/README.md": {
+      "sha256": "f53b9c975003738897a2b2e673cbabd14f4f82b6465ba32e5155cdaf18c27eca",
+      "bytes": 5241,
+      "source": "pre-final-update worktree"
+    },
+    "docs/tasks/README.md": {
+      "sha256": "fd81b25e8e4a0aa85db4ac6b262334bfe3d3788c3d7525b382e20e381b3e4882",
+      "bytes": 3708,
+      "source": "pre-final-update worktree"
+    },
+    "docs/tasks/delivery/ENTRY.md": {
+      "sha256": "d0814293b190d06705b7c0fd48ee11db9aa588688faae27c2755b27e39bc2011",
+      "bytes": 3480,
+      "source": "pre-final-update worktree"
+    },
+    "docs/huawei/README.md": {
+      "sha256": "9e0e3c878862c18816158c2c259f8d2f0d20ee2704bdcc82c33ace394bdafc24",
+      "bytes": 3122,
+      "source": "pre-final-update worktree"
+    },
+    "memory/CURRENT.md": {
+      "sha256": "2de1c52a62c043de59806d0994cbfe9d46efbd8fae962f99ec406a4ad569b83c",
+      "bytes": 2999,
+      "source": "pre-final-update worktree"
+    },
+    "memory/SESSIONS.md": {
+      "sha256": "acf25c0b00f08f9f9d56aefa342bb5eab8e427d3b977e66099c4e2648274a947",
+      "bytes": 9684,
+      "source": "pre-final-update worktree"
+    },
+    "memory/tasks/delivery.md": {
+      "sha256": "580bf1248cac36bc1792ce0bfc6ef3701ee495bff946ed498bea9ed9b378791a",
+      "bytes": 896,
+      "source": "pre-final-update worktree"
+    },
+    "docs/tasks/monitoring/v2-ma/ENTRY.md": {
+      "sha256": "7e5fb8dd6b61634ed77d75a1a749adc37e27e62f66775740fae69eae3694d6d5",
+      "bytes": 5924,
+      "source": "c1345b6 tracked blob"
+    },
+    "docs/tasks/monitoring/v2-ma/FRONTEND_HANDOFF.md": {
+      "sha256": "c9d0bb43685e58fc19a2b23ff1622cfb45b6b3719e96604e6d4a83d449e3c8b3",
+      "bytes": 5462,
+      "source": "c1345b6 tracked blob"
+    },
+    "memory/tasks/monitoring-v2-ma.md": {
+      "sha256": "0a32ab0b8eabcdc20b400578b2d3fa89dd75ad1560beadafc2fa792657d3c98c",
+      "bytes": 17786,
+      "source": "c1345b6 tracked blob"
+    },
+    "memory/tasks/prefix-analysis.md": {
+      "sha256": "3de773e313325d27e69e379453d346411ffc7f5bdb16dc3143b770c1946e13e6",
+      "bytes": 9635,
+      "source": "pre-final-update worktree"
+    },
+    "memory/tasks/length-analysis.md": {
+      "sha256": "6b8103f71f550c6ace0dcf2e9b7a4a72059e40ced94e47c1a04ef8e59e08c9c5",
+      "bytes": 19329,
+      "source": "pre-final-update worktree"
+    },
+    "memory/tasks/viewer-monitoring-v2.md": {
+      "sha256": "4bcd0c4c90f1f7e4e46df17d60fe4216b01fe8f0c08c5065a1f2d2e9bf031633",
+      "bytes": 28946,
+      "source": "pre-final-update worktree"
+    },
+    "memory/tasks/viewer-analysis.md": {
+      "sha256": "237ad59e634879b3793636198c1f40059713ad8adc48123a8e90093ba297d04b",
+      "bytes": 10727,
+      "source": "pre-final-update worktree"
+    },
+    "memory/tasks/monitoring-v2-user.md": {
+      "sha256": "30dc2308bf12e49a4927153e45e49dc7d7b3ad34075b01d9d58e8583bcf1cb85",
+      "bytes": 24457,
+      "source": "pre-final-update worktree"
+    }
+  }
+}

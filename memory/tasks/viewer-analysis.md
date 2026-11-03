@@ -1,5 +1,8 @@
 # 异常分析前端维护与本机统筹历史
 
+2026-11-03总设计师交付同步：本线依赖及统一源码/容器独立验收完成，已随tokenscope-v2-hv2-20261103交付桌面并核全SHA；现场新版真实数据待验，开发窗口关闭，后续定向派发。当前恢复先读[最终交付](../../docs/tasks/delivery/HV2_DELIVERY_20261103.md)与本线ENTRY；下方旧候选/待验/未打包记录仅表示历史时点，不自动重启。
+
+
 2026-11-03 HV2浏览器fixture定向测试维护完成：只改analysis-boundaries.spec.ts、analysis-review-regressions.spec.ts并新增analysis-v2-fixtures.ts；v2 caps/catalog/selected_reports、精确source模型绑定、旧execution not_computed和v2 task路径已适配，partial-only改验自动可读/部分状态/显式历史，其余断言保留。typecheck及四组无浏览器Schema检查通过，未运行浏览器/服务。c3原18项源码生成器测试SHA仍全一致，addendum记录本次3文件SHA，不覆盖旧240输入证据；[交接](../../docs/tasks/viewer/analysis/HV2_FRONTEND_HANDOFF_20261103.md)。测试窗口关闭，由总设计师统一4191环境跑浏览器；无产品改动/Git/push/打包，继续HV2而非旧UIR。
 
 2026-11-03 HV2-R3正式接入交接完成：[HV2_FRONTEND_HANDOFF](../../docs/tasks/viewer/analysis/HV2_FRONTEND_HANDOFF_20261103.md)。当前候选viewer-analysis-hv2-r3-20261103-c3，本线18文件SHA组合61a430bf0ffe931fa5e91713e1a5455b0d518fc2e1293620ed1373cbe105735c；335单元/组件、typecheck/lint/build通过，240前端输入稳定，TestClient1项及真实响应Schema/选择检查通过，无监听/browser E2E。正式消费diagnostics-execution-2/discovery-2，ready优先且无ready时published partial可发现；完整分页/身份校验、L4/L5各一卡≤3去重例、完整>1pp和T2–T4保持。HV2-AF-01更多页缓存与首读统一实际契约key，元数据另存v2兼容读取旧v1；原始负向/中间失败保留。SourceIdentity没有原index_revision：核对不可变run/base/model/common/manifest/asset/encoder及当前目录/receipt一致后携带revision，不称原报告revision。当前后端not_computed固定0组，真实有差异主路径computed+零recipe；保持availability/数量校验。总设计师已开始独立复审，产品/生成器/测试窗口关闭，只完成本线文档；不继续加改、不启动服务/Git/Docker/打包、跨会话消息或子Agent。恢复上下文继续HV2，不回旧UIR。

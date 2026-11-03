@@ -1,0 +1,50 @@
+# 低命中后端与公共层当前记忆
+
+2026-11-03最新：HV2-R2-LOWHIT已由总设计师独立验收通过，冻结identity `10f643bc56fa59936dcfd7d17f4aabf1163aba4d479c47662366d13c879e011b`，本次逐文件核对匹配。按独立验收回执：62项通过/201.93s，源码前后稳定，公共冻结仅两份已授权prefix适配变化；该结果归审查方，本次未重跑测试。异常前端接入已正式派发，**后端源码窗口关闭**，仅待总设计师E2E发现问题后定向修复，不自行恢复开发/复测/旧arpc或RV2提交任务。现场预算、真实正反例、生产收益与容量缺口保持，本机profile不代表现场通过。不改冻结源码/测试/交接身份，不commit/push、监听、打包部署。[权威冻结](../../docs/tasks/delivery/HV2_LOW_HIT_FREEZE_20261103.json)。下方待验收文字为历史时点；本次仅增量更新ENTRY及本线记忆，历史身份清单不回写。
+
+
+2026-11-03 HV2-R2-LOWHIT本线完成、待第二关独立验收：公共第一关已通过且窗口关闭；低命中3源码最小修复（保留候选截断及硬停止双原因、相同字符串跳过无效正则）。47项本线/公共调用＋15项gate/资源回归通过，11源码mypy/ruff通过；60个合成profile、24检测配置前后证据一致。仅本线源码/测试/文档记忆，原公共冻结不回写；华为预算/抽样prompt已提供，Qwen仍仅low_hit，未代签现场/前端，不commit/push、打包部署。[实际交接](../../docs/tasks/prefix-analysis/HV2_LOW_HIT_BACKEND_HANDOFF_20261103.md)。
+
+
+2026-11-03 HV2-R1-COMMON本线实施完成，候选hv2-common-local-1待总设计师独立验收：显式v2方向、规则保留/比较与方向预算隔离、published partial fallback、空recipe快路径、实测遥测及真实create_app接入。331项公共/低命中/Token联合通过；末项empty投影修正后23项v2专项、46源码mypy/ruff通过，旧27项冻结身份保持。只改公共及必要低命中调用适配，未改Token私有/前端；公共第一关通过前不进入私有第二阶段。不commit/push、打包部署。[实际交接](../../docs/tasks/prefix-analysis/HV2_COMMON_HANDOFF_20261103.md)。下方arpc/RV1/RV2是历史，不代替本轮验收。
+
+
+2026-11-02当前交付决定：用户认可V2可交付，UIR-03留V3、不阻断；审查打包已完成源码push、WSL构建/包体与桌面全SHA交付；华为真实数据待验。角色职责保持，以下旧暂停/阻断/合成现场计划只是历史。现场真实数据、两次人工验收、SSH18002、唯一Markdown要求及不得再犯的问题见[长期记忆](../DELIVERY_LESSONS.md)；当前结果看[交付记录](../../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
+
+2026-11-01 Token依赖复审回执已核对：[实际报告](../../docs/tasks/length-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md)确认T2–T4+arpc-local-4通过并保留限制，164本线/12独立边界/14 ART4 GET，无阻断或源码修复，未占公共窗口。RV2-L清单中“Token复审进行中”为交接时点，现以本报告更新；冻结清单不回写。本记忆为清单后增量，总负责提交前重新计摘要。tool_calls:null保守partial、生产策略/引用/用户及现场验收限制保持。
+
+2026-11-01 RV2-L聚合接入验证闭环：L4/L5各一张卡可用现有契约完成，RV1每类唯一6请求，215只读路由/84原文件未变；业务保持arpc-local-4。提交清单交异常分析总负责统一收口，本线不commit/push、不打包部署。[回执](../../docs/tasks/prefix-analysis/RV2_L_HANDOFF_20261101.md)。
+
+2026-11-01独立复审已完成：arpc-local-4在低命中/公共后端范围通过。PCR-01工具对照错位、PCR-02成员完整性误报均归口修复并独立复验关闭；146项公共/低命中、4项独立边界、6项Token受影响专项通过，mypy/ruff通过；RV1 215路由只读核对、84原文件未变。Token私有全范围、前端用户验收和现场容量不由本结论代签。不打包部署。[实际报告](../../docs/tasks/prefix-analysis/INDEPENDENT_REVIEW_RESULT_20261101.md)。后续段落为历史时点，以本条为当前状态。
+
+独立审查修复候选：arpc-local-4，PCR-01/02已由公共维护方修复，38项针对回归通过；已交独立会话复验，尚未给最终结论。见docs/tasks/prefix-analysis/INDEPENDENT_REVIEW_FIXES_20261101.md，不以维护方通过代签复审。
+
+2026-11-01用户已授权并实际启动低命中/公共独立复审：既有审查会话01a1800e-80b4-7400-a78b-a84f5b6e888d已受理arpc-local-3+RV1核查；公共维护方跟进归口修复/复测。当前未出独立结论；旧“仅准备”被本次授权覆盖。[执行记录](../../docs/tasks/prefix-analysis/INDEPENDENT_REVIEW_EXECUTION_20261101.md)。不打包部署。
+
+2026-11-01 RV1统一验收state已实际生成：同实例synthetic-orders/GLM-5.2，两份两方向ready及一份partial历史；两默认保留第二ready，含L1与T2–T4及L4/L5。业务源码/Schema保持arpc-local-3，运行校验PASS；只读消费入口见[RV1](../../docs/tasks/prefix-analysis/UNIFIED_ACCEPTANCE_RV1_HANDOFF.md)。后端独立复审仍只有交接准备，不冒称通过；不打包部署。
+
+2026-11-01：基于arpc-local-3的[低命中/公共独立复审交接及启动prompt](../../docs/tasks/prefix-analysis/INDEPENDENT_REVIEW_HANDOFF.md)已整理，完整工作树候选prefix-common-review-20261101-1；叠加身份69文件及Token候选依赖摘要核对通过。仅文档/身份校验，未发送或启动复审、未重跑业务测试；用户视觉与独立复审仍待完成，不打包部署。
+
+2026-10-31前端已签收AR-L5并通过其低命中只读浏览器检查；用户视觉及独立复审仍待完成。公共保持接入支持，本回执不触发新测试/任务。[消费回执](../../docs/tasks/prefix-analysis/FRONTEND_ARL5_ACCEPTANCE_RECEIPT.md)。
+
+2026-10-31 AR-L5标题/建议修复完成，当前arpc-local-3：按实际Plan描述L1–L3位置/动作/条件，10项针对性测试通过；Schema及旧封存报告不变。前端已签收AR-L4并通过其动态片段浏览器检查，本轮新读取入口见[AR-L5](../../docs/tasks/prefix-analysis/FRONTEND_COPY_HANDOFF_ARL5.md)。不改正式前端、打包部署。
+
+2026-10-31 AR-L4证据可读性修复完成，当前arpc-local-2：L1/L4精确变化片段、L1原始A/B、Token缺依据before；Schema不变，31项针对回归及1项加强重跑通过。旧冻结样例保持，新实际状态/接口回执见[AR-L4](../../docs/tasks/prefix-analysis/FRONTEND_READABILITY_HANDOFF_ARL4.md)。
+
+2026-10-31前端已签收arpc-local-1：64/64文件、17/17依赖、8/8测试证据摘要匹配，按其已有授权进入UI-04正式返工。公共保持接入支持，不因回执重跑或修改后端。[接收回执](../../docs/tasks/prefix-analysis/FRONTEND_ARL3_ACCEPTANCE_RECEIPT.md)。
+
+2026-10-31，session 01a18be2-7112-7aa2-919b-5137d1f1b1ad。角色：L1–L5及analysis_common/诊断API唯一公共维护方。Token session 01a18fcd-0464-7cf1-b435-4f394bd33e66负责token_content私有实现；不接管对方源码。
+
+当前阶段：用户直接恢复T2–T4/ARPC000–006已实施闭环，转前端接入/审查支持；旧暂停、类型未修复、Schema含T1、仅部分实现的记忆已失效。没有正式前端、打包、部署或Git发布授权变更。
+
+P0入口：[AR-L3实际交接及启动prompt](../../docs/tasks/prefix-analysis/FRONTEND_REWORK_IMPLEMENTATION_HANDOFF_ARL3.md) → [ARPC006验收](../../docs/tasks/analysis/batches/ARPC006/RESULT.md) → [机器Schema](../../docs/contracts/analysis-recommendations-1/README.md)。身份arpc-local-1；交接旁有IDENTITY/EXAMPLES，实际8组持久状态11份HTTP报告。294项分析测试（293全套+1新增、另重跑1项），监控254+MA46=300；42模块mypy、ruff、旧13冻结文件一致。
+
+当前能力：按recipe归组，L4/L5独立；局部原文准确定位/截断/最多3例；Token实际adapter T2–T4；提交配置快照、幂等/retry固定；完整原appid提案扫描/guard/Plan/direct_full；不同依据相同执行验证后复用；预算/停止位置/coverage；封存GET、实例/分页/legacy兼容。公开视图不暴露内部策略JSON。CurrentTokenContentPlugin=token-content-2，旧T1报告仍读。
+
+口径：低命中完整pilot和full均严格>1个百分点，L4/L5/Token独立；N为完整raw实际改动去重请求数，未知null；ΔP/ΔC=after-before，零负收益保留，P降C升不称整体成功。缺业务依据完整advice可ready；技术/预算不完整partial。partial仅历史，empty不换默认，两方向整体ready才更新已包含方向。
+
+后台真实业务策略尚未配置，默认空bundle明确0策略。构造业务规则仅验证工程，不能证明业务授权或线上质量。资源是本机套件/小档位测量，15万请求未校准；新推荐发布对既有低命中Plan预算事后核算，不宣称前置RSS控制。Loop/真实session/turn过程不新增，不改模型配置和线上原文。
+
+共享api/app.py装配窗口已释放，只加独立router；bootstrap静态适配器。原监控计量复用，旧common/http/discovery不改。工作区有多会话内容，不整区暂存/清理。前端正式接入及产品验收由其本线推进；未跨会话发送消息。
+
+旧阶段完整记忆归档：[历史](../../achieve/tasks/prefix-analysis/arpc-pre-final-20261031/MEMORY.md)。LH000–009、自审及FE-N1已闭环历史以本线ENTRY链接进入，勿重跑已完成开发或恢复旧等待。

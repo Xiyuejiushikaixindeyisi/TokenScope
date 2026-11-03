@@ -1,0 +1,57 @@
+[
+  {
+    "original": "prompts/sessions/hv2-repair-20261103/ANALYSIS_FRONTEND_IMPLEMENT.md",
+    "archived": "achieve/2026-11-03/hv2-session-prompts/prompts/sessions/hv2-repair-20261103/ANALYSIS_FRONTEND_IMPLEMENT.md",
+    "sha256": "76f88559732b5c73a15c8043ee31512bc367c88287926dfc438fd99c4579a171"
+  },
+  {
+    "original": "prompts/sessions/hv2-repair-20261103/ANALYSIS_FRONTEND_PREP.md",
+    "archived": "achieve/2026-11-03/hv2-session-prompts/prompts/sessions/hv2-repair-20261103/ANALYSIS_FRONTEND_PREP.md",
+    "sha256": "37e91173916fd44c3dba08ac35dd9ef4ccdb0a717a78efac5bd099321ce7ec1b"
+  },
+  {
+    "original": "prompts/sessions/hv2-repair-20261103/COMMON.md",
+    "archived": "achieve/2026-11-03/hv2-session-prompts/prompts/sessions/hv2-repair-20261103/COMMON.md",
+    "sha256": "916e128caed114b4af013a8b898c41520ac05dd6f3a0475e01692fb557030f92"
+  },
+  {
+    "original": "prompts/sessions/hv2-repair-20261103/LOW_HIT_IMPLEMENT.md",
+    "archived": "achieve/2026-11-03/hv2-session-prompts/prompts/sessions/hv2-repair-20261103/LOW_HIT_IMPLEMENT.md",
+    "sha256": "a2ff8e34e8a6e3bab6f6b46a48bc114765151f10d81bab853e62cc5466f61050"
+  },
+  {
+    "original": "prompts/sessions/hv2-repair-20261103/MA_BACKEND.md",
+    "archived": "achieve/2026-11-03/hv2-session-prompts/prompts/sessions/hv2-repair-20261103/MA_BACKEND.md",
+    "sha256": "3e56b37e10fec2429570491a97fc40d759aac1b30fa03cafdcf74cfaa69be7e8"
+  },
+  {
+    "original": "prompts/sessions/hv2-repair-20261103/MONITOR_FRONTEND_MA.md",
+    "archived": "achieve/2026-11-03/hv2-session-prompts/prompts/sessions/hv2-repair-20261103/MONITOR_FRONTEND_MA.md",
+    "sha256": "ccfd036672c89610d3cf0c7e2689ed2666283158cbe675ecb9fa320637c1b37d"
+  },
+  {
+    "original": "prompts/sessions/hv2-repair-20261103/MONITOR_FRONTEND_PREP.md",
+    "archived": "achieve/2026-11-03/hv2-session-prompts/prompts/sessions/hv2-repair-20261103/MONITOR_FRONTEND_PREP.md",
+    "sha256": "8b4a5b3d0f3757584c47469373652f606c9244af641d2bf5359ca756541d0d16"
+  },
+  {
+    "original": "prompts/sessions/hv2-repair-20261103/MONITOR_FRONTEND_USER.md",
+    "archived": "achieve/2026-11-03/hv2-session-prompts/prompts/sessions/hv2-repair-20261103/MONITOR_FRONTEND_USER.md",
+    "sha256": "76e1e97af77995ffd7f890dc2e70062680b3382e61243a2081d76e455bf674bc"
+  },
+  {
+    "original": "prompts/sessions/hv2-repair-20261103/TOKEN_IMPLEMENT.md",
+    "archived": "achieve/2026-11-03/hv2-session-prompts/prompts/sessions/hv2-repair-20261103/TOKEN_IMPLEMENT.md",
+    "sha256": "f511d1b05fd8ba6a8fe5ce7f9710514072fe093d3ff6228a6d6977262aa0f00e"
+  },
+  {
+    "original": "prompts/sessions/hv2-repair-20261103/TOKEN_PREP.md",
+    "archived": "achieve/2026-11-03/hv2-session-prompts/prompts/sessions/hv2-repair-20261103/TOKEN_PREP.md",
+    "sha256": "6d0af6fabcf0e4fc0950ad4b16d49cf217161379211224f26527f0fcd2002a39"
+  },
+  {
+    "original": "prompts/sessions/hv2-repair-20261103/USER_BACKEND.md",
+    "archived": "achieve/2026-11-03/hv2-session-prompts/prompts/sessions/hv2-repair-20261103/USER_BACKEND.md",
+    "sha256": "b6f8fdcf170c1356e3e680f916c4891701c3542b0772e43894206577e0ce1451"
+  }
+]

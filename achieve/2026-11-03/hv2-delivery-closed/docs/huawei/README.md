@@ -1,0 +1,18 @@
+# 华为机文档
+
+2026-11-03后续执行更新：华为调查已收到，用户已要求开始修复与实际任务派发。当前状态、证据勘误、源码窗口和阶段门槛以[本轮执行板](../tasks/delivery/HV2_REPAIR_EXECUTION_20261103.md)为准；下方“等待回传/尚未派发”保留为前序规划记录。公共层先验收，后端通过冻结后前端，最终完整验收交付。
+
+2026-11-03当前：[V2回传原件](HUAWEI_V2_ACCEPTANCE_REPORT.md) · [核对方案](HUAWEI_V2_REVIEW_AND_RESEARCH_PLAN_20261103.md) · [只读调查prompt](../../prompts/delivery/HUAWEI_V2_READONLY_INVESTIGATION_20261103.md)。该prompt的新调查报告尚未收到，现场是否执行未取得新证据；本地当前仅规划与记忆。用户已指定本会话为V2版本总设计师，回传后按[六线修复与交付计划](../tasks/delivery/V2_REPAIR_COORDINATION_PLAN_20261103.md)实施公共层/后端先验收、契约冻结后前端及最终完整验收交付；不因此放宽当前调查只读边界。用户明确第二次验收不通过，多模型访问、异常空结果与MA缺数仍待闭环。
+
+2026-11-02已交付版本参考：[V2批准交付](../tasks/delivery/V2_APPROVED_DELIVERY_20261102.md) · [华为真实数据两阶段执行prompt](../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../operations/DELIVERY_ACCEPTANCE_RULES.md) · [闭环归档](../../achieve/2026-11-02/v2-approved-delivery/README.md)。UIR-03由用户留V3，不是V2阻断；旧记录只作历史。
+
+本目录保存华为机调查、事实核对、版本差异和验收结论。收到的报告、源码或日志原件放 evidence/huawei 或 evidence/source_drops，文件摘要放 evidence/manifests。
+
+每份结论说明来源、日期、适用源码或镜像版本，以及“用户提供”“材料描述”“本机核对”“现场验证”等证据状态。内网路径可用于来源索引，需要的关键结论仍应有可阅读证据。
+
+当前完整 PrefixLens 位于华为实验机，按后续分析任务需要核实。监控首版目标为 V100：已收到 [2026-10-26 原报告](TOKEN_SCOPE_V100_ENVIRONMENT_REPORT.md)，用户直接存入本目录，保持原件不移动、不改写；[来源摘要](../../evidence/manifests/monitoring-v100-environment-2026-10-26.json)和[设计核对](MONITORING_V100_DESIGN_REVIEW_2026-10-26.md)另存。确认 2×V100、40 可调度逻辑 CPU 与 Docker/Compose；驱动不匹配、CPU 镜像兼容性及性能状态见核对。其他机器的历史 H100 描述不能套用到本次目标，此前尚未取得现场首次验收报告；2026-10-30已收到真实CSV现场报告且用户确认V1前后端通过，当前状态见下方。
+
+
+## 2026-10-30 监控V1验收
+
+[验收核对与分析交接](MONITORING_V1_ACCEPTANCE_20261030.md)汇总现场事实、用户验收、workaround及限制；[报告原件](../../evidence/huawei/2026-10-30/TOKEN_SCOPE_HUAWEI_RUN_AND_BUG_REPORT.md)逐字节保存，[摘要清单](../../evidence/manifests/monitoring-huawei-acceptance-2026-10-30.json)记录来源。历史报告不覆写。

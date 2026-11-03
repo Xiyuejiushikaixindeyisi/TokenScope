@@ -1,5 +1,8 @@
 # V2 用户监控后端记忆
 
+2026-11-03总设计师交付同步：本线依赖及统一源码/容器独立验收完成，已随tokenscope-v2-hv2-20261103交付桌面并核全SHA；现场新版真实数据待验，开发窗口关闭，后续定向派发。当前恢复先读[最终交付](../../docs/tasks/delivery/HV2_DELIVERY_20261103.md)与本线ENTRY；下方旧候选/待验/未打包记录仅表示历史时点，不自动重启。
+
+
 2026-11-02当前交付决定：用户认可V2可交付，UIR-03留V3、不阻断；审查打包已完成源码push、WSL构建/包体与桌面全SHA交付；华为真实数据待验。角色职责保持，以下旧暂停/阻断/合成现场计划只是历史。现场真实数据、两次人工验收、SSH18002、唯一Markdown要求及不得再犯的问题见[长期记忆](../DELIVERY_LESSONS.md)；当前结果看[交付记录](../../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
 
 当前TTFT状态：**代码完成，性能校准待完成**。用户最新要求与缺参保护见文末及[校准清单](../../docs/tasks/monitoring/v2-user/PERFORMANCE_CALIBRATION.md)。

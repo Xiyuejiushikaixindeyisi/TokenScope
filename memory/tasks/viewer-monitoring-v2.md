@@ -1,5 +1,8 @@
 # Token监控V2前端记忆
 
+2026-11-03总设计师交付同步：本线依赖及统一源码/容器独立验收完成，已随tokenscope-v2-hv2-20261103交付桌面并核全SHA；现场新版真实数据待验，开发窗口关闭，后续定向派发。当前恢复先读[最终交付](../../docs/tasks/delivery/HV2_DELIVERY_20261103.md)与本线ENTRY；下方旧候选/待验/未打包记录仅表示历史时点，不自动重启。
+
+
 2026-11-03总设计师收口通知：已接收总/MA交接、核对50文件c4280716…，独立审读及6文件75项定点通过2.02s，前后SHA一致；5份新HTTP fixture复制至其新输入目录。**本线源码窗口关闭，待统一冷启动浏览器/视觉及定向问题**，不自行改源码/测试/生成身份，不启动服务/提交/打包。当前仅独立源码与定点通过，不能代签最终前端通过；异常前端仍实施，整合类型/全量由总设计师待其冻结后跑。该75项是总设计师回执，不与本线301项叠加。
 
 2026-11-03最新：HV2-R2-MONITOR-FE-MA与USER均完成本线源码/静态/单元组件自测，冻结候选交回总设计师独立冷启动E2E，**不是整体最终通过**。[总交接](../../docs/tasks/viewer/monitoring-v2/HV2_MONITOR_FRONTEND_HANDOFF_20261103.md)和[MA交接](../../docs/tasks/viewer/monitoring-v2/HV2_MA_FRONTEND_HANDOFF_20261103.md)已存在。HEAD d55df94b6e58117a698dbd14667b7836e67cd50f，50个未提交前端文件组合c4280716635dc0b7e0dd472cf7c98a3f6ac80cacec9125dc02ac09fc09645404，证据artifacts/validation/viewer/HV2-MONITOR-FE-20261103。32文件301项全量、typecheck/lint/build通过；MA34/用户41定点与全量重叠不相加。三模型同APPID与13UUID合成输入已生成到证据inputs，7项新浏览器仅编写未跑，无监听服务/state/Docker/打包/commit/push。用户目录完整snapshot分页、有界冲突重读、固定run/index跨刷新/模型/重载，保持搜索20条/300ms与导出；TTFT后端默认W/T、可选K且不缩放τ，精确Fraction/历史旧命名空间只读。MA独立/配对/null/0/partial及本UUID原因、同池4并发保持；两线握手解析真实聚合refs且保留完整断言。产品去掉异常提交JSON，来源参数文案“用户提供、尚未校准”。SourceLink跨模块revision已派发异常前端，本线不改共享壳/样式/异常/CURRENT/SESSIONS。实际环境两ID仍01a18c49-d9b4-7a33-8c04-e5a72adfcc24。压缩恢复必须以本轮交接/最新总设计师通知继续，不能误回历史RV2/UIR/push。

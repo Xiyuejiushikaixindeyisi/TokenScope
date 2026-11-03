@@ -1,0 +1,5 @@
+# V2总设计与交付记忆
+
+2026-11-03源码固定并已push：c1345b6fd7d413a94420642ca1b4099b9ec104b4。根339前端/88浏览器/135鼠标/156重启资源源码关通过，完整视觉已核对。WSL镜像已构建：sha256:d129a05636b01b4f93d806e42587be749cef561cfbacbe0067adbd7b8d7c37f8；默认空state Compose及HTTP资源身份验证通过，容器功能测试进行中，尚未形成包体或桌面验收目录。8份原有未提交修改保留。后续打包/桌面SHA/本地backup/文档push按既有授权继续，现场真实数据仍待验。
+
+权威入口：docs/tasks/delivery/HV2_REPAIR_EXECUTION_20261103.md、HV2_INDEPENDENT_ACCEPTANCE_20261103.md、VERSION_HV2_20261103.json；最终现场prompt为prompts/delivery/HUAWEI_V2_HV2_REAL_DATA_20261103.md，只有随同名实包才执行。原报告/旧包/state/证据保持，UIR-03留V3，不造真实cached或性能校准。

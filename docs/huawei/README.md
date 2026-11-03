@@ -1,18 +1,11 @@
 # 华为机文档
 
-2026-11-03后续执行更新：华为调查已收到，用户已要求开始修复与实际任务派发。当前状态、证据勘误、源码窗口和阶段门槛以[本轮执行板](../tasks/delivery/HV2_REPAIR_EXECUTION_20261103.md)为准；下方“等待回传/尚未派发”保留为前序规划记录。公共层先验收，后端通过冻结后前端，最终完整验收交付。
+2026-11-03：调查已回传，六线修复与本机独立源码/容器验收已闭环，新包已交付Windows桌面；华为对新版的真实数据验收尚未执行。[当前交付结果](../tasks/delivery/HV2_DELIVERY_20261103.md) · [当前完整现场prompt](../../prompts/delivery/HUAWEI_V2_HV2_REAL_DATA_20261103.md)。旧只读调查prompt已归档，不再作为新包部署指令。
 
-2026-11-03当前：[V2回传原件](HUAWEI_V2_ACCEPTANCE_REPORT.md) · [核对方案](HUAWEI_V2_REVIEW_AND_RESEARCH_PLAN_20261103.md) · [只读调查prompt](../../prompts/delivery/HUAWEI_V2_READONLY_INVESTIGATION_20261103.md)。该prompt的新调查报告尚未收到，现场是否执行未取得新证据；本地当前仅规划与记忆。用户已指定本会话为V2版本总设计师，回传后按[六线修复与交付计划](../tasks/delivery/V2_REPAIR_COORDINATION_PLAN_20261103.md)实施公共层/后端先验收、契约冻结后前端及最终完整验收交付；不因此放宽当前调查只读边界。用户明确第二次验收不通过，多模型访问、异常空结果与MA缺数仍待闭环。
+- [V2二次验收原件](HUAWEI_V2_ACCEPTANCE_REPORT.md)、[2026-11-03调查原件](HUAWEI_V2_INVESTIGATION_REPORT_20261103.md)：只读保持；[原分析方案](HUAWEI_V2_REVIEW_AND_RESEARCH_PLAN_20261103.md)按历史阅读。
+- [V100环境原报告](TOKEN_SCOPE_V100_ENVIRONMENT_REPORT.md)、[设计核对](MONITORING_V100_DESIGN_REVIEW_2026-10-26.md)：现场仍核实CPU/驱动/Docker/Compose/磁盘，不按机器名称假定NPU或GPU可用。
+- [V1现场验收](MONITORING_V1_ACCEPTANCE_20261030.md)、[旧V2交付](../tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)：历史及回退身份，不能代替新版现场通过。
 
-2026-11-02已交付版本参考：[V2批准交付](../tasks/delivery/V2_APPROVED_DELIVERY_20261102.md) · [华为真实数据两阶段执行prompt](../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../operations/DELIVERY_ACCEPTANCE_RULES.md) · [闭环归档](../../achieve/2026-11-02/v2-approved-delivery/README.md)。UIR-03由用户留V3，不是V2阻断；旧记录只作历史。
+现场仅真实Trace3/MA18 CSV，先量级和预算，再用户监控/搜索/TTFT及MA；第一次用户验收后由用户指定appid/模型/方向再做异常分析。停止已核实旧服务后新state启动，经SSH18002访问。最终唯一Markdown，关键源码/diff、复现、修改、结果与证据直接嵌正文；限制和失败如实保留。本机合成数据不得拿到现场冒充真实验收。[固定规则](../operations/DELIVERY_ACCEPTANCE_RULES.md)。
 
-本目录保存华为机调查、事实核对、版本差异和验收结论。收到的报告、源码或日志原件放 evidence/huawei 或 evidence/source_drops，文件摘要放 evidence/manifests。
-
-每份结论说明来源、日期、适用源码或镜像版本，以及“用户提供”“材料描述”“本机核对”“现场验证”等证据状态。内网路径可用于来源索引，需要的关键结论仍应有可阅读证据。
-
-当前完整 PrefixLens 位于华为实验机，按后续分析任务需要核实。监控首版目标为 V100：已收到 [2026-10-26 原报告](TOKEN_SCOPE_V100_ENVIRONMENT_REPORT.md)，用户直接存入本目录，保持原件不移动、不改写；[来源摘要](../../evidence/manifests/monitoring-v100-environment-2026-10-26.json)和[设计核对](MONITORING_V100_DESIGN_REVIEW_2026-10-26.md)另存。确认 2×V100、40 可调度逻辑 CPU 与 Docker/Compose；驱动不匹配、CPU 镜像兼容性及性能状态见核对。其他机器的历史 H100 描述不能套用到本次目标，此前尚未取得现场首次验收报告；2026-10-30已收到真实CSV现场报告且用户确认V1前后端通过，当前状态见下方。
-
-
-## 2026-10-30 监控V1验收
-
-[验收核对与分析交接](MONITORING_V1_ACCEPTANCE_20261030.md)汇总现场事实、用户验收、workaround及限制；[报告原件](../../evidence/huawei/2026-10-30/TOKEN_SCOPE_HUAWEI_RUN_AND_BUG_REPORT.md)逐字节保存，[摘要清单](../../evidence/manifests/monitoring-huawei-acceptance-2026-10-30.json)记录来源。历史报告不覆写。
+本目录保存版本化现场结论，原件不覆写；勘误和补证另存并指向原件，记录版本/配置/数据摘要和证据状态。

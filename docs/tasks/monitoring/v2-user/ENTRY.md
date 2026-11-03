@@ -1,15 +1,10 @@
 # V2 用户监控后端功能入口
 
-2026-11-03总设计师阶段同步：五项后端已独立验收冻结，两前端接入及HV2-AF-01/MF-02修复完成；根339项前端、88项最终浏览器通过（原失败与测试修正分别保留）。本线窗口关闭，统一版本与容器交付由V2总设计师继续；华为真实数据仍待验。[实际独立验收](../../delivery/HV2_INDEPENDENT_ACCEPTANCE_20261103.md)。下方旧阶段按历史阅读。
+2026-11-03：HV2修复已完成公共层→依赖后端独立验收及冻结→前端→源码与容器独立验收→WSL打包和桌面全SHA交付。源码 `c1345b6fd7d413a94420642ca1b4099b9ec104b4` 已push main；版本 `tokenscope-v2-hv2-20261103`。现场真实数据及用户两阶段验收待执行，六线开发窗口关闭。 [完整结果与现场prompt](../../delivery/HV2_DELIVERY_20261103.md)。
 
-2026-11-03当前HV2-R1-USER：已实现只读多模型发布目录、用户提供TTFT默认参数持久化及自动计算候选；[本轮后端交接](HV2_USER_BACKEND_HANDOFF_20261103.md)和[2.1.0候选契约](../../../contracts/user-monitoring-v2/2.1.0/README.md)优先。待总设计师独立验收/冻结后才交前端；旧U008仅作历史。参数Qwen1/GLM2.7/DeepSeek2.6秒、K8192是用户提供参考，真实性能校准仍待完成。后续恢复只按prompts/sessions/hv2-repair-20261103/USER_BACKEND.md及当前执行板，不重复执行历史提交指令。
+P0：AGENTS→CURRENT→SESSIONS→本入口；当前维护优先读取[HV2用户后端交接](HV2_USER_BACKEND_HANDOFF_20261103.md)及[用户2.1.0契约](../../../contracts/user-monitoring-v2/2.1.0/README.md)。默认τ为用户提供1/2.7/2.6秒，K8192，真实性能校准待完成。
 
-
-2026-11-02统一交付同步：V2已完成WSL打包、桌面全文件SHA核对，华为真实数据待验；用户认可V2可交付，UIR-03暂不修、留V3，不作V2阻断。本角色职责/休眠状态不变；当前发布与实际结果见[交付记录](../../delivery/V2_APPROVED_DELIVERY_20261102.md)。现场只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）和MA，第一次用户验收并指定appid后才两类异常；SSH18002，唯一Markdown嵌关键源码/证据。[当前prompt](../../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../../../operations/DELIVERY_ACCEPTANCE_RULES.md)。下方旧开发/交接状态按历史阅读，不覆盖本决定。
-
-当前TTFT状态：**代码完成，性能校准待完成**。新最小模型已实现：W覆盖全部非计算耗时、不单列O；证据材料选填，缺必要参数不出比例、W不默认0。当前用户契约2.0.0，旧1.0.1历史兼容；[前端接入](TTFT_FRONTEND_HANDOFF.md)尚待前端实施/验收。
-2026-10-30：用户已认可最终设计并授权连续开发。**U000–U005 closed，本地用户后端统一验收完成**；289全量回归及最终增量15项恢复测试通过，真实MA联合通过。未部署、打包或修改V1运行配置；前端、真实TTFT校准及现场仍pending。
-
+本线职责及ID保持，后续现场问题由总设计师定向分配；不自行重跑旧派发prompt或改变批准展示。旧阶段/候选回执已[完整归档](../../../../achieve/2026-11-03/hv2-delivery-closed/docs/tasks/monitoring/v2-user/ENTRY.md)。以下为版本化维护材料，历史批次状态不覆盖本段。
 ## 优先阅读
 
 P0：AGENTS → CURRENT → SESSIONS → docs/README → 本入口。
