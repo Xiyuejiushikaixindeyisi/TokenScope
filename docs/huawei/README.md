@@ -1,5 +1,7 @@
 # 华为机文档
 
+2026-11-04：用户确认新版报告尚未回传，新增七项观察供[V3研究](../tasks/product-v3/ENTRY.md)立即开始。[V3补充取证prompt](../../prompts/delivery/HUAWEI_V3_EVIDENCE_APPENDIX_20261104.md)只追加到当前唯一Markdown，不改冻结包/SHA、不增加报告数量。已有统计与质量调查可先做；用户未指定appid前，不借V3研究启动第二阶段异常深挖。
+
 2026-11-03：调查已回传，六线修复与本机独立源码/容器验收已闭环，新包已交付Windows桌面；华为对新版的真实数据验收尚未执行。[当前交付结果](../tasks/delivery/HV2_DELIVERY_20261103.md) · [当前完整现场prompt](../../prompts/delivery/HUAWEI_V2_HV2_REAL_DATA_20261103.md)。旧只读调查prompt已归档，不再作为新包部署指令。
 
 - [V2二次验收原件](HUAWEI_V2_ACCEPTANCE_REPORT.md)、[2026-11-03调查原件](HUAWEI_V2_INVESTIGATION_REPORT_20261103.md)：只读保持；[原分析方案](HUAWEI_V2_REVIEW_AND_RESEARCH_PLAN_20261103.md)按历史阅读。

@@ -1,4 +1,6 @@
-# V2总设计与交付记忆
+# 版本迭代、镜像打包与审查记忆
+
+2026-11-04：实际环境CODEX_THREAD_ID/CODEX_SESSION_ID再次核实均为01a1800e-80b4-7400-a78b-a84f5b6e888d。用户将V3研究/产品设计交新session；本角色回归V1/V2/V3迭代、版本级debug修复协调、独立E2E、Git/归档记忆和授权镜像/代码交付。已整理[七项观察任务书](../../docs/tasks/product-v3/RESEARCH_BRIEF_20261104.md)及[现场补充取证prompt](../../prompts/delivery/HUAWEI_V3_EVIDENCE_APPENDIX_20261104.md)。新研究无需等报告，回传作为高优先级增量证据。当前不改产品、不启动服务/打包；原8份其他session修改保持。新会话01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2已创建并接收完整任务，自报环境身份已核实，正在一手调研；登记见SESSIONS。
 
 2026-11-03本轮已完成，实际session仍01a1800e-80b4-7400-a78b-a84f5b6e888d。当前权威入口：[完整交付结果](../../docs/tasks/delivery/HV2_DELIVERY_20261103.md)。源码c1345b6已push main；镜像d129a056…；版本tokenscope-v2-hv2-20261103，WSL原包与Windows桌面全15文件SHA一致，本地backup/20261103-tokenscope-v2-hv2指针commit8a67599e1d05c138ddd0e983e0facdf5406d0f43不push。包体不进GitHub，旧包/state/证据、其他session原有8份dirty保持。
 

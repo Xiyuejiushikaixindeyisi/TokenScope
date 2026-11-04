@@ -2,7 +2,7 @@
 
 2026-11-03：HV2修复已完成公共层→依赖后端独立验收及冻结→前端→源码与容器独立验收→WSL打包和桌面全SHA交付。源码 `c1345b6fd7d413a94420642ca1b4099b9ec104b4` 已push main；版本 `tokenscope-v2-hv2-20261103`。现场真实数据及用户两阶段验收待执行，六线开发窗口关闭。 本轮完成状态由总设计师根据交接与独立证据更新，原角色ID保留；历史总设计/V1继续休眠。[完整结果](../docs/tasks/delivery/HV2_DELIVERY_20261103.md)。
 
-P0：AGENTS→CURRENT→本登记→自己的ENTRY。后续只按现场实际问题定向恢复，其他session原有未提交内容保持；历史阶段登记已归档，不自动恢复旧任务。
+P0：AGENTS→CURRENT→本登记→自己的ENTRY。2026-11-04用户另设V3研究/产品设计线，立即开始、不等报告；镜像打包与审查回归跨版本验收与交付。V2六线后续按现场实际问题定向恢复，其他session原有未提交内容保持。
 
 ## 已有session
 
@@ -11,7 +11,8 @@ P0：AGENTS→CURRENT→本登记→自己的ENTRY。后续只按现场实际问
 | TokenScope总设计 | 未知，历史未核实 | 休眠 | 用户唤醒后处理总体边界与协调，不代写任务方案 | [总设计](../docs/tasks/product/ENTRY.md) |
 | Token监控后端开发V1 | 01a1682f-956d-7630-afe7-e123ba38dfc0，历史环境登记 | 休眠 | 保留V1能力/现场交接；不自动启动修复或打包 | [监控V1](../docs/tasks/monitoring/ENTRY.md) · [验收](../docs/huawei/MONITORING_V1_ACCEPTANCE_20261030.md) |
 | Token监控前端开发V1 | 01a17811-4c9a-7513-befc-b35723aec96e，前端环境已核实 | 休眠 | F007/UI-01和两份新前端prompt交接完成，保留原型开发起点 | [前端交接](../docs/tasks/viewer/ENTRY.md) · [UI-01](../docs/tasks/viewer/PROTOTYPE_V2_UI_01.md) |
-| V2版本总设计师（原镜像打包与审查／完整服务总负责） | 01a1800e-80b4-7400-a78b-a84f5b6e888d，2026-11-03环境CODEX_THREAD_ID/CODEX_SESSION_ID一致再次核实 | HV2源码/容器独立验收及桌面交付完成，待现场新版报告 | 六线统筹、独立验收、停旧冷启动E2E、固定commit/push及WSL构建/桌面交付；按执行板推进，不代签现场 | [总计划](../docs/tasks/delivery/V2_REPAIR_COORDINATION_PLAN_20261103.md) · [本线记忆](tasks/delivery.md) · [交付入口](../docs/tasks/delivery/ENTRY.md) |
+| 镜像打包与审查（曾任V2修复总设计师） | 01a1800e-80b4-7400-a78b-a84f5b6e888d，2026-11-04环境CODEX_THREAD_ID/CODEX_SESSION_ID一致再次核实 | HV2已交付，待现场新版报告；本轮组织V3职责交接及文档版本整理 | V1/V2/V3版本迭代、版本级debug协调、独立E2E、Git/WSL镜像代码包及现场交付；V3产品设计交新session | [本线记忆](tasks/delivery.md) · [交付入口](../docs/tasks/delivery/ENTRY.md) |
+| TokenScope V3调研与产品设计 | 01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2，2026-11-04 create_thread返回且新会话已报告环境核实 | 已创建、完整启动prompt已发送并接收，正在一手调研 | 七项现场观察的一手研究、产品设计、MVP与验证方案；不等华为报告，后续高优先级增量纳入 | [V3入口](../docs/tasks/product-v3/ENTRY.md) · [本线记忆](tasks/product-v3.md) |
 | V2 Token监控后端（原父会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境与应用列表核实 | 历史角色；同一会话已按用户指派转为同事监控后端 | 已完成产品讨论、分线与版本整理；不再以父会话接管两线 | [产品记忆](tasks/monitoring.md) · [检查点](../docs/operations/V2_HANDOFF_20261030.md) |
 | V2 同事监控后端设计与开发 | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境核实 | HV2 MA解释资源已独立通过冻结，源码窗口关闭 | 维护MA数据/预热/独立与配对指标和availability；按总负责定向处理后续问题，真实cached缺失不补造；[冻结](../docs/tasks/delivery/HV2_MA_FREEZE_20261103.json) | [MA入口](../docs/tasks/monitoring/v2-ma/ENTRY.md) · [记忆](tasks/monitoring-v2-ma.md) |
 | V2 用户监控后端—功能设计与开发 | 01a18bc7-cdb5-7830-a185-ad3aa6257b21，环境核实 | HV2用户2.1.0目录及默认TTFT已独立通过冻结，源码窗口关闭 | 多模型发现、同Trace来源与用户提供τ已实现；前端接入支持和问题归口，未校准；[冻结](../docs/tasks/delivery/HV2_USER_FREEZE_20261103.json) | [本线ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md) · [设计](../docs/tasks/monitoring/v2-user/DESIGN.md) · [记忆](tasks/monitoring-v2-user.md) |
@@ -33,4 +34,4 @@ P0：AGENTS→CURRENT→本登记→自己的ENTRY。后续只按现场实际问
 
 ## 当前协作边界
 
-公共层唯一维护方为低命中后端；公共/契约变化先独立验收冻结，再由依赖后端与前端接入。V2总设计师负责独立E2E、停旧冷启、Git/WSL构建/交付、归档记忆和华为归口。用户与异常同Trace，MA独立制品；W/SLO与用户τ/K要求保持。现场真实数据、两阶段用户验收、SSH18002及唯一Markdown要求见当前现场prompt。不得因旧派发prompt/历史压缩摘要重开已闭环源码窗口。
+公共层唯一维护方为低命中后端；公共/契约变化先独立验收冻结，再由依赖后端与前端接入。镜像打包与审查负责跨版本迭代、版本级debug、独立E2E、停旧冷启、Git/WSL构建/交付、归档记忆和华为归口。V3新session仅调研与产品设计，独占本线研究文档；共享入口/Git由审查会话维护，不并发改写。用户与异常同Trace，MA独立制品；W/SLO与用户τ/K要求保持。现场真实数据、两阶段用户验收、SSH18002及唯一Markdown要求见当前现场prompt。不得因旧派发prompt/历史压缩摘要重开已闭环源码窗口。

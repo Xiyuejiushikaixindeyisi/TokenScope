@@ -1,5 +1,7 @@
 # TokenScope总设计入口
 
+2026-11-04：本历史session继续休眠；用户另设[TokenScope V3调研与产品设计](../product-v3/ENTRY.md)，不是唤醒或复用本会话。当前发布为[HV2 20261103](../delivery/HV2_DELIVERY_20261103.md)，现场新版报告待回传；下方20261102仅历史版本。当前现场prompt见[HV2真实验收](../../../prompts/delivery/HUAWEI_V2_HV2_REAL_DATA_20261103.md)。
+
 2026-11-02统一交付同步：V2已完成WSL打包、桌面全文件SHA核对，华为真实数据待验；用户认可V2可交付，UIR-03暂不修、留V3，不作V2阻断。本角色职责/休眠状态不变；当前发布与实际结果见[交付记录](../delivery/V2_APPROVED_DELIVERY_20261102.md)。现场只用真实Trace3/MA18 CSV，先用户监控（搜索/P90 TTFT）和MA，第一次用户验收并指定appid后才两类异常；SSH18002，唯一Markdown嵌关键源码/证据。[当前prompt](../../../prompts/delivery/HUAWEI_V2_REAL_DATA_20261102.md) · [固定规则](../../operations/DELIVERY_ACCEPTANCE_RULES.md)。下方旧开发/交接状态按历史阅读，不覆盖本决定。
 
 2026-10-28：现有总设计session休眠，实际ID未知。负责产品形态、一期/后续边界、session分工和跨任务协调；本次文档整理不唤醒会话或授权新功能。

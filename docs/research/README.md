@@ -1,5 +1,7 @@
 # 调研入口
 
+2026-11-04新增：[V3研究与产品设计入口](../tasks/product-v3/ENTRY.md)及[任务书](../tasks/product-v3/RESEARCH_BRIEF_20261104.md)。专职新session立即研究，未来现场报告增量纳入；本轮不开发产品代码。
+
 本目录保存参考实现、论文和专题研究。[候选参考清单](implementations/CATALOG.md)中的条目不自动代表已调研、采用或接入；具体状态以对应研究记录为准。
 
 - implementations：每个项目的固定版本、关键代码路径、可借鉴部分与适用边界。
