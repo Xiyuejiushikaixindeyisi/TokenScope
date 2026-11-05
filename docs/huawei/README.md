@@ -1,13 +1,11 @@
 # 华为机文档
 
-2026-11-04：用户确认新版报告尚未回传，新增七项观察供[V3研究](../tasks/product-v3/ENTRY.md)立即开始。[V3补充取证prompt](../../prompts/delivery/HUAWEI_V3_EVIDENCE_APPENDIX_20261104.md)只追加到当前唯一Markdown，不改冻结包/SHA、不增加报告数量。已有统计与质量调查可先做；用户未指定appid前，不借V3研究启动第二阶段异常深挖。
+2026-11-05收到HV2更新验收报告，用户决定V2暂时通过、产品宣传优先。先读[根核对与阶段收口](../tasks/delivery/HV2_ACCEPTANCE_CLOSE_20261105.md)，不再将旧“未回传/待部署”当当前任务。
 
-2026-11-03：调查已回传，六线修复与本机独立源码/容器验收已闭环，新包已交付Windows桌面；华为对新版的真实数据验收尚未执行。[当前交付结果](../tasks/delivery/HV2_DELIVERY_20261103.md) · [当前完整现场prompt](../../prompts/delivery/HUAWEI_V2_HV2_REAL_DATA_20261103.md)。旧只读调查prompt已归档，不再作为新包部署指令。
+- [最新回传原件](HUAWEI_V2_ACCEPTANCE_REPORT.md)：生成11-04、更新11-05，SHA256 a5901a2a8c5eace577ffb39e4e0ef36201549cde8d94d00f16f1ef9c32d36fac；[固定日期原字节](../../achieve/2026-11-05/hv2-acceptance-close/received/HUAWEI_V2_ACCEPTANCE_REPORT_20261105.md)。正文不回填勘误。
+- [旧验收原字节](../../achieve/2026-11-05/hv2-acceptance-close/previous-evidence/docs/huawei/HUAWEI_V2_ACCEPTANCE_REPORT.md)、[11-03旧调查原字节](../../achieve/2026-11-05/hv2-acceptance-close/previous-evidence/docs/huawei/HUAWEI_V2_INVESTIGATION_REPORT_20261103.md)。注意：本机旧调查路径预存工作树已变成新报告的相同副本，不能当独立来源；该未提交副本保留，不顺带push。
+- [HV2交付身份](../tasks/delivery/HV2_DELIVERY_20261103.md)、[冻结随包执行prompt](../../prompts/delivery/HUAWEI_V2_HV2_REAL_DATA_20261103.md)。已有现场执行回传，本轮不再派部署/分析任务。
+- [V3证据/宣传边界交接](../tasks/product-v3/HV2_EVIDENCE_HANDOFF_20261105.md)：真实业务场景、32GiB资源限制、证据分母和宣传数值核验。
+- [V100环境原报告](TOKEN_SCOPE_V100_ENVIRONMENT_REPORT.md)、[原设计核对](MONITORING_V100_DESIGN_REVIEW_2026-10-26.md)、[V1验收](MONITORING_V1_ACCEPTANCE_20261030.md)：历史身份保留，后续环境仍按实际核实。
 
-- [V2二次验收原件](HUAWEI_V2_ACCEPTANCE_REPORT.md)、[2026-11-03调查原件](HUAWEI_V2_INVESTIGATION_REPORT_20261103.md)：只读保持；[原分析方案](HUAWEI_V2_REVIEW_AND_RESEARCH_PLAN_20261103.md)按历史阅读。
-- [V100环境原报告](TOKEN_SCOPE_V100_ENVIRONMENT_REPORT.md)、[设计核对](MONITORING_V100_DESIGN_REVIEW_2026-10-26.md)：现场仍核实CPU/驱动/Docker/Compose/磁盘，不按机器名称假定NPU或GPU可用。
-- [V1现场验收](MONITORING_V1_ACCEPTANCE_20261030.md)、[旧V2交付](../tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)：历史及回退身份，不能代替新版现场通过。
-
-现场仅真实Trace3/MA18 CSV，先量级和预算，再用户监控/搜索/TTFT及MA；第一次用户验收后由用户指定appid/模型/方向再做异常分析。停止已核实旧服务后新state启动，经SSH18002访问。最终唯一Markdown，关键源码/diff、复现、修改、结果与证据直接嵌正文；限制和失败如实保留。本机合成数据不得拿到现场冒充真实验收。[固定规则](../operations/DELIVERY_ACCEPTANCE_RULES.md)。
-
-本目录保存版本化现场结论，原件不覆写；勘误和补证另存并指向原件，记录版本/配置/数据摘要和证据状态。
+用户接受、报告陈述、根核对、待补证分开。当前报告仍有MA/异常任务阶段残留及统计/因果局限，保留未决项，不冒称全面通过。后续现场仍真实数据/量级预算/两阶段用户范围/SSH18002/单Markdown嵌源码证据；新候选仍先停旧冷启动。现场旧state/镜像清理记录影响回退，需重新确认恢复介质。

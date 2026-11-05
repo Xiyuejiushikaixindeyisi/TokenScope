@@ -1,13 +1,11 @@
 # 当前状态
 
-2026-11-04最新范围：用户授权新建[V3调研与产品设计](../docs/tasks/product-v3/ENTRY.md) session，立即研究七项现场观察，无须等待HV2报告；报告到达后作为高优先级新增证据。当前镜像打包与审查会话回归跨版本迭代、版本级debug、独立E2E和Git/镜像代码交付。身份和分工见[SESSIONS](SESSIONS.md)。本轮仅研究/设计与文档版本整理，不启动产品实现/服务/打包。
+2026-11-05：用户决定 **V2暂时认为通过，先完成TokenScope产品宣传**。当前发布仍为tokenscope-v2-hv2-20261103（源码c1345b6）；收到的华为报告、核对、证据局限及留V3问题见[阶段收口](../docs/tasks/delivery/HV2_ACCEPTANCE_CLOSE_20261105.md)。暂时接受不等于全功能/全规模/全部性能问题验证通过；不自动恢复开发、重测或打包。
 
-2026-11-03：V2总设计师 `01a1800e-80b4-7400-a78b-a84f5b6e888d` 已完成六线修复统筹，公共层优先验收、全部后端冻结后前端接入，源码及容器独立验收通过。源码main `c1345b6fd7d413a94420642ca1b4099b9ec104b4` 已push；版本 **tokenscope-v2-hv2-20261103** 已在WSL构建并完整复制Windows桌面，15文件SHA一致。包体仅本机，本地backup管理；旧包/state/证据和其他session原有8份未提交修改保留。[完整交付结果](../docs/tasks/delivery/HV2_DELIVERY_20261103.md) · [SESSIONS](SESSIONS.md)。
+[V3 session](../docs/tasks/product-v3/ENTRY.md)继续用户已开展的宣传讨论与研究设计，先明确定位/服务对象/功能取舍，以公司真实appid任务、分布、结构和业务确认匹配异常分析；外部报告是参考，不替代现场。细化/重构待讨论决定。本次[新证据交接](../docs/tasks/product-v3/HV2_EVIDENCE_HANDOFF_20261105.md)已接收并由V3本线更新证据/宣传口径，既有草稿不混入本轮提交。
 
-339项前端检查、源码和镜像分别88个不同浏览器用例/135项鼠标核对、156/154资源及业务行重启一致性通过，重启追加6项浏览器通过；HV2-AF-01/MF-02闭环。临时服务/容器/本轮私有Docker已停止。**新版华为真实数据和用户两阶段验收待执行**，不能以本机通过代签。
+保留问题：搜索排行模型入口留V3；已列出的异常成果主要L4、Token无业务recipe时零建议不等于无异常；MA源缺失/预热冲突仍有边界。报告容器32GiB、峰值30.19GiB，伴随超时/任务Not Found；主机375GiB，未见OOM-kill完整证据。大数据容量/API健康/任务持久化与恢复是V3重要设计约束，不能仅靠扩内存或加探测器解决。
 
-[当前现场prompt](../prompts/delivery/HUAWEI_V2_HV2_REAL_DATA_20261103.md)：先核SHA/环境/停旧与数据量预算，真实Trace3/MA18，先用户监控（多模型/搜索排序/TTFT）后MA；用户验收并指定appid/模型/方向才做异常第二阶段。SSH18002，唯一Markdown嵌关键源码/diff/证据。真实622差异、MA缺失/冲突、规模预算、tools/messages新探测器依据仍待补证。
+镜像打包与审查负责跨版本迭代、版本级debug、独立E2E、Git及授权交付；六线开发窗口关闭、历史总设计/V1休眠。[SESSIONS](SESSIONS.md) · [交付身份/全部SHA](../docs/tasks/delivery/HV2_DELIVERY_20261103.md)。本轮仅文档归档、记忆和版本push，不改源码/批准四入口与L4/L5/冻结契约/包体；UIR-03仍留V3。
 
-TTFT用户默认τ Qwen1s/GLM2.7s/DeepSeek2.6s，K8192可选修改但不自动缩放τ；日常W/SLO，参数未性能校准。用户与异常同Trace模型规格，MA独立数据制品。保持批准四入口/UI02/UI04和L4/L5，UIR-03留V3；缺失不补0、partial不冒ready、业务GET不计算、不擅增recipe/T1/hybrid/Agent。
-
-六线开发窗口关闭，后续现场问题由镜像打包与审查会话定向协调；历史总设计/V1休眠。V3研究与V2现场验收独立推进，[补充取证prompt](../prompts/delivery/HUAWEI_V3_EVIDENCE_APPENDIX_20261104.md)仅追加到同一份现场Markdown，不改已发布包/SHA或两阶段验收。[长期教训](DELIVERY_LESSONS.md) · [本轮归档](../achieve/2026-11-03/hv2-delivery-closed/README.md) · [回退身份](../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
+[原字节归档](../achieve/2026-11-05/hv2-acceptance-close/README.md)保留旧报告和新接收快照。旧调查路径的预存重复副本不顺带提交，历史取证从归档读取。现场报告称旧state/镜像已由用户清理，现场回退须先确认介质与匹配state；不得再承诺现场旧环境原位可直接回退。[长期教训](DELIVERY_LESSONS.md)。

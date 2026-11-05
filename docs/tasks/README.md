@@ -1,13 +1,11 @@
 # 任务与session入口
 
-2026-11-04：用户新设V3调研/产品设计线，不等待华为报告；审查交付会话回归跨版本迭代、版本级debug、验收与打包。V2最新现场报告仍待回传，开发窗口不因研究自动恢复。
-
-2026-11-03：HV2修复已完成公共层→依赖后端独立验收及冻结→前端→源码与容器独立验收→WSL打包和桌面全SHA交付。源码 `c1345b6fd7d413a94420642ca1b4099b9ec104b4` 已push main；版本 `tokenscope-v2-hv2-20261103`。现场真实数据及用户两阶段验收待执行，六线开发窗口关闭。 [完整结果](delivery/HV2_DELIVERY_20261103.md) · [SESSIONS](../../memory/SESSIONS.md)。
+2026-11-05：用户暂时接受V2，优先完成产品宣传；[现场核对与阶段收口](delivery/HV2_ACCEPTANCE_CLOSE_20261105.md)保留未决项与原始证据。V3真实业务调查/定位/功能取舍继续讨论，六线不自动开发或重构。
 
 | 任务 | 职责与依赖 | 入口 |
 | --- | --- | --- |
 | 镜像打包与审查（曾统筹V2修复） | V1/V2/V3版本迭代、版本级debug协调、独立E2E、Docker/代码镜像、归档记忆、版本push与华为归口 | [工作入口](delivery/ENTRY.md) |
-| TokenScope V3调研与产品设计 | 立即开展七项观察的研究与设计；华为报告后补高优先级证据，本轮不开发产品代码 | [V3入口](product-v3/ENTRY.md) · [任务书](product-v3/RESEARCH_BRIEF_20261104.md) |
+| TokenScope V3调研与产品设计 | 宣传讨论优先；高优先级核对华为新证据，基于真实业务及32GiB约束研究定位/功能取舍，本轮不实施 | [V3入口](product-v3/ENTRY.md) · [任务书](product-v3/RESEARCH_BRIEF_20261104.md) |
 | 异常分析前端 | 异常发现/读取/状态与批准展示；依赖公共层及分析后端通过和契约冻结 | [异常前端](viewer/analysis/ENTRY.md) |
 | MA监控后端 | 独立MA模型制品/UUID/pre-now数据、四指标缺数与质量 | [MA后端](monitoring/v2-ma/ENTRY.md) |
 | Token异常后端 | Token私有探测/预算/证据；依赖先验收的异常公共层，当前T2–T4，研究不自动恢复T1 | [Token后端](length-analysis/ENTRY.md) |

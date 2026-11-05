@@ -1,10 +1,10 @@
 # V2 用户监控后端功能入口
 
-2026-11-03：HV2修复已完成公共层→依赖后端独立验收及冻结→前端→源码与容器独立验收→WSL打包和桌面全SHA交付。源码 `c1345b6fd7d413a94420642ca1b4099b9ec104b4` 已push main；版本 `tokenscope-v2-hv2-20261103`。现场真实数据及用户两阶段验收待执行，六线开发窗口关闭。 [完整结果与现场prompt](../../delivery/HV2_DELIVERY_20261103.md)。
+2026-11-05：用户暂时接受V2，产品宣传优先；[现场核对与保留问题](../../delivery/HV2_ACCEPTANCE_CLOSE_20261105.md)为当前版本状态。本线HV2源码窗口关闭，不自动修复/重构/复测。V3先真实业务场景、定位与功能取舍及32GiB资源约束讨论；后续有新定向任务再恢复。以下保留对应版本维护资料，旧“待验/未打包”等不覆盖本段。
 
 P0：AGENTS→CURRENT→SESSIONS→本入口；当前维护优先读取[HV2用户后端交接](HV2_USER_BACKEND_HANDOFF_20261103.md)及[用户2.1.0契约](../../../contracts/user-monitoring-v2/2.1.0/README.md)。默认τ为用户提供1/2.7/2.6秒，K8192，真实性能校准待完成。
 
-本线职责及ID保持，后续现场问题由总设计师定向分配；不自行重跑旧派发prompt或改变批准展示。旧阶段/候选回执已[完整归档](../../../../achieve/2026-11-03/hv2-delivery-closed/docs/tasks/monitoring/v2-user/ENTRY.md)。以下为版本化维护材料，历史批次状态不覆盖本段。
+本线职责及ID保持，后续现场问题由镜像打包与审查会话按新任务定向协调；不自行重跑旧派发prompt或改变批准展示。旧阶段/候选回执已[完整归档](../../../../achieve/2026-11-03/hv2-delivery-closed/docs/tasks/monitoring/v2-user/ENTRY.md)。以下为版本化维护材料，历史批次状态不覆盖本段。
 ## 优先阅读
 
 P0：AGENTS → CURRENT → SESSIONS → docs/README → 本入口。

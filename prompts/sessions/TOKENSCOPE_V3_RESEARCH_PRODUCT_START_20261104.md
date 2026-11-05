@@ -1,17 +1,5 @@
-# TokenScope V3 调研与产品设计启动消息
+# 历史任务材料已归档
 
-你是用户明确新设的 **TokenScope V3 调研与产品设计** session。现在开始调研和产品设计，不等待华为 HV2 新报告；未来报告是高优先级增量证据，需要审视并修订相关假设，不是启动和产出方案的依赖。你负责产品研究与设计，镜像打包与审查会话负责 V1/V2/V3 迭代、版本级 debug 修复协调、独立端到端验收、版本管理和镜像/代码交付。
+2026-11-05：本轮报告已回传或会话已启动，旧文本不再作为自动执行指令；未决问题转入[当前阶段收口](../../docs/tasks/delivery/HV2_ACCEPTANCE_CLOSE_20261105.md)及[V3交接](../../docs/tasks/product-v3/HV2_EVIDENCE_HANDOFF_20261105.md)。
 
-项目根目录 `/home/zhangxiyue/TokenScope`，Windows 对应 `\\wsl.localhost\Ubuntu-22.04\home\zhangxiyue\TokenScope`。应用可能从父目录项目启动，先进入确切 TokenScope 根目录，所有新增维护内容均在项目内。不要操作兄弟项目。读取 AGENTS.md、memory/CURRENT.md、memory/SESSIONS.md、docs/README.md，然后 docs/tasks/product-v3/ENTRY.md 和 RESEARCH_BRIEF_20261104.md。优先按任务书引用阅读，不全量读历史或上游源码。
-
-先从环境获取自己的 CODEX_THREAD_ID/CODEX_SESSION_ID，写入 memory/tasks/product-v3.md；取不到写未知，不沿用发送者 `01a1800e-80b4-7400-a78b-a84f5b6e888d`。本轮根会话正在统一更新 SESSIONS/入口并做文档版本整理，请不要同时修改这些共享文件，也不要自行 Git commit/push。你的独占写入范围是 docs/tasks/product-v3/ 下除 ENTRY.md 和 RESEARCH_BRIEF_20261104.md 以外的研究/设计产出、docs/research/tokenscope-v3/ 与 memory/tasks/product-v3.md。根会话管理 ENTRY/任务书/全局导航。保留其他 session 未提交修改。无需另开子会话或唤醒开发会话；无需向其他 chat 发消息，根会话会读取你的状态和产出。
-
-用户提出七个研究方向，完整语义见任务书：①短请求中的意图识别/文本整理/实体提取等可能业务固有低复用，区分可优化动态字段/tools/messages，低潜力转 SLO/排队建议；②GLM 高命中80%上方仍可优化，查85→95%价值及所谓95%瓶颈拐点；③稳定、狭窄长度分布能否用于行为分组路由、减少网关额外tokenization；④用真实约8K等分布纠正32K/64K为主的压测并研究实例配比；⑤缺失/cached虚报/接口注册协议的数据可信性；⑥全局用户理想与MA实例分散的差距，KV-aware参数调优，暂不主攻容量/SSD；⑦企业不同用户的行为群组与场景专门调优。
-
-请主动查一手论文、官方实现和文档，记录日期/版本与场景边界，针对假设找支持和反证。新用户观察、旧指定10appid的样本与全量总体不可混同：模型品牌不决定任务。不能把狭窄分布直接写成高斯，不能把cached命中口径当物理复用，不能把高命中率当95%通用质变定律，不能由实例内复用充分就证明容量足够。关键推导与待验证项见任务书。
-
-交付可讨论的研究报告、七项证据矩阵、V3产品设计初稿、MVP/分期与未来开发交接条件。每项功能要回答谁使用、输入是否可得、输出支持什么决策、范围/不可判定、成本预算、成功标准和兼容/回退。给出无新增现场数据也能推进的首版设计，报告到达后通过证据台账增量修订。研究应覆盖场景分诊和探测器适配、反推SLO/准入建议的限制、行为路由/压测、数据质量，以及高命中剩余工作量与实际性能之间的区别。
-
-本轮仅调研和设计。可读产品源码/测试以核实实际能力；不改产品代码、冻结契约、配置、包体或批准HTML，不启动服务/全量真实分析/压测/路由实验，不扩大数据访问，不实施新detector/recipe/T1/hybrid/Agent/SSD。保持四入口与L4/L5；UIR-03仅列V3待讨论，不能当新阻断。将V2真实bug交接给版本审查会话，不借研究重开六线修复。最终需用户审阅设计后再进入实施阶段。
-
-华为补充取证已由根会话另行准备，只有一份Markdown回传；先真实数据量级/预算，既定V2用户监控和MA验收优先，用户指定appid后才做异常分析。该报告未到不影响你的首轮研究。先登记身份与阅读结论，然后持续完成首轮产出，不停留在计划或等待报告。
+[原字节归档](../../achieve/2026-11-05/hv2-acceptance-close/closed/prompts/sessions/TOKENSCOPE_V3_RESEARCH_PRODUCT_START_20261104.md)；SHA256 `d99ee916a78b98552664a3cfb3aef08dc336d5850ab54ad272bb5906df89d5fb`。原文链接按原始项目路径解释。已发布包内prompt/校验值不变。

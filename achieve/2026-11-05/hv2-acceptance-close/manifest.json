@@ -1,0 +1,180 @@
+{
+  "date": "2026-11-05",
+  "base_commit": "8351d8249a320ef1be61e38c7593b2ac945c1f36",
+  "session_id": "01a1800e-80b4-7400-a78b-a84f5b6e888d",
+  "files": [
+    {
+      "source": "docs/huawei/HUAWEI_V2_ACCEPTANCE_REPORT.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/previous-evidence/docs/huawei/HUAWEI_V2_ACCEPTANCE_REPORT.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "93d6d02d5a4937ecea23491309ea59da1d8e0ad51417ffae6e64b8398ac2487e",
+      "bytes": 50443
+    },
+    {
+      "source": "docs/huawei/HUAWEI_V2_INVESTIGATION_REPORT_20261103.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/previous-evidence/docs/huawei/HUAWEI_V2_INVESTIGATION_REPORT_20261103.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "51a5a9430137523b0ccc2a6fd52f9ed48334458a900c58d733718242514eff83",
+      "bytes": 60524
+    },
+    {
+      "source": "docs/huawei/HUAWEI_V2_ACCEPTANCE_REPORT.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/received/HUAWEI_V2_ACCEPTANCE_REPORT_20261105.md",
+      "source_kind": "received_worktree_2026-11-05",
+      "sha256": "a5901a2a8c5eace577ffb39e4e0ef36201549cde8d94d00f16f1ef9c32d36fac",
+      "bytes": 53149
+    },
+    {
+      "source": "docs/huawei/HUAWEI_V2_REVIEW_AND_RESEARCH_PLAN_20261103.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/closed/docs/huawei/HUAWEI_V2_REVIEW_AND_RESEARCH_PLAN_20261103.md",
+      "source_kind": "worktree_before_archive",
+      "sha256": "a937eb05bf0010fd58a73cc718d1e7916983118959f0afbea79834f135ccd711",
+      "bytes": 26990
+    },
+    {
+      "source": "prompts/delivery/HUAWEI_V3_EVIDENCE_APPENDIX_20261104.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/closed/prompts/delivery/HUAWEI_V3_EVIDENCE_APPENDIX_20261104.md",
+      "source_kind": "worktree_before_archive",
+      "sha256": "2b874e51dda6e64a745ac770fd15b7a3d14846f91ca0e06b9e97773a5cb5d0ac",
+      "bytes": 8512
+    },
+    {
+      "source": "prompts/sessions/TOKENSCOPE_V3_RESEARCH_PRODUCT_START_20261104.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/closed/prompts/sessions/TOKENSCOPE_V3_RESEARCH_PRODUCT_START_20261104.md",
+      "source_kind": "worktree_before_archive",
+      "sha256": "d99ee916a78b98552664a3cfb3aef08dc336d5850ab54ad272bb5906df89d5fb",
+      "bytes": 4248
+    },
+    {
+      "source": "memory/CURRENT.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/memory/CURRENT.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "5f3b164463db329470de6122f69abe9b5373ac3a3a5530dac7a5ef34fc067e72",
+      "bytes": 2653
+    },
+    {
+      "source": "memory/SESSIONS.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/memory/SESSIONS.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "840eeacb1603bfd46913e97be8c9034b79a6abfb6ad7984c5640d9429bc3fd9a",
+      "bytes": 7620
+    },
+    {
+      "source": "memory/tasks/delivery.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/memory/tasks/delivery.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "a5ff2470f5ed49bbbdee589438cbb75f6ea0332e1dd9c3f0f9bd8935f55128c5",
+      "bytes": 2175
+    },
+    {
+      "source": "docs/README.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/README.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "a6f9bb9a1280040d8aca46200b5219b3e1293d583328cc4f98f1c869cde584be",
+      "bytes": 2812
+    },
+    {
+      "source": "docs/tasks/README.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/tasks/README.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "1e35699044a895b37ae10f2a1a03ecdb74359e559c0145343effb55ed203c39c",
+      "bytes": 3640
+    },
+    {
+      "source": "docs/tasks/delivery/ENTRY.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/tasks/delivery/ENTRY.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "8eb0ad024eaaaca54ca6b9f782c174634d341dff772283d34f7cb31f6ca25f5f",
+      "bytes": 2662
+    },
+    {
+      "source": "docs/huawei/README.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/huawei/README.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "4929ecf9a7dad66b09eba36ecd7e3f38d26335d698cb934fe041faba3d3a7381",
+      "bytes": 2083
+    },
+    {
+      "source": "docs/tasks/product-v3/ENTRY.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/tasks/product-v3/ENTRY.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "acf0df94e60fa145bf3984ec16f23c4cfd8de9183c841f63b9721c9377de606e",
+      "bytes": 1859
+    },
+    {
+      "source": "docs/architecture/TASK_SESSION_WORKFLOW.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/architecture/TASK_SESSION_WORKFLOW.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "53e164de32c6237db3c5f3a012599151ae19015e317c9e18df5c576527bcc4d4",
+      "bytes": 12708
+    },
+    {
+      "source": "achieve/README.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/achieve/README.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "daae8a800e8297ce13a4c0fcb90605c28e4ccf4ab2833ad85a4aa1138be05c9e",
+      "bytes": 3758
+    },
+    {
+      "source": "prompts/delivery/README.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/prompts/delivery/README.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "79d80250b01284264c854a595d22785fa737329dc97de28993dd9a524e1c633c",
+      "bytes": 839
+    },
+    {
+      "source": "docs/tasks/prefix-analysis/ENTRY.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/tasks/prefix-analysis/ENTRY.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "36756364fd6d729e8b3f9ad4382902cc723f1736c12d1286ef67fcfc666d0592",
+      "bytes": 2554
+    },
+    {
+      "source": "docs/tasks/length-analysis/ENTRY.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/tasks/length-analysis/ENTRY.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "e49049b30c373f308a617755cbd1dd740ee9b75043aa44b42df624ca64b88aa5",
+      "bytes": 2359
+    },
+    {
+      "source": "docs/tasks/monitoring/v2-user/ENTRY.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/tasks/monitoring/v2-user/ENTRY.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "3398e250618fa1e4ce1a91cf8cbdce15419350176c9abcb5ec8f8503a2fc1e21",
+      "bytes": 4553
+    },
+    {
+      "source": "docs/tasks/monitoring/v2-ma/ENTRY.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/tasks/monitoring/v2-ma/ENTRY.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "7717784a3fe33efa4ad573fa7f13233a58187663b93553f636b81ecc99eff567",
+      "bytes": 6033
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/ENTRY.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/tasks/viewer/analysis/ENTRY.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "5c06dd2ef073387dfc161ef5b256e683f6096d4839b4f2a75768886994fdd31f",
+      "bytes": 1222
+    },
+    {
+      "source": "docs/tasks/viewer/monitoring-v2/ENTRY.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/tasks/viewer/monitoring-v2/ENTRY.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "c1876365a2a17474c8db3c142832cfbec1603a532b36f6c609e9f054483f4264",
+      "bytes": 3250
+    },
+    {
+      "source": "docs/tasks/product/ENTRY.md",
+      "archive": "achieve/2026-11-05/hv2-acceptance-close/snapshots/docs/tasks/product/ENTRY.md",
+      "source_kind": "git:8351d8249a320ef1be61e38c7593b2ac945c1f36",
+      "sha256": "d671e92f6027df7717886aed5c7df5e16b7ba7a536002bd3e0c8fa47c4761d82",
+      "bytes": 2070
+    }
+  ],
+  "notes": [
+    "Original bytes preserved. Relative links inside snapshots are interpreted from original source paths.",
+    "The pre-existing working copy at the old investigation path equals the new report; it is preserved but excluded from this commit.",
+    "Mixed MA ENTRY snapshot uses tracked HEAD only; unrelated pending changes are not archived or staged."
+  ]
+}
