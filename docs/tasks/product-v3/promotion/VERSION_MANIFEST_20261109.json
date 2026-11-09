@@ -1,0 +1,271 @@
+{
+  "checkpoint": "promotion-v3-priorities-and-exploration-prompt-20261109",
+  "kind": "documentation-only",
+  "created_at": "2026-11-09T12:33:04.579336+00:00",
+  "thread_id": "01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2",
+  "git_head": "4dc32d4399c019ae1dadc11713caa7466f98ccf5",
+  "git_action": "User authorized commit and explicit push origin main; actual commit identity is in Git history and conversation.",
+  "versions": {
+    "quadrant_detail": {
+      "id": "quadrant-detail-r1-20261109",
+      "priority": "high",
+      "status": "current"
+    },
+    "four_page_brief": {
+      "id": "huawei-brief-r2-fielddata-20261109",
+      "status": "current"
+    },
+    "first_html": {
+      "status": "retired-preserved"
+    }
+  },
+  "artifacts_and_sources": [
+    {
+      "path": "docs/tasks/product-v3/promotion/quadrant-detail/dist/index.html",
+      "bytes": 1639153,
+      "sha256": "8d76928147dd8a4f274fd0e160a916a493e7878d4ba14c7c339683877ba2a354"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/huawei-demo-r2/dist/index.html",
+      "bytes": 114866,
+      "sha256": "600d6a6bdc925c29fdfc31a83a194021d82eeb700cbd945bcf241f98467f5a3d"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/TokenScope_V2_Overview.html",
+      "bytes": 48274,
+      "sha256": "853efec47df3a0f6c9a793094b787a5e0fa422519c649ae632e66c68cb538c40"
+    },
+    {
+      "path": "docs/huawei/TOKENSCOPE_PROMOTION_READONLY_20261109.md",
+      "bytes": 174954,
+      "sha256": "31ee6957e16c6ddcc09c61e5abde2490be8b532a7fa3801d801d197304a5b5ab"
+    },
+    {
+      "path": "docs/huawei/appid与对应产品（未去重）.md",
+      "bytes": 7137,
+      "sha256": "90c34d86fbe8687495e076617fc27f3d18ea6685ea0f3f12ffd1f59f5097e345"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/quadrant-detail/build.py",
+      "bytes": 8759,
+      "sha256": "11fe4f29c36629e683ee5636346fef1fa9bb7fd709d4b634632e9fd4e995638f"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/quadrant-detail/template.html",
+      "bytes": 17603,
+      "sha256": "33b6f3c31b404e09914ad6cb5096c5fe6b2ac6518bfee79edee3455458257ca4"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/huawei-demo-r2/update_from_report.py",
+      "bytes": 24119,
+      "sha256": "afd4291fb793794aa20a7ee368ed722ebfc4b827af1c9d5cdf0b66530ca32573"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/huawei-demo-r2/REPORT_INTEGRATION_20261109.md",
+      "bytes": 5298,
+      "sha256": "5a7e62150688397b25d608f98cf81da22322721d9bc0c0f2b04f1d2d608674e3"
+    }
+  ],
+  "documents": [
+    {
+      "path": "docs/tasks/product-v3/HUAWEI_LOW_HIT_EXPLORATION_PROMPT_20261109.md",
+      "bytes": 21419,
+      "sha256": "528a8a58d2de069959e609040827ef7d0fe80a0980b5ba6c0af7b7c25e4cd854"
+    },
+    {
+      "path": "docs/tasks/product-v3/PRODUCT_DESIGN.md",
+      "bytes": 17652,
+      "sha256": "b5b582c6d4090dc8317967bcbbd8b76b6078545279c9ccdb3fa5069e341fabc2"
+    },
+    {
+      "path": "docs/tasks/product-v3/ROADMAP.md",
+      "bytes": 7922,
+      "sha256": "464ed3569dfb85cd24c875bf5c5e4a7cddaaec22cef065b27c8fe04852642a53"
+    },
+    {
+      "path": "docs/tasks/product-v3/V3_LOW_HIT_PRIORITY_20261109.md",
+      "bytes": 12535,
+      "sha256": "1398c886b562418dfb36873f308412f60b0e6bee2ecf4840c0135893b04b5c67"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/FOUR_PAGE_STORY_R1_20261109.md",
+      "bytes": 12608,
+      "sha256": "35fc0ef86b82ca43c0567b2e3e2cc74f5a71c59f86af5c6adfa0c7553c44ea31"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/GIT_CHECKPOINT_20261109.md",
+      "bytes": 2697,
+      "sha256": "68e4e74509d913bbc7cdac22f613840b8e53bf8acb770751da78c85e25e64221"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/HUAWEI_READONLY_COLLECTION_PROMPT_20261109.md",
+      "bytes": 12818,
+      "sha256": "323d254018fdf4cccdbb8ea1422993e9a31fe598183b8bdb1b0478183d360357"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/README.md",
+      "bytes": 5204,
+      "sha256": "663e67e8ce65a9c26c9e66251a6593a3fca0f94a7d479fd387446360d8851af2"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/VERSION_CHECKPOINT_20261109.md",
+      "bytes": 4235,
+      "sha256": "a9f8dd03a5322cc84c307592b537427d1b7e270a0257693a165ae3b4f3de7306"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/VERSION_INDEX_20261109.md",
+      "bytes": 6394,
+      "sha256": "8ae3ebbf0bfcdf35b9a861b7fbbbca59e8933974236425f4c4ff1af4ea84d21d"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/huawei-demo-r2/README.md",
+      "bytes": 3133,
+      "sha256": "9ae5d892fb713dc6e9da9579c783d84cf598b10bd73fa306f0f6da4330c00b1f"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/huawei-demo-r2/REPORT_INTEGRATION_20261109.md",
+      "bytes": 5298,
+      "sha256": "5a7e62150688397b25d608f98cf81da22322721d9bc0c0f2b04f1d2d608674e3"
+    },
+    {
+      "path": "docs/tasks/product-v3/promotion/quadrant-detail/README.md",
+      "bytes": 4088,
+      "sha256": "e5c9413b61351de67eb7f317836a51fa31d419de11ccdbc48ba8f5741d726466"
+    },
+    {
+      "path": "memory/tasks/product-v3.md",
+      "bytes": 29233,
+      "sha256": "dbdc719b95b51e99fff6ddaecb748ad307d9bb03ed90ca1881ff99ec5cad14a9"
+    }
+  ],
+  "read_only_code_review": [
+    {
+      "path": "src/tokenscope/analysis_common/runtime.py",
+      "bytes": 2308,
+      "sha256": "92cc0a2e412ea173ed59cfff19828a8fc1dccc705ab2a71fa3421aaabaab5832"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/source.py",
+      "bytes": 9856,
+      "sha256": "036ea9346441707dc5569e30e6b549d2d90aa4bc20282f8823cb02e0f2e42413"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/service.py",
+      "bytes": 42107,
+      "sha256": "e217dc4d3e8f2a1d32a5271905cbbdcd40d3a63c192dd7ba1081672c2a2c6953"
+    },
+    {
+      "path": "src/tokenscope/analysis_common/recommendation_pipeline.py",
+      "bytes": 7114,
+      "sha256": "5d5f8de3ea3b50ea549a393068fa18c90f34a5b305005fa677f7b5a61d30f254"
+    },
+    {
+      "path": "src/tokenscope/prefix_analysis/experiments.py",
+      "bytes": 8096,
+      "sha256": "37b6eaaab0d592d2ea4013290524f10886099172845aec64679bdf4b2f1af05a"
+    }
+  ],
+  "desktop_copies": [
+    {
+      "path": "C:/Users/ALIENWARE/Desktop/TokenScope_四象限明细_20261109.html",
+      "project_path": "docs/tasks/product-v3/promotion/quadrant-detail/dist/index.html",
+      "bytes": 1639153,
+      "sha256": "8d76928147dd8a4f274fd0e160a916a493e7878d4ba14c7c339683877ba2a354"
+    },
+    {
+      "path": "C:/Users/ALIENWARE/Desktop/TokenScope_业务汇报_20261109.html",
+      "project_path": "docs/tasks/product-v3/promotion/huawei-demo-r2/dist/index.html",
+      "bytes": 114866,
+      "sha256": "600d6a6bdc925c29fdfc31a83a194021d82eeb700cbd945bcf241f98467f5a3d"
+    }
+  ],
+  "checks": {
+    "source_groups": 77,
+    "requests": 150698,
+    "selected_groups": [
+      {
+        "id": 2,
+        "appid": "S00000000000000000000000000000773",
+        "model": "DeepSeek-V4-Flash-0731",
+        "n": 1047,
+        "mean": 44741.16523400191,
+        "hit": 34.8068299029379
+      },
+      {
+        "id": 5,
+        "appid": "S010320",
+        "model": "DeepSeek-V4-Flash-0731",
+        "n": 1038,
+        "mean": 59565.510597302506,
+        "hit": 36.54709521610123
+      },
+      {
+        "id": 23,
+        "appid": "com.huawei.mbs.ilegal.ioc",
+        "model": "DeepSeek-V4-Flash-0731",
+        "n": 661,
+        "mean": 38833.58547655068,
+        "hit": 43.964646449691585
+      },
+      {
+        "id": 27,
+        "appid": "com.huawei.onlinetools",
+        "model": "DeepSeek-V4-Flash-0731",
+        "n": 108,
+        "mean": 10138.888888888889,
+        "hit": 10.560975189293451
+      },
+      {
+        "id": 25,
+        "appid": "com.huawei.newalliance",
+        "model": "DeepSeek-V4-Flash-0731",
+        "n": 104,
+        "mean": 54942.307692307695,
+        "hit": 47.36851589660274
+      },
+      {
+        "id": 63,
+        "appid": "com.huawei.aidp_dg06",
+        "model": "Qwen3.6-27B",
+        "n": 171,
+        "mean": 57216.37426900585,
+        "hit": 45.700811574700786
+      }
+    ],
+    "selected_requests": 3129,
+    "proposed_300_each_cap": 1283,
+    "local_markdown_links": 124,
+    "protected_foreign_dirty_files": 18,
+    "html_bytes_unchanged": true,
+    "desktop_matches": true,
+    "staging_unchanged_empty": true,
+    "browser_rerun": false,
+    "product_analysis_run": false,
+    "commit_whitelist_files": 22,
+    "python_static_syntax": true
+  },
+  "commit_whitelist": [
+    "docs/tasks/product-v3/HUAWEI_LOW_HIT_EXPLORATION_PROMPT_20261109.md",
+    "docs/tasks/product-v3/PRODUCT_DESIGN.md",
+    "docs/tasks/product-v3/ROADMAP.md",
+    "docs/tasks/product-v3/V3_LOW_HIT_PRIORITY_20261109.md",
+    "docs/tasks/product-v3/promotion/FOUR_PAGE_STORY_R1_20261109.md",
+    "docs/tasks/product-v3/promotion/GIT_CHECKPOINT_20261109.md",
+    "docs/tasks/product-v3/promotion/HUAWEI_READONLY_COLLECTION_PROMPT_20261109.md",
+    "docs/tasks/product-v3/promotion/README.md",
+    "docs/tasks/product-v3/promotion/VERSION_CHECKPOINT_20261109.md",
+    "docs/tasks/product-v3/promotion/VERSION_INDEX_20261109.md",
+    "docs/tasks/product-v3/promotion/VERSION_MANIFEST_20261109.json",
+    "docs/tasks/product-v3/promotion/huawei-demo-r2/.gitignore",
+    "docs/tasks/product-v3/promotion/huawei-demo-r2/README.md",
+    "docs/tasks/product-v3/promotion/huawei-demo-r2/REPORT_INTEGRATION_20261109.md",
+    "docs/tasks/product-v3/promotion/huawei-demo-r2/dist/index.html",
+    "docs/tasks/product-v3/promotion/huawei-demo-r2/update_from_report.py",
+    "docs/tasks/product-v3/promotion/quadrant-detail/.gitignore",
+    "docs/tasks/product-v3/promotion/quadrant-detail/README.md",
+    "docs/tasks/product-v3/promotion/quadrant-detail/build.py",
+    "docs/tasks/product-v3/promotion/quadrant-detail/dist/index.html",
+    "docs/tasks/product-v3/promotion/quadrant-detail/template.html",
+    "memory/tasks/product-v3.md"
+  ]
+}

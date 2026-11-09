@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>TokenScope · 业务汇报（现场数据版）</title>
+<style>
+:root{--red:#c00000;--red-dark:#960000;--red-wash:#fff3f2;--ink:#24262b;--muted:#68707b;--line:#d8dce1;--pale:#f4f5f7;--blue:#315c86;--blue-wash:#eef4f8;--green:#416b5a;--green-wash:#edf5f0;--amber:#8a641c;--amber-wash:#fff8e9;--scale:1}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;color:var(--ink);background:#e7e9ec}button,a{touch-action:manipulation}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #1e79b9;outline-offset:3px}button:disabled{cursor:default;opacity:.35}.toolbar{height:58px;padding:0 24px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;position:relative;z-index:5}.brand{font-size:21px;font-weight:800;letter-spacing:-.5px;display:flex;gap:10px;align-items:center}.brand:before{content:"";height:22px;width:5px;background:var(--red)}.toolbar-sub{font-size:12px;color:var(--muted);padding-left:15px;border-left:1px solid var(--line)}.tabs{display:flex;gap:4px;margin:auto}.tabs button{background:none;border:0;padding:10px 15px;font-size:13px;color:#545b64;border-bottom:3px solid transparent}.tabs button[aria-current=page]{border-color:var(--red);color:var(--red);font-weight:700}.tool{border:1px solid #dce0e4;background:white;padding:7px 11px;font-size:12px;color:#535a64;border-radius:2px}.toolbar-actions{display:flex;gap:8px}.stage{height:calc(100dvh - 108px);display:flex;align-items:center;justify-content:center;overflow:auto;padding:16px}.frame{width:calc(1600px * var(--scale));height:calc(900px * var(--scale));flex:none;position:relative;background:white;box-shadow:0 3px 16px #202b3c15}.slide{width:1600px;height:900px;position:absolute;inset:0;padding:32px 46px 20px;display:flex;flex-direction:column;transform-origin:0 0;transform:scale(var(--scale));background:white}.slide[hidden]{display:none}.slide-head{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid var(--red);padding-bottom:17px;gap:18px;min-height:104px;flex:none}.eyebrow{font-size:14px;letter-spacing:1px;color:#737985;margin-bottom:8px}.slide h1{font-size:34px;line-height:1.25;margin:0;font-weight:700;letter-spacing:-.6px}.slide h1 em{font-style:normal;color:var(--red)}.location{display:flex;border:1px solid #d9dce1;margin-top:7px;flex:none}.location span{padding:7px 10px;font-size:13px;color:#7d828a;background:#f7f7f8;border-right:1px solid #d9dce1}.location span:last-child{border:0}.location .on{background:var(--red);color:white}.slide-body{flex:1;min-height:0;padding-top:19px;display:flex;flex-direction:column;gap:17px}.slide-footer{flex:none;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#7a8088;margin-top:12px;padding-top:10px;border-top:1px solid #e1e3e7}.slide-footer .wordmark{font-size:15px;font-weight:700;color:#50545b}.value-strip{display:flex;align-items:center;gap:16px;background:var(--red-wash);border-left:5px solid var(--red);padding:14px 19px;font-size:22px;line-height:1.35;flex:none}.value-strip strong{color:var(--red);white-space:nowrap}.value-strip span{font-weight:600}.section-label{font-size:19px;font-weight:700;display:flex;align-items:center;gap:9px}.section-label:before{content:"";width:4px;height:17px;background:var(--red)}.minor{font-size:14px;color:var(--muted);line-height:1.5}.tag{display:inline-block;font-size:12px;padding:3px 7px;border:1px solid #d7dde2;color:#66717e;vertical-align:middle;white-space:nowrap;font-weight:400}.tag.future{background:var(--amber-wash);color:var(--amber);border-color:#e8d7ad}.tag.pending{border-style:dashed;border-color:#d4be91;color:#856521;background:#fffbf3}.red{color:var(--red)}.pending-value{color:#9b7945}.muted{color:var(--muted)}.flowbar{display:grid;grid-template-columns:1fr 40px 1fr 40px 1fr 40px 1fr;align-items:center;gap:0}.flowstep{background:#f2f3f5;padding:14px 18px;text-align:center;border:1px solid #dedfe3}.flowstep strong{font-size:21px;display:block}.flowstep small{display:block;color:#6d737c;font-size:14px;margin-top:5px}.flowstep:last-child{background:var(--red-wash);border-color:#e8bcbc}.flow-arrow{text-align:center;font-size:27px;color:#959ba3}.responsibilities{display:grid;grid-template-columns:1fr 1fr;gap:22px}.responsibility{display:grid;grid-template-columns:94px 1fr;gap:13px;align-items:center;font-size:17px;line-height:1.6;padding:0 3px}.owner{background:#edf1f5;border-left:3px solid var(--blue);padding:9px 8px;text-align:center;color:var(--blue);font-weight:700}.responsibility:last-child .owner{background:var(--green-wash);color:var(--green);border-color:var(--green)}.architecture{display:grid;grid-template-columns:1.5fr .78fr 1fr 1fr;gap:13px;flex:1;min-height:0}.module{border:1px solid #bcc5cf;display:flex;flex-direction:column;min-height:0;position:relative}.module-head{display:flex;align-items:center;gap:8px;padding:12px 13px;background:#edf1f5;font-size:19px;font-weight:700;border-bottom:1px solid #d4dbe2}.module-num{font-size:13px;color:var(--blue);border:1px solid #b4c3d2;padding:2px 5px;line-height:1.1}.module-head .tag{margin-left:auto}.module-content{padding:12px;display:flex;flex:1;flex-direction:column;gap:10px}.conversion-row{display:grid;grid-template-columns:96px 1fr;align-items:center;gap:11px;flex:1;border-bottom:1px solid #e2e5e8;padding-bottom:9px}.conversion-row:last-child{border:0;padding:0}.conversion-label{font-size:17px;font-weight:700;color:#454d56}.small-chips{display:flex;gap:6px;flex-wrap:wrap}.small-chips span{padding:3px 7px;font-size:14px;border:1px solid #cfd9d3;background:var(--green-wash);color:#3f5b4d}.transform{font-size:19px;font-weight:700;color:var(--red);margin:5px 0 0}.module-note{font-size:12px;line-height:1.4;color:#7c8289;margin-top:5px}.slo-module{border-color:#ccb98d;background:#fffdf8}.slo-module .module-head{background:#faf3e5;border-color:#e5d6b5;color:#765719;display:block;font-size:18px;text-align:center}.slo-module .module-head .tag{display:inline-block;margin-top:5px}.slo-flow{display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;gap:5px;height:100%;font-size:16px;line-height:1.5}.down{color:#a6a7aa;font-size:22px;line-height:1}.model-box{border:1px solid #cfac65;background:#fff6e3;padding:8px 14px;font-size:23px;font-weight:700;color:#725118;width:100%}.slo-output{font-size:19px;color:#9b2020;font-weight:700}.analysis-tile{background:#f4f5f7;border:1px solid #e0e3e7;padding:14px 12px;flex:1;display:flex;flex-direction:column;justify-content:center}.analysis-tile strong{font-size:20px;display:block;margin-bottom:8px}.analysis-tile small{font-size:15px;color:#6a717b;line-height:1.5}.ma-item{flex:1;display:flex;align-items:center;gap:12px;border-bottom:1px solid #e1e4e7;padding:5px}.ma-item:last-child{border:0}.ma-symbol{width:39px;height:39px;border:1px solid #bdcbbf;display:grid;place-items:center;flex:none;background:#f0f6f2;color:#466752;font-size:21px}.ma-item strong{font-size:18px}.ma-item small{display:block;font-size:14px;margin-top:4px;color:var(--muted)}.arch-note{font-size:12px;color:#83878e;margin-top:-8px;line-height:1.4}.nav-bottom{height:50px;display:flex;align-items:center;justify-content:center;gap:20px;color:#66707c;font-size:12px}.nav-bottom button{border:1px solid #cfd4da;background:#f8f9fa;padding:5px 17px;font-size:16px}.nav-bottom .counter{font-variant-numeric:tabular-nums;letter-spacing:2px;color:#3b424b}.keyboard-hint{position:absolute;left:25px;font-size:11px}.review-hint{position:absolute;right:25px;font-size:11px}.challenge-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:21px;flex:1;min-height:0}.challenge{border:1px solid #ccd1d7;display:flex;flex-direction:column;min-height:0}.challenge-head{background:#f1f2f4;display:flex;gap:11px;align-items:center;padding:13px 16px;font-size:23px;font-weight:700}.challenge-head .no{color:var(--red);font-size:25px;line-height:1}.challenge-content{padding:15px 17px;display:flex;flex-direction:column;gap:12px;flex:1;min-height:0}.challenge-title{font-size:17px;font-weight:700;margin:0 0 8px}.compare{display:grid;grid-template-columns:1fr 23px 1fr;gap:7px;align-items:stretch}.compare-box{background:#f3f4f6;padding:11px 12px;font-size:16px;line-height:1.45}.compare-box.now{background:#fff3f2;border-top:2px solid var(--red);padding-top:9px}.compare-label{font-size:12px;color:#7e8690;letter-spacing:1px;margin-bottom:5px}.compare-box.now .compare-label{color:var(--red)}.compare-arrow{align-self:center;text-align:center;color:#9ca1a9;font-size:22px}.performance-pending{font-size:20px;margin-top:8px;font-weight:700;color:#856c43}.small-pending{font-size:12px;color:#92763e}.tech-strip{background:#f7f9fb;border:1px solid #d9e1e8;padding:10px;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:8px}.tech-strip .accent{color:var(--blue);font-weight:700}.sub-value{margin-top:auto;background:#f2f4f6;border-left:3px solid #9ca9b6;padding:11px 12px;font-size:17px;line-height:1.5;font-weight:600}.analyzer-chain{display:flex;gap:6px;align-items:stretch}.analyzer-chain span{position:relative;flex:1;min-width:0;text-align:center;border:1px solid #cfd8d0;background:var(--green-wash);padding:8px 3px;font-size:15px;line-height:1.4}.analyzer-chain .featured{color:var(--red);background:#fff1f0;border-color:#dcadab;font-weight:700}.chain-line-label{display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:700;margin-bottom:6px}.chain-line-label small{font-size:12px;color:#7c838c;font-weight:400}.cch-evidence{border:1px solid #e0d2d2;background:#fffbfa;padding:10px 12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.cch-evidence .caption{grid-column:1/-1;font-size:15px;font-weight:700}.code-line{font-family:Consolas,monospace;font-size:14px;line-height:1.6;color:#535b64;background:white;padding:7px 8px;border:1px solid #e2dedc;white-space:nowrap}.code-line mark{background:#fce0df;color:#b10000;font-weight:700;padding:2px}.evidence-action{grid-column:1/-1;font-size:14px;color:#5f656e}.result-row{display:flex;align-items:center;justify-content:space-around;border-top:1px solid #e3e3e3;padding-top:7px}.result-number{font-size:42px;line-height:1.05;font-weight:700;letter-spacing:-1.5px}.result-caption{font-size:12px;color:#737a83;margin-bottom:6px}.result-arrow{color:#a2a6ac;font-size:29px}.result-gain{border-left:1px solid #dedfe2;padding-left:17px;font-size:15px;line-height:1.5;color:#5f6771}.result-gain strong{display:block;color:var(--red);font-size:24px}.demo-row{display:flex;align-items:center;gap:13px;padding:11px 15px;border:1px solid #dbdfe3;background:#fafafa}.demo-row strong{font-size:17px}.demo-path{font-size:15px;color:#5a616c;flex:1}.demo-link{display:inline-flex;text-decoration:none;align-items:center;padding:9px 13px;background:var(--red);color:white;font-size:15px;font-weight:700;white-space:nowrap}.demo-link.secondary{background:white;border:1px solid #bfc7cf;color:#46525f}.case-footnote{font-size:12px;color:#7c8188;line-height:1.45}.coverage-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.coverage-kpi{display:flex;align-items:center;justify-content:space-between;background:#f6f7f9;border-top:3px solid #aab3bd;padding:17px 23px}.coverage-kpi .label{font-size:20px;font-weight:700}.coverage-kpi .label small{display:block;font-size:13px;font-weight:400;color:#7c828b;margin-top:6px}.big-placeholder{font-size:46px;color:#9ca2aa;line-height:1;font-weight:700}.big-placeholder small{font-size:15px;color:#8b9098;font-weight:400;margin-left:8px}.coverage-note{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:#7b818b;margin-bottom:-6px}.business-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px;flex:1;min-height:0}.business{border:1px solid #cbd2da;display:flex;flex-direction:column;min-height:0}.business-head{padding:14px 17px;font-size:23px;font-weight:700;border-bottom:1px solid #d4dae1;background:#edf2f6;display:flex;align-items:center;justify-content:space-between}.business-number{color:#bec7d0;font-size:29px;font-weight:400}.business-stats{display:flex;gap:18px;padding:15px 17px 12px;border-bottom:1px dashed #dce0e5;font-size:13px;color:#7c838d}.business-stats strong{font-size:23px;color:#9ba2ac;margin-right:4px}.business-list{padding:16px 18px;display:flex;flex-direction:column;gap:14px;font-size:18px;color:#555d67;flex:1}.business-list div{display:flex;align-items:center;gap:9px}.business-list div:before{content:"";width:5px;height:5px;background:#a8b2bc;flex:none}.business-bottom{font-size:12px;padding:10px 17px;color:#8d784f;background:#fffaf0;border-top:1px solid #ece2cd}.models-band{border:1px solid #b9c5ce;background:#f5f8fa;display:flex;align-items:center;padding:14px 20px;gap:30px}.models-label{font-size:18px;line-height:1.5;padding-right:27px;border-right:1px solid #cad3db}.models-label strong{color:var(--red)}.model-family{flex:1;display:flex;align-items:center;gap:15px;justify-content:center}.model-family b{font-size:25px;color:#3c4653}.model-family span{font-size:14px;color:#76818d}.chart-layout{display:grid;grid-template-columns:1.18fr 1fr;gap:21px;flex:1;min-height:0}.quadrants-panel{border:1px solid #cbd2d9;display:flex;flex-direction:column;padding:15px;min-height:0}.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:9px;font-size:19px;font-weight:700}.quad-chart{width:100%;height:auto;flex:1;min-height:0;display:block}.chart-note{font-size:12px;line-height:1.5;color:#7b828c}.case-column{display:grid;grid-template-rows:.84fr 1.16fr;gap:15px;min-height:0}.candidate-panel{border:1px solid #dec0be;padding:14px 16px;display:flex;flex-direction:column;gap:8px;background:#fffcfb}.candidate-title{font-size:18px;font-weight:700;color:var(--red);display:flex;justify-content:space-between;align-items:center}.candidate-table{width:100%;border-collapse:collapse;font-size:14px}.candidate-table th{background:#f5eeed;font-weight:400;text-align:left;color:#6c6464;padding:8px}.candidate-table td{padding:9px 8px;border-bottom:1px solid #eee5e4;color:#98918c}.candidate-table th:last-child,.candidate-table td:last-child{text-align:right}.candidate-panel .minor{font-size:12px;margin-top:auto}.employee-panel{border:1px solid #c3cdd7;padding:15px 16px;display:flex;flex-direction:column;gap:8px;min-height:0}.employee-head{display:flex;justify-content:space-between;align-items:center}.employee-head strong{font-size:21px}.employee-head .family{font-size:16px;color:var(--blue);background:#edf3f8;border:1px solid #cbd8e4;padding:4px 10px}.appid{font:12px Consolas,monospace;color:#6c7683;overflow-wrap:anywhere}.employee-metrics{display:grid;grid-template-columns:1fr 1fr;background:#f5f7f9;padding:9px 0}.employee-metric{padding:0 13px;border-right:1px solid #dce0e5;font-size:13px;color:#6f7781}.employee-metric:last-child{border:0}.employee-metric b{display:block;font-size:29px;color:#939ca7;margin-top:2px;font-weight:500}.employee-metric b small{font-size:13px;margin-left:4px}.histogram-placeholder{flex:1;min-height:68px;position:relative;margin:10px 19px 11px 23px;border-left:1px solid #c5ccd4;border-bottom:1px solid #c5ccd4;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(to top,transparent 0,transparent 31px,#eef0f3 31px,#eef0f3 32px)}.histogram-placeholder .empty-label{background:#fff;border:1px dashed #c9cfd6;padding:10px 15px;font-size:14px;color:#8b929c;text-align:center}.histogram-placeholder .y-label{position:absolute;left:-23px;top:-13px;font-size:10px;color:#9299a2}.histogram-placeholder .x-label{position:absolute;bottom:-17px;right:0;font-size:10px;color:#9299a2}.legend-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#737d87}.threshold-tag{display:inline-flex;align-items:center;gap:5px;font-size:12px}.threshold-tag:before{content:"";height:2px;width:20px;background:#9da5af}.threshold-tag.dashed:before{background:none;border-top:2px dashed #9da5af}.foot-strong{color:#3c434b;font-size:21px;font-weight:700}.foot-strong em{font-style:normal;color:var(--red)}.notes{border:1px solid #d3d8df;border-top:4px solid var(--red);padding:22px 26px;width:min(660px,94vw);max-height:82vh;color:var(--ink);line-height:1.75;box-shadow:0 10px 40px #0003}.notes::backdrop{background:#20263380}.notes h2{margin:0 0 12px;font-size:22px}.notes p{font-size:14px;margin:10px 0}.notes-close{float:right;border:0;background:#f0f1f3;width:32px;height:32px;font-size:22px}.notes .source{font-size:12px;color:#7b838d;border-top:1px solid #ddd;padding-top:12px}.notes a{color:var(--blue)}.note-content[hidden]{display:none}.toast{position:fixed;bottom:65px;left:50%;transform:translateX(-50%);background:#303842;color:white;padding:10px 18px;z-index:20;font-size:13px}.toast[hidden]{display:none}
+@media(max-width:1100px){.toolbar-sub{display:none}.tabs button{padding:10px 8px}.toolbar{padding:0 14px;gap:8px}.toolbar-actions{gap:4px}.keyboard-hint{display:none}.review-hint{display:none}}
+@media(max-width:650px){.toolbar{height:88px;flex-wrap:wrap;padding:9px 12px;align-content:center;gap:6px}.brand{font-size:18px}.toolbar-actions{margin-left:auto}.tabs{order:3;flex-basis:100%;justify-content:center}.tabs button{padding:5px 10px;font-size:11px}.tool{font-size:11px;padding:5px 7px}.stage{height:calc(100dvh - 134px);padding:7px}.nav-bottom{height:46px}.nav-bottom button{padding:5px 14px}.stage{align-items:center}.frame{box-shadow:none}}
+@media print{@page{size:420mm 236.25mm;margin:0}html,body{height:auto;background:white}.toolbar,.nav-bottom,.notes,.toast{display:none!important}.stage{padding:0;display:block;height:auto;overflow:visible}.frame{height:auto!important;width:auto!important;box-shadow:none;background:white}.slide,.slide[hidden]{display:flex!important;position:relative;width:420mm;height:236.25mm;transform:none;padding:8.4mm 12mm 5.2mm;break-after:page;page-break-after:always;zoom:.992125}.slide:last-child{break-after:auto;page-break-after:auto}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+/* 2026-11-09: report-backed data, within the approved four-slide layout. */
+.verified{color:var(--red)!important}.request-total{font-size:40px}.business-stats strong{color:#465363}.business-list{font-size:17px;gap:13px}.model-family{flex-direction:column;gap:4px}.model-family span{font-size:13px}.business-bottom{color:#727b85;background:#f7f8fa;border-color:#e0e4e8}.axis-text{font:14px "Microsoft YaHei",Arial;fill:#697583}.chart-axis-title{font:15px "Microsoft YaHei",Arial;fill:#52606e}.data-point{cursor:help}.data-point:hover,.data-point:focus{stroke:#24262b;stroke-width:3;fill-opacity:1;outline:none}.quad-chart{min-height:270px}.model-legend{justify-content:flex-start;gap:21px;margin:0 0 9px}.model-legend span{display:flex;align-items:center;gap:5px;font-size:12px}.model-legend i{display:inline-block;width:9px;height:9px;border-radius:50%}.scenario-guide{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:8px}.scenario-guide>div{background:#f4f6f8;padding:7px 10px;font-size:12px;line-height:1.5;border-left:2px solid #a8b7c3}.scenario-guide b,.scenario-guide span{display:block}.scenario-guide b{font-size:13px;font-weight:600}.scenario-guide span{color:#76808a}.scenario-guide .priority{background:#fff2f0;border-color:#c00000;color:#aa1515}.candidate-table{table-layout:fixed}.candidate-table th:nth-child(1){width:63%}.candidate-table th:nth-child(2){width:20%}.candidate-table th:nth-child(3){width:17%}.candidate-table td{color:#4b5058;padding:8px}.candidate-table td b{font-weight:500;font-size:14px}.candidate-table td small{display:block;font:10.5px Consolas,monospace;overflow-wrap:anywhere;color:#7b8189;margin-top:2px}.employee-hist{width:100%;min-height:92px;flex:1;display:block}.hist-tick{font:11px "Microsoft YaHei",Arial;fill:#77818c}.employee-head .family{font-size:13px}.source-link{color:#315c86;text-decoration:none;margin-left:8px}.notes{width:min(960px,95vw)}.notes summary{cursor:pointer;font-weight:600;color:#315c86;margin:13px 0}.data-table-wrap{overflow:auto}.detail-table{width:100%;border-collapse:collapse;font-size:11px;line-height:1.5}.detail-table th,.detail-table td{padding:7px;border:1px solid #dbe0e5;text-align:left}.detail-table th{background:#f1f4f7}.detail-table td small{display:block;color:#7a838d;overflow-wrap:anywhere}.detail-table td:first-child{max-width:270px}.plot-tooltip{position:fixed;z-index:30;pointer-events:none;background:#263440f5;color:white;padding:10px 13px;font-size:12px;line-height:1.7;white-space:pre-line;max-width:min(440px,90vw);box-shadow:0 3px 12px #0003}.plot-tooltip[hidden]{display:none}
+</style>
+</head>
+<body>
+<header class="toolbar" aria-label="演示控制">
+ <div class="brand">TokenScope</div><span class="toolbar-sub">业务汇报 · 现场数据版</span>
+ <nav class="tabs" aria-label="页面导航">
+  <button type="button" data-goto="0" aria-current="page">01 产品与协作</button><button type="button" data-goto="1">02 ICSL案例</button><button type="button" data-goto="2">03 业务覆盖</button><button type="button" data-goto="3">04 场景与机会</button>
+ </nav>
+ <div class="toolbar-actions"><button type="button" class="tool" id="notes-open">讲解与数据说明</button><button type="button" class="tool" id="fullscreen">全屏</button><button type="button" class="tool" id="print">打印</button></div>
+</header>
+<main class="stage" aria-label="TokenScope四页业务汇报"><div class="frame">
+
+<section class="slide" id="page-1" aria-label="第1页：产品架构与协作流程">
+ <header class="slide-head"><div><div class="eyebrow">TOKEN SCOPE / 产品与业务逻辑</div><h1>TokenScope：让业务查问题有依据，让平台<em>优化有方向</em></h1></div><div class="location" aria-hidden="true"><span class="on">产品</span><span>案例</span><span>覆盖</span><span>机会</span></div></header>
+ <div class="slide-body">
+  <div class="flowbar"><div class="flowstep"><strong>现网数据分析</strong><small>业务请求 · 实例流量</small></div><div class="flow-arrow">→</div><div class="flowstep"><strong>识别异常用户 / 实例</strong><small>命中率 · 请求分布 · 流量</small></div><div class="flow-arrow">→</div><div class="flowstep"><strong>提供证据与改进方向</strong><small>定位问题 · 评估方案</small></div><div class="flow-arrow">→</div><div class="flowstep"><strong>协同改进</strong><small>业务修复 · 平台调优 · 结果复核</small></div></div>
+  <div class="responsibilities"><div class="responsibility"><div class="owner">业务团队</div><div>逐 <b>appid × 模型</b> 了解用户行为<br>依据问题证据与修改方案，改进应用请求组织</div></div><div class="responsibility"><div class="owner">平台团队</div><div>逐 <b>实例 UUID</b> 找到负载与命中差距<br>验证路由、压测、并发配置，改善吞吐与时延</div></div></div>
+  <div class="section-label">产品架构 <span class="minor" style="font-weight:400;margin-left:auto">现网负载 → 可复用空间 → 可执行改进</span></div>
+  <div class="architecture">
+   <div class="module"><div class="module-head"><span class="module-num">01</span>用户现网数据分析<span class="tag">纯 CPU</span></div><div class="module-content">
+    <div class="conversion-row"><div class="conversion-label">数据转化</div><div><div class="small-chips"><span>Qwen</span><span>DeepSeek</span><span>GLM</span></div><div class="transform">JSON → Token ID</div></div></div>
+    <div class="conversion-row"><div class="conversion-label">仿真器</div><div><div class="small-chips"><span>MLA</span><span>GDA</span><span>CSA</span></div><div class="transform">Token ID → 理想命中率</div></div></div>
+    <div class="conversion-row"><div class="conversion-label">数据统计</div><div><b style="font-size:19px">请求长度直方图</b><div class="module-note">刻画真实请求分布与业务行为</div></div></div>
+   </div></div>
+   <div class="module slo-module"><div class="module-head">P90 TTFT ↔ 命中率<br><span class="tag future">XGBoost · 演进中</span></div><div class="module-content"><div class="slo-flow"><div>SLO 要求 + 时延参数<br><span class="minor">结合现网负载</span></div><span class="down">↓</span><div class="model-box">XGBoost</div><span class="down">↓</span><div class="slo-output">满足 P90 TTFT 的<br>最低参考命中率</div><div class="module-note">为目标设定与异常筛选提供依据</div></div></div></div>
+   <div class="module"><div class="module-head"><span class="module-num">02</span>异常分析</div><div class="module-content"><div class="analysis-tile"><strong>低命中率分析</strong><small>前缀与请求结构差异<br>定位复用受损的原因</small></div><div class="analysis-tile"><strong>Token异常分析</strong><small>工具内容、重复与历史负担<br>识别可改进的内容组织</small></div><div class="module-note" style="text-align:center">证据 → 修改方案 → 收益评估</div></div></div>
+   <div class="module"><div class="module-head"><span class="module-num">03</span>MaaS数据监控</div><div class="module-content"><div class="ma-item"><div class="ma-symbol">⇄</div><div><strong>命中率对比</strong><small>理想命中 VS 实际报告命中</small></div></div><div class="ma-item"><div class="ma-symbol">↗</div><div><strong>流量趋势</strong><small>req/s · Token/s</small></div></div><div class="ma-item"><div class="ma-symbol">▥</div><div><strong>长度分布</strong><small>支撑压测与实例配置讨论</small></div></div></div></div>
+  </div>
+  <div class="arch-note">目标产品架构：XGBoost拟合及Hybrid相关适配为演进能力；当前仿真结果按已验证配置解释。理想命中率对应当前请求组织与仿真条件。</div>
+  <div class="value-strip"><strong>业务价值</strong><span>用同一份现网证据，减少反复排查、跨团队沟通与优化试错</span></div>
+ </div>
+ <footer class="slide-footer"><span class="wordmark">TokenScope</span><span>企业 MaaS · Token监控与运营分析</span><span>01 / 04</span></footer>
+</section>
+
+<section class="slide" id="page-2" aria-label="第2页：ICSL案例与产品演示" hidden>
+ <header class="slide-head"><div><div class="eyebrow">ICSL / 典型问题与协作闭环</div><h1>从“命中率低”到“改哪里、提升多少”，<em>让优化可执行</em></h1></div><div class="location" aria-hidden="true"><span>产品</span><span class="on">案例</span><span>覆盖</span><span>机会</span></div></header>
+ <div class="slide-body">
+  <div class="challenge-grid">
+   <article class="challenge"><div class="challenge-head"><span class="no">01</span>缺少适合自身业务的优化目标</div><div class="challenge-content">
+    <div><div class="challenge-title">CPU仿真 prefix cache 命中链</div><div class="tech-strip"><span>现网请求</span><span>→</span><span class="accent">模板 / 编码</span><span>→</span><span class="accent">前缀复用仿真</span><span>→</span><span>理想命中率</span></div></div>
+    <div class="compare"><div class="compare-box"><div class="compare-label">BEFORE</div>参考外部通用经验<br>或占用推理卡重放数据<div class="performance-pending">【重放耗时待核】</div><div class="small-pending">资源配置与重放范围待补</div></div><div class="compare-arrow">→</div><div class="compare-box now"><div class="compare-label">NOW</div>直接仿真现网请求<br>得到当前请求组织的复用上限<div class="performance-pending">【全量耗时待核】</div><div class="small-pending">CPU分析，无需模型推理卡</div></div></div>
+    <div style="border-top:1px solid #e0e3e7;padding-top:11px"><div class="challenge-title">建立 SLO 与命中率的关系 <span class="tag future">XGBoost · 演进中</span></div><div class="compare"><div class="compare-box"><div class="compare-label">BEFORE</div>沿用上一版本指标<br>缺少实际负载依据</div><div class="compare-arrow">→</div><div class="compare-box now"><div class="compare-label">目标能力</div>结合现网负载与时延拟合<br>形成合理的SLO参考</div></div></div>
+    <div class="sub-value">用自身现网流量确定目标，<br>减少凭外部经验设指标的判断风险。</div>
+   </div></article>
+   <article class="challenge"><div class="challenge-head"><span class="no">02</span>发现问题后，缺少可执行的改法</div><div class="challenge-content">
+    <div><div class="chain-line-label">低命中率分析链 <small>5类分析</small></div><div class="analyzer-chain"><span class="featured">前部<br>动态内容</span><span>工具<br>排列</span><span>工具<br>定义</span><span>消息内容<br>差异</span><span>JSON写法<br>差异</span></div></div>
+    <div><div class="chain-line-label">Token异常分析链 <small>3类分析</small></div><div class="analyzer-chain"><span>工具返回内容</span><span>重复内容</span><span>历史工具结果</span></div></div>
+    <div class="cch-evidence"><div class="caption">L1定位：system最顶部的CCH随新对话变化</div><div class="code-line">对话A：<mark>cch=24201</mark></div><div class="code-line">对话B：<mark>cch=cd6c3</mark></div><div class="evidence-action">修改方案：移除无关计费标识所在行，保留业务指令与代码上下文。</div></div>
+    <div class="result-row"><div><div class="result-caption">修改前 · 理想命中率</div><div class="result-number">35.95<span style="font-size:24px">%</span></div></div><div class="result-arrow">→</div><div><div class="result-caption">修改后 · 理想命中率</div><div class="result-number red">90.16<span style="font-size:24px">%</span></div></div><div class="result-gain"><strong>+54.21</strong>个百分点<br><span style="font-size:12px">102条完整评估</span></div></div>
+    <div class="sub-value">问题 + 证据 + 改法 + 收益，形成协作闭环。<br><span style="font-size:14px;font-weight:400;color:#82704f">历史业务闭环周期：【优化前待核】 → 【优化后待核】</span></div>
+   </div></article>
+  </div>
+  <div class="demo-row"><strong class="red">现场展示</strong><span class="demo-path">用户监控 → L1证据 → 修改方案 → 前后评估</span><a class="demo-link secondary" href="http://localhost:18002/#/users?run=ur-104155b7b5e947d6ac4504e5e5637fd8&amp;appid=com.huawei.icsl.base&amp;revision=66f89935ddcae6efdf5eea6786765ff112c21005f3e9b04c5883c6d75630dc82" target="_blank" rel="noopener noreferrer">打开用户监控 ↗</a><a class="demo-link" href="http://localhost:18002/#/analysis?direction=low_hit&amp;mode=history&amp;task=e8613905-82df-45e7-9f72-fb736f40b292" target="_blank" rel="noopener noreferrer">查看证据与改法 ↗</a></div>
+  <div class="case-footnote">案例来源：ICSL场景构造样本的本机完整链路验证，GLM-5.2 / 102条；35.95%→90.16%为仿真结果。线上时延、吞吐、历史排障周期及全量性能数据待补。链接指向本机已有成果。</div>
+ </div>
+ <footer class="slide-footer"><span class="wordmark">TokenScope</span><span>典型问题复现 · 定位证据 · 可执行方案</span><span>02 / 04</span></footer>
+</section>
+
+<section class="slide" id="page-3" aria-label="第3页：业务覆盖与模型系列" hidden>
+<header class="slide-head"><div><div class="eyebrow">业务覆盖 / 营销服 · 财经 · 研发 · HR</div><h1>已分析<em>67个业务appid</em>，覆盖三大主流模型系列</h1></div><div class="location" aria-hidden="true"><span class="">产品</span><span class="">案例</span><span class="on">覆盖</span><span class="">机会</span></div></header>
+<div class="slide-body">
+ <div class="coverage-kpis">
+  <div class="coverage-kpi"><div class="label">已关联业务产品<small>15个appid已关联名称；52个待关联</small></div><div class="big-placeholder verified">15<small>个</small></div></div>
+  <div class="coverage-kpi"><div class="label">已分析 appid<small>形成77组 appid × 模型结果</small></div><div class="big-placeholder verified">67<small>个</small></div></div>
+  <div class="coverage-kpi"><div class="label">已分析请求<small>2026-10-20真实Trace，约2小时窗口</small></div><div class="big-placeholder verified request-total">150,698<small>次</small></div></div>
+ </div>
+ <div class="coverage-note"><span class="section-label">业务产品矩阵</span><span class="tag">8个产品按名称初分至四领域 · 7个已知产品跨域 / 归属待确认</span></div>
+ <div class="business-grid"><article class="business"><div class="business-head">营销服<span class="business-number">01</span></div><div class="business-stats"><span><strong>1</strong>产品</span><span><strong>595</strong>请求</span></div><div class="business-list"><div title="云计算销售助手">云计算销售助手</div></div><div class="business-bottom">已关联真实结果 · 按产品名初分领域</div></article><article class="business"><div class="business-head">财经<span class="business-number">02</span></div><div class="business-stats"><span><strong>4</strong>产品</span><span><strong>163</strong>请求</span></div><div class="business-list"><div title="财报产品">财报产品</div><div title="前端组件子产品">前端组件子产品</div><div title="财经质量管理产品">财经质量管理产品</div><div title="财经文档助手子产品-财经文档综合智能识别模块">财经文档助手（综合智能识别）</div></div><div class="business-bottom">已关联真实结果 · 按产品名初分领域</div></article><article class="business"><div class="business-head">研发<span class="business-number">03</span></div><div class="business-stats"><span><strong>2</strong>产品</span><span><strong>893</strong>请求</span></div><div class="business-list"><div title="天舟人工智能平台">天舟人工智能平台</div><div title="存储芯片开发工具链">存储芯片开发工具链</div></div><div class="business-bottom">已关联真实结果 · 按产品名初分领域</div></article><article class="business"><div class="business-head">HR<span class="business-number">04</span></div><div class="business-stats"><span><strong>1</strong>产品</span><span><strong>905</strong>请求</span></div><div class="business-list"><div title="任职资格认证管理">任职资格认证管理</div></div><div class="business-bottom">已关联真实结果 · 按产品名初分领域</div></article></div>
+ <div class="models-band"><div class="models-label"><strong>三大主流</strong><br>模型系列</div><div class="model-family"><b>Qwen</b><span>21组 · 119,066次请求</span></div><div class="model-family"><b>DeepSeek</b><span>34组 · 19,186次请求</span></div><div class="model-family"><b>GLM</b><span>22组 · 12,446次请求</span></div></div>
+ <div class="value-strip"><strong>推广价值</strong><span>同一套分析方法，跨业务找问题、给证据、推动协同改进</span></div>
+ <div class="case-footnote">来源：11月9日只读回传 + appid产品对照表；已排除ICSL构造样本。领域按产品名称初分，非组织归属确认；未关联对象仍计入67个appid及请求总数。此为已分析范围，不代表企业全量覆盖率。</div>
+</div><footer class="slide-footer"><span class="wordmark">TokenScope</span><span>真实结果 → 关联产品 → 汇总领域；完整明细见讲解与数据说明</span><span>03 / 04</span></footer>
+</section>
+
+<section class="slide" id="page-4" aria-label="第4页：场景分类与优先优化对象" hidden>
+<header class="slide-head"><div><div class="eyebrow">真实负载 / 场景分类与优化机会</div><h1>按场景选择优化策略，优先协同改善<em>长输入、低命中</em>业务</h1></div><div class="location" aria-hidden="true"><span class="">产品</span><span class="">案例</span><span class="">覆盖</span><span class="on">机会</span></div></header>
+<div class="slide-body"><div class="chart-layout">
+ <div class="quadrants-panel"><div class="panel-heading">业务负载四象限 <span class="tag">77组真实结果 · 悬停可查看详情</span></div>
+ <svg class="quad-chart" viewBox="0 0 790 530" role="img" aria-label="77组真实appid与模型结果。横轴为平均输入Token估算的对数刻度；10K临时观察线，纵轴50%分界。短高9、长高31、短低23、长低14组。"><rect x="70.00" y="65" width="293.78" height="175" fill="#eff5f8"/><rect x="363.78" y="65" width="382.22" height="175" fill="#eef5f0"/><rect x="70.00" y="240" width="293.78" height="175" fill="#f4f5f7"/><rect x="363.78" y="240" width="382.22" height="175" fill="#fff0ee"/><line x1="70" x2="746" y1="415" y2="415" stroke="#dfe5e9"/><text x="58" y="420" text-anchor="end" class="axis-text">0%</text><line x1="70" x2="746" y1="327.5" y2="327.5" stroke="#dfe5e9"/><text x="58" y="332.5" text-anchor="end" class="axis-text">25%</text><line x1="70" x2="746" y1="240.0" y2="240.0" stroke="#8996a4"/><text x="58" y="245.0" text-anchor="end" class="axis-text">50%</text><line x1="70" x2="746" y1="152.5" y2="152.5" stroke="#dfe5e9"/><text x="58" y="157.5" text-anchor="end" class="axis-text">75%</text><line x1="70" x2="746" y1="65" y2="65" stroke="#dfe5e9"/><text x="58" y="70" text-anchor="end" class="axis-text">100%</text><line x1="70.00" x2="70.00" y1="65" y2="415" stroke="#e1e6ea" stroke-dasharray="2 3"/><text x="70.00" y="438" text-anchor="middle" class="axis-text">1K</text><line x1="158.44" x2="158.44" y1="65" y2="415" stroke="#e1e6ea" stroke-dasharray="2 3"/><text x="158.44" y="438" text-anchor="middle" class="axis-text">2K</text><line x1="275.34" x2="275.34" y1="65" y2="415" stroke="#e1e6ea" stroke-dasharray="2 3"/><text x="275.34" y="438" text-anchor="middle" class="axis-text">5K</text><line x1="363.78" x2="363.78" y1="65" y2="415" stroke="#8996a4" stroke-dasharray="6 5"/><text x="363.78" y="438" text-anchor="middle" class="axis-text">10K</text><line x1="452.22" x2="452.22" y1="65" y2="415" stroke="#e1e6ea" stroke-dasharray="2 3"/><text x="452.22" y="438" text-anchor="middle" class="axis-text">20K</text><line x1="569.13" x2="569.13" y1="65" y2="415" stroke="#e1e6ea" stroke-dasharray="2 3"/><text x="569.13" y="438" text-anchor="middle" class="axis-text">50K</text><line x1="657.56" x2="657.56" y1="65" y2="415" stroke="#e1e6ea" stroke-dasharray="2 3"/><text x="657.56" y="438" text-anchor="middle" class="axis-text">100K</text><line x1="746.00" x2="746.00" y1="65" y2="415" stroke="#e1e6ea" stroke-dasharray="2 3"/><text x="746.00" y="438" text-anchor="middle" class="axis-text">200K</text><text x="70" y="28" class="chart-axis-title">理想前缀命中率</text><text x="746" y="470" text-anchor="end" class="chart-axis-title">平均输入Token（估算 · 对数刻度）</text><text x="363.78" y="492" text-anchor="middle" class="axis-text">10K · 临时观察线</text><text x="82" y="55" font-size="17" font-weight="700" fill="#315c86" paint-order="stroke" stroke="white" stroke-width="4" stroke-linejoin="round">短输入 · 高命中  9组</text><text x="375.78148102103927" y="55" font-size="17" font-weight="700" fill="#416b5a" paint-order="stroke" stroke="white" stroke-width="4" stroke-linejoin="round">长输入 · 高命中  31组</text><text x="82" y="264" font-size="17" font-weight="700" fill="#626b78" paint-order="stroke" stroke="white" stroke-width="4" stroke-linejoin="round">短输入 · 低命中  23组</text><text x="375.78148102103927" y="264" font-size="17" font-weight="700" fill="#b40000" paint-order="stroke" stroke="white" stroke-width="4" stroke-linejoin="round">长输入 · 低命中  14组</text><circle class="data-point" data-record="3" tabindex="0" role="img" aria-label="产品待关联｜S00000000000000000000000000002127
+DeepSeek-V4-Flash-0731｜1条请求
+平均输入 2,000.00 Token｜理想命中率 0.00%
+报告 H-3；短低（10K临时线）" cx="158.44" cy="415.00" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜S00000000000000000000000000002127
+DeepSeek-V4-Flash-0731｜1条请求
+平均输入 2,000.00 Token｜理想命中率 0.00%
+报告 H-3；短低（10K临时线）</title></circle><circle class="data-point" data-record="65" tabindex="0" role="img" aria-label="财经质量管理产品｜com.huawei.fin.arm.arm
+Qwen3.6-27B｜1条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-65；短低（10K临时线）" cx="70.00" cy="415.00" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>财经质量管理产品｜com.huawei.fin.arm.arm
+Qwen3.6-27B｜1条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-65；短低（10K临时线）</title></circle><circle class="data-point" data-record="69" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.ltc.cnbg
+Qwen3.6-27B｜1条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-69；短低（10K临时线）" cx="70.00" cy="415.00" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.ltc.cnbg
+Qwen3.6-27B｜1条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-69；短低（10K临时线）</title></circle><circle class="data-point" data-record="15" tabindex="0" role="img" aria-label="前端组件子产品｜com.huawei.finance.front.common
+DeepSeek-V4-Flash-0731｜2条请求
+平均输入 20,000.00 Token｜理想命中率 49.53%
+报告 H-15；长低（10K临时线）" cx="452.22" cy="241.65" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>前端组件子产品｜com.huawei.finance.front.common
+DeepSeek-V4-Flash-0731｜2条请求
+平均输入 20,000.00 Token｜理想命中率 49.53%
+报告 H-15；长低（10K临时线）</title></circle><circle class="data-point" data-record="40" tabindex="0" role="img" aria-label="IOC｜com.huawei.cbg.nebula.isc
+GLM-5.2｜2条请求
+平均输入 8,000.00 Token｜理想命中率 37.26%
+报告 H-40；短低（10K临时线）" cx="335.31" cy="284.60" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>IOC｜com.huawei.cbg.nebula.isc
+GLM-5.2｜2条请求
+平均输入 8,000.00 Token｜理想命中率 37.26%
+报告 H-40；短低（10K临时线）</title></circle><circle class="data-point" data-record="70" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.make.scheduling
+Qwen3.6-27B｜2条请求
+平均输入 85,500.00 Token｜理想命中率 16.29%
+报告 H-70；长低（10K临时线）" cx="637.58" cy="358.00" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.make.scheduling
+Qwen3.6-27B｜2条请求
+平均输入 85,500.00 Token｜理想命中率 16.29%
+报告 H-70；长低（10K临时线）</title></circle><circle class="data-point" data-record="29" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.supply.ioc.rock
+DeepSeek-V4-Flash-0731｜4条请求
+平均输入 1,000.00 Token｜理想命中率 60.00%
+报告 H-29；短高（10K临时线）" cx="70.00" cy="205.00" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.supply.ioc.rock
+DeepSeek-V4-Flash-0731｜4条请求
+平均输入 1,000.00 Token｜理想命中率 60.00%
+报告 H-29；短高（10K临时线）</title></circle><circle class="data-point" data-record="30" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.threecloud.ai_llm
+DeepSeek-V4-Flash-0731｜4条请求
+平均输入 110,250.00 Token｜理想命中率 51.63%
+报告 H-30；长高（10K临时线）" cx="670.01" cy="234.28" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.threecloud.ai_llm
+DeepSeek-V4-Flash-0731｜4条请求
+平均输入 110,250.00 Token｜理想命中率 51.63%
+报告 H-30；长高（10K临时线）</title></circle><circle class="data-point" data-record="28" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.rnd.common.pool
+DeepSeek-V4-Flash-0731｜5条请求
+平均输入 46,200.00 Token｜理想命中率 11.25%
+报告 H-28；长低（10K临时线）" cx="559.04" cy="375.64" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.rnd.common.pool
+DeepSeek-V4-Flash-0731｜5条请求
+平均输入 46,200.00 Token｜理想命中率 11.25%
+报告 H-28；长低（10K临时线）</title></circle><circle class="data-point" data-record="64" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.csi.smartndp
+Qwen3.6-27B｜5条请求
+平均输入 26,200.00 Token｜理想命中率 38.12%
+报告 H-64；长低（10K临时线）" cx="486.67" cy="281.60" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.csi.smartndp
+Qwen3.6-27B｜5条请求
+平均输入 26,200.00 Token｜理想命中率 38.12%
+报告 H-64；长低（10K临时线）</title></circle><circle class="data-point" data-record="74" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.meta.crm.analyticscloud.ags
+Qwen3.6-27B｜5条请求
+平均输入 5,800.00 Token｜理想命中率 47.02%
+报告 H-74；短低（10K临时线）" cx="294.28" cy="250.43" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.meta.crm.analyticscloud.ags
+Qwen3.6-27B｜5条请求
+平均输入 5,800.00 Token｜理想命中率 47.02%
+报告 H-74；短低（10K临时线）</title></circle><circle class="data-point" data-record="48" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.iocbusiness
+GLM-5.2｜6条请求
+平均输入 9,833.33 Token｜理想命中率 75.13%
+报告 H-48；短高（10K临时线）" cx="361.64" cy="152.05" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.iocbusiness
+GLM-5.2｜6条请求
+平均输入 9,833.33 Token｜理想命中率 75.13%
+报告 H-48；短高（10K临时线）</title></circle><circle class="data-point" data-record="77" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.wdm.netstar.devops
+Qwen3.6-27B｜6条请求
+平均输入 4,000.00 Token｜理想命中率 0.00%
+报告 H-77；短低（10K临时线）" cx="246.87" cy="415.00" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.wdm.netstar.devops
+Qwen3.6-27B｜6条请求
+平均输入 4,000.00 Token｜理想命中率 0.00%
+报告 H-77；短低（10K临时线）</title></circle><circle class="data-point" data-record="6" tabindex="0" role="img" aria-label="WeLink直播｜app_000000000381
+DeepSeek-V4-Flash-0731｜8条请求
+平均输入 2,000.00 Token｜理想命中率 78.50%
+报告 H-6；短高（10K临时线）" cx="158.44" cy="140.24" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>WeLink直播｜app_000000000381
+DeepSeek-V4-Flash-0731｜8条请求
+平均输入 2,000.00 Token｜理想命中率 78.50%
+报告 H-6；短高（10K临时线）</title></circle><circle class="data-point" data-record="68" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.it.xingyun.panshi
+Qwen3.6-27B｜8条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-68；短低（10K临时线）" cx="70.00" cy="415.00" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.it.xingyun.panshi
+Qwen3.6-27B｜8条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-68；短低（10K临时线）</title></circle><circle class="data-point" data-record="4" tabindex="0" role="img" aria-label="产品待关联｜S00000000000000000000000000003734
+DeepSeek-V4-Flash-0731｜9条请求
+平均输入 15,444.44 Token｜理想命中率 84.41%
+报告 H-4；长高（10K临时线）" cx="419.24" cy="119.56" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜S00000000000000000000000000003734
+DeepSeek-V4-Flash-0731｜9条请求
+平均输入 15,444.44 Token｜理想命中率 84.41%
+报告 H-4；长高（10K临时线）</title></circle><circle class="data-point" data-record="33" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.wh3s
+DeepSeek-V4-Flash-0731｜9条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-33；短低（10K临时线）" cx="70.00" cy="415.00" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.wh3s
+DeepSeek-V4-Flash-0731｜9条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-33；短低（10K临时线）</title></circle><circle class="data-point" data-record="16" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.ipd.noproduct.tenant_w00292996.shenzhen
+DeepSeek-V4-Flash-0731｜11条请求
+平均输入 26,636.36 Token｜理想命中率 68.59%
+报告 H-16；长高（10K临时线）" cx="488.78" cy="174.95" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.ipd.noproduct.tenant_w00292996.shenzhen
+DeepSeek-V4-Flash-0731｜11条请求
+平均输入 26,636.36 Token｜理想命中率 68.59%
+报告 H-16；长高（10K临时线）</title></circle><circle class="data-point" data-record="50" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.meca.admin.digital
+GLM-5.2｜12条请求
+平均输入 82,333.33 Token｜理想命中率 73.43%
+报告 H-50；长高（10K临时线）" cx="632.76" cy="157.99" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.meca.admin.digital
+GLM-5.2｜12条请求
+平均输入 82,333.33 Token｜理想命中率 73.43%
+报告 H-50；长高（10K临时线）</title></circle><circle class="data-point" data-record="36" tabindex="0" role="img" aria-label="产品待关联｜S00000000000000000000000000001679
+GLM-5.2｜14条请求
+平均输入 62,357.14 Token｜理想命中率 83.84%
+报告 H-36；长高（10K临时线）" cx="597.30" cy="121.55" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜S00000000000000000000000000001679
+GLM-5.2｜14条请求
+平均输入 62,357.14 Token｜理想命中率 83.84%
+报告 H-36；长高（10K临时线）</title></circle><circle class="data-point" data-record="37" tabindex="0" role="img" aria-label="产品待关联｜S00000000000000000000000000003344
+GLM-5.2｜14条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-37；短低（10K临时线）" cx="70.00" cy="415.00" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜S00000000000000000000000000003344
+GLM-5.2｜14条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-37；短低（10K临时线）</title></circle><circle class="data-point" data-record="61" tabindex="0" role="img" aria-label="产品待关联｜S00000000000000000000000000003344
+Qwen3.6-27B｜14条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-61；短低（10K临时线）" cx="70.00" cy="415.00" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜S00000000000000000000000000003344
+Qwen3.6-27B｜14条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-61；短低（10K临时线）</title></circle><circle class="data-point" data-record="12" tabindex="0" role="img" aria-label="e+ IOC｜com.huawei.ebg.ioc.efc
+DeepSeek-V4-Flash-0731｜15条请求
+平均输入 2,133.33 Token｜理想命中率 41.88%
+报告 H-12；短低（10K临时线）" cx="166.67" cy="268.43" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>e+ IOC｜com.huawei.ebg.ioc.efc
+DeepSeek-V4-Flash-0731｜15条请求
+平均输入 2,133.33 Token｜理想命中率 41.88%
+报告 H-12；短低（10K临时线）</title></circle><circle class="data-point" data-record="14" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.fin.report.biportal
+DeepSeek-V4-Flash-0731｜16条请求
+平均输入 48,312.50 Token｜理想命中率 12.34%
+报告 H-14；长低（10K临时线）" cx="564.75" cy="371.81" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.fin.report.biportal
+DeepSeek-V4-Flash-0731｜16条请求
+平均输入 48,312.50 Token｜理想命中率 12.34%
+报告 H-14；长低（10K临时线）</title></circle><circle class="data-point" data-record="34" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.wxalm.smartci
+DeepSeek-V4-Flash-0731｜16条请求
+平均输入 7,687.50 Token｜理想命中率 73.94%
+报告 H-34；短高（10K临时线）" cx="330.23" cy="156.22" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.wxalm.smartci
+DeepSeek-V4-Flash-0731｜16条请求
+平均输入 7,687.50 Token｜理想命中率 73.94%
+报告 H-34；短高（10K临时线）</title></circle><circle class="data-point" data-record="72" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.mbs.ilegal.ioc
+Qwen3.6-27B｜18条请求
+平均输入 60,388.89 Token｜理想命中率 77.56%
+报告 H-72；长高（10K临时线）" cx="593.21" cy="143.53" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.mbs.ilegal.ioc
+Qwen3.6-27B｜18条请求
+平均输入 60,388.89 Token｜理想命中率 77.56%
+报告 H-72；长高（10K临时线）</title></circle><circle class="data-point" data-record="22" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.makeit.autotest
+DeepSeek-V4-Flash-0731｜20条请求
+平均输入 74,250.00 Token｜理想命中率 90.21%
+报告 H-22；长高（10K临时线）" cx="619.58" cy="99.28" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.makeit.autotest
+DeepSeek-V4-Flash-0731｜20条请求
+平均输入 74,250.00 Token｜理想命中率 90.21%
+报告 H-22；长高（10K临时线）</title></circle><circle class="data-point" data-record="71" tabindex="0" role="img" aria-label="iAudit｜com.huawei.mbs.iaai
+Qwen3.6-27B｜20条请求
+平均输入 1,950.00 Token｜理想命中率 0.00%
+报告 H-71；短低（10K临时线）" cx="155.21" cy="415.00" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>iAudit｜com.huawei.mbs.iaai
+Qwen3.6-27B｜20条请求
+平均输入 1,950.00 Token｜理想命中率 0.00%
+报告 H-71；短低（10K临时线）</title></circle><circle class="data-point" data-record="21" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.make.mes.mesai.aimachine
+DeepSeek-V4-Flash-0731｜22条请求
+平均输入 45,727.27 Token｜理想命中率 86.56%
+报告 H-21；长高（10K临时线）" cx="557.73" cy="112.04" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.make.mes.mesai.aimachine
+DeepSeek-V4-Flash-0731｜22条请求
+平均输入 45,727.27 Token｜理想命中率 86.56%
+报告 H-21；长高（10K临时线）</title></circle><circle class="data-point" data-record="1" tabindex="0" role="img" aria-label="产品待关联｜0c615488865343e2b37176fbf18ca8e1
+DeepSeek-V4-Flash-0731｜26条请求
+平均输入 1,538.46 Token｜理想命中率 75.05%
+报告 H-1；短高（10K临时线）" cx="124.96" cy="152.33" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜0c615488865343e2b37176fbf18ca8e1
+DeepSeek-V4-Flash-0731｜26条请求
+平均输入 1,538.46 Token｜理想命中率 75.05%
+报告 H-1；短高（10K临时线）</title></circle><circle class="data-point" data-record="47" tabindex="0" role="img" aria-label="存储芯片开发工具链｜com.huawei.hisi.laval.smdmp
+GLM-5.2｜29条请求
+平均输入 133,310.34 Token｜理想命中率 91.50%
+报告 H-47；长高（10K临时线）" cx="694.25" cy="94.76" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>存储芯片开发工具链｜com.huawei.hisi.laval.smdmp
+GLM-5.2｜29条请求
+平均输入 133,310.34 Token｜理想命中率 91.50%
+报告 H-47；长高（10K临时线）</title></circle><circle class="data-point" data-record="8" tabindex="0" role="img" aria-label="IOC｜com.huawei.cbg.nebula.isc
+DeepSeek-V4-Flash-0731｜32条请求
+平均输入 1,000.00 Token｜理想命中率 69.57%
+报告 H-8；短高（10K临时线）" cx="70.00" cy="171.50" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>IOC｜com.huawei.cbg.nebula.isc
+DeepSeek-V4-Flash-0731｜32条请求
+平均输入 1,000.00 Token｜理想命中率 69.57%
+报告 H-8；短高（10K临时线）</title></circle><circle class="data-point" data-record="35" tabindex="0" role="img" aria-label="产品待关联｜7ca7ba5da84e4458b1c48209d4b3cf9f
+GLM-5.2｜32条请求
+平均输入 158,750.00 Token｜理想命中率 93.42%
+报告 H-35；长高（10K临时线）" cx="716.53" cy="88.04" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜7ca7ba5da84e4458b1c48209d4b3cf9f
+GLM-5.2｜32条请求
+平均输入 158,750.00 Token｜理想命中率 93.42%
+报告 H-35；长高（10K临时线）</title></circle><circle class="data-point" data-record="10" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.cnbg.ioc.cnkm
+DeepSeek-V4-Flash-0731｜33条请求
+平均输入 71,636.36 Token｜理想命中率 26.46%
+报告 H-10；长低（10K临时线）" cx="615.00" cy="322.40" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.cnbg.ioc.cnkm
+DeepSeek-V4-Flash-0731｜33条请求
+平均输入 71,636.36 Token｜理想命中率 26.46%
+报告 H-10；长低（10K临时线）</title></circle><circle class="data-point" data-record="7" tabindex="0" role="img" aria-label="财报产品｜bbbe2c7ed6854ab2b83c441c04f35ac1
+DeepSeek-V4-Flash-0731｜36条请求
+平均输入 3,666.67 Token｜理想命中率 83.38%
+报告 H-7；短高（10K临时线）" cx="235.77" cy="123.18" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>财报产品｜bbbe2c7ed6854ab2b83c441c04f35ac1
+DeepSeek-V4-Flash-0731｜36条请求
+平均输入 3,666.67 Token｜理想命中率 83.38%
+报告 H-7；短高（10K临时线）</title></circle><circle class="data-point" data-record="42" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.group1579415685808
+GLM-5.2｜38条请求
+平均输入 65,973.68 Token｜理想命中率 83.04%
+报告 H-42；长高（10K临时线）" cx="604.50" cy="124.35" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.group1579415685808
+GLM-5.2｜38条请求
+平均输入 65,973.68 Token｜理想命中率 83.04%
+报告 H-42；长高（10K临时线）</title></circle><circle class="data-point" data-record="44" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.gtsfi.costline
+GLM-5.2｜43条请求
+平均输入 15,604.65 Token｜理想命中率 77.78%
+报告 H-44；长高（10K临时线）" cx="420.56" cy="142.77" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.gtsfi.costline
+GLM-5.2｜43条请求
+平均输入 15,604.65 Token｜理想命中率 77.78%
+报告 H-44；长高（10K临时线）</title></circle><circle class="data-point" data-record="32" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.weda
+DeepSeek-V4-Flash-0731｜44条请求
+平均输入 4,272.73 Token｜理想命中率 64.39%
+报告 H-32；短高（10K临时线）" cx="255.29" cy="189.65" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.weda
+DeepSeek-V4-Flash-0731｜44条请求
+平均输入 4,272.73 Token｜理想命中率 64.39%
+报告 H-32；短高（10K临时线）</title></circle><circle class="data-point" data-record="73" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.meca.admin.digital
+Qwen3.6-27B｜51条请求
+平均输入 56,745.10 Token｜理想命中率 29.56%
+报告 H-73；长低（10K临时线）" cx="585.27" cy="311.56" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.meca.admin.digital
+Qwen3.6-27B｜51条请求
+平均输入 56,745.10 Token｜理想命中率 29.56%
+报告 H-73；长低（10K临时线）</title></circle><circle class="data-point" data-record="38" tabindex="0" role="img" aria-label="交易经营产品｜cf7df995185d4456ae85def41eb8532e
+GLM-5.2｜53条请求
+平均输入 18,320.75 Token｜理想命中率 40.01%
+报告 H-38；长低（10K临时线）" cx="441.03" cy="274.97" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>交易经营产品｜cf7df995185d4456ae85def41eb8532e
+GLM-5.2｜53条请求
+平均输入 18,320.75 Token｜理想命中率 40.01%
+报告 H-38；长低（10K临时线）</title></circle><circle class="data-point" data-record="13" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.eplus.esalespdb
+DeepSeek-V4-Flash-0731｜57条请求
+平均输入 5,052.63 Token｜理想命中率 49.79%
+报告 H-13；短低（10K临时线）" cx="276.68" cy="240.75" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.eplus.esalespdb
+DeepSeek-V4-Flash-0731｜57条请求
+平均输入 5,052.63 Token｜理想命中率 49.79%
+报告 H-13；短低（10K临时线）</title></circle><circle class="data-point" data-record="54" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.ucd.uiplus.wa
+GLM-5.2｜68条请求
+平均输入 47,676.47 Token｜理想命中率 89.88%
+报告 H-54；长高（10K临时线）" cx="563.05" cy="100.43" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.ucd.uiplus.wa
+GLM-5.2｜68条请求
+平均输入 47,676.47 Token｜理想命中率 89.88%
+报告 H-54；长高（10K临时线）</title></circle><circle class="data-point" data-record="56" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.wireless.mae.autotest
+GLM-5.2｜87条请求
+平均输入 32,344.83 Token｜理想命中率 84.32%
+报告 H-56；长高（10K临时线）" cx="513.55" cy="119.88" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.wireless.mae.autotest
+GLM-5.2｜87条请求
+平均输入 32,344.83 Token｜理想命中率 84.32%
+报告 H-56；长高（10K临时线）</title></circle><circle class="data-point" data-record="11" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.data.laplace
+DeepSeek-V4-Flash-0731｜98条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-11；短低（10K临时线）" cx="70.00" cy="415.00" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.data.laplace
+DeepSeek-V4-Flash-0731｜98条请求
+平均输入 1,000.00 Token｜理想命中率 0.00%
+报告 H-11；短低（10K临时线）</title></circle><circle class="data-point" data-record="75" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.supply.mes.imucp
+Qwen3.6-27B｜100条请求
+平均输入 66,700.00 Token｜理想命中率 80.58%
+报告 H-75；长高（10K临时线）" cx="605.89" cy="132.97" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.supply.mes.imucp
+Qwen3.6-27B｜100条请求
+平均输入 66,700.00 Token｜理想命中率 80.58%
+报告 H-75；长高（10K临时线）</title></circle><circle class="data-point" data-record="52" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.rnd.common.pool
+GLM-5.2｜102条请求
+平均输入 62,676.47 Token｜理想命中率 61.26%
+报告 H-52；长高（10K临时线）" cx="597.96" cy="200.57" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.rnd.common.pool
+GLM-5.2｜102条请求
+平均输入 62,676.47 Token｜理想命中率 61.26%
+报告 H-52；长高（10K临时线）</title></circle><circle class="data-point" data-record="19" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.iv
+DeepSeek-V4-Flash-0731｜104条请求
+平均输入 67,750.00 Token｜理想命中率 90.41%
+报告 H-19；长高（10K临时线）" cx="607.89" cy="98.57" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.iv
+DeepSeek-V4-Flash-0731｜104条请求
+平均输入 67,750.00 Token｜理想命中率 90.41%
+报告 H-19；长高（10K临时线）</title></circle><circle class="data-point" data-record="25" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.newalliance
+DeepSeek-V4-Flash-0731｜104条请求
+平均输入 54,942.31 Token｜理想命中率 47.37%
+报告 H-25；长低（10K临时线）" cx="581.15" cy="249.21" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.newalliance
+DeepSeek-V4-Flash-0731｜104条请求
+平均输入 54,942.31 Token｜理想命中率 47.37%
+报告 H-25；长低（10K临时线）</title></circle><circle class="data-point" data-record="27" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.onlinetools
+DeepSeek-V4-Flash-0731｜108条请求
+平均输入 10,138.89 Token｜理想命中率 10.56%
+报告 H-27；长低（10K临时线）" cx="365.54" cy="378.04" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.onlinetools
+DeepSeek-V4-Flash-0731｜108条请求
+平均输入 10,138.89 Token｜理想命中率 10.56%
+报告 H-27；长低（10K临时线）</title></circle><circle class="data-point" data-record="59" tabindex="0" role="img" aria-label="财经文档助手子产品-财经文档综合智能识别模块｜S00000000000000000000000000000969
+Qwen3.6-27B｜124条请求
+平均输入 2,072.58 Token｜理想命中率 0.93%
+报告 H-59；短低（10K临时线）" cx="162.99" cy="411.76" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>财经文档助手子产品-财经文档综合智能识别模块｜S00000000000000000000000000000969
+Qwen3.6-27B｜124条请求
+平均输入 2,072.58 Token｜理想命中率 0.93%
+报告 H-59；短低（10K临时线）</title></circle><circle class="data-point" data-record="67" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.ipd.alm
+Qwen3.6-27B｜127条请求
+平均输入 3,629.92 Token｜理想命中率 0.00%
+报告 H-67；短低（10K临时线）" cx="234.49" cy="415.00" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.ipd.alm
+Qwen3.6-27B｜127条请求
+平均输入 3,629.92 Token｜理想命中率 0.00%
+报告 H-67；短低（10K临时线）</title></circle><circle class="data-point" data-record="63" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.aidp_dg06
+Qwen3.6-27B｜171条请求
+平均输入 57,216.37 Token｜理想命中率 45.70%
+报告 H-63；长低（10K临时线）" cx="586.33" cy="255.05" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.aidp_dg06
+Qwen3.6-27B｜171条请求
+平均输入 57,216.37 Token｜理想命中率 45.70%
+报告 H-63；长低（10K临时线）</title></circle><circle class="data-point" data-record="46" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.hisi.jeme
+GLM-5.2｜246条请求
+平均输入 75,325.20 Token｜理想命中率 92.69%
+报告 H-46；长高（10K临时线）" cx="621.41" cy="90.57" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.hisi.jeme
+GLM-5.2｜246条请求
+平均输入 75,325.20 Token｜理想命中率 92.69%
+报告 H-46；长高（10K临时线）</title></circle><circle class="data-point" data-record="76" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.unidata.datafactory.datalink
+Qwen3.6-27B｜286条请求
+平均输入 4,573.43 Token｜理想命中率 29.88%
+报告 H-76；短低（10K临时线）" cx="263.97" cy="310.41" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.unidata.datafactory.datalink
+Qwen3.6-27B｜286条请求
+平均输入 4,573.43 Token｜理想命中率 29.88%
+报告 H-76；短低（10K临时线）</title></circle><circle class="data-point" data-record="18" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.it.jalor.studio
+DeepSeek-V4-Flash-0731｜349条请求
+平均输入 24,257.88 Token｜理想命中率 81.21%
+报告 H-18；长高（10K临时线）" cx="476.84" cy="130.76" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.it.jalor.studio
+DeepSeek-V4-Flash-0731｜349条请求
+平均输入 24,257.88 Token｜理想命中率 81.21%
+报告 H-18；长高（10K临时线）</title></circle><circle class="data-point" data-record="9" tabindex="0" role="img" aria-label="云计算销售助手｜com.huawei.cloud.ioc.global
+DeepSeek-V4-Flash-0731｜595条请求
+平均输入 50,406.72 Token｜理想命中率 90.93%
+报告 H-9；长高（10K临时线）" cx="570.16" cy="96.76" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>云计算销售助手｜com.huawei.cloud.ioc.global
+DeepSeek-V4-Flash-0731｜595条请求
+平均输入 50,406.72 Token｜理想命中率 90.93%
+报告 H-9；长高（10K临时线）</title></circle><circle class="data-point" data-record="45" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.hisi.cie
+GLM-5.2｜650条请求
+平均输入 77,029.23 Token｜理想命中率 91.00%
+报告 H-45；长高（10K临时线）" cx="624.26" cy="96.50" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.hisi.cie
+GLM-5.2｜650条请求
+平均输入 77,029.23 Token｜理想命中率 91.00%
+报告 H-45；长高（10K临时线）</title></circle><circle class="data-point" data-record="23" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.mbs.ilegal.ioc
+DeepSeek-V4-Flash-0731｜661条请求
+平均输入 38,833.59 Token｜理想命中率 43.96%
+报告 H-23；长低（10K临时线）" cx="536.88" cy="261.12" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.mbs.ilegal.ioc
+DeepSeek-V4-Flash-0731｜661条请求
+平均输入 38,833.59 Token｜理想命中率 43.96%
+报告 H-23；长低（10K临时线）</title></circle><circle class="data-point" data-record="41" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.chipset2
+GLM-5.2｜709条请求
+平均输入 53,571.23 Token｜理想命中率 79.41%
+报告 H-41；长高（10K临时线）" cx="577.93" cy="137.05" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.chipset2
+GLM-5.2｜709条请求
+平均输入 53,571.23 Token｜理想命中率 79.41%
+报告 H-41；长高（10K临时线）</title></circle><circle class="data-point" data-record="17" tabindex="0" role="img" aria-label="天舟人工智能平台｜com.huawei.ipd.tianzhou.ai
+DeepSeek-V4-Flash-0731｜864条请求
+平均输入 41,899.31 Token｜理想命中率 61.47%
+报告 H-17；长高（10K临时线）" cx="546.57" cy="199.84" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>天舟人工智能平台｜com.huawei.ipd.tianzhou.ai
+DeepSeek-V4-Flash-0731｜864条请求
+平均输入 41,899.31 Token｜理想命中率 61.47%
+报告 H-17；长高（10K临时线）</title></circle><circle class="data-point" data-record="62" tabindex="0" role="img" aria-label="任职资格认证管理｜app_000000030502
+Qwen3.6-27B｜905条请求
+平均输入 8,414.36 Token｜理想命中率 38.06%
+报告 H-62；短低（10K临时线）" cx="341.75" cy="281.79" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>任职资格认证管理｜app_000000030502
+Qwen3.6-27B｜905条请求
+平均输入 8,414.36 Token｜理想命中率 38.06%
+报告 H-62；短低（10K临时线）</title></circle><circle class="data-point" data-record="5" tabindex="0" role="img" aria-label="产品待关联｜S010320
+DeepSeek-V4-Flash-0731｜1,038条请求
+平均输入 59,565.51 Token｜理想命中率 36.55%
+报告 H-5；长低（10K临时线）" cx="591.46" cy="287.09" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜S010320
+DeepSeek-V4-Flash-0731｜1,038条请求
+平均输入 59,565.51 Token｜理想命中率 36.55%
+报告 H-5；长低（10K临时线）</title></circle><circle class="data-point" data-record="55" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.w00416772
+GLM-5.2｜1,096条请求
+平均输入 80,735.40 Token｜理想命中率 92.70%
+报告 H-55；长高（10K临时线）" cx="630.26" cy="90.54" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.w00416772
+GLM-5.2｜1,096条请求
+平均输入 80,735.40 Token｜理想命中率 92.70%
+报告 H-55；长高（10K临时线）</title></circle><circle class="data-point" data-record="20" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.jiutian
+DeepSeek-V4-Flash-0731｜1,104条请求
+平均输入 7,025.36 Token｜理想命中率 91.83%
+报告 H-20；短高（10K临时线）" cx="318.74" cy="93.58" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.jiutian
+DeepSeek-V4-Flash-0731｜1,104条请求
+平均输入 7,025.36 Token｜理想命中率 91.83%
+报告 H-20；短高（10K临时线）</title></circle><circle class="data-point" data-record="31" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.ucd.uiplus.wa
+DeepSeek-V4-Flash-0731｜1,159条请求
+平均输入 56,266.61 Token｜理想命中率 92.72%
+报告 H-31；长高（10K临时线）" cx="584.19" cy="90.47" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.ucd.uiplus.wa
+DeepSeek-V4-Flash-0731｜1,159条请求
+平均输入 56,266.61 Token｜理想命中率 92.72%
+报告 H-31；长高（10K临时线）</title></circle><circle class="data-point" data-record="51" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.owls.notify_message
+GLM-5.2｜1,170条请求
+平均输入 20,611.11 Token｜理想命中率 88.22%
+报告 H-51；长高（10K临时线）" cx="456.06" cy="106.21" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.owls.notify_message
+GLM-5.2｜1,170条请求
+平均输入 20,611.11 Token｜理想命中率 88.22%
+报告 H-51；长高（10K临时线）</title></circle><circle class="data-point" data-record="49" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.ipd.noproduct.tenant_l00379841.hz
+GLM-5.2｜1,353条请求
+平均输入 34,796.01 Token｜理想命中率 90.95%
+报告 H-49；长高（10K临时线）" cx="522.87" cy="96.69" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.ipd.noproduct.tenant_l00379841.hz
+GLM-5.2｜1,353条请求
+平均输入 34,796.01 Token｜理想命中率 90.95%
+报告 H-49；长高（10K临时线）</title></circle><circle class="data-point" data-record="53" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.tdata
+GLM-5.2｜1,474条请求
+平均输入 40,746.95 Token｜理想命中率 87.05%
+报告 H-53；长高（10K临时线）" cx="543.02" cy="110.32" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.tdata
+GLM-5.2｜1,474条请求
+平均输入 40,746.95 Token｜理想命中率 87.05%
+报告 H-53；长高（10K临时线）</title></circle><circle class="data-point" data-record="39" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.atebrain.atewingman
+GLM-5.2｜1,873条请求
+平均输入 58,604.38 Token｜理想命中率 93.86%
+报告 H-39；长高（10K临时线）" cx="589.39" cy="86.51" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.atebrain.atewingman
+GLM-5.2｜1,873条请求
+平均输入 58,604.38 Token｜理想命中率 93.86%
+报告 H-39；长高（10K临时线）</title></circle><circle class="data-point" data-record="26" tabindex="0" role="img" aria-label="会议管理维稳｜com.huawei.officeit.meeting.brain
+DeepSeek-V4-Flash-0731｜2,910条请求
+平均输入 4,940.21 Token｜理想命中率 0.83%
+报告 H-26；短低（10K临时线）" cx="273.81" cy="412.11" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>会议管理维稳｜com.huawei.officeit.meeting.brain
+DeepSeek-V4-Flash-0731｜2,910条请求
+平均输入 4,940.21 Token｜理想命中率 0.83%
+报告 H-26；短低（10K临时线）</title></circle><circle class="data-point" data-record="43" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.gtsdata.datalinkpro
+GLM-5.2｜3,375条请求
+平均输入 57,193.19 Token｜理想命中率 89.13%
+报告 H-43；长高（10K临时线）" cx="586.28" cy="103.05" r="5.5" fill="#398369" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.gtsdata.datalinkpro
+GLM-5.2｜3,375条请求
+平均输入 57,193.19 Token｜理想命中率 89.13%
+报告 H-43；长高（10K临时线）</title></circle><circle class="data-point" data-record="57" tabindex="0" role="img" aria-label="产品待关联｜7ca7ba5da84e4458b1c48209d4b3cf9f
+Qwen3.6-27B｜4,935条请求
+平均输入 2,025.13 Token｜理想命中率 4.71%
+报告 H-57；短低（10K临时线）" cx="160.03" cy="398.53" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜7ca7ba5da84e4458b1c48209d4b3cf9f
+Qwen3.6-27B｜4,935条请求
+平均输入 2,025.13 Token｜理想命中率 4.71%
+报告 H-57；短低（10K临时线）</title></circle><circle class="data-point" data-record="66" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.gtsdata.datalinkpro
+Qwen3.6-27B｜5,587条请求
+平均输入 26,693.93 Token｜理想命中率 81.77%
+报告 H-66；长高（10K临时线）" cx="489.05" cy="128.81" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.gtsdata.datalinkpro
+Qwen3.6-27B｜5,587条请求
+平均输入 26,693.93 Token｜理想命中率 81.77%
+报告 H-66；长高（10K临时线）</title></circle><circle class="data-point" data-record="24" tabindex="0" role="img" aria-label="产品待关联｜com.huawei.nebula.alpha_voc
+DeepSeek-V4-Flash-0731｜8,675条请求
+平均输入 1,393.89 Token｜理想命中率 39.22%
+报告 H-24；短低（10K临时线）" cx="112.37" cy="277.74" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜com.huawei.nebula.alpha_voc
+DeepSeek-V4-Flash-0731｜8,675条请求
+平均输入 1,393.89 Token｜理想命中率 39.22%
+报告 H-24；短低（10K临时线）</title></circle><circle class="data-point" data-record="60" tabindex="0" role="img" aria-label="产品待关联｜S00000000000000000000000000001679
+Qwen3.6-27B｜52,098条请求
+平均输入 3,271.18 Token｜理想命中率 13.55%
+报告 H-60；短低（10K临时线）" cx="221.21" cy="367.58" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>产品待关联｜S00000000000000000000000000001679
+Qwen3.6-27B｜52,098条请求
+平均输入 3,271.18 Token｜理想命中率 13.55%
+报告 H-60；短低（10K临时线）</title></circle><circle class="data-point" data-record="58" tabindex="0" role="img" aria-label="员工助手｜S00000000000000000000000000000773
+Qwen3.6-27B｜54,602条请求
+平均输入 7,042.09 Token｜理想命中率 41.87%
+报告 H-58；短低（10K临时线）" cx="319.04" cy="268.47" r="5.5" fill="#c34639" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>员工助手｜S00000000000000000000000000000773
+Qwen3.6-27B｜54,602条请求
+平均输入 7,042.09 Token｜理想命中率 41.87%
+报告 H-58；短低（10K临时线）</title></circle><circle class="data-point" data-record="2" tabindex="0" role="img" aria-label="员工助手｜S00000000000000000000000000000773
+DeepSeek-V4-Flash-0731｜1,047条请求
+平均输入 44,741.17 Token｜理想命中率 34.81%
+报告 H-2；长低（10K临时线）" cx="554.95" cy="293.18" r="5.5" fill="#315c86" fill-opacity=".8" stroke="white" stroke-width="1.4"><title>员工助手｜S00000000000000000000000000000773
+DeepSeek-V4-Flash-0731｜1,047条请求
+平均输入 44,741.17 Token｜理想命中率 34.81%
+报告 H-2；长低（10K临时线）</title></circle><circle cx="554.95" cy="293.18" r="10" fill="none" stroke="#c00000" stroke-width="2" pointer-events="none"/><path d="M545.95 297.18 l-45 42 h-100" fill="none" stroke="#b00000"/><text x="402.95" y="358.18" fill="#b00000" font-size="15" font-weight="700">员工助手 × DeepSeek</text></svg>
+ <div class="legend-row model-legend"><span><i style="background:#315c86"></i>DeepSeek</span><span><i style="background:#398369"></i>GLM</span><span><i style="background:#c34639"></i>Qwen</span><span>每点 = appid × 模型</span></div>
+ <div class="scenario-guide"><div><b>长高 / 编码与工具Agent等</b><span>关注剩余计算、路由与并发</span></div><div><b>短低 / 问答、搜索、提取等</b><span>关注负载适配、SLO与排队</span></div><div><b>短高 / 固定模板等</b><span>关注高频调用与执行效率</span></div><div class="priority"><b>长低 / 业务协同重点</b><span>核查动态前缀、工具与消息问题</span></div></div>
+ <div class="chart-note">命中分界50%；10K为临时长度观察线，正式分界待定。场景举例不等于任务识别；长低不代表一定可修复。重叠点不偏移，完整明细见说明。</div>
+ </div>
+ <div class="case-column">
+  <div class="candidate-panel"><div class="candidate-title">长输入、低命中：优先核查清单 <span class="tag">14组中的请求量前3</span></div><table class="candidate-table"><thead><tr><th>产品 / appid</th><th>模型</th><th>请求量</th></tr></thead><tbody><tr><td><b>员工助手</b><small title="S00000000000000000000000000000773">S00000000000000000000000000000773</small></td><td>DeepSeek</td><td>1,047</td></tr><tr><td><b>S010320（产品待关联）</b><small title="S010320">S010320</small></td><td>DeepSeek</td><td>1,038</td></tr><tr><td><b>产品待关联</b><small title="com.huawei.mbs.ilegal.ioc">com.huawei.mbs.ilegal.ioc</small></td><td>DeepSeek</td><td>661</td></tr></tbody></table><div class="minor">暂按平均输入&gt;10K、理想命中&lt;50%筛选；共3,296条请求。先结合业务核查原因，再确定改进方案。</div></div>
+  <div class="employee-panel"><div class="employee-head"><strong>重点核查：员工助手</strong><span class="family">DeepSeek-V4-Flash</span></div><div class="appid">S00000000000000000000000000000773 · 1,047条</div><div class="employee-metrics"><div class="employee-metric">平均输入长度（1K箱估算）<b class="verified">44.74<small>K Token</small></b></div><div class="employee-metric">理想命中率<b class="verified">34.81<small>%</small></b></div></div><svg class="employee-hist" viewBox="0 0 600 155" role="img" aria-label="员工助手DeepSeek，1047条请求，已有5K分箱直方图。主峰45K至50K为112条，分布宽且多峰。"><line x1="37" x2="581" y1="117.0" y2="117.0" stroke="#e0e5ea"/><text x="30" y="121.0" text-anchor="end" class="hist-tick">0</text><line x1="37" x2="581" y1="72.0" y2="72.0" stroke="#e0e5ea"/><text x="30" y="76.0" text-anchor="end" class="hist-tick">60</text><line x1="37" x2="581" y1="27.0" y2="27.0" stroke="#e0e5ea"/><text x="30" y="31.0" text-anchor="end" class="hist-tick">120</text><rect x="38.00" y="83.25" width="19.5" height="33.75" fill="#6686a2"><title>0–5,000 Token：45条（4.30%）</title></rect><rect x="59.76" y="117.00" width="19.5" height="0.00" fill="#6686a2"><title>5,000–10,000 Token：0条（0.00%）</title></rect><rect x="81.52" y="111.00" width="19.5" height="6.00" fill="#6686a2"><title>10,000–15,000 Token：8条（0.76%）</title></rect><rect x="103.28" y="53.25" width="19.5" height="63.75" fill="#6686a2"><title>15,000–20,000 Token：85条（8.12%）</title></rect><rect x="125.04" y="36.00" width="19.5" height="81.00" fill="#6686a2"><title>20,000–25,000 Token：108条（10.32%）</title></rect><rect x="146.80" y="65.25" width="19.5" height="51.75" fill="#6686a2"><title>25,000–30,000 Token：69条（6.59%）</title></rect><rect x="168.56" y="50.25" width="19.5" height="66.75" fill="#6686a2"><title>30,000–35,000 Token：89条（8.50%）</title></rect><rect x="190.32" y="94.50" width="19.5" height="22.50" fill="#6686a2"><title>35,000–40,000 Token：30条（2.87%）</title></rect><rect x="212.08" y="58.50" width="19.5" height="58.50" fill="#6686a2"><title>40,000–45,000 Token：78条（7.45%）</title></rect><rect x="233.84" y="33.00" width="19.5" height="84.00" fill="#b90000"><title>45,000–50,000 Token：112条（10.70%）</title></rect><rect x="255.60" y="77.25" width="19.5" height="39.75" fill="#6686a2"><title>50,000–55,000 Token：53条（5.06%）</title></rect><rect x="277.36" y="45.00" width="19.5" height="72.00" fill="#6686a2"><title>55,000–60,000 Token：96条（9.17%）</title></rect><rect x="299.12" y="50.25" width="19.5" height="66.75" fill="#6686a2"><title>60,000–65,000 Token：89条（8.50%）</title></rect><rect x="320.88" y="48.00" width="19.5" height="69.00" fill="#6686a2"><title>65,000–70,000 Token：92条（8.79%）</title></rect><rect x="342.64" y="88.50" width="19.5" height="28.50" fill="#6686a2"><title>70,000–75,000 Token：38条（3.63%）</title></rect><rect x="364.40" y="103.50" width="19.5" height="13.50" fill="#6686a2"><title>75,000–80,000 Token：18条（1.72%）</title></rect><rect x="386.16" y="112.50" width="19.5" height="4.50" fill="#6686a2"><title>80,000–85,000 Token：6条（0.57%）</title></rect><rect x="407.92" y="107.25" width="19.5" height="9.75" fill="#6686a2"><title>85,000–90,000 Token：13条（1.24%）</title></rect><rect x="429.68" y="117.00" width="19.5" height="0.00" fill="#6686a2"><title>90,000–95,000 Token：0条（0.00%）</title></rect><rect x="451.44" y="112.50" width="19.5" height="4.50" fill="#6686a2"><title>95,000–100,000 Token：6条（0.57%）</title></rect><rect x="473.20" y="114.00" width="19.5" height="3.00" fill="#6686a2"><title>100,000–105,000 Token：4条（0.38%）</title></rect><rect x="494.96" y="113.25" width="19.5" height="3.75" fill="#6686a2"><title>105,000–110,000 Token：5条（0.48%）</title></rect><rect x="516.72" y="115.50" width="19.5" height="1.50" fill="#6686a2"><title>110,000–115,000 Token：2条（0.19%）</title></rect><rect x="538.48" y="117.00" width="19.5" height="0.00" fill="#6686a2"><title>115,000–120,000 Token：0条（0.00%）</title></rect><rect x="560.24" y="116.25" width="19.5" height="0.75" fill="#6686a2"><title>120,000–125,000 Token：1条（0.10%）</title></rect><text x="37.00" y="136" text-anchor="middle" class="hist-tick">0K</text><text x="145.80" y="136" text-anchor="middle" class="hist-tick">25K</text><text x="254.60" y="136" text-anchor="middle" class="hist-tick">50K</text><text x="363.40" y="136" text-anchor="middle" class="hist-tick">75K</text><text x="472.20" y="136" text-anchor="middle" class="hist-tick">100K</text><text x="581.00" y="136" text-anchor="middle" class="hist-tick">125K</text><text x="37" y="16" class="hist-tick">请求数</text><text x="581" y="153" text-anchor="end" class="hist-tick">模板后输入Token · 已有5K分箱</text></svg><div class="chart-note">主峰45K–50K：112条（10.70%）；分布宽且多峰。<br>model_id：DeepSeek-V4-Flash-0731 <a class="source-link" href="http://localhost:18002/#/users?run=ur-07c8abc2e3ea49438cb018cf53bcaa97&amp;appid=S00000000000000000000000000000773&amp;revision=4eaa33edb665be3e709af4fa3fc2bf75c98d96e122dbb4a79bdf5788c90ded63" target="_blank" rel="noopener noreferrer">查看华为已有结果 ↗</a></div></div>
+ </div>
+</div><div class="value-strip"><strong>下一步</strong><span>从真实负载找到关键对象，让业务协同和平台优化各有重点</span></div></div>
+<footer class="slide-footer"><span class="wordmark">TokenScope</span><span>2026-10-20约2小时真实Trace · 1K箱右端点加权均值 · 已排除构造样本</span><span>04 / 04</span></footer>
+</section>
+</div></main>
+<footer class="nav-bottom"><span class="keyboard-hint">← → 翻页 · 1–4 直达 · F 全屏 · N 讲解说明</span><button type="button" id="previous" aria-label="上一页">←</button><span class="counter" id="counter" aria-live="polite">01 / 04</span><button type="button" id="next" aria-label="下一页">→</button><span class="review-hint">11月9日回传已填入 · 长度10K暂作观察线</span></footer>
+<dialog class="notes" id="notes-dialog"><button type="button" class="notes-close" id="notes-close" aria-label="关闭讲解说明">×</button><h2 id="notes-title">讲解与数据说明</h2>
+ <div class="note-content" data-note="0"><p><b>建议讲解约4分钟。</b>先解释业务与平台各自依据什么采取行动，再讲产品模块。强调CPU分析和协作闭环，无需讲解具体注意力算法。</p><p>本页为目标产品架构。MLA/GDA/CSA按讨论保留模块名称，不表示已验证所有模型模式；XGBoost与Hybrid相关适配标明演进状态。当前V2的SLO功能为参数化参考。</p><p>理想命中率对应当前输入组织、请求集合和仿真配置，不能直接替代实例物理缓存命中。</p></div>
+ <div class="note-content" data-note="1" hidden><p><b>建议讲解与演示共8分钟。</b>先说“目标缺依据”，再说“改法缺证据”，最后打开已有产品链接，沿监控→L1→证据→改法→评估讲一个完整故事。</p><p>已验证：ICSL场景构造样本102条、GLM-5.2，35.949479%→90.156355%；仅移除system首行billing内容，完整102条评估。整体任务partial与候选留存预算有关，完整评估本身已完成。</p><p><b>仍待补证：</b>全量CPU耗时、推理卡重放耗时/配置/范围、历史业务闭环周期、线上TTFT/吞吐改善。未把“30分钟”“一个月→一周”写成已验证数字。</p><p>链接仅在你点击时打开本机已有成果，此HTML不会请求产品API。当前页面保持来源说明，既有产品页面不作任何修改。</p></div>
+ <div class="note-content" data-note="2" hidden><p><b>建议讲解约2分钟。</b>67个appid、77组appid×模型、150,698条请求来自11月9日只读回传，已排除ICSL构造样本。三大主流系列按本次业务汇报口径命名，非企业总体模型排行。</p><p><b>产品关联与领域初分：</b>对照表关联15个产品名称（15个appid，17组结果）；52个appid缺有效名称映射。8个产品按名称初分到四领域，7个已关联产品暂不强行归属：员工助手、WeLink直播、IOC、e+ IOC、会议管理维稳、交易经营产品、iAudit。领域是展示初分，仍需业务确认。</p><p>匹配保持appid大小写，仅去除“（生产环境）/（测试环境）”描述；cf7…的交易经营产品由此匹配。未把com.huawei.gtsdata.datalinkpro猜作对照表中com.gtsdata.huawei.com.datalinkpro；未分析的标书360、发票识别等不计入。</p><details><summary>查看已关联产品与分析结果（17组）</summary><div class="data-table-wrap"><table class="detail-table"><thead><tr><th>产品 / appid</th><th>模型</th><th>请求</th><th>均长Token</th><th>理想命中</th></tr></thead><tbody><tr><td>员工助手<small>S00000000000000000000000000000773</small></td><td>DeepSeek-V4-Flash-0731</td><td>1,047</td><td>44,741.17</td><td>34.81%</td></tr><tr><td>WeLink直播<small>app_000000000381</small></td><td>DeepSeek-V4-Flash-0731</td><td>8</td><td>2,000.00</td><td>78.50%</td></tr><tr><td>财报产品<small>bbbe2c7ed6854ab2b83c441c04f35ac1</small></td><td>DeepSeek-V4-Flash-0731</td><td>36</td><td>3,666.67</td><td>83.38%</td></tr><tr><td>IOC<small>com.huawei.cbg.nebula.isc</small></td><td>DeepSeek-V4-Flash-0731</td><td>32</td><td>1,000.00</td><td>69.57%</td></tr><tr><td>云计算销售助手<small>com.huawei.cloud.ioc.global</small></td><td>DeepSeek-V4-Flash-0731</td><td>595</td><td>50,406.72</td><td>90.93%</td></tr><tr><td>e+ IOC<small>com.huawei.ebg.ioc.efc</small></td><td>DeepSeek-V4-Flash-0731</td><td>15</td><td>2,133.33</td><td>41.88%</td></tr><tr><td>前端组件子产品<small>com.huawei.finance.front.common</small></td><td>DeepSeek-V4-Flash-0731</td><td>2</td><td>20,000.00</td><td>49.53%</td></tr><tr><td>天舟人工智能平台<small>com.huawei.ipd.tianzhou.ai</small></td><td>DeepSeek-V4-Flash-0731</td><td>864</td><td>41,899.31</td><td>61.47%</td></tr><tr><td>会议管理维稳<small>com.huawei.officeit.meeting.brain</small></td><td>DeepSeek-V4-Flash-0731</td><td>2,910</td><td>4,940.21</td><td>0.83%</td></tr><tr><td>交易经营产品<small>cf7df995185d4456ae85def41eb8532e</small></td><td>GLM-5.2</td><td>53</td><td>18,320.75</td><td>40.01%</td></tr><tr><td>IOC<small>com.huawei.cbg.nebula.isc</small></td><td>GLM-5.2</td><td>2</td><td>8,000.00</td><td>37.26%</td></tr><tr><td>存储芯片开发工具链<small>com.huawei.hisi.laval.smdmp</small></td><td>GLM-5.2</td><td>29</td><td>133,310.34</td><td>91.50%</td></tr><tr><td>员工助手<small>S00000000000000000000000000000773</small></td><td>Qwen3.6-27B</td><td>54,602</td><td>7,042.09</td><td>41.87%</td></tr><tr><td>财经文档助手子产品-财经文档综合智能识别模块<small>S00000000000000000000000000000969</small></td><td>Qwen3.6-27B</td><td>124</td><td>2,072.58</td><td>0.93%</td></tr><tr><td>任职资格认证管理<small>app_000000030502</small></td><td>Qwen3.6-27B</td><td>905</td><td>8,414.36</td><td>38.06%</td></tr><tr><td>财经质量管理产品<small>com.huawei.fin.arm.arm</small></td><td>Qwen3.6-27B</td><td>1</td><td>1,000.00</td><td>0.00%</td></tr><tr><td>iAudit<small>com.huawei.mbs.iaai</small></td><td>Qwen3.6-27B</td><td>20</td><td>1,950.00</td><td>0.00%</td></tr></tbody></table></div></details><p>来源为2026-10-20约2小时Trace，报告概述为07:00–09:00 UTC；员工助手源文件观测范围到09:03:42 UTC，因此页面使用“约2小时”。没有企业完整分母，不展示覆盖率百分比。</p></div>
+ <div class="note-content" data-note="3" hidden><p><b>建议讲解约4分钟。</b>50%为已确认命中率分界；10K仅用于本次观察（大于为长、小于为短，本批无恰等于10K）。短高9组、长高31组、短低23组、长低14组，总77组，均为appid×model_id×common_name结果；不是77个独立appid。</p><p>横轴：Σ(区间请求数×右端点)/总请求数，模板后输入长度，统一使用已有1K分箱。右端点估算略偏高；77条均无开放尾箱。图以对数横轴覆盖1K–200K，无删点、随机抖动或尾部截断。颜色表示模型，圆大小不编码请求量；重叠点可能遮挡，完整表如下。</p><p><b>员工助手：</b>DeepSeek-V4-Flash-0731，1,047条，均长44,741.17 Token，理想命中34.81%。均长分子46,844,000；缓存16,124,832 / 输入46,326,632。右侧已有5K直方图与1K合并计数一致，补回零箱；主峰45K–50K仅占10.70%，不是窄高斯分布。</p><p>低命中原因尚未在此报告中诊断，不能认定员工助手具有CCH问题。任务语义、可修复性与SLO承诺需分别确认。员工助手链接来自华为报告，需对应现场SSH转发；本机同端口服务未必持有该run。</p><details><summary>查看长输入、低命中完整14组</summary><div class="data-table-wrap"><table class="detail-table"><thead><tr><th>产品 / appid</th><th>模型</th><th>请求</th><th>均长Token</th><th>理想命中</th></tr></thead><tbody><tr><td>员工助手<small>S00000000000000000000000000000773</small></td><td>DeepSeek-V4-Flash-0731</td><td>1,047</td><td>44,741.17</td><td>34.81%</td></tr><tr><td>待关联<small>S010320</small></td><td>DeepSeek-V4-Flash-0731</td><td>1,038</td><td>59,565.51</td><td>36.55%</td></tr><tr><td>待关联<small>com.huawei.mbs.ilegal.ioc</small></td><td>DeepSeek-V4-Flash-0731</td><td>661</td><td>38,833.59</td><td>43.96%</td></tr><tr><td>待关联<small>com.huawei.aidp_dg06</small></td><td>Qwen3.6-27B</td><td>171</td><td>57,216.37</td><td>45.70%</td></tr><tr><td>待关联<small>com.huawei.onlinetools</small></td><td>DeepSeek-V4-Flash-0731</td><td>108</td><td>10,138.89</td><td>10.56%</td></tr><tr><td>待关联<small>com.huawei.newalliance</small></td><td>DeepSeek-V4-Flash-0731</td><td>104</td><td>54,942.31</td><td>47.37%</td></tr><tr><td>交易经营产品<small>cf7df995185d4456ae85def41eb8532e</small></td><td>GLM-5.2</td><td>53</td><td>18,320.75</td><td>40.01%</td></tr><tr><td>待关联<small>com.huawei.meca.admin.digital</small></td><td>Qwen3.6-27B</td><td>51</td><td>56,745.10</td><td>29.56%</td></tr><tr><td>待关联<small>com.huawei.cnbg.ioc.cnkm</small></td><td>DeepSeek-V4-Flash-0731</td><td>33</td><td>71,636.36</td><td>26.46%</td></tr><tr><td>待关联<small>com.huawei.fin.report.biportal</small></td><td>DeepSeek-V4-Flash-0731</td><td>16</td><td>48,312.50</td><td>12.34%</td></tr><tr><td>待关联<small>com.huawei.rnd.common.pool</small></td><td>DeepSeek-V4-Flash-0731</td><td>5</td><td>46,200.00</td><td>11.25%</td></tr><tr><td>待关联<small>com.huawei.csi.smartndp</small></td><td>Qwen3.6-27B</td><td>5</td><td>26,200.00</td><td>38.12%</td></tr><tr><td>前端组件子产品<small>com.huawei.finance.front.common</small></td><td>DeepSeek-V4-Flash-0731</td><td>2</td><td>20,000.00</td><td>49.53%</td></tr><tr><td>待关联<small>com.huawei.make.scheduling</small></td><td>Qwen3.6-27B</td><td>2</td><td>85,500.00</td><td>16.29%</td></tr></tbody></table></div></details><details><summary>查看全部77组真实结果</summary><div class="data-table-wrap"><table class="detail-table"><thead><tr><th>产品 / appid</th><th>模型</th><th>请求</th><th>均长Token</th><th>理想命中</th></tr></thead><tbody><tr><td>待关联<small>0c615488865343e2b37176fbf18ca8e1</small></td><td>DeepSeek-V4-Flash-0731</td><td>26</td><td>1,538.46</td><td>75.05%</td></tr><tr><td>员工助手<small>S00000000000000000000000000000773</small></td><td>DeepSeek-V4-Flash-0731</td><td>1,047</td><td>44,741.17</td><td>34.81%</td></tr><tr><td>待关联<small>S00000000000000000000000000002127</small></td><td>DeepSeek-V4-Flash-0731</td><td>1</td><td>2,000.00</td><td>0.00%</td></tr><tr><td>待关联<small>S00000000000000000000000000003734</small></td><td>DeepSeek-V4-Flash-0731</td><td>9</td><td>15,444.44</td><td>84.41%</td></tr><tr><td>待关联<small>S010320</small></td><td>DeepSeek-V4-Flash-0731</td><td>1,038</td><td>59,565.51</td><td>36.55%</td></tr><tr><td>WeLink直播<small>app_000000000381</small></td><td>DeepSeek-V4-Flash-0731</td><td>8</td><td>2,000.00</td><td>78.50%</td></tr><tr><td>财报产品<small>bbbe2c7ed6854ab2b83c441c04f35ac1</small></td><td>DeepSeek-V4-Flash-0731</td><td>36</td><td>3,666.67</td><td>83.38%</td></tr><tr><td>IOC<small>com.huawei.cbg.nebula.isc</small></td><td>DeepSeek-V4-Flash-0731</td><td>32</td><td>1,000.00</td><td>69.57%</td></tr><tr><td>云计算销售助手<small>com.huawei.cloud.ioc.global</small></td><td>DeepSeek-V4-Flash-0731</td><td>595</td><td>50,406.72</td><td>90.93%</td></tr><tr><td>待关联<small>com.huawei.cnbg.ioc.cnkm</small></td><td>DeepSeek-V4-Flash-0731</td><td>33</td><td>71,636.36</td><td>26.46%</td></tr><tr><td>待关联<small>com.huawei.data.laplace</small></td><td>DeepSeek-V4-Flash-0731</td><td>98</td><td>1,000.00</td><td>0.00%</td></tr><tr><td>e+ IOC<small>com.huawei.ebg.ioc.efc</small></td><td>DeepSeek-V4-Flash-0731</td><td>15</td><td>2,133.33</td><td>41.88%</td></tr><tr><td>待关联<small>com.huawei.eplus.esalespdb</small></td><td>DeepSeek-V4-Flash-0731</td><td>57</td><td>5,052.63</td><td>49.79%</td></tr><tr><td>待关联<small>com.huawei.fin.report.biportal</small></td><td>DeepSeek-V4-Flash-0731</td><td>16</td><td>48,312.50</td><td>12.34%</td></tr><tr><td>前端组件子产品<small>com.huawei.finance.front.common</small></td><td>DeepSeek-V4-Flash-0731</td><td>2</td><td>20,000.00</td><td>49.53%</td></tr><tr><td>待关联<small>com.huawei.ipd.noproduct.tenant_w00292996.shenzhen</small></td><td>DeepSeek-V4-Flash-0731</td><td>11</td><td>26,636.36</td><td>68.59%</td></tr><tr><td>天舟人工智能平台<small>com.huawei.ipd.tianzhou.ai</small></td><td>DeepSeek-V4-Flash-0731</td><td>864</td><td>41,899.31</td><td>61.47%</td></tr><tr><td>待关联<small>com.huawei.it.jalor.studio</small></td><td>DeepSeek-V4-Flash-0731</td><td>349</td><td>24,257.88</td><td>81.21%</td></tr><tr><td>待关联<small>com.huawei.iv</small></td><td>DeepSeek-V4-Flash-0731</td><td>104</td><td>67,750.00</td><td>90.41%</td></tr><tr><td>待关联<small>com.huawei.jiutian</small></td><td>DeepSeek-V4-Flash-0731</td><td>1,104</td><td>7,025.36</td><td>91.83%</td></tr><tr><td>待关联<small>com.huawei.make.mes.mesai.aimachine</small></td><td>DeepSeek-V4-Flash-0731</td><td>22</td><td>45,727.27</td><td>86.56%</td></tr><tr><td>待关联<small>com.huawei.makeit.autotest</small></td><td>DeepSeek-V4-Flash-0731</td><td>20</td><td>74,250.00</td><td>90.21%</td></tr><tr><td>待关联<small>com.huawei.mbs.ilegal.ioc</small></td><td>DeepSeek-V4-Flash-0731</td><td>661</td><td>38,833.59</td><td>43.96%</td></tr><tr><td>待关联<small>com.huawei.nebula.alpha_voc</small></td><td>DeepSeek-V4-Flash-0731</td><td>8,675</td><td>1,393.89</td><td>39.22%</td></tr><tr><td>待关联<small>com.huawei.newalliance</small></td><td>DeepSeek-V4-Flash-0731</td><td>104</td><td>54,942.31</td><td>47.37%</td></tr><tr><td>会议管理维稳<small>com.huawei.officeit.meeting.brain</small></td><td>DeepSeek-V4-Flash-0731</td><td>2,910</td><td>4,940.21</td><td>0.83%</td></tr><tr><td>待关联<small>com.huawei.onlinetools</small></td><td>DeepSeek-V4-Flash-0731</td><td>108</td><td>10,138.89</td><td>10.56%</td></tr><tr><td>待关联<small>com.huawei.rnd.common.pool</small></td><td>DeepSeek-V4-Flash-0731</td><td>5</td><td>46,200.00</td><td>11.25%</td></tr><tr><td>待关联<small>com.huawei.supply.ioc.rock</small></td><td>DeepSeek-V4-Flash-0731</td><td>4</td><td>1,000.00</td><td>60.00%</td></tr><tr><td>待关联<small>com.huawei.threecloud.ai_llm</small></td><td>DeepSeek-V4-Flash-0731</td><td>4</td><td>110,250.00</td><td>51.63%</td></tr><tr><td>待关联<small>com.huawei.ucd.uiplus.wa</small></td><td>DeepSeek-V4-Flash-0731</td><td>1,159</td><td>56,266.61</td><td>92.72%</td></tr><tr><td>待关联<small>com.huawei.weda</small></td><td>DeepSeek-V4-Flash-0731</td><td>44</td><td>4,272.73</td><td>64.39%</td></tr><tr><td>待关联<small>com.huawei.wh3s</small></td><td>DeepSeek-V4-Flash-0731</td><td>9</td><td>1,000.00</td><td>0.00%</td></tr><tr><td>待关联<small>com.huawei.wxalm.smartci</small></td><td>DeepSeek-V4-Flash-0731</td><td>16</td><td>7,687.50</td><td>73.94%</td></tr><tr><td>待关联<small>7ca7ba5da84e4458b1c48209d4b3cf9f</small></td><td>GLM-5.2</td><td>32</td><td>158,750.00</td><td>93.42%</td></tr><tr><td>待关联<small>S00000000000000000000000000001679</small></td><td>GLM-5.2</td><td>14</td><td>62,357.14</td><td>83.84%</td></tr><tr><td>待关联<small>S00000000000000000000000000003344</small></td><td>GLM-5.2</td><td>14</td><td>1,000.00</td><td>0.00%</td></tr><tr><td>交易经营产品<small>cf7df995185d4456ae85def41eb8532e</small></td><td>GLM-5.2</td><td>53</td><td>18,320.75</td><td>40.01%</td></tr><tr><td>待关联<small>com.huawei.atebrain.atewingman</small></td><td>GLM-5.2</td><td>1,873</td><td>58,604.38</td><td>93.86%</td></tr><tr><td>IOC<small>com.huawei.cbg.nebula.isc</small></td><td>GLM-5.2</td><td>2</td><td>8,000.00</td><td>37.26%</td></tr><tr><td>待关联<small>com.huawei.chipset2</small></td><td>GLM-5.2</td><td>709</td><td>53,571.23</td><td>79.41%</td></tr><tr><td>待关联<small>com.huawei.group1579415685808</small></td><td>GLM-5.2</td><td>38</td><td>65,973.68</td><td>83.04%</td></tr><tr><td>待关联<small>com.huawei.gtsdata.datalinkpro</small></td><td>GLM-5.2</td><td>3,375</td><td>57,193.19</td><td>89.13%</td></tr><tr><td>待关联<small>com.huawei.gtsfi.costline</small></td><td>GLM-5.2</td><td>43</td><td>15,604.65</td><td>77.78%</td></tr><tr><td>待关联<small>com.huawei.hisi.cie</small></td><td>GLM-5.2</td><td>650</td><td>77,029.23</td><td>91.00%</td></tr><tr><td>待关联<small>com.huawei.hisi.jeme</small></td><td>GLM-5.2</td><td>246</td><td>75,325.20</td><td>92.69%</td></tr><tr><td>存储芯片开发工具链<small>com.huawei.hisi.laval.smdmp</small></td><td>GLM-5.2</td><td>29</td><td>133,310.34</td><td>91.50%</td></tr><tr><td>待关联<small>com.huawei.iocbusiness</small></td><td>GLM-5.2</td><td>6</td><td>9,833.33</td><td>75.13%</td></tr><tr><td>待关联<small>com.huawei.ipd.noproduct.tenant_l00379841.hz</small></td><td>GLM-5.2</td><td>1,353</td><td>34,796.01</td><td>90.95%</td></tr><tr><td>待关联<small>com.huawei.meca.admin.digital</small></td><td>GLM-5.2</td><td>12</td><td>82,333.33</td><td>73.43%</td></tr><tr><td>待关联<small>com.huawei.owls.notify_message</small></td><td>GLM-5.2</td><td>1,170</td><td>20,611.11</td><td>88.22%</td></tr><tr><td>待关联<small>com.huawei.rnd.common.pool</small></td><td>GLM-5.2</td><td>102</td><td>62,676.47</td><td>61.26%</td></tr><tr><td>待关联<small>com.huawei.tdata</small></td><td>GLM-5.2</td><td>1,474</td><td>40,746.95</td><td>87.05%</td></tr><tr><td>待关联<small>com.huawei.ucd.uiplus.wa</small></td><td>GLM-5.2</td><td>68</td><td>47,676.47</td><td>89.88%</td></tr><tr><td>待关联<small>com.huawei.w00416772</small></td><td>GLM-5.2</td><td>1,096</td><td>80,735.40</td><td>92.70%</td></tr><tr><td>待关联<small>com.huawei.wireless.mae.autotest</small></td><td>GLM-5.2</td><td>87</td><td>32,344.83</td><td>84.32%</td></tr><tr><td>待关联<small>7ca7ba5da84e4458b1c48209d4b3cf9f</small></td><td>Qwen3.6-27B</td><td>4,935</td><td>2,025.13</td><td>4.71%</td></tr><tr><td>员工助手<small>S00000000000000000000000000000773</small></td><td>Qwen3.6-27B</td><td>54,602</td><td>7,042.09</td><td>41.87%</td></tr><tr><td>财经文档助手子产品-财经文档综合智能识别模块<small>S00000000000000000000000000000969</small></td><td>Qwen3.6-27B</td><td>124</td><td>2,072.58</td><td>0.93%</td></tr><tr><td>待关联<small>S00000000000000000000000000001679</small></td><td>Qwen3.6-27B</td><td>52,098</td><td>3,271.18</td><td>13.55%</td></tr><tr><td>待关联<small>S00000000000000000000000000003344</small></td><td>Qwen3.6-27B</td><td>14</td><td>1,000.00</td><td>0.00%</td></tr><tr><td>任职资格认证管理<small>app_000000030502</small></td><td>Qwen3.6-27B</td><td>905</td><td>8,414.36</td><td>38.06%</td></tr><tr><td>待关联<small>com.huawei.aidp_dg06</small></td><td>Qwen3.6-27B</td><td>171</td><td>57,216.37</td><td>45.70%</td></tr><tr><td>待关联<small>com.huawei.csi.smartndp</small></td><td>Qwen3.6-27B</td><td>5</td><td>26,200.00</td><td>38.12%</td></tr><tr><td>财经质量管理产品<small>com.huawei.fin.arm.arm</small></td><td>Qwen3.6-27B</td><td>1</td><td>1,000.00</td><td>0.00%</td></tr><tr><td>待关联<small>com.huawei.gtsdata.datalinkpro</small></td><td>Qwen3.6-27B</td><td>5,587</td><td>26,693.93</td><td>81.77%</td></tr><tr><td>待关联<small>com.huawei.ipd.alm</small></td><td>Qwen3.6-27B</td><td>127</td><td>3,629.92</td><td>0.00%</td></tr><tr><td>待关联<small>com.huawei.it.xingyun.panshi</small></td><td>Qwen3.6-27B</td><td>8</td><td>1,000.00</td><td>0.00%</td></tr><tr><td>待关联<small>com.huawei.ltc.cnbg</small></td><td>Qwen3.6-27B</td><td>1</td><td>1,000.00</td><td>0.00%</td></tr><tr><td>待关联<small>com.huawei.make.scheduling</small></td><td>Qwen3.6-27B</td><td>2</td><td>85,500.00</td><td>16.29%</td></tr><tr><td>iAudit<small>com.huawei.mbs.iaai</small></td><td>Qwen3.6-27B</td><td>20</td><td>1,950.00</td><td>0.00%</td></tr><tr><td>待关联<small>com.huawei.mbs.ilegal.ioc</small></td><td>Qwen3.6-27B</td><td>18</td><td>60,388.89</td><td>77.56%</td></tr><tr><td>待关联<small>com.huawei.meca.admin.digital</small></td><td>Qwen3.6-27B</td><td>51</td><td>56,745.10</td><td>29.56%</td></tr><tr><td>待关联<small>com.huawei.meta.crm.analyticscloud.ags</small></td><td>Qwen3.6-27B</td><td>5</td><td>5,800.00</td><td>47.02%</td></tr><tr><td>待关联<small>com.huawei.supply.mes.imucp</small></td><td>Qwen3.6-27B</td><td>100</td><td>66,700.00</td><td>80.58%</td></tr><tr><td>待关联<small>com.huawei.unidata.datafactory.datalink</small></td><td>Qwen3.6-27B</td><td>286</td><td>4,573.43</td><td>29.88%</td></tr><tr><td>待关联<small>com.huawei.wdm.netstar.devops</small></td><td>Qwen3.6-27B</td><td>6</td><td>4,000.00</td><td>0.00%</td></tr></tbody></table></div></details></div>
+ <p class="source">内容基线：2026-11-09四页方案 + TOKENSCOPE_PROMOTION_READONLY_20261109.md + appid产品对照表。离线静态报告，无自动接口调用。CPU/GPU耗时、历史闭环周期及线上收益仍待补证；演进功能保持标注。</p>
+</dialog>
+<div class="toast" id="toast" hidden role="status"></div>
+<div class="plot-tooltip" id="plot-tooltip" hidden role="status"></div>
+<script>
+(()=>{'use strict';const slides=[...document.querySelectorAll('.slide')],tabs=[...document.querySelectorAll('[data-goto]')],notes=document.getElementById('notes-dialog');let current=0;const titles=['产品与协作','ICSL案例','业务覆盖','场景与机会'];
+function resize(){const stage=document.querySelector('.stage'),style=getComputedStyle(stage),w=stage.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight),h=stage.clientHeight-parseFloat(style.paddingTop)-parseFloat(style.paddingBottom);document.documentElement.style.setProperty('--scale',Math.max(.1,Math.min(w/1600,h/900)));}
+function show(index,updateHash=true){current=Math.max(0,Math.min(slides.length-1,index));slides.forEach((s,i)=>s.hidden=i!==current);tabs.forEach((b,i)=>{if(i===current)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});document.querySelectorAll('[data-note]').forEach((n,i)=>n.hidden=i!==current);document.getElementById('notes-title').textContent=`${String(current+1).padStart(2,'0')} ${titles[current]} · 讲解与数据`;document.getElementById('counter').textContent=`${String(current+1).padStart(2,'0')} / 04`;document.getElementById('previous').disabled=current===0;document.getElementById('next').disabled=current===3;if(updateHash)history.replaceState(null,'',`#page-${current+1}`);resize();}
+function fromHash(){const match=location.hash.match(/^#page-([1-4])$/);show(match?Number(match[1])-1:0,false);}
+tabs.forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.goto))));document.getElementById('previous').addEventListener('click',()=>show(current-1));document.getElementById('next').addEventListener('click',()=>show(current+1));document.getElementById('notes-open').addEventListener('click',()=>notes.showModal());document.getElementById('notes-close').addEventListener('click',()=>notes.close());notes.addEventListener('click',e=>{if(e.target===notes){const r=notes.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)notes.close();}});
+let toastTimer;function toast(message){const t=document.getElementById('toast');t.textContent=message;t.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.hidden=true,3500);}
+async function fullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{toast('当前浏览器不支持页面全屏，可使用浏览器全屏功能。')}}
+document.getElementById('fullscreen').addEventListener('click',fullscreen);document.addEventListener('fullscreenchange',()=>{document.getElementById('fullscreen').textContent=document.fullscreenElement?'退出全屏':'全屏';resize()});document.getElementById('print').addEventListener('click',()=>window.print());
+document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||notes.open)return;const tag=document.activeElement?.tagName;if(['INPUT','TEXTAREA','SELECT'].includes(tag))return;if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();show(current+1)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(current-1)}else if(e.key==='Home'){e.preventDefault();show(0)}else if(e.key==='End'){e.preventDefault();show(3)}else if(/^[1-4]$/.test(e.key)){show(Number(e.key)-1)}else if(e.key.toLowerCase()==='f'){fullscreen()}else if(e.key.toLowerCase()==='n'){notes.showModal()}});
+
+// Report point details are local DOM text, never an API request.
+const plotTip=document.getElementById('plot-tooltip');
+document.querySelectorAll('.data-point').forEach(p=>{
+ const display=(event)=>{plotTip.textContent=p.getAttribute('aria-label');plotTip.hidden=false;const rect=p.getBoundingClientRect();const px=event?.clientX??rect.right,py=event?.clientY??rect.top;plotTip.style.left=Math.max(8,Math.min(px+14,innerWidth-plotTip.offsetWidth-12))+'px';plotTip.style.top=Math.max(8,Math.min(py+14,innerHeight-plotTip.offsetHeight-12))+'px';};
+ p.addEventListener('pointerenter',display);p.addEventListener('pointermove',display);p.addEventListener('focus',()=>display());p.addEventListener('click',display);p.addEventListener('pointerleave',()=>plotTip.hidden=true);p.addEventListener('blur',()=>plotTip.hidden=true);
+});
+document.addEventListener('keydown',()=>plotTip.hidden=true);document.querySelectorAll('[data-goto],#next,#previous').forEach(b=>b.addEventListener('click',()=>plotTip.hidden=true));
+
+window.addEventListener('resize',resize);window.addEventListener('hashchange',fromHash);fromHash();
+})();
+</script>
+</body>
+</html>

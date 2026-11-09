@@ -2,6 +2,36 @@
 
 ## 当前入口：2026-11-09
 
+**最新：用户明确授权“提交Git、生成华为探索prompt”。** 已完成[可直接执行的六组小样本探索prompt](../../docs/tasks/product-v3/HUAWEI_LOW_HIT_EXPLORATION_PROMPT_20261109.md)；[本轮提交说明](../../docs/tasks/product-v3/promotion/GIT_CHECKPOINT_20261109.md)。仅准备文本，未远程执行或发送跨会话消息。按项目约定精确提交本线文档/HTML/支持脚本至main并显式push origin main；最终提交SHA和同步状态以Git历史/本轮对话为准，不将自身SHA循环写入文件。保留其他会话修改及docs/huawei原件，不提交原始请求/state/包体/截图。
+
+prompt固定六组原来源，N>300时首240条发现+末60条复核，N≤300在预算内约80/20分窗；每组≤300，总上限1283，不连续窗各自冷启，完整同样本before/after P/H/C。先元数据选键再读正文，限制单条8MiB/250K、每组64MiB/20M Token、自有进程树≤min(6GiB,可用余量25%)、2CPU/串行、每组30min/总180min、2GiB磁盘、1000候选对/2改法、编码≤3N；均为探索保护预算，非性能承诺，可降低不自动加大。业务服务/state/API写入禁止，独立目录可做轻量脚本/副本/CPU评估；有阻碍则保留结构证据，不强制跑全量或改产品。关键片段/正反例/代码分支/样本键与实数对照嵌一份Markdown，回传TOKENSCOPE_V3_LOW_HIT_EXPLORATION_20261109.md；天舟/Token异常留V3.5。
+
+本轮THREAD/SESSION再次读取均为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2。下方“本轮未提交/下一轮生成”属于前序完成记录，本次授权覆盖提交与prompt准备；不覆盖未实施、无现场执行的边界。
+
+**最新用户决定：V3重点开发低命中率分析器；Token异常新增优化开发冷却到V3.5。** 已完成[方向判断与六组清单](../../docs/tasks/product-v3/V3_LOW_HIT_PRIORITY_20261109.md)和[文档版本整理](../../docs/tasks/product-v3/promotion/VERSION_CHECKPOINT_20261109.md)。四象限明细HTML是**高优先级长期文档**（quadrant-detail-r1-20261109），独立于四页宣传稿维护，用作负载画像与探索选点入口；两份HTML及桌面副本SHA原样保持。优先级已在本线入口/台账/报告说明置顶，旧设计与路线加最新方向提示，不改全局CURRENT/SESSIONS/ENTRY。
+
+本线认同先把低命中诊断做得可运行、能解释、给出改法和样本对照，再扩展其他分析器。下一轮用户才要求生成华为探索prompt，本轮不提前生成或执行。指定范围仅DeepSeek-V4-Flash-0731×{S00000000000000000000000000000773、S010320、com.huawei.mbs.ilegal.ioc、com.huawei.onlinetools、com.huawei.newalliance}和Qwen3.6-27B×com.huawei.aidp_dg06；只读报告对应1047/1038/661/108/104/171条，共3129。若每组至多300条则数量上限1283，具体仍受资源预算约束；这是规划算术，未抽样。V3.5再探com.huawei.ipd.tianzhou.ai等长尾，当前不加入六组任务，具体模型/窗口届时定。
+
+小样本排障认可，“时间戳前300条”是候选策略，不是冻结默认值或总体代表性保证。固定同样本/顺序/编码仿真/缓存初态比较before/after；全量画像值不能直接与样本after拼收益。可在预算内留后续窗核对；不拼接不连续样本冒真实缓存序列。记录P/H/C、适用分母、排除原因，样本参考不冒全量/线上性能。源请求数外还需单条/累计字节Token、比较/编码/耗时预算，在昂贵加载与解析前生效。
+
+只读代码确认已有RuntimeOptions源请求/字节/pilot限额、时间窗及preflight；run_experiment先pilot后整个所选scope的full。需设计独立样本结果，不能只把pilot_limit调小就承诺解决内存；不认定所有输入都会整批装内存。low_hit有独立publish_low_hit，空recipe不能解释所有低命中零建议。用户仅L4反馈加11-05现场证据支持排查发现→计划→试验→发布链路，不证明其他规则全部失效；32GiB/30.19GiB+超时仍未证实OOM-kill完整因果。
+
+华为未来只回一份Markdown，关键结构差异、字段定位、必要脱敏片段、计数/反证/同样本对照嵌正文；直接启发式分析真实样本，再总结旧规则改进和新规则正负例，不仅重跑现有分析器。新报告用于V3范围/方案和开发任务收敛，本轮未实现、未发消息/新会话、未动服务/state/旧结果、未Git commit/push。THREAD/SESSION环境再次核实均为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2。下方保留此前完成记录，不以旧“宣传优先/暂停深化”覆盖本次方向收敛。
+
+最新交付（四象限明细）：用户要求复制四页HTML至Windows桌面，并另做仅四象限的明细HTML。已完成[明细报告](../../docs/tasks/product-v3/promotion/quadrant-detail/dist/index.html)和[说明/验证](../../docs/tasks/product-v3/promotion/quadrant-detail/README.md)。第④项重复“长高”但称重点优化，按上下文落实为“长低”，对话已说明。默认长低14组；长高31/短低23/短高9/长低14，三模型下逐appid完整展示均长、理想命中、请求量及77张已有1K直方图，附非零分箱表。10K临时/50%固定；搜索、模型过滤、模型内排序、全部展开均离线实现，不接API。均值仍按1K右端点加权；柱计数覆盖全部请求与零箱空隙，不拟合、不截尾。
+
+桌面副本：C:\Users\ALIENWARE\Desktop\TokenScope_业务汇报_20261109.html（原四页SHA600d6a6b…7f5a3d）；TokenScope_四象限明细_20261109.html（SHA8d769281…a2a354，1,639,153字节）。复制非移动，项目原文件保留，维护内容仍在项目内。报告源SHA31ee6957…a5b5ab不变。环境THREAD/SESSION再次核实01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2。直接解析报告生成，不依赖旧qa数据、不重跑真实分析。CUA验证四象限计数、77张柱计数/均值、员工助手跨象限2组搜索、GLM筛选/排序、空搜索、分箱展开；1440桌面/390窄屏及全部77组指标无越界，日志为空。原产品18002/state/源码/契约不动；18770独立静态预览结束停止；无Git提交、远端动作或跨会话消息。
+
+最新进度（华为报告回传后）：用户认可四页展示，已按TOKENSCOPE_PROMOTION_READONLY_20261109.md更新[现场数据版HTML](../../docs/tasks/product-v3/promotion/huawei-demo-r2/dist/index.html)；[数据核对与映射](../../docs/tasks/product-v3/promotion/huawei-demo-r2/REPORT_INTEGRATION_20261109.md)。报告SHA31ee6957…a5b5ab，真实67appid/77组/150698请求；ICSL102条构造样本排除。映射15产品（15appid/17组），52appid待关联；8产品按名称初分四领域（营销服1/财经4/研发2/HR1），7产品跨域/归属待确认。不猜GTS相近appid别名。第四页77点，50%固定、10K临时，短高9/长高31/短低23/长低14；长低3296请求，前三员工助手1047、S010320 1038、ilegal.ioc 661。员工助手DeepSeek-V4-Flash-0731均长1K右端点估算44741.17、命中34.81%，已有5K直方图宽且多峰、主峰45–50K仅10.70%；不判CCH。横轴明确对数刻度，无删点抖动；完整表置讲解说明。源窗口约2h（员工源文件延至09:03:42 UTC），不写精确2h或推req/s。报告无CPU/GPU耗时、历史协作周期及线上收益，继续待核；XGBoost/Hybrid仍演进标记。
+
+本轮环境THREAD/SESSION均为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2。本地脚本只解析报告，77条分箱计数/均值/Token恒等式/模型总数、1K与5K员工直方图一致；可重复生成稳定HTML。CUA四页布局/77点/点位详情/14组明细与console通过，QA在huawei-demo-r2/qa。原报告和退役HTML不变；未改产品源码/配置/契约/四入口/state/真实数据，未操作18002、远端执行、PPT制作、Git提交或跨会话消息。临时18769只做静态预览，结束停止。下文为前序制作过程，最新状态以上述回填为准。
+
+最新展示授权与完成：用户要求华为回传前先按认可方案制作HTML DEMO，不确定信息占位，覆盖前序“不制作HTML”。已完成[四页r2 HTML](../../docs/tasks/product-v3/promotion/huawei-demo-r2/dist/index.html)及[验证说明](../../docs/tasks/product-v3/promotion/huawei-demo-r2/README.md)。Sites本地流程，独立单文件、1600×900白底红灰模块化；第一页双线协作+CPU/目标XGBoost/异常/MA；第二页双挑战+5/3分析器+CCH+实际35.95→90.16与本机成果链接；第三页四领域候选产品与覆盖占位、三主流系列；第四页四象限空点位/候选表/员工助手DeepSeek空直方图，50%固定/10K临时。覆盖、耗时、协作周期等未知均占位，演进能力短注，未假造点位。使用CUA可见预览/DOM几何/截图，桌面和窄屏无横向或页内溢出；键盘翻页/弹窗/全屏状态切换通过、console error/warn为空。打印仅配置未系统实测；file导航被IAB协议安全策略阻止，未绕过，仅已验证HTTP预览。临时静态18769预览交付前停止，产品18002未操作。无产品/数据修改、远端执行、PPT制作或Git提交；旧稿原字节保留。当前待用户检验展示理解，再按回传填数。
+
+本日最新：用户基本认可四页方案，要求生成可直接发给华为机的只读信息收集prompt，已完成[执行文本](../../docs/tasks/product-v3/promotion/HUAWEI_READONLY_COLLECTION_PROMPT_20261109.md)。高命中>=50%、低命中<50%；长短正式阈值等回传，10000只作观察线，equal单列。重点核查改为员工助手S00000000000000000000000000000773×DeepSeek（覆盖旧Qwen候选）。读取现有目录、metrics和prompt_tokens长度直方图；统一优先1K箱，按count/N×upper加权，非零开放尾箱主均值不可计算则标缺口。回传全部appid×模型的均值/命中/直方图和请求数、来源；分页snapshot、历史去重、构造样本三个input SHA排除均写明。API dataset_kind=trace不证明真实来源；不按appid误删真实结果。仅GET/必要只读成果表，不打开可能触发自动TTFT POST的前端，不新任务/重分词/仿真/配置修改/服务操作。单Markdown含可复制完整分布数据；本机仅准备文件，未发消息/远端执行/产品修改/再次Git提交。环境THREAD/SESSION仍为本线程ID。
+
+本日续轮：[四页汇报r1](../../docs/tasks/product-v3/promotion/FOUR_PAGE_STORY_R1_20261109.md)为最新讨论入口。用户允许目标架构展示XGBoost/Hybrid等后续演进，不据此启动实现；架构中短注演进状态，已完成案例仍与真实证据一致。第1页业务/平台协作+三模块+SLO桥接；第2页ICSL两类挑战、5+3分析器名称与完整演示；第3页营销服/财经/研发/HR覆盖，TOP3按用户定义为Qwen/DeepSeek/GLM主流系列；第4页明确做场景分类与优化方向，采用两轴四象限。横轴按用户要求读取已有模板后长度直方图，以箱右端点加权估算；替代本线此前P/N建议。源码已有1K/2K/5K箱，建议统一1K；200K溢出箱upper=null需单独处理。长短分界未定，50%可作命中候选；员工助手Qwen3.6-27B×S00000000000000000000000000000773为优先核查例，不预设它一定在问题象限。第4页仅主图、长低appid请求数表、典型直方图与理想命中率，req/s与Token/s不再作为该页必填。数据采集prompt待内容确定后生成，只读已有结果，不重算/改旧展示。本轮没有发prompt/执行采集/制作PPT或HTML/再次Git提交。用户36.5%建议与现有35.95%→90.16%区分，建议汇报约36%→90%；全量30min与1月→1周历史陈述保留待核，不能用样本佐证。
+
 用户明确第一版宣传HTML不符合预期，授权本线版本整理、提交与记忆更新；随后只构思宣传/汇报，不制作HTML/PPT、不深化V3实施。[当前汇报讨论](../../docs/tasks/product-v3/promotion/HUAWEI_BRIEF_DISCUSSION_20261109.md)与[版本台账](../../docs/tasks/product-v3/promotion/VERSION_INDEX_20261109.md)为本线入口；旧HTML原路径原字节保留、标为退役。下文是历史记录，不以旧“下一步”覆盖最新授权。
 
 环境CODEX_THREAD_ID/CODEX_SESSION_ID本轮再次读取，均为`01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2`。已按AGENTS/CURRENT/SESSIONS/docs导航恢复本线，定向读用户华为风参考和appid产品映射；未改共享入口/其他session文件。用户输入原文只读，SHA固定于版本台账；未混入本线提交。
