@@ -1,0 +1,15 @@
+{
+  "count": 102,
+  "conversations": 62,
+  "same_conversation_cch_stable": true,
+  "different_conversation_cch_unique": true,
+  "header_at_top": true,
+  "uuid_ids": true,
+  "forbidden_words_absent_in_request": true,
+  "mean": 27999.20588235294,
+  "min": 26603,
+  "max": 29364,
+  "stdev": 533.860731972177,
+  "mode_5k_bin": "25000\u201330000",
+  "count_in_mode": 102
+}

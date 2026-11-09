@@ -1,0 +1,1164 @@
+{
+  "description": "ICSL场景构造样本",
+  "dataset_kind": "constructed_scenario",
+  "appid": "com.huawei.icsl.base",
+  "count": 102,
+  "conversations": 62,
+  "conversation_sizes": [
+    2,
+    2,
+    1,
+    1,
+    2,
+    1,
+    2,
+    2,
+    2,
+    1,
+    2,
+    2,
+    2,
+    1,
+    1,
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    2,
+    1,
+    2,
+    2,
+    2,
+    1,
+    1,
+    2,
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2,
+    1,
+    2,
+    1,
+    1,
+    2,
+    2,
+    2,
+    1,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2,
+    1,
+    1,
+    1,
+    2
+  ],
+  "model_id": "GLM-5.2",
+  "common_name": "GLM-V5.2",
+  "seed": 20261105,
+  "completion_tokens": "placeholder 0, not measured output",
+  "settings": {
+    "model_id": "GLM-5.2",
+    "revision": 1,
+    "block_size": 128,
+    "block_size_unit": "simulation_input_tokens",
+    "cp_world_size": 1,
+    "mtp": true,
+    "prefix_cache_enabled": true,
+    "hybrid_enabled": false,
+    "cache_mode": "full_block",
+    "model_aliases": [
+      "glm-5.2",
+      "GLM-V5.2",
+      "GLM-V5.2-32K",
+      "GLM-V5.2-64K",
+      "GLM-V5.2-128K"
+    ],
+    "encoding_profile": "default"
+  },
+  "asset_identity": "c8bf2cc61113194473ec5502ac3116dcad8611dc95d469a5d4995d3a75150a43",
+  "encoder_identity": "7e6e71933f9278ad86c56fafe919abd4f4eab23ca57123aefa03f3415275ce63",
+  "model_asset_spec": {
+    "model_id": "GLM-5.2",
+    "source": "https://huggingface.co/zai-org/GLM-5.2",
+    "revision": "cf457fa734ab149ffef225f80893eb38c6ff5cdc",
+    "license": "mit",
+    "files": [
+      {
+        "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer_config.json",
+        "role": "tokenizer_config.json",
+        "sha256": "98b1271574f41abf89427ae2dda030d94dc9478f0edc5a8bd240db213c6fd5fc",
+        "source_url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer_config.json"
+      },
+      {
+        "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/chat_template.jinja",
+        "role": "chat_template.jinja",
+        "sha256": "172dc74a35e1752df75ecfb2b2cf9326d2852bb1379868ebeec9571654489679",
+        "source_url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/chat_template.jinja"
+      },
+      {
+        "path": "models/glm52/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer.json",
+        "role": "tokenizer.json",
+        "sha256": "19e773648cb4e65de8660ea6365e10acca112d42a854923df93db4a6f333a82d",
+        "source_url": "https://huggingface.co/zai-org/GLM-5.2/resolve/cf457fa734ab149ffef225f80893eb38c6ff5cdc/tokenizer.json"
+      }
+    ]
+  },
+  "csv_sha256": "e1425657987dce4ad312d33c7e40a3ac98a822ec7ed928fb7979f1dcc785678b",
+  "csv_bytes": 15921971,
+  "before": {
+    "p": 2855919,
+    "h": 1026688,
+    "c": 1829231,
+    "rate": 0.3594947895931222,
+    "per_request_hits": [
+      0,
+      25472,
+      128,
+      25472,
+      128,
+      128,
+      128,
+      25472,
+      128,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      128,
+      128,
+      25472,
+      128,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      128,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      128,
+      25472,
+      128,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      128,
+      25472,
+      128,
+      128,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      25472,
+      128,
+      128,
+      25472,
+      128,
+      128,
+      128,
+      128,
+      25472
+    ]
+  },
+  "after_reference": {
+    "p": 2853567,
+    "h": 2572672,
+    "c": 280895,
+    "rate": 0.9015635518633346,
+    "per_request_hits": [
+      0,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472,
+      25472
+    ]
+  },
+  "lengths": [
+    {
+      "index": 0,
+      "conversation": 0,
+      "cch": "24201",
+      "prompt_before": 28986,
+      "prompt_after": 28963,
+      "target": 28987
+    },
+    {
+      "index": 1,
+      "conversation": 0,
+      "cch": "24201",
+      "prompt_before": 28374,
+      "prompt_after": 28351,
+      "target": 28375
+    },
+    {
+      "index": 2,
+      "conversation": 1,
+      "cch": "cd6c3",
+      "prompt_before": 28445,
+      "prompt_after": 28421,
+      "target": 28446
+    },
+    {
+      "index": 3,
+      "conversation": 1,
+      "cch": "cd6c3",
+      "prompt_before": 28542,
+      "prompt_after": 28518,
+      "target": 28543
+    },
+    {
+      "index": 4,
+      "conversation": 2,
+      "cch": "97aa9",
+      "prompt_before": 28579,
+      "prompt_after": 28556,
+      "target": 28580
+    },
+    {
+      "index": 5,
+      "conversation": 3,
+      "cch": "c9d8a",
+      "prompt_before": 27679,
+      "prompt_after": 27655,
+      "target": 27680
+    },
+    {
+      "index": 6,
+      "conversation": 4,
+      "cch": "15252",
+      "prompt_before": 27889,
+      "prompt_after": 27867,
+      "target": 27890
+    },
+    {
+      "index": 7,
+      "conversation": 4,
+      "cch": "15252",
+      "prompt_before": 28767,
+      "prompt_after": 28745,
+      "target": 28768
+    },
+    {
+      "index": 8,
+      "conversation": 5,
+      "cch": "4fc15",
+      "prompt_before": 28232,
+      "prompt_after": 28209,
+      "target": 28233
+    },
+    {
+      "index": 9,
+      "conversation": 6,
+      "cch": "e40db",
+      "prompt_before": 26764,
+      "prompt_after": 26742,
+      "target": 26765
+    },
+    {
+      "index": 10,
+      "conversation": 6,
+      "cch": "e40db",
+      "prompt_before": 27603,
+      "prompt_after": 27581,
+      "target": 27604
+    },
+    {
+      "index": 11,
+      "conversation": 7,
+      "cch": "80f27",
+      "prompt_before": 28182,
+      "prompt_after": 28159,
+      "target": 28183
+    },
+    {
+      "index": 12,
+      "conversation": 7,
+      "cch": "80f27",
+      "prompt_before": 27896,
+      "prompt_after": 27873,
+      "target": 27897
+    },
+    {
+      "index": 13,
+      "conversation": 8,
+      "cch": "8b94a",
+      "prompt_before": 27436,
+      "prompt_after": 27412,
+      "target": 27437
+    },
+    {
+      "index": 14,
+      "conversation": 8,
+      "cch": "8b94a",
+      "prompt_before": 27518,
+      "prompt_after": 27494,
+      "target": 27519
+    },
+    {
+      "index": 15,
+      "conversation": 9,
+      "cch": "a7eab",
+      "prompt_before": 28656,
+      "prompt_after": 28633,
+      "target": 28657
+    },
+    {
+      "index": 16,
+      "conversation": 10,
+      "cch": "82f40",
+      "prompt_before": 27916,
+      "prompt_after": 27893,
+      "target": 27917
+    },
+    {
+      "index": 17,
+      "conversation": 10,
+      "cch": "82f40",
+      "prompt_before": 28471,
+      "prompt_after": 28448,
+      "target": 28472
+    },
+    {
+      "index": 18,
+      "conversation": 11,
+      "cch": "cd2ed",
+      "prompt_before": 28121,
+      "prompt_after": 28098,
+      "target": 28122
+    },
+    {
+      "index": 19,
+      "conversation": 11,
+      "cch": "cd2ed",
+      "prompt_before": 27922,
+      "prompt_after": 27899,
+      "target": 27923
+    },
+    {
+      "index": 20,
+      "conversation": 12,
+      "cch": "8967e",
+      "prompt_before": 27327,
+      "prompt_after": 27303,
+      "target": 27328
+    },
+    {
+      "index": 21,
+      "conversation": 12,
+      "cch": "8967e",
+      "prompt_before": 27405,
+      "prompt_after": 27381,
+      "target": 27406
+    },
+    {
+      "index": 22,
+      "conversation": 13,
+      "cch": "2b87a",
+      "prompt_before": 27716,
+      "prompt_after": 27692,
+      "target": 27717
+    },
+    {
+      "index": 23,
+      "conversation": 14,
+      "cch": "671bc",
+      "prompt_before": 27448,
+      "prompt_after": 27425,
+      "target": 27449
+    },
+    {
+      "index": 24,
+      "conversation": 15,
+      "cch": "251c5",
+      "prompt_before": 28351,
+      "prompt_after": 28327,
+      "target": 28352
+    },
+    {
+      "index": 25,
+      "conversation": 15,
+      "cch": "251c5",
+      "prompt_before": 29020,
+      "prompt_after": 28996,
+      "target": 29021
+    },
+    {
+      "index": 26,
+      "conversation": 16,
+      "cch": "2da64",
+      "prompt_before": 28316,
+      "prompt_after": 28293,
+      "target": 28317
+    },
+    {
+      "index": 27,
+      "conversation": 17,
+      "cch": "ddea5",
+      "prompt_before": 28056,
+      "prompt_after": 28034,
+      "target": 28057
+    },
+    {
+      "index": 28,
+      "conversation": 17,
+      "cch": "ddea5",
+      "prompt_before": 27759,
+      "prompt_after": 27737,
+      "target": 27760
+    },
+    {
+      "index": 29,
+      "conversation": 18,
+      "cch": "16805",
+      "prompt_before": 28202,
+      "prompt_after": 28180,
+      "target": 28203
+    },
+    {
+      "index": 30,
+      "conversation": 18,
+      "cch": "16805",
+      "prompt_before": 28198,
+      "prompt_after": 28176,
+      "target": 28199
+    },
+    {
+      "index": 31,
+      "conversation": 19,
+      "cch": "7b71b",
+      "prompt_before": 28110,
+      "prompt_after": 28086,
+      "target": 28111
+    },
+    {
+      "index": 32,
+      "conversation": 19,
+      "cch": "7b71b",
+      "prompt_before": 27128,
+      "prompt_after": 27104,
+      "target": 27129
+    },
+    {
+      "index": 33,
+      "conversation": 20,
+      "cch": "49b33",
+      "prompt_before": 28281,
+      "prompt_after": 28258,
+      "target": 28282
+    },
+    {
+      "index": 34,
+      "conversation": 20,
+      "cch": "49b33",
+      "prompt_before": 27863,
+      "prompt_after": 27840,
+      "target": 27864
+    },
+    {
+      "index": 35,
+      "conversation": 21,
+      "cch": "23bed",
+      "prompt_before": 28507,
+      "prompt_after": 28485,
+      "target": 28508
+    },
+    {
+      "index": 36,
+      "conversation": 22,
+      "cch": "82ced",
+      "prompt_before": 27857,
+      "prompt_after": 27835,
+      "target": 27858
+    },
+    {
+      "index": 37,
+      "conversation": 22,
+      "cch": "82ced",
+      "prompt_before": 28409,
+      "prompt_after": 28387,
+      "target": 28410
+    },
+    {
+      "index": 38,
+      "conversation": 23,
+      "cch": "ef0d5",
+      "prompt_before": 28554,
+      "prompt_after": 28530,
+      "target": 28555
+    },
+    {
+      "index": 39,
+      "conversation": 23,
+      "cch": "ef0d5",
+      "prompt_before": 27812,
+      "prompt_after": 27788,
+      "target": 27813
+    },
+    {
+      "index": 40,
+      "conversation": 24,
+      "cch": "a54b0",
+      "prompt_before": 27379,
+      "prompt_after": 27356,
+      "target": 27380
+    },
+    {
+      "index": 41,
+      "conversation": 25,
+      "cch": "40eff",
+      "prompt_before": 28324,
+      "prompt_after": 28302,
+      "target": 28325
+    },
+    {
+      "index": 42,
+      "conversation": 25,
+      "cch": "40eff",
+      "prompt_before": 28987,
+      "prompt_after": 28965,
+      "target": 28988
+    },
+    {
+      "index": 43,
+      "conversation": 26,
+      "cch": "dd626",
+      "prompt_before": 29102,
+      "prompt_after": 29079,
+      "target": 29103
+    },
+    {
+      "index": 44,
+      "conversation": 26,
+      "cch": "dd626",
+      "prompt_before": 27734,
+      "prompt_after": 27711,
+      "target": 27735
+    },
+    {
+      "index": 45,
+      "conversation": 27,
+      "cch": "9640a",
+      "prompt_before": 27754,
+      "prompt_after": 27730,
+      "target": 27755
+    },
+    {
+      "index": 46,
+      "conversation": 27,
+      "cch": "9640a",
+      "prompt_before": 27792,
+      "prompt_after": 27768,
+      "target": 27793
+    },
+    {
+      "index": 47,
+      "conversation": 28,
+      "cch": "17af9",
+      "prompt_before": 27955,
+      "prompt_after": 27932,
+      "target": 27956
+    },
+    {
+      "index": 48,
+      "conversation": 29,
+      "cch": "26dda",
+      "prompt_before": 27459,
+      "prompt_after": 27437,
+      "target": 27460
+    },
+    {
+      "index": 49,
+      "conversation": 30,
+      "cch": "483d3",
+      "prompt_before": 27647,
+      "prompt_after": 27623,
+      "target": 27648
+    },
+    {
+      "index": 50,
+      "conversation": 30,
+      "cch": "483d3",
+      "prompt_before": 28803,
+      "prompt_after": 28779,
+      "target": 28804
+    },
+    {
+      "index": 51,
+      "conversation": 31,
+      "cch": "af340",
+      "prompt_before": 27720,
+      "prompt_after": 27698,
+      "target": 27721
+    },
+    {
+      "index": 52,
+      "conversation": 31,
+      "cch": "af340",
+      "prompt_before": 28197,
+      "prompt_after": 28175,
+      "target": 28198
+    },
+    {
+      "index": 53,
+      "conversation": 32,
+      "cch": "05467",
+      "prompt_before": 28313,
+      "prompt_after": 28290,
+      "target": 28314
+    },
+    {
+      "index": 54,
+      "conversation": 33,
+      "cch": "1711c",
+      "prompt_before": 27748,
+      "prompt_after": 27725,
+      "target": 27749
+    },
+    {
+      "index": 55,
+      "conversation": 33,
+      "cch": "1711c",
+      "prompt_before": 27788,
+      "prompt_after": 27765,
+      "target": 27789
+    },
+    {
+      "index": 56,
+      "conversation": 34,
+      "cch": "c8001",
+      "prompt_before": 27300,
+      "prompt_after": 27278,
+      "target": 27301
+    },
+    {
+      "index": 57,
+      "conversation": 34,
+      "cch": "c8001",
+      "prompt_before": 28335,
+      "prompt_after": 28313,
+      "target": 28336
+    },
+    {
+      "index": 58,
+      "conversation": 35,
+      "cch": "09747",
+      "prompt_before": 28268,
+      "prompt_after": 28245,
+      "target": 28269
+    },
+    {
+      "index": 59,
+      "conversation": 35,
+      "cch": "09747",
+      "prompt_before": 27551,
+      "prompt_after": 27528,
+      "target": 27552
+    },
+    {
+      "index": 60,
+      "conversation": 36,
+      "cch": "bd56a",
+      "prompt_before": 28546,
+      "prompt_after": 28523,
+      "target": 28547
+    },
+    {
+      "index": 61,
+      "conversation": 36,
+      "cch": "bd56a",
+      "prompt_before": 28551,
+      "prompt_after": 28528,
+      "target": 28552
+    },
+    {
+      "index": 62,
+      "conversation": 37,
+      "cch": "fc4f4",
+      "prompt_before": 28080,
+      "prompt_after": 28056,
+      "target": 28081
+    },
+    {
+      "index": 63,
+      "conversation": 37,
+      "cch": "fc4f4",
+      "prompt_before": 27646,
+      "prompt_after": 27622,
+      "target": 27647
+    },
+    {
+      "index": 64,
+      "conversation": 38,
+      "cch": "dedbf",
+      "prompt_before": 28172,
+      "prompt_after": 28150,
+      "target": 28173
+    },
+    {
+      "index": 65,
+      "conversation": 38,
+      "cch": "dedbf",
+      "prompt_before": 28345,
+      "prompt_after": 28323,
+      "target": 28346
+    },
+    {
+      "index": 66,
+      "conversation": 39,
+      "cch": "bc7ca",
+      "prompt_before": 27699,
+      "prompt_after": 27676,
+      "target": 27700
+    },
+    {
+      "index": 67,
+      "conversation": 40,
+      "cch": "3ae35",
+      "prompt_before": 27941,
+      "prompt_after": 27918,
+      "target": 27942
+    },
+    {
+      "index": 68,
+      "conversation": 40,
+      "cch": "3ae35",
+      "prompt_before": 28411,
+      "prompt_after": 28388,
+      "target": 28412
+    },
+    {
+      "index": 69,
+      "conversation": 41,
+      "cch": "7d97c",
+      "prompt_before": 29364,
+      "prompt_after": 29340,
+      "target": 29365
+    },
+    {
+      "index": 70,
+      "conversation": 42,
+      "cch": "ff764",
+      "prompt_before": 28505,
+      "prompt_after": 28482,
+      "target": 28506
+    },
+    {
+      "index": 71,
+      "conversation": 42,
+      "cch": "ff764",
+      "prompt_before": 27533,
+      "prompt_after": 27510,
+      "target": 27534
+    },
+    {
+      "index": 72,
+      "conversation": 43,
+      "cch": "cff14",
+      "prompt_before": 27083,
+      "prompt_after": 27061,
+      "target": 27084
+    },
+    {
+      "index": 73,
+      "conversation": 43,
+      "cch": "cff14",
+      "prompt_before": 27888,
+      "prompt_after": 27866,
+      "target": 27889
+    },
+    {
+      "index": 74,
+      "conversation": 44,
+      "cch": "25f5e",
+      "prompt_before": 28390,
+      "prompt_after": 28366,
+      "target": 28391
+    },
+    {
+      "index": 75,
+      "conversation": 45,
+      "cch": "05e6e",
+      "prompt_before": 27077,
+      "prompt_after": 27053,
+      "target": 27078
+    },
+    {
+      "index": 76,
+      "conversation": 45,
+      "cch": "05e6e",
+      "prompt_before": 28122,
+      "prompt_after": 28098,
+      "target": 28123
+    },
+    {
+      "index": 77,
+      "conversation": 46,
+      "cch": "41d2f",
+      "prompt_before": 27745,
+      "prompt_after": 27721,
+      "target": 27746
+    },
+    {
+      "index": 78,
+      "conversation": 47,
+      "cch": "8707e",
+      "prompt_before": 28378,
+      "prompt_after": 28354,
+      "target": 28379
+    },
+    {
+      "index": 79,
+      "conversation": 48,
+      "cch": "500ee",
+      "prompt_before": 27805,
+      "prompt_after": 27783,
+      "target": 27806
+    },
+    {
+      "index": 80,
+      "conversation": 48,
+      "cch": "500ee",
+      "prompt_before": 28201,
+      "prompt_after": 28179,
+      "target": 28202
+    },
+    {
+      "index": 81,
+      "conversation": 49,
+      "cch": "eddcc",
+      "prompt_before": 28711,
+      "prompt_after": 28689,
+      "target": 28712
+    },
+    {
+      "index": 82,
+      "conversation": 49,
+      "cch": "eddcc",
+      "prompt_before": 26751,
+      "prompt_after": 26729,
+      "target": 26752
+    },
+    {
+      "index": 83,
+      "conversation": 50,
+      "cch": "9fb38",
+      "prompt_before": 28332,
+      "prompt_after": 28309,
+      "target": 28333
+    },
+    {
+      "index": 84,
+      "conversation": 50,
+      "cch": "9fb38",
+      "prompt_before": 27991,
+      "prompt_after": 27968,
+      "target": 27992
+    },
+    {
+      "index": 85,
+      "conversation": 51,
+      "cch": "8d8ec",
+      "prompt_before": 27950,
+      "prompt_after": 27926,
+      "target": 27951
+    },
+    {
+      "index": 86,
+      "conversation": 52,
+      "cch": "d67f3",
+      "prompt_before": 28388,
+      "prompt_after": 28365,
+      "target": 28389
+    },
+    {
+      "index": 87,
+      "conversation": 52,
+      "cch": "d67f3",
+      "prompt_before": 28690,
+      "prompt_after": 28667,
+      "target": 28691
+    },
+    {
+      "index": 88,
+      "conversation": 53,
+      "cch": "8688a",
+      "prompt_before": 28415,
+      "prompt_after": 28391,
+      "target": 28416
+    },
+    {
+      "index": 89,
+      "conversation": 53,
+      "cch": "8688a",
+      "prompt_before": 28291,
+      "prompt_after": 28267,
+      "target": 28292
+    },
+    {
+      "index": 90,
+      "conversation": 54,
+      "cch": "b032c",
+      "prompt_before": 28584,
+      "prompt_after": 28561,
+      "target": 28585
+    },
+    {
+      "index": 91,
+      "conversation": 54,
+      "cch": "b032c",
+      "prompt_before": 26603,
+      "prompt_after": 26580,
+      "target": 26604
+    },
+    {
+      "index": 92,
+      "conversation": 55,
+      "cch": "e8f28",
+      "prompt_before": 27495,
+      "prompt_after": 27472,
+      "target": 27496
+    },
+    {
+      "index": 93,
+      "conversation": 55,
+      "cch": "e8f28",
+      "prompt_before": 28102,
+      "prompt_after": 28079,
+      "target": 28103
+    },
+    {
+      "index": 94,
+      "conversation": 56,
+      "cch": "d29c7",
+      "prompt_before": 27467,
+      "prompt_after": 27444,
+      "target": 27468
+    },
+    {
+      "index": 95,
+      "conversation": 57,
+      "cch": "ca82a",
+      "prompt_before": 27657,
+      "prompt_after": 27634,
+      "target": 27658
+    },
+    {
+      "index": 96,
+      "conversation": 57,
+      "cch": "ca82a",
+      "prompt_before": 27906,
+      "prompt_after": 27883,
+      "target": 27907
+    },
+    {
+      "index": 97,
+      "conversation": 58,
+      "cch": "6bc56",
+      "prompt_before": 27173,
+      "prompt_after": 27150,
+      "target": 27174
+    },
+    {
+      "index": 98,
+      "conversation": 59,
+      "cch": "a5532",
+      "prompt_before": 27192,
+      "prompt_after": 27169,
+      "target": 27193
+    },
+    {
+      "index": 99,
+      "conversation": 60,
+      "cch": "bf9e4",
+      "prompt_before": 27266,
+      "prompt_after": 27242,
+      "target": 27267
+    },
+    {
+      "index": 100,
+      "conversation": 61,
+      "cch": "2dc9b",
+      "prompt_before": 27411,
+      "prompt_after": 27387,
+      "target": 27412
+    },
+    {
+      "index": 101,
+      "conversation": 61,
+      "cch": "2dc9b",
+      "prompt_before": 27609,
+      "prompt_after": 27585,
+      "target": 27610
+    }
+  ],
+  "seconds": 32.330820910981856,
+  "peak_rss_kib": 553888
+}

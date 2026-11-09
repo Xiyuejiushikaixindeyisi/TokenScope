@@ -1,0 +1,54 @@
+{
+  "version": "diagnostics-execution-2",
+  "request": {
+    "source": {
+      "source_kind": "user_v2",
+      "base_run_id": null,
+      "user_run_id": "REPLACE_WITH_HUAWEI_USER_RUN_ID",
+      "appid": "com.huawei.icsl.base",
+      "window": null,
+      "expected_index_revision": "REPLACE_WITH_HUAWEI_INDEX_REVISION"
+    },
+    "selection": {
+      "reason_codes": [
+        "low_hit"
+      ],
+      "enable_low_hit": true,
+      "enable_token_content": false
+    },
+    "reason_note": "ICSL编码Agent前缀复用分析",
+    "submission_key": "icsl-glm52-v3-analysis"
+  },
+  "options": {
+    "version": "diagnostics-runtime-2",
+    "token_selection": {
+      "rule_ids": [
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "policies_json": "[]",
+      "budget": {
+        "max_request_bytes": "1048576",
+        "max_units": "10000",
+        "max_comparison_bytes": "2097152",
+        "max_depth": "64",
+        "max_candidates": "1000",
+        "max_encoding_calls": "100"
+      }
+    },
+    "candidate_limit": "2",
+    "pilot_limit": "8",
+    "max_source_requests": "102",
+    "max_source_bytes": "67108864",
+    "max_findings": "400",
+    "max_experiments": "1",
+    "max_combinations": "0",
+    "max_encoding_calls": "400",
+    "max_plan_bytes": "67108864",
+    "max_retained_bytes": "100663296",
+    "max_comparisons": "1000",
+    "max_fragment_bytes": "8388608",
+    "max_total_fragment_bytes": "67108864"
+  }
+}

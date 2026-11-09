@@ -1,0 +1,4 @@
+# Browser state, screenshots and housekeeping outputs stay local.
+/qa/*
+!/qa/verify.cjs
+!/qa/verification.json

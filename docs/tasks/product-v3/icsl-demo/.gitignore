@@ -1,0 +1,24 @@
+# Keep reproducible scripts and concise provenance; never commit runtime/data.
+/*
+!/.gitignore
+!/README.md
+!/*.py
+!/*.cjs
+!/LOCAL_ACCEPTANCE.md
+!/revision2/
+/revision2/*
+!/revision2/delivery/
+/revision2/delivery/*
+!/revision2/delivery/HUAWEI_PROMPT.md
+!/revision3/
+/revision3/*
+!/revision3/LOCAL_ACCEPTANCE.md
+!/revision3/final-validation.json
+!/revision3/structure-validation.json
+!/revision3/negative-controls.json
+!/revision3/frontend-validation.json
+!/revision3/delivery/
+/revision3/delivery/*
+!/revision3/delivery/manifest.json
+!/revision3/delivery/diagnostic-submission-template.json
+!/revision3/delivery/HUAWEI_PROMPT.md

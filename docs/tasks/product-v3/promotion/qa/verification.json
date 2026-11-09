@@ -1,0 +1,43 @@
+{
+  "desktopOverflow": false,
+  "duplicateIds": [],
+  "brokenAnchors": [],
+  "tabs": [
+    {
+      "step": 0,
+      "visible": true,
+      "count": 1
+    },
+    {
+      "step": 1,
+      "visible": true,
+      "count": 1
+    },
+    {
+      "step": 2,
+      "visible": true,
+      "count": 1
+    },
+    {
+      "step": 3,
+      "visible": true,
+      "count": 1
+    },
+    {
+      "step": 4,
+      "visible": true,
+      "count": 1
+    },
+    {
+      "step": 5,
+      "visible": true,
+      "count": 1
+    }
+  ],
+  "keyboardTab": "true",
+  "printPanels": 6,
+  "mobileOverflow": false,
+  "missingLocalLinks": [],
+  "networkRequests": [],
+  "pageErrors": []
+}

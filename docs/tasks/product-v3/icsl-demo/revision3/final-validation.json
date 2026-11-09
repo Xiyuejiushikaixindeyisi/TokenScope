@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "full_rows": 102,
+  "only_top_billing_line_removed": true,
+  "full_matches_reference": true,
+  "before_percent": 35.949478959312216,
+  "after_percent": 90.15635518633346,
+  "csv_sha256": "e1425657987dce4ad312d33c7e40a3ac98a822ec7ed928fb7979f1dcc785678b",
+  "old_user_entries_preserved": 22,
+  "old_diagnostic_entries_preserved": 6
+}

@@ -1,0 +1,11 @@
+{
+  "positive_l1": true,
+  "constant_cch_no_l1": true,
+  "removed_cch_no_l1": true,
+  "only_one_billing_line_removed_all_102": true,
+  "other_fields_preserved_by_reference": true,
+  "request_count": 102,
+  "unique_hash_ids": 102,
+  "max_raw_bytes": 161766,
+  "fixture_only": true
+}
