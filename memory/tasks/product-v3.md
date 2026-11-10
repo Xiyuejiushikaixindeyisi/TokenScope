@@ -1,5 +1,31 @@
 # V3 调研与产品设计记忆
 
+## 文档提交授权：2026-11-10
+
+用户明确要求提交Git并在对话完整给出新开发启动prompt。按[本次检查点](../../docs/tasks/product-v3/GIT_CHECKPOINT_20261110.md)精确提交四P0/角色交接/探索prompt与相关导航，显式push origin main；最终SHA与同步状态以Git历史及对话为准。CURRENT/交付ENTRY已有他线ICSL追加记录不暂存，其他会话文件与现场报告原件保留。新开发首轮仅登记、只读check并形成CHECK.md；等华为Token异常探索报告后再细化范围和验收，本次提交不是实施授权。
+
+## 最新决定与交接：2026-11-10
+
+用户基本认可低命中**四项P0**，P1独立模板分组不进入本版；全新V3开发会话独立check并承担后续获准公共层/低命中/必要前端和验证。**镜像会话V3仅打包与审批**，不承担开发/debug/开发调度或开发验收执行；旧六线休眠。Token异常在V3休眠，旧结果保留可读，修复留V3.5。方向权威：[范围/分工](../../docs/tasks/product-v3/V3_SCOPE_AND_HANDOFF_20261110.md)。
+
+已预登记新开发角色，实际ID未知；本轮没有创建/唤醒chat或发跨会话消息。已准备[最小入口与代码/测试地图](../../docs/tasks/development-v3/ENTRY.md)、[可粘贴启动消息](../../docs/tasks/development-v3/START_PROMPT_20261110.md)、[新角色记忆](development-v3.md)。首轮只读check，报告回来后再细化代码范围、开发顺序与验收。不能沿用本线或旧后端ID。
+
+已生成[华为Token长尾探索prompt](../../docs/tasks/product-v3/HUAWEI_TOKEN_TAIL_EXPLORATION_PROMPT_20261110.md)，精确限定DS×com.huawei.ipd.tianzhou.ai、Qwen×com.huawei.gtsdata.datalinkpro、GLM×com.huawei.owls.notify_message。先元数据选键，每组至多300/总900；连续前后窗、众数、长尾和有限关联样本分别计数，防止前300遗漏长尾。只做独立有界CPU探索、不注册产品任务/结果，单Markdown嵌关键证据。先看内容，再区分T2–T4适用/扫描/发现/改法/评估/发布，零建议不等于无发现，长尾不等于浪费。
+
+已有均长/众数/P90分别为天舟41.90K/0–1K/97,064，数据链26.69K/4–5K/68,374，通知20.61K/2–3K/88,771；均长仍为1K右端点加权估算，非精确均值。报告返回后复核公共资源/样本/状态衔接，不提前实施Token私有规则。四象限HTML保持高优先级、原文件不改。
+
+本轮按用户明确要求增量整理AGENTS、CURRENT、SESSIONS、文档/任务/研发/交付/历史分析入口和工作流；保留此前未提交内容。THREAD/SESSION均为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2，环境确认。当前仅文档，无产品代码/配置/契约/state/服务/HTML改动，无远端执行、Git提交或打包。下方旧“待评审/P1可加入/旧公共层归属”不覆盖本次决定。
+
+整理核验：19份相关文档的269个本地链接均可达，38个所引代码/测试路径存在；本轮相关diff检查通过，src/crates/apps/tests/deploy无改动。16份预存其他线修改/现场原件SHA保持，两份宣传/四象限HTML SHA保持。未运行产品测试或现场分析；这些只是文档完整性与保护核验。
+
+## 当前入口：2026-11-10
+
+**最新：用户已替换实际回传，旧“误放prompt”问题已解除。** 新报告626行、SHA d321426897f785cf0ec2e665b5e21f1f54cd6b9478a174fad412956656882963。本轮已逐节读取并定向核对dynamic/detection/candidates/experiments/runtime代码，形成[待评审V3修复简案](../../docs/tasks/product-v3/V3_LOW_HIT_REPAIR_BRIEF_20261110.md)。仅大方向：P0有界小样本模式→L1时间字段/session_clock定位→候选质量/重复差异归并→精确改法和独立复核窗收益/解释；P1模板分组与非Agent解释。Token异常仍V3.5，四入口/L4L5和四象限高优先级保持；未实施/派发/提交Git。
+
+新证据：五组时钟固定化报告+12.68–39.14pp；A4多步骤文档生成。保留局限：B窗未独立验证、A/B合并后标A、B.5/C基线P冲突、A2 264+45>300、样本键/脚本正文不足、8CPU非约定2且编码次数自相矛盾。收益只作探索线索不当验收基线。源码candidate_limit≤128与max_comparisons独立，不能照报告把1000当candidate_limit或扩大到组内全比较。text_shape不依赖path值长度；最小纯函数核对路径变化已出recipe1、斜杠时钟recipe0，故workspace新增规则暂不优先。时间可能影响业务，固定化不标无损；模板分组不直接推分appid/路由必提升；拒绝自动>5pp触发全量。后续方向评审后再细化与复核收益，当前只改本线简案/记忆，原报告和产品保持。
+
+前序接收记录（已解除）：用户最初指定文件是169行、21,444字节的执行prompt副本，SHA256 `4fb4ea4d824ce4acbb030a7fd90b5323fba3e69f892b3c175117ebb2682d934c`；与已发prompt仅一处localhost链接格式不同，当轮未据此推断修复根因。随后由用户替换，当前以本段上方新报告为准。THREAD/SESSION仍为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2，环境复核。前次22文件提交fe0f23c已推送origin/main。
+
 ## 当前入口：2026-11-09
 
 **最新：用户明确授权“提交Git、生成华为探索prompt”。** 已完成[可直接执行的六组小样本探索prompt](../../docs/tasks/product-v3/HUAWEI_LOW_HIT_EXPLORATION_PROMPT_20261109.md)；[本轮提交说明](../../docs/tasks/product-v3/promotion/GIT_CHECKPOINT_20261109.md)。仅准备文本，未远程执行或发送跨会话消息。按项目约定精确提交本线文档/HTML/支持脚本至main并显式push origin main；最终提交SHA和同步状态以Git历史/本轮对话为准，不将自身SHA循环写入文件。保留其他会话修改及docs/huawei原件，不提交原始请求/state/包体/截图。

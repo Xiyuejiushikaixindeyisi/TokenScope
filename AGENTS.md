@@ -11,9 +11,9 @@
 
 - 当前阶段和允许开展的工作以 memory/CURRENT.md 为准。目录创建不构成业务实现、调研任务或部署任务的启动。
 - 2026-10-23 的一期目标输入覆盖早期 V0.1 中不一致的设想。用户明确第一版目标尚需分任务讨论和规划；目录审批不等于功能设计或实施计划审批。session、turn、trace 数据可用性待确认。
-- 历史全项目总设计会话保持休眠。2026-11-04用户新设V3调研与产品设计session，可立即研究设计，无需等待华为报告；报告作为高优先级新增证据。镜像打包与审查会话回归V1/V2/V3版本迭代、版本级debug修复协调、独立端到端验收、版本管理及授权交付，不兼任V3产品设计。入口见memory/CURRENT.md、docs/tasks/product-v3/ENTRY.md与docs/tasks/delivery/ENTRY.md；研究授权不等于产品实施授权。
+- 历史全项目总设计会话保持休眠。V3研究与产品设计由docs/tasks/product-v3/ENTRY.md归口；2026-11-10用户认可低命中四项P0，并指定全新V3代码修复与开发session独立check及后续获准开发，入口docs/tasks/development-v3/ENTRY.md。新角色待启动/实际ID未知，当前只接入与check；待Token探索回传后再细化范围、顺序和验收。镜像打包与审查在V3只负责镜像/交付打包与审批，不承担编码、debug、开发调度或开发验收执行。研究/登记不等于实施授权。
 - 当前任务入口见 docs/tasks/README.md。统一编码、计量和理想命中率计算由 Token 监控维护；原因分析消费其结果或复用同一实现。展示读取已有成果，不在页面访问时触发分析。
-- 会话安排和启动依赖以memory/SESSIONS.md与docs/architecture/TASK_SESSION_WORKFLOW.md为准。监控V2用户功能与MA监控分线并行；异常分析先由统一后端会话完成调研/产品设计，再按用户启动fork低命中和Token异常两线；hybrid暂不做。两类诊断设计和代码均完成后才启动自进化Agent。
+- 会话安排和启动依赖以memory/SESSIONS.md与docs/architecture/TASK_SESSION_WORKFLOW.md为准。V2分线和fork流程属于历史阶段，不自动恢复。V3聚焦低命中四项P0，Token异常休眠且旧结果保留可读；三组长尾探索仅为V3.5及公共能力衔接取证，不提前开发Token规则。hybrid与自进化Agent仍未启动。
 - 不把参考项目中的环境、审批、Git 或现场运维规则直接继承为 TokenScope 要求。
 
 ## 开发和交付
@@ -26,7 +26,7 @@
 - 原始证据不改写；核对、勘误和结论放 docs 并指向证据。历史版本不覆盖当前入口。
 - 交付必须保持用户批准四入口HTML与L4/L5；现场真实数据/两阶段人工验收/SSH18002/单Markdown回传的固定要求见 docs/operations/DELIVERY_ACCEPTANCE_RULES.md 和 memory/DELIVERY_LESSONS.md。最新用户范围决定优先，不把历史评审意见或旧prompt当当前阻断/执行计划。
 
-- session实际角色、状态、优先级和入口统一见memory/SESSIONS.md：V1前后端及历史总设计休眠；六个V2维护session的HV2开发窗口关闭，现场问题由审查交付会话按授权定向协调修复与独立验收。低命中后端唯一维护异常公共层；先验收公共层，再完成依赖后端；对应后端通过并固化接口后才开发前端。V3新session当前仅调研/产品设计，不自动唤醒开发线。
+- session实际角色、状态、优先级和入口统一见memory/SESSIONS.md：V1前后端、历史总设计与六个V2维护session保持休眠。V3获准修改涉及的公共层、低命中及必要前端兼容由全新V3开发session统一负责，避免与旧维护方双写；依赖仍按公共层验证、相关后端、必要前端接入组织。研究session负责证据/方案，打包session只接收候选与验证证据作审批和授权打包。
 - 当前监控维护/现场入口为docs/tasks/monitoring/ENTRY.md，交付入口为docs/tasks/delivery/ENTRY.md。B005.1计划/设计/TESTS和冻结S0是维护依据，已完成审批不重复申请。
 - 已闭环批次、旧prompt和过期记忆归档到achieve；原始证据、冻结契约和已发布交付文件保持身份，归档后更新入口和链接。
 - 协作、交接、联合验收及打包顺序统一维护于 docs/architecture/TASK_SESSION_WORKFLOW.md；授权内按batch/步骤验证闭环后推进，不把整理文档当作恢复编码或打包授权。

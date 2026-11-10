@@ -1,5 +1,11 @@
 # 当前状态
 
+2026-11-10：**V3先聚焦低命中四项P0**：有界小样本/资源控制、L1时间字段、候选质量/重复差异、改法到样本验证及建议解释。详见[当前范围与交接](../docs/tasks/product-v3/V3_SCOPE_AND_HANDOFF_20261110.md)。[全新V3开发角色](../docs/tasks/development-v3/ENTRY.md)已预登记，ID未知/待启动；首轮只读check。镜像打包与审查在V3只负责打包和审批，不承担开发/debug/开发调度或开发验收执行。
+
+**Token异常在V3休眠，修复留V3.5**；旧成果保留可读，四入口/L4L5保持。已准备[三组长尾探索prompt](../docs/tasks/product-v3/HUAWEI_TOKEN_TAIL_EXPLORATION_PROMPT_20261110.md)，等待华为单份报告后再细化V3范围/顺序/验收。当前只整理文档与角色，不实施、不启动新分析或会话。[四象限明细HTML](../docs/tasks/product-v3/promotion/quadrant-detail/dist/index.html)为高优先级资料。[SESSIONS](SESSIONS.md)。
+
+## 既有V2状态与文件交付记录（不覆盖上述V3分工）
+
 2026-11-05：用户决定 **V2暂时认为通过，先完成TokenScope产品宣传**。当前发布仍为tokenscope-v2-hv2-20261103（源码c1345b6）；收到的华为报告、核对、证据局限及留V3问题见[阶段收口](../docs/tasks/delivery/HV2_ACCEPTANCE_CLOSE_20261105.md)。暂时接受不等于全功能/全规模/全部性能问题验证通过；不自动恢复开发、重测或打包。
 
 [V3 session](../docs/tasks/product-v3/ENTRY.md)继续用户已开展的宣传讨论与研究设计，先明确定位/服务对象/功能取舍，以公司真实appid任务、分布、结构和业务确认匹配异常分析；外部报告是参考，不替代现场。细化/重构待讨论决定。本次[新证据交接](../docs/tasks/product-v3/HV2_EVIDENCE_HANDOFF_20261105.md)已接收并由V3本线更新证据/宣传口径，既有草稿不混入本轮提交。
