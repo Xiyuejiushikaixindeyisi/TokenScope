@@ -11,7 +11,9 @@ from tokenscope.analysis_common.wire import from_wire, to_wire, wire_schema
 from tokenscope.errors import TokenScopeError
 
 
-def router(service: DiagnosticService, instance_id: str) -> APIRouter:
+def router(
+    service: DiagnosticService, instance_id: str, *, legacy_execution: bool = True
+) -> APIRouter:
     root = APIRouter(prefix="/diagnostics")
 
     def identity(x_tokenscope_service_instance: str = Header()) -> None:
@@ -31,7 +33,8 @@ def router(service: DiagnosticService, instance_id: str) -> APIRouter:
         return {
             "service_instance_id": instance_id,
             "version": "diagnostics-execution-2",
-            "directions": ["low_hit", "token_content"],
+            "directions": ["low_hit", "token_content"] if legacy_execution else [],
+            "execution_enabled": legacy_execution,
             "minimum_selected_directions": "1",
             "submission_url": "/diagnostics/v2/tasks",
             "catalog_url": "/diagnostics/v2/catalog",

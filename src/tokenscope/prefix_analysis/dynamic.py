@@ -5,6 +5,7 @@ import re
 from typing import Any
 
 from tokenscope.prefix_analysis.structure import tool_map
+from tokenscope.prefix_analysis.timestamps import valid_timestamps
 
 PATTERNS = {
     "timestamp": r"\b\d{4}-\d{2}-\d{2}(?:[T ]\d{2}:\d{2}:\d{2}(?:\.\d+)?Z?)?\b",
@@ -28,7 +29,10 @@ def strings(value: Any, path: str = "") -> list[tuple[str, str]]:
 
 def slots_in_text(value: str) -> list[tuple[int, int, str, str]]:
     candidates = [(m.start(), m.end(), "billing_header", m.group()) for m in HEADER.finditer(value)]
+    candidates.extend((a, b, "timestamp", text) for a, b, text in valid_timestamps(value))
     for name, pattern in PATTERNS.items():
+        if name == "timestamp":
+            continue
         candidates.extend(
             (m.start(), m.end(), name, m.group()) for m in re.finditer(pattern, value)
         )

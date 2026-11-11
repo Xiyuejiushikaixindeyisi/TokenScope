@@ -10,17 +10,21 @@ from tokenscope.analysis_common.recommendations import RecipeBundle
 from tokenscope.analysis_common.service import DiagnosticService
 from tokenscope.analysis_common.source import SourceResolver
 from tokenscope.monitoring.service import MonitoringService
-from tokenscope.token_content.auto_proposals import TokenProposalAdapter
-from tokenscope.token_content.current_plugin import CurrentTokenContentPlugin
 from tokenscope.user_monitoring.service import UserRunService
 
 
-def build_diagnostics(base: MonitoringService, user: UserRunService) -> DiagnosticService:
+def build_diagnostics(
+    base: MonitoringService, user: UserRunService, *, legacy_execution: bool = True
+) -> DiagnosticService:
     registry = PluginRegistry()
-    registry.register(CurrentTokenContentPlugin())
     proposals = ProposalRegistry()
-    proposals.register(TokenProposalAdapter())
-    path = os.environ.get("TOKENSCOPE_RECOMMENDATION_BUNDLE")
+    if legacy_execution:
+        from tokenscope.token_content.auto_proposals import TokenProposalAdapter
+        from tokenscope.token_content.current_plugin import CurrentTokenContentPlugin
+
+        registry.register(CurrentTokenContentPlugin())
+        proposals.register(TokenProposalAdapter())
+    path = os.environ.get("TOKENSCOPE_RECOMMENDATION_BUNDLE") if legacy_execution else None
     bundle: RecipeBundle | Path = (
         Path(path)
         if path

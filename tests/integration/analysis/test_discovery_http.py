@@ -8,7 +8,7 @@ from tokenscope.api.diagnostics import Submission
 
 def test_discovery_real_report_terminal_and_instance_guard(service):
     _, request = setup(service)
-    app = create_app(service, start_worker=False)
+    app = create_app(service, start_worker=False, legacy_diagnostics=True)
     with TestClient(app) as client:
         prefix = "/diagnostics/discovery"
         capability = client.get(prefix + "/capabilities").json()

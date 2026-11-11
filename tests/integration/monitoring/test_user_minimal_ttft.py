@@ -50,7 +50,7 @@ def req(run, **updates):
         ("DeepSeek-V4-Flash-0731", "DeepSeek-V4-Flash"),
     ],
 )
-def test_http_real_csv_new_and_legacy_restart(service, model, common):
+def test_http_real_csv_new_and_legacy_restart(service, model, common, tmp_path):
     (service.inputs.root / "minimal.csv").write_bytes(
         csv_bytes(
             [
@@ -169,7 +169,7 @@ def test_http_real_csv_new_and_legacy_restart(service, model, common):
         assert [
             (r[0], r[1]) for r in db.execute("SELECT id,payload FROM evaluations ORDER BY id")
         ] == stored
-    output = Path("artifacts/validation/user-monitoring/U007")
+    output = tmp_path / "minimal-ttft-results"
     output.mkdir(parents=True, exist_ok=True)
     (output / (model + ".json")).write_text(json.dumps(dict(new=result, legacy=old), indent=2))
 

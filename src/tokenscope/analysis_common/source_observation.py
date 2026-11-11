@@ -3,6 +3,7 @@
 import sqlite3
 from collections.abc import Generator, Iterator
 from dataclasses import dataclass
+from typing import Any
 
 from tokenscope.analysis_common.contracts import RequestView
 from tokenscope.analysis_common.source import ResolvedSource
@@ -32,7 +33,7 @@ class ObservedSource(ResolvedSource):
             if isinstance(iterator, Generator):
                 iterator.close()
 
-    def _view(self, row: sqlite3.Row) -> RequestView:
+    def _view(self, row: sqlite3.Row | dict[str, Any]) -> RequestView:
         with self.telemetry.span("source_decode_and_identity"):
             return super()._view(row)
 

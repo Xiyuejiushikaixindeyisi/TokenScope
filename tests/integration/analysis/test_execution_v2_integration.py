@@ -122,7 +122,7 @@ def test_fragment_retention_does_not_falsify_fragment_scan(service):
 
 def test_v2_http_and_readonly_legacy(service, tmp_path):
     d, req, opts = configured(service, token=False)
-    app = create_app(service, start_worker=False)
+    app = create_app(service, start_worker=False, legacy_diagnostics=True)
     with TestClient(app) as client:
         cap = client.get("/diagnostics/v2/capabilities").json()
         client.headers["x-tokenscope-service-instance"] = cap["service_instance_id"]
@@ -263,7 +263,7 @@ def test_legacy_execution_uncomputed_and_invalid_v2_selection(service):
     d, req = setup(service, low_hit=False)
     receipt = d.submit(req, options())
     assert d.process_next().status == "ready"
-    app = create_app(service, start_worker=False)
+    app = create_app(service, start_worker=False, legacy_diagnostics=True)
     with TestClient(app) as client:
         cap = client.get("/diagnostics/v2/capabilities").json()
         client.headers["x-tokenscope-service-instance"] = cap["service_instance_id"]
@@ -287,7 +287,7 @@ def test_empty_execution_uses_published_terminal_status(service):
     req = req.model_copy(update={"source": req.source.model_copy(update={"appid": "absent"})})
     receipt = d.submit(req, opts)
     assert d.process_next().status == "empty"
-    app = create_app(service, start_worker=False)
+    app = create_app(service, start_worker=False, legacy_diagnostics=True)
     with TestClient(app) as client:
         cap = client.get("/diagnostics/v2/capabilities").json()
         client.headers["x-tokenscope-service-instance"] = cap["service_instance_id"]

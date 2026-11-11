@@ -21,6 +21,7 @@ async function intercept(page: Page, options: { catalog?: () => unknown; event?:
     let directory = catalogV2(initial);
     await page.route('**/diagnostics/**', async route => {
         const req = route.request(), u = new URL(req.url()), p = decodeURIComponent(u.pathname); calls.push(req.method() + ' ' + p);
+        if (p === '/diagnostics/v3/capabilities') return route.fulfill({ status: 404, json: { error: { code: 'NOT_FOUND' } } });
         if (p === '/diagnostics/v2/capabilities') return route.fulfill({ json: executionCapabilities });
         if (p === '/diagnostics/recommendations/capabilities') return route.fulfill({ json: { version: 'analysis-recommendations-1', service_instance_id: 'fixture-instance', read_only: true, token_rule_ids: ['T2', 'T3', 'T4'], schemas: schemas.models } });
         if (p.endsWith('/capabilities')) return route.fulfill({ json: p.includes('/discovery/') ? { version: 'diagnostics-discovery-1', service_instance_id: 'fixture-instance' } : { contract_version: 'analysis-common-1.0', http_version: 'diagnostics-http-1', service_instance_id: 'fixture-instance' } });
@@ -62,7 +63,7 @@ test('first published partial is automatically readable with partial status and 
 
 test('evidence read failure keeps benefit and retries only the local examples', async ({ page }) => {
     let fail = true; const calls = await intercept(page, { examplesFail: () => fail });
-    await page.goto('/#/analysis'); await expect(page.getByRole('alert')).toContainText('局部证据读取失败'); await expect(page.locator('.solution-card[data-rule="L1"] .impact-strip')).toContainText('预期命中率提升');
+    await page.goto('/#/analysis'); await page.locator('.solution-card[data-rule="L1"] .key-evidence').scrollIntoViewIfNeeded(); await expect(page.getByRole('alert')).toContainText('局部证据读取失败'); await expect(page.locator('.solution-card[data-rule="L1"] .impact-strip')).toContainText('预期命中率提升');
     fail = false; await page.getByRole('button', { name: '重新读取证据' }).click(); await expect(page.locator('.solution-card[data-rule="L1"] .key-evidence code')).toContainText('2026'); await expect(page.getByRole('alert')).toHaveCount(0); expect(calls.every(x => x.startsWith('GET '))).toBe(true); expect(calls.some(x => /\/requests\/|\/items\//.test(x))).toBe(false);
 });
 

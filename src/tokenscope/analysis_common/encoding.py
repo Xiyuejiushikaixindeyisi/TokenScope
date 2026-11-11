@@ -13,7 +13,7 @@ from tokenscope.errors import TokenScopeError
 
 
 class EncodingContext:
-    def __init__(self, source: ResolvedSource) -> None:
+    def __init__(self, source: ResolvedSource, *, cpu_budget: int | None = None) -> None:
         self.source = source
         identity = source.scope.source
         if identity.algorithm_version != ALGORITHM_VERSION:
@@ -23,6 +23,10 @@ class EncodingContext:
         if assets.identity != identity.asset_identity:
             raise TokenScopeError("ASSET_IDENTITY_MISMATCH", "Original assets unavailable", 409)
         profile = EncodingProfile.model_validate_json(identity.profile_json)
+        if cpu_budget is not None:
+            # CPU concurrency is explicitly excluded from ModelEncoder.identity.
+            # Templates/options/assets and reproduced baseline remain unchanged.
+            profile = profile.model_copy(update={"cpu_budget": min(profile.cpu_budget, cpu_budget)})
         self.batch = EncodingBatchService(ModelEncoder(assets, settings, profile))
         if self.batch.encoder.identity != identity.encoder_identity:
             raise TokenScopeError("ENCODER_IDENTITY_MISMATCH", "Original encoder differs", 409)

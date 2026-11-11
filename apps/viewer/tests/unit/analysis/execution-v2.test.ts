@@ -153,3 +153,8 @@ describe('frozen diagnostics v2 consumer', () => {
         expect(() => cardFromRow(valid, 'recommendation', entry(low), 'low_hit')).toThrow('INVALID_LOW_HIT_QUALIFICATION');
     });
 });
+it('accepts exact frozen v2 read-only capability while keeping schemas strict', () => {
+    expect(() => verifyExecutionCapabilities({ ...capabilities, directions: [], execution_enabled: false }, base.service_instance_id)).not.toThrow();
+    expect(() => verifyExecutionCapabilities({ ...capabilities, directions: [], execution_enabled: true }, base.service_instance_id)).toThrow();
+    expect(() => verifyExecutionCapabilities({ ...capabilities, directions: [], execution_enabled: false, schemas: {} }, base.service_instance_id)).toThrow();
+});

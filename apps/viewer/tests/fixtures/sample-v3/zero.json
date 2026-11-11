@@ -1,0 +1,479 @@
+{
+  "version": "diagnostics-report-3",
+  "task_id": "diag-9e3244d1dc5440fda99eed17c570eeb8",
+  "sample_id": "sample:f0834a4749af7226ac6971f35f40337772d17bcb7fd23d472859df818231db60",
+  "manifest_sha256": "e48de4d3afb20b46f061102a52decc08d91aa4de952a19887468d8a9540d6cf6",
+  "sample": {
+    "version": "diagnostics-sampling-3",
+    "parent_scope": {
+      "source": {
+        "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+        "user_run_id": null,
+        "common_name": null,
+        "model_id": "Qwen3.6-27B",
+        "manifest_sha256": "18160efefdbffd3fc187e14005254f935df154aeae81f68d7e5fec9376946dac",
+        "asset_identity": "7527c8934262e7d1091b603846535d73910a8bfb592a2f8b94c399a711d5a523",
+        "encoder_identity": "0e70e54b017205ccfda1b7a833cd3028ab7ed30be14d1f141df7ae7588bdc886",
+        "profile_json": "{\"name\": \"default\", \"cpu_budget\": 8, \"default_thinking\": null, \"template_options\": {}}",
+        "settings_json": "{\"model_id\":\"Qwen3.6-27B\",\"revision\":1,\"block_size\":1536,\"block_size_unit\":\"simulation_input_tokens\",\"cp_world_size\":1,\"mtp\":true,\"prefix_cache_enabled\":true,\"hybrid_enabled\":false,\"cache_mode\":\"full_block_approximation\",\"model_aliases\":[\"Qwen3.6-27B\",\"Qwen-V3.6-27B\",\"Qwen-V3.6-27B-32K\",\"Qwen-V3.6-27B-64K\",\"Qwen-V3.6-27B-128K\"],\"encoding_profile\":\"default\"}",
+        "algorithm_version": "full-block-mtp-v1"
+      },
+      "appid": "clock",
+      "window": null,
+      "request_count": "8",
+      "request_keys_digest": "631829b7540b03195284f2d4fc1cfc6691ed5e0e5a8e37380b4e02f4b164fe0d",
+      "baseline_origin": "original_run_window"
+    },
+    "source_selection": {
+      "source_kind": "base",
+      "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+      "user_run_id": null,
+      "appid": "clock",
+      "window": null,
+      "expected_index_revision": null
+    },
+    "source_index_revision": null,
+    "decision": {
+      "algorithm": "first-prefix-last-suffix-1",
+      "parent_count": "8",
+      "parent_keys_digest": "631829b7540b03195284f2d4fc1cfc6691ed5e0e5a8e37380b4e02f4b164fe0d",
+      "admitted_count": "8",
+      "excluded_count": "0",
+      "exclusion_counts": {},
+      "exclusion_examples": [],
+      "windows": [
+        {
+          "role": "discovery",
+          "members": [
+            {
+              "key": {
+                "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+                "source_record_index": "1"
+              },
+              "time_ns": "1794301200000000000",
+              "raw_bytes": "1622",
+              "prompt_tokens": "257"
+            },
+            {
+              "key": {
+                "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+                "source_record_index": "2"
+              },
+              "time_ns": "1794301201000000000",
+              "raw_bytes": "1702",
+              "prompt_tokens": "269"
+            }
+          ],
+          "keys_digest": "d02bf06614c1434117b1ce6823a9657cc3aec0c48a24e5c709366351c15a827b",
+          "raw_bytes": "3324",
+          "prompt_tokens": "526",
+          "contiguous": true
+        },
+        {
+          "role": "review",
+          "members": [
+            {
+              "key": {
+                "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+                "source_record_index": "7"
+              },
+              "time_ns": "1794301206000000000",
+              "raw_bytes": "1622",
+              "prompt_tokens": "257"
+            },
+            {
+              "key": {
+                "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+                "source_record_index": "8"
+              },
+              "time_ns": "1794301207000000000",
+              "raw_bytes": "1702",
+              "prompt_tokens": "269"
+            }
+          ],
+          "keys_digest": "75921b164587c80f19954d5b1dc7335740c38cb385b28b55e440414824a82aa2",
+          "raw_bytes": "3324",
+          "prompt_tokens": "526",
+          "contiguous": true
+        }
+      ],
+      "limits": {
+        "max_requests": "4",
+        "max_raw_bytes": "18187008",
+        "max_prompt_tokens": "1136688",
+        "max_record_bytes": "9093504",
+        "max_record_tokens": "568344",
+        "max_metadata_bytes": "8321664",
+        "max_snapshot_bytes": "83156736",
+        "max_exclusion_examples": "32",
+        "review_requested": true
+      }
+    },
+    "files": [
+      {
+        "path": "discovery/1.raw",
+        "size": "1622",
+        "sha256": "4bd0e5a48acd8e8d70cfb51c4de615f023e11545ffac1c23c134210d3dc554f2"
+      },
+      {
+        "path": "discovery/1.view",
+        "size": "2269",
+        "sha256": "2b5b41c8d644d2e05816b47e7ed6f260cede98826369989be8bf22bcd74e3397"
+      },
+      {
+        "path": "discovery/1.tokens",
+        "size": "1028",
+        "sha256": "33639d0b0322759319550ce4634bdc7c88df468ffdcbf874901d5f7b073dbd61"
+      },
+      {
+        "path": "discovery/2.raw",
+        "size": "1702",
+        "sha256": "7f547002788d41e32fe613906dcdd794e48f7dda380c3928bc9ab7ebf2d928c5"
+      },
+      {
+        "path": "discovery/2.view",
+        "size": "2982",
+        "sha256": "c4aa6641a01e10a7e50474ea9f654471a6d6e03072ab5827fadfc6ea90bcfb56"
+      },
+      {
+        "path": "discovery/2.tokens",
+        "size": "1076",
+        "sha256": "57f8aa6519b7db793411d4f13a30ab067dd33a9d7ee2320628554fed7c70ebf0"
+      },
+      {
+        "path": "review/7.raw",
+        "size": "1622",
+        "sha256": "3506abc7b6303c18bc23160b4cdb4ea090c742b926c92d02843d43dff04504ca"
+      },
+      {
+        "path": "review/7.view",
+        "size": "2272",
+        "sha256": "bf2683f1a094fd8e265aa119f94b9a971a5f7339d4f3de7007accb98bdd7521a"
+      },
+      {
+        "path": "review/7.tokens",
+        "size": "1028",
+        "sha256": "ddba38d6a353c88a49d05928e866d3e24c55dc0392e6f64ddcb2e374a029abcb"
+      },
+      {
+        "path": "review/8.raw",
+        "size": "1702",
+        "sha256": "3a8a4cbcdfc3031ccfd75136e6829f21a3f130a15117394778ac16c4e4a25f26"
+      },
+      {
+        "path": "review/8.view",
+        "size": "2982",
+        "sha256": "6c5a53b0f903d0877ca1d1cadaecb557360195861c85c7af8fe3640389c2bf45"
+      },
+      {
+        "path": "review/8.tokens",
+        "size": "1076",
+        "sha256": "dacba375c786e2d13bb5305653b1b7d732d181aab0e58c119a82ec8e81d8a537"
+      }
+    ],
+    "verification_bytes": "716294",
+    "selected_raw_bytes": "6648",
+    "selected_token_bytes": "4208"
+  },
+  "discovery": {
+    "scope_id": "scope:c3af45b513158dd50f676fa6ac3c4dad2f38bfe8963cf70de5f767e8592386e1",
+    "findings": [
+      {
+        "finding_id": "finding:72b0641ad1558b72a559cfb4f0facf80e142d2a6a08e5c3beb3a20a974a2ee66",
+        "rule_id": "L1",
+        "rule_version": "clock-3.1",
+        "comparison": {
+          "left": {
+            "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+            "source_record_index": "1"
+          },
+          "right": {
+            "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+            "source_record_index": "2"
+          },
+          "left_raw_sha256": "4bd0e5a48acd8e8d70cfb51c4de615f023e11545ffac1c23c134210d3dc554f2",
+          "right_raw_sha256": "7f547002788d41e32fe613906dcdd794e48f7dda380c3928bc9ab7ebf2d928c5",
+          "difference_pointers": [
+            "/messages/0/content"
+          ],
+          "association_ref": null,
+          "lcp_tokens": "139"
+        },
+        "left_locations": [
+          {
+            "request_key": {
+              "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+              "source_record_index": "1"
+            },
+            "raw_sha256": "4bd0e5a48acd8e8d70cfb51c4de615f023e11545ffac1c23c134210d3dc554f2",
+            "source_pointer": "/messages/0/content",
+            "embedded": null,
+            "text_range": {
+              "start": "715",
+              "end": "764"
+            }
+          }
+        ],
+        "right_locations": [
+          {
+            "request_key": {
+              "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+              "source_record_index": "2"
+            },
+            "raw_sha256": "7f547002788d41e32fe613906dcdd794e48f7dda380c3928bc9ab7ebf2d928c5",
+            "source_pointer": "/messages/0/content",
+            "embedded": null,
+            "text_range": {
+              "start": "715",
+              "end": "764"
+            }
+          }
+        ],
+        "left_date_ranges": [
+          [
+            {
+              "start": "744",
+              "end": "763"
+            }
+          ]
+        ],
+        "right_date_ranges": [
+          [
+            {
+              "start": "744",
+              "end": "763"
+            }
+          ]
+        ],
+        "recipe": {
+          "version": "session-clock-normalize-3.1",
+          "discovery": "automatic_l1",
+          "logical_field": "[\"system\",0,\"\"]",
+          "field_shape": [
+            "stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable <session_clock>",
+            "</session_clock> suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix"
+          ],
+          "block_indices": [
+            "0"
+          ],
+          "constant": "NORMALIZED",
+          "business_effect": "changes_time_awareness"
+        },
+        "evidence_status": "clock_change_and_input_difference",
+        "advice": "固定session_clock会改变模型的时间感知；仅在样本副本评估，需业务确认，不承诺业务无损。",
+        "before_fragments": [
+          " ## 当前时间（本机时区：Asia/Shanghai） 2026/11/10 09:00:01 "
+        ],
+        "after_fragments": [
+          "NORMALIZED"
+        ]
+      }
+    ],
+    "cause_groups": [
+      {
+        "group_id": "cause:6b283375cbfb0e15cb59bc0a0bc394a6c190627ebff13041720169f7c5f8c0db",
+        "rule_id": "L1",
+        "pointers": [
+          "[\"system\",0,\"\"]"
+        ],
+        "members": [
+          {
+            "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+            "source_record_index": "1"
+          },
+          {
+            "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+            "source_record_index": "2"
+          }
+        ],
+        "observed_pairs": "1",
+        "input_changed": true,
+        "lcp_tokens": "139",
+        "context_status": "pair_evidence_only"
+      },
+      {
+        "group_id": "cause:0ea3ad6a2a13271a6fa6cc541335f74c70c61947792b72b23010177303113945",
+        "rule_id": "L4",
+        "pointers": [
+          "/messages/0/content"
+        ],
+        "members": [
+          {
+            "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+            "source_record_index": "1"
+          },
+          {
+            "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+            "source_record_index": "2"
+          }
+        ],
+        "observed_pairs": "1",
+        "input_changed": true,
+        "lcp_tokens": "139",
+        "context_status": "pair_evidence_only"
+      }
+    ],
+    "channel_visits": {
+      "L1": "1",
+      "L4": "1",
+      "L5": "1"
+    },
+    "candidate_limit": "16",
+    "checked_requests": "2",
+    "comparisons": "1",
+    "unsupported_fields": "0",
+    "reason_codes": [],
+    "complete": true
+  },
+  "recommendations": [
+    {
+      "finding": {
+        "finding_id": "finding:72b0641ad1558b72a559cfb4f0facf80e142d2a6a08e5c3beb3a20a974a2ee66",
+        "rule_id": "L1",
+        "rule_version": "clock-3.1",
+        "comparison": {
+          "left": {
+            "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+            "source_record_index": "1"
+          },
+          "right": {
+            "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+            "source_record_index": "2"
+          },
+          "left_raw_sha256": "4bd0e5a48acd8e8d70cfb51c4de615f023e11545ffac1c23c134210d3dc554f2",
+          "right_raw_sha256": "7f547002788d41e32fe613906dcdd794e48f7dda380c3928bc9ab7ebf2d928c5",
+          "difference_pointers": [
+            "/messages/0/content"
+          ],
+          "association_ref": null,
+          "lcp_tokens": "139"
+        },
+        "left_locations": [
+          {
+            "request_key": {
+              "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+              "source_record_index": "1"
+            },
+            "raw_sha256": "4bd0e5a48acd8e8d70cfb51c4de615f023e11545ffac1c23c134210d3dc554f2",
+            "source_pointer": "/messages/0/content",
+            "embedded": null,
+            "text_range": {
+              "start": "715",
+              "end": "764"
+            }
+          }
+        ],
+        "right_locations": [
+          {
+            "request_key": {
+              "base_run_id": "627056dd-fe98-42d6-98a9-f486707d49ac",
+              "source_record_index": "2"
+            },
+            "raw_sha256": "7f547002788d41e32fe613906dcdd794e48f7dda380c3928bc9ab7ebf2d928c5",
+            "source_pointer": "/messages/0/content",
+            "embedded": null,
+            "text_range": {
+              "start": "715",
+              "end": "764"
+            }
+          }
+        ],
+        "left_date_ranges": [
+          [
+            {
+              "start": "744",
+              "end": "763"
+            }
+          ]
+        ],
+        "right_date_ranges": [
+          [
+            {
+              "start": "744",
+              "end": "763"
+            }
+          ]
+        ],
+        "recipe": {
+          "version": "session-clock-normalize-3.1",
+          "discovery": "automatic_l1",
+          "logical_field": "[\"system\",0,\"\"]",
+          "field_shape": [
+            "stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable <session_clock>",
+            "</session_clock> suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix"
+          ],
+          "block_indices": [
+            "0"
+          ],
+          "constant": "NORMALIZED",
+          "business_effect": "changes_time_awareness"
+        },
+        "evidence_status": "clock_change_and_input_difference",
+        "advice": "固定session_clock会改变模型的时间感知；仅在样本副本评估，需业务确认，不承诺业务无损。",
+        "before_fragments": [
+          " ## 当前时间（本机时区：Asia/Shanghai） 2026/11/10 09:00:01 "
+        ],
+        "after_fragments": [
+          "NORMALIZED"
+        ]
+      },
+      "transformation_digest": "03aaa251ceb7e4285c997578cb2f97885f4e3829460f96a452aedfa3f0d61975",
+      "windows": [
+        {
+          "role": "discovery",
+          "status": "zero",
+          "transformation_digest": "03aaa251ceb7e4285c997578cb2f97885f4e3829460f96a452aedfa3f0d61975",
+          "reason_code": null,
+          "complete": true,
+          "n": "2",
+          "matched": "2",
+          "modified": "2",
+          "before": {
+            "p": "526",
+            "h": "0",
+            "c": "526"
+          },
+          "after": {
+            "p": "464",
+            "h": "0",
+            "c": "464"
+          },
+          "improvement_pp": {
+            "numerator": "0",
+            "denominator": "1"
+          },
+          "rows_ref": "evaluation-0001/discovery/rows.json",
+          "plan_ref": "evaluation-0001/discovery/plan.json"
+        },
+        {
+          "role": "review",
+          "status": "zero",
+          "transformation_digest": "03aaa251ceb7e4285c997578cb2f97885f4e3829460f96a452aedfa3f0d61975",
+          "reason_code": null,
+          "complete": true,
+          "n": "2",
+          "matched": "2",
+          "modified": "2",
+          "before": {
+            "p": "526",
+            "h": "0",
+            "c": "526"
+          },
+          "after": {
+            "p": "464",
+            "h": "0",
+            "c": "464"
+          },
+          "improvement_pp": {
+            "numerator": "0",
+            "denominator": "1"
+          },
+          "rows_ref": "evaluation-0001/review/rows.json",
+          "plan_ref": "evaluation-0001/review/plan.json"
+        }
+      ]
+    }
+  ],
+  "business_note": "固定session_clock改变时间感知；样本副本参考，需业务确认。",
+  "automatic_full": false
+}

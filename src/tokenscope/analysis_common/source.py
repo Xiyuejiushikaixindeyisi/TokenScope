@@ -3,7 +3,7 @@
 import hashlib
 import json
 import sqlite3
-from collections.abc import Iterator
+from collections.abc import Callable, Iterator
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -56,7 +56,7 @@ class ResolvedSource:
                 values,
             )
 
-    def _view(self, row: sqlite3.Row) -> RequestView:
+    def _view(self, row: sqlite3.Row | dict[str, Any]) -> RequestView:
         source = self.scope.source
         evidence = json.loads(row["evidence_json"])
         raw = row["request_input"]
@@ -128,7 +128,15 @@ class SourceResolver:
     def __init__(self, base: MonitoringService, user: UserRunService | None = None) -> None:
         self.base, self.user = base, user
 
-    def resolve_scope(self, selection: SourceSelection) -> ResolvedSource:
+    def resolve_scope(
+        self,
+        selection: SourceSelection,
+        *,
+        digest: Callable[[Path], str] | None = None,
+        read_metadata: Callable[[Path], Any] | None = None,
+        checkpoint: Callable[[], None] | None = None,
+    ) -> ResolvedSource:
+        digest_file = digest or file_digest
         base_id = selection.base_run_id
         common_name = None
         user_model = None
@@ -138,7 +146,9 @@ class SourceResolver:
             receipt = self.user.receipt(selection.user_run_id)
             if receipt.state not in (UserState.READY, UserState.EMPTY):
                 raise TokenScopeError("RESULT_NOT_READY", "User source is not published", 409)
-            with self.user.index(selection.user_run_id, selection.expected_index_revision):
+            with self.user.index(
+                selection.user_run_id, selection.expected_index_revision, verify_digest=digest
+            ):
                 pass
             base_id, common_name, user_model = (
                 receipt.base_run_id,
@@ -152,7 +162,13 @@ class SourceResolver:
         directory = (self.base.state_root / "runs" / run.run_id).resolve()
         if not directory.is_relative_to((self.base.state_root / "runs").resolve()):
             raise TokenScopeError("SOURCE_IDENTITY_INVALID", "Invalid source identity", 409)
-        sealed = verify_seal(directory, run.run_id)["summary"]
+        sealed = verify_seal(
+            directory,
+            run.run_id,
+            digest=digest,
+            read_metadata=read_metadata,
+            include_signals=False,
+        )["summary"]
         # Monitoring adds post-seal timings only to the control result, deliberately.
         timing_fields = {"elapsed_seconds", "elapsed_scope", "timings_seconds"}
         if {key: value for key, value in indexed.items() if key not in timing_fields} != {
@@ -167,7 +183,7 @@ class SourceResolver:
             user_run_id=selection.user_run_id,
             common_name=common_name,
             model_id=run.model_id,
-            manifest_sha256=file_digest(directory / "manifest.json"),
+            manifest_sha256=digest_file(directory / "manifest.json"),
             asset_identity=runtime["asset_identity"],
             encoder_identity=runtime["encoder_identity"],
             profile_json=json.dumps(runtime["profile"]),
@@ -187,7 +203,7 @@ class SourceResolver:
                 raise TokenScopeError("INVALID_WINDOW", "Window exceeds timestamp range", 422)
             clause += " AND time_ns>=? AND time_ns<?"
             values += (selection.window.start_ns, selection.window.end_ns)
-        digest, count = hashlib.sha256(), 0
+        membership_digest, count = hashlib.sha256(), 0
         with self.base.result_db(run.run_id) as db:
             for row in db.execute(
                 "SELECT source_record_index FROM request_records "
@@ -195,7 +211,9 @@ class SourceResolver:
                 f"WHERE {clause} ORDER BY time_ns,source_record_index",
                 values,
             ):
-                digest.update(
+                if checkpoint is not None:
+                    checkpoint()
+                membership_digest.update(
                     canonical_metadata(
                         RequestKey(
                             base_run_id=run.run_id,
@@ -212,7 +230,7 @@ class SourceResolver:
                 appid=selection.appid,
                 window=selection.window,
                 request_count=count,
-                request_keys_digest=digest.hexdigest(),
+                request_keys_digest=membership_digest.hexdigest(),
                 baseline_origin="original_run_window"
                 if selection.window is None
                 else "selected_window_recomputed",

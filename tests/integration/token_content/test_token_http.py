@@ -15,7 +15,7 @@ from tokenscope.token_content.plugin import TokenContentPlugin
 
 def test_token_http_explicit_evaluation_instance_membership_and_readonly(service, monkeypatch):
     _, _, source = setup(service)
-    app = create_app(service, start_worker=False)
+    app = create_app(service, start_worker=False, legacy_diagnostics=True)
     with TestClient(app) as client:
         capabilities = client.get("/diagnostics/capabilities").json()
         assert capabilities["http_version"] == "diagnostics-http-1"

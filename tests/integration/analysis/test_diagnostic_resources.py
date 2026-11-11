@@ -5,7 +5,6 @@ import platform
 import resource
 import time
 from datetime import UTC, datetime, timedelta
-from pathlib import Path
 
 import pytest
 from conftest import csv_bytes, valid_row
@@ -22,7 +21,7 @@ from tokenscope.user_monitoring.service import UserRunService
 
 
 @pytest.mark.parametrize("count,size,tools", [(16, 1024, 2), (64, 8192, 8), (128, 65536, 16)])
-def test_local_scale_record(service, count, size, tools):
+def test_local_scale_record(service, tmp_path, count, size, tools):
     rows = []
     start = datetime(2026, 10, 27, tzinfo=UTC)
     for i in range(count):
@@ -98,6 +97,6 @@ def test_local_scale_record(service, count, size, tools):
         "encoding_calls": report["encoding_calls"],
         "rule_coverage": diagnostics.items(task.task_id, "rule_coverage"),
     }
-    output = Path("artifacts/validation/prefix-analysis/lh009")
+    output = tmp_path / "legacy-resource-measurements"
     output.mkdir(parents=True, exist_ok=True)
     (output / f"scale-{count}.json").write_text(json.dumps(record, ensure_ascii=False, indent=2))

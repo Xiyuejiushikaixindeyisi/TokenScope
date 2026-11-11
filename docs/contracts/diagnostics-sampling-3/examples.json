@@ -1,0 +1,149 @@
+{
+  "note": "Synthetic schema examples; no real source or validation result.",
+  "queued": {
+    "intent_digest": "intent:de581bc0f9a4bc397dc686e8928facf02e9fd1859ea18da0bf0038f0b9ddeaf6",
+    "manifest_sha256": null,
+    "preparation_id": "prep-11111111111111111111111111111111",
+    "reason_code": null,
+    "sample_id": null,
+    "state": "queued",
+    "version": "diagnostics-sampling-3"
+  },
+  "request": {
+    "direction": "low_hit",
+    "discovery_mode": "automatic",
+    "source": {
+      "appid": "example-app",
+      "base_run_id": "example-run",
+      "expected_index_revision": null,
+      "source_kind": "base",
+      "user_run_id": null,
+      "window": null
+    },
+    "submission_key": "example-submission"
+  },
+  "sample": {
+    "decision": {
+      "admitted_count": "2",
+      "algorithm": "first-prefix-last-suffix-1",
+      "excluded_count": "0",
+      "exclusion_counts": {},
+      "exclusion_examples": [],
+      "limits": {
+        "max_exclusion_examples": "2",
+        "max_metadata_bytes": "100000",
+        "max_prompt_tokens": "100",
+        "max_raw_bytes": "100",
+        "max_record_bytes": "50",
+        "max_record_tokens": "50",
+        "max_requests": "2",
+        "max_snapshot_bytes": "200000",
+        "review_requested": true
+      },
+      "parent_count": "2",
+      "parent_keys_digest": "78151e73590c42826695acedc5000ddc230043562c6bfd9086a2f4959a70b437",
+      "windows": [
+        {
+          "contiguous": true,
+          "keys_digest": "604b6dd8da1fcb036505f5dba9b1ce29b5b7711b58a09c2a6ddfeb28b3daec4c",
+          "members": [
+            {
+              "key": {
+                "base_run_id": "example-run",
+                "source_record_index": "1"
+              },
+              "prompt_tokens": "0",
+              "raw_bytes": "2",
+              "time_ns": "1"
+            }
+          ],
+          "prompt_tokens": "0",
+          "raw_bytes": "2",
+          "role": "discovery"
+        },
+        {
+          "contiguous": true,
+          "keys_digest": "3bb64653f6a2f321ed95f0efd92532aee4f3f2afc9f20b2ef38032d35bd140ef",
+          "members": [
+            {
+              "key": {
+                "base_run_id": "example-run",
+                "source_record_index": "2"
+              },
+              "prompt_tokens": "0",
+              "raw_bytes": "2",
+              "time_ns": "2"
+            }
+          ],
+          "prompt_tokens": "0",
+          "raw_bytes": "2",
+          "role": "review"
+        }
+      ]
+    },
+    "files": [
+      {
+        "path": "discovery/1.raw",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "size": "2"
+      },
+      {
+        "path": "discovery/1.view",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "size": "1024"
+      },
+      {
+        "path": "discovery/1.tokens",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "size": "0"
+      },
+      {
+        "path": "review/2.raw",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "size": "2"
+      },
+      {
+        "path": "review/2.view",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "size": "1024"
+      },
+      {
+        "path": "review/2.tokens",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "size": "0"
+      }
+    ],
+    "parent_scope": {
+      "appid": "example-app",
+      "baseline_origin": "original_run_window",
+      "request_count": "2",
+      "request_keys_digest": "78151e73590c42826695acedc5000ddc230043562c6bfd9086a2f4959a70b437",
+      "source": {
+        "algorithm_version": "example-algorithm",
+        "asset_identity": "example-asset",
+        "base_run_id": "example-run",
+        "common_name": null,
+        "encoder_identity": "example-encoder",
+        "manifest_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "model_id": "GLM-5.2",
+        "profile_json": "{}",
+        "settings_json": "{}",
+        "user_run_id": null
+      },
+      "window": null
+    },
+    "selected_raw_bytes": "4",
+    "selected_token_bytes": "0",
+    "source_index_revision": null,
+    "source_selection": {
+      "appid": "example-app",
+      "base_run_id": "example-run",
+      "expected_index_revision": null,
+      "source_kind": "base",
+      "user_run_id": null,
+      "window": null
+    },
+    "verification_bytes": "1234",
+    "version": "diagnostics-sampling-3"
+  }
+}

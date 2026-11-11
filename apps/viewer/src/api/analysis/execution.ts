@@ -33,7 +33,7 @@ export function schemaSignature(schema: unknown): string {
     return JSON.stringify(expand(schema));
 }
 export function verifyExecutionCapabilities(c: Record<string, unknown>, instance: string) {
-    if (c.service_instance_id !== instance || c.version !== EXECUTION_VERSION || c.discovery_version !== DISCOVERY_VERSION || c.minimum_selected_directions !== '1' || c.legacy_read_compatible !== true || c.catalog_url !== '/diagnostics/v2/catalog' || c.submission_url !== '/diagnostics/v2/tasks' || c.partial_policy !== 'ready_preferred_published_partial_fallback' || c.budget_semantics !== 'direction_isolated_compute_rule_reserved_retention' || JSON.stringify(c.directions) !== JSON.stringify(['low_hit', 'token_content'])) throw Error('EXECUTION_CAPABILITY_MISMATCH');
+    if (c.service_instance_id !== instance || c.version !== EXECUTION_VERSION || c.discovery_version !== DISCOVERY_VERSION || c.minimum_selected_directions !== '1' || c.legacy_read_compatible !== true || c.catalog_url !== '/diagnostics/v2/catalog' || c.submission_url !== '/diagnostics/v2/tasks' || c.partial_policy !== 'ready_preferred_published_partial_fallback' || c.budget_semantics !== 'direction_isolated_compute_rule_reserved_retention' || !(JSON.stringify(c.directions) === JSON.stringify(['low_hit', 'token_content']) || (c.execution_enabled === false && JSON.stringify(c.directions) === '[]'))) throw Error('EXECUTION_CAPABILITY_MISMATCH');
     const advertised = c.schemas as Record<string, unknown> | undefined;
     for (const [key, schema] of Object.entries(schemas)) if (!advertised?.[key] || schemaSignature(advertised[key]) !== schemaSignature(schema)) throw Error(`EXECUTION_SCHEMA_MISMATCH:${key}`);
 }

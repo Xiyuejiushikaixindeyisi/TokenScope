@@ -5,6 +5,7 @@ import json
 import os
 import sqlite3
 import time
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -61,9 +62,18 @@ def write_json(path: Path, value: Any) -> None:
         os.fsync(stream.fileno())
 
 
-def verify_seal(directory: Path, run_id: str) -> dict[str, Any]:
+def verify_seal(
+    directory: Path,
+    run_id: str,
+    *,
+    digest: Callable[[Path], str] | None = None,
+    read_metadata: Callable[[Path], Any] | None = None,
+    include_signals: bool = True,
+) -> dict[str, Any]:
+    digest = digest or file_digest
+    read_metadata = read_metadata or (lambda path: json.loads(path.read_text()))
     try:
-        manifest = json.loads((directory / "manifest.json").read_text())
+        manifest = read_metadata(directory / "manifest.json")
         if manifest["run_id"] != run_id:
             raise ValueError("Wrong run")
         paths = [item["path"] for item in manifest["files"]]
@@ -76,12 +86,15 @@ def verify_seal(directory: Path, run_id: str) -> dict[str, Any]:
             raise ValueError("Incomplete manifest")
         for item in manifest["files"]:
             path = (directory / item["path"]).resolve(strict=True)
-            if not path.is_relative_to(directory.resolve()) or file_digest(path) != item["sha256"]:
+            if not path.is_relative_to(directory.resolve()) or digest(path) != item["sha256"]:
                 raise ValueError("Invalid seal")
-        summary = json.loads((directory / "summary.json").read_text())
+        summary = read_metadata(directory / "summary.json")
         if summary["run_id"] != run_id:
             raise ValueError("Wrong summary")
-        return dict(summary=summary, signals=json.loads((directory / "signals.json").read_text()))
+        result = dict(summary=summary)
+        if include_signals:
+            result["signals"] = read_metadata(directory / "signals.json")
+        return result
     except (OSError, ValueError, KeyError, TypeError) as exc:
         raise TokenScopeError(
             "RESULT_SEAL_INVALID", "Sealed result verification failed", 409

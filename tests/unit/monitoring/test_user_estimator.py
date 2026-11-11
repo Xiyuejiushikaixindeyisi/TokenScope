@@ -1,7 +1,6 @@
 import json
 import time
 from decimal import Decimal
-from pathlib import Path
 
 import pytest
 from pydantic import ValidationError
@@ -88,7 +87,7 @@ def test_exact_example_and_extremes():
     )
 
 
-def test_decimal_oracle_monotonicity_and_budget():
+def test_decimal_oracle_monotonicity_and_budget(tmp_path):
     started = time.perf_counter()
     checked = 0
     for comparator in ("le", "lt"):
@@ -118,7 +117,7 @@ def test_decimal_oracle_monotonicity_and_budget():
                 checked += 1
     seconds = time.perf_counter() - started
     assert checked == 1000 and seconds < 2.0
-    root = Path("artifacts/validation/user-monitoring/U004")
+    root = tmp_path / "estimator-performance"
     root.mkdir(parents=True, exist_ok=True)
     (root / "estimator-performance.json").write_text(
         json.dumps(dict(cases=checked, seconds=seconds))

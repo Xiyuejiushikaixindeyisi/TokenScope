@@ -8,7 +8,7 @@ from tokenscope.api.diagnostics import Submission
 
 def test_real_http_saved_evidence_and_explicit_full(service):
     _, request = setup(service, True)
-    app = create_app(service, start_worker=False)
+    app = create_app(service, start_worker=False, legacy_diagnostics=True)
     with TestClient(app) as client:
         capability = client.get("/diagnostics/capabilities")
         assert capability.status_code == 200

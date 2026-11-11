@@ -44,3 +44,12 @@
 .analysis .connection-status{display:flex;align-items:center;gap:10px;margin-bottom:18px}.analysis .connection-status button{border:0;background:none;padding:2px;color:var(--blue);font-size:11px}.analysis .analysis-history{font-size:12px}.analysis .analysis-history button{font-size:11px;padding:8px 12px}.analysis .empty-excerpt{font-style:normal;color:var(--muted);font-size:11px}
 
 .analysis .example-block{border-bottom:1px solid var(--line);padding-bottom:16px}.analysis .example-caption{cursor:pointer;padding:8px 0}.analysis .finding-body .report-code{max-height:320px!important;overflow:auto}.analysis .evidence-pane .report-code:focus{outline:2px solid #90afea;outline-offset:-2px}
+
+.sample-diagnostics { margin: 20px 0; }
+.sample-diagnostics select { max-width: 100%; margin: 8px; }
+.sample-report table { width: 100%; border-collapse: collapse; }
+.sample-report td, .sample-report th { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+.sample-report pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.sample-diff { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.sample-report small, .sample-report details { overflow-wrap: anywhere; }
+@media (max-width: 700px) { .sample-diff { grid-template-columns: 1fr; } }

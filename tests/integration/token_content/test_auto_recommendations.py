@@ -212,7 +212,7 @@ def test_real_same_task_recommendations_scope_counts_and_noop(service, monkeypat
     )
 
     # Actual app registration reads the sealed extension; no analysis on GET.
-    app = create_app(service, start_worker=False)
+    app = create_app(service, start_worker=False, legacy_diagnostics=True)
 
     def forbidden(*args, **kwargs):
         raise AssertionError("GET invoked computation")
@@ -397,7 +397,7 @@ def test_t3_real_three_model_automatic_replay(service, model, tmp_path):
         assert int(rec["evaluation"]["after"]["p"]) < int(rec["evaluation"]["before"]["p"])
         assert rec["support_refs"] and not rec["support_refs"][0]["finding_ids"]
 
-    app = create_app(service, start_worker=False)
+    app = create_app(service, start_worker=False, legacy_diagnostics=True)
     with TestClient(app) as client:
         cap = client.get("/diagnostics/recommendations/capabilities").json()
         headers = {"x-tokenscope-service-instance": cap["service_instance_id"]}

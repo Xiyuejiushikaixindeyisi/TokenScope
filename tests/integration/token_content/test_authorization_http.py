@@ -66,7 +66,7 @@ def test_full_body_authorization_and_combination_real_http(service, monkeypatch)
     assert service.processor.process_next().status == "completed"
     source_db = service.state_root / "runs" / base_run.run_id / "requests.sqlite3"
     original_digest = file_digest(source_db)
-    app = create_app(service, start_worker=False)
+    app = create_app(service, start_worker=False, legacy_diagnostics=True)
     with TestClient(app) as client:
         caps = client.get("/diagnostics/capabilities").json()
         headers = {"x-tokenscope-service-instance": caps["service_instance_id"]}

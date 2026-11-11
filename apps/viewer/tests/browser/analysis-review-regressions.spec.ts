@@ -22,6 +22,7 @@ async function intercept(page: Page, options: { catalog?: unknown; report?: (rou
     await page.route('**/diagnostics/**', async route => {
         const u = new URL(route.request().url()), p = decodeURIComponent(u.pathname);
         calls.push(p);
+        if (p === '/diagnostics/v3/capabilities') return route.fulfill({ status: 404, json: { error: { code: 'NOT_FOUND' } } });
         if (p === '/diagnostics/v2/capabilities') return route.fulfill({ json: executionCapabilities });
         if (p === '/diagnostics/recommendations/capabilities') return route.fulfill({ json: { version: 'analysis-recommendations-1', service_instance_id: 'fixture-instance', read_only: true, token_rule_ids: ['T2', 'T3', 'T4'], schemas: schemas.models } });
         if (p.endsWith('/capabilities')) return route.fulfill({ json: p.includes('/discovery/') ? { version: 'diagnostics-discovery-1', service_instance_id: 'fixture-instance' } : { contract_version: 'analysis-common-1.0', http_version: 'diagnostics-http-1', service_instance_id: 'fixture-instance' } });

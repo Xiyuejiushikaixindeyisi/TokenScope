@@ -14,10 +14,13 @@ from starlette.staticfiles import StaticFiles
 
 from tokenscope import __version__
 from tokenscope.analysis_common.bootstrap import build_diagnostics
+from tokenscope.analysis_common.service_v3 import PreparationService
 from tokenscope.api.diagnostic_discovery import router as diagnostic_discovery_router
 from tokenscope.api.diagnostic_recommendations import router as diagnostic_recommendations_router
 from tokenscope.api.diagnostics import router as diagnostics_router
+from tokenscope.api.diagnostics_policy_v3 import DiagnosticPolicy3
 from tokenscope.api.diagnostics_v2 import router as diagnostics_v2_router
+from tokenscope.api.diagnostics_v3 import router as diagnostics_v3_router
 from tokenscope.api.ma import router as ma_router
 from tokenscope.api.openapi import install as install_openapi
 from tokenscope.api.user import router as user_router
@@ -34,7 +37,11 @@ from tokenscope.user_monitoring.service import UserRunService
 
 
 def create_app(
-    service: MonitoringService, *, start_worker: bool = True, viewer_root: Path | None = None
+    service: MonitoringService,
+    *,
+    start_worker: bool = True,
+    viewer_root: Path | None = None,
+    legacy_diagnostics: bool = False,
 ) -> FastAPI:
     if viewer_root is not None and not (viewer_root / "index.html").is_file():
         raise TokenScopeError("VIEWER_BUILD_MISSING", "Viewer build requires index.html", 503)
@@ -43,8 +50,10 @@ def create_app(
     dispatcher = Dispatcher(service.processor, ma.processor, state_root=service.state_root)
     user = UserRunService(service)
     dispatcher.register(user)
-    diagnostics = build_diagnostics(service, user)
-    dispatcher.register(diagnostics)
+    diagnostics = build_diagnostics(service, user, legacy_execution=legacy_diagnostics)
+    preparation = PreparationService(service, user)
+    # Explicit legacy mode is for isolated compatibility tests, never exposed by CLI/HTTP.
+    dispatcher.register(diagnostics if legacy_diagnostics else preparation)
 
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
@@ -70,10 +79,13 @@ def create_app(
             yield
         finally:
             stop.set()
+            preparation.shutdown.set()
             if start_worker:
                 await asyncio.to_thread(worker.join, 30)
 
     app = FastAPI(title="TokenScope Monitoring", version=__version__, lifespan=lifespan)
+    if not legacy_diagnostics:
+        app.add_middleware(DiagnosticPolicy3)
 
     @app.exception_handler(TokenScopeError)
     async def domain_error(request: Request, exc: TokenScopeError) -> JSONResponse:
@@ -115,10 +127,18 @@ def create_app(
     app.include_router(ma_router(ma))
     app.include_router(user_router(user))
     app.include_router(diagnostics_router(diagnostics, user.service_id))
-    app.include_router(diagnostics_v2_router(diagnostics, user.service_id))
+    app.include_router(
+        diagnostics_v2_router(diagnostics, user.service_id, legacy_execution=legacy_diagnostics)
+    )
     app.include_router(diagnostic_discovery_router(diagnostics, user.service_id))
     app.include_router(diagnostic_recommendations_router(diagnostics, user.service_id))
+    app.include_router(
+        diagnostics_v3_router(
+            preparation.store, user.service_id, preparation_enabled=not legacy_diagnostics
+        )
+    )
     app.state.diagnostics = diagnostics
+    app.state.preparation = preparation
     app.state.user = user
     app.state.ma = ma
     app.state.dispatcher = dispatcher

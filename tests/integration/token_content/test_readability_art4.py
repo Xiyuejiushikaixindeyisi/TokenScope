@@ -245,7 +245,7 @@ def test_chinese_recipes_actual_sealed_report(service, tmp_path):
     )
     completed = diagnostics.process_next()
     assert completed.status == "ready", completed
-    with TestClient(create_app(service, start_worker=False)) as client:
+    with TestClient(create_app(service, start_worker=False, legacy_diagnostics=True)) as client:
         capabilities = client.get("/diagnostics/recommendations/capabilities").json()
         headers = {"x-tokenscope-service-instance": capabilities["service_instance_id"]}
         route = f"/diagnostics/tasks/{receipt.task_id}"

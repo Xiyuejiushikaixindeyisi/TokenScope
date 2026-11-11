@@ -1,19 +1,16 @@
-# 版本迭代、镜像打包与审查入口
+# 镜像打包与审查入口
 
-2026-11-10当前分工：**V3仅负责镜像/交付打包与审批**，不承担代码开发、debug修复、开发调度或开发验收执行。由[全新V3开发会话](../development-v3/ENTRY.md)提交完整候选及验证证据，本线审查发现的问题退回该会话处理；打包须有有效授权。当前四P0仅方向获认可，待Token探索回传后细化，未启动新打包。[最新范围与角色](../product-v3/V3_SCOPE_AND_HANDOFF_20261110.md)。
+2026-11-10：本线是三个活跃角色之一，实际ID `01a1800e-80b4-7400-a78b-a84f5b6e888d`，本人已重新核实并登记[当前权责](../../../memory/tasks/delivery.md)。**只负责镜像/交付打包与审批**；不承担代码开发、debug修复、开发调度或开发验收执行。没有具体候选及有效授权时保持待命。
 
-以下保留V2及ICSL文件交付历史；旧“总负责/版本级debug/独立E2E”职责不延续为V3开发任务。发布身份、原包和证据不改写。
+接收[新V3开发会话](../development-v3/ENTRY.md)提交的候选版本、变更/验证证据及遗留问题；审批问题退回开发处理。当前四P0只读CHECK已完成，未启动实施或新打包。研究会话负责证据/产品范围；六条V2线休眠，不由本线唤醒。
 
-## V2与ICSL文件交付记录
+## 打包时按需读取
 
-2026-11-05：用户决定V2暂时认为通过，先完成产品宣传；[现场核对与阶段收口](HV2_ACCEPTANCE_CLOSE_20261105.md)为当前状态。当前仅文档整理、记忆、版本提交/push，不启动修复/复测/打包。V3产品和宣传讨论归[既有专职session](../product-v3/ENTRY.md)，[新证据交接](../product-v3/HV2_EVIDENCE_HANDOFF_20261105.md)已发。
+- [当前范围与分工](../product-v3/V3_SCOPE_AND_HANDOFF_20261110.md)、[会话登记](../../../memory/SESSIONS.md)。
+- [交付固定规则](../../operations/DELIVERY_ACCEPTANCE_RULES.md)、[部署说明](../../../deploy/monitoring/README.md)、[Git约定](../../operations/GIT_WORKFLOW.md)。
+- [HV2阶段收口](HV2_ACCEPTANCE_CLOSE_20261105.md)、[HV2发布身份/SHA](HV2_DELIVERY_20261103.md)；冻结清单、原包及证据保持。
+- ICSL文件交付与revision2撤回/清理、revision3身份仍查[本线记忆](../../../memory/tasks/delivery.md)及[整理前完整入口](../../../achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/delivery/ENTRY.md)，不与产品V3发布混同。
 
-本线负责V1/V2/V3版本迭代、版本级debug修复协调、独立端到端验收、Git/归档记忆及授权WSL镜像/代码交付。六线开发窗口关闭，用户后续指定实施时仍公共层先行→相关后端验收冻结→前端→干净环境完整独立验收。
+[V2低优先级归档](../../../achieve/2026-11-10/v2-session-dormancy/README.md)。历史“总负责/六线修复/独立E2E”分工不延续为当前开发职责；原批准四入口/L4L5和旧数据成果保护规则保持。
 
-P0：[CURRENT](../../../memory/CURRENT.md) → [SESSIONS](../../../memory/SESSIONS.md) → [阶段收口](HV2_ACCEPTANCE_CLOSE_20261105.md)。P1：[发布身份与SHA](HV2_DELIVERY_20261103.md)、[冻结VERSION](VERSION_HV2_20261103.json)、[冻结随包prompt](../../../prompts/delivery/HUAWEI_V2_HV2_REAL_DATA_20261103.md)、[部署说明](../../../deploy/monitoring/README.md)、[Git约定](../../operations/GIT_WORKFLOW.md)。发布文件的pending仅记录发布时状态，不回写包体。
-
-保留边界：搜索模型入口/DS可达性留V3；异常已列成果偏L4，Token零建议不等于无异常；32GiB容器压力与任务完整性待研究；MA缺失/预热冲突和报告更新不齐不伪造闭环。[原始回传](../../huawei/HUAWEI_V2_ACCEPTANCE_REPORT.md)与根核对分开，用户暂时接受不冒充全项现场重测通过。
-
-五关冻结：[公共](HV2_COMMON_FREEZE_20261103.json)、[用户](HV2_USER_FREEZE_20261103.json)、[MA](HV2_MA_FREEZE_20261103.json)、[Token](HV2_TOKEN_FREEZE_20261103.json)、[低命中](HV2_LOW_HIT_FREEZE_20261103.json)。四入口/L4L5保持，UIR-03留V3。
-
-[新归档](../../../achieve/2026-11-05/hv2-acceptance-close/README.md)保留原字节。新报告称现场旧state/镜像等已清理，现场回退前必须确认恢复介质与匹配state；不能将本机旧包保留等同现场可直接回退。未来交付仍遵守[固定规则](../../operations/DELIVERY_ACCEPTANCE_RULES.md)，包体/backup不上GitHub。
+2026-11-11授权推进：[小样本候选审查通过](V3_SAMPLE_REVIEW_20261111.md)，用户已授权版本整理、精确提交/push、WSL镜像及代码包构建；[发布版本清单](VERSION_V3_SAMPLE_20261111.json)。显式full延期，Token休眠，BUS/AC-MEM现场待验。本线不改产品、不部署华为。

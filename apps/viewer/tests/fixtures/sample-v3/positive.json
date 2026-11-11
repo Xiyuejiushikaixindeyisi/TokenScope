@@ -1,0 +1,479 @@
+{
+  "version": "diagnostics-report-3",
+  "task_id": "diag-d29d5a92a50240a888ca1cad441e01f8",
+  "sample_id": "sample:9a363c91ef19a3b59e5d4e200cfcfc114caa4e91cbd0203235a7a9103b381615",
+  "manifest_sha256": "51f73ba34f7c87a7cc1278e58bd1a36d4e5f565bf97526a48898af42b4660238",
+  "sample": {
+    "version": "diagnostics-sampling-3",
+    "parent_scope": {
+      "source": {
+        "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+        "user_run_id": null,
+        "common_name": null,
+        "model_id": "DeepSeek-V4-Flash-0731",
+        "manifest_sha256": "cbb54a872977063b717be30acaac7596581698c26e5587da01cd86766d43b8b4",
+        "asset_identity": "65eb6b0a6db0f2a66a9de666fb6a51a5faee24002da19f362047ce74054a6b62",
+        "encoder_identity": "694b8932d2c7524b03d20e515e13b726856df97ab5392b7a46904967960e2b3c",
+        "profile_json": "{\"name\": \"thinking_disabled\", \"cpu_budget\": 8, \"default_thinking\": false, \"template_options\": {}}",
+        "settings_json": "{\"model_id\":\"DeepSeek-V4-Flash-0731\",\"revision\":1,\"block_size\":32,\"block_size_unit\":\"simulation_input_tokens\",\"cp_world_size\":1,\"mtp\":true,\"prefix_cache_enabled\":true,\"hybrid_enabled\":false,\"cache_mode\":\"full_block_approximation\",\"model_aliases\":[\"deepseek-v4-flash-0731\",\"DeepSeek-V4-Flash\",\"DeepSeek-V4-Flash-8K\",\"DeepSeek-V4-Flash-32K\",\"DeepSeek-V4-Flash-64K\",\"DeepSeek-V4-Flash-128K\"],\"encoding_profile\":\"thinking_disabled\"}",
+        "algorithm_version": "full-block-mtp-v1"
+      },
+      "appid": "clock",
+      "window": null,
+      "request_count": "8",
+      "request_keys_digest": "3d118fe2306cc808681be6cf519fc88f5155516e3e78118b7581976820c1f60b",
+      "baseline_origin": "original_run_window"
+    },
+    "source_selection": {
+      "source_kind": "base",
+      "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+      "user_run_id": null,
+      "appid": "clock",
+      "window": null,
+      "expected_index_revision": null
+    },
+    "source_index_revision": null,
+    "decision": {
+      "algorithm": "first-prefix-last-suffix-1",
+      "parent_count": "8",
+      "parent_keys_digest": "3d118fe2306cc808681be6cf519fc88f5155516e3e78118b7581976820c1f60b",
+      "admitted_count": "8",
+      "excluded_count": "0",
+      "exclusion_counts": {},
+      "exclusion_examples": [],
+      "windows": [
+        {
+          "role": "discovery",
+          "members": [
+            {
+              "key": {
+                "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+                "source_record_index": "1"
+              },
+              "time_ns": "1794301200000000000",
+              "raw_bytes": "1622",
+              "prompt_tokens": "243"
+            },
+            {
+              "key": {
+                "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+                "source_record_index": "2"
+              },
+              "time_ns": "1794301201000000000",
+              "raw_bytes": "1702",
+              "prompt_tokens": "249"
+            }
+          ],
+          "keys_digest": "ce6954b555852f198a14e022cea666b80a3a4eb3ea7bdf9f85703dc91296aa13",
+          "raw_bytes": "3324",
+          "prompt_tokens": "492",
+          "contiguous": true
+        },
+        {
+          "role": "review",
+          "members": [
+            {
+              "key": {
+                "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+                "source_record_index": "7"
+              },
+              "time_ns": "1794301206000000000",
+              "raw_bytes": "1622",
+              "prompt_tokens": "243"
+            },
+            {
+              "key": {
+                "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+                "source_record_index": "8"
+              },
+              "time_ns": "1794301207000000000",
+              "raw_bytes": "1702",
+              "prompt_tokens": "249"
+            }
+          ],
+          "keys_digest": "10ecb783958952840fae6eac0323169174935705abc2e03577a2d0a2e190ca99",
+          "raw_bytes": "3324",
+          "prompt_tokens": "492",
+          "contiguous": true
+        }
+      ],
+      "limits": {
+        "max_requests": "4",
+        "max_raw_bytes": "38726688",
+        "max_prompt_tokens": "2420418",
+        "max_record_bytes": "19363344",
+        "max_record_tokens": "1210209",
+        "max_metadata_bytes": "8388608",
+        "max_snapshot_bytes": "95463208",
+        "max_exclusion_examples": "32",
+        "review_requested": true
+      }
+    },
+    "files": [
+      {
+        "path": "discovery/1.raw",
+        "size": "1622",
+        "sha256": "4bd0e5a48acd8e8d70cfb51c4de615f023e11545ffac1c23c134210d3dc554f2"
+      },
+      {
+        "path": "discovery/1.view",
+        "size": "2211",
+        "sha256": "ce993a6c5907f3ab5b7f083a595bfa84068ec421bc4438000fb72d6baedb850d"
+      },
+      {
+        "path": "discovery/1.tokens",
+        "size": "972",
+        "sha256": "512601ad69673b906e1a95d48aa30d58d7f18f49786fd799dbf2a7054df3cc64"
+      },
+      {
+        "path": "discovery/2.raw",
+        "size": "1702",
+        "sha256": "7f547002788d41e32fe613906dcdd794e48f7dda380c3928bc9ab7ebf2d928c5"
+      },
+      {
+        "path": "discovery/2.view",
+        "size": "2924",
+        "sha256": "de926e54d8b071c66c9ac68432b997520743ab45f100201bce373546bed4a3e9"
+      },
+      {
+        "path": "discovery/2.tokens",
+        "size": "996",
+        "sha256": "e45ecf19f77d4bcb85338b11ba20b38b8fd3f74f66feca9f61f311f35a052c7b"
+      },
+      {
+        "path": "review/7.raw",
+        "size": "1622",
+        "sha256": "3506abc7b6303c18bc23160b4cdb4ea090c742b926c92d02843d43dff04504ca"
+      },
+      {
+        "path": "review/7.view",
+        "size": "2215",
+        "sha256": "3a173efc1a6bb842ea1b778835d11fe26f905030bbde2ccccc67439d3c3fb895"
+      },
+      {
+        "path": "review/7.tokens",
+        "size": "972",
+        "sha256": "01df4c37c3fb7fd9ad61e6012fed22c89e1b78e7071149a6a72ea555dd31e43d"
+      },
+      {
+        "path": "review/8.raw",
+        "size": "1702",
+        "sha256": "3a8a4cbcdfc3031ccfd75136e6829f21a3f130a15117394778ac16c4e4a25f26"
+      },
+      {
+        "path": "review/8.view",
+        "size": "2925",
+        "sha256": "c856a633dc9bdf1ab3fb085a0797ce13a91dc708418bc5afc89dc5f3eb2425ad"
+      },
+      {
+        "path": "review/8.tokens",
+        "size": "996",
+        "sha256": "c55b519dd782323dcd4153407f3efea161ab2a4ea58ee503b1c4957b7a997860"
+      }
+    ],
+    "verification_bytes": "715578",
+    "selected_raw_bytes": "6648",
+    "selected_token_bytes": "3936"
+  },
+  "discovery": {
+    "scope_id": "scope:40abfca50513990f86d781f29f985a3fd3874d9068cf0de6960b29640f4678d3",
+    "findings": [
+      {
+        "finding_id": "finding:f8c5eefc66e12d8a5f59d9868b122d9dd51d21e58ca5f0ca0dd7972668889437",
+        "rule_id": "L1",
+        "rule_version": "clock-3.1",
+        "comparison": {
+          "left": {
+            "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+            "source_record_index": "1"
+          },
+          "right": {
+            "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+            "source_record_index": "2"
+          },
+          "left_raw_sha256": "4bd0e5a48acd8e8d70cfb51c4de615f023e11545ffac1c23c134210d3dc554f2",
+          "right_raw_sha256": "7f547002788d41e32fe613906dcdd794e48f7dda380c3928bc9ab7ebf2d928c5",
+          "difference_pointers": [
+            "/messages/0/content"
+          ],
+          "association_ref": null,
+          "lcp_tokens": "133"
+        },
+        "left_locations": [
+          {
+            "request_key": {
+              "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+              "source_record_index": "1"
+            },
+            "raw_sha256": "4bd0e5a48acd8e8d70cfb51c4de615f023e11545ffac1c23c134210d3dc554f2",
+            "source_pointer": "/messages/0/content",
+            "embedded": null,
+            "text_range": {
+              "start": "715",
+              "end": "764"
+            }
+          }
+        ],
+        "right_locations": [
+          {
+            "request_key": {
+              "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+              "source_record_index": "2"
+            },
+            "raw_sha256": "7f547002788d41e32fe613906dcdd794e48f7dda380c3928bc9ab7ebf2d928c5",
+            "source_pointer": "/messages/0/content",
+            "embedded": null,
+            "text_range": {
+              "start": "715",
+              "end": "764"
+            }
+          }
+        ],
+        "left_date_ranges": [
+          [
+            {
+              "start": "744",
+              "end": "763"
+            }
+          ]
+        ],
+        "right_date_ranges": [
+          [
+            {
+              "start": "744",
+              "end": "763"
+            }
+          ]
+        ],
+        "recipe": {
+          "version": "session-clock-normalize-3.1",
+          "discovery": "automatic_l1",
+          "logical_field": "[\"system\",0,\"\"]",
+          "field_shape": [
+            "stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable <session_clock>",
+            "</session_clock> suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix"
+          ],
+          "block_indices": [
+            "0"
+          ],
+          "constant": "NORMALIZED",
+          "business_effect": "changes_time_awareness"
+        },
+        "evidence_status": "clock_change_and_input_difference",
+        "advice": "固定session_clock会改变模型的时间感知；仅在样本副本评估，需业务确认，不承诺业务无损。",
+        "before_fragments": [
+          " ## 当前时间（本机时区：Asia/Shanghai） 2026/11/10 09:00:01 "
+        ],
+        "after_fragments": [
+          "NORMALIZED"
+        ]
+      }
+    ],
+    "cause_groups": [
+      {
+        "group_id": "cause:207eecf022abd11563a1d4ed10f0e1b7dc594a7f4d8b99175243e6341d177bd3",
+        "rule_id": "L1",
+        "pointers": [
+          "[\"system\",0,\"\"]"
+        ],
+        "members": [
+          {
+            "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+            "source_record_index": "1"
+          },
+          {
+            "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+            "source_record_index": "2"
+          }
+        ],
+        "observed_pairs": "1",
+        "input_changed": true,
+        "lcp_tokens": "133",
+        "context_status": "pair_evidence_only"
+      },
+      {
+        "group_id": "cause:994805290cc3871a75aad88019f48a8288560fd9f4e344ac618ba6e44a266139",
+        "rule_id": "L4",
+        "pointers": [
+          "/messages/0/content"
+        ],
+        "members": [
+          {
+            "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+            "source_record_index": "1"
+          },
+          {
+            "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+            "source_record_index": "2"
+          }
+        ],
+        "observed_pairs": "1",
+        "input_changed": true,
+        "lcp_tokens": "133",
+        "context_status": "pair_evidence_only"
+      }
+    ],
+    "channel_visits": {
+      "L1": "1",
+      "L4": "1",
+      "L5": "1"
+    },
+    "candidate_limit": "16",
+    "checked_requests": "2",
+    "comparisons": "1",
+    "unsupported_fields": "0",
+    "reason_codes": [],
+    "complete": true
+  },
+  "recommendations": [
+    {
+      "finding": {
+        "finding_id": "finding:f8c5eefc66e12d8a5f59d9868b122d9dd51d21e58ca5f0ca0dd7972668889437",
+        "rule_id": "L1",
+        "rule_version": "clock-3.1",
+        "comparison": {
+          "left": {
+            "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+            "source_record_index": "1"
+          },
+          "right": {
+            "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+            "source_record_index": "2"
+          },
+          "left_raw_sha256": "4bd0e5a48acd8e8d70cfb51c4de615f023e11545ffac1c23c134210d3dc554f2",
+          "right_raw_sha256": "7f547002788d41e32fe613906dcdd794e48f7dda380c3928bc9ab7ebf2d928c5",
+          "difference_pointers": [
+            "/messages/0/content"
+          ],
+          "association_ref": null,
+          "lcp_tokens": "133"
+        },
+        "left_locations": [
+          {
+            "request_key": {
+              "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+              "source_record_index": "1"
+            },
+            "raw_sha256": "4bd0e5a48acd8e8d70cfb51c4de615f023e11545ffac1c23c134210d3dc554f2",
+            "source_pointer": "/messages/0/content",
+            "embedded": null,
+            "text_range": {
+              "start": "715",
+              "end": "764"
+            }
+          }
+        ],
+        "right_locations": [
+          {
+            "request_key": {
+              "base_run_id": "61670e99-a316-45c7-a3ec-ea65159bf895",
+              "source_record_index": "2"
+            },
+            "raw_sha256": "7f547002788d41e32fe613906dcdd794e48f7dda380c3928bc9ab7ebf2d928c5",
+            "source_pointer": "/messages/0/content",
+            "embedded": null,
+            "text_range": {
+              "start": "715",
+              "end": "764"
+            }
+          }
+        ],
+        "left_date_ranges": [
+          [
+            {
+              "start": "744",
+              "end": "763"
+            }
+          ]
+        ],
+        "right_date_ranges": [
+          [
+            {
+              "start": "744",
+              "end": "763"
+            }
+          ]
+        ],
+        "recipe": {
+          "version": "session-clock-normalize-3.1",
+          "discovery": "automatic_l1",
+          "logical_field": "[\"system\",0,\"\"]",
+          "field_shape": [
+            "stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable stable <session_clock>",
+            "</session_clock> suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix suffix"
+          ],
+          "block_indices": [
+            "0"
+          ],
+          "constant": "NORMALIZED",
+          "business_effect": "changes_time_awareness"
+        },
+        "evidence_status": "clock_change_and_input_difference",
+        "advice": "固定session_clock会改变模型的时间感知；仅在样本副本评估，需业务确认，不承诺业务无损。",
+        "before_fragments": [
+          " ## 当前时间（本机时区：Asia/Shanghai） 2026/11/10 09:00:01 "
+        ],
+        "after_fragments": [
+          "NORMALIZED"
+        ]
+      },
+      "transformation_digest": "03aaa251ceb7e4285c997578cb2f97885f4e3829460f96a452aedfa3f0d61975",
+      "windows": [
+        {
+          "role": "discovery",
+          "status": "positive",
+          "transformation_digest": "03aaa251ceb7e4285c997578cb2f97885f4e3829460f96a452aedfa3f0d61975",
+          "reason_code": null,
+          "complete": true,
+          "n": "2",
+          "matched": "2",
+          "modified": "2",
+          "before": {
+            "p": "492",
+            "h": "96",
+            "c": "396"
+          },
+          "after": {
+            "p": "442",
+            "h": "160",
+            "c": "282"
+          },
+          "improvement_pp": {
+            "numerator": "151200",
+            "denominator": "9061"
+          },
+          "rows_ref": "evaluation-0001/discovery/rows.json",
+          "plan_ref": "evaluation-0001/discovery/plan.json"
+        },
+        {
+          "role": "review",
+          "status": "positive",
+          "transformation_digest": "03aaa251ceb7e4285c997578cb2f97885f4e3829460f96a452aedfa3f0d61975",
+          "reason_code": null,
+          "complete": true,
+          "n": "2",
+          "matched": "2",
+          "modified": "2",
+          "before": {
+            "p": "492",
+            "h": "96",
+            "c": "396"
+          },
+          "after": {
+            "p": "442",
+            "h": "160",
+            "c": "282"
+          },
+          "improvement_pp": {
+            "numerator": "151200",
+            "denominator": "9061"
+          },
+          "rows_ref": "evaluation-0001/review/rows.json",
+          "plan_ref": "evaluation-0001/review/plan.json"
+        }
+      ]
+    }
+  ],
+  "business_note": "固定session_clock改变时间感知；样本副本参考，需业务确认。",
+  "automatic_full": false
+}

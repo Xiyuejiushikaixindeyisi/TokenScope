@@ -3,8 +3,9 @@
 import csv
 import io
 import sqlite3
-from collections.abc import Iterator
+from collections.abc import Callable, Iterator
 from contextlib import contextmanager
+from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
@@ -220,7 +221,13 @@ class UserRunService:
         )
 
     @contextmanager
-    def index(self, run_id: str, revision: str | None = None) -> Iterator[sqlite3.Connection]:
+    def index(
+        self,
+        run_id: str,
+        revision: str | None = None,
+        *,
+        verify_digest: Callable[[Path], str] | None = None,
+    ) -> Iterator[sqlite3.Connection]:
         row = self.store.run(run_id)
         if row["state"] not in ("ready", "empty"):
             raise TokenScopeError("RESULT_NOT_READY", "User index is not published", 409)
@@ -231,7 +238,7 @@ class UserRunService:
             raise TokenScopeError(
                 "INDEX_NOT_READY", "Index file missing; worker rebuild required", 503
             )
-        if file_digest(path) != row["revision"]:
+        if (verify_digest or file_digest)(path) != row["revision"]:
             raise TokenScopeError("RESULT_SEAL_INVALID", "User index digest differs", 409)
         db = sqlite3.connect(path.as_uri() + "?mode=ro", uri=True)
         db.row_factory = sqlite3.Row

@@ -1,0 +1,812 @@
+{
+  "receipt": {
+    "additionalProperties": false,
+    "properties": {
+      "intent_digest": {
+        "minLength": 1,
+        "title": "Intent Digest",
+        "type": "string"
+      },
+      "manifest_sha256": {
+        "anyOf": [
+          {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Manifest Sha256"
+      },
+      "preparation_id": {
+        "pattern": "^prep-[0-9a-f]{32}$",
+        "title": "Preparation Id",
+        "type": "string"
+      },
+      "reason_code": {
+        "anyOf": [
+          {
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Reason Code"
+      },
+      "sample_id": {
+        "anyOf": [
+          {
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Sample Id"
+      },
+      "state": {
+        "enum": [
+          "queued",
+          "running",
+          "completed",
+          "stopped",
+          "failed",
+          "interrupted"
+        ],
+        "title": "State",
+        "type": "string"
+      },
+      "version": {
+        "const": "diagnostics-sampling-3",
+        "default": "diagnostics-sampling-3",
+        "title": "Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "preparation_id",
+      "state",
+      "intent_digest"
+    ],
+    "title": "PreparationReceipt3",
+    "type": "object"
+  },
+  "request": {
+    "$defs": {
+      "SourceSelection": {
+        "additionalProperties": false,
+        "properties": {
+          "appid": {
+            "minLength": 1,
+            "title": "Appid",
+            "type": "string"
+          },
+          "base_run_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Base Run Id"
+          },
+          "expected_index_revision": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Expected Index Revision"
+          },
+          "source_kind": {
+            "enum": [
+              "base",
+              "user_v2"
+            ],
+            "title": "Source Kind",
+            "type": "string"
+          },
+          "user_run_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "User Run Id"
+          },
+          "window": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/TimeWindow"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "source_kind",
+          "appid"
+        ],
+        "title": "SourceSelection",
+        "type": "object"
+      },
+      "TimeWindow": {
+        "additionalProperties": false,
+        "properties": {
+          "end_ns": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "End Ns",
+            "type": "string"
+          },
+          "start_ns": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Start Ns",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start_ns",
+          "end_ns"
+        ],
+        "title": "TimeWindow",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "direction": {
+        "const": "low_hit",
+        "default": "low_hit",
+        "title": "Direction",
+        "type": "string"
+      },
+      "discovery_mode": {
+        "const": "automatic",
+        "default": "automatic",
+        "title": "Discovery Mode",
+        "type": "string"
+      },
+      "source": {
+        "$ref": "#/$defs/SourceSelection"
+      },
+      "submission_key": {
+        "maxLength": 128,
+        "minLength": 1,
+        "title": "Submission Key",
+        "type": "string"
+      }
+    },
+    "required": [
+      "submission_key",
+      "source"
+    ],
+    "title": "PreparationRequest3",
+    "type": "object"
+  },
+  "sample": {
+    "$defs": {
+      "AnalysisScope": {
+        "additionalProperties": false,
+        "properties": {
+          "appid": {
+            "minLength": 1,
+            "title": "Appid",
+            "type": "string"
+          },
+          "baseline_origin": {
+            "enum": [
+              "original_run_window",
+              "selected_window_recomputed"
+            ],
+            "title": "Baseline Origin",
+            "type": "string"
+          },
+          "request_count": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Request Count",
+            "type": "string",
+            "x-integer-minimum": "0"
+          },
+          "request_keys_digest": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Request Keys Digest",
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/$defs/SourceIdentity"
+          },
+          "window": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/TimeWindow"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "source",
+          "appid",
+          "window",
+          "request_count",
+          "request_keys_digest",
+          "baseline_origin"
+        ],
+        "title": "AnalysisScope",
+        "type": "object"
+      },
+      "ExcludedRecord": {
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "$ref": "#/$defs/RequestKey"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "reason"
+        ],
+        "title": "ExcludedRecord",
+        "type": "object"
+      },
+      "RequestKey": {
+        "additionalProperties": false,
+        "properties": {
+          "base_run_id": {
+            "minLength": 1,
+            "title": "Base Run Id",
+            "type": "string"
+          },
+          "source_record_index": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Source Record Index",
+            "type": "string",
+            "x-integer-minimum": "0"
+          }
+        },
+        "required": [
+          "base_run_id",
+          "source_record_index"
+        ],
+        "title": "RequestKey",
+        "type": "object"
+      },
+      "SampleLimits": {
+        "additionalProperties": false,
+        "description": "Internal positive limits; deployment profile selection belongs to runtime v3.",
+        "properties": {
+          "max_exclusion_examples": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Max Exclusion Examples",
+            "type": "string",
+            "x-integer-maximum": "1000",
+            "x-integer-minimum": "0"
+          },
+          "max_metadata_bytes": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Max Metadata Bytes",
+            "type": "string",
+            "x-integer-exclusiveMinimum": "0"
+          },
+          "max_prompt_tokens": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Max Prompt Tokens",
+            "type": "string",
+            "x-integer-exclusiveMinimum": "0"
+          },
+          "max_raw_bytes": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Max Raw Bytes",
+            "type": "string",
+            "x-integer-exclusiveMinimum": "0"
+          },
+          "max_record_bytes": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Max Record Bytes",
+            "type": "string",
+            "x-integer-exclusiveMinimum": "0"
+          },
+          "max_record_tokens": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Max Record Tokens",
+            "type": "string",
+            "x-integer-exclusiveMinimum": "0"
+          },
+          "max_requests": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Max Requests",
+            "type": "string",
+            "x-integer-exclusiveMinimum": "0",
+            "x-integer-maximum": "100000"
+          },
+          "max_snapshot_bytes": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Max Snapshot Bytes",
+            "type": "string",
+            "x-integer-exclusiveMinimum": "0"
+          },
+          "review_requested": {
+            "default": true,
+            "title": "Review Requested",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "max_requests",
+          "max_raw_bytes",
+          "max_prompt_tokens",
+          "max_record_bytes",
+          "max_record_tokens",
+          "max_metadata_bytes",
+          "max_snapshot_bytes",
+          "max_exclusion_examples"
+        ],
+        "title": "SampleLimits",
+        "type": "object"
+      },
+      "SampleMetadata": {
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "$ref": "#/$defs/RequestKey"
+          },
+          "prompt_tokens": {
+            "anyOf": [
+              {
+                "pattern": "^(0|-?[1-9][0-9]*)$",
+                "type": "string",
+                "x-integer-minimum": "0"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Prompt Tokens"
+          },
+          "raw_bytes": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Raw Bytes",
+            "type": "string",
+            "x-integer-minimum": "0"
+          },
+          "time_ns": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Time Ns",
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "time_ns",
+          "raw_bytes"
+        ],
+        "title": "SampleMetadata",
+        "type": "object"
+      },
+      "SampleWindow": {
+        "additionalProperties": false,
+        "properties": {
+          "contiguous": {
+            "const": true,
+            "default": true,
+            "title": "Contiguous",
+            "type": "boolean"
+          },
+          "keys_digest": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Keys Digest",
+            "type": "string"
+          },
+          "members": {
+            "items": {
+              "$ref": "#/$defs/SampleMetadata"
+            },
+            "title": "Members",
+            "type": "array"
+          },
+          "prompt_tokens": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Prompt Tokens",
+            "type": "string",
+            "x-integer-minimum": "0"
+          },
+          "raw_bytes": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Raw Bytes",
+            "type": "string",
+            "x-integer-minimum": "0"
+          },
+          "role": {
+            "enum": [
+              "discovery",
+              "review"
+            ],
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "role",
+          "members",
+          "keys_digest",
+          "raw_bytes",
+          "prompt_tokens"
+        ],
+        "title": "SampleWindow",
+        "type": "object"
+      },
+      "SamplingDecision": {
+        "additionalProperties": false,
+        "properties": {
+          "admitted_count": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Admitted Count",
+            "type": "string",
+            "x-integer-minimum": "0"
+          },
+          "algorithm": {
+            "const": "first-prefix-last-suffix-1",
+            "default": "first-prefix-last-suffix-1",
+            "title": "Algorithm",
+            "type": "string"
+          },
+          "excluded_count": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Excluded Count",
+            "type": "string",
+            "x-integer-minimum": "0"
+          },
+          "exclusion_counts": {
+            "additionalProperties": {
+              "pattern": "^(0|-?[1-9][0-9]*)$",
+              "type": "string"
+            },
+            "title": "Exclusion Counts",
+            "type": "object"
+          },
+          "exclusion_examples": {
+            "items": {
+              "$ref": "#/$defs/ExcludedRecord"
+            },
+            "title": "Exclusion Examples",
+            "type": "array"
+          },
+          "limits": {
+            "$ref": "#/$defs/SampleLimits"
+          },
+          "parent_count": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Parent Count",
+            "type": "string",
+            "x-integer-minimum": "0"
+          },
+          "parent_keys_digest": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Parent Keys Digest",
+            "type": "string"
+          },
+          "windows": {
+            "items": {
+              "$ref": "#/$defs/SampleWindow"
+            },
+            "title": "Windows",
+            "type": "array"
+          }
+        },
+        "required": [
+          "parent_count",
+          "parent_keys_digest",
+          "admitted_count",
+          "excluded_count",
+          "exclusion_counts",
+          "exclusion_examples",
+          "windows",
+          "limits"
+        ],
+        "title": "SamplingDecision",
+        "type": "object"
+      },
+      "SnapshotFile3": {
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "pattern": "^(discovery|review)/[0-9]+\\.(raw|view|tokens)$",
+            "title": "Path",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Size",
+            "type": "string",
+            "x-integer-minimum": "0"
+          }
+        },
+        "required": [
+          "path",
+          "size",
+          "sha256"
+        ],
+        "title": "SnapshotFile3",
+        "type": "object"
+      },
+      "SourceIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "algorithm_version": {
+            "minLength": 1,
+            "title": "Algorithm Version",
+            "type": "string"
+          },
+          "asset_identity": {
+            "minLength": 1,
+            "title": "Asset Identity",
+            "type": "string"
+          },
+          "base_run_id": {
+            "minLength": 1,
+            "title": "Base Run Id",
+            "type": "string"
+          },
+          "common_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Common Name"
+          },
+          "encoder_identity": {
+            "minLength": 1,
+            "title": "Encoder Identity",
+            "type": "string"
+          },
+          "manifest_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Manifest Sha256",
+            "type": "string"
+          },
+          "model_id": {
+            "minLength": 1,
+            "title": "Model Id",
+            "type": "string"
+          },
+          "profile_json": {
+            "title": "Profile Json",
+            "type": "string"
+          },
+          "settings_json": {
+            "title": "Settings Json",
+            "type": "string"
+          },
+          "user_run_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "User Run Id"
+          }
+        },
+        "required": [
+          "base_run_id",
+          "model_id",
+          "manifest_sha256",
+          "asset_identity",
+          "encoder_identity",
+          "profile_json",
+          "settings_json",
+          "algorithm_version"
+        ],
+        "title": "SourceIdentity",
+        "type": "object"
+      },
+      "SourceSelection": {
+        "additionalProperties": false,
+        "properties": {
+          "appid": {
+            "minLength": 1,
+            "title": "Appid",
+            "type": "string"
+          },
+          "base_run_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Base Run Id"
+          },
+          "expected_index_revision": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Expected Index Revision"
+          },
+          "source_kind": {
+            "enum": [
+              "base",
+              "user_v2"
+            ],
+            "title": "Source Kind",
+            "type": "string"
+          },
+          "user_run_id": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "User Run Id"
+          },
+          "window": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/TimeWindow"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "source_kind",
+          "appid"
+        ],
+        "title": "SourceSelection",
+        "type": "object"
+      },
+      "TimeWindow": {
+        "additionalProperties": false,
+        "properties": {
+          "end_ns": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "End Ns",
+            "type": "string"
+          },
+          "start_ns": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Start Ns",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start_ns",
+          "end_ns"
+        ],
+        "title": "TimeWindow",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "decision": {
+        "$ref": "#/$defs/SamplingDecision"
+      },
+      "files": {
+        "items": {
+          "$ref": "#/$defs/SnapshotFile3"
+        },
+        "title": "Files",
+        "type": "array"
+      },
+      "parent_scope": {
+        "$ref": "#/$defs/AnalysisScope"
+      },
+      "selected_raw_bytes": {
+        "pattern": "^(0|-?[1-9][0-9]*)$",
+        "title": "Selected Raw Bytes",
+        "type": "string",
+        "x-integer-minimum": "0"
+      },
+      "selected_token_bytes": {
+        "pattern": "^(0|-?[1-9][0-9]*)$",
+        "title": "Selected Token Bytes",
+        "type": "string",
+        "x-integer-minimum": "0"
+      },
+      "source_index_revision": {
+        "anyOf": [
+          {
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Source Index Revision"
+      },
+      "source_selection": {
+        "$ref": "#/$defs/SourceSelection"
+      },
+      "verification_bytes": {
+        "pattern": "^(0|-?[1-9][0-9]*)$",
+        "title": "Verification Bytes",
+        "type": "string",
+        "x-integer-minimum": "0"
+      },
+      "version": {
+        "const": "diagnostics-sampling-3",
+        "default": "diagnostics-sampling-3",
+        "title": "Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "parent_scope",
+      "source_selection",
+      "decision",
+      "files",
+      "verification_bytes",
+      "selected_raw_bytes",
+      "selected_token_bytes"
+    ],
+    "title": "SampleManifest3",
+    "type": "object"
+  }
+}
