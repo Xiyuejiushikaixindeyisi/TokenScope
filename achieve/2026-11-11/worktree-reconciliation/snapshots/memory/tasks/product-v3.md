@@ -1,0 +1,228 @@
+# V3 调研与产品设计记忆
+
+## 当前：已发送授权打包prompt，镜像会话开始处理（2026-11-11）
+
+用户直接要求把prompt发给镜像会话，审查通过后由该会话版本整理、Git提交和镜像打包，准备华为代码包/镜像/使用prompt，保留已有数据和分析结果。本线已将[完整prompt](../../docs/tasks/product-v3/acceptance-v3/PACKAGING_REVIEW_PROMPT_20261111.md)中的旧“未授权Git/构建”替换为新授权，并同步CURRENT/入口；不再重复申请同项授权。本次准备交付文件，不直接现场部署或扩大真实数据访问。
+
+发送成功至`01a1800e-80b4-7400-a78b-a84f5b6e888d`（local）；即时snapshot为active，turn `01a1c82d-23ce-7f73-9df6-4b330f0bdc48` inProgress，cursor `3888078c-4a35-4588-bb72-198a04868384:98`。[发送回执](../../docs/tasks/product-v3/acceptance-v3/PACKAGING_SEND_RECEIPT_20261111.md)。只代表已开始处理，不代表审查/构建完成；后续交付状态由镜像会话维护。本线不修改产品、不Git/构建，未重新创建跟踪自动化。
+
+候选本地已验收、五BUS/真实AC-MEM仍待现场、显式全量延期、Token新执行休眠等结论不变。以下为前序状态；旧“供用户转发/未授权打包”由本节覆盖。
+
+## 用户确认小样本交付，本地验收收口（2026-11-11）
+
+用户已答复“V3先交付小样本分析，显式全量评估延后”。原D6/T19显式full不再阻断本候选；不自动full、不声称样本收益覆盖全量，延期未指定版本。当前 **LOCAL_ACCEPTED_WITH_SCOPE_DECISION / ONSITE_PENDING**，[收口](../../docs/tasks/product-v3/acceptance-v3/CLOSE_20261111.md)、[完整打包审查prompt](../../docs/tasks/product-v3/acceptance-v3/PACKAGING_REVIEW_PROMPT_20261111.md)已整理供用户转发。BUS01–05及真实负载AC-MEM仍NOT_RUN，未批准Git/镜像/现场。
+
+本轮核repair-r1-02的302源码/17验证文件/4个dist/8编码资产与保护文档全部一致；证据artifacts/validation/product-v3/handoff-20261111-01/identity-check.json及git-status.txt。HEAD9a071c8加dirty，不能直接作为已发布V3 commit；固定提交/构建需后续授权和身份映射。沿用已充分的R2证据，没有重跑测试/服务或修改源码/测试/契约/配置。
+
+最后开发cursor `5b13bf57-3c9e-405a-8226-4f8b31dec48e:11`，同一已completed修复turn，idle；无新候选。heartbeat tokenscope-v3在2026-11-11交付prompt后已通过工具删除，回执deleteStatus=deleted。不直接唤醒镜像会话、不额外派开发；后续由用户使用prompt启动交付审查。
+
+以下为历史过程，范围待答复/heartbeat ACTIVE等旧状态不覆盖本节。
+
+## R2独立复验完成，等待显式全量范围裁定（2026-11-10）
+
+开发修复turn01a1c5a6-97de-7e62-88d1-75f358c644ad已completed；最新cursor `5b13bf57-3c9e-405a-8226-4f8b31dec48e:10`。2026-11-11 01:32仅chat应用状态转为notLoaded，同一修复turn/交接未变，无新候选或阻断。候选repair-r1-02，HEAD9a071c8+dirty，302源码manifest SHA `1fb8c3dc6a03dc49ddeb4c4cbc8b260c4ebc79e1cc60cfe04dcdcc5ee2fad820`，dist为REPAIR-R1/attempt-07/dist。源码/dist/验证文件前后均未变。
+
+RV3-01/02/03独立复验关闭；[R2验收报告](../../docs/tasks/product-v3/acceptance-v3/REVIEW_20261110_R2.md)。10实际HTTP/浏览器场景89.37s、9完整窗literal-prefix oracle47.66s、104后端106.78s、34前端兼容通过。大源2200→A512+B512；L4保留上限显式截断，不声称全发现。原DS CCH编码相同实算0pp且诚实解释。资源5组P95最大5.308ms；HTTP取消13.392ms，worker0.537s停止。重启10报告/26封存文件不变、0POST；首轮重启编排漏实例头422，补头复验通过，失败日志保留。
+
+证据根artifacts/validation/product-v3/independent-20261110-02；现有E2E驱动输出独占development-v3/V3B007/independent-review-20261110-02。所有临时服务停止，四端口关闭。两华为报告/高优先级两HTML SHA保持。未改产品/测试/配置/旧state、无Git/镜像/现场。
+
+当前 **LOCAL_CHECKS_PASSED / WAITING_SCOPE_DECISION**，不是继续等待开发修复。原D6/T19显式全量评估未实现，已通过异步问题请用户决定“V3先交付小样本、显式全量延后”或“补齐后再通过”；未收到答复不代签豁免、不提前派扩展开发。BUS01–05及真实负载AC-MEM仍现场待验。若接受延期，核身份仍一致后可整理打包评审prompt，无需重跑充分且不受新变更影响的检查；若要求补齐交原开发。prompt未生成，heartbeat保持ACTIVE，等待无变化静默，交付prompt后停止自动化。
+
+## 独立验收首轮未通过，已交开发修复（2026-11-10）
+
+heartbeat在开发completed后接收B007 LOCAL_VALIDATED；候选HEAD9a071c8+dirty，attempt15/source-sha256.json摘要a72eb548d0e466bb7ca7231fe2c9e46d5cdfee9a3c7e06417025396121edfd4f。核301源码/attempt14 dist一致，独立测试后源码未变。
+
+实际新state/新浏览器三场景clock E2E49.1s exit0；2200自动A512+B512，刷新/重连仅GET；literal-prefix oracle36.4s exit0四完整窗一致。均为明确构造样本，不代BUS。证据根artifacts/validation/product-v3/independent-20261110-01；既有驱动输出被路径断言限定在artifacts/validation/development-v3/V3B007/independent-review-20261110-01（全新独占目录，不复用开发证据）。本线服务已停止。
+
+额外六组真实DS编码+正常prepare/diagnoses+受控worker复现：CCH、普通时间、workspace各8条，V3无L1/改法但原pair_dynamics有精确recipe；工具排序/description只有L2/L3摘要无评估，tools空→有完全漏报。静态/报告/页面另确认新L4L5只有路径人数、无完整请求对照。已写[RV3-01/02/03](../../docs/tasks/product-v3/acceptance-v3/REVIEW_20261110_R1.md)，成功发送开发chat，修复turn01a1c5a6-97de-7e62-88d1-75f358c644ad已active。
+
+状态WAITING_FOR_REPAIR/NOT_ACCEPTED；cursor `5b13bf57-3c9e-405a-8226-4f8b31dec48e:8`，下次从[验收入口](../../docs/tasks/product-v3/acceptance-v3/ENTRY.md)恢复，等新候选复验并补资源/恢复/旧兼容等未完成独立门禁。未生成打包prompt，heartbeat保持ACTIVE；不重复派相同问题。本轮未改产品代码/测试/契约/配置或旧state，无Git/镜像/现场；只做授权验收、证据和开发修复交接。
+
+21:51 CST紧凑跟踪：开发仍active，自报定向38项/旧浏览器12项通过，大源A/B各272条完成且L4保留上限显式标注；全Python仍在跑、REPAIR_R1仍IN_PROGRESS，尚未交新候选。显式full未实现且无取消依据。本线只记录开发进度，不将其当独立验收结论，未启动争用服务/数据的复验，未重复派单或提醒等待。
+
+## 开始持续跟踪开发并自动接续独立验收（2026-11-10）
+
+用户明确授权本线盯开发进度，开发完成后主动读取最新交接和测试记录并独立验收，不需要再等启动确认；发现问题可发给开发chat修复，验收通过后整理镜像交接prompt。本线仍不修改代码。
+
+已实际创建本会话heartbeat：automationId `tokenscope-v3`，ACTIVE，10分钟间隔；目标开发chat `01a1c449-6a9b-7a83-912a-5a9ff77c703d` / host local。状态无变化不通知；有实质完成/问题/用户决定才报告；交接prompt交付后停止跟踪。没有创建其他chat或子agent。
+
+恢复入口：[独立验收跟踪](../../docs/tasks/product-v3/acceptance-v3/ENTRY.md)。当前WAITING_FOR_CANDIDATE，开发仍active进行最终真实HTTP/浏览器E2E，V3B007 CLOSE/TESTS尚未回填最终候选/结果，不能提前验收或占用开发服务。最近wait cursor `5b13bf57-3c9e-405a-8226-4f8b31dec48e:3`。本轮只读及登记，无产品代码/测试/服务/现场/打包/Git操作。
+
+## 开发完成后的独立验收与打包交接职责（2026-11-10）
+
+用户最新指定：**本session不修改代码；“TokenScope V3代码修复与开发”开发完成后，本session负责验收，并整理发给“镜像打包与审查”的prompt。** 本线职责增加独立验收与交接材料，不接管实施或debug修复。
+
+- 开始条件：开发会话交出确定候选版本、变更清单、批次关闭/测试证据和已知限制；不对仍在变化的工作树提前签验收通过。当前不启动验收服务/测试，也不创建监控或唤醒其他会话。
+- 验收以用户认可的四P0、两项评审修订和开发验收规范为准，重点检查自动L1 clock完整链、不同历史轮次的合法比较、大源自动缩样/资源、样本实算/独立复核、旧数据/默认入口/四入口/L4L5保护及Token休眠。独立E2E遵守唯一候选冷启动、新state/浏览器与原证据保护，不能只复述开发方通过数。
+- 本线记录问题和证据，产品代码问题交开发会话修复，修复后复验；不自行修改代码、降低门槛或代签未验证项。区分本地工程验收与需现场真实来源完成的业务底线，未完成事项明确保留。
+- 验收后整理打包交接prompt，包含精确候选身份、变更/兼容范围、独立验收结论与证据、未决现场项、保留/回退要求及交付文件要求。镜像会话仍只负责审批与授权打包；准备prompt不等于执行打包或部署。
+
+本轮仅更新本线入口/记忆和职责导航，未修改代码、运行验收、发送跨会话消息或提交Git。开发自测职责不变；原文档“研究会话只评审/不承担验收”由本条覆盖。
+
+## 两项评审修订后进入开发的授权（2026-11-10）
+
+用户已纠正接收方笔误，明确要求将结论发给“TokenScope V3代码修复与开发”（应用列表核实实际ID `01a1c449-6a9b-7a83-912a-5a9ff77c703d`）。先修订实施计划/验收的两点：①自动L1发现clock→定位→改法→评估→前端闭环，指定反事实不能代替；②不得因无关历史轮次/完整角色序列不同排除合法system/developer clock对照，消除D4/D5歧义并覆盖正负例。修订一致后即可按四P0计划进入开发，无需重复启动确认。
+
+权威交接：[评审决定与条件授权](../../docs/tasks/product-v3/V3_REVIEW_DECISION_20261110.md)。本线仅转交和登记，不接管代码或修改开发计划；Token私有开发仍留V3.5，打包/现场操作未由本次授权。消息回执记录在决定文件；上文优先于下方历史“未获实施授权”状态。
+
+## 四P0详细方案简评（2026-11-10）
+
+按用户要求只评审，不替开发会话给新方案或修改其文档。已读development-v3的ENTRY、ACCEPTANCE、DESIGN、BATCH_PLAN、TESTS、EVIDENCE_REVIEW、CHECK及B003–B005相关批次计划，并对照两份华为原报告。评审对象为r0，DESIGN SHA256 `2f05af4e57ddb4e5e8b387d25b8ec83464a174a6a72abb8ae19b184ad75068f6`；全部测试仍NOT_RUN。
+
+结论：总体认可证据取舍、四P0范围、公共层→领域→评估→前端→最终验收顺序；未发现引入V3.5 Token私有开发。已覆盖自动缩样、全源校验成本、进程资源/取消、候选/原因去重、精确clock反事实、A/B身份/P-H-C/未完成状态以及旧成果保护。不把旧12–39pp、容器末态内存或Token脚本结果当V3通过证据。
+
+一处需澄清的设计歧义：DESIGN D5.1 L1桶的“消息角色结构”未明确是否含完整历史角色序列；若按完整序列，则会排除同system/clock但历史轮次不同的对照，与D4及B003“无关历史不阻断clock候选”不一致。当前T10–T15未明确列出该跨历史结构的自动L1正例。此为文档/验收覆盖风险，非已确认实现bug。另，五组BUS允许用户指定clock反事实、无自动归因也出实算卡，故BUS通过证明改法评估/展示链，不单独证明自动L1已正确归因；方案已允许诚实标注，不要求制造因果或正收益。
+
+本轮仅向用户反馈简评，记忆做必要增量；不修改代码、开发方案、共享入口/登记或原报告，不运行测试/服务/分析，不提交Git、不通知其他会话。THREAD/SESSION经PowerShell环境复核仍为 `01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2`；WSL子进程未透传ID，未据此覆盖已核身份。
+
+## Token回传判断与评审边界（2026-11-10）
+
+用户明确：V3开发会话正在细化四P0范围/顺序/验收，完成后本线仅作简要评审，不另给方案；本轮只判断Token异常是否成立及V3.5开发必要性。已读Token回传661行/34,994字节，SHA1c617fc0afbb2f825253ab58aa2b4423f8a1983c939af516e2bcc21ee3167ab0；[完整判断](../../docs/tasks/product-v3/V35_TOKEN_TAIL_ASSESSMENT_20261110.md)。
+
+结论：报告有大工具返回、精确重复及历史负担线索，不能把长尾/固定system重复等同可无损删减。Qwen 202,071字符搜索返回与天舟8组重复值得核对；GLM最长例理想H/P约99.15%，固定提示词重复不单独证明缓存问题。V3.5值得针对性完善，但不支持推倒T2–T4或默认保留最近3个结果。
+
+源码核对：T2/T4无policy仍有content_inventory/met，规则condition才unknown；T3已有精确载荷匹配和重叠排除。assistant已提取/计量但T2/T4不覆盖，system/developer未进入当前提取名单，报告称system属于message_payload不符。三组报告均称无既有诊断任务，本批不能作为执行漏检证明；无recipe是建议阶段，与无发现不同。
+
+表内重算6组P/H/C均守恒、C均下降12.47%–36.85%，5组H/P下降；数字仅为报告算术，未复现样本。命中率下降不独立证明缓存破坏，较大block_size的因果亦未控制。保留报告局限：GLM全部长尾模板/工具结论自相矛盾，编码720/1440、5/6与8/12计数错误，无样本键/SHA和完整编码仿真调用，未验证业务质量。原报告不改，收益不作承诺。
+
+本轮只读源码/报告及算术核对，未运行分析器或现场数据；只维护本线判断/入口/记忆，不读取或改写正在细化的V3方案、不修改共享状态或源码、无Git/服务/消息/子会话。THREAD/SESSION仍为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2，环境一致复核。下方“未审阅报告”属于前序归档轮记录。
+
+## 当前权责与V2归档（2026-11-10）
+
+- 实际ID：01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2；本轮环境CODEX_THREAD_ID/CODEX_SESSION_ID一致。活跃角色为V3调研与产品设计。
+- 权责：现场证据/产品范围/研究与宣传、四象限高优先级资料及交接；本轮按用户授权整理低优先级V2文档、汇总共享导航与会话登记，并通知另两条活跃chat本人登记。不承担产品开发/debug/验收执行或镜像打包。
+- 当前阶段：四P0方向已认可，新开发01a1c449-6a9b-7a83-912a-5a9ff77c703d已完成独立CHECK，产品尚未实施。Token私有修复留V3.5。Token回传文件已在目录，本轮仅核存在/报告头，未评审结论，不启动进一步设计。
+- 可写范围：本线文档/记忆；本轮额外获准整理AGENTS、CURRENT/SESSIONS、文档导航、相关ENTRY与V2归档。先快照并保留历史和其他会话追加记录；两条活跃chat只改自己的记忆，避免共享文件并发写入。
+- 依赖/交接：研究核对证据和范围；新开发负责独立check及后续获准公共层/低命中/必要前端和验证；镜像会话只审批与授权打包，不代开发。报告正式核验后再按用户安排细化修改范围、开发顺序与验收。
+- 已完成：39份V2旧prompt/阶段计划/草案归档，22份整理前快照；六条V2开发线、历史总设计/V1休眠。新开发与打包会话均通过实际消息通知并完成本人登记，详见[通知回执](../../docs/operations/SESSION_SCOPE_REGISTRATION_20261110.md)。本线自行登记，没有创建新chat或唤醒旧线。
+- [归档索引](../../achieve/2026-11-10/v2-session-dormancy/README.md)、[最新登记](../SESSIONS.md)。本轮未Git提交、未改产品/测试/配置/契约/state/HTML，未启动服务/分析/打包。前序文档提交9a071c8已推送；下方旧“ID未知/待启动/等待文件”等是历史时点，不覆盖当前状态。
+- 整理核验：39份归档原文/旧路径短入口及22份快照SHA一致；107份文档914个本地链接无断链，相关diff检查通过。15份无关预存修改/报告/CHECK原件摘要不变；源码与两份HTML保持。两条通知均取得completed回执并读到本人记忆，不只记录“发送成功”。
+
+## 文档提交授权：2026-11-10
+
+用户明确要求提交Git并在对话完整给出新开发启动prompt。按[本次检查点](../../docs/tasks/product-v3/GIT_CHECKPOINT_20261110.md)精确提交四P0/角色交接/探索prompt与相关导航，显式push origin main；最终SHA与同步状态以Git历史及对话为准。CURRENT/交付ENTRY已有他线ICSL追加记录不暂存，其他会话文件与现场报告原件保留。新开发首轮仅登记、只读check并形成CHECK.md；等华为Token异常探索报告后再细化范围和验收，本次提交不是实施授权。
+
+## 最新决定与交接：2026-11-10
+
+用户基本认可低命中**四项P0**，P1独立模板分组不进入本版；全新V3开发会话独立check并承担后续获准公共层/低命中/必要前端和验证。**镜像会话V3仅打包与审批**，不承担开发/debug/开发调度或开发验收执行；旧六线休眠。Token异常在V3休眠，旧结果保留可读，修复留V3.5。方向权威：[范围/分工](../../docs/tasks/product-v3/V3_SCOPE_AND_HANDOFF_20261110.md)。
+
+已预登记新开发角色，实际ID未知；本轮没有创建/唤醒chat或发跨会话消息。已准备[最小入口与代码/测试地图](../../docs/tasks/development-v3/ENTRY.md)、[可粘贴启动消息](../../docs/tasks/development-v3/START_PROMPT_20261110.md)、[新角色记忆](development-v3.md)。首轮只读check，报告回来后再细化代码范围、开发顺序与验收。不能沿用本线或旧后端ID。
+
+已生成[华为Token长尾探索prompt](../../docs/tasks/product-v3/HUAWEI_TOKEN_TAIL_EXPLORATION_PROMPT_20261110.md)，精确限定DS×com.huawei.ipd.tianzhou.ai、Qwen×com.huawei.gtsdata.datalinkpro、GLM×com.huawei.owls.notify_message。先元数据选键，每组至多300/总900；连续前后窗、众数、长尾和有限关联样本分别计数，防止前300遗漏长尾。只做独立有界CPU探索、不注册产品任务/结果，单Markdown嵌关键证据。先看内容，再区分T2–T4适用/扫描/发现/改法/评估/发布，零建议不等于无发现，长尾不等于浪费。
+
+已有均长/众数/P90分别为天舟41.90K/0–1K/97,064，数据链26.69K/4–5K/68,374，通知20.61K/2–3K/88,771；均长仍为1K右端点加权估算，非精确均值。报告返回后复核公共资源/样本/状态衔接，不提前实施Token私有规则。四象限HTML保持高优先级、原文件不改。
+
+本轮按用户明确要求增量整理AGENTS、CURRENT、SESSIONS、文档/任务/研发/交付/历史分析入口和工作流；保留此前未提交内容。THREAD/SESSION均为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2，环境确认。当前仅文档，无产品代码/配置/契约/state/服务/HTML改动，无远端执行、Git提交或打包。下方旧“待评审/P1可加入/旧公共层归属”不覆盖本次决定。
+
+整理核验：19份相关文档的269个本地链接均可达，38个所引代码/测试路径存在；本轮相关diff检查通过，src/crates/apps/tests/deploy无改动。16份预存其他线修改/现场原件SHA保持，两份宣传/四象限HTML SHA保持。未运行产品测试或现场分析；这些只是文档完整性与保护核验。
+
+## 当前入口：2026-11-10
+
+**最新：用户已替换实际回传，旧“误放prompt”问题已解除。** 新报告626行、SHA d321426897f785cf0ec2e665b5e21f1f54cd6b9478a174fad412956656882963。本轮已逐节读取并定向核对dynamic/detection/candidates/experiments/runtime代码，形成[待评审V3修复简案](../../docs/tasks/product-v3/V3_LOW_HIT_REPAIR_BRIEF_20261110.md)。仅大方向：P0有界小样本模式→L1时间字段/session_clock定位→候选质量/重复差异归并→精确改法和独立复核窗收益/解释；P1模板分组与非Agent解释。Token异常仍V3.5，四入口/L4L5和四象限高优先级保持；未实施/派发/提交Git。
+
+新证据：五组时钟固定化报告+12.68–39.14pp；A4多步骤文档生成。保留局限：B窗未独立验证、A/B合并后标A、B.5/C基线P冲突、A2 264+45>300、样本键/脚本正文不足、8CPU非约定2且编码次数自相矛盾。收益只作探索线索不当验收基线。源码candidate_limit≤128与max_comparisons独立，不能照报告把1000当candidate_limit或扩大到组内全比较。text_shape不依赖path值长度；最小纯函数核对路径变化已出recipe1、斜杠时钟recipe0，故workspace新增规则暂不优先。时间可能影响业务，固定化不标无损；模板分组不直接推分appid/路由必提升；拒绝自动>5pp触发全量。后续方向评审后再细化与复核收益，当前只改本线简案/记忆，原报告和产品保持。
+
+前序接收记录（已解除）：用户最初指定文件是169行、21,444字节的执行prompt副本，SHA256 `4fb4ea4d824ce4acbb030a7fd90b5323fba3e69f892b3c175117ebb2682d934c`；与已发prompt仅一处localhost链接格式不同，当轮未据此推断修复根因。随后由用户替换，当前以本段上方新报告为准。THREAD/SESSION仍为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2，环境复核。前次22文件提交fe0f23c已推送origin/main。
+
+## 当前入口：2026-11-09
+
+**最新：用户明确授权“提交Git、生成华为探索prompt”。** 已完成[可直接执行的六组小样本探索prompt](../../docs/tasks/product-v3/HUAWEI_LOW_HIT_EXPLORATION_PROMPT_20261109.md)；[本轮提交说明](../../docs/tasks/product-v3/promotion/GIT_CHECKPOINT_20261109.md)。仅准备文本，未远程执行或发送跨会话消息。按项目约定精确提交本线文档/HTML/支持脚本至main并显式push origin main；最终提交SHA和同步状态以Git历史/本轮对话为准，不将自身SHA循环写入文件。保留其他会话修改及docs/huawei原件，不提交原始请求/state/包体/截图。
+
+prompt固定六组原来源，N>300时首240条发现+末60条复核，N≤300在预算内约80/20分窗；每组≤300，总上限1283，不连续窗各自冷启，完整同样本before/after P/H/C。先元数据选键再读正文，限制单条8MiB/250K、每组64MiB/20M Token、自有进程树≤min(6GiB,可用余量25%)、2CPU/串行、每组30min/总180min、2GiB磁盘、1000候选对/2改法、编码≤3N；均为探索保护预算，非性能承诺，可降低不自动加大。业务服务/state/API写入禁止，独立目录可做轻量脚本/副本/CPU评估；有阻碍则保留结构证据，不强制跑全量或改产品。关键片段/正反例/代码分支/样本键与实数对照嵌一份Markdown，回传TOKENSCOPE_V3_LOW_HIT_EXPLORATION_20261109.md；天舟/Token异常留V3.5。
+
+本轮THREAD/SESSION再次读取均为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2。下方“本轮未提交/下一轮生成”属于前序完成记录，本次授权覆盖提交与prompt准备；不覆盖未实施、无现场执行的边界。
+
+**最新用户决定：V3重点开发低命中率分析器；Token异常新增优化开发冷却到V3.5。** 已完成[方向判断与六组清单](../../docs/tasks/product-v3/V3_LOW_HIT_PRIORITY_20261109.md)和[文档版本整理](../../docs/tasks/product-v3/promotion/VERSION_CHECKPOINT_20261109.md)。四象限明细HTML是**高优先级长期文档**（quadrant-detail-r1-20261109），独立于四页宣传稿维护，用作负载画像与探索选点入口；两份HTML及桌面副本SHA原样保持。优先级已在本线入口/台账/报告说明置顶，旧设计与路线加最新方向提示，不改全局CURRENT/SESSIONS/ENTRY。
+
+本线认同先把低命中诊断做得可运行、能解释、给出改法和样本对照，再扩展其他分析器。下一轮用户才要求生成华为探索prompt，本轮不提前生成或执行。指定范围仅DeepSeek-V4-Flash-0731×{S00000000000000000000000000000773、S010320、com.huawei.mbs.ilegal.ioc、com.huawei.onlinetools、com.huawei.newalliance}和Qwen3.6-27B×com.huawei.aidp_dg06；只读报告对应1047/1038/661/108/104/171条，共3129。若每组至多300条则数量上限1283，具体仍受资源预算约束；这是规划算术，未抽样。V3.5再探com.huawei.ipd.tianzhou.ai等长尾，当前不加入六组任务，具体模型/窗口届时定。
+
+小样本排障认可，“时间戳前300条”是候选策略，不是冻结默认值或总体代表性保证。固定同样本/顺序/编码仿真/缓存初态比较before/after；全量画像值不能直接与样本after拼收益。可在预算内留后续窗核对；不拼接不连续样本冒真实缓存序列。记录P/H/C、适用分母、排除原因，样本参考不冒全量/线上性能。源请求数外还需单条/累计字节Token、比较/编码/耗时预算，在昂贵加载与解析前生效。
+
+只读代码确认已有RuntimeOptions源请求/字节/pilot限额、时间窗及preflight；run_experiment先pilot后整个所选scope的full。需设计独立样本结果，不能只把pilot_limit调小就承诺解决内存；不认定所有输入都会整批装内存。low_hit有独立publish_low_hit，空recipe不能解释所有低命中零建议。用户仅L4反馈加11-05现场证据支持排查发现→计划→试验→发布链路，不证明其他规则全部失效；32GiB/30.19GiB+超时仍未证实OOM-kill完整因果。
+
+华为未来只回一份Markdown，关键结构差异、字段定位、必要脱敏片段、计数/反证/同样本对照嵌正文；直接启发式分析真实样本，再总结旧规则改进和新规则正负例，不仅重跑现有分析器。新报告用于V3范围/方案和开发任务收敛，本轮未实现、未发消息/新会话、未动服务/state/旧结果、未Git commit/push。THREAD/SESSION环境再次核实均为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2。下方保留此前完成记录，不以旧“宣传优先/暂停深化”覆盖本次方向收敛。
+
+最新交付（四象限明细）：用户要求复制四页HTML至Windows桌面，并另做仅四象限的明细HTML。已完成[明细报告](../../docs/tasks/product-v3/promotion/quadrant-detail/dist/index.html)和[说明/验证](../../docs/tasks/product-v3/promotion/quadrant-detail/README.md)。第④项重复“长高”但称重点优化，按上下文落实为“长低”，对话已说明。默认长低14组；长高31/短低23/短高9/长低14，三模型下逐appid完整展示均长、理想命中、请求量及77张已有1K直方图，附非零分箱表。10K临时/50%固定；搜索、模型过滤、模型内排序、全部展开均离线实现，不接API。均值仍按1K右端点加权；柱计数覆盖全部请求与零箱空隙，不拟合、不截尾。
+
+桌面副本：C:\Users\ALIENWARE\Desktop\TokenScope_业务汇报_20261109.html（原四页SHA600d6a6b…7f5a3d）；TokenScope_四象限明细_20261109.html（SHA8d769281…a2a354，1,639,153字节）。复制非移动，项目原文件保留，维护内容仍在项目内。报告源SHA31ee6957…a5b5ab不变。环境THREAD/SESSION再次核实01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2。直接解析报告生成，不依赖旧qa数据、不重跑真实分析。CUA验证四象限计数、77张柱计数/均值、员工助手跨象限2组搜索、GLM筛选/排序、空搜索、分箱展开；1440桌面/390窄屏及全部77组指标无越界，日志为空。原产品18002/state/源码/契约不动；18770独立静态预览结束停止；无Git提交、远端动作或跨会话消息。
+
+最新进度（华为报告回传后）：用户认可四页展示，已按TOKENSCOPE_PROMOTION_READONLY_20261109.md更新[现场数据版HTML](../../docs/tasks/product-v3/promotion/huawei-demo-r2/dist/index.html)；[数据核对与映射](../../docs/tasks/product-v3/promotion/huawei-demo-r2/REPORT_INTEGRATION_20261109.md)。报告SHA31ee6957…a5b5ab，真实67appid/77组/150698请求；ICSL102条构造样本排除。映射15产品（15appid/17组），52appid待关联；8产品按名称初分四领域（营销服1/财经4/研发2/HR1），7产品跨域/归属待确认。不猜GTS相近appid别名。第四页77点，50%固定、10K临时，短高9/长高31/短低23/长低14；长低3296请求，前三员工助手1047、S010320 1038、ilegal.ioc 661。员工助手DeepSeek-V4-Flash-0731均长1K右端点估算44741.17、命中34.81%，已有5K直方图宽且多峰、主峰45–50K仅10.70%；不判CCH。横轴明确对数刻度，无删点抖动；完整表置讲解说明。源窗口约2h（员工源文件延至09:03:42 UTC），不写精确2h或推req/s。报告无CPU/GPU耗时、历史协作周期及线上收益，继续待核；XGBoost/Hybrid仍演进标记。
+
+本轮环境THREAD/SESSION均为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2。本地脚本只解析报告，77条分箱计数/均值/Token恒等式/模型总数、1K与5K员工直方图一致；可重复生成稳定HTML。CUA四页布局/77点/点位详情/14组明细与console通过，QA在huawei-demo-r2/qa。原报告和退役HTML不变；未改产品源码/配置/契约/四入口/state/真实数据，未操作18002、远端执行、PPT制作、Git提交或跨会话消息。临时18769只做静态预览，结束停止。下文为前序制作过程，最新状态以上述回填为准。
+
+最新展示授权与完成：用户要求华为回传前先按认可方案制作HTML DEMO，不确定信息占位，覆盖前序“不制作HTML”。已完成[四页r2 HTML](../../docs/tasks/product-v3/promotion/huawei-demo-r2/dist/index.html)及[验证说明](../../docs/tasks/product-v3/promotion/huawei-demo-r2/README.md)。Sites本地流程，独立单文件、1600×900白底红灰模块化；第一页双线协作+CPU/目标XGBoost/异常/MA；第二页双挑战+5/3分析器+CCH+实际35.95→90.16与本机成果链接；第三页四领域候选产品与覆盖占位、三主流系列；第四页四象限空点位/候选表/员工助手DeepSeek空直方图，50%固定/10K临时。覆盖、耗时、协作周期等未知均占位，演进能力短注，未假造点位。使用CUA可见预览/DOM几何/截图，桌面和窄屏无横向或页内溢出；键盘翻页/弹窗/全屏状态切换通过、console error/warn为空。打印仅配置未系统实测；file导航被IAB协议安全策略阻止，未绕过，仅已验证HTTP预览。临时静态18769预览交付前停止，产品18002未操作。无产品/数据修改、远端执行、PPT制作或Git提交；旧稿原字节保留。当前待用户检验展示理解，再按回传填数。
+
+本日最新：用户基本认可四页方案，要求生成可直接发给华为机的只读信息收集prompt，已完成[执行文本](../../docs/tasks/product-v3/promotion/HUAWEI_READONLY_COLLECTION_PROMPT_20261109.md)。高命中>=50%、低命中<50%；长短正式阈值等回传，10000只作观察线，equal单列。重点核查改为员工助手S00000000000000000000000000000773×DeepSeek（覆盖旧Qwen候选）。读取现有目录、metrics和prompt_tokens长度直方图；统一优先1K箱，按count/N×upper加权，非零开放尾箱主均值不可计算则标缺口。回传全部appid×模型的均值/命中/直方图和请求数、来源；分页snapshot、历史去重、构造样本三个input SHA排除均写明。API dataset_kind=trace不证明真实来源；不按appid误删真实结果。仅GET/必要只读成果表，不打开可能触发自动TTFT POST的前端，不新任务/重分词/仿真/配置修改/服务操作。单Markdown含可复制完整分布数据；本机仅准备文件，未发消息/远端执行/产品修改/再次Git提交。环境THREAD/SESSION仍为本线程ID。
+
+本日续轮：[四页汇报r1](../../docs/tasks/product-v3/promotion/FOUR_PAGE_STORY_R1_20261109.md)为最新讨论入口。用户允许目标架构展示XGBoost/Hybrid等后续演进，不据此启动实现；架构中短注演进状态，已完成案例仍与真实证据一致。第1页业务/平台协作+三模块+SLO桥接；第2页ICSL两类挑战、5+3分析器名称与完整演示；第3页营销服/财经/研发/HR覆盖，TOP3按用户定义为Qwen/DeepSeek/GLM主流系列；第4页明确做场景分类与优化方向，采用两轴四象限。横轴按用户要求读取已有模板后长度直方图，以箱右端点加权估算；替代本线此前P/N建议。源码已有1K/2K/5K箱，建议统一1K；200K溢出箱upper=null需单独处理。长短分界未定，50%可作命中候选；员工助手Qwen3.6-27B×S00000000000000000000000000000773为优先核查例，不预设它一定在问题象限。第4页仅主图、长低appid请求数表、典型直方图与理想命中率，req/s与Token/s不再作为该页必填。数据采集prompt待内容确定后生成，只读已有结果，不重算/改旧展示。本轮没有发prompt/执行采集/制作PPT或HTML/再次Git提交。用户36.5%建议与现有35.95%→90.16%区分，建议汇报约36%→90%；全量30min与1月→1周历史陈述保留待核，不能用样本佐证。
+
+用户明确第一版宣传HTML不符合预期，授权本线版本整理、提交与记忆更新；随后只构思宣传/汇报，不制作HTML/PPT、不深化V3实施。[当前汇报讨论](../../docs/tasks/product-v3/promotion/HUAWEI_BRIEF_DISCUSSION_20261109.md)与[版本台账](../../docs/tasks/product-v3/promotion/VERSION_INDEX_20261109.md)为本线入口；旧HTML原路径原字节保留、标为退役。下文是历史记录，不以旧“下一步”覆盖最新授权。
+
+环境CODEX_THREAD_ID/CODEX_SESSION_ID本轮再次读取，均为`01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2`。已按AGENTS/CURRENT/SESSIONS/docs导航恢复本线，定向读用户华为风参考和appid产品映射；未改共享入口/其他session文件。用户输入原文只读，SHA固定于版本台账；未混入本线提交。
+
+用户计划15–20分钟、四页：①产品架构/业务逻辑，技术作为模块；②ICSL挑战/措施/成果+现场演示；③营销服/财经/研发/HR覆盖及TOP3模型；④待提升业务及场景画像，输入长度×理想prefix命中率二维图，代表appid给req/s、tokens/s、分布与案例。逐页组织/可行性/华为所需证据留下一轮讨论，本轮没有生成PPT/HTML或发现场执行prompt。
+
+本线建议已单独记录：业务价值先行，技术支撑；二维图用于筛选，不靠长度/命中率识别任务，高命中不能作为Agent定义。长输入低命中结合流量/业务影响/可修复证据排优先级；req/s、输入/输出tokens/s同窗且有完整分母，不混吞吐能力。产品与appid非必然一一对应；四主领域之外保留未知/跨领域。映射原表机械读为122记录/105种原始ID单元格/26条缺名，不是覆盖数字，不能据此称105产品。员工助手不凭名称归HR，大小写别名不擅自合并。
+
+ICSL有效版本仍revision3，本机35.95%→90.16%、L1 full102；交付线文件表明已打包，未发现新的华为样本验收回传。样本不计生产覆盖，历史业务效果和构造样本分开。MA用于支持优化对象选择；SLO仍未校准参数参考。局部Git忽略保护CSV/state/SQLite/浏览器profile/大响应/截图，保留脚本、清单和简明验证。此次检查点仅本线文档及支持脚本；提交与同步结果以本轮对话/Git历史为准。
+
+本轮版本检查完成：23份Markdown本地链接、Python静态语法/JSON解析通过；旧HTML原字节、非本线已修改文件SHA保持。49份白名单约330KB，原始数据/state/浏览器资料/包体均不入Git。五层运营用户原文按原字节保存并SHA校验，其余文件空白检查通过。不重跑历史产品测试或分析。
+
+## 历史记录
+
+2026-11-04：首轮研究与产品设计r0完成，待用户审阅，未进入实施。环境CODEX_THREAD_ID与CODEX_SESSION_ID均为 `01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2`，本会话独立核实。
+
+角色/范围：TokenScope V3研究设计。已读AGENTS/CURRENT/SESSIONS/docs导航和本线ENTRY/任务书，定向核读旧华为§7、HV2结果、用户estimator/defaults及MA replay/simulation。只维护本线文档和本记忆；全局入口/Git由镜像打包与审查会话维护。
+
+## 已完成产出
+
+- [研究报告](../../docs/tasks/product-v3/RESEARCH.md)：七项判断、95%来源、SLO边界、G/R/A损失分解及反证。
+- [七项证据矩阵](../../docs/tasks/product-v3/EVIDENCE_MATRIX.md)：支持/反证、可信度、最小补证、动作；两条同轮证据修订记录。
+- [产品设计](../../docs/tasks/product-v3/PRODUCT_DESIGN.md)：F1–F7逐项用户/输入/决策/不可判定/成本/成功/回退；探测器适配正负例、标注质量、B0–B3候选预算及四入口流程。
+- [MVP与交接](../../docs/tasks/product-v3/ROADMAP.md)：R0/M1/M2/M3、六类实验方案、未来实施前条件和版本归口。
+- [一手来源台账](../../docs/research/tokenscope-v3/SOURCES_20261104.md)：15项论文、官方文档/实现与团队技术报告；日期、版本和读取深度，未锁commit的网页明确标注。
+
+关键修订：首次检索未找到95%出处，后找到Netpreme/LMSYS的特定分层KV搬运模型/实验（64K/prefill并发8；附录H100级且GPU前缀缓存禁用）。现结论是“有特定场景出处，无通用95%定律证据”。SGLang所读官方实现是字符前缀近似，路由匹配不等同引擎物理复用。
+
+建议MVP：质量/可比性→资源/场景画像→既有探测器适配解释→剩余工作量/SLO参考→配方框架。未获得服务曲线不报安全QPS/台数；用户与MA不同集合不求路由损失；低潜力与无发现/预算不足分开。容量/SSD不作主线。所有数值预算/验收门槛为讨论草案，不是现场测量。
+
+验证：五份产出做本地链接、七方向/七功能/来源编号及空白格式核查；文档工作未运行产品测试或真实分析。无产品代码/契约/配置/批准HTML/包体修改，无服务/压测/路由实验，无新session/消息派发，无Git提交推送。其他session修改保留。
+
+下一步：用户审阅r0；收到华为唯一Markdown时先核版本、预算、V2监控/MA验收和数据质量，以新增证据记录修订受影响假设。报告未到不阻塞设计。异常深挖仍以用户指定appid为前提。当前未复现新的V2真实bug，六线窗口不自行恢复。
+
+2026-11-04 用户进一步要求：先在对话展开七方向的结论、场景/使用者、支持与反证，再逐项讨论，暂不进入实施。当前进入研究讨论阶段；文档r0为讨论材料，不视作用户认可。
+
+2026-11-04 最新讨论收敛：[用户七项判断与数据确认安排](../../docs/tasks/product-v3/USER_JUDGMENTS_20261104.md)为r1讨论补充，保留r0。用户要求请求结构以华为报告为准，先记录判断，报告后逐项核实，再集中研究未解释问题（含低复用三类区分），暂不实施/追问结构。
+
+新增重点：J3按众数覆盖/稳定性，不纠缠高斯；结合llm-slo-scheduler的GF让行候选（只读参考，不接管或运行）。J6明确80%与60–70%为用户/MA两种理想命中，优先路由机会损失；容量/SSD低优先级为范围决定，不写成容量充分已证实。J7纳入不混用户的现有MA路由、Token预算/输出上限/上下文上限、并发与PD调优研究。
+
+补核已有架构：GB模板前JSON分词、同UUID跨appid/跨P共享、跨层hash_id、模型侧TTFT不含GB等待已有说明；实际导出覆盖/计时端点/成本仍待新报告。不得继续把这些已说明事实全部列为未知。定向外部核查支持参数折衷；DeepSeek Harness官方README本次未找到95%普遍保证，不把社区数值转成官方结论。
+
+2026-11-04 最新用户安排：七项判断等华为报告后逐项对照，先数据确认、再集中讨论未解释项，暂不推进V3实施；当前做V2推广资料准备。第一轮仅听众画像，下一轮才讨论展示内容/核心能力与价值。已形成[听众画像r0](../../docs/tasks/product-v3/AUDIENCE_PROFILE_V2_20261104.md)。主听众为有开发/运维经历、懂业务流程与TTFT/TPOT但缺少AI服务内部上下文的领导；应用方与infra方是产品服务对象，与宣传主受众分开。记录用户上下双向Token监控定位，量化省人力/稳定性收益及自动调优不冒充已证实V2能力。画像中的动机/痛点为待验证假设，未代定宣传重点。华为验收状态仍以实际报告为准。
+
+2026-11-04 听众画像获用户基本认可，进入展示内容/顺序/核心能力与业务价值讨论。已记录[对领导展示讨论稿](../../docs/tasks/product-v3/LEADERSHIP_STORY_DISCUSSION_20261104.md)，定位建议为企业MaaS的Token监控与优化分析平台；三项记忆点/故事顺序均为待用户讨论建议，未制作PPT或实施。
+
+核查纠正：当前V2 P90 TTFT为固定W/K/τ情景计算，非经真实数据校准的XGBoost，不能以其参考值直接判聚合命中不达标。用户30min全量/一天GPU重放暂作经验待范围计时；CPU逻辑回放不等价完整推理重放。已找到并只读PrefixLens-ppt/PrefixLens/outline.md：记载ICSL/财经、定位一周→半天，业务修改一周内；案例归属前期PrefixLens，不能说V2已独立复验或一天完成全部闭环。缺失/路由/配比等展示继续按七项判断待华为报告核实，不把新宣传需求变成数据或产品实施授权。
+
+2026-11-04 本轮已完成[领导展示大纲](../../docs/tasks/product-v3/LEADERSHIP_OUTLINE_V2_20261104.md)，当前只讨论内容、不制作PPT。用户要求四个记忆点：具体证据/排障和协作效率/运维成本，CPU低资源消耗，减少SLO与技术投入判断风险，真实负载黑盒变白盒。推荐简明定位“TokenScope是MaaS的Token监控工具，帮助业务更快查问题，帮助平台找准优化方向。”主线应用完整路径→搜索已覆盖群体→前期案例与CPU→SLO→MA选优化对象。八个现行探测器L1–L5/T2–T4各有示意例子及范围；核读current_plugin确认T1仅历史兼容。
+
+用户补充五层Token运营附件并要求沉淀，已逐字节保存[原文](../../docs/research/tokenscope-v3/TOKEN_OPERATIONS_FIVE_LAYERS_USER_SOURCE_20261104.md)，SHA256与附件一致EFBA2AB02B2C0A7375131CBB502AADB1BFDB4F83A3FABD30193905FC255568E0；[来源与V2对应说明](../../docs/research/tokenscope-v3/TOKEN_OPERATIONS_SOURCE_NOTE_20261104.md)单列。未找到独立命名的既有运营汇报稿；根V0.1含运营目标，不确认就是已汇报版。新原文五层是运营责任框架，非当前V2五层贯通事实；它的L1–L5不与探测器编号混淆。
+
+保留用户最新ICSL时间线“1天debug/方案、约半周业务修改、一周TTFT/吞吐改善”，作为待历史业务记录确认的陈述；旧稿半天定位/一周修改不覆盖。保留Qwen3.6 27B 10月20日“910B4单实例一天以上、CPU所有实例30分钟”待核。只读llm-slo-scheduler G5文档见3节点各8卡、P/D各TP4，并有910B2标注，故型号与复用配置均待证，不能据此确认B4。编码代码可证Rust批量、默认8线程预算；DeepSeek使用Recipe边界，Qwen/GLM不能归因为DeepInfer分词。
+
+XGBoost话术与V2实现冲突，已从当前能力表述改成参数化SLO参考；可讨论未来模型路线但没有实施。待华为核验的分布/路由/质量数字与需历史证据的案例分开台账。所有新文档本地链接检查通过；未运行产品测试/服务/分析，未改共享文件/代码/配置/契约、未制作PPT、未Git提交推送。环境THREAD/SESSION再次核实均为本记忆已有ID。下一步继续讨论大纲内容；七项研究判断仍等华为报告逐项确认。
+
+
+2026-11-05：已接收根会话交接并核读HV2_EVIDENCE_HANDOFF与HV2_ACCEPTANCE_CLOSE，核对日期固定新报告SHA256 a5901a2a8c5eace577ffb39e4e0ef36201549cde8d94d00f16f1ef9c32d36fac，定向读取现场记录。用户暂时接受V2，产品宣传优先，V3先定位/功能取舍，异常分析按公司真实任务适配，不盲目扩展。新增[证据修订](../../docs/tasks/product-v3/EVIDENCE_UPDATE_20261105.md)，更新证据矩阵、宣传大纲与讨论稿。三模型77目录项非独立appid数；搜索入口有边界；4个partial任务差异组均L4、Token零建议不能判无异常，空recipe不解释全部low_hit。容器32GiB/峰值30.19GiB与主机375GiB分开，无OOM-kill完整因果证据。Qwen20.37GB索引约90分钟，30分钟历史口径继续待核；TTFT未校准。报告分布/稳定性/路由/容量判断按根核对降级，旧调查改读归档原字节，不重复算证据。后续资源设计覆盖阶段峰值/长尾/公平/API/持久化恢复/磁盘，当前仅登记，不实施。未修改共享入口/交接、未运行服务分析实验、未发消息、未Git/push。
+
+2026-11-05用户继续宣传，明确暂不展开V3、不制作PPT。已记录LEADERSHIP_DEMO_DISCUSSION_20261105.md：50条编码Agent/50K窄分布/CCH L1/36→90为合成演示目标，未生成运行；指出头部逐请求唯一CCH与36%不自洽，需前置稳定段或分组复用机制并实际验证。源码匹配独立billing行而非任意cch字段。核查Anthropics issue68900/40652，按提交者报告使用，不证实代码公开传播因果。合成演示、前身案例和现场证据分开。
+
+2026-11-05用户批准制作独立宣传HTML，暂不制作合成数据。已完成[宣传页](../../docs/tasks/product-v3/promotion/TokenScope_V2_Overview.html)与说明README：六步交互流程、规则备查、ICSL/财经、CPU、SLO、MA和待核台账；离线单HTML，无接口调用。独立本地文件Edge验证桌面/手机布局、六步和键盘切换、锚点/相对链接、打印面板可见、无JS错误/HTTP请求；人工看截图并调整手机标题后复验。无产品服务/真实分析/产品修改/Git。下一轮用户要求：本机制作合成数据及使用prompt，华为分析后向现有前端追加展示，绝不影响已有真实数据展示；需独立数据/任务/结果身份，不覆盖真实结果或替换默认选择。本轮仅登记，未生成数据或执行部署。QA独立浏览器profile清理命令被工具策略阻止，保留在本线qa目录，不影响HTML交付。
+2026-11-05合成方案进入讨论：用户改为约80条GLM-5.2编码Agent、50K集中、L1 CCH、理想36→90。新增SYNTHETIC_GLM52_DEMO_PLAN_20261105.md；本轮未生成/运行。固定80条，冷起点推导共享约18.2K/45.6K，真实GLM模板/128基础块×CP/MTP校准，不改参数凑结果。静态system形状一致，CCH独立行唯一，变化尾部控制长度；建议±0.5pp容差，完整L1 plan/full80评估与负对照。重要源码风险：用户目录最新优先且裸入口取首条default，独立appid只能保护组合默认，不能保证全局首次展示不变。华为追加前必须本机隔离state验证默认/固定链接/四入口保护；若无现有开关则停止并另议最小默认隔离，不直接导入或改数据库排序。本机后续交数据/清单/验证/预算/prompt，华为同服务追加独立demo身份且原真实结果不覆盖；本轮只讨论，不变更产品/服务/配置，不Git。
+2026-11-05 最新授权与完成：用户明确可自行启动本机服务，且“不影响”指旧数据/结果保留可看，允许新增appid改变裸入口首次默认选择；覆盖上文默认选择阻断。已从final-default保留state复制启动http://localhost:18002（未动原244文件），追加80条GLM-5.2合成数据。首轮v1整段system修改超过建议发布16MiB预算，保留失败证据；revision2把CCH独立system消息，未改产品/预算，实际L1和full80得到35.898228%→90.051281%，前端卡片/证据/改法通过，旧20监控目录项/4诊断结果及旧页面可访问。报告整体partial源于比较/留存限制，不影响full评估完整。详见[本机验收](../../docs/tasks/product-v3/icsl-demo/LOCAL_ACCEPTANCE.md)，交付仅revision2/delivery数据、manifest、模板及[华为prompt](../../docs/tasks/product-v3/icsl-demo/revision2/delivery/HUAWEI_PROMPT.md)。未在华为执行，未产品修改/Git提交，服务保留运行。session ID沿用本线程实际01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2。
+
+2026-11-05 用户明确授权向‘镜像打包与审查’整理并发送需求，请其准备华为文件压缩包。已通过send_message_to_thread发送至local/01a1800e-80b4-7400-a78b-a84f5b6e888d，工具成功。交接包含目的、revision2四文件白名单、CSV摘要、本机full80与前端验收、partial限制、v1发布预算问题、旧数据保护及默认选择澄清；要求对方打包/解压核验/清单SHA后向用户交付，不重建镜像、不打包本机state或local-ID JSON、不自动上传或在华为执行。本线未重复打包或修改共享入口。
+
+2026-11-05 用户否决revision2，撤回其正式交付候选资格，已通知镜像打包与审查暂停旧包。最新要求appid=com.huawei.icsl.base，hash_id为UUID格式，GLM-5.2、102或211条、平均28K、窄正态分布、众数箱25K–30K；CCH为每新对话随机标识、system顶部billing行、非时间戳，同对话应稳定。约35.90→90.05仍为目标，不能沿用中部CCH方案数值。拟102条多对话样本以同对话重复提供修改前命中，重新实际验证；新数据尚未生成。使用业务appid不改变合成来源属性，交付说明保留场景复现标识；现场同appid冲突需保护真实结果。
+
+2026-11-05 用户授权102条重制及验收后交打包。revision3已完成：com.huawei.icsl.base、UUID、平均27999.21（26603–29364）、62对话同对话CCH固定，单system顶部billing行。full102逐行仅删除该行，实际35.949479%→90.156355%，前端卡片/证据/旧页面通过，原22目录项和6诊断digest保留、原244state文件不变。新内容无demo等词；本机旧试验appid下拉仍保留不删除，不交付华为。LOCAL_ACCEPTANCE与prompt位于icsl-demo/revision3，交付说明ICSL场景构造样本；已按用户授权发送到镜像打包与审查01a1800e-80b4-7400-a78b-a84f5b6e888d恢复新版打包，白名单CSV/manifest/template/prompt，排除local-ID JSON和旧版本/state。未产品修改/华为执行/Git。

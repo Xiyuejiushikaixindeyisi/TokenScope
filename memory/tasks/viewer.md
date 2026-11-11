@@ -44,3 +44,7 @@
 用户明确要求本会话暂时休眠。两份最终启动prompt已复核：[监控V2前端](../../prompts/sessions/TOKEN_MONITORING_V2_FRONTEND_START.md)、[异常分析前端](../../prompts/sessions/ANOMALY_ANALYSIS_FRONTEND_START.md)。待对应产品、后端设计和接口契约固定后，由用户使用它们启动新会话；当前不创建、不唤醒、不继续设计开发。
 
 交接固定要点：docs/tasks/viewer/prototypes/tokenscope-v2-demo-ui01.html为视觉入口；必须沿用获批配色与布局；monitoring-v1/v2的.py、HTML、CSS、JS、样例及验证材料均保留作为开发起点；仅原型HTTP预览撤下。后续依次完成职责理解、后端阅读、先提优化意见再经认可生成DEMO、HTML审批、交互讨论确认、开发计划审批和batch开发验收。原型完成不等于正式后端接入完成；打包另行授权。此状态不覆盖其他会话进展。
+
+## 2026-10-30 监控V2前端接收摘要
+
+用户指定新会话 `01a18c49-d9b4-7a33-8c04-e5a72adfcc24` 承接监控V2前端，已由本会话环境核实并登记；原V1前端仍休眠。新会话本轮只做职责理解、两线设计/契约入口与UI-01上下文接收，未修改DEMO或正式代码。后续独立维护[本线ENTRY](../../docs/tasks/viewer/monitoring-v2/ENTRY.md)与[本线记忆](viewer-monitoring-v2.md)，本公共记忆只保留交接摘要；异常分析前端职责不被接管。

@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-11",
+  "kind": "pre-worktree-reconciliation snapshots; preserve raw bytes",
+  "files": [
+    {
+      "source": "AGENTS.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/AGENTS.md",
+      "sha256": "abe87d12520a559a1fc50479db9c776c504dd8fad500c0e5958cc3e3450a8100"
+    },
+    {
+      "source": "memory/CURRENT.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/memory/CURRENT.md",
+      "sha256": "242db245cbeab74d6c00218c25e8fcf9a615360b131c071353fb6c956567bf55"
+    },
+    {
+      "source": "docs/README.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/README.md",
+      "sha256": "aa02439bf616cdf25ab97b3a87ed6c868f2cf816de62337e30645d1af833ffa6"
+    },
+    {
+      "source": "docs/tasks/README.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/tasks/README.md",
+      "sha256": "b518985268d2812ac8e7d099553458787f9e2d93e8b78f47c9d3a2d68647dccf"
+    },
+    {
+      "source": "memory/SESSIONS.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/memory/SESSIONS.md",
+      "sha256": "1705f4da21f89b1cf824e53041c84981d7e471f70f331edd89df5747ecd0edba"
+    },
+    {
+      "source": "docs/tasks/length-analysis/ENTRY.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/tasks/length-analysis/ENTRY.md",
+      "sha256": "d33b3fd61097dbfe647f5401468a66ac4faaca6968868aa35049ecf9cdf1f29b"
+    },
+    {
+      "source": "docs/tasks/prefix-analysis/ENTRY.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/tasks/prefix-analysis/ENTRY.md",
+      "sha256": "53cbb5b83f334e8105cd5c6a05c60efc666a5fbbaac7d4be661098e800bf5b53"
+    },
+    {
+      "source": "docs/tasks/monitoring/v2-user/ENTRY.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/tasks/monitoring/v2-user/ENTRY.md",
+      "sha256": "a3be2ce74765016e2c2af50de67430d90f0c09cf8499bd131cfeafb6a181bc31"
+    },
+    {
+      "source": "docs/tasks/monitoring/v2-ma/ENTRY.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/tasks/monitoring/v2-ma/ENTRY.md",
+      "sha256": "a1c62ec392d95050d9fed3063a4685b2ddd50d19bbb9041fccd9bb906dcd2524"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/ENTRY.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/tasks/viewer/analysis/ENTRY.md",
+      "sha256": "6e7184618ee036e03f8633ea2e37c4ff582bf987a1e88f9ef92555f5bc7018e5"
+    },
+    {
+      "source": "docs/tasks/viewer/monitoring-v2/ENTRY.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/tasks/viewer/monitoring-v2/ENTRY.md",
+      "sha256": "026ed0473e355dfffcb0da3d16b73c3e58ede94eabd190664c6459929ece4172"
+    },
+    {
+      "source": "docs/tasks/product-v3/ENTRY.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/tasks/product-v3/ENTRY.md",
+      "sha256": "884c52ec4eac0a8c5af62ea99b39d8241b34d798fa9e6c8a2fd2df19eb38fc9e"
+    },
+    {
+      "source": "docs/tasks/development-v3/ENTRY.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/tasks/development-v3/ENTRY.md",
+      "sha256": "a21975dae6c312e9bc08d7ae21dbb459fca074a67f0bf7848d9b5feab7a27e36"
+    },
+    {
+      "source": "docs/tasks/product-v3/V3_SCOPE_AND_HANDOFF_20261110.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/tasks/product-v3/V3_SCOPE_AND_HANDOFF_20261110.md",
+      "sha256": "4a6a4419fdde276d4b0178ff42d64fcc3d4f0720d4ff5813054d72e67746dabc"
+    },
+    {
+      "source": "memory/tasks/product-v3.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/memory/tasks/product-v3.md",
+      "sha256": "87b183063dd8dd6a87857819e336f2804e3e6456fbb9e4dd1092a4876945d5ba"
+    },
+    {
+      "source": "memory/tasks/development-v3.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/memory/tasks/development-v3.md",
+      "sha256": "111e272ca1aa4432867f2ee2913743a0e3f111d61e80cf90dbf7c5767d5c4a00"
+    },
+    {
+      "source": "docs/huawei/HUAWEI_V2_INVESTIGATION_REPORT_20261103.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/huawei/HUAWEI_V2_INVESTIGATION_REPORT_20261103.md",
+      "sha256": "a5901a2a8c5eace577ffb39e4e0ef36201549cde8d94d00f16f1ef9c32d36fac"
+    },
+    {
+      "source": "docs/huawei/README.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/huawei/README.md",
+      "sha256": "68454c3bcdc1a09abd2fa0f94868c06368273866a73d787ef4f5d19f7ed48f72"
+    },
+    {
+      "source": "docs/architecture/TASK_SESSION_WORKFLOW.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/architecture/TASK_SESSION_WORKFLOW.md",
+      "sha256": "a8586c3ae5e3e988d9db0f279aca33cf7385cf1ab492dcb45c2645cd54aebcd3"
+    },
+    {
+      "source": "docs/operations/DELIVERY_ACCEPTANCE_RULES.md",
+      "snapshot": "achieve/2026-11-11/worktree-reconciliation/snapshots/docs/operations/DELIVERY_ACCEPTANCE_RULES.md",
+      "sha256": "a2c32b9bda621d665073a8a80f98a4ba0602e2e3ecc1d2e24b861481544be2ef"
+    }
+  ]
+}

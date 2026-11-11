@@ -1,7 +1,14 @@
 # V2 同事侧 MA 监控后端记忆
 
+## 当前状态：休眠（2026-11-10用户决定）
+
+本V2会话 `01a18ab2-2600-7ae1-8b0e-979dad9ec3be` 明确休眠，本轮未唤醒或派发任务。以下内容全部作为对应版本历史，不恢复旧开发/测试/协调授权。当前活跃三角色及权责见[SESSIONS](../SESSIONS.md)，本线按需参考见[历史入口](../../docs/tasks/monitoring/v2-ma/ENTRY.md)；V3由新开发会话统一承担获准修改，Token私有修复留V3.5。原有记忆正文保留。
+
+## 既有历史记录
+
 2026-11-02当前交付决定：用户认可V2可交付，UIR-03留V3、不阻断；审查打包已完成源码push、WSL构建/包体与桌面全SHA交付；华为真实数据待验。角色职责保持，以下旧暂停/阻断/合成现场计划只是历史。现场真实数据、两次人工验收、SSH18002、唯一Markdown要求及不得再犯的问题见[长期记忆](../DELIVERY_LESSONS.md)；当前结果看[交付记录](../../docs/tasks/delivery/V2_APPROVED_DELIVERY_20261102.md)。
 
+当前职责（2026-10-31用户重新明确）：MA监控已闭环；本会话仅承接华为机服务启动/功能验证及其中发现的MA Bug修复。P90 TTFT与性能校准由用户监控session讨论；此前校准清单属于待重新讨论材料，不作为本会话继续扩展工作的依据。
 更新：2026-10-30。实际会话ID `01a18ab2-2600-7ae1-8b0e-979dad9ec3be`（环境核实）；原V2父会话现负责同事MA监控后端。角色以[SESSIONS](../SESSIONS.md)为准。当前[最终设计v1.0](../../docs/tasks/monitoring/v2-ma/DESIGN.md)已形成；用户已批准设计并授权逐批开发；M000–M005本机后端闭环，未部署/打包。当前恢复优先读M005 RESULT、DESIGN_CHECK与IMPLEMENTED_API，以下历史阶段记录保留追溯。
 
 ## 当前阅读与执行入口
@@ -80,6 +87,17 @@ M005 closed。本机后端最终pytest235 passed/1既有弃用warning/190.03s；
 
 本轮最终复核：已同步集成源码289 passed/1既有警告/234.92s；静态126文件、mypy50源码和协议通过。独立MA候选227项仅作隔离范围核验；本次追加提交严格为10项MA文档/本线状态，不包含新业务代码或他线未完成材料。源码身份9a037466f7211126261ec2026f54b9c19c2e2151，Git同步后的精确文档提交由git log -- GIT_CHECKPOINT.md定位。
 
+## 2026-10-30 TTFT闭环口径澄清
+用户质疑尚未提供三模型batch耗时、等待时间却宣称闭环。只读核对用户线estimator.py、Scenario/EvaluationRequest和U005 VALIDATION_SUMMARY：当前为固定chunk参数化参考计算器，τ/W/K/O须显式提供，无三模型真实τ或等待缺省；合成测试参数不等于用户/现场校准。U000–U005 closed指本机软件开发验证，E07真实TTFT校准/现场性能仍pending。对外需明确“代码完成、性能校准与业务可用性未完成”，不能以批次闭环表示已得到三模型可信最低命中率。本线不改用户公式/契约或代签校准，未提供参数时不输出具体模型结论。
+
+## 2026-10-30 用户明确的TTFT校准门槛（最新）
+**代码完成，性能校准待完成**。三模型真实batch耗时、有效K、等待W及O未完成校准；缺失/空白/null不出具体比例，不默认W=0。最小清单在docs/tasks/monitoring/v2-user/PERFORMANCE_CALIBRATION.md，区分全batch预算与单请求有效进度、固定τ与实测batch时间、GF同口径初始及chunk间等待，禁止双计O或分位数直接相加。本轮由MA会话按用户直接要求统一跨线文档/交接；不改变后端公式或契约。UI-02已修正默认假设展示与Number空字符串变0，布局不变；正式前端仍按原流程推进。缺参后端38项测试、浏览器5组检查通过，人工假设必须完整且显式输入，不能当模型已校准。
+
+## 2026-10-31 职责纠正（最新权威）
+用户明确MA监控已闭环，本会话只负责华为机拉起服务、功能验证后出现的MA Bug修复；本轮仅更新职责并提供转交用户监控session的讨论prompt，不立即执行远端启动、部署或打包。P90 TTFT及性能校准交回用户监控线，现有最小清单过多，须由该线与用户重新收敛，不把原清单当已认可门槛，不自行继续设计/修改用户监控或前端。
+
+## 2026-11-01 华为验收补采字段核对
+本线按最新CURRENT/SESSIONS配合完整服务总负责（镜像打包与审查），归口MA问题支持，不承担完整服务启动总责。用户计划用户监控/异常分析沿用V1现场CSV，仅补采MA，例如Qwen-V3.6-27B-32K。已核对当前ma/ingest.py与Submit：两份同规格连续各1小时pre/now，按request_time左闭右开；9个必需列instance_uuid/hash_id/appid/request_time/model_handle_start_time/prompt_tokens/cached_tokens/completion_tokens/request_input，可加model_standard_name供混规格校验。每份包含该规格所有UUID和appid，后端自行分组；不DISTINCT、不用BETWEEN重复边界、不把缺失命中改0。pre仅预热，now统计。时间需明确时区，推荐导出UTC ISO；解析器无偏移值按UTC解释，显式+08:00可归一UTC。SQL示例时段按数据库真实时区选取，导出两时间列与提交窗口需对应同一绝对时间。原始JSON用合规UTF-8 CSV引用转义，不能截断或改正文。仅字段/查询交接，未启动服务、改代码或打包；真实验收待CSV及现场结果。
 ## 2026-11-03 HV2-R1-MA修复候选交接
 实际环境THREAD/SESSION均01a18ab2-2600-7ae1-8b0e-979dad9ec3be。已承接V2总设计师直接派发；优先级P0 MA缺数解释/预热审查，当前本线代码与测试完成、待独立验收冻结，不改CURRENT/SESSIONS总文档。入口docs/tasks/monitoring/v2-ma/HV2_MA_BACKEND_HANDOFF_20261103.md。
 新增预计算availability表及独立GET资源，保留旧Snapshot/Schema/原seal；六项解释覆盖四主指标及独立ideal/real，含原因/样本/分母、12桶和成功编码pre/now时间边界。DS缺cached保持真实不可用并保留独立ideal；GLM冲突保留独立real/小时已知量。缺JSON/输出字段不影响真实量，null/0/部分覆盖/空桶明确。旧结果新资源返回AVAILABILITY_NOT_RECORDED，旧GET照常只读，不自动重算。

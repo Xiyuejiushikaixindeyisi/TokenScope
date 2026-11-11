@@ -1,5 +1,7 @@
 # achieve归档索引
 
+2026-11-10：[V2低优先级文档与会话休眠整理](2026-11-10/v2-session-dormancy/README.md)归档39份旧启动/派发/阶段计划和过期草案，保留原字节、导航版、SHA映射及22份整理前快照。当前只保留研究、打包、V3开发三个活跃角色，六条V2线休眠；[最新登记](../memory/SESSIONS.md)。四象限明细、有效设计/代码地图、冻结契约和实际验收原证据保持原位。以下日期段均为历史状态。
+
 2026-11-05：[HV2验收阶段收口归档](2026-11-05/hv2-acceptance-close/README.md)保存旧报告、收到的新原件固定副本、过期任务prompt/方案及入口记忆快照。用户暂时接受V2，产品宣传优先；[当前核对与保留问题](../docs/tasks/delivery/HV2_ACCEPTANCE_CLOSE_20261105.md)。
 
 2026-11-03：[HV2完整交付闭环](2026-11-03/hv2-delivery-closed/README.md)、[实施前快照](2026-11-03/hv2-pre-implementation/README.md)，均为历史，不再表示接入中或未交付。2026-11-02：[旧V2交付归档](2026-11-02/v2-approved-delivery/README.md)。
@@ -29,3 +31,5 @@
 - [2026-11-03 HV2六线任务prompt](2026-11-03/hv2-session-prompts/README.md)：11份实施/准备原始文本，开发窗口已关闭。
 
 - [2026-11-03 HV2完整交付闭环](2026-11-03/hv2-delivery-closed/README.md)：执行/评审/六线计划与入口记忆快照；记录当时发布状态；新版现场回传见11-05阶段收口。
+
+2026-11-11：[工作树整理快照](2026-11-11/worktree-reconciliation/README.md)，保留共享入口与误名报告整理前字节；原11-10归档清单不改。

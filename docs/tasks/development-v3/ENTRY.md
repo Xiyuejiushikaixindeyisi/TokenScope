@@ -1,5 +1,7 @@
 # 全新V3代码修复与开发会话入口
 
+2026-11-11工作树整理者（镜像会话）同步：V3小样本已交付，现场按[华为执行说明r2](../delivery/V3_PROMPT_R2_20261111.md)复用已认可用户/MA结果，不重跑全量；五组真实异常逐一分析并展示实际方案与样本收益，不强制每组clock。现场待回传，以下原作者阶段记录保留，不将旧待打包/未实施文字当当前状态。
+
 **当前范围决定（2026-11-11）：显式 full 延期（DEFERRED_BY_USER，未实现/未运行，不记PASS），不再是本期V3门禁；自动full仍禁止。候选repair-r1-02为LOCAL_ACCEPTED_WITH_SCOPE_DECISION / ONSITE_PENDING，独立R2已关闭RV3-01/02/03。大源自动缩样和五组session_clock样本参考率优先，真实BUS01–05及现场AC-MEM待华为验收。暂不打包。**
 
 [本地验收收口](LOCAL_ACCEPTANCE_CLOSE_20261111.md) · [华为验收交接材料](HUAWEI_ACCEPTANCE_HANDOFF_20261111.md) · [范围差异](FULL_SCOPE_GAP.md)。

@@ -11,7 +11,7 @@
 
 - 当前阶段和允许开展的工作以 memory/CURRENT.md 为准。目录创建不构成业务实现、调研任务或部署任务的启动。
 - 2026-10-23 的一期目标输入覆盖早期 V0.1 中不一致的设想。用户明确第一版目标尚需分任务讨论和规划；目录审批不等于功能设计或实施计划审批。session、turn、trace 数据可用性待确认。
-- 历史全项目总设计会话保持休眠。V3研究与产品设计由docs/tasks/product-v3/ENTRY.md归口；2026-11-10用户认可低命中四项P0，并指定全新V3代码修复与开发session独立check及后续获准开发，入口docs/tasks/development-v3/ENTRY.md。新角色待启动/实际ID未知，当前只接入与check；待Token探索回传后再细化范围、顺序和验收。镜像打包与审查在V3只负责镜像/交付打包与审批，不承担编码、debug、开发调度或开发验收执行。研究/登记不等于实施授权。
+- 当前仅三个活跃角色：V3调研与产品设计、镜像打包与审查、V3代码修复与开发；六条V2开发线及历史总设计/V1休眠。研究入口docs/tasks/product-v3/ENTRY.md；新开发入口docs/tasks/development-v3/ENTRY.md，实际ID已核实，V3小样本候选已完成本地独立验收及交付，现场待回传；详细阶段以memory/CURRENT.md为准。Token探索已核对，私有开发仍留V3.5。镜像会话只负责镜像/交付打包与审批，不承担编码、debug、开发调度或开发验收执行。实际ID、本人权责及当前阶段以memory/SESSIONS.md为准。
 - 当前任务入口见 docs/tasks/README.md。统一编码、计量和理想命中率计算由 Token 监控维护；原因分析消费其结果或复用同一实现。展示读取已有成果，不在页面访问时触发分析。
 - 会话安排和启动依赖以memory/SESSIONS.md与docs/architecture/TASK_SESSION_WORKFLOW.md为准。V2分线和fork流程属于历史阶段，不自动恢复。V3聚焦低命中四项P0，Token异常休眠且旧结果保留可读；三组长尾探索仅为V3.5及公共能力衔接取证，不提前开发Token规则。hybrid与自进化Agent仍未启动。
 - 不把参考项目中的环境、审批、Git 或现场运维规则直接继承为 TokenScope 要求。

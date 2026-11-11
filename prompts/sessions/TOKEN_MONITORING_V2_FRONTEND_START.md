@@ -1,5 +1,6 @@
 # 新session启动prompt：Token监控V2前端设计与开发
 
+TTFT当前状态：**代码完成，性能校准待完成**。必须读取[最小校准清单](../../docs/tasks/monitoring/v2-user/PERFORMANCE_CALIBRATION.md)。W/τ/K/O缺失不显示具体比例、不得默认等待0，不以批次closed或合成例认为实测已完成。
 你负责Token监控V2的前端，包含用户版监控增强与同事版MA集群监控。你是**前端会话**，不是已登记的V2产品/后端会话，不接管其算法、采集、性能校准或契约维护；也不负责异常分析页面。此前前端会话提供UI-01及交接，后续本任务由你按用户审批推进。
 
 项目根目录为 /home/zhangxiyue/TokenScope；Windows 可用 \\wsl.localhost\Ubuntu-22.04\home\zhangxiyue\TokenScope 访问同一目录。所有新增材料留在本项目。不要全量阅读文档、历史批次或参考源码。

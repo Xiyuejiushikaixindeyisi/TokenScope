@@ -1,17 +1,11 @@
 # 当前状态
 
-2026-11-10：**V3先聚焦低命中四项P0**：有界小样本/资源控制、L1时间字段、候选质量/重复差异、改法到样本验证及建议解释。详见[当前范围与交接](../docs/tasks/product-v3/V3_SCOPE_AND_HANDOFF_20261110.md)。[全新V3开发角色](../docs/tasks/development-v3/ENTRY.md)已预登记，ID未知/待启动；首轮只读check。镜像打包与审查在V3只负责打包和审批，不承担开发/debug/开发调度或开发验收执行。
+2026-11-11：V3小样本版本 **tokenscope-v3-sample-20261111** 已完成本地独立验收、镜像/代码包制作和Windows桌面校验，源码cabf2c6已push；[交付记录](../docs/tasks/delivery/V3_SAMPLE_DELIVERY_20261111.md)。现场五组真实分析和真实资源验证待回传，不以本地通过代签现场。
 
-**Token异常在V3休眠，修复留V3.5**；旧成果保留可读，四入口/L4L5保持。已准备[三组长尾探索prompt](../docs/tasks/product-v3/HUAWEI_TOKEN_TAIL_EXPLORATION_PROMPT_20261110.md)，等待华为单份报告后再细化V3范围/顺序/验收。当前只整理文档与角色，不实施、不启动新分析或会话。[四象限明细HTML](../docs/tasks/product-v3/promotion/quadrant-detail/dist/index.html)为高优先级资料。[SESSIONS](SESSIONS.md)。
+用户已批准[华为执行说明r2](../docs/tasks/delivery/V3_PROMPT_R2_20261111.md)：用户监控/搜索/MA复用已认可约15万条数据对应的成果，不重新导入或全量计算；五组指定appid逐一做真实有界低命中分析，前端展示可执行修改和样本实算收益/语义风险，不强制每组clock或正收益。旧异常允许安全弃用，原CSV和监控/MA成果必须保护。两阶段人工确认、SSH18002、单Markdown正文证据、保留演示服务。
 
-## 既有V2状态与文件交付记录（不覆盖上述V3分工）
+当前三个角色：[登记与入口](SESSIONS.md)。研究负责证据/产品范围/独立验收；V3开发负责获准代码与回传缺陷；镜像会话负责审查/版本/交付，当前用户额外授权其完成[工作树分类整理](../docs/operations/WORKTREE_RECONCILIATION_20261111.md)。不因此恢复编码、测试服务、现场访问或打包。六条V2线及V1/历史总设计继续休眠。
 
-2026-11-05：用户决定 **V2暂时认为通过，先完成TokenScope产品宣传**。当前发布仍为tokenscope-v2-hv2-20261103（源码c1345b6）；收到的华为报告、核对、证据局限及留V3问题见[阶段收口](../docs/tasks/delivery/HV2_ACCEPTANCE_CLOSE_20261105.md)。暂时接受不等于全功能/全规模/全部性能问题验证通过；不自动恢复开发、重测或打包。
+显式full延期、自动full禁止；Token新执行休眠，私有修复留V3.5；hybrid/Agent未启动。[研究判断](../docs/tasks/product-v3/V35_TOKEN_TAIL_ASSESSMENT_20261110.md)与[四象限资料](../docs/tasks/product-v3/promotion/quadrant-detail/README.md)保留，研究线索不当已实现能力。
 
-[V3 session](../docs/tasks/product-v3/ENTRY.md)继续用户已开展的宣传讨论与研究设计，先明确定位/服务对象/功能取舍，以公司真实appid任务、分布、结构和业务确认匹配异常分析；外部报告是参考，不替代现场。细化/重构待讨论决定。本次[新证据交接](../docs/tasks/product-v3/HV2_EVIDENCE_HANDOFF_20261105.md)已接收并由V3本线更新证据/宣传口径，既有草稿不混入本轮提交。
-
-保留问题：搜索排行模型入口留V3；已列出的异常成果主要L4、Token无业务recipe时零建议不等于无异常；MA源缺失/预热冲突仍有边界。报告容器32GiB、峰值30.19GiB，伴随超时/任务Not Found；主机375GiB，未见OOM-kill完整证据。大数据容量/API健康/任务持久化与恢复是V3重要设计约束，不能仅靠扩内存或加探测器解决。
-
-镜像打包与审查负责跨版本迭代、版本级debug、独立E2E、Git及授权交付；六线开发窗口关闭、历史总设计/V1休眠。[SESSIONS](SESSIONS.md) · [交付身份/全部SHA](../docs/tasks/delivery/HV2_DELIVERY_20261103.md)。本轮仅文档归档、记忆和版本push，不改源码/批准四入口与L4/L5/冻结契约/包体；UIR-03仍留V3。
-
-[原字节归档](../achieve/2026-11-05/hv2-acceptance-close/README.md)保留旧报告和新接收快照。旧调查路径的预存重复副本不顺带提交，历史取证从归档读取。现场报告称旧state/镜像已由用户清理，现场回退须先确认介质与匹配state；不得再承诺现场旧环境原位可直接回退。[长期教训](DELIVERY_LESSONS.md)。
+本轮整理前状态按原字节保存在[归档](../achieve/2026-11-11/worktree-reconciliation/README.md)，历史阶段不再覆盖当前入口。未收到华为报告前不宣称现场验收通过。

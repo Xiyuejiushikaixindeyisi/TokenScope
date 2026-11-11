@@ -1,5 +1,105 @@
 # V3 调研与产品设计记忆
 
+2026-11-11工作树整理者（镜像会话）同步：V3小样本已交付，现场按[华为执行说明r2](../../docs/tasks/delivery/V3_PROMPT_R2_20261111.md)复用已认可用户/MA结果，不重跑全量；五组真实异常逐一分析并展示实际方案与样本收益，不强制每组clock。现场待回传，以下原作者阶段记录保留，不将旧待打包/未实施文字当当前状态。
+
+## 当前：已发送授权打包prompt，镜像会话开始处理（2026-11-11）
+
+用户直接要求把prompt发给镜像会话，审查通过后由该会话版本整理、Git提交和镜像打包，准备华为代码包/镜像/使用prompt，保留已有数据和分析结果。本线已将[完整prompt](../../docs/tasks/product-v3/acceptance-v3/PACKAGING_REVIEW_PROMPT_20261111.md)中的旧“未授权Git/构建”替换为新授权，并同步CURRENT/入口；不再重复申请同项授权。本次准备交付文件，不直接现场部署或扩大真实数据访问。
+
+发送成功至`01a1800e-80b4-7400-a78b-a84f5b6e888d`（local）；即时snapshot为active，turn `01a1c82d-23ce-7f73-9df6-4b330f0bdc48` inProgress，cursor `3888078c-4a35-4588-bb72-198a04868384:98`。[发送回执](../../docs/tasks/product-v3/acceptance-v3/PACKAGING_SEND_RECEIPT_20261111.md)。只代表已开始处理，不代表审查/构建完成；后续交付状态由镜像会话维护。本线不修改产品、不Git/构建，未重新创建跟踪自动化。
+
+候选本地已验收、五BUS/真实AC-MEM仍待现场、显式全量延期、Token新执行休眠等结论不变。以下为前序状态；旧“供用户转发/未授权打包”由本节覆盖。
+
+## 用户确认小样本交付，本地验收收口（2026-11-11）
+
+用户已答复“V3先交付小样本分析，显式全量评估延后”。原D6/T19显式full不再阻断本候选；不自动full、不声称样本收益覆盖全量，延期未指定版本。当前 **LOCAL_ACCEPTED_WITH_SCOPE_DECISION / ONSITE_PENDING**，[收口](../../docs/tasks/product-v3/acceptance-v3/CLOSE_20261111.md)、[完整打包审查prompt](../../docs/tasks/product-v3/acceptance-v3/PACKAGING_REVIEW_PROMPT_20261111.md)已整理供用户转发。BUS01–05及真实负载AC-MEM仍NOT_RUN，未批准Git/镜像/现场。
+
+本轮核repair-r1-02的302源码/17验证文件/4个dist/8编码资产与保护文档全部一致；证据artifacts/validation/product-v3/handoff-20261111-01/identity-check.json及git-status.txt。HEAD9a071c8加dirty，不能直接作为已发布V3 commit；固定提交/构建需后续授权和身份映射。沿用已充分的R2证据，没有重跑测试/服务或修改源码/测试/契约/配置。
+
+最后开发cursor `5b13bf57-3c9e-405a-8226-4f8b31dec48e:11`，同一已completed修复turn，idle；无新候选。heartbeat tokenscope-v3在2026-11-11交付prompt后已通过工具删除，回执deleteStatus=deleted。不直接唤醒镜像会话、不额外派开发；后续由用户使用prompt启动交付审查。
+
+以下为历史过程，范围待答复/heartbeat ACTIVE等旧状态不覆盖本节。
+
+## R2独立复验完成，等待显式全量范围裁定（2026-11-10）
+
+开发修复turn01a1c5a6-97de-7e62-88d1-75f358c644ad已completed；最新cursor `5b13bf57-3c9e-405a-8226-4f8b31dec48e:10`。2026-11-11 01:32仅chat应用状态转为notLoaded，同一修复turn/交接未变，无新候选或阻断。候选repair-r1-02，HEAD9a071c8+dirty，302源码manifest SHA `1fb8c3dc6a03dc49ddeb4c4cbc8b260c4ebc79e1cc60cfe04dcdcc5ee2fad820`，dist为REPAIR-R1/attempt-07/dist。源码/dist/验证文件前后均未变。
+
+RV3-01/02/03独立复验关闭；[R2验收报告](../../docs/tasks/product-v3/acceptance-v3/REVIEW_20261110_R2.md)。10实际HTTP/浏览器场景89.37s、9完整窗literal-prefix oracle47.66s、104后端106.78s、34前端兼容通过。大源2200→A512+B512；L4保留上限显式截断，不声称全发现。原DS CCH编码相同实算0pp且诚实解释。资源5组P95最大5.308ms；HTTP取消13.392ms，worker0.537s停止。重启10报告/26封存文件不变、0POST；首轮重启编排漏实例头422，补头复验通过，失败日志保留。
+
+证据根artifacts/validation/product-v3/independent-20261110-02；现有E2E驱动输出独占development-v3/V3B007/independent-review-20261110-02。所有临时服务停止，四端口关闭。两华为报告/高优先级两HTML SHA保持。未改产品/测试/配置/旧state、无Git/镜像/现场。
+
+当前 **LOCAL_CHECKS_PASSED / WAITING_SCOPE_DECISION**，不是继续等待开发修复。原D6/T19显式全量评估未实现，已通过异步问题请用户决定“V3先交付小样本、显式全量延后”或“补齐后再通过”；未收到答复不代签豁免、不提前派扩展开发。BUS01–05及真实负载AC-MEM仍现场待验。若接受延期，核身份仍一致后可整理打包评审prompt，无需重跑充分且不受新变更影响的检查；若要求补齐交原开发。prompt未生成，heartbeat保持ACTIVE，等待无变化静默，交付prompt后停止自动化。
+
+## 独立验收首轮未通过，已交开发修复（2026-11-10）
+
+heartbeat在开发completed后接收B007 LOCAL_VALIDATED；候选HEAD9a071c8+dirty，attempt15/source-sha256.json摘要a72eb548d0e466bb7ca7231fe2c9e46d5cdfee9a3c7e06417025396121edfd4f。核301源码/attempt14 dist一致，独立测试后源码未变。
+
+实际新state/新浏览器三场景clock E2E49.1s exit0；2200自动A512+B512，刷新/重连仅GET；literal-prefix oracle36.4s exit0四完整窗一致。均为明确构造样本，不代BUS。证据根artifacts/validation/product-v3/independent-20261110-01；既有驱动输出被路径断言限定在artifacts/validation/development-v3/V3B007/independent-review-20261110-01（全新独占目录，不复用开发证据）。本线服务已停止。
+
+额外六组真实DS编码+正常prepare/diagnoses+受控worker复现：CCH、普通时间、workspace各8条，V3无L1/改法但原pair_dynamics有精确recipe；工具排序/description只有L2/L3摘要无评估，tools空→有完全漏报。静态/报告/页面另确认新L4L5只有路径人数、无完整请求对照。已写[RV3-01/02/03](../../docs/tasks/product-v3/acceptance-v3/REVIEW_20261110_R1.md)，成功发送开发chat，修复turn01a1c5a6-97de-7e62-88d1-75f358c644ad已active。
+
+状态WAITING_FOR_REPAIR/NOT_ACCEPTED；cursor `5b13bf57-3c9e-405a-8226-4f8b31dec48e:8`，下次从[验收入口](../../docs/tasks/product-v3/acceptance-v3/ENTRY.md)恢复，等新候选复验并补资源/恢复/旧兼容等未完成独立门禁。未生成打包prompt，heartbeat保持ACTIVE；不重复派相同问题。本轮未改产品代码/测试/契约/配置或旧state，无Git/镜像/现场；只做授权验收、证据和开发修复交接。
+
+21:51 CST紧凑跟踪：开发仍active，自报定向38项/旧浏览器12项通过，大源A/B各272条完成且L4保留上限显式标注；全Python仍在跑、REPAIR_R1仍IN_PROGRESS，尚未交新候选。显式full未实现且无取消依据。本线只记录开发进度，不将其当独立验收结论，未启动争用服务/数据的复验，未重复派单或提醒等待。
+
+## 开始持续跟踪开发并自动接续独立验收（2026-11-10）
+
+用户明确授权本线盯开发进度，开发完成后主动读取最新交接和测试记录并独立验收，不需要再等启动确认；发现问题可发给开发chat修复，验收通过后整理镜像交接prompt。本线仍不修改代码。
+
+已实际创建本会话heartbeat：automationId `tokenscope-v3`，ACTIVE，10分钟间隔；目标开发chat `01a1c449-6a9b-7a83-912a-5a9ff77c703d` / host local。状态无变化不通知；有实质完成/问题/用户决定才报告；交接prompt交付后停止跟踪。没有创建其他chat或子agent。
+
+恢复入口：[独立验收跟踪](../../docs/tasks/product-v3/acceptance-v3/ENTRY.md)。当前WAITING_FOR_CANDIDATE，开发仍active进行最终真实HTTP/浏览器E2E，V3B007 CLOSE/TESTS尚未回填最终候选/结果，不能提前验收或占用开发服务。最近wait cursor `5b13bf57-3c9e-405a-8226-4f8b31dec48e:3`。本轮只读及登记，无产品代码/测试/服务/现场/打包/Git操作。
+
+## 开发完成后的独立验收与打包交接职责（2026-11-10）
+
+用户最新指定：**本session不修改代码；“TokenScope V3代码修复与开发”开发完成后，本session负责验收，并整理发给“镜像打包与审查”的prompt。** 本线职责增加独立验收与交接材料，不接管实施或debug修复。
+
+- 开始条件：开发会话交出确定候选版本、变更清单、批次关闭/测试证据和已知限制；不对仍在变化的工作树提前签验收通过。当前不启动验收服务/测试，也不创建监控或唤醒其他会话。
+- 验收以用户认可的四P0、两项评审修订和开发验收规范为准，重点检查自动L1 clock完整链、不同历史轮次的合法比较、大源自动缩样/资源、样本实算/独立复核、旧数据/默认入口/四入口/L4L5保护及Token休眠。独立E2E遵守唯一候选冷启动、新state/浏览器与原证据保护，不能只复述开发方通过数。
+- 本线记录问题和证据，产品代码问题交开发会话修复，修复后复验；不自行修改代码、降低门槛或代签未验证项。区分本地工程验收与需现场真实来源完成的业务底线，未完成事项明确保留。
+- 验收后整理打包交接prompt，包含精确候选身份、变更/兼容范围、独立验收结论与证据、未决现场项、保留/回退要求及交付文件要求。镜像会话仍只负责审批与授权打包；准备prompt不等于执行打包或部署。
+
+本轮仅更新本线入口/记忆和职责导航，未修改代码、运行验收、发送跨会话消息或提交Git。开发自测职责不变；原文档“研究会话只评审/不承担验收”由本条覆盖。
+
+## 两项评审修订后进入开发的授权（2026-11-10）
+
+用户已纠正接收方笔误，明确要求将结论发给“TokenScope V3代码修复与开发”（应用列表核实实际ID `01a1c449-6a9b-7a83-912a-5a9ff77c703d`）。先修订实施计划/验收的两点：①自动L1发现clock→定位→改法→评估→前端闭环，指定反事实不能代替；②不得因无关历史轮次/完整角色序列不同排除合法system/developer clock对照，消除D4/D5歧义并覆盖正负例。修订一致后即可按四P0计划进入开发，无需重复启动确认。
+
+权威交接：[评审决定与条件授权](../../docs/tasks/product-v3/V3_REVIEW_DECISION_20261110.md)。本线仅转交和登记，不接管代码或修改开发计划；Token私有开发仍留V3.5，打包/现场操作未由本次授权。消息回执记录在决定文件；上文优先于下方历史“未获实施授权”状态。
+
+## 四P0详细方案简评（2026-11-10）
+
+按用户要求只评审，不替开发会话给新方案或修改其文档。已读development-v3的ENTRY、ACCEPTANCE、DESIGN、BATCH_PLAN、TESTS、EVIDENCE_REVIEW、CHECK及B003–B005相关批次计划，并对照两份华为原报告。评审对象为r0，DESIGN SHA256 `2f05af4e57ddb4e5e8b387d25b8ec83464a174a6a72abb8ae19b184ad75068f6`；全部测试仍NOT_RUN。
+
+结论：总体认可证据取舍、四P0范围、公共层→领域→评估→前端→最终验收顺序；未发现引入V3.5 Token私有开发。已覆盖自动缩样、全源校验成本、进程资源/取消、候选/原因去重、精确clock反事实、A/B身份/P-H-C/未完成状态以及旧成果保护。不把旧12–39pp、容器末态内存或Token脚本结果当V3通过证据。
+
+一处需澄清的设计歧义：DESIGN D5.1 L1桶的“消息角色结构”未明确是否含完整历史角色序列；若按完整序列，则会排除同system/clock但历史轮次不同的对照，与D4及B003“无关历史不阻断clock候选”不一致。当前T10–T15未明确列出该跨历史结构的自动L1正例。此为文档/验收覆盖风险，非已确认实现bug。另，五组BUS允许用户指定clock反事实、无自动归因也出实算卡，故BUS通过证明改法评估/展示链，不单独证明自动L1已正确归因；方案已允许诚实标注，不要求制造因果或正收益。
+
+本轮仅向用户反馈简评，记忆做必要增量；不修改代码、开发方案、共享入口/登记或原报告，不运行测试/服务/分析，不提交Git、不通知其他会话。THREAD/SESSION经PowerShell环境复核仍为 `01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2`；WSL子进程未透传ID，未据此覆盖已核身份。
+
+## Token回传判断与评审边界（2026-11-10）
+
+用户明确：V3开发会话正在细化四P0范围/顺序/验收，完成后本线仅作简要评审，不另给方案；本轮只判断Token异常是否成立及V3.5开发必要性。已读Token回传661行/34,994字节，SHA1c617fc0afbb2f825253ab58aa2b4423f8a1983c939af516e2bcc21ee3167ab0；[完整判断](../../docs/tasks/product-v3/V35_TOKEN_TAIL_ASSESSMENT_20261110.md)。
+
+结论：报告有大工具返回、精确重复及历史负担线索，不能把长尾/固定system重复等同可无损删减。Qwen 202,071字符搜索返回与天舟8组重复值得核对；GLM最长例理想H/P约99.15%，固定提示词重复不单独证明缓存问题。V3.5值得针对性完善，但不支持推倒T2–T4或默认保留最近3个结果。
+
+源码核对：T2/T4无policy仍有content_inventory/met，规则condition才unknown；T3已有精确载荷匹配和重叠排除。assistant已提取/计量但T2/T4不覆盖，system/developer未进入当前提取名单，报告称system属于message_payload不符。三组报告均称无既有诊断任务，本批不能作为执行漏检证明；无recipe是建议阶段，与无发现不同。
+
+表内重算6组P/H/C均守恒、C均下降12.47%–36.85%，5组H/P下降；数字仅为报告算术，未复现样本。命中率下降不独立证明缓存破坏，较大block_size的因果亦未控制。保留报告局限：GLM全部长尾模板/工具结论自相矛盾，编码720/1440、5/6与8/12计数错误，无样本键/SHA和完整编码仿真调用，未验证业务质量。原报告不改，收益不作承诺。
+
+本轮只读源码/报告及算术核对，未运行分析器或现场数据；只维护本线判断/入口/记忆，不读取或改写正在细化的V3方案、不修改共享状态或源码、无Git/服务/消息/子会话。THREAD/SESSION仍为01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2，环境一致复核。下方“未审阅报告”属于前序归档轮记录。
+
+## 当前权责与V2归档（2026-11-10）
+
+- 实际ID：01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2；本轮环境CODEX_THREAD_ID/CODEX_SESSION_ID一致。活跃角色为V3调研与产品设计。
+- 权责：现场证据/产品范围/研究与宣传、四象限高优先级资料及交接；本轮按用户授权整理低优先级V2文档、汇总共享导航与会话登记，并通知另两条活跃chat本人登记。不承担产品开发/debug/验收执行或镜像打包。
+- 当前阶段：四P0方向已认可，新开发01a1c449-6a9b-7a83-912a-5a9ff77c703d已完成独立CHECK，产品尚未实施。Token私有修复留V3.5。Token回传文件已在目录，本轮仅核存在/报告头，未评审结论，不启动进一步设计。
+- 可写范围：本线文档/记忆；本轮额外获准整理AGENTS、CURRENT/SESSIONS、文档导航、相关ENTRY与V2归档。先快照并保留历史和其他会话追加记录；两条活跃chat只改自己的记忆，避免共享文件并发写入。
+- 依赖/交接：研究核对证据和范围；新开发负责独立check及后续获准公共层/低命中/必要前端和验证；镜像会话只审批与授权打包，不代开发。报告正式核验后再按用户安排细化修改范围、开发顺序与验收。
+- 已完成：39份V2旧prompt/阶段计划/草案归档，22份整理前快照；六条V2开发线、历史总设计/V1休眠。新开发与打包会话均通过实际消息通知并完成本人登记，详见[通知回执](../../docs/operations/SESSION_SCOPE_REGISTRATION_20261110.md)。本线自行登记，没有创建新chat或唤醒旧线。
+- [归档索引](../../achieve/2026-11-10/v2-session-dormancy/README.md)、[最新登记](../SESSIONS.md)。本轮未Git提交、未改产品/测试/配置/契约/state/HTML，未启动服务/分析/打包。前序文档提交9a071c8已推送；下方旧“ID未知/待启动/等待文件”等是历史时点，不覆盖当前状态。
+- 整理核验：39份归档原文/旧路径短入口及22份快照SHA一致；107份文档914个本地链接无断链，相关diff检查通过。15份无关预存修改/报告/CHECK原件摘要不变；源码与两份HTML保持。两条通知均取得completed回执并读到本人记忆，不只记录“发送成功”。
+
 ## 文档提交授权：2026-11-10
 
 用户明确要求提交Git并在对话完整给出新开发启动prompt。按[本次检查点](../../docs/tasks/product-v3/GIT_CHECKPOINT_20261110.md)精确提交四P0/角色交接/探索prompt与相关导航，显式push origin main；最终SHA与同步状态以Git历史及对话为准。CURRENT/交付ENTRY已有他线ICSL追加记录不暂存，其他会话文件与现场报告原件保留。新开发首轮仅登记、只读check并形成CHECK.md；等华为Token异常探索报告后再细化范围和验收，本次提交不是实施授权。

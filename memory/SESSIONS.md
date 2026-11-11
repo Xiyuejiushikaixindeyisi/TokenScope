@@ -1,40 +1,43 @@
 # Session角色与任务登记
 
-2026-11-10：用户基本认可V3低命中四项P0，指定全新开发角色独立check和后续获准代码开发；角色预登记、实际ID未知，未创建/唤醒会话。镜像打包与审查在V3仅打包与审批。Token异常在V3休眠，三组长尾探索为V3.5取证；回传后再细化V3范围/顺序/验收。[最新范围](../docs/tasks/product-v3/V3_SCOPE_AND_HANDOFF_20261110.md)。
+2026-11-11整理更新：**仅以下三个活跃角色，六条V2开发线休眠。** 活跃表示当前职责，不要求持续运行；休眠不等于删除chat、源码、数据或历史成果。工具的idle/notLoaded与这里的项目职责状态不同。先读AGENTS→CURRENT→本页→docs/README→自己的ENTRY，不全量恢复历史。
 
-P0：AGENTS→CURRENT→本登记→自己的ENTRY。当前以11-10用户决定为准；V2发布事实仍查[阶段收口](../docs/tasks/delivery/HV2_ACCEPTANCE_CLOSE_20261105.md)。V2六线、历史总设计/V1保持休眠，其他session未提交内容保留。新开发会话只需[精简入口](../docs/tasks/development-v3/ENTRY.md)，不全量恢复历史。
+## 活跃角色（3）
 
-## 已有session
-
-| 角色 | 实际ID与来源 | 状态 | 当前任务与优先级 | 入口 |
-| --- | --- | --- | --- | --- |
-| TokenScope总设计 | 未知，历史未核实 | 休眠 | 用户唤醒后处理总体边界与协调，不代写任务方案 | [总设计](../docs/tasks/product/ENTRY.md) |
-| Token监控后端开发V1 | 01a1682f-956d-7630-afe7-e123ba38dfc0，历史环境登记 | 休眠 | 保留V1能力/现场交接；不自动启动修复或打包 | [监控V1](../docs/tasks/monitoring/ENTRY.md) · [验收](../docs/huawei/MONITORING_V1_ACCEPTANCE_20261030.md) |
-| Token监控前端开发V1 | 01a17811-4c9a-7513-befc-b35723aec96e，前端环境已核实 | 休眠 | F007/UI-01和两份新前端prompt交接完成，保留原型开发起点 | [前端交接](../docs/tasks/viewer/ENTRY.md) · [UI-01](../docs/tasks/viewer/PROTOTYPE_V2_UI_01.md) |
-| 镜像打包与审查（曾任V2修复总设计师） | 01a1800e-80b4-7400-a78b-a84f5b6e888d，既有环境登记；11-10应用列表核对 | V2及ICSL revision3历史交付保持；未启动V3打包 | **V3只负责镜像/交付打包与审批**；接收新开发会话候选及验证证据，问题退回开发处理；不承担V3编码/debug/开发调度/开发验收执行 | [本线记忆](tasks/delivery.md) · [交付入口](../docs/tasks/delivery/ENTRY.md) |
-| TokenScope V3调研与产品设计 | 01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2，2026-11-10环境THREAD/SESSION一致核实 | 四P0方向获基本认可；本轮交接/登记/Token探索prompt已整理 | 现场证据、产品范围、探索prompt与研究文档；维护高优先级四象限资料；报告回传后参与范围细化，不承担产品开发 | [V3入口](../docs/tasks/product-v3/ENTRY.md) · [本线记忆](tasks/product-v3.md) |
-| V2 Token监控后端（原父会话） | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境与应用列表核实 | 历史角色；同一会话已按用户指派转为同事监控后端 | 已完成产品讨论、分线与版本整理；不再以父会话接管两线 | [产品记忆](tasks/monitoring.md) · [检查点](../docs/operations/V2_HANDOFF_20261030.md) |
-| V2 同事监控后端设计与开发 | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be，环境核实 | HV2 MA解释资源已独立通过冻结，源码窗口关闭 | 维护MA数据/预热/独立与配对指标和availability；按总负责定向处理后续问题，真实cached缺失不补造；[冻结](../docs/tasks/delivery/HV2_MA_FREEZE_20261103.json) | [MA入口](../docs/tasks/monitoring/v2-ma/ENTRY.md) · [记忆](tasks/monitoring-v2-ma.md) |
-| V2 用户监控后端—功能设计与开发 | 01a18bc7-cdb5-7830-a185-ad3aa6257b21，环境核实 | HV2用户2.1.0目录及默认TTFT已独立通过冻结，源码窗口关闭 | 多模型发现、同Trace来源与用户提供τ已实现；前端接入支持和问题归口，未校准；[冻结](../docs/tasks/delivery/HV2_USER_FREEZE_20261103.json) | [本线ENTRY](../docs/tasks/monitoring/v2-user/ENTRY.md) · [设计](../docs/tasks/monitoring/v2-user/DESIGN.md) · [记忆](tasks/monitoring-v2-user.md) |
-| 低命中率分析后端设计和开发（原异常分析母会话） | 01a18be2-7112-7aa2-919b-5137d1f1b1ad，2026-10-31环境THREAD/SESSION ID一致复核 | HV2公共第一关及低命中第二关均独立通过冻结，继续休眠 | 保留V2公共层/L1–L5维护历史；V3范围由全新开发会话统一接手，不双写；[公共冻结](../docs/tasks/delivery/HV2_COMMON_FREEZE_20261103.json)／[私有冻结](../docs/tasks/delivery/HV2_LOW_HIT_FREEZE_20261103.json) | [本线ENTRY](../docs/tasks/prefix-analysis/ENTRY.md) · [记忆](tasks/prefix-analysis.md) · [分线交接](../docs/tasks/analysis/BACKEND_SPLIT_HANDOFF.md) |
-| Token异常分析后端设计和开发 | 01a18fcd-0464-7cf1-b435-4f394bd33e66，既有环境登记；11-10应用列表核对 | V3休眠；修复开发留V3.5，未唤醒 | 保留T2–T4历史资料/旧成果；新三组长尾探索不是本线编码启动；[冻结](../docs/tasks/delivery/HV2_TOKEN_FREEZE_20261103.json) | [本线入口](../docs/tasks/length-analysis/ENTRY.md) · [记忆](tasks/length-analysis.md) |
-| Token监控V2前端设计与开发 | 01a18c49-d9b4-7a33-8c04-e5a72adfcc24，本会话环境CODEX_THREAD_ID与CODEX_SESSION_ID一致核实 | HV2接入/MF02及根源码与容器完整复验通过，窗口关闭 | 保持UI02/四入口；完整多模型发现、固定历史、仅W/SLO日常输入和MA缺数解释；不独立监听/Git/打包 | [修复交接](../achieve/2026-10-31/monitoring-v2-review/docs/tasks/viewer/monitoring-v2/REVIEW_FIX_HANDOFF_20261031.md) · [本线ENTRY](../docs/tasks/viewer/monitoring-v2/ENTRY.md) · [记忆](tasks/viewer-monitoring-v2.md) |
-
-
-## 其他已登记与未来角色
-
-新V3开发角色为用户本次指定的全新session，只登记职责和启动资料，不用旧会话顶替。下表旧前端/hybrid/Agent记录保留历史身份，不构成新启动。
-
-| 角色 | 实际ID／状态 | 优先任务与范围 | 依赖与入口 |
+| 角色／应用中的chat标题 | 实际ID与核验 | 当前阶段与权责 | 入口及本人登记 |
 | --- | --- | --- | --- |
-| **全新V3代码修复与开发** | **未知；待新会话启动后从环境登记。本轮未创建/唤醒** | 先独立check四P0；华为Token探索回传后细化，随后承担获准公共层/低命中/必要前端兼容与验证；不把Token私有开发纳入V3 | [入口/代码地图](../docs/tasks/development-v3/ENTRY.md) · [启动消息](../docs/tasks/development-v3/START_PROMPT_20261110.md) · [记忆](tasks/development-v3.md) |
-| 异常分析前端维护（原本机阶段总负责） | 01a19111-344a-75c1-84e0-14db8be08f4f，已核实 | HV2 c3/AF01及根源码与容器完整复验通过，窗口关闭 | v2 partial可读/状态与批准L4L5、固定来源revision；本线实施后根独立复审。异常前端归口维护、现场问题支持及被协调复验；不继续统一指挥后端或华为验收，不作为新总负责与后端中转；原交付/验证身份保持 | [职责交接](../docs/tasks/analysis/ONSITE_COORDINATION_HANDOFF_20261101.md) · [前端入口](../docs/tasks/viewer/analysis/ENTRY.md) |
-| hybrid attention仿真 | 无session；暂不做 | 不调研设计或开发，不作为监控两线依赖 | 保留现有近似的能力边界 |
-| 自进化Agent | 未知；未启动 | 两类诊断设计与代码均完成后由用户另行启动 | [Agent ENTRY](../docs/tasks/evolution-agent/ENTRY.md) |
+| TokenScope V3 调研与产品设计 | `01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2`，环境THREAD/SESSION已核实 | 证据/产品范围/宣传及高优先级四象限资料；**不修改代码，负责独立验收、问题复验及镜像审查交接prompt**。2026-11-11显式全量延期，repair-r1-02本地验收收口；已交接且镜像线完成发布；本人历史通知/验收记录保留。五组真实业务/现场资源仍待验；本线不执行Git或打包 | [研究入口](../docs/tasks/product-v3/ENTRY.md) · [本人记忆](tasks/product-v3.md) |
+| 镜像打包与审查 | `01a1800e-80b4-7400-a78b-a84f5b6e888d`，本人核验登记，2026-11-11本人环境THREAD/SESSION再次核实；本轮不读取应用实时状态 | **镜像/交付审查、版本与打包**：repair-r1-02已交付，源码cabf2c6已push、WSL/桌面校验及prompt r2完成，等待现场；用户新授权本线负责本轮工作树分类审查/整理。不直接现场部署，不承担产品开发/debug/开发调度或开发验收执行 | [交付入口](../docs/tasks/delivery/ENTRY.md) · [本人记忆](tasks/delivery.md) |
+| TokenScope V3代码修复与开发；chat标题“核查V3四项P0修复方案” | `01a1c449-6a9b-7a83-912a-5a9ff77c703d`，本人环境核验及应用列表一致 | 2026-11-11用户明确延期显式full；设计r2/T19拆分/验收/记忆已同步。repair-r1-02独立R2关闭RV3-01/02/03，本地LOCAL_ACCEPTED_WITH_SCOPE_DECISION / ONSITE_PENDING；华为五BUS及真实AC-MEM仍NOT_RUN。华为验收交接材料已准备，打包由镜像线完成，本开发线不打包/现场执行；继续承担公共层/低命中/必要前端及回传缺陷修复。本人PowerShell环境THREAD/SESSION再次核验一致，302源码摘要无漂移，详本人入口与记忆 | [开发入口](../docs/tasks/development-v3/ENTRY.md) · [CHECK](../docs/tasks/development-v3/CHECK.md) · [本人记忆](tasks/development-v3.md) |
 
+三方权责已由本人登记；两条外部chat已按用户明确授权通知并完成更新，见[通知回执](../docs/operations/SESSION_SCOPE_REGISTRATION_20261110.md)。此前登记轮各方只改自己的记忆、研究汇总共享导航；2026-11-11用户明确授权镜像线整理当前工作树及共享入口，先快照并保留各方原记录。
 
-## 当前协作边界
+2026-11-11研究会话补充：[R2复验及用户范围决定已收口](../docs/tasks/product-v3/acceptance-v3/CLOSE_20261111.md)，不改开发自测或历史失败记录。用户新授权已同步[完整打包prompt](../docs/tasks/product-v3/acceptance-v3/PACKAGING_REVIEW_PROMPT_20261111.md)并发送镜像会话，turn已inProgress；[发送回执](../docs/tasks/product-v3/acceptance-v3/PACKAGING_SEND_RECEIPT_20261111.md)。审查/构建是否完成以交付会话后续实际证据为准。
 
-V3获准改动涉及的公共层由新开发会话统一维护，并负责相关后端/必要前端兼容与代码验证；旧六线不并发介入。镜像会话只做审批和授权打包，不承担开发验收执行；候选问题由新开发会话修复。研究会话维护证据、范围和交接，本轮按用户明确要求增量更新共享登记/导航；以后修改前仍核最新状态，不覆盖他人dirty。先等Token探索报告再细化V3实施安排，当前不编码/提交/打包。
+## V2开发会话（6，均休眠）
 
-用户与异常同Trace，MA独立制品；W/SLO与用户τ/K要求保持。旧结果与批准四入口/L4L5保护，四象限HTML为高优先级资料。现场真实数据、两阶段用户验收、SSH18002及唯一Markdown要求按当前具体授权适用；不因旧prompt恢复源码窗口或开启Token分析。
+| 应用中的chat标题 | 实际ID | 状态及历史入口 |
+| --- | --- | --- |
+| Token监控前端设计开发 | `01a18c49-d9b4-7a33-8c04-e5a72adfcc24` | **休眠** · [V2监控前端](../docs/tasks/viewer/monitoring-v2/ENTRY.md) |
+| 异常分析前端设计与开发 | `01a19111-344a-75c1-84e0-14db8be08f4f` | **休眠** · [V2异常前端](../docs/tasks/viewer/analysis/ENTRY.md) |
+| 低命中率异常分析后端 | `01a18be2-7112-7aa2-919b-5137d1f1b1ad` | **休眠** · [V2低命中/公共层](../docs/tasks/prefix-analysis/ENTRY.md) |
+| Token异常分析后端设计和开发 | `01a18fcd-0464-7cf1-b435-4f394bd33e66` | **休眠** · [V2 Token后端](../docs/tasks/length-analysis/ENTRY.md) |
+| V2 用户监控-后端 | `01a18bc7-cdb5-7830-a185-ad3aa6257b21` | **休眠** · [V2用户后端](../docs/tasks/monitoring/v2-user/ENTRY.md) |
+| V2 MA 监控-后端 | `01a18ab2-2600-7ae1-8b0e-979dad9ec3be` | **休眠** · [V2 MA后端](../docs/tasks/monitoring/v2-ma/ENTRY.md)；原V2监控父角色已转为本角色，不重复登记 |
+
+六条ID来自既有登记并于本轮应用列表核对；未唤醒、未发送开发任务。旧“等待总负责定向修复/并行分线/公共层唯一维护方”不自动恢复。未来确需唤醒由用户另行指定；V3范围由新开发会话统一负责，不双写。
+
+## 其他历史与未启动角色
+
+| 角色 | ID／状态 | 入口 |
+| --- | --- | --- |
+| 历史全项目总设计 | ID未知／休眠 | [历史入口](../docs/tasks/product/ENTRY.md) |
+| V1监控后端 | `01a1682f-956d-7630-afe7-e123ba38dfc0`／休眠 | [V1入口](../docs/tasks/monitoring/ENTRY.md) |
+| V1监控前端 | `01a17811-4c9a-7513-befc-b35723aec96e`／休眠 | [V1入口](../docs/tasks/viewer/ENTRY.md) |
+| hybrid／自进化Agent | 未启动 | 不因本次登记创建或恢复；[Agent历史入口](../docs/tasks/evolution-agent/ENTRY.md) |
+
+## 协作边界
+
+V3四P0按条件授权进入开发，Token私有修复留V3.5，四入口/L4L5与旧成果保留。最新分工：开发会话完成实施/自测并提交确定候选，研究会话独立验收；问题交开发修复后复验，研究会话整理验收结论及打包交接prompt，镜像会话审批和授权打包。研究会话不修改代码，打包会话不代开发或验收；不组织旧六线修复。未完成的现场业务底线独立列明，不以本地结果代签。
+
+共享文件先读最新状态，精确增量更新并保留他人修改。当前为授权工作树整理，具体变更与Git结果见[整理记录](../docs/operations/WORKTREE_RECONCILIATION_20261111.md)；不运行产品服务或变更包体。历史职责及逐版状态保存在[归档前登记](../achieve/2026-11-10/v2-session-dormancy/snapshots/memory/SESSIONS.md)；当前流程见[协作规则](../docs/architecture/TASK_SESSION_WORKFLOW.md)。
