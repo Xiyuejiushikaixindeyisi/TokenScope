@@ -1,49 +1,8 @@
-# 公共推荐扩展分批实施与验收计划
+# 已归档：公共推荐扩展分批实施与验收计划
 
-2026-10-31 TA-S1/AR-03范围覆盖：Token新自动方案仅T2–T4，不重编号，不再要求T1精简模板；工具定义仅由低命中现有顺序/一致性/漂移职责负责，不新增长度精简。工具定义仍可作为T2–T4身份/协议校验输入。旧T1报告及冻结契约保留。用户已在本线直接恢复公共实施，前端也确认统一阶段已解决；此前暂停不再生效。详见[范围回执](../prefix-analysis/SCOPE_T234_ACK.md)。
+2026-11-10：本材料属于已关闭的V2启动/阶段计划，降为历史参考，不是新一轮执行授权。
 
-2026-10-31。依据[AR-C1工程设计](RECOMMENDATION_CONTRACT_ALIGNMENT_AR1.md)、[公共ARTA000签收](../prefix-analysis/ARTA000_PUBLIC_ACK.md)及[Token ARTA000](../length-analysis/ARTA000_ALIGNMENT.md)。本计划设计已获批准；ARPC000–006实现、分批测试及最终联合回归已完成，详见[最终验收](batches/ARPC006/RESULT.md)，以下为完整批次目标而非已完成声明，不把旧LH/TA测试当新功能验证。本计划不修改正式前端，不含打包、部署、自进化Agent或线上请求改写。
-
-## 实施顺序与交接
-
-公共维护会话01a18be2-7112-7aa2-919b-5137d1f1b1ad唯一修改analysis_common、prefix_analysis、诊断API/存储及装配。Token会话01a18fcd-0464-7cf1-b435-4f394bd33e66唯一修改token_content及本线测试。共同计量复用监控；不复制编码或回放算法。共享app/CLI实际开工前登记修改窗口，不因本计划预占。Token实施安排由其本线授权推进，本计划不自动启动会话或委派任务。
-
-主链：ARPC000 → ARPC001 → ARPC002 → ARPC003 → ARPC004 → ARPC005 → ARPC006。Token私有适配可在公共机器协议交付后依赖该协议推进；不等待前端，不用视觉JSON替代真实插件。
-
-| 批次/维护方 | 交付及依赖 | 必须通过的退出验收 |
-| --- | --- | --- |
-| ARPC000 公共契约与设施骨架／公共 | 生成独立推荐/分组/局部定位Schema、typed basis/reason注册、适配器协议、预算配置模型与独立存储kind；记录冻结摘要。消费本轮设计签收，向Token提供正反fixture与方法签名，对应其ARTA000后续运行时交接 | 新Schema校验通过；未知版本/非法枚举/错误引用/超界计数拒绝；旧common/http/runtime/discovery冻结摘要不变；旧报告明确not_computed；能力声明不得声称未安装adapter可用。提供方与消费者分别记录验收 |
-| ARPC001 推荐与差异归组／公共 | L1–L3稳定recipe与支持集合、N/M关联、三态字段；L4/L5独立difference_group。依赖ARPC000 | 同recipe跨请求聚合且请求去重；不同依据/工具定义/生成规则不合组；同输入ID稳定、换task读取仍隔离；匹配/位置/修改数区别正确。低命中pilot/full严格>1pp，恰好1pp不通过；L4/L5不套收益门槛。30条Finding来自6条请求的样例不得展示30条受影响请求 |
-| ARPC002 局部证据与建议前后／公共 | lossless定位、raw/decoded codepoint范围、最多3例及截断标记；原完整JSON留底层。依赖归组对象 | 重复相同字符串不能错定位；重复key歧义明确；JSON转义、内嵌JSON、非BMP字符、>2^53数值词法保持；空值/根路径/不存在路径给明确原因；64k级原文不全量内联。3例不改变总计数；可解释不可定位保留发现，预算/系统中断按partial |
-| ARPC003 后台策略与Token适配／公共+Token各自模块 | 公共装配静态adapter、提交冻结配置；Token提供recipe/validate/propose/prepare实现与业务模板。依赖ARPC000机器协议及Token ARTA001–002实际交付，不代写其模块 | T2–T4构造合法策略各形成准确目标；相同输入确定性；无Finding的T3合法。缺依据、坏配置、无匹配、缺adapter区分；来源不能由raw请求伪装；T3无真实协议/删除约定拒绝；T2/T4无依据假设默认禁用；幂等提交/retry固定原配置，新key才能取新配置 |
-| ARPC004 自动评估与资源/发布／公共 | 原scope扫描→proposal→归组→逐项guard→完整Plan→direct_full→封存，等价执行去重；低命中先、Token始终原文。消费Token已验证adapter，对应ARTA003联合边界 | 每项先验证再复用；不同依据不隐藏，Evaluation准确指向执行Plan；guard失败整方案阻断、不丢失败目标。编码全任务共预算；所有新预算等于允许、超出停止，失败启动计数，复用不重复计。完整零负收益available，P降C升不可标整体成功。范围/编码身份一致，取消/源损坏/中途失败无假after，partial不得替换默认 |
-| ARPC005 只读API与发现接入／公共 | 实现AR-C1确切GET路由、稳定分页、封存数据读取、capabilities及summary；Token配合ARTA004消费核对 | 所有路由只读；页面访问零分析/编码/写任务调用。分页无重漏、末页null、limit及实例错误确定；旧报告not_computed；未知版本拒绝。跨task对象不可串读；未封存不可读；原子发布后才通知，重启/重复通知保留既有恢复语义；部分或空报告不替换旧默认 |
-| ARPC006 联合回归与后端交接／公共+Token各自签收 | 真实插件端到端、资源测量、监控/旧HTTP兼容、身份摘要、最终字段样例及前端只读接入文档。依赖前批和Token本线实现验收 | 混合低命中+Token及Token单线完整跑通；真实既有模型资产回放核对P/H/C，不以mock代替计量验证；完成下表场景。记录覆盖、耗时、内存、预算停止位置及配置；联合签收区分工程数据与真实业务收益。前端产品验收/打包部署仍不在本批 |
-
-每批实现后先运行相关单元/集成与必要兼容检查，修复失败再关闭；记录修改文件、输入身份、命令/结果、问题及修复、残余限制和下一批依赖。仅新变更或未消除风险触发扩大回归，不机械重复全量测试。所有批次报告写入本目录后续`batches/ARPCxxx/RESULT.md`，未执行不预建通过记录。
-
-## 联合验收矩阵
-
-| 编号 | 场景与判据 |
-| --- | --- |
-| A01 | 修改数N来自完整modified计数；noop N=0，原文改变P不变N>0，缺modified的新available结果拒绝，旧结果unknown；全scope N<=M；跨卡不累加 |
-| A02 | 低命中完整pilot>1pp才full，完整full>1pp才优化卡；L4/L5发现即差异区。Token ΔP/ΔC为after-before，before=0比例null；负/零收益保持，不套命中率门槛 |
-| A03 | 缺保留规则/引用或删除约定/替换规则，资格检查完整后advice_only可ready；非法依据或声明支持却未实现为技术阻断partial；合法空bundle展示配置数0，坏路径拒绝或partial |
-| A04 | 两依据相同执行内容：各自验证通过后复用一次，保存两条依据；其中一个invalid不能借另一条成功。相同hash仍比规范化字节；冲突/重叠操作不自动拼接 |
-| A05 | proposals、组数、操作数、单项/总Plan字节、回放次数和encoding_calls逐项边界；全scope不静默缩小；匹配未完成matched=null，完整after不可伪造；计划预算与实际RSS分开测量 |
-| A06 | 任务取消、worker重启、源损坏、评估失败、封存失败；after及终态真实，旧默认不变，无先通知后报告；一方向完整一方向未完成整体partial |
-| A07 | 同submission_key遇配置变化返回原task/快照；retry用原快照；新意图读新配置。旧任务旧接口不变；跨scope/实例/版本禁止串联 |
-| A08 | 每组<=3例且局部before/after可回溯原文摘要/位置；无法唯一定位不给假高亮；长文本/转义/大整数/重复key均覆盖。接口仅公开安全策略摘要，不泄露完整映射配置 |
-| A09 | 推荐列表、单项、例子、差异及摘要读取同封存task，顺序稳定；读取次数增长不增加回放次数。legacy≠无问题，empty≠partial，阶段失败原因无需解析中文 |
-
-## 最小业务输入与不阻塞项
-
-工程细节已确定，无需再选择ID、枚举、分页、默认预算、发布方式或前端交互。默认预算是有界起点，ARPC006需给出资源实测；不能将256个请求级提案默认上限宣称适用于大appid生产全量。调大预算需新任务配置，不靠缩小scope制造完成率。
-
-真实业务验收只需指向一份可追溯后台配置/规范，按已有内容启用：T2允许省略字段/层级或保留规则；T3真实引用映射或普通重复副本删除约定；T4 K/单位/范围及准确替换规则。当前尚未核实这些真实资料。构造fixture足以验证工程正确性，不能证明业务授权、质量不损失或线上收益。
-
-缺少部分策略不阻碍其他规则开发或验收；该分支展示明确缺依据。若另行要求无配置也给T2/T4数值收益，才需业务确定有限假设档位和替换内容；当前不默认启用，不阻塞本计划。无需再次询问已批准的L1/L3删除副本评估或L4/L5展示规则。
-
-## 本轮记录
-
-完成：AR-T2/ARTA000与AR-L2工程语义收口、公共方文档签收、上述实施/验收计划。当前实现与测试详见[最终验收](batches/ARPC006/RESULT.md)。已运行真实本地分析任务并完成公共及Token接口交接；未改正式前端、未打包部署。
+- [历史正文（导航版）](../../../achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/analysis/RECOMMENDATION_IMPLEMENTATION_PLAN_AR1.md)
+- [原字节与校验依据](../../../achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/analysis/RECOMMENDATION_IMPLEMENTATION_PLAN_AR1.md)
+- [归档清单](../../../achieve/2026-11-10/v2-session-dormancy/README.md)
+- [当前会话与权责](../../../memory/SESSIONS.md)

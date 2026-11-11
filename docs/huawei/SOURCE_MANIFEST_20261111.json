@@ -1,0 +1,40 @@
+{
+  "purpose": "received documents / business references; identity only, not new acceptance",
+  "files": [
+    {
+      "path": "TOKENSCOPE_PROMOTION_READONLY_20261109.md",
+      "bytes": 174954,
+      "sha256": "31ee6957e16c6ddcc09c61e5abde2490be8b532a7fa3801d801d197304a5b5ab"
+    },
+    {
+      "path": "TOKENSCOPE_V3_LOW_HIT_EXPLORATION_20261109.md",
+      "bytes": 33646,
+      "sha256": "d321426897f785cf0ec2e665b5e21f1f54cd6b9478a174fad412956656882963"
+    },
+    {
+      "path": "TOKENSCOPE_V35_TOKEN_TAIL_EXPLORATION_20261110.md",
+      "bytes": 34994,
+      "sha256": "1c617fc0afbb2f825253ab58aa2b4423f8a1983c939af516e2bcc21ee3167ab0"
+    },
+    {
+      "path": "appid与对应产品（未去重）.md",
+      "bytes": 7137,
+      "sha256": "90c34d86fbe8687495e076617fc27f3d18ea6685ea0f3f12ffd1f59f5097e345"
+    },
+    {
+      "path": "华为风PPT参考.md",
+      "bytes": 28766,
+      "sha256": "2fdb06cedca3e62e748f8d92c257c6107bb9857af694653e408d0a5d38e16883"
+    },
+    {
+      "path": "HUAWEI_V2_INVESTIGATION_REPORT_20261103.md",
+      "bytes": 60524,
+      "sha256": "51a5a9430137523b0ccc2a6fd52f9ed48334458a900c58d733718242514eff83"
+    },
+    {
+      "path": "HUAWEI_V2_ACCEPTANCE_REPORT.md",
+      "bytes": 53149,
+      "sha256": "a5901a2a8c5eace577ffb39e4e0ef36201549cde8d94d00f16f1ef9c32d36fac"
+    }
+  ]
+}

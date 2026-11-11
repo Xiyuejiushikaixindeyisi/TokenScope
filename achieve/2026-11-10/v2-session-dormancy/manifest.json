@@ -1,0 +1,454 @@
+{
+  "date": "2026-11-10",
+  "kind": "V2 low-priority documentation archive",
+  "documents": [
+    {
+      "source": "docs/tasks/monitoring/v2-user/BATCH_PLAN.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/monitoring/v2-user/BATCH_PLAN.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/monitoring/v2-user/BATCH_PLAN.md",
+      "sha256": "80acbec0d9b09692edcfa75769032d2f85a9ef0044aeaa2c72999567c847833f",
+      "bytes": 13124,
+      "stub_sha256": "40bd2ca2f88826fab745ab80b14f2b20157f56aa94ec2c60ba7f62491736d032"
+    },
+    {
+      "source": "docs/tasks/monitoring/v2-user/BATCH_RECORD_TEMPLATE.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/monitoring/v2-user/BATCH_RECORD_TEMPLATE.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/monitoring/v2-user/BATCH_RECORD_TEMPLATE.md",
+      "sha256": "f1059b37f5efa4ee602919e9c48bfc4304cc85601587140774d50719db9b0907",
+      "bytes": 2611,
+      "stub_sha256": "dd1ed81598557cf0fa304297382b9d8f47c976332ab9b9e53cd2a58f1f212ba2"
+    },
+    {
+      "source": "docs/tasks/monitoring/v2-user/TTFT_BATCH_PLAN.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/monitoring/v2-user/TTFT_BATCH_PLAN.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/monitoring/v2-user/TTFT_BATCH_PLAN.md",
+      "sha256": "232cb5cc24ba079340f73cc943f49c779ba144d7d4f1665a9215e5d94b82f297",
+      "bytes": 893,
+      "stub_sha256": "81d6cb4e38e43a046db0274965c1e0496fdb9563a1053779bcd0458881faaf71"
+    },
+    {
+      "source": "docs/tasks/monitoring/v2-ma/BATCH_PLAN.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/monitoring/v2-ma/BATCH_PLAN.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/monitoring/v2-ma/BATCH_PLAN.md",
+      "sha256": "9ec83604ecfa0cd3f336390864079492426cd4a529df67ef58decea7e8ce96fd",
+      "bytes": 8219,
+      "stub_sha256": "cc2679a98df8dd9cbc701230e860aa13af711a89a67e7b73813e4e7325bd12e7"
+    },
+    {
+      "source": "docs/tasks/prefix-analysis/BATCH_PLAN.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/prefix-analysis/BATCH_PLAN.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/prefix-analysis/BATCH_PLAN.md",
+      "sha256": "b4c94cf4a5c4373990bcd0de59000c3614eb51683a1a5c4e185827a2749fd673",
+      "bytes": 20169,
+      "stub_sha256": "a5d300ccf70d95edc267213a654a2e2d892a41f1c21378f61f621323f8be576a"
+    },
+    {
+      "source": "docs/tasks/prefix-analysis/DESIGN_REVIEW.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/prefix-analysis/DESIGN_REVIEW.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/prefix-analysis/DESIGN_REVIEW.md",
+      "sha256": "cf89ca60f7d09d12a689304052be7cd2cfb2af9cc91553f1f040f47a404c0475",
+      "bytes": 9845,
+      "stub_sha256": "a0207820cde74870e928f859ce477cec33d5301ec1333f9e0cfe280a4746db8d"
+    },
+    {
+      "source": "docs/tasks/length-analysis/BATCH_PLAN.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/length-analysis/BATCH_PLAN.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/length-analysis/BATCH_PLAN.md",
+      "sha256": "654c025df454e8aa5bf52a459ad129d94878fe2dd0e114ed83cedc47f251f7ae",
+      "bytes": 12830,
+      "stub_sha256": "5765e3b94fcf8b04cc2b3db377d343d42371ae6f7f0fe50ee0f7b9dadbf1ec45"
+    },
+    {
+      "source": "docs/tasks/length-analysis/BATCH_PLAN_ARTA.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/length-analysis/BATCH_PLAN_ARTA.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/length-analysis/BATCH_PLAN_ARTA.md",
+      "sha256": "804850631a74f9afaf5af4f82116969cf72794f78236b8e55fb700bbddecda4d",
+      "bytes": 2122,
+      "stub_sha256": "ac9519d7d48163faeb24820e9c8619ebb2e14a589f56b0e6abb76d2a27fa46fa"
+    },
+    {
+      "source": "docs/tasks/length-analysis/COMMON_INTERFACE_ALIGNMENT.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/length-analysis/COMMON_INTERFACE_ALIGNMENT.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/length-analysis/COMMON_INTERFACE_ALIGNMENT.md",
+      "sha256": "61c916f4975bdb8b2e7026f81915095d6cd839c7e87251ebe5d8a955055681c9",
+      "bytes": 14370,
+      "stub_sha256": "a5a7cc406ef4f100b2eb3e67e33ec5dc02cc29fc89320bf07cce1fe0c5676f7c"
+    },
+    {
+      "source": "docs/tasks/viewer/monitoring-v2/BATCH_PLAN.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/monitoring-v2/BATCH_PLAN.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/monitoring-v2/BATCH_PLAN.md",
+      "sha256": "3d7295b976a3b53100070e8e2af82d0b3778d2d2ada185b967efd72e1b519bca",
+      "bytes": 9556,
+      "stub_sha256": "bab7de22ef5ccf2e12a97cecfffc0a7c627d9071f8a6a51f12369ce0611346fc"
+    },
+    {
+      "source": "docs/tasks/viewer/monitoring-v2/DEMO_REVIEW.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/monitoring-v2/DEMO_REVIEW.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/monitoring-v2/DEMO_REVIEW.md",
+      "sha256": "5a7dd856e061bce8ded08a4590906e978c3599b75c457a8c1a3fbd18bf239641",
+      "bytes": 15722,
+      "stub_sha256": "2377c54d7df4a3b1c232005dd964ac2b71f684a14ebff098159d13ee6525a1ff"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/BACKEND_DEVELOPMENT_PROMPT.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/BACKEND_DEVELOPMENT_PROMPT.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/BACKEND_DEVELOPMENT_PROMPT.md",
+      "sha256": "376c7dd76c355be97384bebe8b9c984ffd8361472e495ff4820a6220d70d466d",
+      "bytes": 6947,
+      "stub_sha256": "c974bda0a35fcbd060fdaecea875367b094f89a1346bfbd17d158c61128b89db"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/DEVELOPMENT_READINESS.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/DEVELOPMENT_READINESS.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/DEVELOPMENT_READINESS.md",
+      "sha256": "34fbc4a484e51d3f11ff844bdd818eabf127d630255bd6163a6f8c0f6ff7efca",
+      "bytes": 5406,
+      "stub_sha256": "ca0695d10f13d4c03e7c77ff75d3401a0d6bf32d664ab5a884976600a2bd8802"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/FRONTEND_DEVELOPMENT_PLAN.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/FRONTEND_DEVELOPMENT_PLAN.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/FRONTEND_DEVELOPMENT_PLAN.md",
+      "sha256": "ea085853361f0e618b317669c58c69e5e7decb95393ec5145f81f6e3779f2b9a",
+      "bytes": 22108,
+      "stub_sha256": "864cb99d957ff1a02e2927bdcbd890e2d1d186541120fd276bd3cb63d41bf908"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/INTEGRATION_PLAN.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/INTEGRATION_PLAN.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/INTEGRATION_PLAN.md",
+      "sha256": "930114edd2605080a1d55904b4b25345189efd24940ec739d1bdd12203c5f172",
+      "bytes": 9603,
+      "stub_sha256": "14f8e76a1e5a4765fe130498bab294f5d340ba3dbb22f5857f434518b985f1c5"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/REWORK_PLAN_AR01.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/REWORK_PLAN_AR01.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/REWORK_PLAN_AR01.md",
+      "sha256": "ae0639cd2d8e336a32560adccb10fc93301cf95321e80b707a68656f5d4aeda7",
+      "bytes": 11893,
+      "stub_sha256": "495b65019a3f2f279992051df34cc583b2b3e63707ed31cea41571737d665475"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/REWORK_COORDINATION_AR02.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/REWORK_COORDINATION_AR02.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/REWORK_COORDINATION_AR02.md",
+      "sha256": "f24ba1228eaa5276f0a15cabb6fd31d17c3c5e17a16c46fc724c6aa7bf74b912",
+      "bytes": 6461,
+      "stub_sha256": "cf4a528bfeb5f4ba597e70a060b115356412373196002e42f7e43d7a7bc5b629"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/REWORK_COORDINATION_AR03.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/REWORK_COORDINATION_AR03.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/REWORK_COORDINATION_AR03.md",
+      "sha256": "8087a52d967ca81224785606c0d1d481a21bb09f3b48de2082ab10294ec9d60c",
+      "bytes": 7319,
+      "stub_sha256": "05ca1b7235373518b5e2b04c767441e30eb00a8f70c7a73dfa1d52842cdcd291"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/PROMPT_LOW_HIT_READONLY_RECEIPT.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/PROMPT_LOW_HIT_READONLY_RECEIPT.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/PROMPT_LOW_HIT_READONLY_RECEIPT.md",
+      "sha256": "c99e948ee0eba80487934d679b72ab4f2b9f368166805cf6bf34966265bb211b",
+      "bytes": 4023,
+      "stub_sha256": "afe745cbb96aaf7d7734a3ef439ac52f5778ffd83d54d72a2e2969834e648c5c"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/PROMPT_LOW_HIT_REWORK_ARL2.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/PROMPT_LOW_HIT_REWORK_ARL2.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/PROMPT_LOW_HIT_REWORK_ARL2.md",
+      "sha256": "e8123967850adb641d0370f0f0e0194ab6f1765bb7f74f52500579fa68b6c691",
+      "bytes": 5896,
+      "stub_sha256": "9c00ddc2b1addb08b3ea843e227aa294e8983a42cc2fb124f9d8e119d24c59e1"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/PROMPT_PUBLIC_IMPLEMENTATION_ARL3.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/PROMPT_PUBLIC_IMPLEMENTATION_ARL3.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/PROMPT_PUBLIC_IMPLEMENTATION_ARL3.md",
+      "sha256": "19194609abaf34844e4f3abb403d718dd6e0959a3b401c33619258da494a28fb",
+      "bytes": 4640,
+      "stub_sha256": "137e60c9d1f871e4ea73c28a288d38fd3bdb3356c549fdd75ca8aef9378e37ec"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/PROMPT_PUBLIC_READABILITY_ARL4.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/PROMPT_PUBLIC_READABILITY_ARL4.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/PROMPT_PUBLIC_READABILITY_ARL4.md",
+      "sha256": "d8f837c7a9c0f9154a18b260f3230feba0ab5ebe24c9df2346f12483537ab7e7",
+      "bytes": 1908,
+      "stub_sha256": "3a2056c6d6ff14012e51b633278d0fce0d6051cc414d58d658a9df84187b1943"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/PROMPT_TOKEN_IMPLEMENTATION_ART3.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/PROMPT_TOKEN_IMPLEMENTATION_ART3.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/PROMPT_TOKEN_IMPLEMENTATION_ART3.md",
+      "sha256": "951049902851fc2339a6022ddebc97975b20b35ef0cc9516190e4e87528a7718",
+      "bytes": 4842,
+      "stub_sha256": "908a97b8bd06d257edddfb06f85ba41ad26169150b896096a4ac774e0e8055a9"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/PROMPT_TOKEN_READABILITY_ART4.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/PROMPT_TOKEN_READABILITY_ART4.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/PROMPT_TOKEN_READABILITY_ART4.md",
+      "sha256": "3f64c8f6119b60268b88ba670b0487cc6cec67d92cb7733248487400c3907921",
+      "bytes": 1452,
+      "stub_sha256": "beede0fbe0b2102fb223d2c8b917ca67f32349bc9dc05f962be797d14735ced5"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/PROMPT_TOKEN_READONLY_RECEIPT.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/PROMPT_TOKEN_READONLY_RECEIPT.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/PROMPT_TOKEN_READONLY_RECEIPT.md",
+      "sha256": "0bc88e20996a0b8bb86f4ddf92a48824b13922ae5a4a32ae0aac10834a192b90",
+      "bytes": 4316,
+      "stub_sha256": "978ba9fce51b95849bb37ea02adee6bfcfee6d2c79ff0ecc88ae6b73cfa6f50f"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/PROMPT_TOKEN_REWORK_ART2.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/PROMPT_TOKEN_REWORK_ART2.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/PROMPT_TOKEN_REWORK_ART2.md",
+      "sha256": "ee0c6c3b2686322dc98a2d09b4a59928fb9471061893c2a104e413b395911a3c",
+      "bytes": 5828,
+      "stub_sha256": "143ddd18e74a68d30b6e1d12aecf79666e9b49fe26bace3eab478746b83d1ca5"
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/PROMPT_UNIFIED_ACCEPTANCE_RV1.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/viewer/analysis/PROMPT_UNIFIED_ACCEPTANCE_RV1.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/viewer/analysis/PROMPT_UNIFIED_ACCEPTANCE_RV1.md",
+      "sha256": "fde12949bc9ce2d3e8367848b8d7871ca344e66cdd13f6ffd2a7ed7d935ee194",
+      "bytes": 2484,
+      "stub_sha256": "b76cccd6ffa0586f77eee6135d01ff4202d3c1d54f0b6194b0a3048f54cca3db"
+    },
+    {
+      "source": "docs/tasks/analysis/BACKEND_COMMON_CONTRACT_DRAFT.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/analysis/BACKEND_COMMON_CONTRACT_DRAFT.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/analysis/BACKEND_COMMON_CONTRACT_DRAFT.md",
+      "sha256": "87163e5a5b173cf72ec397b707c318580cae6cd9eb20c505a2be4024129ce865",
+      "bytes": 14410,
+      "stub_sha256": "289fd393e0a18a428df8d57b06a585084421ae415c6391537227f969c45fa126"
+    },
+    {
+      "source": "docs/tasks/analysis/PHASE1_PLAN.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/analysis/PHASE1_PLAN.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/analysis/PHASE1_PLAN.md",
+      "sha256": "47e9938cbd21307afea725a4ac23adfba5ffd199239509f835c12956034e9938",
+      "bytes": 9415,
+      "stub_sha256": "173ef8a7eeac580335c885d4814e66334944b41378b0e171082fabddb40fba99"
+    },
+    {
+      "source": "docs/tasks/analysis/RECOMMENDATION_IMPLEMENTATION_PLAN_AR1.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/analysis/RECOMMENDATION_IMPLEMENTATION_PLAN_AR1.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/analysis/RECOMMENDATION_IMPLEMENTATION_PLAN_AR1.md",
+      "sha256": "518380ec4e272f3792cca208af793be519f4dc70360022aa8cea668fceed2472",
+      "bytes": 9317,
+      "stub_sha256": "6ac5144ba60fd6e59950ed431492df845ef44ba852830164fb3a17eb9207a7f2"
+    },
+    {
+      "source": "docs/tasks/analysis/RESULT_FIELDS_DRAFT.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/analysis/RESULT_FIELDS_DRAFT.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/analysis/RESULT_FIELDS_DRAFT.md",
+      "sha256": "42697cbf0e164f051271d2bd7300f9f39539f15ed6a2acfabe3651f15e1af56f",
+      "bytes": 9258,
+      "stub_sha256": "17cbe800e4f44aa26204a2d8cad1f415bfb75331c8dc0769c64a7e07eccba255"
+    },
+    {
+      "source": "prompts/sessions/ANALYSIS_UNIFIED_REVIEW_DELIVERY_RV2.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/prompts/sessions/ANALYSIS_UNIFIED_REVIEW_DELIVERY_RV2.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/prompts/sessions/ANALYSIS_UNIFIED_REVIEW_DELIVERY_RV2.md",
+      "sha256": "44301d6d6c0d012f39ebf74c79921a24af334cb423a71f1a2c96319073980e58",
+      "bytes": 9037,
+      "stub_sha256": "9ace57a27ff7c2c7d42f2cb12431a3ab041f7559014f5db364f23bd101bf1147"
+    },
+    {
+      "source": "prompts/sessions/ANOMALY_ANALYSIS_FRONTEND_START.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/prompts/sessions/ANOMALY_ANALYSIS_FRONTEND_START.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/prompts/sessions/ANOMALY_ANALYSIS_FRONTEND_START.md",
+      "sha256": "0afcb1482f0ed29facc29311829b6bac45be6a5240ad9490eccc9a27de39fc2f",
+      "bytes": 28966,
+      "stub_sha256": "7d0df450c6743cd86cceb5adf1d1f58c5fff30586d3f00d8e9a0b9030586fdc3"
+    },
+    {
+      "source": "prompts/sessions/LOW_HIT_BACKEND_START.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/prompts/sessions/LOW_HIT_BACKEND_START.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/prompts/sessions/LOW_HIT_BACKEND_START.md",
+      "sha256": "2f704257061eb905b56fc3264493c1fb901231a398e7617350c5d88e1f4b79e4",
+      "bytes": 2833,
+      "stub_sha256": "e656b819f7675f60c8dfcc08971740fd781ea7483abc78ed783ede9aefca45a9"
+    },
+    {
+      "source": "prompts/sessions/PREFIX_ANALYSIS_BACKEND_INDEPENDENT_REVIEW.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/prompts/sessions/PREFIX_ANALYSIS_BACKEND_INDEPENDENT_REVIEW.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/prompts/sessions/PREFIX_ANALYSIS_BACKEND_INDEPENDENT_REVIEW.md",
+      "sha256": "e2a45beacb1acc9a7a53e485b0dcb2aecfcaca9453889c4453e2fca922a95bb8",
+      "bytes": 5552,
+      "stub_sha256": "dd1dff8a887d7155b40f55debc7e11114902c642623bba40012762c4f94acff0"
+    },
+    {
+      "source": "prompts/sessions/TOKEN_ANOMALY_BACKEND_FORK_START.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/prompts/sessions/TOKEN_ANOMALY_BACKEND_FORK_START.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/prompts/sessions/TOKEN_ANOMALY_BACKEND_FORK_START.md",
+      "sha256": "bb2aecbbedd11e86a6d01be04be05cb674da7f01d9cb3970d0d1a5b105409ca5",
+      "bytes": 3673,
+      "stub_sha256": "2c0958c615d8d6edb983caa28d0d73eef6af8fcaf7449736ada2cfd785bbc820"
+    },
+    {
+      "source": "prompts/sessions/TOKEN_CONTENT_BACKEND_INDEPENDENT_REVIEW.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/prompts/sessions/TOKEN_CONTENT_BACKEND_INDEPENDENT_REVIEW.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/prompts/sessions/TOKEN_CONTENT_BACKEND_INDEPENDENT_REVIEW.md",
+      "sha256": "9f0ca77b274662de8404a4c02c7161e0cad85b0b79789caa3d29de7f3ab01986",
+      "bytes": 5442,
+      "stub_sha256": "6cb6a216a6f8c5db807ddbfdb0f83ca094b0bdd6c3c8775d2885b4090fb30df8"
+    },
+    {
+      "source": "prompts/sessions/TOKEN_CONTENT_FRONTEND_INTEGRATION.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/prompts/sessions/TOKEN_CONTENT_FRONTEND_INTEGRATION.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/prompts/sessions/TOKEN_CONTENT_FRONTEND_INTEGRATION.md",
+      "sha256": "985f3dff023978f469352ead3e28107cd338837f95f82f2a2585b17f885be3c7",
+      "bytes": 5061,
+      "stub_sha256": "c46f7ce58547a93bb8f7b4139f2b1b28b685983c5ab0bb30226f572b4e1d2b4e"
+    },
+    {
+      "source": "prompts/sessions/TOKEN_MONITORING_V2_START.md",
+      "original": "achieve/2026-11-10/v2-session-dormancy/originals/prompts/sessions/TOKEN_MONITORING_V2_START.md",
+      "reading": "achieve/2026-11-10/v2-session-dormancy/reading/prompts/sessions/TOKEN_MONITORING_V2_START.md",
+      "sha256": "676637ef71ccddac349c2f178ec473c34f959399782dd9b2185a66c49440a808",
+      "bytes": 7805,
+      "stub_sha256": "43de724cc4ad5bb58ed71453bfcdda6be4c546ffe97cec0bbd67830b5eb81c8e"
+    }
+  ],
+  "snapshots": [
+    {
+      "source": "AGENTS.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/AGENTS.md",
+      "sha256": "04fe613d5509ffabeac9f4c9214ab4a79bfc2f4babd21fc3861f83581c7bf3ab",
+      "bytes": 6152
+    },
+    {
+      "source": "memory/CURRENT.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/memory/CURRENT.md",
+      "sha256": "6cfa0eb7b4aa6c6b466f8c3ec9b73302d1fbf1a36e0696271e6c8c64892f6d34",
+      "bytes": 4127
+    },
+    {
+      "source": "memory/SESSIONS.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/memory/SESSIONS.md",
+      "sha256": "28810aed4eea615eac8770706a48d4bb6cbd1f5ee6fd1d49b18935a0b8a37f0b",
+      "bytes": 8197
+    },
+    {
+      "source": "docs/README.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/README.md",
+      "sha256": "031efe3dc865d0218df78de508a5bd1f6cf545c6500e6fec95b9f8ccd275fce4",
+      "bytes": 2631
+    },
+    {
+      "source": "docs/tasks/README.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/README.md",
+      "sha256": "0c7ecba22a316fe49917a707e2f0412bef6379bb48817ecf006681014e2e3b3c",
+      "bytes": 3522
+    },
+    {
+      "source": "docs/architecture/TASK_SESSION_WORKFLOW.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/architecture/TASK_SESSION_WORKFLOW.md",
+      "sha256": "21b8f67e264579f13f6b17d2b322cd564ba2b495a6b7efe0da1fad4b3b6bc046",
+      "bytes": 14114
+    },
+    {
+      "source": "docs/tasks/delivery/ENTRY.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/delivery/ENTRY.md",
+      "sha256": "280f1878a6a78bd8ff12372ca9c111bdd0eb271bb29633f7a693243a9194fada",
+      "bytes": 3691
+    },
+    {
+      "source": "docs/tasks/analysis/ENTRY.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/analysis/ENTRY.md",
+      "sha256": "6eaf98c29185b19055871d0f925f8016479eb28eccfadc9e6cb6de391977508b",
+      "bytes": 5603
+    },
+    {
+      "source": "docs/tasks/product-v3/ENTRY.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/product-v3/ENTRY.md",
+      "sha256": "2a1715d1e69539b15343f0a473a5b8fc0d2e0e7d892c39303cbe5836e4b9fb90",
+      "bytes": 2443
+    },
+    {
+      "source": "docs/tasks/development-v3/ENTRY.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/development-v3/ENTRY.md",
+      "sha256": "b702b76fdcb7f6fd5ce83df25a47b8ea822b2baa8ab961cfe81e69e463474522",
+      "bytes": 6049
+    },
+    {
+      "source": "docs/tasks/monitoring/v2-user/ENTRY.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/monitoring/v2-user/ENTRY.md",
+      "sha256": "18b5b3e6af26a0e7e7f2257dde6870ced118881fb474ba4a6f192fe4eab6f90f",
+      "bytes": 4589
+    },
+    {
+      "source": "docs/tasks/monitoring/v2-ma/ENTRY.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/monitoring/v2-ma/ENTRY.md",
+      "sha256": "cd188d3dd2b6845303922daa2b0467d9cfdbec5893d8b9036505fcf6b295d4b3",
+      "bytes": 6279
+    },
+    {
+      "source": "docs/tasks/prefix-analysis/ENTRY.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/prefix-analysis/ENTRY.md",
+      "sha256": "c90807dfded73ef16fcd8b2338d144e216589cfe59f767421ef80bd28088d389",
+      "bytes": 3230
+    },
+    {
+      "source": "docs/tasks/length-analysis/ENTRY.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/length-analysis/ENTRY.md",
+      "sha256": "68520bdca3bfd46bbbc6fb96aac5ab1577d21c83ce07bffe010d94b39c305a0a",
+      "bytes": 3155
+    },
+    {
+      "source": "docs/tasks/viewer/monitoring-v2/ENTRY.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/viewer/monitoring-v2/ENTRY.md",
+      "sha256": "3ab311a50b519f2214c48b96a3a9a9c212efbdcfd02004aee4c6539a999ebe94",
+      "bytes": 3286
+    },
+    {
+      "source": "docs/tasks/viewer/analysis/ENTRY.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/viewer/analysis/ENTRY.md",
+      "sha256": "310b1c6c8c4a9e30eca12d2510970537c84339c4a486b3d199198e408a223898",
+      "bytes": 1258
+    },
+    {
+      "source": "memory/tasks/monitoring-v2-user.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/memory/tasks/monitoring-v2-user.md",
+      "sha256": "323659850b09266ce9add89601f0a9d9b46908082c3c01a48fa6a5ae3913a44c",
+      "bytes": 24867
+    },
+    {
+      "source": "memory/tasks/monitoring-v2-ma.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/memory/tasks/monitoring-v2-ma.md",
+      "sha256": "78836ba766a88e44f8122ea6b23f687303cf0d23180e4f5130def2996d99d6fd",
+      "bytes": 21562
+    },
+    {
+      "source": "memory/tasks/prefix-analysis.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/memory/tasks/prefix-analysis.md",
+      "sha256": "233df4b18023d1e7d946d876fe1a7cb7bddedc0e4be6a8362a9220139ccfe55b",
+      "bytes": 10045
+    },
+    {
+      "source": "memory/tasks/length-analysis.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/memory/tasks/length-analysis.md",
+      "sha256": "04bd75837d8d35a31ea0d9baef5eafdbbce3164fa9e765a218614ffb5126c604",
+      "bytes": 19739
+    },
+    {
+      "source": "memory/tasks/viewer-monitoring-v2.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/memory/tasks/viewer-monitoring-v2.md",
+      "sha256": "401213e7db5c84bbb220ff51eab56c6cf56b5bff5eeb3c205b1df233693ad31f",
+      "bytes": 29356
+    },
+    {
+      "source": "memory/tasks/viewer-analysis.md",
+      "archive": "achieve/2026-11-10/v2-session-dormancy/snapshots/memory/tasks/viewer-analysis.md",
+      "sha256": "b4052d3471ae32aedba4f95d9ad84788a8a5c21347c44187ebe45ad571933a5d",
+      "bytes": 11137
+    }
+  ],
+  "preexisting_missing_links": [],
+  "archived_count": 39
+}

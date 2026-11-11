@@ -1,9 +1,8 @@
-# TTFT最小方案增量批次
-2026-10-31用户认可工程调整并授权后端/接口逐批推进；不修改前端、不部署打包。U000–U005历史保持。
-- U006：冻结2.0.0情景DTO及旧兼容，新增契约校验与样例。门槛：新最小情景/缺参/未知版本/旧样例验证通过，静态检查通过。
-- U007：公式及HTTP/持久化接入。门槛：精确边界、可选范围、旧快照/幂等、重启读写与错误路径通过。
-- U008：统一回归、健壮性、设计符合性及前端交接。门槛：全量测试、类型/静态/契约核对通过；确认前端/冻结旧契约未改。
-每批PLAN、ISSUES、TESTS、RESULT和记忆递增维护；达到门槛才推进。真实性能校准独立pending。
+# 已归档：TTFT最小方案增量批次
 
-## 执行结果
-U006、U007、U008均closed，各自RESULT/TESTS/ISSUES为依据。前端只交接；真实校准与前端联合待完成。
+2026-11-10：本材料属于已关闭的V2启动/阶段计划，降为历史参考，不是新一轮执行授权。
+
+- [历史正文（导航版）](../../../../achieve/2026-11-10/v2-session-dormancy/reading/docs/tasks/monitoring/v2-user/TTFT_BATCH_PLAN.md)
+- [原字节与校验依据](../../../../achieve/2026-11-10/v2-session-dormancy/originals/docs/tasks/monitoring/v2-user/TTFT_BATCH_PLAN.md)
+- [归档清单](../../../../achieve/2026-11-10/v2-session-dormancy/README.md)
+- [当前会话与权责](../../../../memory/SESSIONS.md)
