@@ -1,0 +1,234 @@
+{
+  "scope": "local browser test environment, not product runtime or release",
+  "provenance": "apt-get download and project-only dpkg-deb extraction per V3B007/ISSUES I01; exact download mirror not recorded; font source/license not verified, local only",
+  "files": [
+    {
+      "path": "archives/libasound2_1.2.6.1-1ubuntu1.2_amd64.deb",
+      "bytes": 390788,
+      "sha256": "dce4ce1043cde35f4bc375a4b1bd84badd5dec7e656ea2a8849edf9215bc8c33",
+      "symlink_target": null
+    },
+    {
+      "path": "archives/libnspr4_2%3a4.35-0ubuntu0.22.04.1_amd64.deb",
+      "bytes": 119208,
+      "sha256": "b3c96e4a61675c87f8d9655109346748847d859abc95f20493159d06b5aa30ef",
+      "symlink_target": null
+    },
+    {
+      "path": "archives/libnss3_2%3a3.98-0ubuntu0.22.04.5_amd64.deb",
+      "bytes": 1345528,
+      "sha256": "75f3879ab9969a930b5bf4b9229345d57e2ebe310ad8ce58c9d91393d823b236",
+      "symlink_target": null
+    },
+    {
+      "path": "fonts/msyh.ttc",
+      "bytes": 19704352,
+      "sha256": "d79c55e68b1131eea0cc1c47be4f572d964f28c682e143db2ad09c1e4cb07a3f",
+      "symlink_target": null
+    },
+    {
+      "path": "fonts.conf",
+      "bytes": 273,
+      "sha256": "5eaedfde6c2ca088fcd3eb6e194463d72becec40d606433d3f9d636edd2a9619",
+      "symlink_target": null
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 350,
+      "sha256": "f5a427e57a3d33013115cff99d263c52e99f24c122a081b1c53301b079ecde5d",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libasound.so.2",
+      "bytes": 1055472,
+      "sha256": "9b2bd6ae0b44763493961fc287ec6f50808bc79bc6974c2a892401514e190584",
+      "symlink_target": "libasound.so.2.0.0"
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libasound.so.2.0.0",
+      "bytes": 1055472,
+      "sha256": "9b2bd6ae0b44763493961fc287ec6f50808bc79bc6974c2a892401514e190584",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libfreebl3.chk",
+      "bytes": 84,
+      "sha256": "cdbf9423c8efa65c2a13aa39963d8f7219b868cff467c11c8b9451dc95c0c671",
+      "symlink_target": "nss/libfreebl3.chk"
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libfreebl3.so",
+      "bytes": 14608,
+      "sha256": "60192152066fa0dd281c12e51f0d7a4d9b294c0aa64a1c23e5b20e5338418d42",
+      "symlink_target": "nss/libfreebl3.so"
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libfreeblpriv3.chk",
+      "bytes": 84,
+      "sha256": "578d3165cfeecbdae21ad0d7a3694c582c1846c0e251e4a1b7b3cd3271a6b98c",
+      "symlink_target": "nss/libfreeblpriv3.chk"
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libfreeblpriv3.so",
+      "bytes": 829816,
+      "sha256": "b237cb4ee8097aecf482bf4c8e86cdc8f28cf98a5965ecce44d0344a4738197e",
+      "symlink_target": "nss/libfreeblpriv3.so"
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libnspr4.so",
+      "bytes": 246248,
+      "sha256": "c38693b813e89bdd4330b87f719d73f0b89653ddd484aa3280c42247388549d8",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libnss3.so",
+      "bytes": 1240024,
+      "sha256": "9a98137d2ddd8bb504cdfa98c5ff70cce3e252418acb0edab9db649f110027da",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libnssutil3.so",
+      "bytes": 203816,
+      "sha256": "de887f45cfa298ab0ec7108701c5d8c79349714a19aee9b6a6f8a327aec4abc1",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libplc4.so",
+      "bytes": 22784,
+      "sha256": "279e6c45488241b44006e604f1cea85d172111069935a0da0a74d8c687fd106d",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libplds4.so",
+      "bytes": 14624,
+      "sha256": "9ede43d7ae46771bae1000008100fd4f382b554085c7530e0330eeda5a58d172",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libsmime3.so",
+      "bytes": 167808,
+      "sha256": "c70897c63f9bc923f4b49d97a6e8374faea51a57708c73032a560b304ed3bef2",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/libssl3.so",
+      "bytes": 434928,
+      "sha256": "49ca985c0b88661a403343814765ca53393c56564f73c2e106aff43e732fb79c",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/nss/libfreebl3.chk",
+      "bytes": 84,
+      "sha256": "cdbf9423c8efa65c2a13aa39963d8f7219b868cff467c11c8b9451dc95c0c671",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/nss/libfreebl3.so",
+      "bytes": 14608,
+      "sha256": "60192152066fa0dd281c12e51f0d7a4d9b294c0aa64a1c23e5b20e5338418d42",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/nss/libfreeblpriv3.chk",
+      "bytes": 84,
+      "sha256": "578d3165cfeecbdae21ad0d7a3694c582c1846c0e251e4a1b7b3cd3271a6b98c",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/nss/libfreeblpriv3.so",
+      "bytes": 829816,
+      "sha256": "b237cb4ee8097aecf482bf4c8e86cdc8f28cf98a5965ecce44d0344a4738197e",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/nss/libnssckbi.so",
+      "bytes": 584480,
+      "sha256": "1fc7092d91ba7b4b3771486fb1ecad121de0cf0dec85863dcf20f3f31f06ce91",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/nss/libnssdbm3.chk",
+      "bytes": 84,
+      "sha256": "8ab8e5a092607812a19af674a8b37735f9000d0a867cd53f06bdc157d23e7996",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/nss/libnssdbm3.so",
+      "bytes": 142520,
+      "sha256": "b78021f3488e143683900f3065d270246f124593a3f724924cdafdd709beaae3",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/nss/libsoftokn3.chk",
+      "bytes": 84,
+      "sha256": "b2e052e7c64bec52c857575f43e884afbfc72e80631c4cc55e42d5b2d65d1792",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/lib/x86_64-linux-gnu/nss/libsoftokn3.so",
+      "bytes": 363224,
+      "sha256": "4c625de47d6d1fac712ec05808ba224e8e1f6baefefa91cdc58d67a4a361d0ae",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/share/doc/libasound2/NEWS.Debian.gz",
+      "bytes": 841,
+      "sha256": "e1bb1b75447ceb76069f583d3ea2add1643ceba1b09f937f1415692cc0f91878",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/share/doc/libasound2/changelog.Debian.gz",
+      "bytes": 1465,
+      "sha256": "a2b63c6a385639d7353cafeacd78bb535c5b4146ffc4de8426fbec98fc08f724",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/share/doc/libasound2/copyright",
+      "bytes": 1583,
+      "sha256": "1e389062b3d44557d569d488e6075b162efd946e4bced56d20cbf62f9f53d7f6",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/share/doc/libasound2/examples/asoundrc.txt",
+      "bytes": 11473,
+      "sha256": "27c58e2147c4dbbc15670d5d6a78995086368f7d145de0b33258142ee204855b",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/share/doc/libnspr4/changelog.Debian.gz",
+      "bytes": 1313,
+      "sha256": "d52769a63f43cf501bcea61d5ad51dad2b99ed29cf12593225878e3a3dc532bb",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/share/doc/libnspr4/copyright",
+      "bytes": 331,
+      "sha256": "3c4fcc131809b2b6993513bfe4cf6f1ede391ec84f1d5ceca78fb75537b22452",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/share/doc/libnss3/changelog.Debian.gz",
+      "bytes": 1844,
+      "sha256": "cb48f9b7342dd9b7d02fd36bb9537f53b3630c1a8e845181ef9dc7f48b8e6260",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/share/doc/libnss3/copyright",
+      "bytes": 8087,
+      "sha256": "d91076658d63a9486e031cedd9dec97d99cfb13ddc3296ac7b22552dbb1ea503",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/share/lintian/overrides/libnspr4",
+      "bytes": 795,
+      "sha256": "e468620345b004fc233ec7a2710cd7927945dee564531cc73664309d41c7b502",
+      "symlink_target": null
+    },
+    {
+      "path": "root/usr/share/lintian/overrides/libnss3",
+      "bytes": 708,
+      "sha256": "292427d11af1aa399075c5632d1b26ce29c47ad1cbfc766fa8364acacd8fe868",
+      "symlink_target": null
+    }
+  ]
+}

@@ -62,3 +62,10 @@ env/.contract-cache/
 
 # TypeScript incremental build metadata is generated locally.
 *.tsbuildinfo
+
+# V3 local browser dependencies: version only provenance, not installed binaries/fonts.
+/env/browser-deps-v3/archives/
+/env/browser-deps-v3/root/
+/env/browser-deps-v3/fonts/
+/env/browser-deps-v3/font-cache/
+/env/browser-deps-v3/fonts.conf
