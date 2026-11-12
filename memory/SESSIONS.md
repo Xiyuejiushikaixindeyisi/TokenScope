@@ -23,7 +23,7 @@
 | 角色／应用中的chat标题 | 实际ID与核验 | 当前阶段与权责 | 入口及本人登记 |
 | --- | --- | --- | --- |
 | TokenScope V3 调研与产品设计 | `01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2`，环境THREAD/SESSION已核实 | 保存用户原始需求上下文，**仅提供V3修复方案及开发完成后的需求一致性评审，不修改代码或接管开发测试/持续调度**。华为报告已核对；修复方案已按用户授权发开发评审细化，细化方案须用户审批后才实施。历史工程通过不代表用户认可页面/硬超时，原证据保留 | [研究入口](../docs/tasks/product-v3/ENTRY.md) · [本人记忆](tasks/product-v3.md) |
-| 镜像打包与审查 | `01a1800e-80b4-7400-a78b-a84f5b6e888d`，本人核验登记，2026-11-11本人环境THREAD/SESSION再次核实；本轮不读取应用实时状态 | **2026-11-12用户授权：独立E2E、Git/版本/记忆整理、打包及桌面复制**。本人环境ID再次核实；D01进行中，LOCAL_USER_ACCEPTED不替代技术复验；华为真实收益待现场。本轮不编写华为prompt、不代产品编码/debug，缺陷交V3开发；原包证据保留 | [交付入口](../docs/tasks/delivery/ENTRY.md) · [本人记忆](tasks/delivery.md) |
+| 镜像打包与审查 | `01a1800e-80b4-7400-a78b-a84f5b6e888d`，本人核验登记，2026-11-11本人环境THREAD/SESSION再次核实；本轮不读取应用实时状态 | **2026-11-12用户授权：独立E2E、Git/版本/记忆整理、打包及桌面复制**。本人环境ID再次核实；独立E2E/构建/桌面19文件校验完成，源码57fe9f6已push；实际记录见delivery/V3_C04_DELIVERY_20261112.md，LOCAL_USER_ACCEPTED不替代现场验收；华为真实收益待现场。本轮不编写华为prompt、不代产品编码/debug，缺陷交V3开发；原包证据保留 | [交付入口](../docs/tasks/delivery/ENTRY.md) · [本人记忆](tasks/delivery.md) |
 | TokenScope V3代码修复与开发；chat标题“核查V3四项P0修复方案” | `01a1c449-6a9b-7a83-912a-5a9ff77c703d`，本人环境核验及应用列表一致 | **2026-11-12用户本机人工验收通过（LOCAL_USER_ACCEPTED）**，C01–C04技术闭环；用户授权镜像线独立E2E、Git/版本/记忆整理及打包，开发已准备交接prompt，尚未发送消息/代执行。开发仍负责后续代码缺陷修复；华为五真实收益待验，旧六线不恢复 | [开发入口](../docs/tasks/development-v3/ENTRY.md) · [交付prompt](../docs/tasks/development-v3/PACKAGING_HANDOFF_PROMPT_20261112.md) · [本人记忆](tasks/development-v3.md) |
 
 三方权责已由本人登记；两条外部chat已按用户明确授权通知并完成更新，见[通知回执](../docs/operations/SESSION_SCOPE_REGISTRATION_20261110.md)。此前登记轮各方只改自己的记忆、研究汇总共享导航；2026-11-11用户明确授权镜像线整理当前工作树及共享入口，先快照并保留各方原记录。
