@@ -1,0 +1,42 @@
+[
+  {
+    "source": "memory/CURRENT.md",
+    "snapshot": "achieve/2026-11-12/v3-c01-c04-delivery/snapshots/memory/CURRENT.md",
+    "sha256": "598552aaf0c114167fa4724978447decb961f126e8a954675b2d6e8310e09059"
+  },
+  {
+    "source": "memory/SESSIONS.md",
+    "snapshot": "achieve/2026-11-12/v3-c01-c04-delivery/snapshots/memory/SESSIONS.md",
+    "sha256": "a946ad2b1962e530042a08d90b8f7cf3d599d8830831ad55b3d29a793956fa44"
+  },
+  {
+    "source": "docs/README.md",
+    "snapshot": "achieve/2026-11-12/v3-c01-c04-delivery/snapshots/docs/README.md",
+    "sha256": "4cad6e81d1aa7631aefacd9f35506dcfb518c9c93b90d2fcf2ddea0c8803cacf"
+  },
+  {
+    "source": "docs/tasks/README.md",
+    "snapshot": "achieve/2026-11-12/v3-c01-c04-delivery/snapshots/docs/tasks/README.md",
+    "sha256": "dee717883f7d425fbf43972eeb3642c750a1eafd5534d105e0296264888fe5aa"
+  },
+  {
+    "source": "docs/tasks/delivery/ENTRY.md",
+    "snapshot": "achieve/2026-11-12/v3-c01-c04-delivery/snapshots/docs/tasks/delivery/ENTRY.md",
+    "sha256": "ed5eac1fcf36e7ce098971f7ccb91bcda8a8fa23bf5734a3369e39aea33f7caa"
+  },
+  {
+    "source": "memory/tasks/delivery.md",
+    "snapshot": "achieve/2026-11-12/v3-c01-c04-delivery/snapshots/memory/tasks/delivery.md",
+    "sha256": "0e62272afbfe5f4a32269fb60a2a965b03a10282227cd0d4203e4719f8a61748"
+  },
+  {
+    "source": "docs/architecture/TASK_SESSION_WORKFLOW.md",
+    "snapshot": "achieve/2026-11-12/v3-c01-c04-delivery/snapshots/docs/architecture/TASK_SESSION_WORKFLOW.md",
+    "sha256": "4ac7950769c3e92167aa84b1d66432b7b77a4e28f9ebc356f8551a352b1af70f"
+  },
+  {
+    "source": "docs/operations/DELIVERY_ACCEPTANCE_RULES.md",
+    "snapshot": "achieve/2026-11-12/v3-c01-c04-delivery/snapshots/docs/operations/DELIVERY_ACCEPTANCE_RULES.md",
+    "sha256": "c13432a605d25087c9e70235854786f76594f73d489ba7f85f017dee51d9cc8c"
+  }
+]

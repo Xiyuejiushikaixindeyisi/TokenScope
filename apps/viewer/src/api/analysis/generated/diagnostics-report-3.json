@@ -1,4 +1,323 @@
 {
+  "EvidenceBundle3": {
+    "$defs": {
+      "EmbeddedLocation": {
+        "additionalProperties": false,
+        "properties": {
+          "format": {
+            "const": "json",
+            "default": "json",
+            "title": "Format",
+            "type": "string"
+          },
+          "parser_version": {
+            "minLength": 1,
+            "title": "Parser Version",
+            "type": "string"
+          },
+          "pointer": {
+            "title": "Pointer",
+            "type": "string"
+          }
+        },
+        "required": [
+          "parser_version",
+          "pointer"
+        ],
+        "title": "EmbeddedLocation",
+        "type": "object"
+      },
+      "EvidenceSpan": {
+        "additionalProperties": false,
+        "properties": {
+          "end": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "End",
+            "type": "string",
+            "x-integer-minimum": "0"
+          },
+          "start": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Start",
+            "type": "string",
+            "x-integer-minimum": "0"
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ],
+        "title": "EvidenceSpan",
+        "type": "object"
+      },
+      "LocalEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "context_after": {
+            "default": "",
+            "title": "Context After",
+            "type": "string"
+          },
+          "context_before": {
+            "default": "",
+            "title": "Context Before",
+            "type": "string"
+          },
+          "decoded_span": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/EvidenceSpan"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "excerpt": {
+            "title": "Excerpt",
+            "type": "string"
+          },
+          "locator_version": {
+            "const": "evidence-locator-1",
+            "default": "evidence-locator-1",
+            "title": "Locator Version",
+            "type": "string"
+          },
+          "offset_unit": {
+            "const": "unicode_codepoint",
+            "default": "unicode_codepoint",
+            "title": "Offset Unit",
+            "type": "string"
+          },
+          "omitted_after": {
+            "default": false,
+            "title": "Omitted After",
+            "type": "boolean"
+          },
+          "omitted_before": {
+            "default": false,
+            "title": "Omitted Before",
+            "type": "boolean"
+          },
+          "raw_span": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/EvidenceSpan"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reason_codes": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Reason Codes",
+            "type": "array"
+          },
+          "source": {
+            "$ref": "#/$defs/Location"
+          }
+        },
+        "required": [
+          "source",
+          "raw_span",
+          "excerpt"
+        ],
+        "title": "LocalEvidence",
+        "type": "object"
+      },
+      "Location": {
+        "additionalProperties": false,
+        "properties": {
+          "embedded": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/EmbeddedLocation"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "raw_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Raw Sha256",
+            "type": "string"
+          },
+          "request_key": {
+            "$ref": "#/$defs/RequestKey"
+          },
+          "source_pointer": {
+            "title": "Source Pointer",
+            "type": "string"
+          },
+          "text_range": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/TextRange"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "request_key",
+          "raw_sha256",
+          "source_pointer"
+        ],
+        "title": "Location",
+        "type": "object"
+      },
+      "RecommendationExample": {
+        "additionalProperties": false,
+        "properties": {
+          "after": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/LocalEvidence"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "before": {
+            "$ref": "#/$defs/LocalEvidence"
+          },
+          "comparison": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/LocalEvidence"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "example_id": {
+            "minLength": 1,
+            "title": "Example Id",
+            "type": "string"
+          },
+          "owner_id": {
+            "minLength": 1,
+            "title": "Owner Id",
+            "type": "string"
+          },
+          "scope_id": {
+            "minLength": 1,
+            "title": "Scope Id",
+            "type": "string"
+          },
+          "task_id": {
+            "minLength": 1,
+            "title": "Task Id",
+            "type": "string"
+          },
+          "version": {
+            "const": "analysis-recommendations-1",
+            "default": "analysis-recommendations-1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "example_id",
+          "task_id",
+          "scope_id",
+          "owner_id",
+          "before"
+        ],
+        "title": "RecommendationExample",
+        "type": "object"
+      },
+      "RequestKey": {
+        "additionalProperties": false,
+        "properties": {
+          "base_run_id": {
+            "minLength": 1,
+            "title": "Base Run Id",
+            "type": "string"
+          },
+          "source_record_index": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Source Record Index",
+            "type": "string",
+            "x-integer-minimum": "0"
+          }
+        },
+        "required": [
+          "base_run_id",
+          "source_record_index"
+        ],
+        "title": "RequestKey",
+        "type": "object"
+      },
+      "TextRange": {
+        "additionalProperties": false,
+        "properties": {
+          "end": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "End",
+            "type": "string",
+            "x-integer-minimum": "0"
+          },
+          "start": {
+            "pattern": "^(0|-?[1-9][0-9]*)$",
+            "title": "Start",
+            "type": "string",
+            "x-integer-minimum": "0"
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ],
+        "title": "TextRange",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "examples": {
+        "items": {
+          "$ref": "#/$defs/RecommendationExample"
+        },
+        "title": "Examples",
+        "type": "array"
+      },
+      "owner_id": {
+        "title": "Owner Id",
+        "type": "string"
+      },
+      "sample_id": {
+        "title": "Sample Id",
+        "type": "string"
+      },
+      "task_id": {
+        "title": "Task Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "task_id",
+      "sample_id",
+      "owner_id",
+      "examples"
+    ],
+    "title": "EvidenceBundle3",
+    "type": "object"
+  },
   "Execution3": {
     "$defs": {
       "Checkpoint3": {
@@ -348,6 +667,11 @@
           "scope_id": {
             "title": "Scope Id",
             "type": "string"
+          },
+          "synthetic_fixture": {
+            "default": false,
+            "title": "Synthetic Fixture",
+            "type": "boolean"
           },
           "unsupported_fields": {
             "pattern": "^(0|-?[1-9][0-9]*)$",
@@ -1628,6 +1952,22 @@
       },
       "discovery": {
         "$ref": "#/$defs/ClockDiscovery3"
+      },
+      "evidence_mode": {
+        "default": "inline",
+        "enum": [
+          "inline",
+          "sealed_examples"
+        ],
+        "title": "Evidence Mode",
+        "type": "string"
+      },
+      "evidence_refs": {
+        "additionalProperties": {
+          "type": "string"
+        },
+        "title": "Evidence Refs",
+        "type": "object"
       },
       "manifest_sha256": {
         "pattern": "^[0-9a-f]{64}$",

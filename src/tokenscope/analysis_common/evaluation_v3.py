@@ -1,5 +1,6 @@
 """Complete-window counterfactuals; no pilot/full promotion or gain filter."""
 
+from dataclasses import dataclass, field
 from fractions import Fraction
 from pathlib import Path
 from typing import Any, Literal, Self
@@ -13,6 +14,7 @@ from tokenscope.analysis_common.runtime_v3 import BudgetLedger, TaskStopped
 from tokenscope.analysis_common.sample_source import SampleResolvedSource
 from tokenscope.analysis_common.supervisor_v3 import atomic_json
 from tokenscope.domain import ModelSettings
+from tokenscope.encoding.batch import EncodedRequest
 from tokenscope.errors import TokenScopeError
 from tokenscope.monitoring.simulation import PrefixLedger, make_strategy
 from tokenscope.prefix_analysis.clock_discovery_v3 import ClockFinding3, compile_clock_plan
@@ -103,11 +105,59 @@ def stopped_status(code: str) -> EvaluationStatus3:
     return "failed"
 
 
+@dataclass
+class SampleBaseline3:
+    """One verified replay per immutable sample; retains small metrics, never token arrays."""
+
+    source: SampleResolvedSource
+    control: BudgetLedger
+    context: EncodingContext = field(init=False)
+    rows: dict[RequestKey, dict[str, Any]] = field(default_factory=dict)
+    totals: dict[str, int] = field(default_factory=lambda: dict(p=0, h=0, c=0))
+
+    def __post_init__(self) -> None:
+        self.context = EncodingContext(self.source, cpu_budget=self.control.profile.cpu_budget)
+
+    def prepare(self, directory: Path) -> None:
+        directory.mkdir(parents=True, exist_ok=False)
+        settings = ModelSettings.model_validate_json(self.source.scope.source.settings_json)
+        ledger = PrefixLedger(directory / "baseline.sqlite3")
+        try:
+            strategy = make_strategy(settings, self.source.scope.source.asset_identity, ledger)
+            for request in self.source.iter_requests():
+                self.control.reserve_many(
+                    {"encoding_calls": 1, "encoding_input_bytes": len(request.raw_body.encode())}
+                )
+                encoded = self.context.verify_baseline(request)
+                self.control.reserve("encoding_output_tokens", encoded.prompt_tokens)
+                metrics = strategy.process(self.source.scope.appid, encoded.prompt_ids)
+                values = dict(
+                    p=encoded.prompt_tokens, h=metrics.hit_tokens, c=metrics.compute_tokens
+                )
+                self.rows[request.request_key] = values | {"ids_sha256": encoded.prompt_digest}
+                for key, value in values.items():
+                    self.totals[key] += value
+            self.source.verify()
+            if len(self.rows) != self.source.scope.request_count:
+                raise TokenScopeError("SCOPE_CHANGED", "Incomplete baseline", 409)
+            atomic_json(directory / "totals.json", self.totals)
+        finally:
+            ledger.close()
+
+    def original(self, request: Any) -> EncodedRequest:
+        row = self.rows[request.request_key]
+        ids = self.source.read_ids(request)
+        return EncodedRequest(
+            request.baseline_metrics.j, ids, row["ids_sha256"], request.encoder_identity, {}
+        )
+
+
 def evaluate_window(
     source: SampleResolvedSource,
     finding: ClockFinding3 | PrefixFinding3,
     directory: Path,
     control: BudgetLedger,
+    baseline: SampleBaseline3 | None = None,
 ) -> WindowEvaluation3:
     digest = value_digest(finding.recipe.model_dump(mode="json"))
     base: dict[str, Any] = {"role": source.role, "transformation_digest": digest}
@@ -126,55 +176,52 @@ def evaluate_window(
                 reason_code=compiled.reason_code,
                 matched=len(set(compiled.matched)),
             )
-        context = EncodingContext(source, cpu_budget=control.profile.cpu_budget)
+        if baseline is None:
+            baseline = SampleBaseline3(source, control)
+            baseline.prepare(directory / "baseline")
+        if (
+            baseline.source.scope.scope_id != source.scope.scope_id
+            or baseline.source.manifest_sha256 != source.manifest_sha256
+        ):
+            raise TokenScopeError("BASELINE_MISMATCH", "Baseline identity differs", 409)
+        context = baseline.context
         settings = ModelSettings.model_validate_json(source.scope.source.settings_json)
         operations: dict[RequestKey, list[Any]] = {}
         for operation in compiled.plan.operations:
             operations.setdefault(operation.target.location.request_key, []).append(operation)
-        ledgers = [PrefixLedger(directory / name) for name in ("before.sqlite3", "after.sqlite3")]
+        ledgers = [PrefixLedger(directory / "after.sqlite3")]
         strategies = [
             make_strategy(settings, source.scope.source.asset_identity, ledger)
             for ledger in ledgers
         ]
-        totals = [dict(p=0, h=0, c=0), dict(p=0, h=0, c=0)]
+        totals = [dict(baseline.totals), dict(p=0, h=0, c=0)]
         rows: list[dict[str, Any]] = []
         for request in source.iter_requests():
             raw, changes = apply_mutations(
                 request, tuple(operations.pop(request.request_key, ())), settings
             )
-            control.reserve_many(
-                {
-                    "encoding_calls": 1 + int(raw != request.raw_body),
-                    "encoding_input_bytes": len(request.raw_body.encode())
-                    + (len(raw.encode()) if raw != request.raw_body else 0),
-                }
-            )
-            before = context.verify_baseline(request)
-            control.reserve("encoding_output_tokens", before.prompt_tokens)
-            after = context.encode(request, raw) if raw != request.raw_body else before
-            if after is not before:
+            changed = raw != request.raw_body
+            if changed:
+                control.reserve_many(
+                    {"encoding_calls": 1, "encoding_input_bytes": len(raw.encode())}
+                )
+                after = context.encode(request, raw)
                 control.reserve("encoding_output_tokens", after.prompt_tokens)
+            else:
+                after = baseline.original(request)
             row: dict[str, Any] = {
                 "request_key": request.request_key.model_dump(mode="json"),
                 "sequence": len(rows),
                 "mutations": changes,
             }
-            for label, total, encoded, strategy in zip(
-                ("before", "after"),
-                totals,
-                (before, after),
-                strategies,
-                strict=True,
-            ):
-                metrics = strategy.process(source.scope.appid, encoded.prompt_ids)
-                values = dict(
-                    p=encoded.prompt_tokens, h=metrics.hit_tokens, c=metrics.compute_tokens
-                )
-                if values["p"] != values["h"] + values["c"]:
-                    raise TokenScopeError("METRIC_CONSERVATION", "Invalid replay metrics", 409)
-                for key, value in values.items():
-                    total[key] += value
-                row[label] = values | {"ids_sha256": encoded.prompt_digest}
+            row["before"] = baseline.rows[request.request_key]
+            metrics = strategies[0].process(source.scope.appid, after.prompt_ids)
+            values = dict(p=after.prompt_tokens, h=metrics.hit_tokens, c=metrics.compute_tokens)
+            if values["p"] != values["h"] + values["c"]:
+                raise TokenScopeError("METRIC_CONSERVATION", "Invalid replay metrics", 409)
+            for key, value in values.items():
+                totals[1][key] += value
+            row["after"] = values | {"ids_sha256": after.prompt_digest}
             import json
 
             control.reserve("result_bytes", len(json.dumps(row).encode()))

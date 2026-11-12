@@ -1,0 +1,11 @@
+{
+  "status": "DEMO_PENDING_USER_APPROVAL",
+  "baseline": "docs/tasks/viewer/analysis/prototypes/analysis-ui04/tokenscope-analysis-ui04.html",
+  "baseline_sha256": "779e6665985fe02e6df9e7d0483ef8111a16a49c2b61fdb27aacbef58d624f5f",
+  "demo_sha256": "3441e2ea20bc47b331d602cea5010f922c24b2522bee6b628bad77f23d956619",
+  "styles": "all four UI04 CSS blocks unchanged",
+  "data": "illustrative only; no actual analysis or gains",
+  "scope": "five business views, original card/detail structure; no product code",
+  "evidence_report_sha256": "5e27ad137cc7434a25532ee3c5b17921d31ab50b614b5da7e935862f68fad292",
+  "qa": "qa-02/checks.json"
+}

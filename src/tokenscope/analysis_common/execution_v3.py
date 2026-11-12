@@ -67,35 +67,27 @@ def automatic_profile(
     if address < 512 * 1024 * 1024:
         raise TokenScopeError("RESOURCE_ENVIRONMENT_LIMIT", "Insufficient worker headroom", 503)
     metadata = min(8 * 1024 * 1024, address // 128)
-    raw = address // 32
-    tokens = address // 512
-    requests = min(1024, max(2, raw // 65536))
+    raw = min(64 * 1024 * 1024, address // 32)
+    tokens = min(4_000_000, address // 512)
+    requests = min(300, max(2, raw // 65536))
     disk = raw + tokens * 4 + requests * 65536 + metadata
     verification = (max(1, source_bytes) + metadata * 8) * 8
-    # Full-source integrity I/O is budgeted separately, not rejected against the
-    # small raw-body sample cap. Deadline includes its planned streaming cost.
-    deadline_ms = (120 + verification // (8 * 1024 * 1024) + tokens // 5000) * 1000
+    # Integrity I/O streams independently of the bounded raw sample.
     return RuntimeProfile3(
         address_space_bytes=address,
         soft_rss_bytes=address * 85 // 100,
-        deadline_ms=deadline_ms,
-        phase_deadlines_ms={
-            "verification": deadline_ms,
-            "model": 60000,
-            "selection": deadline_ms,
-            "snapshot": 120000,
-        },
         cpu_budget=min(cpu_budget, os.cpu_count() or 1, 1 if address < 1024**3 else 8),
         max_file_bytes=max(raw, disk),
         sample=SampleLimits(
             max_requests=requests,
             max_raw_bytes=raw,
             max_prompt_tokens=tokens,
-            max_record_bytes=raw // 2,
-            max_record_tokens=tokens // 2,
+            max_record_bytes=min(8 * 1024 * 1024, raw // 2),
+            max_record_tokens=min(500_000, tokens // 2),
             max_metadata_bytes=metadata,
             max_snapshot_bytes=disk,
             max_exclusion_examples=32,
+            review_requested=False,
         ),
         budgets={
             "metadata_rows": max(1, verification // 32),
@@ -113,7 +105,7 @@ def automatic_profile(
             "plans": 32,
             "plan_bytes": metadata * 2,
             "result_bytes": metadata * 4,
-            "checkpoints": 128,
+            "checkpoints": 2 + min(20000, requests * 32) * 16,
         },
         max_json_depth=128,
         max_json_nodes=200000,

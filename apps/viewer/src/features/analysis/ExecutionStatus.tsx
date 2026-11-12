@@ -29,6 +29,13 @@ function ruleCounts(value: unknown): string {
     return value == null ? '未提供' : Object.entries(obj(value)).map(([rule, count]) => `${rule}：${number(count)}`).join('；') || '无记录';
 }
 export function ExecutionStatus({ data }: { data: LoadedReport }) {
+    if (data.sample) {
+        const decision = obj(obj(data.sample.sample).decision), discovery = obj(data.sample.discovery);
+        const n = arr(decision.windows).map(obj).find(w => w.role === 'discovery');
+        return <><p className="notice">{discovery.synthetic_fixture === true ? '合成数据验证 · ' : ''}小样本分析：{n ? arr(n.members).length : 0} / {str(decision.parent_count)} 条。参考提升按同一样本完整前后对比，不代表全量业务收益。</p>
+          {discovery.complete !== true && <p className="notice">部分比较或证据保存未完整：{arr(discovery.reason_codes).map(str).join('、')}。已完成的单项计算仍可查看。</p>}
+          <details className="report-detail"><summary>本次检查范围与限制</summary><div className="a-pad"><p>检查请求：{str(discovery.checked_requests)}；实际比较：{str(discovery.comparisons)}；未入样本的请求不参与正文分析和修改后计算。</p><p>{str(data.sample.business_note)}</p><p>各方案独立计算，收益不可相加；未评估不等于零。</p></div></details></>;
+    }
     const execution = data.execution;
     if (!execution) return null;
     if (execution.availability === 'not_computed') return <p className="notice">这份历史报告未记录新版执行状态；仍按原报告读取已发布结果，不能据此判断检查完整性。</p>;

@@ -42,7 +42,11 @@ def test_normal_worker_automatically_discovers_and_encodes_clock(service, model,
         def constrained(task_id):
             profile = original_profile(task_id)
             return profile.model_copy(
-                update={"sample": profile.sample.model_copy(update={"max_requests": 4})}
+                update={
+                    "sample": profile.sample.model_copy(
+                        update={"max_requests": 4, "review_requested": True}
+                    )
+                }
             )
 
         preparation.profile = constrained
@@ -64,7 +68,7 @@ def test_normal_worker_automatically_discovers_and_encodes_clock(service, model,
     if changing:
         recommendation = report["recommendations"][0]
         assert recommendation["finding"]["finding_id"] == findings["findings"][0]["finding_id"]
-        assert len(recommendation["windows"]) == 2
+        assert len(recommendation["windows"]) == (2 if review else 1)
         if review:
             assert all(w["complete"] and w["n"] == 2 for w in recommendation["windows"])
         for window in recommendation["windows"]:

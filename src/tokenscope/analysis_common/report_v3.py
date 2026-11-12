@@ -2,6 +2,8 @@
 
 from typing import Literal
 
+from pydantic import Field
+
 from tokenscope.analysis_common.contracts import Contract, Digest
 from tokenscope.analysis_common.contracts_v3 import SampleManifest3
 from tokenscope.analysis_common.evaluation_v3 import WindowEvaluation3
@@ -25,3 +27,5 @@ class SampleReport3(Contract):
     recommendations: tuple[Recommendation3, ...]
     business_note: str
     automatic_full: Literal[False] = False
+    evidence_mode: Literal["inline", "sealed_examples"] = "inline"
+    evidence_refs: dict[str, str] = Field(default_factory=dict)

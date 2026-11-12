@@ -2,7 +2,6 @@
 
 import os
 import threading
-import time
 from pathlib import Path
 
 from tokenscope.analysis_common.contracts_v3 import PreparationReceipt3
@@ -43,14 +42,9 @@ class PreparationService:
         # Directory metadata only, off the HTTP path. Source hashing/body access
         # occurs exclusively inside the bounded child; no user sample tuning.
         size = 0
-        started = time.monotonic()
         for root, _, files in os.walk(directory, followlinks=False):
             if self.shutdown.is_set() or self.store.execution(task_id).cancel_requested:
                 raise TokenScopeError("USER_CANCELLED", "Preparation cancelled", 409)
-            if time.monotonic() - started > 10:
-                raise TokenScopeError(
-                    "SOURCE_INVENTORY_LIMIT", "Source inventory deadline exceeded", 409
-                )
             for name in files:
                 path = Path(root) / name
                 if not path.is_symlink():

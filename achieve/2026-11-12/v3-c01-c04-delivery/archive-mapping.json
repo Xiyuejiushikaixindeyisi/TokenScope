@@ -1,0 +1,17 @@
+[
+  {
+    "from": "docs/tasks/development-v3/REPAIR_PLAN_20261111.md",
+    "to": "achieve/2026-11-12/v3-c01-c04-delivery/originals/docs/tasks/development-v3/REPAIR_PLAN_20261111.md",
+    "sha256": "1854776581e1bb97d9589990c1e47bf872ef089d413d918f72f2a02d571ebda5"
+  },
+  {
+    "from": "docs/tasks/development-v3/HUAWEI_SAMPLE_EVIDENCE_REQUEST_20261111.md",
+    "to": "achieve/2026-11-12/v3-c01-c04-delivery/originals/docs/tasks/development-v3/HUAWEI_SAMPLE_EVIDENCE_REQUEST_20261111.md",
+    "sha256": "76132460cb1f8f1f2b22ac1d274616bd231c16ccfefc5d446615f24194b769cf"
+  },
+  {
+    "from": "docs/tasks/product-v3/V3_REPAIR_PROPOSAL_20261111.md",
+    "to": "achieve/2026-11-12/v3-c01-c04-delivery/originals/docs/tasks/product-v3/V3_REPAIR_PROPOSAL_20261111.md",
+    "sha256": "ec2bd4421c8e88d95dc19db8d140b70732189c5f1c74a39bba4d3b256186c0e8"
+  }
+]

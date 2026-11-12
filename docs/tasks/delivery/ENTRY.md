@@ -1,25 +1,16 @@
 # 镜像打包与审查入口
 
-2026-11-11：[V3小样本交付完成](V3_SAMPLE_DELIVERY_20261111.md)，版本tokenscope-v3-sample-20261111，源码cabf2c6已push；WSL/桌面17文件SHA一致，包/容器验证通过，BUS01–05/真实AC-MEM和现场人工验收仍待执行。用户已明确授权本次审批后Git/构建，覆盖下文旧待命状态。本线仅审批/版本/打包，不承担产品编码/debug/开发验收执行。
+2026-11-12：用户已通过本机人工验收，授权本线独立E2E、Git/版本与记忆整理、WSL打包及Windows桌面复制。**D01独立复验通过，进入固定版本提交与打包。** 本人实际ID `01a1800e-80b4-7400-a78b-a84f5b6e888d`，本轮环境核实。
 
-## 历史阶段登记（不覆盖上述当前交付）
+- [本次开发交接与批准范围](../development-v3/PACKAGING_HANDOFF_PROMPT_20261112.md)
+- [独立审查及实际结果](V3_C04_REVIEW_20261112.md)
+- [新版固定源码/资源清单](VERSION_V3_C04_20261112.json)
+- [本人长期记忆](../../../memory/tasks/delivery.md) · [三角色登记](../../../memory/SESSIONS.md)
 
-2026-11-10：本线是三个活跃角色之一，实际ID `01a1800e-80b4-7400-a78b-a84f5b6e888d`，本人已重新核实并登记[当前权责](../../../memory/tasks/delivery.md)。**只负责镜像/交付打包与审批**；不承担代码开发、debug修复、开发调度或开发验收执行。没有具体候选及有效授权时保持待命。
+本轮不编写华为机prompt，打包后下一轮讨论；不得把11-11旧说明附为新版执行计划。华为五组真实业务收益仍ON_SITE_PENDING。本机合成与用户人工通过不代签现场。产品缺陷交V3开发修复，本线不代写产品代码或重新设计。
 
-接收[新V3开发会话](../development-v3/ENTRY.md)提交的候选版本、变更/验证证据及遗留问题；审批问题退回开发处理。当前四P0只读CHECK已完成，未启动实施或新打包。研究会话负责证据/产品范围；六条V2线休眠，不由本线唤醒。
+范围：L1漏检与大数据mem_limit，合理小样本完整实算，原V2四入口与L4/L5；没有分析硬时间截止。显式full延期，自动full禁止，Token新执行休眠。保护现场真实CSV与已认可监控/搜索/MA结果，不重算约15万条数据。旧包及原证据保留。
 
-## 打包时按需读取
+固定规则：[Git](../../operations/GIT_WORKFLOW.md) · [交付约定](../../operations/DELIVERY_ACCEPTANCE_RULES.md) · [流程](../../architecture/TASK_SESSION_WORKFLOW.md) · [构建资产](../../../deploy/monitoring/README.md)。源码从固定commit构建，backup/*及包体仅本地。
 
-- [当前范围与分工](../product-v3/V3_SCOPE_AND_HANDOFF_20261110.md)、[会话登记](../../../memory/SESSIONS.md)。
-- [交付固定规则](../../operations/DELIVERY_ACCEPTANCE_RULES.md)、[部署说明](../../../deploy/monitoring/README.md)、[Git约定](../../operations/GIT_WORKFLOW.md)。
-- [HV2阶段收口](HV2_ACCEPTANCE_CLOSE_20261105.md)、[HV2发布身份/SHA](HV2_DELIVERY_20261103.md)；冻结清单、原包及证据保持。
-- ICSL文件交付与revision2撤回/清理、revision3身份仍查[本线记忆](../../../memory/tasks/delivery.md)及[整理前完整入口](../../../achieve/2026-11-10/v2-session-dormancy/snapshots/docs/tasks/delivery/ENTRY.md)，不与产品V3发布混同。
-
-[V2低优先级归档](../../../achieve/2026-11-10/v2-session-dormancy/README.md)。历史“总负责/六线修复/独立E2E”分工不延续为当前开发职责；原批准四入口/L4L5和旧数据成果保护规则保持。
-
-2026-11-11授权推进：[小样本候选审查通过](V3_SAMPLE_REVIEW_20261111.md)，用户已授权版本整理、精确提交/push、WSL镜像及代码包构建；[发布版本清单](VERSION_V3_SAMPLE_20261111.json)。显式full延期，Token休眠，BUS/AC-MEM现场待验。本线不改产品、不部署华为。
-
-
-2026-11-11执行说明更新：[华为prompt r2](V3_PROMPT_R2_20261111.md)，已同步WSL/桌面和SHA；仅复用已有用户/MA成果，五组异常逐一分析，展示方案和样本收益。代码/镜像不变。
-
-2026-11-11用户授权由本线完成[工作树分类整理](../../operations/WORKTREE_RECONCILIATION_20261111.md)：归档/研究/共享记忆/环境资产，修正阶段导航与误名证据，按类别本地提交；不启动开发、服务、现场或新打包。
+历史：[11-11交付](V3_SAMPLE_DELIVERY_20261111.md) · [其prompt r2](V3_PROMPT_R2_20261111.md) · [UI异议与回执](V3_UI_USER_STATEMENT_20261111.md) · [11-12整理前快照](../../../achieve/2026-11-12/v3-c01-c04-delivery/README.md)。这些历史阶段不覆盖本次授权。

@@ -7,6 +7,7 @@ from pathlib import Path
 
 from tokenscope.analysis_common.execution_v3 import Execution3
 from tokenscope.analysis_common.report_v3 import SampleReport3
+from tokenscope.analysis_common.sample_evidence_v3 import EvidenceBundle3
 from tokenscope.analysis_common.wire_v3 import wire_schema
 
 root = Path(__file__).resolve().parents[1]
@@ -15,7 +16,11 @@ parser.add_argument("--check", action="store_true")
 args = parser.parse_args()
 data = (
     json.dumps(
-        {"SampleReport3": wire_schema(SampleReport3), "Execution3": wire_schema(Execution3)},
+        {
+            "SampleReport3": wire_schema(SampleReport3),
+            "Execution3": wire_schema(Execution3),
+            "EvidenceBundle3": wire_schema(EvidenceBundle3),
+        },
         ensure_ascii=False,
         sort_keys=True,
         indent=2,

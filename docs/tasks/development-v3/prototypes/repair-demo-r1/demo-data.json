@@ -1,0 +1,62 @@
+[
+  {
+    "id": "BUS01",
+    "appid": "S00000000000000000000000000000773",
+    "model": "DeepSeek-V4-Flash-0731",
+    "length": 27469,
+    "offset": 24156,
+    "tools": 44,
+    "n": 12,
+    "t1": "15:05:27",
+    "t2": "15:05:46",
+    "l3": true
+  },
+  {
+    "id": "BUS02",
+    "appid": "S010320",
+    "model": "DeepSeek-V4-Flash-0731",
+    "length": 23268,
+    "offset": 16063,
+    "tools": 40,
+    "n": 12,
+    "t1": "15:44:58",
+    "t2": "15:46:55",
+    "l3": true
+  },
+  {
+    "id": "BUS03",
+    "appid": "com.huawei.mbs.ilegal.ioc",
+    "model": "DeepSeek-V4-Flash-0731",
+    "length": 37222,
+    "offset": 22348,
+    "tools": 40,
+    "n": 16,
+    "t1": "15:56:41",
+    "t2": "15:56:54",
+    "l3": true
+  },
+  {
+    "id": "BUS04",
+    "appid": "com.huawei.newalliance",
+    "model": "DeepSeek-V4-Flash-0731",
+    "length": 18892,
+    "offset": 14645,
+    "tools": 40,
+    "n": 12,
+    "t1": "15:49:32",
+    "t2": "15:52:24",
+    "l3": false
+  },
+  {
+    "id": "BUS05",
+    "appid": "com.huawei.aidp_dg06",
+    "model": "Qwen3.6-27B",
+    "length": 17982,
+    "offset": 14883,
+    "tools": 40,
+    "n": 12,
+    "t1": "15:27:29",
+    "t2": "15:29:22",
+    "l3": true
+  }
+]

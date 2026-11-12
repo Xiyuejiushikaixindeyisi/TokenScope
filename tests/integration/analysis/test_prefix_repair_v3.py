@@ -1,6 +1,5 @@
 """Normal V3 execution must retain non-clock low-hit behavior and complete evidence."""
 
-import hashlib
 import json
 
 import pytest
@@ -104,7 +103,11 @@ def test_normal_nonclock_recommendations_and_evidence(service, case, rule, revie
         def limited(task_id):
             profile = original_profile(task_id)
             return profile.model_copy(
-                update={"sample": profile.sample.model_copy(update={"max_requests": 4})}
+                update={
+                    "sample": profile.sample.model_copy(
+                        update={"max_requests": 4, "review_requested": True}
+                    )
+                }
             )
 
         prep.profile = limited
@@ -126,16 +129,15 @@ def test_normal_nonclock_recommendations_and_evidence(service, case, rule, revie
         selected = [g for g in groups if g["rule_id"] == rule]
         assert len(selected) == 1
         assert len(selected[0]["members"]) == (2 if review else 8)
-    records = {
-        json.dumps(r["request_key"], sort_keys=True): r
-        for r in report["discovery"]["evidence_requests"]
-    }
-    for g in groups:
-        for side in ("left", "right"):
-            record = records[json.dumps(g["comparison"][side], sort_keys=True)]
-            assert hashlib.sha256(record["raw_body"].encode()).hexdigest() == record["raw_sha256"]
-            assert record["raw_sha256"] == g["comparison"][side + "_raw_sha256"]
-            assert json.loads(record["raw_body"]) in [body(case, i) for i in range(8)]
+    assert report["evidence_mode"] == "sealed_examples"
+    for owner in report["evidence_refs"]:
+        evidence = prep.diagnoses.evidence(task.task_id, owner)
+        assert evidence["task_id"] == task.task_id
+        assert evidence["sample_id"] == report["sample_id"]
+        assert len(evidence["examples"]) == 1
+        example = evidence["examples"][0]
+        assert example["comparison"] is not None
+        assert len(example["before"]["excerpt"]) <= 1000
     if case in ("tool_added", "representation"):
         assert not report["recommendations"]  # Evidence is not an invented executable change.
     else:

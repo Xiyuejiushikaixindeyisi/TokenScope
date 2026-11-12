@@ -26,8 +26,6 @@ def enforce(spec: WorkerSpec3) -> None:
     resource.setrlimit(resource.RLIMIT_AS, (profile.address_space_bytes,) * 2)
     resource.setrlimit(resource.RLIMIT_FSIZE, (profile.max_file_bytes,) * 2)
     resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
-    cpu_seconds = max(1, profile.deadline_ms // 1000 * profile.cpu_budget + 5)
-    resource.setrlimit(resource.RLIMIT_CPU, (cpu_seconds,) * 2)
 
     # Native threads share the address-space cap. Additional processes are not allowed.
     def audit(event: str, args: tuple[Any, ...]) -> None:
@@ -86,7 +84,8 @@ def run(spec: WorkerSpec3, ledger: BudgetLedger) -> dict[str, Any]:
     sample = profile.sample
 
     def phase(name: str) -> None:
-        atomic_json(root / "phase.json", {"phase": name, "deadline": ledger.enter(name)})
+        ledger.enter(name)
+        atomic_json(root / "phase.json", {"phase": name})
 
     def charge(member: SampleMetadata) -> None:
         ledger.reserve_many(

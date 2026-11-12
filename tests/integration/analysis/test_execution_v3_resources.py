@@ -55,7 +55,7 @@ def workload(value, body):
     return (sys.executable, "-c", header + body)
 
 
-@pytest.mark.parametrize("cause", ["cancel", "deadline", "phase", "crash"])
+@pytest.mark.parametrize("cause", ["cancel", "crash"])
 def test_real_blocked_worker_stops_preserves_only_committed_checkpoint(tmp_path, cause):
     value = spec(tmp_path, deadline_ms=900 if cause == "deadline" else 10000)
     cancel = threading.Event()
@@ -96,6 +96,27 @@ def test_real_blocked_worker_stops_preserves_only_committed_checkpoint(tmp_path,
     )
     pid = json.loads((Path(value.job_root) / "process.json").read_text())["pid"]
     assert not Path(f"/proc/{pid}").exists()
+
+
+@pytest.mark.parametrize("legacy", [False, True])
+def test_worker_finishes_despite_expired_legacy_time_fields(tmp_path, legacy):
+    value = spec(
+        tmp_path,
+        **(
+            {"version": "bounded-runtime-3.1", "deadline_ms": 1, "phase_deadlines_ms": {"model": 1}}
+            if legacy
+            else {}
+        ),
+    )
+    body = (
+        "import resource\n"
+        "assert resource.getrlimit(resource.RLIMIT_CPU)==(resource.RLIM_INFINITY,)*2\n"
+        "atomic_json(root/'phase.json', {'phase':'model','deadline':0})\n"
+        "time.sleep(0.1)\n"
+        "atomic_json(root/'worker-result.json', {'state':'completed'})\n"
+    )
+    result = WorkerSupervisor().run(value, lambda: False, test_command=workload(value, body))
+    assert result["state"] == "completed" and not result["forced_termination"]
 
 
 def test_real_hard_address_space_and_spawn_denial(tmp_path):

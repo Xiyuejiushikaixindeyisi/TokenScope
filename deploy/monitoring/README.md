@@ -1,5 +1,7 @@
 # 完整服务构建与交付
 
+2026-11-12：本轮用户明确暂不编写华为机prompt。构建使用`--defer-onsite-prompt`，candidate/release manifest标记`onsite_prompt_status=deferred_by_user`，交付根目录不提供执行prompt；下文“包含prompt/按包内prompt执行”仅适用于明确附带说明的其他版本，不授权本轮现场部署。用户将在本机打包结束后另行讨论现场任务。
+
 当前发布范围为监控V2/MA及异常分析RV2正式前后端；CPU linux/amd64，同源FastAPI静态资源。旧monitoring-v1-20261028包和manifest冻结，不能覆盖。
 
 有效打包授权后，prepare_monitoring_context.py须指定固定--source-commit；源码、配置、部署文件和版本从Git对象读取，前端在独立快照目录用已安装锁定工具构建，不读共享dirty源码或旧dist。wheelhouse逐包SHA须在requirements.runtime.txt中；模型资产须匹配固定commit编码锁。构建用固定BASE_IMAGE摘要、--network=none及pip --no-index --require-hashes。candidate.json记录实际组合版本、commit、dist、模型与文件摘要。

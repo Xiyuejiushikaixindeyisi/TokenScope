@@ -15,6 +15,7 @@ for (const [keyword, compare] of Object.entries({
 const reportValidator = ajv.compile(schemas.SampleReport3);
 const executionValidator = ajv.compile(schemas.Execution3);
 const receiptValidator = ajv.compile(sampling.receipt);
+const evidenceValidator = ajv.compile(schemas.EvidenceBundle3);
 export const integer = (value: unknown): bigint => {
   if (typeof value !== 'string' || !/^-?(0|[1-9][0-9]*)$/.test(value)) throw Error('INVALID_INTEGER');
   return BigInt(value);
@@ -65,7 +66,9 @@ export function validateSampleReport(value: unknown, task?: string): Obj {
     const pair = obj(group.comparison);
     for (const side of ['left', 'right']) {
       const record = evidence.get(stable(pair[side]));
-      if (!record || record.raw_sha256 !== pair[side + '_raw_sha256']) throw Error('PAIR_EVIDENCE_IDENTITY');
+      if (report.evidence_mode === 'sealed_examples') {
+        if (!discoveryKeys.has(stable(pair[side]))) throw Error('PAIR_EVIDENCE_IDENTITY');
+      } else if (!record || record.raw_sha256 !== pair[side + '_raw_sha256']) throw Error('PAIR_EVIDENCE_IDENTITY');
     }
   }
   for (const recommendation of arr(report.recommendations).map(obj)) {
@@ -138,7 +141,14 @@ export class SampleClient3 {
     if (!receiptValidator(value)) throw Error('INVALID_V3_PREPARATION');
     return value;
   }
-  async report(task: string): Promise<Obj> {
-    return validateSampleReport(await this.request(`/diagnostics/v3/tasks/${encodeURIComponent(task)}/report`), task);
+  async evidence(task: string, sample: string, owner: string, signal?: AbortSignal): Promise<Obj[]> {
+    const value = await this.request(`/diagnostics/v3/tasks/${encodeURIComponent(task)}/evidence/${encodeURIComponent(owner)}`, undefined, signal);
+    if (!evidenceValidator(value) || value.task_id !== task || value.sample_id !== sample || value.owner_id !== owner) throw Error('EVIDENCE_IDENTITY');
+    const examples = arr(value.examples).map(obj);
+    if (examples.length > 3 || examples.some(e => e.task_id !== task || e.owner_id !== owner)) throw Error('EVIDENCE_OWNER');
+    return examples;
+  }
+  async report(task: string, signal?: AbortSignal): Promise<Obj> {
+    return validateSampleReport(await this.request(`/diagnostics/v3/tasks/${encodeURIComponent(task)}/report`, undefined, signal), task);
   }
 }

@@ -1,3 +1,5 @@
+import { mergeSampleCatalog } from './sample-catalog';
+import { verifySampleCapabilities } from './sample-v3';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import common from './generated/analysis-common-1.0.json';
@@ -63,7 +65,7 @@ export function verifySelectedReports(items: Obj[], selected: Obj[]) {
     if (seen.size !== expected.size) throw Error('MISSING_SELECTED_REPORT');
 }
 export class AnalysisClient {
-    constructor(readonly instance: string, readonly fetcher: typeof fetch = (...args) => globalThis.fetch(...args), readonly executionVersion: string | null = null) { }
+    constructor(readonly instance: string, readonly fetcher: typeof fetch = (...args) => globalThis.fetch(...args), readonly executionVersion: string | null = null, readonly includeSamples = false) { }
     async get(path: string, query: Record<string, string | number | undefined> = {}, signal?: AbortSignal): Promise<Obj> {
         const r = await this.fetcher(apiPath(path, query), { method: 'GET', credentials: 'same-origin', redirect: 'error', headers: { Accept: 'application/json', 'x-tokenscope-service-instance': this.instance }, ...(signal ? { signal } : {}) });
         if (!r.headers.get('content-type')?.includes('application/json'))
@@ -77,7 +79,7 @@ export class AnalysisClient {
             throw new ApiError(409, 'SERVICE_INSTANCE_MISMATCH', '服务身份已变化');
         return data;
     }
-    static async connect(signal?: AbortSignal, fetcher: typeof fetch = (...args) => globalThis.fetch(...args)) {
+    static async connect(signal?: AbortSignal, fetcher: typeof fetch = (...args) => globalThis.fetch(...args), includeSamples = false) {
         const read = async (path: string) => {
             const r = await fetcher(path, { method: 'GET', redirect: 'error', credentials: 'same-origin', ...(signal ? { signal } : {}) });
             if (!r.ok)
@@ -90,7 +92,17 @@ export class AnalysisClient {
             throw new Error('诊断接口版本或实例不兼容');
         const c = await read('/diagnostics/v2/capabilities');
         verifyExecutionCapabilities(c, str(a.service_instance_id));
-        return new AnalysisClient(str(a.service_instance_id), fetcher, EXECUTION_VERSION);
+        if (includeSamples) {
+            const v3 = await fetcher('/diagnostics/v3/capabilities', { method: 'GET', ...(signal ? { signal } : {}) });
+            if (v3.status === 404) includeSamples = false;
+            else {
+                if (!v3.ok) throw Error('SAMPLE_CAPABILITIES_UNAVAILABLE');
+                const offered = obj(await v3.json());
+                if (offered.service_instance_id !== a.service_instance_id) throw Error('SERVICE_INSTANCE_MISMATCH');
+                verifySampleCapabilities(offered);
+            }
+        }
+        return new AnalysisClient(str(a.service_instance_id), fetcher, EXECUTION_VERSION, includeSamples);
     }
     async catalog(signal?: AbortSignal): Promise<Catalog> {
         let snapshot: string | undefined, cursor = '', after = '0';
@@ -130,7 +142,8 @@ export class AnalysisClient {
                 throw new Error('INVALID_DEFAULT_REFERENCE');
         }
         if (this.executionVersion) verifySelectedReports([...items.values()], selected);
-        return { snapshot: snapshot!, cursor, items: [...items.values()], defaults, ...(this.executionVersion ? { selected_reports: selected } : {}) };
+        const result = { snapshot: snapshot!, cursor, items: [...items.values()], defaults, ...(this.executionVersion ? { selected_reports: selected } : {}) };
+        return this.includeSamples ? mergeSampleCatalog(this, result, signal) : result;
     }
     async report(entry: Obj, signal?: AbortSignal) {
         const r = await this.get(`${taskPath(str(entry.task_id))}/report`, {}, signal);

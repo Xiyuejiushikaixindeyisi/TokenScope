@@ -15,6 +15,7 @@ from tokenscope.analysis_common.diagnostic_store_v3 import DiagnosticStore3
 from tokenscope.analysis_common.execution_v3 import Execution3
 from tokenscope.analysis_common.preparation_store import PreparationStore
 from tokenscope.analysis_common.report_v3 import SampleReport3
+from tokenscope.analysis_common.sample_evidence_v3 import EvidenceBundle3
 from tokenscope.analysis_common.wire_v3 import from_wire, to_wire, wire_schema
 from tokenscope.errors import TokenScopeError
 
@@ -56,6 +57,7 @@ def router(
                 "sample": wire_schema(SampleManifest3),
                 "report": wire_schema(SampleReport3),
                 "execution": wire_schema(Execution3),
+                "evidence": wire_schema(EvidenceBundle3),
             },
         }
 
@@ -94,6 +96,7 @@ def router(
                     "execution": to_wire(item["execution"]),
                     "source": to_wire(item["source"]),
                     "preparation_id": item["preparation_id"],
+                    "sample_metadata": to_wire(item["sample_metadata"]),
                 }
                 for item in page["items"]
             ],
@@ -116,6 +119,12 @@ def router(
     @api.get("/tasks/{task_id}/report")
     def report(task_id: str) -> dict[str, Any]:
         return to_wire(SampleReport3.model_validate_json(json.dumps(diagnoses.report(task_id))))
+
+    @api.get("/tasks/{task_id}/evidence/{owner_id}")
+    def evidence(task_id: str, owner_id: str) -> dict[str, Any]:
+        return to_wire(
+            EvidenceBundle3.model_validate_json(json.dumps(diagnoses.evidence(task_id, owner_id)))
+        )
 
     root.include_router(api)
     return root

@@ -41,15 +41,31 @@ def test_every_budget_before_action_boundary_and_total(kind, monkeypatch):
         assert ledger.consumed.get("plans", 0) == 0
 
 
-def test_profile_digest_order_and_cancel_deadline():
+def test_profile_digest_order_cancel_and_no_time_limit(monkeypatch):
+    monkeypatch.setattr("tokenscope.analysis_common.runtime_v3.current_rss", lambda: 0)
     p = profile()
     assert (
         p.digest == p.model_copy(update={"budgets": dict(reversed(list(p.budgets.items())))}).digest
     )
     with pytest.raises(TaskStopped, match="USER_CANCELLED"):
         BudgetLedger(p, lambda: True).reserve("requests")
-    with pytest.raises(TaskStopped, match="DEADLINE_EXHAUSTED"):
-        BudgetLedger(p, lambda: False, started=0).checkpoint()
+    assert p.deadline_ms is None and not p.phase_deadlines_ms
+    assert p.sample.max_requests <= 300 and not p.sample.review_requested
+    for profile_value in (
+        p,
+        p.model_copy(
+            update={
+                "version": "bounded-runtime-3.1",
+                "deadline_ms": 1,
+                "phase_deadlines_ms": {"model": 1},
+            }
+        ),
+    ):
+        restored = type(p).model_validate_json(profile_value.model_dump_json())
+        ledger = BudgetLedger(restored, lambda: False, started=0)
+        ledger.enter("model")
+        monkeypatch.setattr("tokenscope.analysis_common.runtime_v3.time.monotonic", lambda: 1e12)
+        ledger.checkpoint()
 
 
 def test_tiny_headroom_shrinks_sample_without_spending_safety_reserve():

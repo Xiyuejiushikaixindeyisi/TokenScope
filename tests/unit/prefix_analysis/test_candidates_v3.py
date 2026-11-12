@@ -145,7 +145,8 @@ def test_representative_evidence_is_bounded_without_merging_unrelated_pairs():
     groups = [g for g in result.cause_groups if g.rule_id == "L4"]
     assert len(groups) == 128
     assert not result.complete and "CAUSE_EVIDENCE_TRUNCATED" in result.reason_codes
-    evidence = {r.request_key: r for r in result.evidence_requests}
+    assert result.evidence_requests == ()
+    evidence = {r.request_key: r for r in source.requests}
     assert len(evidence) <= len(source.requests)
     for group in groups:
         assert group.comparison is not None

@@ -22,8 +22,14 @@ def main():
     parser.add_argument("--source-commit", required=True)
     parser.add_argument("--version-file", default="docs/tasks/analysis/VERSION_RV2_20261101.json")
     parser.add_argument("--onsite-prompt", default="prompts/delivery/HUAWEI_FULL_SERVICE_RV2.md")
+    parser.add_argument(
+        "--defer-onsite-prompt", action="store_true",
+        help="Omit onsite instructions pending user discussion",
+    )
     args = parser.parse_args()
-    for name in (args.version_file, args.onsite_prompt):
+    if args.defer_onsite_prompt:
+        args.onsite_prompt = None
+    for name in filter(None, (args.version_file, args.onsite_prompt)):
         if Path(name).is_absolute() or ".." in Path(name).parts:
             parser.error("Version and prompt must be repository-relative paths")
     root = Path(__file__).resolve().parents[2]
@@ -82,9 +88,10 @@ def main():
         "env/sources.lock.json",
         "scripts/validation/generate_monitoring_data.py",
         "scripts/release/verify_service.py",
-        args.onsite_prompt,
         args.version_file,
     ]
+    if args.onsite_prompt:
+        files.append(args.onsite_prompt)
     files += [p for p in tracked if p.startswith(("src/", "configs/", "deploy/monitoring/"))]
     for name in sorted(set(files)):
         if name in links:
@@ -117,6 +124,7 @@ def main():
         "source_commit": commit,
         "version_file": args.version_file,
         "onsite_prompt": args.onsite_prompt,
+        "onsite_prompt_status": "deferred_by_user" if args.defer_onsite_prompt else "included",
         "base_image": args.base_image,
         "versions": {
             k: version[k]

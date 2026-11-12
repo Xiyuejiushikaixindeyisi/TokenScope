@@ -1,5 +1,7 @@
 # 文档入口
 
+> 2026-11-12当前决定：用户本机人工验收已通过，授权镜像线独立E2E、Git/版本/记忆整理及打包；正在复验，华为业务收益待现场。本轮暂不编写华为prompt。旧暂停、旧四P0/硬时限及旧prompt不覆盖本决定，当前进度以交付入口和memory/CURRENT.md为准。
+
 2026-11-11：当前仅三个活跃角色，六条V2开发线休眠。恢复顺序：[AGENTS](../AGENTS.md) → [CURRENT](../memory/CURRENT.md) → [SESSIONS](../memory/SESSIONS.md) → 自己的入口。按任务取最小上下文，旧启动prompt不是当前指令。
 
 | 当前工作 | 首选入口 |

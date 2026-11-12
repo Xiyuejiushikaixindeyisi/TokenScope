@@ -121,8 +121,6 @@ def main():
     copies = {
         "compose.yaml": args.context / "deploy/monitoring/compose.yaml",
         "deployment.env.example": args.context / "deploy/monitoring/deployment.env.example",
-        "HUAWEI_AGENT_PROMPT.md": args.context
-        / candidate.get("onsite_prompt", "prompts/delivery/HUAWEI_FULL_SERVICE_RV2.md"),
         "DEPLOYMENT_README.md": args.context / "deploy/monitoring/README.md",
         "candidate.json": args.context / "candidate.json",
         "container-acceptance.json": args.acceptance,
@@ -130,6 +128,10 @@ def main():
         "container-browser.log": args.browser_log,
         "unified-container-validation.json": args.validation,
     }
+    if candidate.get("onsite_prompt"):
+        copies["HUAWEI_AGENT_PROMPT.md"] = args.context / candidate["onsite_prompt"]
+    else:
+        assert candidate.get("onsite_prompt_status") == "deferred_by_user"
     if args.acceptance_kit:
         copies["SYNTHETIC_ACCEPTANCE.tar.gz"] = args.acceptance_kit
     for name, source in copies.items():

@@ -58,10 +58,35 @@ class DiagnosticStore3:
                     "execution": Execution3.model_validate_json(row["value"]),
                     "source": self.preparations.request(row["preparation"]).source,
                     "preparation_id": row["preparation"],
+                    "sample_metadata": self.sample_metadata(row["preparation"]),
                 }
                 for row in rows[:limit]
             ],
             "next_offset": str(offset + limit) if len(rows) > limit else None,
+        }
+
+    def sample_metadata(self, preparation_id: str) -> dict[str, Any] | None:
+        from tokenscope.analysis_common.contracts_v3 import SampleManifest3
+        from tokenscope.monitoring.pipeline import file_digest
+
+        receipt = self.preparations.receipt(preparation_id)
+        if receipt.state != "completed":
+            return None
+        execution = self.preparations.execution(preparation_id)
+        root = (self.root / "jobs" / preparation_id).resolve(strict=True)
+        path = (root / execution.telemetry["manifest_path"]).resolve(strict=True)
+        if (
+            not path.is_relative_to(root)
+            or path.stat().st_size > 8 * 1024 * 1024
+            or file_digest(path) != receipt.manifest_sha256
+        ):
+            raise TokenScopeError("SAMPLE_CHANGED", "Catalog sample differs", 409)
+        manifest = SampleManifest3.model_validate_json(path.read_bytes())
+        return {
+            "sample_id": receipt.sample_id,
+            "manifest_sha256": receipt.manifest_sha256,
+            "scope": manifest.parent_scope.model_dump(mode="json"),
+            "selected_count": sum(len(w.members) for w in manifest.decision.windows),
         }
 
     def execution(self, task_id: str) -> Execution3:
@@ -149,7 +174,7 @@ class DiagnosticStore3:
         return CheckpointJournal(
             root,
             max_entries=spec.profile.budgets["checkpoints"],
-            max_bytes=spec.profile.sample.max_metadata_bytes,
+            max_bytes=spec.profile.max_file_bytes,
         )
 
     def recover(self) -> None:
@@ -181,9 +206,14 @@ class DiagnosticStore3:
         reports = [item for item in committed if item.kind == "report"]
         if not reports:
             raise TokenScopeError("REPORT_NOT_READY", "No sealed report", 409)
-        report: dict[str, Any] = json.loads(
-            journal.checked_artifact(reports[-1].artifact).read_bytes()
-        )
+        expected = [c for c in self.execution(task_id).checkpoints if c.kind == "report"]
+        if expected and expected[-1].sha256 != reports[-1].sha256:
+            # A terminal publication cannot silently downgrade after corruption.
+            raise TokenScopeError("INVALID_ARTIFACT", "Published report evidence changed", 409)
+        report_path = journal.checked_artifact(reports[-1].artifact)
+        if report_path.stat().st_size > 8 * 1024 * 1024:
+            raise TokenScopeError("INVALID_ARTIFACT", "Report metadata exceeds limit", 409)
+        report: dict[str, Any] = json.loads(report_path.read_bytes())
         if report["task_id"] != task_id:
             raise TokenScopeError("INVALID_ARTIFACT", "Report identity differs", 409)
         # Every published row/plan reference must itself be committed and hash verified.
@@ -195,4 +225,21 @@ class DiagnosticStore3:
                         raise TokenScopeError(
                             "INVALID_ARTIFACT", "Report has unsealed evidence", 409
                         )
+        if any(ref not in references for ref in report.get("evidence_refs", {}).values()):
+            raise TokenScopeError("INVALID_ARTIFACT", "Report has unsealed examples", 409)
         return report
+
+    def evidence(self, task_id: str, owner_id: str) -> dict[str, Any]:
+        report = self.report(task_id)
+        ref = report.get("evidence_refs", {}).get(owner_id)
+        if ref is None:
+            raise TokenScopeError("EVIDENCE_NOT_FOUND", "No sealed example for this owner", 404)
+        journal = self.journal(task_id)
+        payload: dict[str, Any] = json.loads(journal.checked_artifact(ref).read_bytes())
+        if (
+            payload.get("task_id") != task_id
+            or payload.get("owner_id") != owner_id
+            or payload.get("sample_id") != report["sample_id"]
+        ):
+            raise TokenScopeError("INVALID_ARTIFACT", "Evidence identity differs", 409)
+        return payload

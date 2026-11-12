@@ -1,3 +1,4 @@
+import { loadSampleReport, sampleExamples } from './sample-model';
 import { arr, canonical, obj, str, taskPath } from '../../api/analysis/client';
 import type { Item, Obj, AnalysisClient } from '../../api/analysis/client';
 import { resultExamples, resultPage, summary, verifyItem } from '../../api/analysis/recommendations';
@@ -14,6 +15,7 @@ export interface Card {
 export interface LoadedReport {
     entry: Obj; report: Obj; summary: Obj; cards: Card[]; direction: Direction;
     execution?: Obj | null;
+    sample?: Obj;
     ruleCoverage?: Obj[];
     offsets: Record<ResultKind, string | null>; hasMore: boolean;
 }
@@ -104,6 +106,7 @@ async function loadDifferenceCards(api: AnalysisClient, entry: Obj, s: Obj, sign
     });
 }
 export async function loadCardExamples(api: AnalysisClient, report: LoadedReport, card: Card, signal?: AbortSignal): Promise<Obj[]> {
+    if (report.sample) return sampleExamples(api, report, card, signal);
     if (!card.differenceGroups) return arr(card.data.example_refs).length ? resultExamples(api, report.entry, card.kind, card.data, signal) : [];
     const rows = await Promise.all(card.differenceGroups.map(owner => resultExamples(api, report.entry, 'difference_group', owner, signal)));
     const selected: Obj[] = [], seen = new Set<string>();
@@ -119,6 +122,7 @@ export async function loadCardExamples(api: AnalysisClient, report: LoadedReport
     return selected;
 }
 export async function loadReport(api: AnalysisClient, entry: Obj, direction: Direction, signal?: AbortSignal): Promise<LoadedReport> {
+    if (entry.sample_v3 === true) return loadSampleReport(api, entry, signal);
     const [report, s, execution] = await Promise.all([api.report(entry, signal), summary(api, entry, signal), api.execution(entry, signal)]);
     const ruleCoverage = execution?.availability === 'computed' && direction === 'low_hit' ? (await api.all(str(entry.task_id), 'rule_coverage', signal)).map(x => x.data) : [];
     for (const row of ruleCoverage) {
@@ -131,6 +135,7 @@ export async function loadReport(api: AnalysisClient, entry: Obj, direction: Dir
 }
 export function moreReport(api: AnalysisClient, old: LoadedReport, signal?: AbortSignal) { return readPages(api, old, signal); }
 export async function getCard(api: AnalysisClient, report: LoadedReport, id: string, signal?: AbortSignal): Promise<Card> {
+    if (report.sample) { const card = report.cards.find(x => x.id === id); if (!card) throw Error('RESULT_NOT_FOUND'); return card; }
     if (report.direction === 'low_hit' && /^difference-detector:L[45]$/.test(id)) {
         const cards = await loadDifferenceCards(api, report.entry, report.summary, signal);
         const card = cards.find(x => x.id === id);

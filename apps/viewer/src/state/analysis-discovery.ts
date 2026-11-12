@@ -55,7 +55,7 @@ export class DiscoverySession {
         catalog: (api: AnalysisClient, c: Catalog) => void;
         status: (message: string) => void;
         terminal?: (value: Obj) => void;
-    }, private fetcher: typeof fetch = (...args) => globalThis.fetch(...args)) { }
+    }, private fetcher: typeof fetch = (...args) => globalThis.fetch(...args), private includeSamples = false) { }
     stop() { this.controller.abort(); this.active?.abort(); }
     async run() {
         let attempts = 0;
@@ -64,7 +64,7 @@ export class DiscoverySession {
             const signal = this.active.signal;
             try {
                 this.callbacks.status('正在核对报告目录');
-                const api = await AnalysisClient.connect(signal, this.fetcher);
+                const api = await AnalysisClient.connect(signal, this.fetcher, this.includeSamples);
                 const cat = await api.catalog(signal);
                 if (signal.aborted)
                     break;

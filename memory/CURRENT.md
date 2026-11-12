@@ -1,11 +1,9 @@
 # 当前状态
 
-2026-11-11：V3小样本版本 **tokenscope-v3-sample-20261111** 已完成本地独立验收、镜像/代码包制作和Windows桌面校验，源码cabf2c6已push；[交付记录](../docs/tasks/delivery/V3_SAMPLE_DELIVERY_20261111.md)。现场五组真实分析和真实资源验证待回传，不以本地通过代签现场。
+2026-11-12：用户已通过本机人工验收，授权镜像打包与审查线执行独立端到端复验、Git/版本整理、记忆整理、WSL打包及Windows桌面复制。当前D01独立复验通过，进入固定版本提交与打包。依据：[开发交接](../docs/tasks/development-v3/PACKAGING_HANDOFF_PROMPT_20261112.md)；实际进度：[交付入口](../docs/tasks/delivery/ENTRY.md)。
 
-用户已批准[华为执行说明r2](../docs/tasks/delivery/V3_PROMPT_R2_20261111.md)：用户监控/搜索/MA复用已认可约15万条数据对应的成果，不重新导入或全量计算；五组指定appid逐一做真实有界低命中分析，前端展示可执行修改和样本实算收益/语义风险，不强制每组clock或正收益。旧异常允许安全弃用，原CSV和监控/MA成果必须保护。两阶段人工确认、SSH18002、单Markdown正文证据、保留演示服务。
+范围为L1动态字段漏检与大数据mem_limit、小样本完整实算、保留已批准V2四入口/L4L5，无分析硬时间截止。用户展示和开发方案审批链见开发入口。五组华为真实业务收益仍 **ON_SITE_PENDING**；本机合成不代签。
 
-当前三个角色：[登记与入口](SESSIONS.md)。研究负责证据/产品范围/独立验收；V3开发负责获准代码与回传缺陷；镜像会话负责审查/版本/交付，当前用户额外授权其完成[工作树分类整理](../docs/operations/WORKTREE_RECONCILIATION_20261111.md)。不因此恢复编码、测试服务、现场访问或打包。六条V2线及V1/历史总设计继续休眠。
+**本轮不编写华为机prompt，用户将在打包后下一轮讨论。** 不将旧prompt作为新包执行计划。产品缺陷交V3开发修复；本线不代写产品代码。三角色及六条V2休眠状态见[SESSIONS](SESSIONS.md)。Token私有修复留V3.5、自动full禁止、显式full延期。
 
-显式full延期、自动full禁止；Token新执行休眠，私有修复留V3.5；hybrid/Agent未启动。[研究判断](../docs/tasks/product-v3/V35_TOKEN_TAIL_ASSESSMENT_20261110.md)与[四象限资料](../docs/tasks/product-v3/promotion/quadrant-detail/README.md)保留，研究线索不当已实现能力。
-
-本轮整理前状态按原字节保存在[归档](../achieve/2026-11-11/worktree-reconciliation/README.md)，历史阶段不再覆盖当前入口。未收到华为报告前不宣称现场验收通过。
+复用已认可约15万条监控/搜索/MA结果，现场真实数据/结果保护不变；旧包与原始证据保留。此前暂停/报告评审/11-11发布阶段见[原字节快照](../achieve/2026-11-12/v3-c01-c04-delivery/README.md)，不再覆盖最新授权。

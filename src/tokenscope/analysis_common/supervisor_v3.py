@@ -31,19 +31,6 @@ def process_rss(pid: int) -> int:
         return 0
 
 
-def phase_expired(root: Path, now: float) -> bool:
-    try:
-        path = root / "phase.json"
-        if path.stat().st_size > 1024:
-            return True
-        value = json.loads(path.read_text())
-        return bool(now >= float(value["deadline"]))
-    except FileNotFoundError:
-        return False
-    except (OSError, ValueError, KeyError, TypeError):
-        return True
-
-
 def terminate_group(process: subprocess.Popen[bytes], grace: float = 0.5) -> None:
     if process.poll() is not None:
         return
@@ -123,10 +110,6 @@ class WorkerSupervisor:
                     if stop_reason is None:
                         if cancelled():
                             stop_reason = "USER_CANCELLED"
-                        elif (now - started) * 1000 >= spec.profile.deadline_ms:
-                            stop_reason = "DEADLINE_EXHAUSTED"
-                        elif phase_expired(root, now):
-                            stop_reason = "PHASE_DEADLINE_EXHAUSTED"
                         elif rss >= spec.profile.soft_rss_bytes:
                             stop_reason = "MEMORY_PRESSURE"
                         if stop_reason is not None:
@@ -170,7 +153,7 @@ class WorkerSupervisor:
         journal = CheckpointJournal(
             root,
             max_entries=spec.profile.budgets["checkpoints"],
-            max_bytes=spec.profile.sample.max_metadata_bytes,
+            max_bytes=spec.profile.max_file_bytes,
         )
         result.update(
             exit_code=process.returncode,

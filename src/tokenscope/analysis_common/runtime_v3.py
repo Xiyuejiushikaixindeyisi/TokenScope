@@ -23,11 +23,11 @@ from tokenscope.monitoring.pipeline import file_digest, sync_directory
 
 
 class RuntimeProfile3(Contract):
-    version: Literal["bounded-runtime-3.1"] = "bounded-runtime-3.1"
+    version: Literal["bounded-runtime-3.1", "sample-runtime-3.2"] = "sample-runtime-3.2"
     address_space_bytes: int = Field(ge=128 * 1024 * 1024)
     soft_rss_bytes: int = Field(gt=0)
-    deadline_ms: int = Field(gt=0)
-    phase_deadlines_ms: dict[str, int]
+    deadline_ms: int | None = Field(default=None, gt=0)
+    phase_deadlines_ms: dict[str, int] = Field(default_factory=dict)
     cpu_budget: int = Field(ge=1, le=64)
     max_file_bytes: int = Field(gt=0)
     sample: SampleLimits
@@ -42,7 +42,7 @@ class RuntimeProfile3(Contract):
             raise ValueError("Soft RSS boundary must precede hard address limit")
         if not self.budgets or any(value <= 0 for value in self.budgets.values()):
             raise ValueError("All budget limits must be positive")
-        if not self.phase_deadlines_ms or any(v <= 0 for v in self.phase_deadlines_ms.values()):
+        if any(v <= 0 for v in self.phase_deadlines_ms.values()):
             raise ValueError("All phase deadlines must be positive")
         return self
 
@@ -69,18 +69,14 @@ class BudgetLedger:
     stage: str = "startup"
     stage_deadline: float | None = None
 
-    def enter(self, stage: str) -> float:
+    def enter(self, stage: str) -> None:
         self.stage = stage
-        self.stage_deadline = time.monotonic() + self.profile.phase_deadlines_ms[stage] / 1000
-        return self.stage_deadline
+        # Legacy deadline fields remain readable, but never terminate analysis.
+        self.stage_deadline = None
 
     def checkpoint(self) -> None:
         if self.cancelled():
             raise TaskStopped("USER_CANCELLED")
-        if (time.monotonic() - self.started) * 1000 >= self.profile.deadline_ms:
-            raise TaskStopped("DEADLINE_EXHAUSTED")
-        if self.stage_deadline is not None and time.monotonic() >= self.stage_deadline:
-            raise TaskStopped("PHASE_DEADLINE_EXHAUSTED")
         if current_rss() >= self.profile.soft_rss_bytes:
             raise TaskStopped("MEMORY_PRESSURE")
 

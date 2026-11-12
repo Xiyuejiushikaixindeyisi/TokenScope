@@ -1,0 +1,54 @@
+{
+  "errors": [],
+  "overflow": false,
+  "network": [],
+  "results": [
+    {
+      "business": "BUS01",
+      "cards": 3
+    },
+    {
+      "business": "BUS02",
+      "cards": 3
+    },
+    {
+      "business": "BUS03",
+      "cards": 4
+    },
+    {
+      "business": "BUS04",
+      "cards": 2
+    },
+    {
+      "business": "BUS05",
+      "cards": 3
+    },
+    {
+      "deepLink": true
+    },
+    {
+      "mode": "small",
+      "pass": true
+    },
+    {
+      "mode": "zero",
+      "pass": true
+    },
+    {
+      "mode": "negative",
+      "pass": true
+    },
+    {
+      "mode": "pending",
+      "pass": true
+    },
+    {
+      "mode": "empty",
+      "pass": true
+    },
+    {
+      "mode": "l5",
+      "pass": true
+    }
+  ]
+}

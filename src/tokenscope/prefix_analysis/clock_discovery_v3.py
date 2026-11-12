@@ -84,6 +84,7 @@ class ClockDiscovery3(Contract):
     unsupported_fields: int
     reason_codes: tuple[str, ...] = ()
     complete: bool = True
+    synthetic_fixture: bool = False
 
 
 def pair_clock(
@@ -270,7 +271,13 @@ def collect_clock(source: SampleResolvedSource, control: BudgetLedger) -> ClockD
                         if "CAUSE_EVIDENCE_TRUNCATED" not in reasons:
                             reasons.append("CAUSE_EVIDENCE_TRUNCATED")
                         continue
-                    additions = [r for r in (left, right) if r.request_key not in evidence]
+                    # New reports resolve exact evidence from sealed sample members on demand.
+                    # Do not duplicate long raw requests inside every report checkpoint.
+                    additions = (
+                        [r for r in (left, right) if r.request_key not in evidence]
+                        if control.profile.version == "bounded-runtime-3.1"
+                        else []
+                    )
                     records = [
                         EvidenceRequest3(
                             request_key=r.request_key, raw_sha256=r.raw_sha256, raw_body=r.raw_body
@@ -310,6 +317,8 @@ def collect_clock(source: SampleResolvedSource, control: BudgetLedger) -> ClockD
         complete = False
     return ClockDiscovery3(
         scope_id=source.scope.scope_id,
+        synthetic_fixture=bool(bodies)
+        and all(b.get("tokenscope_synthetic_fixture") == "huawei-shape-1" for b in bodies),
         findings=tuple(findings.values()),
         evidence_requests=tuple(evidence.values()),
         cause_groups=tuple(

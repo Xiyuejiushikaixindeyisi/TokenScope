@@ -1,0 +1,56 @@
+{
+  "errors": [],
+  "checks": [
+    {
+      "business": "BUS01",
+      "cards": 3,
+      "clock": 1
+    },
+    {
+      "business": "BUS02",
+      "cards": 3,
+      "clock": 1
+    },
+    {
+      "business": "BUS03",
+      "cards": 4,
+      "clock": 1
+    },
+    {
+      "business": "BUS04",
+      "cards": 2,
+      "clock": 1
+    },
+    {
+      "business": "BUS05",
+      "cards": 3,
+      "clock": 1
+    },
+    {
+      "mode": "small",
+      "text": "优化建议\n样本参考 · 各方案独立对比\nL1 · 前部动态内容\n样本参考方案\nsession_clock 每次变化，打断相同前缀的复用\n\n自动比较system中的clock字段；历史轮次不同不应排除这个合法对照。\n\n影响请求 · 示意\n8条\n本报告样本 12 条，包含未修改请求\n样本命中率变化 · 参考\n+0.5个百分点\n40% → 40.5% · 展示示意，非实算\n修改方案\n\n仅将已识别的 <session_clock> 标签内部内容固定为 NORMALIZED，保留标签及外部全部内容。\n\n证据片段 · /messages/0/content\n<session_clock> ## 当前时间（本机时区：Asia/Shanghai） 2026/10/20 15:49:32 </session_clock>\n\n固定时间会改变模型的时间感知；这里只在样本副本评估，是否采用由业务方确认。\n\n合成效果示意 · 单项收益不可相加\n查看证据与改法 →\n发现的差异\nL4 / L5 · 每类一张卡，最多3个代表例子\nL4 · 消息内容差异\n差异线索\n相同位置的消息出现内容差异\n\n保留已发现的消息差异；不据此认定请求属于同一次会话。\n\n已发现涉及\n8\n条 / 样本 12 条\n2 个代表例子\n证据片段 · /messages/0/content；/messages/3/content\n<session_clock> ## 当前时间（本机时区：Asia/Shanghai） 2026/10/20 15:49:32 </session_clock>\n合成效果示意 · 单项收益不可相加\n查看具体差异 →"
+    },
+    {
+      "mode": "zero",
+      "text": "优化建议\n样本参考 · 各方案独立对比\nL1 · 前部动态内容\n未见正收益\nsession_clock 每次变化，打断相同前缀的复用\n\n自动比较system中的clock字段；历史轮次不同不应排除这个合法对照。\n\n影响请求 · 示意\n8条\n本报告样本 12 条，包含未修改请求\n样本命中率变化 · 参考\n0个百分点\n40% → 40% · 展示示意，非实算\n修改方案\n\n仅将已识别的 <session_clock> 标签内部内容固定为 NORMALIZED，保留标签及外部全部内容。\n\n证据片段 · /messages/0/content\n<session_clock> ## 当前时间（本机时区：Asia/Shanghai） 2026/10/20 15:49:32 </session_clock>\n\n固定时间会改变模型的时间感知；这里只在样本副本评估，是否采用由业务方确认。\n\n合成效果示意 · 单项收益不可相加\n查看证据与改法 →\n发现的差异\nL4 / L5 · 每类一张卡，最多3个代表例子\nL4 · 消息内容差异\n差异线索\n相同位置的消息出现内容差异\n\n保留已发现的消息差异；不据此认定请求属于同一次会话。\n\n已发现涉及\n8\n条 / 样本 12 条\n2 个代表例子\n证据片段 · /messages/0/content；/messages/3/content\n<session_clock> ## 当前时间（本机时区：Asia/Shanghai） 2026/10/20 15:49:32 </session_clock>\n合成效果示意 · 单项收益不可相加\n查看具体差异 →"
+    },
+    {
+      "mode": "negative",
+      "text": "优化建议\n样本参考 · 各方案独立对比\nL1 · 前部动态内容\n未见正收益\nsession_clock 每次变化，打断相同前缀的复用\n\n自动比较system中的clock字段；历史轮次不同不应排除这个合法对照。\n\n影响请求 · 示意\n8条\n本报告样本 12 条，包含未修改请求\n样本命中率变化 · 参考\n-0.5个百分点\n40% → 39.5% · 展示示意，非实算\n修改方案\n\n仅将已识别的 <session_clock> 标签内部内容固定为 NORMALIZED，保留标签及外部全部内容。\n\n证据片段 · /messages/0/content\n<session_clock> ## 当前时间（本机时区：Asia/Shanghai） 2026/10/20 15:49:32 </session_clock>\n\n固定时间会改变模型的时间感知；这里只在样本副本评估，是否采用由业务方确认。\n\n合成效果示意 · 单项收益不可相加\n查看证据与改法 →\n发现的差异\nL4 / L5 · 每类一张卡，最多3个代表例子\nL4 · 消息内容差异\n差异线索\n相同位置的消息出现内容差异\n\n保留已发现的消息差异；不据此认定请求属于同一次会话。\n\n已发现涉及\n8\n条 / 样本 12 条\n2 个代表例子\n证据片段 · /messages/0/content；/messages/3/content\n<session_clock> ## 当前时间（本机时区：Asia/Shanghai） 2026/10/20 15:49:32 </session_clock>\n合成效果示意 · 单项收益不可相加\n查看具体差异 →"
+    },
+    {
+      "mode": "pending",
+      "text": "优化建议\n样本参考 · 各方案独立对比\nL1 · 前部动态内容\n未完成评估\nsession_clock 每次变化，打断相同前缀的复用\n\n自动比较system中的clock字段；历史轮次不同不应排除这个合法对照。\n\n影响请求 · 示意\n8条\n本报告样本 12 条，包含未修改请求\n样本命中率变化 · 参考\n未评估\n未获得完整结果；不填0、不显示修改后数值\n修改方案\n\n仅将已识别的 <session_clock> 标签内部内容固定为 NORMALIZED，保留标签及外部全部内容。\n\n证据片段 · /messages/0/content\n<session_clock> ## 当前时间（本机时区：Asia/Shanghai） 2026/10/20 15:49:32 </session_clock>\n\n固定时间会改变模型的时间感知；这里只在样本副本评估，是否采用由业务方确认。\n\n合成效果示意 · 单项收益不可相加\n查看证据与改法 →\n发现的差异\nL4 / L5 · 每类一张卡，最多3个代表例子\nL4 · 消息内容差异\n差异线索\n相同位置的消息出现内容差异\n\n保留已发现的消息差异；不据此认定请求属于同一次会话。\n\n已发现涉及\n8\n条 / 样本 12 条\n2 个代表例子\n证据片段 · /messages/0/content；/messages/3/content\n<session_clock> ## 当前时间（本机时区：Asia/Shanghai） 2026/10/20 15:49:32 </session_clock>\n合成效果示意 · 单项收益不可相加\n查看具体差异 →"
+    },
+    {
+      "mode": "empty",
+      "text": "优化建议\n样本参考 · 各方案独立对比\n\n本对照未发现clock变化，无适用的clock固定化方案。没有评估收益，不填0。\n\n发现的差异\nL4 / L5 · 每类一张卡，最多3个代表例子\n\n本状态示例未提供差异；不推断真实业务没有差异。"
+    },
+    {
+      "mode": "l5",
+      "text": "优化建议\n样本参考 · 各方案独立对比\nL1 · 前部动态内容\n样本参考方案\nsession_clock 每次变化，打断相同前缀的复用\n\n自动比较system中的clock字段；历史轮次不同不应排除这个合法对照。\n\n影响请求 · 示意\n8条\n本报告样本 12 条，包含未修改请求\n样本命中率变化 · 参考\n+15个百分点\n40% → 55% · 展示示意，非实算\n修改方案\n\n仅将已识别的 <session_clock> 标签内部内容固定为 NORMALIZED，保留标签及外部全部内容。\n\n证据片段 · /messages/0/content\n<session_clock> ## 当前时间（本机时区：Asia/Shanghai） 2026/10/20 15:49:32 </session_clock>\n\n固定时间会改变模型的时间感知；这里只在样本副本评估，是否采用由业务方确认。\n\n合成效果示意 · 单项收益不可相加\n查看证据与改法 →\n发现的差异\nL4 / L5 · 每类一张卡，最多3个代表例子\nL4 · 消息内容差异\n差异线索\n相同位置的消息出现内容差异\n\n保留已发现的消息差异；不据此认定请求属于同一次会话。\n\n已发现涉及\n8\n条 / 样本 12 条\n2 个代表例子\n证据片段 · /messages/0/content；/messages/3/content\n<session_clock> ## 当前时间（本机时区：Asia/Shanghai） 2026/10/20 15:49:32 </session_clock>\n合成效果示意 · 单项收益不可相加\n查看具体差异 →\nL5 · JSON 写法差异\n差异线索\n相同工具结果，JSON 的写法不一致\n\n这是额外的本地兼容对照，并非报告证明五组业务都存在L5。\n\n已发现涉及\n2\n条 / 样本 12 条\n1 个代表例子\n证据片段 · /messages/3/content\n{\"id\":9007199254740993,\"status\":\"ok\"}\n合成效果示意 · 单项收益不可相加\n查看具体差异 →"
+    }
+  ],
+  "mobileOverflow": false,
+  "url": "file://wsl.localhost/Ubuntu-22.04/home/zhangxiyue/TokenScope/docs/tasks/development-v3/prototypes/repair-demo-r1/index.html"
+}
