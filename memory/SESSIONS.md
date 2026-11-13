@@ -1,59 +1,46 @@
 # Session角色与任务登记
 
-2026-11-11整理更新：**仅以下三个活跃角色，六条V2开发线休眠。** 活跃表示当前职责，不要求持续运行；休眠不等于删除chat、源码、数据或历史成果。工具的idle/notLoaded与这里的项目职责状态不同。先读AGENTS→CURRENT→本页→docs/README→自己的ENTRY，不全量恢复历史。
+2026-11-13用户已确认V3验收通过，要求两条V3会话休眠并准备V4入口/任务/prompt。休眠是项目职责登记，不等于删除/应用归档，不自动发消息或唤醒；新角色待启动不代表实际会话已创建。
 
-> 2026-11-12本次用户交付授权优先于下方历史暂停；当前阶段见CURRENT及镜像角色行。
+## 当前与待启动角色
 
-## 三session协同的用户原意（2026-11-11明确）
-
-最新授权（2026-11-11，报告评审之后）：产品线产出[V3修复方案](../docs/tasks/product-v3/V3_REPAIR_PROPOSAL_20261111.md)，定向交开发独立评审、细化；**必须待用户批准细化开发方案后才能实施**。产品线仅负责方案及开发完成后的需求一致性评审，不接管开发/技术测试执行或持续开发调度；开发负责方案与后续获准编码/测试；镜像职责不变，本轮不派任务。下表/下文历史“独立验收执行”“条件开发”不能替代本次安排。
-
-最新同步（2026-11-11）：用户要求的两次发送均成功，开发与镜像会话已完成各自入口和记忆更新；本线已读四文件核实，[研究侧回执](tasks/product-v3.md)。**V3仅修L1漏检和大数据mem_limit，采用小样本、保留V2前端，不增加硬性时间限制；待华为报告返回后讨论，当前不改代码或提前回滚/重验/打包。** 历史四P0计划/测试通过不能覆盖此决定。两接收方仅登记，未启动实施；本线维护共享导航，下表历史交付阶段不覆盖此状态。
-
-三个session利用不同上下文相互校验，保持各自优势，不把协作简化为机械传递任务或三方重复全套检查：
-
-- **产品设计**与用户交互最多，最了解原始需求，负责产出方案和验收。交接须区分用户原话/已定边界、方案建议与未决问题；最终以原始需求验收，不能以自己或开发写出的设计替代用户要求，不修改代码。
-- **开发**保留干净上下文，独立审查和优化代码设计方案，主要执行开发与测试。可以指出产品设计方案的过度设计或技术错误，不把方案作者的技术选择当不可质疑的前提；优化不能自行改变已批准产品范围和页面。
-- **镜像打包与审查**延续V1/V2/V3版本整理、Git、打包及使用prompt经验，拥有跨版本视野且最了解华为环境；负责结合现场约束审查交付、数据兼容与操作说明，并在授权内完成版本/Git/包体工作。不承担产品编码、debug或代替产品验收。
-
-交接只给接收方必要的需求、证据和确定候选，不把所有聊天历史灌入开发上下文。产品验收结论应直接对照用户要求；开发测试结论证明实现行为；交付审查核版本与现场适配，三者不能互相替代。涉及需求变化交产品与用户确定；具体实现由开发判断，现场交付判断应使用镜像会话积累的上下文。本轮仅登记，不自动发送消息或启动任务。
-
-## 活跃角色（3）
-
-| 角色／应用中的chat标题 | 实际ID与核验 | 当前阶段与权责 | 入口及本人登记 |
+| 角色 | 实际ID与核验 | 状态与任务 | 入口/记忆 |
 | --- | --- | --- | --- |
-| TokenScope V3 调研与产品设计 | `01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2`，环境THREAD/SESSION已核实 | 保存用户原始需求上下文，**仅提供V3修复方案及开发完成后的需求一致性评审，不修改代码或接管开发测试/持续调度**。华为报告已核对；修复方案已按用户授权发开发评审细化，细化方案须用户审批后才实施。历史工程通过不代表用户认可页面/硬超时，原证据保留 | [研究入口](../docs/tasks/product-v3/ENTRY.md) · [本人记忆](tasks/product-v3.md) |
-| 镜像打包与审查 | `01a1800e-80b4-7400-a78b-a84f5b6e888d`，本人核验登记，2026-11-11本人环境THREAD/SESSION再次核实；本轮不读取应用实时状态 | **2026-11-12用户授权：独立E2E、Git/版本/记忆整理、打包及桌面复制**。本人环境ID再次核实；独立E2E/构建/桌面19文件校验完成，源码57fe9f6已push；实际记录见delivery/V3_C04_DELIVERY_20261112.md，LOCAL_USER_ACCEPTED不替代现场验收；华为真实收益待现场。本轮不编写华为prompt、不代产品编码/debug，缺陷交V3开发；原包证据保留 | [交付入口](../docs/tasks/delivery/ENTRY.md) · [本人记忆](tasks/delivery.md) |
-| TokenScope V3代码修复与开发；chat标题“核查V3四项P0修复方案” | `01a1c449-6a9b-7a83-912a-5a9ff77c703d`，本人环境核验及应用列表一致 | **2026-11-12用户本机人工验收通过（LOCAL_USER_ACCEPTED）**，C01–C04技术闭环；用户授权镜像线独立E2E、Git/版本/记忆整理及打包，开发已准备交接prompt，尚未发送消息/代执行。开发仍负责后续代码缺陷修复；华为五真实收益待验，旧六线不恢复 | [开发入口](../docs/tasks/development-v3/ENTRY.md) · [交付prompt](../docs/tasks/development-v3/PACKAGING_HANDOFF_PROMPT_20261112.md) · [本人记忆](tasks/development-v3.md) |
+| 镜像打包与审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d；本人Windows THREAD/SESSION及应用列表核实 | 持续版本职责；本轮V3用户收口、V4登记、文档/记忆/本地Git提交。不代产品编码，不自动构建/现场/push | [交付](../docs/tasks/delivery/ENTRY.md) · [记忆](tasks/delivery.md) |
+| V4产品设计与汇报（拟定角色） | 未知，待用户启动后本人登记 | 待启动；产品定位/汇报、最小DEMO与需求验收，不编码 | [V4](../docs/tasks/v4/ENTRY.md) · [启动](../docs/tasks/v4/START_PRODUCT.md) · [记忆](tasks/product-v4.md) |
+| V4模型演进与开发（拟定角色） | 未知，待用户启动后本人登记 | 待启动；首轮只读资产复用核查/技术方案，获准后实现测试，不提前改页面 | [启动](../docs/tasks/v4/START_DEVELOPMENT.md) · [复用表](../docs/tasks/v4/MODEL_REUSE_MATRIX.md) · [记忆](tasks/development-v4.md) |
+| 华为现场agent | 未知，现场本人登记 | 现场身份与本地角色分开；只读取证prompt待用户转发，本轮未执行 | [只读启动](../docs/tasks/v4/START_HUAWEI_READONLY.md) |
 
-三方权责已由本人登记；两条外部chat已按用户明确授权通知并完成更新，见[通知回执](../docs/operations/SESSION_SCOPE_REGISTRATION_20261110.md)。此前登记轮各方只改自己的记忆、研究汇总共享导航；2026-11-11用户明确授权镜像线整理当前工作树及共享入口，先快照并保留各方原记录。
+新角色首次读AGENTS→CURRENT→本页→docs/README→V4入口，从自己的环境核实ID，未知如实写未知，不沿用父会话/V3会话ID。当前没有新增应用chat，不把拟定角色名当已存在chat标题。
 
-2026-11-11研究会话补充：[R2复验及用户范围决定已收口](../docs/tasks/product-v3/acceptance-v3/CLOSE_20261111.md)，不改开发自测或历史失败记录。用户新授权已同步[完整打包prompt](../docs/tasks/product-v3/acceptance-v3/PACKAGING_REVIEW_PROMPT_20261111.md)并发送镜像会话，turn已inProgress；[发送回执](../docs/tasks/product-v3/acceptance-v3/PACKAGING_SEND_RECEIPT_20261111.md)。审查/构建是否完成以交付会话后续实际证据为准。
+## V3会话（2，用户明确休眠）
 
-## V2开发会话（6，均休眠）
-
-| 应用中的chat标题 | 实际ID | 状态及历史入口 |
+| 应用实际chat标题 | 实际ID | 当前状态与历史入口 |
 | --- | --- | --- |
-| Token监控前端设计开发 | `01a18c49-d9b4-7a33-8c04-e5a72adfcc24` | **休眠** · [V2监控前端](../docs/tasks/viewer/monitoring-v2/ENTRY.md) |
-| 异常分析前端设计与开发 | `01a19111-344a-75c1-84e0-14db8be08f4f` | **休眠** · [V2异常前端](../docs/tasks/viewer/analysis/ENTRY.md) |
-| 低命中率异常分析后端 | `01a18be2-7112-7aa2-919b-5137d1f1b1ad` | **休眠** · [V2低命中/公共层](../docs/tasks/prefix-analysis/ENTRY.md) |
-| Token异常分析后端设计和开发 | `01a18fcd-0464-7cf1-b435-4f394bd33e66` | **休眠** · [V2 Token后端](../docs/tasks/length-analysis/ENTRY.md) |
-| V2 用户监控-后端 | `01a18bc7-cdb5-7830-a185-ad3aa6257b21` | **休眠** · [V2用户后端](../docs/tasks/monitoring/v2-user/ENTRY.md) |
-| V2 MA 监控-后端 | `01a18ab2-2600-7ae1-8b0e-979dad9ec3be` | **休眠** · [V2 MA后端](../docs/tasks/monitoring/v2-ma/ENTRY.md)；原V2监控父角色已转为本角色，不重复登记 |
+| TokenScope V3 调研与产品设计 | 01a1a5d5-4baf-7a41-b5c6-14bd5f4f67c2 | **休眠**；[入口](../docs/tasks/product-v3/ENTRY.md) · [记忆](tasks/product-v3.md) |
+| TokenScope V3代码修复与开发 | 01a1c449-6a9b-7a83-912a-5a9ff77c703d | **休眠**；[入口](../docs/tasks/development-v3/ENTRY.md) · [记忆](tasks/development-v3.md) |
 
-六条ID来自既有登记并于本轮应用列表核对；未唤醒、未发送开发任务。旧“等待总负责定向修复/并行分线/公共层唯一维护方”不自动恢复。未来确需唤醒由用户另行指定；V3范围由新开发会话统一负责，不双写。
+2026-11-13应用列表确认上述标题/ID及本项目cwd。首次核查notLoaded，后续两会话分别执行了用户另行要求的V4上下文交接；这是本轮收尾，不是新V4身份或恢复产品开发。项目休眠依据用户指令，不从工具idle/active推断；本线未发送消息/唤醒。既有研究/开发事实保留，不转移实际身份给V4。
 
-## 其他历史与未启动角色
+## V2与更早角色
 
-| 角色 | ID／状态 | 入口 |
+| 角色 | 历史实际ID | 状态/入口 |
 | --- | --- | --- |
-| 历史全项目总设计 | ID未知／休眠 | [历史入口](../docs/tasks/product/ENTRY.md) |
-| V1监控后端 | `01a1682f-956d-7630-afe7-e123ba38dfc0`／休眠 | [V1入口](../docs/tasks/monitoring/ENTRY.md) |
-| V1监控前端 | `01a17811-4c9a-7513-befc-b35723aec96e`／休眠 | [V1入口](../docs/tasks/viewer/ENTRY.md) |
-| hybrid／自进化Agent | 未启动 | 不因本次登记创建或恢复；[Agent历史入口](../docs/tasks/evolution-agent/ENTRY.md) |
+| Token监控前端设计开发 | 01a18c49-d9b4-7a33-8c04-e5a72adfcc24 | 休眠 · [入口](../docs/tasks/viewer/monitoring-v2/ENTRY.md) |
+| 异常分析前端设计与开发 | 01a19111-344a-75c1-84e0-14db8be08f4f | 休眠 · [入口](../docs/tasks/viewer/analysis/ENTRY.md) |
+| 低命中率异常分析后端 | 01a18be2-7112-7aa2-919b-5137d1f1b1ad | 休眠 · [入口](../docs/tasks/prefix-analysis/ENTRY.md) |
+| Token异常分析后端设计和开发 | 01a18fcd-0464-7cf1-b435-4f394bd33e66 | 休眠 · [入口](../docs/tasks/length-analysis/ENTRY.md) |
+| V2用户监控后端 | 01a18bc7-cdb5-7830-a185-ad3aa6257b21 | 休眠 · [入口](../docs/tasks/monitoring/v2-user/ENTRY.md) |
+| V2 MA监控后端 | 01a18ab2-2600-7ae1-8b0e-979dad9ec3be | 休眠 · [入口](../docs/tasks/monitoring/v2-ma/ENTRY.md) |
+| 历史总设计 | 未知 | 休眠 · [入口](../docs/tasks/product/ENTRY.md) |
+| V1监控后端 | 01a1682f-956d-7630-afe7-e123ba38dfc0 | 休眠 · [入口](../docs/tasks/monitoring/ENTRY.md) |
+| V1监控前端 | 01a17811-4c9a-7513-befc-b35723aec96e | 休眠 · [入口](../docs/tasks/viewer/ENTRY.md) |
+| hybrid/自进化Agent | 未启动 | [历史入口](../docs/tasks/evolution-agent/ENTRY.md) |
 
-## 协作边界
+这些历史ID沿原登记保留，本轮未逐个重新核实或唤醒。Token新开发未纳入本次核心；V4不因名称规划自动恢复六条V2。
 
-V3四P0按条件授权进入开发，Token私有修复留V3.5，四入口/L4L5与旧成果保留。最新分工：开发会话完成实施/自测并提交确定候选，研究会话独立验收；问题交开发修复后复验，研究会话整理验收结论及打包交接prompt，镜像会话审批和授权打包。研究会话不修改代码，打包会话不代开发或验收；不组织旧六线修复。未完成的现场业务底线独立列明，不以本地结果代签。
+## 协作与维护
 
-共享文件先读最新状态，精确增量更新并保留他人修改。当前为授权工作树整理，具体变更与Git结果见[整理记录](../docs/operations/WORKTREE_RECONCILIATION_20261111.md)；不运行产品服务或变更包体。历史职责及逐版状态保存在[归档前登记](../achieve/2026-11-10/v2-session-dormancy/snapshots/memory/SESSIONS.md)；当前流程见[协作规则](../docs/architecture/TASK_SESSION_WORKFLOW.md)。
+[本机/华为/用户协作](../docs/tasks/v4/COLLABORATION.md)：产品方案和DEMO先经用户确认，开发独立技术审查、公共身份/后端契约先行、前端随后；镜像只接固定候选作版本/交付。已授权阶段自行推进，不反复申请同一批准；未授权部署/产品改动不得因目录存在自动启动。
+
+共享文件先读最新，按责任精确更新。此次用户授权统一登记休眠，可由整理者在两V3入口/记忆加状态说明，保留原历史；不把整理者写入当成接收方回执。[原字节快照](../achieve/2026-11-13/v3-close-v4-start/README.md)。

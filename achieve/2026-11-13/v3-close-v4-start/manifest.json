@@ -1,0 +1,57 @@
+[
+  {
+    "original_path": "AGENTS.md",
+    "snapshot_path": "achieve/2026-11-13/v3-close-v4-start/snapshots/AGENTS.md",
+    "sha256": "bfe91f64b82b3b82ebf294f145b5b9a426754b1011f110567c7d5f8b798b0fdc"
+  },
+  {
+    "original_path": "memory/CURRENT.md",
+    "snapshot_path": "achieve/2026-11-13/v3-close-v4-start/snapshots/memory/CURRENT.md",
+    "sha256": "397e814f1f5b96862394c33f06a04fff7ee884708ee436b2ccdfff0eb5533802"
+  },
+  {
+    "original_path": "memory/SESSIONS.md",
+    "snapshot_path": "achieve/2026-11-13/v3-close-v4-start/snapshots/memory/SESSIONS.md",
+    "sha256": "508f750dfdf9aa03b6a20e063167fc97402900ef18c04dbb5908075f5c79f44e"
+  },
+  {
+    "original_path": "docs/README.md",
+    "snapshot_path": "achieve/2026-11-13/v3-close-v4-start/snapshots/docs/README.md",
+    "sha256": "fe78e3c11d4e815477b2bfdb0e04caa74356a3b307ad19787426c69d5388a1e4"
+  },
+  {
+    "original_path": "docs/tasks/README.md",
+    "snapshot_path": "achieve/2026-11-13/v3-close-v4-start/snapshots/docs/tasks/README.md",
+    "sha256": "10159b3f36bb8069f37c4fbfaaca76c156a7e40f9eb5406c37745f5193ff1fd8"
+  },
+  {
+    "original_path": "docs/architecture/TASK_SESSION_WORKFLOW.md",
+    "snapshot_path": "achieve/2026-11-13/v3-close-v4-start/snapshots/docs/architecture/TASK_SESSION_WORKFLOW.md",
+    "sha256": "6d10779dc2b3d623b1e3fc0a51c6082d9be8f986aeacc11f1f4c57749d55349c"
+  },
+  {
+    "original_path": "docs/tasks/delivery/ENTRY.md",
+    "snapshot_path": "achieve/2026-11-13/v3-close-v4-start/snapshots/docs/tasks/delivery/ENTRY.md",
+    "sha256": "c1601a18457acb2246abb7e0ccc4aeda54a0b4f552be338b11939529a179baaa"
+  },
+  {
+    "original_path": "docs/tasks/product-v3/ENTRY.md",
+    "snapshot_path": "achieve/2026-11-13/v3-close-v4-start/snapshots/docs/tasks/product-v3/ENTRY.md",
+    "sha256": "16077299667b22b09426390bd3387b20ff8511d465ce1a6350c35e098b251633"
+  },
+  {
+    "original_path": "docs/tasks/development-v3/ENTRY.md",
+    "snapshot_path": "achieve/2026-11-13/v3-close-v4-start/snapshots/docs/tasks/development-v3/ENTRY.md",
+    "sha256": "84daeff8a50a72411bf648ad899a269cb272d09b1c50dcc5e11d76f8cc47583f"
+  },
+  {
+    "original_path": "memory/tasks/product-v3.md",
+    "snapshot_path": "achieve/2026-11-13/v3-close-v4-start/snapshots/memory/tasks/product-v3.md",
+    "sha256": "bb062a1a484eee087c27908f2dc65208947e8f8546f1ad21c8ef159cef33736f"
+  },
+  {
+    "original_path": "memory/tasks/development-v3.md",
+    "snapshot_path": "achieve/2026-11-13/v3-close-v4-start/snapshots/memory/tasks/development-v3.md",
+    "sha256": "5655c6eebc53c90e143ea7535ecaec99c2646017d2b8116357b5133481ea72b1"
+  }
+]

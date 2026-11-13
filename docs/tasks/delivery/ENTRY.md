@@ -1,18 +1,18 @@
 # 镜像打包与审查入口
 
-2026-11-12已完成：独立E2E、Git main推送、固定源码57fe9f6构建、容器/重启/旧state副本兼容、WSL及Windows桌面tokenscope-v3-c04-20261112完整19文件SHA校验；本地backup分支仅清单，未上传包体/分支。详docs/tasks/delivery/V3_C04_DELIVERY_20261112.md。本机临时服务/容器/专用daemon均已停，18002释放，旧包与原证据保留。**华为真实业务收益待现场；本轮不写华为prompt，下一轮讨论。** 下方D01/打包进行中为过程记录。
+2026-11-13：**用户已确认V3验收通过**，[验收决定](V3_USER_ACCEPTANCE_20261113.md)。本线持续版本/Git/交付职责；两个V3产品/开发会话休眠，V4新角色待启动，见[SESSIONS](../../../memory/SESSIONS.md)。
 
-2026-11-12：用户已通过本机人工验收，授权本线独立E2E、Git/版本与记忆整理、WSL打包及Windows桌面复制。**D01独立复验通过，进入固定版本提交与打包。** 本人实际ID `01a1800e-80b4-7400-a78b-a84f5b6e888d`，本轮环境核实。
+当前本轮：整理[V4入口](../v4/ENTRY.md)、两核心任务、角色/启动prompt、本机华为/人机协作和记忆，精确本地Git提交，不push。没有编码、停服务、重算、构建或发布新包。V4产品目标先由用户确认具体方案，后续交付按相应授权，不沿用V3一次性全量重算许可。
 
-- [本次开发交接与批准范围](../development-v3/PACKAGING_HANDOFF_PROMPT_20261112.md)
-- [独立审查及实际结果](V3_C04_REVIEW_20261112.md)
-- [新版固定源码/资源清单](VERSION_V3_C04_20261112.json)
-- [本人长期记忆](../../../memory/tasks/delivery.md) · [三角色登记](../../../memory/SESSIONS.md)
+## V3已收口的权威记录
 
-本轮不编写华为机prompt，打包后下一轮讨论；不得把11-11旧说明附为新版执行计划。华为五组真实业务收益仍ON_SITE_PENDING。本机合成与用户人工通过不代签现场。产品缺陷交V3开发修复，本线不代写产品代码或重新设计。
+- [发布/WSL与桌面/prompt同步](V3_C04_DELIVERY_20261112.md)：固定源码57fe9f6，tokenscope-v3-c04-20261112，完整20文件校验；代码包/镜像不变。
+- [现场补证核对](V3_C04_SUPPLEMENT_REVIEW_AND_CLOSE_20261113.md)：BUS01/ICSL整数收益复核、L4覆盖受限、不相加；用户通过决定以上文为准，不代造全量/线上收益。
+- [已执行华为prompt](HUAWEI_V3_C04_ACCEPTANCE_PROMPT_20261112.md)是历史任务，不是V4部署说明。
+- [构建前独立审查](V3_C04_REVIEW_20261112.md) · [固定身份](VERSION_V3_C04_20261112.json) · [本人记忆](../../../memory/tasks/delivery.md)。
 
-范围：L1漏检与大数据mem_limit，合理小样本完整实算，原V2四入口与L4/L5；没有分析硬时间截止。显式full延期，自动full禁止，Token新执行休眠。保护现场真实CSV与已认可监控/搜索/MA结果，不重算约15万条数据。旧包及原证据保留。
+## V4协作入口
 
-固定规则：[Git](../../operations/GIT_WORKFLOW.md) · [交付约定](../../operations/DELIVERY_ACCEPTANCE_RULES.md) · [流程](../../architecture/TASK_SESSION_WORKFLOW.md) · [构建资产](../../../deploy/monitoring/README.md)。源码从固定commit构建，backup/*及包体仅本地。
+[任务范围](../v4/SCOPE_TASKS.md) · [模型资产复用](../v4/MODEL_REUSE_MATRIX.md) · [协作边界](../v4/COLLABORATION.md)。产品负责汇报方案/DEMO与需求验收，开发负责获准编码及测试，本线接收固定候选作版本/交付，不代产品debug。
 
-历史：[11-11交付](V3_SAMPLE_DELIVERY_20261111.md) · [其prompt r2](V3_PROMPT_R2_20261111.md) · [UI异议与回执](V3_UI_USER_STATEMENT_20261111.md) · [11-12整理前快照](../../../achieve/2026-11-12/v3-c01-c04-delivery/README.md)。这些历史阶段不覆盖本次授权。
+[Git规则](../../operations/GIT_WORKFLOW.md) · [交付规则](../../operations/DELIVERY_ACCEPTANCE_RULES.md) · [流程](../../architecture/TASK_SESSION_WORKFLOW.md)。main不含包体/真实数据，backup仅本地，不push --all。旧包/state/报告不改；[历史入口快照](../../../achieve/2026-11-13/v3-close-v4-start/README.md)保留本轮前过程。

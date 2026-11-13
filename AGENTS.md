@@ -11,9 +11,9 @@
 
 - 当前阶段和允许开展的工作以 memory/CURRENT.md 为准。目录创建不构成业务实现、调研任务或部署任务的启动。
 - 2026-10-23 的一期目标输入覆盖早期 V0.1 中不一致的设想。用户明确第一版目标尚需分任务讨论和规划；目录审批不等于功能设计或实施计划审批。session、turn、trace 数据可用性待确认。
-- 当前仅三个活跃角色：V3调研与产品设计、镜像打包与审查、V3代码修复与开发；六条V2开发线及历史总设计/V1休眠。研究入口docs/tasks/product-v3/ENTRY.md；新开发入口docs/tasks/development-v3/ENTRY.md，实际ID已核实，V3小样本候选已完成本地独立验收及交付，现场待回传；详细阶段以memory/CURRENT.md为准。Token探索已核对，私有开发仍留V3.5。镜像会话只负责镜像/交付打包与审批，不承担编码、debug、开发调度或开发验收执行。实际ID、本人权责及当前阶段以memory/SESSIONS.md为准。
+- 2026-11-13用户已确认V3通过验收，V3产品与开发两会话登记休眠。当前持续角色为镜像打包与审查；V4产品设计与汇报、V4模型演进与开发两个新角色待用户启动，实际ID未知，不继承V3身份。V4入口docs/tasks/v4/ENTRY.md，核心仅汇报和模型演进；优先核验小版本Tokenizer/Chat Template复用，不假定兼容。阶段及本人权责以memory/CURRENT.md、memory/SESSIONS.md为准。
 - 当前任务入口见 docs/tasks/README.md。统一编码、计量和理想命中率计算由 Token 监控维护；原因分析消费其结果或复用同一实现。展示读取已有成果，不在页面访问时触发分析。
-- 会话安排和启动依赖以memory/SESSIONS.md与docs/architecture/TASK_SESSION_WORKFLOW.md为准。V2分线和fork流程属于历史阶段，不自动恢复。V3聚焦低命中四项P0，Token异常休眠且旧结果保留可读；三组长尾探索仅为V3.5及公共能力衔接取证，不提前开发Token规则。hybrid与自进化Agent仍未启动。
+- 会话安排和启动依赖以memory/SESSIONS.md与docs/architecture/TASK_SESSION_WORKFLOW.md为准。V1/V2/两条V3休眠线不自动恢复；V4先方案/只读模型资产核查，获准后开发。Token工具重复/巨大返回新探测器留后续候选，hybrid与自进化Agent未启动；旧结果保持可读。
 - 不把参考项目中的环境、审批、Git 或现场运维规则直接继承为 TokenScope 要求。
 
 ## 开发和交付
@@ -26,7 +26,7 @@
 - 原始证据不改写；核对、勘误和结论放 docs 并指向证据。历史版本不覆盖当前入口。
 - 交付必须保持用户批准四入口HTML与L4/L5；现场真实数据/两阶段人工验收/SSH18002/单Markdown回传的固定要求见 docs/operations/DELIVERY_ACCEPTANCE_RULES.md 和 memory/DELIVERY_LESSONS.md。最新用户范围决定优先，不把历史评审意见或旧prompt当当前阻断/执行计划。
 
-- session实际角色、状态、优先级和入口统一见memory/SESSIONS.md：V1前后端、历史总设计与六个V2维护session保持休眠。V3获准修改涉及的公共层、低命中及必要前端兼容由全新V3开发session统一负责，避免与旧维护方双写；依赖仍按公共层验证、相关后端、必要前端接入组织。研究session负责证据/方案，打包session只接收候选与验证证据作审批和授权打包。
+- session实际角色、状态、优先级和入口统一见memory/SESSIONS.md。V4产品负责方案/汇报与需求验收，V4开发负责独立技术审查及获准实现/测试；公共身份与后端契约先验证冻结，再前端接入。涉及页面修改先提供DEMO，用户明确“前端展示审批通过”后实施。镜像线不代产品编码；构建、现场部署按用户对应授权。
 - 当前监控维护/现场入口为docs/tasks/monitoring/ENTRY.md，交付入口为docs/tasks/delivery/ENTRY.md。B005.1计划/设计/TESTS和冻结S0是维护依据，已完成审批不重复申请。
 - 已闭环批次、旧prompt和过期记忆归档到achieve；原始证据、冻结契约和已发布交付文件保持身份，归档后更新入口和链接。
 - 协作、交接、联合验收及打包顺序统一维护于 docs/architecture/TASK_SESSION_WORKFLOW.md；授权内按batch/步骤验证闭环后推进，不把整理文档当作恢复编码或打包授权。

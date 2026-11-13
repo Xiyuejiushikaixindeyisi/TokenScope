@@ -1,0 +1,22 @@
+# 镜像打包与审查入口
+
+2026-11-13补证已核：[V3技术阶段收口与V4建议](V3_C04_SUPPLEMENT_REVIEW_AND_CLOSE_20261113.md)。建议按有界单方案实算能力收口；BUS01实际73条、六clock收益精确复算通过，ICSL102条35.95%→90.16%；L4分组上限导致发现受限/stopped，不否定完整方案评估。组合收益与业务/现场人工最终批准未代签。当前只文档记忆，无代码/重跑/派单/打包。下方初次审查由本补证更新。
+
+2026-11-13最新：[C04现场报告核对与V4方向](V3_C04_ONSITE_REVIEW_AND_V4_DIRECTION_20261113.md)。现场已回传；本轮只解释多条clock方案、收益口径与V4建议，不改产品或派单。11-12后续已完成prompt同步及20文件SHA，用户允许新state全量监控重算，以下“19文件/暂不写prompt/不重算”是早期过程记录，以[后续交付记录](V3_C04_DELIVERY_20261112.md)和[执行说明](HUAWEI_V3_C04_ACCEPTANCE_PROMPT_20261112.md)为准。
+
+2026-11-12已完成：独立E2E、Git main推送、固定源码57fe9f6构建、容器/重启/旧state副本兼容、WSL及Windows桌面tokenscope-v3-c04-20261112完整19文件SHA校验；本地backup分支仅清单，未上传包体/分支。详docs/tasks/delivery/V3_C04_DELIVERY_20261112.md。本机临时服务/容器/专用daemon均已停，18002释放，旧包与原证据保留。**华为真实业务收益待现场；本轮不写华为prompt，下一轮讨论。** 下方D01/打包进行中为过程记录。
+
+2026-11-12：用户已通过本机人工验收，授权本线独立E2E、Git/版本与记忆整理、WSL打包及Windows桌面复制。**D01独立复验通过，进入固定版本提交与打包。** 本人实际ID `01a1800e-80b4-7400-a78b-a84f5b6e888d`，本轮环境核实。
+
+- [本次开发交接与批准范围](../development-v3/PACKAGING_HANDOFF_PROMPT_20261112.md)
+- [独立审查及实际结果](V3_C04_REVIEW_20261112.md)
+- [新版固定源码/资源清单](VERSION_V3_C04_20261112.json)
+- [本人长期记忆](../../../memory/tasks/delivery.md) · [三角色登记](../../../memory/SESSIONS.md)
+
+本轮不编写华为机prompt，打包后下一轮讨论；不得把11-11旧说明附为新版执行计划。华为五组真实业务收益仍ON_SITE_PENDING。本机合成与用户人工通过不代签现场。产品缺陷交V3开发修复，本线不代写产品代码或重新设计。
+
+范围：L1漏检与大数据mem_limit，合理小样本完整实算，原V2四入口与L4/L5；没有分析硬时间截止。显式full延期，自动full禁止，Token新执行休眠。保护现场真实CSV与已认可监控/搜索/MA结果，不重算约15万条数据。旧包及原证据保留。
+
+固定规则：[Git](../../operations/GIT_WORKFLOW.md) · [交付约定](../../operations/DELIVERY_ACCEPTANCE_RULES.md) · [流程](../../architecture/TASK_SESSION_WORKFLOW.md) · [构建资产](../../../deploy/monitoring/README.md)。源码从固定commit构建，backup/*及包体仅本地。
+
+历史：[11-11交付](V3_SAMPLE_DELIVERY_20261111.md) · [其prompt r2](V3_PROMPT_R2_20261111.md) · [UI异议与回执](V3_UI_USER_STATEMENT_20261111.md) · [11-12整理前快照](../../../achieve/2026-11-12/v3-c01-c04-delivery/README.md)。这些历史阶段不覆盖本次授权。
