@@ -5,7 +5,9 @@
 | 状态/角色 | 当前任务 | 入口 |
 | --- | --- | --- |
 | 持续：镜像打包与审查 | 版本、交付审查、授权Git/打包 | [交付](delivery/ENTRY.md) |
-| 待启动：V4产品设计与汇报 | 汇报主线、必要DEMO、需求验收 | [启动](v4/START_PRODUCT.md) |
+| 持续：V4主会话汇报统筹与审核 | 汇报方案、两研究线审核／整合／提交 | [主启动prompt](product-v4/sessions/START_MAIN_20261115.md) |
+| 已fork：V4现网流量研究 | 用户三阶段协同优化，最终独立HTML；待用户首次启动 | [副本1](product-v4/traffic/ENTRY.md) |
+| 已fork：V4 MaaS架构与试点 | 两DeepSeek appid简单试点；有初步结果后架构粗评；待用户首次启动 | [副本2](product-v4/maas/ENTRY.md) |
 | 待启动：V4模型演进与开发 | 先只读模型资产复用核查，后获准实施 | [启动](v4/START_DEVELOPMENT.md) |
 | 待转发：华为agent | 模型/汇报证据只读盘点 | [启动](v4/START_HUAWEI_READONLY.md) |
 

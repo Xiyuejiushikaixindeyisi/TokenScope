@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1510" viewBox="0 0 1800 1510" role="img">
+<title>01  阿里 InferX：选模、实例调度与可选共享缓存</title>
+<desc>公开产品能力的逻辑重绘；下方以PD分离为例，部署模式与缓存绑定可选。非阿里全部线上服务的固定拓扑。</desc>
+<metadata>{&quot;A1&quot;: &quot;https://help.aliyun.com/zh/pai/inferx-overview&quot;, &quot;A2&quot;: &quot;https://help.aliyun.com/zh/pai/inferx-smart-model-selection&quot;, &quot;A3&quot;: &quot;https://help.aliyun.com/zh/pai/inferx-config-center&quot;, &quot;A4&quot;: &quot;https://help.aliyun.com/zh/pai/inferx-kv-cache&quot;, &quot;A5&quot;: &quot;https://help.aliyun.com/zh/pai/create-and-manage-inference-services&quot;}</metadata>
+<rect width="1800" height="1510" fill="white"/>
+<text x="60" y="30" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="42" font-weight="700" fill="#142D45" dominant-baseline="text-before-edge">01  阿里 InferX：选模、实例调度与可选共享缓存</text>
+<text x="60" y="95" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#516174" dominant-baseline="text-before-edge">公开产品能力的逻辑重绘；下方以PD分离为例，部署模式与缓存绑定可选。非阿里全部线上服务的固定拓扑。</text>
+<text x="60" y="136" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#516174" dominant-baseline="text-before-edge">蓝色箭头：请求 / 调度　　绿色箭头：KV数据　　虚线框：可选能力或公开证据边界</text>
+<rect x="40" y="185" width="1720" height="310" rx="16" fill="#F5F8FB" stroke="#CBD6E0" stroke-width="2"/>
+<text x="65" y="200" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#142D45" dominant-baseline="text-before-edge">服务与模型层  |  工作站统一入口、用户流控与用量治理  [A1/A2]</text>
+<rect x="75" y="245" width="410" height="150" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="95" y="260" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">业务请求</text>
+<text x="95" y="301" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">显式指定模型：默认跳过分类</text>
+<text x="95" y="334" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">model=auto：进入难度判定</text>
+<rect x="655" y="245" width="470" height="150" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="675" y="260" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">外部分类服务（可选）</text>
+<text x="675" y="301" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">判定L1 / L2 / L3 → 候选模型</text>
+<text x="675" y="334" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">会话分类缓存、失败兜底档位</text>
+<rect x="1295" y="245" width="425" height="150" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="1315" y="260" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">目标模型的可用服务</text>
+<text x="1315" y="301" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">自动选择或用户指定</text>
+<text x="1315" y="334" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">模型选择 ≠ 副本选择</text>
+<polyline points="485,288 655,288" fill="none" stroke="#265BA7" stroke-width="3"/>
+<polygon points="655.0,288.0 643.1,293.3 643.1,282.7" fill="#265BA7"/>
+<text x="535" y="256" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#265BA7" dominant-baseline="text-before-edge">auto</text>
+<polyline points="1125,288 1295,288" fill="none" stroke="#265BA7" stroke-width="3"/>
+<polygon points="1295.0,288.0 1283.1,293.3 1283.1,282.7" fill="#265BA7"/>
+<text x="1170" y="256" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#265BA7" dominant-baseline="text-before-edge">选模</text>
+<polyline points="280,395 280,450 1505,450 1505,395" fill="none" stroke="#265BA7" stroke-width="3"/>
+<polygon points="1505.0,395.0 1510.3,406.9 1499.7,406.9" fill="#265BA7"/>
+<text x="615" y="415" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#265BA7" dominant-baseline="text-before-edge">指定模型：不调用分类器（默认生效范围）</text>
+<rect x="40" y="525" width="1720" height="285" rx="16" fill="#F5F8FB" stroke="#CBD6E0" stroke-width="2"/>
+<text x="65" y="540" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#142D45" dominant-baseline="text-before-edge">实例调度层  |  PD分离时，三层策略作用于Prefill候选  [A3]</text>
+<rect x="75" y="585" width="430" height="140" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="95" y="600" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">① 会话亲和（可选）</text>
+<text x="95" y="641" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">Soft：繁忙时放弃优先绑定</text>
+<text x="95" y="674" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">Strict：可能造成负载不均</text>
+<rect x="685" y="585" width="430" height="140" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="705" y="600" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">② 前缀亲和（可选）</text>
+<text x="705" y="641" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">按前缀索引争取复用</text>
+<text x="705" y="674" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">同时受负载与等待数约束</text>
+<rect x="1295" y="585" width="425" height="140" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="1315" y="600" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">③ 负载均衡（必选）</text>
+<text x="1315" y="641" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">least-token / least-request</text>
+<text x="1315" y="674" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">或round-robin</text>
+<polyline points="505,650 685,650" fill="none" stroke="#265BA7" stroke-width="3"/>
+<polygon points="685.0,650.0 673.1,655.3 673.1,644.7" fill="#265BA7"/>
+<text x="520" y="613" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#265BA7" dominant-baseline="text-before-edge">未匹配 / 退让</text>
+<polyline points="1115,650 1295,650" fill="none" stroke="#265BA7" stroke-width="3"/>
+<polygon points="1295.0,650.0 1283.1,655.3 1283.1,644.7" fill="#265BA7"/>
+<text x="1130" y="613" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#265BA7" dominant-baseline="text-before-edge">未匹配 / 过载</text>
+<text x="80" y="763" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="400" fill="#516174" dominant-baseline="text-before-edge">每层满足条件即可选点；否则进入下一层。前缀索引是调度依据，不等于实际KV已存在。</text>
+<polyline points="1720,320 1740,320 1740,511 52,511 52,570 290,570 290,585" fill="none" stroke="#265BA7" stroke-width="3"/>
+<polygon points="290.0,585.0 284.7,573.1 295.3,573.1" fill="#265BA7"/>
+<rect x="40" y="840" width="1720" height="340" rx="16" fill="#F5F8FB" stroke="#CBD6E0" stroke-width="2"/>
+<text x="65" y="855" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#142D45" dominant-baseline="text-before-edge">计算与缓存层  |  本地KV与跨实例缓存服务是不同能力  [A3/A4/A5]</text>
+<rect x="75" y="905" width="610" height="125" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="95" y="920" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">Prefill候选 P1 / P2 / …</text>
+<text x="95" y="961" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">各自本地KV；命中后处理剩余输入</text>
+<rect x="1100" y="905" width="620" height="125" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="1120" y="920" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">Decode候选 D1 / D2 / …</text>
+<text x="1120" y="961" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">Decode独立均衡；PD配对依引擎模式</text>
+<polyline points="900,810 900,827 52,827 52,890 380,890 380,905" fill="none" stroke="#265BA7" stroke-width="3"/>
+<polygon points="380.0,905.0 374.7,893.1 385.3,893.1" fill="#265BA7"/>
+<polyline points="685,965 1100,965" fill="none" stroke="#16786C" stroke-width="3"/>
+<polygon points="1100.0,965.0 1088.1,970.3 1088.1,959.7" fill="#16786C"/>
+<text x="735" y="927" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#16786C" dominant-baseline="text-before-edge">本次请求的P → D状态传递</text>
+<rect x="75" y="1070" width="1645" height="85" rx="16" fill="#E8F5F1" stroke="#16786C" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="95" y="1085" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#16786C" dominant-baseline="text-before-edge">可选 FlashKV：内存 / 磁盘 / 远端，多副本须绑定同一服务且缓存兼容</text>
+<polyline points="380,1030 380,1070" fill="none" stroke="#16786C" stroke-width="3"/>
+<polygon points="380.0,1070.0 374.7,1058.1 385.3,1058.1" fill="#16786C"/>
+<polyline points="520,1070 520,1030" fill="none" stroke="#16786C" stroke-width="3"/>
+<polygon points="520.0,1030.0 525.3,1041.9 514.7,1041.9" fill="#16786C"/>
+<rect x="40" y="1210" width="1720" height="185" rx="16" fill="#F5F8FB" stroke="#CBD6E0" stroke-width="2"/>
+<text x="65" y="1225" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#142D45" dominant-baseline="text-before-edge">对照我们的GB / GF / 独立MA  |  产品判断，非实现设计</text>
+<text x="75" y="1270" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">可借鉴：GB同时考虑缓存亲和与跨MA过载；GF / motor继续处理所选MA内部。</text>
+<text x="75" y="1322" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#976010" dominant-baseline="text-before-edge">无共享KV：溢出到冷MA可能重算；分类缓存、路由索引、真实KV缓存不能混为一谈。</text>
+<text x="60" y="1430" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#516174" dominant-baseline="text-before-edge">出处 A1-A5：阿里云PAI官方文档，访问2026-11-14；URL与章节见配套研究文档来源表。</text>
+<text x="60" y="1467" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#516174" dominant-baseline="text-before-edge">TokenScope V4研究图 · 图中箭头为逻辑关系，省略响应返回与具体组件调用顺序。</text>
+</svg>

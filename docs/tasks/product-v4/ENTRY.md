@@ -1,4 +1,43 @@
-# TokenScope V4产品设计上下文补充
+# TokenScope V4产品设计与汇报入口
+
+2026-11-13新V4产品session已由用户启动。本人实际ID `01a1d3e3-0c34-7320-bf6f-14438c120aed`，由本机Windows `CODEX_SESSION_ID`/`CODEX_THREAD_ID`核实一致；[本人记忆](../../../memory/tasks/product-v4.md) · [职责登记](../../../memory/SESSIONS.md)。首轮仅需求与方案：先汇报表达与证据口径，再模型演进的产品影响/验收要求；负责产品判断和需求一致性，不承担编码或技术测试。模型复用结论依赖开发证据，页面变化依赖差异DEMO与用户明确批准。
+
+**2026-11-15最新：用户授权fork两次，V4产品线分为主会话与两条研究副线。** [三会话分工、实际ID与文件所有权](SESSION_COLLABORATION_20261115.md)。主会话继续整理V4汇报方案、审核两线最终文档、判断融入内容并正式提交；[副本1](traffic/ENTRY.md)研究现网流量与用户三阶段优化，最终独立HTML；[副本2](maas/ENTRY.md)先讨论两DeepSeek appid简单试点，有初步结果后形成场景分类MaaS网关架构待同事粗评。两个fork已创建、待用户首次启动，不把工具登记冒作本人自核。
+
+三份独立启动prompt：[主会话](sessions/START_MAIN_20261115.md) · [副本1](sessions/START_TRAFFIC_20261115.md) · [副本2](sessions/START_MAAS_20261115.md)。本轮完成创建／登记与一次本地Git提交，不执行研究／现场实验或push。[长期资料路由](V4_REVIEW_PACKAGE_20261115.md)保持：两份研究正文高优先级，原始证据／专题为重点支撑，P2为次高优先级先行试点。未来架构阶段依赖试点初步结果，Tokenization继续pending。
+
+重点证据直达：[四象限HTML](../product-v3/promotion/quadrant-detail/dist/index.html)、[MaaS现有架构](../../architecture/MAAS_REFERENCE.md)、[P1阶段1](../../huawei/HUAWEI_V4_P1_STAGE1_MIXED_SCENARIOS.md)、[阶段2](../../huawei/HUAWEI_V4_P1_STAGE2_LONG_TAIL.md)、[阶段3](../../huawei/HUAWEI_V4_P1_STAGE3_OUTPUT_HISTOGRAMS.md)；重点专题：[主流MaaS调研](MAAS_ROUTING_RESEARCH_20261114.md)、[DeepSeek专项](DEEPSEEK_ROUTING_AND_SHARED_KV_20261114.md)、[扩展企业架构研究](ENTERPRISE_MAAS_ARCHITECTURE_RESEARCH_20261114.md)。两份高优先级正文也保留对应参考链接，原件不因综合研究存在而降为普通历史材料。
+
+**[MA流量画像HTML](../../huawei/MA_TRAFFIC_PROFILE.html)：高优先级证据，已接收。** 文件在本轮整理期间到达约定位置；页面注明Qwen-V3.6-27B、32K/64K/128K、2026-10-20 08:00–09:00 UTC。本轮只登记身份／声明范围，未研究聚类或重算数据；内链原回传与三份附件在当前相对位置缺失，详[接收记录](../../../artifacts/reviews/v4-doc-review-20261115/ma-profile-receipt.json)。原HTML保持，研究正文已补直接链接。
+
+主会话现按最新分工继续整理汇报方案；既有V3华为风HTML/PPT不自动修改。未来预计主要改第四页，给方案、预期结果、协作对象和验收节点，具体载体修改仍与用户讨论。副本1新研究HTML属于本次独立交付目标，不覆盖旧页面。11-13的四页重排及合并探索prompt不作为当前执行入口。
+
+已完成[企业共享MaaS现网流量与服务需求研究](PRODUCTION_TRAFFIC_STUDY_20261114.md)。用户已认可“调用类型及服务需求”为主线、四象限为发现入口、appid为证据索引，并补充企业业务入场、agentic及细分调用的请求构成／复用／行为解释。文档列出四象限请求占比，长低六个已调研对象及clock等改法，短低分流需求，长高长尾治理候选，附全部22 appid／23组输出索引；统计事实、抽样解释与待验证假设分开，原报告不改写。
+
+配套[InferX、DeepSeek、Mooncake／Kimi架构调研与现网对比](INFERX_DEEPSEEK_MOONCAKE_ARCHITECTURE_COMPARISON_20261114.md)含三张PNG及SVG、出处及GB/GF/独立MA适用条件，§9现已保存分桶、选模与Tokenization前轮讨论及最新暂缓决定。未来先看长度观测桶的实际性能变化，再讨论策略；用户当前不优先编码结果复用，保留粗估用于软调度的候选，均不进入实现。文档中的治理方向不构成实施批准，V3 HTML/PPT、产品代码及四份现场prompt保持。
+
+prompt-1三阶段及[MaaS prompt-2](../../huawei/HUAWEI_V4_P2_MAAS_TRAFFIC_AND_FEASIBILITY.md)回传均已阅读。[P2核对与试点设计输入](HUAWEI_P2_REVIEW_AND_PILOT_INPUTS_20261115.md)现列**次高优先级**，整理两appid的可用流量／负担、分母与配置身份、容量推断限制及设计未知项，作为架构演进的先行验证材料。不能据摘要宣布单MA可承载；未知项不是本轮追加现场指令。原件不改写，本机未发送或执行现场任务。下列四份Markdown是已发探索材料的范围索引，原回传要求保留：
+
+| 编号 | 当前文件 | 现场回传 |
+| --- | --- | --- |
+| prompt-1／阶段1 | [三个短低对象的混合业务与规模](prompts/HUAWEI_PROMPT_1_1_MIXED_SCENARIOS_20261114.md) | 一份Markdown |
+| prompt-1／阶段2 | [长高长尾：必要任务、混合业务与工具Token候选](prompts/HUAWEI_PROMPT_1_2_LONG_TAIL_20261114.md) | 一份Markdown |
+| prompt-1／阶段3 | [全部短低appid输出长度直方图](prompts/HUAWEI_PROMPT_1_3_OUTPUT_HISTOGRAMS_20261114.md) | 每appid一份，共22份；跨模型分章，共23组 |
+| MaaS prompt-2 | [两appid与32K/64K/128K规格、UUID的req/s及0731初步承载判断](prompts/HUAWEI_PROMPT_2_MAAS_TRAFFIC_20261114.md) | 一份Markdown |
+
+阶段3已从四象限HTML直接提取22个appid/23组/124,913条历史有效请求（DeepSeek 7、GLM 2、Qwen 14组）；不是只看阶段1三个对象。appid `S00000000000000000000000000003344`的GLM/Qwen共用一文档、分开统计。[提取清单](../../../artifacts/reviews/v4-prompts-20261114/short-low-targets.json)。MaaS原探索只查流量与部署证据，不部署或重放；**prompt-3的数据整理、重放与采集待下一轮试点设计讨论，尚未生成。**
+
+等待现场期间，用户另行启动公开调研，已完成[主流MaaS分流做法与场景分流判断](MAAS_ROUTING_RESEARCH_20261114.md)：覆盖火山、DeepSeek、Mooncake、腾讯、阿里/Qwen、NVIDIA，并核llm-d与AIBrix实践。产品判断是支持场景服务策略与缓存域亲和的探索，但不把agentic/chat等同长短，不忽略跨MA负载；DeepSeek的共享缓存与长度调度可并存，不能直接套到0731。公开资料不是现网测试或实施批准。
+
+进一步完成[DeepSeek长度调度与共享KV专项](DEEPSEEK_ROUTING_AND_SHARED_KV_20261114.md)：比较计算调度与缓存可访问范围，区分同MA池化基础、跨MA已知隔离及尚未证实条件。用户明确先不做实现方案；保持原prompt及页面，不提前生成prompt-3。
+
+前轮扩展调研为[企业共享MaaS架构比较与华为业务现状](ENTERPRISE_MAAS_ARCHITECTURE_RESEARCH_20261114.md)：扩展InferX、Foundry、Bedrock、Anyscale、Fireworks、Together等，分别比较场景识别/选模、长度或冷热分流、独立缓存亲和与负载折中。优先研究alpha_voc、末773、末1679三类大流量分布，合计占这批短低请求92.36%；不把两个小样本双峰列为重点，不将整个appid简单等同单一场景。
+
+回传原件：[阶段1混合场景](../../huawei/HUAWEI_V4_P1_STAGE1_MIXED_SCENARIOS.md)、[阶段2长尾](../../huawei/HUAWEI_V4_P1_STAGE2_LONG_TAIL.md)、[阶段3输出直方图](../../huawei/HUAWEI_V4_P1_STAGE3_OUTPUT_HISTOGRAMS.md)。阶段3本次为含22 appid/23组的合并文档，未据此确认22份独立回传已全部验收；23组直方图计数守恒。本轮另记H为理想量、缺TTFT/TPOT实测表、样本不等于全量场景占比及影响结论的勘误，原件不改写。研究结论不转为实现批准，prompt-3仍待MaaS证据与用户讨论。
+
+方向背景仍为通过KV cache优化提升单卡任务产出，模型演进原分工保留。[r2背景](V4_DIRECTION_AND_MILESTONES_20261113.md)与[r1事实口径](V4_REPORTING_PROPOSAL_20261113.md)仅按需追溯。本轮只改文档/入口/记忆，无产品/服务/HTML改动，无commit/push。
+
+## 原V3产品线交接补充（保留交接时态）
 
 2026-11-13。由原V3产品设计session整理，供新V4产品设计与汇报session补充原始需求和协作经验。用户已明确“V3版本已经验收通过，即将开启V4”；V3作为已接受的基线，不重新启动验收。本页是产品侧补充；当前范围、角色登记和启动方式以[V4统一入口](../v4/ENTRY.md)、[任务与完成标准](../v4/SCOPE_TASKS.md)、[协作约定](../v4/COLLABORATION.md)为准。
 

@@ -11,7 +11,7 @@
 
 - 当前阶段和允许开展的工作以 memory/CURRENT.md 为准。目录创建不构成业务实现、调研任务或部署任务的启动。
 - 2026-10-23 的一期目标输入覆盖早期 V0.1 中不一致的设想。用户明确第一版目标尚需分任务讨论和规划；目录审批不等于功能设计或实施计划审批。session、turn、trace 数据可用性待确认。
-- 2026-11-13用户已确认V3通过验收，V3产品与开发两会话登记休眠。当前持续角色为镜像打包与审查；V4产品设计与汇报、V4模型演进与开发两个新角色待用户启动，实际ID未知，不继承V3身份。V4入口docs/tasks/v4/ENTRY.md，核心仅汇报和模型演进；优先核验小版本Tokenizer/Chat Template复用，不假定兼容。阶段及本人权责以memory/CURRENT.md、memory/SESSIONS.md为准。
+- V3已于2026-11-13通过用户验收，产品与开发旧会话休眠。V4产品线按用户11-15决定分为主会话（汇报／审核／提交）、现网流量研究副本、MaaS架构与试点副本；实际ID、阶段与本人权责见memory/SESSIONS.md，文件分工见docs/tasks/product-v4/SESSION_COLLABORATION_20261115.md。副本不复做父会话fork或Git任务。模型演进与开发仍按独立启动，V4核心为汇报与模型演进；Tokenizer/Template复用须核资产，不假定兼容。
 - 当前任务入口见 docs/tasks/README.md。统一编码、计量和理想命中率计算由 Token 监控维护；原因分析消费其结果或复用同一实现。展示读取已有成果，不在页面访问时触发分析。
 - 会话安排和启动依赖以memory/SESSIONS.md与docs/architecture/TASK_SESSION_WORKFLOW.md为准。V1/V2/两条V3休眠线不自动恢复；V4先方案/只读模型资产核查，获准后开发。Token工具重复/巨大返回新探测器留后续候选，hybrid与自进化Agent未启动；旧结果保持可读。
 - 不把参考项目中的环境、审批、Git 或现场运维规则直接继承为 TokenScope 要求。

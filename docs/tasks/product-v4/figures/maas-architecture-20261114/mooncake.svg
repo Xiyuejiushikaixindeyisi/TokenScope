@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1510" viewBox="0 0 1800 1510" role="img">
+<title>03  Mooncake / Kimi：让缓存位置、排队与SLO共同选点</title>
+<desc>主图依据FAST 2025论文Fig.2-3与Algorithm 1；论文Conductor是全局调度角色，不等于当前开源索引组件。</desc>
+<metadata>{&quot;M1&quot;: &quot;https://www.usenix.org/system/files/fast25-qin.pdf&quot;, &quot;M2&quot;: &quot;https://kvcache-ai.github.io/Mooncake/design/architecture.html&quot;, &quot;M3&quot;: &quot;https://kvcache-ai.github.io/Mooncake/design/conductor/conductor-architecture-design.html&quot;}</metadata>
+<rect width="1800" height="1510" fill="white"/>
+<text x="60" y="30" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="42" font-weight="700" fill="#142D45" dominant-baseline="text-before-edge">03  Mooncake / Kimi：让缓存位置、排队与SLO共同选点</text>
+<text x="60" y="95" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#516174" dominant-baseline="text-before-edge">主图依据FAST 2025论文Fig.2-3与Algorithm 1；论文Conductor是全局调度角色，不等于当前开源索引组件。</text>
+<text x="60" y="136" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#516174" dominant-baseline="text-before-edge">蓝色箭头：请求 / 调度　　绿色箭头：KV数据　　虚线框：可选能力或公开证据边界</text>
+<rect x="40" y="185" width="1720" height="240" rx="16" fill="#F5F8FB" stroke="#CBD6E0" stroke-width="2"/>
+<text x="65" y="200" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#142D45" dominant-baseline="text-before-edge">输入与服务目标  [M1]</text>
+<rect x="75" y="245" width="635" height="130" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="95" y="260" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">已进入模型服务的请求</text>
+<text x="95" y="301" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">Token前缀、长度及服务目标参与调度</text>
+<rect x="980" y="245" width="740" height="130" rx="16" fill="#F0F2F5" stroke="#718093" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1000" y="260" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#718093" dominant-baseline="text-before-edge">语义分类 / 自动选模型未在论文中披露</text>
+<text x="1000" y="301" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">不能补画成通用的agentic / chat选模器</text>
+<rect x="40" y="455" width="1720" height="320" rx="16" fill="#F5F8FB" stroke="#CBD6E0" stroke-width="2"/>
+<text x="65" y="470" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#142D45" dominant-baseline="text-before-edge">论文中的Conductor：全局控制角色  [M1 §4 / Algorithm 1]</text>
+<rect x="75" y="515" width="475" height="190" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="95" y="530" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">Prefill选择</text>
+<text x="95" y="571" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">比较排队、剩余计算与传输代价</text>
+<text x="95" y="604" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">缓存最长的节点未必最快</text>
+<text x="95" y="637" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">选择符合TTFT目标的落点</text>
+<rect x="665" y="515" width="475" height="190" rx="16" fill="#E8F5F1" stroke="#16786C" stroke-width="2"/>
+<text x="685" y="530" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#16786C" dominant-baseline="text-before-edge">缓存负载调节</text>
+<text x="685" y="571" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">远程读取可在目标形成副本</text>
+<text x="685" y="604" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">热点随访问扩散到更多节点</text>
+<text x="685" y="637" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">依赖真实的数据传输能力</text>
+<rect x="1255" y="515" width="465" height="190" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="1275" y="530" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">Decode选择与准入</text>
+<text x="1275" y="571" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">兼顾生成负载与TBT目标</text>
+<text x="1275" y="604" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">预测无法满足SLO时限制准入</text>
+<text x="1275" y="637" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">不是仅最大化缓存命中率</text>
+<polyline points="390,375 390,438 52,438 52,500 310,500 310,515" fill="none" stroke="#265BA7" stroke-width="3"/>
+<polygon points="310.0,515.0 304.7,503.1 315.3,503.1" fill="#265BA7"/>
+<text x="80" y="733" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="400" fill="#516174" dominant-baseline="text-before-edge">三个职责协同决策；元数据查询、请求派发与KV载荷搬运分开理解。</text>
+<rect x="40" y="805" width="1720" height="375" rx="16" fill="#F5F8FB" stroke="#CBD6E0" stroke-width="2"/>
+<text x="65" y="820" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#142D45" dominant-baseline="text-before-edge">计算与分布式缓存层  |  复用前缀 → 增量Prefill → 传递状态 → Decode  [M1/M2]</text>
+<rect x="75" y="865" width="625" height="130" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="95" y="880" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">Prefill池：多个实例 / 节点组</text>
+<text x="95" y="921" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">保留本地前缀，执行增量与分块Prefill</text>
+<rect x="1095" y="865" width="625" height="130" rx="16" fill="#EAF1FC" stroke="#265BA7" stroke-width="2"/>
+<text x="1115" y="880" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#265BA7" dominant-baseline="text-before-edge">Decode池：多个实例</text>
+<text x="1115" y="921" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">读取本次状态，执行连续生成</text>
+<polyline points="310,705 310,715 52,715 52,850 310,850 310,865" fill="none" stroke="#265BA7" stroke-width="3"/>
+<polygon points="310.0,865.0 304.7,853.1 315.3,853.1" fill="#265BA7"/>
+<polyline points="1490,705 1490,865" fill="none" stroke="#265BA7" stroke-width="3"/>
+<polygon points="1490.0,865.0 1484.7,853.1 1495.3,853.1" fill="#265BA7"/>
+<polyline points="700,925 1095,925" fill="none" stroke="#16786C" stroke-width="3"/>
+<polygon points="1095.0,925.0 1083.1,930.3 1083.1,919.7" fill="#16786C"/>
+<text x="790" y="884" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#16786C" dominant-baseline="text-before-edge">本次请求KV传递</text>
+<rect x="75" y="1040" width="1645" height="112" rx="16" fill="#E8F5F1" stroke="#16786C" stroke-width="2"/>
+<text x="95" y="1055" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="700" fill="#16786C" dominant-baseline="text-before-edge">Mooncake Store：分布式KV池  +  Transfer Engine：跨节点数据传输</text>
+<text x="95" y="1096" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">共享可访问性不消除本地性；缓存数据直接在数据端传输，不经调度器转发。</text>
+<polyline points="390,1040 390,995" fill="none" stroke="#16786C" stroke-width="3"/>
+<polygon points="390.0,995.0 395.3,1006.9 384.7,1006.9" fill="#16786C"/>
+<polyline points="1410,1040 1410,995" fill="none" stroke="#16786C" stroke-width="3"/>
+<polygon points="1410.0,995.0 1415.3,1006.9 1404.7,1006.9" fill="#16786C"/>
+<rect x="40" y="1210" width="1720" height="185" rx="16" fill="#F5F8FB" stroke="#CBD6E0" stroke-width="2"/>
+<text x="65" y="1225" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" fill="#142D45" dominant-baseline="text-before-edge">对照我们的GB / GF / 独立MA  |  产品判断，非实现设计</text>
+<text x="75" y="1270" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" font-weight="400" fill="#142D45" dominant-baseline="text-before-edge">可借鉴：比较热MA排队与冷MA重算；同MA已有池化，跨MA不能默认可搬运KV。</text>
+<text x="75" y="1322" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#976010" dominant-baseline="text-before-edge">开源边界 [M3]：Conductor提供前缀索引与查询；上层router仍负责最终选路。</text>
+<text x="60" y="1430" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#516174" dominant-baseline="text-before-edge">出处 M1：USENIX FAST 2025，Fig.2-3、§4与Algorithm 1；M2/M3：Mooncake官方设计文档。</text>
+<text x="60" y="1467" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="400" fill="#516174" dominant-baseline="text-before-edge">访问2026-11-14。无共享KV时移除跨域读取 / 复制能力；不能把该图当作现网已具备的能力。</text>
+</svg>

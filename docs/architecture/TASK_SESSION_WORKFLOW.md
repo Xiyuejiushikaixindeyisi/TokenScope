@@ -1,6 +1,6 @@
 # 任务与session协作流程
 
-2026-11-13用户确认V3验收通过；两个V3产品/开发休眠，V4待用户启动，当前核心汇报和模型演进。[身份登记](../../memory/SESSIONS.md) · [V4入口](../tasks/v4/ENTRY.md) · [本机/华为/人机协作](../tasks/v4/COLLABORATION.md)。
+V3已于2026-11-13验收通过，两个旧产品／开发会话休眠。V4产品线11-15按用户指令分为主会话汇报／审核／提交、现网流量研究副本、MaaS架构与试点副本；[三线所有权与交接](../tasks/product-v4/SESSION_COLLABORATION_20261115.md)约束同目录协作。V4核心仍为汇报和模型演进，开发另按启动。[身份登记](../../memory/SESSIONS.md) · [V4入口](../tasks/v4/ENTRY.md) · [本机/华为/人机协作](../tasks/v4/COLLABORATION.md)。
 
 产品负责方案、汇报/必要DEMO和需求验收；开发独立技术审查、获准实现和测试；镜像负责版本/交付。用户决定范围、DEMO和业务接受，当前文档登记不启动编码/现场。Tokenizer/Template复用先核身份/证据，不因小版本号相近直接沿用。
 

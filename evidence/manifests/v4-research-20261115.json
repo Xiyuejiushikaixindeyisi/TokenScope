@@ -1,0 +1,67 @@
+{
+  "purpose": "V4 local research evidence identity; neither acceptance nor source-data revalidation",
+  "recorded_date": "2026-11-15",
+  "storage": "Source reports and embedded MA data stay local; this manifest is versioned.",
+  "files": [
+    {
+      "path": "docs/huawei/HUAWEI_V4_P1_STAGE1_MIXED_SCENARIOS.md",
+      "bytes": 22967,
+      "sha256": "5e524531ff9a304937a77d6b814eaa37744aaaa25726fc5b764df025d1c490da",
+      "availability": "present_local",
+      "included_in_this_git_commit": false
+    },
+    {
+      "path": "docs/huawei/HUAWEI_V4_P1_STAGE2_LONG_TAIL.md",
+      "bytes": 20868,
+      "sha256": "da1674d6aa738a6add41a1e0967a3fa9c6bff7a2f59ec14dff0015cf7314da46",
+      "availability": "present_local",
+      "included_in_this_git_commit": false
+    },
+    {
+      "path": "docs/huawei/HUAWEI_V4_P1_STAGE3_OUTPUT_HISTOGRAMS.md",
+      "bytes": 45939,
+      "sha256": "110500abe21b613f7b7fadd307ff94f02990cd45848416c4864a34244f1a9847",
+      "availability": "present_local",
+      "included_in_this_git_commit": false
+    },
+    {
+      "path": "docs/huawei/HUAWEI_V4_P2_MAAS_TRAFFIC_AND_FEASIBILITY.md",
+      "bytes": 26134,
+      "sha256": "d5d3c8fc6c40e16390b19e76d4865c6083cd6a2baf6ec2e84b80228d8d799b6a",
+      "availability": "present_local",
+      "included_in_this_git_commit": false
+    },
+    {
+      "path": "docs/huawei/MA_TRAFFIC_PROFILE.html",
+      "bytes": 388189,
+      "sha256": "c182844ce71cda20eaebf44ec36bf49cee7d54dc82d3acb089b6600c38bd0167",
+      "availability": "present_local",
+      "included_in_this_git_commit": false
+    }
+  ],
+  "ma_profile_declared_scope": {
+    "report_declared_generated_date": "2026-11-10",
+    "report_declared_model": "Qwen-V3.6-27B",
+    "report_declared_window_utc": "2026-10-20 08:00-09:00",
+    "embedded_source_sha256": "3ee1035721f37de89e37ad4c125e626c2f343b2e7a3dcca52339085c25a35e03",
+    "local_references": [
+      {
+        "href": "../../engineering/MA_FLOW_FOR_SUPER_P90_READONLY_20261110.md",
+        "exists_at_resolved_location": false
+      },
+      {
+        "href": "ANALYSIS.md",
+        "exists_at_resolved_location": false
+      },
+      {
+        "href": "audit-data.json",
+        "exists_at_resolved_location": false
+      },
+      {
+        "href": "instance-features.csv",
+        "exists_at_resolved_location": false
+      }
+    ]
+  },
+  "review_limit": "MA file metadata and declared scope only; referenced source and attachments missing at their relative paths."
+}
