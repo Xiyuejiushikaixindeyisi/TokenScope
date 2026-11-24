@@ -6,11 +6,12 @@
 
 | 当前工作 | 首选入口 |
 | --- | --- |
+| V5产品设计准备（11-24） | [需求与入口](tasks/product-v5/ENTRY.md) · [启动prompt](tasks/product-v5/START_PRODUCT_20261124.md)；JSON容错、平均输入/全服务排行、低命中阈值及同事优化建议；当前仅讨论。V4.1独立本机验收、不打包/华为验证 |
 | V4目标、任务、启动与协作 | [统一入口](tasks/v4/ENTRY.md) · [任务](tasks/v4/SCOPE_TASKS.md) · [协作](tasks/v4/COLLABORATION.md) |
 | V4主会话与两研究fork | [三会话分工／ID／三份启动prompt](tasks/product-v4/SESSION_COLLABORATION_20261115.md)；主会话汇报／审核／提交，副本1现网流量与独立HTML，副本2先试点、有初步结果后架构粗评；两个fork已创建 |
 | V4长期研究与证据 | 高优先级：[现网流量研究](tasks/product-v4/PRODUCTION_TRAFFIC_STUDY_20261114.md) · [三架构研究](tasks/product-v4/INFERX_DEEPSEEK_MOONCAKE_ARCHITECTURE_COMPARISON_20261114.md)；[已确认资料路由](tasks/product-v4/V4_REVIEW_PACKAGE_20261115.md)含重点证据／专题，P2为次高优先级试点；MA画像来源附件仍缺。未来MaaS粗评依赖试点初步结果，Tokenization pending |
-| 模型演进/编码资产复用 | [核查表](tasks/v4/MODEL_REUSE_MATRIX.md) · [开发启动prompt](tasks/v4/START_DEVELOPMENT.md) |
-| 华为探索/取证 | [本轮prompt-1三阶段＋MaaS prompt-2](tasks/product-v4/ENTRY.md)；[模型资产盘点](tasks/v4/START_HUAWEI_READONLY.md)按单独范围，均非部署指令 |
+| 模型演进/编码资产复用 | 当前执行见[V4.1入口](tasks/v4/simulator-v41/ENTRY.md)；[核查表](tasks/v4/MODEL_REUSE_MATRIX.md)保留参考，[旧启动材料](tasks/v4/START_DEVELOPMENT.md)已归档 |
+| 华为历史探索/取证 | [V4证据入口](tasks/product-v4/ENTRY.md)；[旧模型盘点prompt](tasks/v4/START_HUAWEI_READONLY.md)归档。本轮无新增现场任务，V4.1不需要华为验证 |
 | 镜像、Git、版本与交付 | [交付入口](tasks/delivery/ENTRY.md) |
 
 V3历史：[产品入口](tasks/product-v3/ENTRY.md) · [开发入口](tasks/development-v3/ENTRY.md) · [现场补证核对](tasks/delivery/V3_C04_SUPPLEMENT_REVIEW_AND_CLOSE_20261113.md) · [四象限资料](tasks/product-v3/promotion/quadrant-detail/dist/index.html)。仅按问题追溯，不把研究资料当产品前端规格。

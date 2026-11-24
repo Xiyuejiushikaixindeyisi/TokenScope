@@ -1,5 +1,7 @@
 # 当前状态
 
+**2026-11-24 V5方向准备：** 用户明确V4.1只在原session完成本机E2E，不需要镜像/代码交付包和华为验证；原开发照常。V5聚焦JSON容错、平均输入长度/理想命中、跨全部已完成模型服务的排行、均值排序、长输入低命中阈值和同事推理优化建议；Token异常长期休眠。当前仅[产品入口/需求](../docs/tasks/product-v5/ENTRY.md)及[启动prompt](../docs/tasks/product-v5/START_PRODUCT_20261124.md)，新session待用户启动、ID未知；具体技术资料待用户提供。未改产品/运行状态；后续用户已授权仅本轮V5文档提交并push main，其他session工作保留。[文档整理](../docs/operations/V5_DOCUMENTATION_HANDOFF_20261124.md)。
+
 2026-11-13用户明确：“我认可，可以认为V3已经通过验收。” **V3已通过用户验收并收口**，详[验收决定](../docs/tasks/delivery/V3_USER_ACCEPTANCE_20261113.md)。固定发布tokenscope-v3-c04-20261112、源码57fe9f6、WSL/桌面20文件及prompt修订保持身份；本轮文档commit不改变产品包。原报告/补证/已知限制保留，不再以“用户验收待定”阻断V4。
 
 **2026-11-15最新：主会话已按用户指令fork两次，三份启动prompt／实际ID／文件分工已登记。** [三会话入口](../docs/tasks/product-v4/SESSION_COLLABORATION_20261115.md)：主会话继续V4汇报方案、审核两线材料并提交；[副本1](../docs/tasks/product-v4/traffic/ENTRY.md)现网流量与用户三阶段优化，最终独立HTML；[副本2](../docs/tasks/product-v4/maas/ENTRY.md)简单试点设计，有初步结果后形成场景分类MaaS架构待同事粗评。两副本工具已确认、idle，待用户首次启动和本人环境核验；不复做父会话fork／Git任务。

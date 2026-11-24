@@ -6,7 +6,8 @@
 
 | 角色 | 实际ID与核验 | 状态与任务 | 入口/记忆 |
 | --- | --- | --- | --- |
-| 镜像打包与审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d；本人Windows THREAD/SESSION及应用列表核实 | 持续版本职责；本轮V3用户收口、V4登记、文档/记忆/本地Git提交。不代产品编码，不自动构建/现场/push | [交付](../docs/tasks/delivery/ENTRY.md) · [记忆](tasks/delivery.md) |
+| V5产品设计（待用户启动） | 未知；未创建/发送会话，待本人环境核实 | 六项产品方向讨论与方案；不接管或阻塞V4.1，不编码/现场/打包/提交 | [入口](../docs/tasks/product-v5/ENTRY.md) · [启动prompt](../docs/tasks/product-v5/START_PRODUCT_20261124.md) · [记忆](tasks/product-v5.md) |
+| 镜像打包与审查 | 01a1800e-80b4-7400-a78b-a84f5b6e888d；本人Windows THREAD/SESSION及应用列表核实 | 持续版本职责；11-24按用户要求整理V5方向/文档/启动prompt与记忆；后续按授权仅提交并推送本轮V5文档，不编码/启停/打包/华为验证，其他session未提交工作保留。本人Windows THREAD/SESSION本轮再次核实；V4.1由原session本机验收，不加本线关卡 | [交付](../docs/tasks/delivery/ENTRY.md) · [记忆](tasks/delivery.md) |
 | V4主会话：汇报统筹、审核与提交（应用“整理TokenScope V4汇报方案”） | 01a1d3e3-0c34-7320-bf6f-14438c120aed；本人Windows SESSION/THREAD及应用列表11-15核实 | 用户授权fork两次，已创建两副本／准备三prompt；主线整理V4汇报，审核两线最终材料并判断纳入，维护共享入口和正式提交。本轮一次本地Git，未授权push；不代开发或现场执行 | [主prompt](../docs/tasks/product-v4/sessions/START_MAIN_20261115.md) · [分工](../docs/tasks/product-v4/SESSION_COLLABORATION_20261115.md) · [记忆](tasks/product-v4.md) |
 | V4副本1：现网流量研究（应用“TokenScope V4现网流量研究”） | 01a1de7c-8ea4-7cb2-b8e6-114aeba29a60；11-15 fork/read工具确认，同目录、idle；待本人环境复核 | 独立HTML：现网现状／证据，用户三阶段协同优化、节点与有依据的效果；维护本线及流量研究。待用户在fork中首次接收启动prompt，不重复父会话fork／Git任务；成品交主会话审核提交 | [启动](../docs/tasks/product-v4/sessions/START_TRAFFIC_20261115.md) · [ENTRY](../docs/tasks/product-v4/traffic/ENTRY.md) · [记忆](tasks/product-v4-traffic.md) |
 | V4副本2：MaaS架构与试点（应用“TokenScope V4 MaaS架构与试点”） | 01a1de7c-a6fd-7043-baa7-987f03d5af3c；11-15 fork/read工具确认，同目录、idle；待本人环境复核 | 两DeepSeek appid简单试点设计；有初步结果后形成场景分类MaaS网关架构待同事粗评。待用户首次启动；无现场／产品实施授权，Tokenization继续pending；成品交主会话审核提交 | [启动](../docs/tasks/product-v4/sessions/START_MAAS_20261115.md) · [ENTRY](../docs/tasks/product-v4/maas/ENTRY.md) · [记忆](tasks/product-v4-maas.md) |

@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-24",
+  "records": [
+    {
+      "original_path": "docs/tasks/v4/START_PRODUCT.md",
+      "archive_path": "achieve/2026-11-24/v5-product-start/originals/docs/tasks/v4/START_PRODUCT.md",
+      "sha256": "2d6cbef36e461c520be644a233214c5390b7830386ee6d61027b37bfe4aac36b",
+      "bytes": 3902,
+      "purpose": "superseded prompt"
+    },
+    {
+      "original_path": "docs/tasks/v4/START_DEVELOPMENT.md",
+      "archive_path": "achieve/2026-11-24/v5-product-start/originals/docs/tasks/v4/START_DEVELOPMENT.md",
+      "sha256": "a2195682d66a173557e6d7033980a329e4f5ec0d617630c6b953275ead0b26bf",
+      "bytes": 4073,
+      "purpose": "superseded prompt"
+    },
+    {
+      "original_path": "docs/tasks/v4/START_HUAWEI_READONLY.md",
+      "archive_path": "achieve/2026-11-24/v5-product-start/originals/docs/tasks/v4/START_HUAWEI_READONLY.md",
+      "sha256": "02463fce3087bc881ca29ceff644e6c776f031fd4fa36ab82ad701a251cbf494",
+      "bytes": 3636,
+      "purpose": "superseded prompt"
+    },
+    {
+      "original_path": "docs/tasks/delivery/ENTRY.md",
+      "archive_path": "achieve/2026-11-24/v5-product-start/originals/docs/tasks/delivery/ENTRY.md",
+      "sha256": "de5369e2258f43a61e6eab4a777fb36aee8656c2fed75291544c0f7385b1b047",
+      "bytes": 1951,
+      "purpose": "delivery entry before refresh"
+    }
+  ],
+  "v41_active_files_moved": false,
+  "raw_evidence_modified": false
+}
